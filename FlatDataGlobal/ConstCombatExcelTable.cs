@@ -13,7 +13,7 @@ public struct ConstCombatExcelTable : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_23_1_21(); }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_23_3_3(); }
   public static ConstCombatExcelTable GetRootAsConstCombatExcelTable(ByteBuffer _bb) { return GetRootAsConstCombatExcelTable(_bb, new ConstCombatExcelTable()); }
   public static ConstCombatExcelTable GetRootAsConstCombatExcelTable(ByteBuffer _bb, ConstCombatExcelTable obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }

@@ -13,7 +13,7 @@ public struct MiniGameMissionExcel : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_23_1_21(); }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_23_3_3(); }
   public static MiniGameMissionExcel GetRootAsMiniGameMissionExcel(ByteBuffer _bb) { return GetRootAsMiniGameMissionExcel(_bb, new MiniGameMissionExcel()); }
   public static MiniGameMissionExcel GetRootAsMiniGameMissionExcel(ByteBuffer _bb, MiniGameMissionExcel obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }

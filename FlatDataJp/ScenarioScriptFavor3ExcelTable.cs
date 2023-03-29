@@ -13,7 +13,7 @@ public struct ScenarioScriptFavor3ExcelTable : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_23_1_21(); }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_23_3_3(); }
   public static ScenarioScriptFavor3ExcelTable GetRootAsScenarioScriptFavor3ExcelTable(ByteBuffer _bb) { return GetRootAsScenarioScriptFavor3ExcelTable(_bb, new ScenarioScriptFavor3ExcelTable()); }
   public static ScenarioScriptFavor3ExcelTable GetRootAsScenarioScriptFavor3ExcelTable(ByteBuffer _bb, ScenarioScriptFavor3ExcelTable obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }

@@ -13,7 +13,7 @@ public struct BGM_GlobalExcel : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_23_1_21(); }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_23_3_3(); }
   public static BGM_GlobalExcel GetRootAsBGM_GlobalExcel(ByteBuffer _bb) { return GetRootAsBGM_GlobalExcel(_bb, new BGM_GlobalExcel()); }
   public static BGM_GlobalExcel GetRootAsBGM_GlobalExcel(ByteBuffer _bb, BGM_GlobalExcel obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
