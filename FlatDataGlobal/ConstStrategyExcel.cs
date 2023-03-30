@@ -44,6 +44,7 @@ public struct ConstStrategyExcel : IFlatbufferObject
   public int TacticSkipClearTimeSeconds { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int TacticSkipFramePerSecond { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int ConquestEchelonCount { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int StoryEchelonCount { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.ConstStrategyExcel> CreateConstStrategyExcel(FlatBufferBuilder builder,
       float HexaMapBoundaryOffset = 0.0f,
@@ -63,9 +64,11 @@ public struct ConstStrategyExcel : IFlatbufferObject
       int WorldRaidEchelonCount = 0,
       int TacticSkipClearTimeSeconds = 0,
       int TacticSkipFramePerSecond = 0,
-      int ConquestEchelonCount = 0) {
-    builder.StartTable(18);
+      int ConquestEchelonCount = 0,
+      int StoryEchelonCount = 0) {
+    builder.StartTable(19);
     ConstStrategyExcel.AddPlayTimeLimitInSeconds(builder, PlayTimeLimitInSeconds);
+    ConstStrategyExcel.AddStoryEchelonCount(builder, StoryEchelonCount);
     ConstStrategyExcel.AddConquestEchelonCount(builder, ConquestEchelonCount);
     ConstStrategyExcel.AddTacticSkipFramePerSecond(builder, TacticSkipFramePerSecond);
     ConstStrategyExcel.AddTacticSkipClearTimeSeconds(builder, TacticSkipClearTimeSeconds);
@@ -86,7 +89,7 @@ public struct ConstStrategyExcel : IFlatbufferObject
     return ConstStrategyExcel.EndConstStrategyExcel(builder);
   }
 
-  public static void StartConstStrategyExcel(FlatBufferBuilder builder) { builder.StartTable(18); }
+  public static void StartConstStrategyExcel(FlatBufferBuilder builder) { builder.StartTable(19); }
   public static void AddHexaMapBoundaryOffset(FlatBufferBuilder builder, float HexaMapBoundaryOffset) { builder.AddFloat(0, HexaMapBoundaryOffset, 0.0f); }
   public static void AddHexaMapStartCameraOffset(FlatBufferBuilder builder, float HexaMapStartCameraOffset) { builder.AddFloat(1, HexaMapStartCameraOffset, 0.0f); }
   public static void AddCameraZoomMax(FlatBufferBuilder builder, float CameraZoomMax) { builder.AddFloat(2, CameraZoomMax, 0.0f); }
@@ -110,6 +113,7 @@ public struct ConstStrategyExcel : IFlatbufferObject
   public static void AddTacticSkipClearTimeSeconds(FlatBufferBuilder builder, int TacticSkipClearTimeSeconds) { builder.AddInt(15, TacticSkipClearTimeSeconds, 0); }
   public static void AddTacticSkipFramePerSecond(FlatBufferBuilder builder, int TacticSkipFramePerSecond) { builder.AddInt(16, TacticSkipFramePerSecond, 0); }
   public static void AddConquestEchelonCount(FlatBufferBuilder builder, int ConquestEchelonCount) { builder.AddInt(17, ConquestEchelonCount, 0); }
+  public static void AddStoryEchelonCount(FlatBufferBuilder builder, int StoryEchelonCount) { builder.AddInt(18, StoryEchelonCount, 0); }
   public static Offset<FlatDataGlobal.ConstStrategyExcel> EndConstStrategyExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstStrategyExcel>(o);

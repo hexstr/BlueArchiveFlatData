@@ -22,9 +22,9 @@ public struct ItemExcel : IFlatbufferObject
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long GroupId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.Rarity Rarity { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Rarity.N; } }
-  public FlatDataGlobal.ProductionStep ProductionStep { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
+  public FlatDataGlobal.ProductionStep Productionstep { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
   public uint LocalizeEtcId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public FlatDataGlobal.ItemCategory ItemCategory { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.ItemCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ItemCategory.Coin; } }
+  public FlatDataGlobal.ItemCategory Itemcategory { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.ItemCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ItemCategory.Coin; } }
   public long Quality { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string Icon { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -46,7 +46,7 @@ public struct ItemExcel : IFlatbufferObject
   public FlatDataGlobal.ParcelType UsingResultParcelType { get { int o = __p.__offset(28); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
   public long UsingResultId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long UsingResultAmount { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.MailType MailType { get { int o = __p.__offset(34); return o != 0 ? (FlatDataGlobal.MailType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MailType.System; } }
+  public FlatDataGlobal.MailType Mailtype { get { int o = __p.__offset(34); return o != 0 ? (FlatDataGlobal.MailType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MailType.System; } }
   public FlatDataGlobal.ParcelType ExpiryChangeParcelType { get { int o = __p.__offset(36); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
   public long ExpiryChangeId { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ExpiryChangeAmount { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -85,10 +85,10 @@ public struct ItemExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.ItemExcel> CreateItemExcel(FlatBufferBuilder builder,
       long Id = 0,
       long GroupId = 0,
-      FlatDataGlobal.Rarity Rarity = FlatDataGlobal.Rarity.N,
-      FlatDataGlobal.ProductionStep ProductionStep = FlatDataGlobal.ProductionStep.ToDo,
+      FlatDataGlobal.Rarity rarity = FlatDataGlobal.Rarity.N,
+      FlatDataGlobal.ProductionStep productionstep = FlatDataGlobal.ProductionStep.ToDo,
       uint LocalizeEtcId = 0,
-      FlatDataGlobal.ItemCategory ItemCategory = FlatDataGlobal.ItemCategory.Coin,
+      FlatDataGlobal.ItemCategory itemcategory = FlatDataGlobal.ItemCategory.Coin,
       long Quality = 0,
       StringOffset IconOffset = default(StringOffset),
       StringOffset SpriteNameOffset = default(StringOffset),
@@ -98,7 +98,7 @@ public struct ItemExcel : IFlatbufferObject
       FlatDataGlobal.ParcelType UsingResultParcelType = FlatDataGlobal.ParcelType.None,
       long UsingResultId = 0,
       long UsingResultAmount = 0,
-      FlatDataGlobal.MailType MailType = FlatDataGlobal.MailType.System,
+      FlatDataGlobal.MailType mailtype = FlatDataGlobal.MailType.System,
       FlatDataGlobal.ParcelType ExpiryChangeParcelType = FlatDataGlobal.ParcelType.None,
       long ExpiryChangeId = 0,
       long ExpiryChangeAmount = 0,
@@ -132,16 +132,16 @@ public struct ItemExcel : IFlatbufferObject
     ItemExcel.AddMaxGiftTags(builder, MaxGiftTags);
     ItemExcel.AddTags(builder, TagsOffset);
     ItemExcel.AddExpiryChangeParcelType(builder, ExpiryChangeParcelType);
-    ItemExcel.AddMailType(builder, MailType);
+    ItemExcel.AddMailtype(builder, mailtype);
     ItemExcel.AddUsingResultParcelType(builder, UsingResultParcelType);
     ItemExcel.AddStackableFunction(builder, StackableFunction);
     ItemExcel.AddStackableMax(builder, StackableMax);
     ItemExcel.AddSpriteName(builder, SpriteNameOffset);
     ItemExcel.AddIcon(builder, IconOffset);
-    ItemExcel.AddItemCategory(builder, ItemCategory);
+    ItemExcel.AddItemcategory(builder, itemcategory);
     ItemExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
-    ItemExcel.AddProductionStep(builder, ProductionStep);
-    ItemExcel.AddRarity(builder, Rarity);
+    ItemExcel.AddProductionstep(builder, productionstep);
+    ItemExcel.AddRarity(builder, rarity);
     ItemExcel.AddCanTierUpgrade(builder, CanTierUpgrade);
     ItemExcel.AddImmediateUse(builder, ImmediateUse);
     return ItemExcel.EndItemExcel(builder);
@@ -150,10 +150,10 @@ public struct ItemExcel : IFlatbufferObject
   public static void StartItemExcel(FlatBufferBuilder builder) { builder.StartTable(30); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(1, GroupId, 0); }
-  public static void AddRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity Rarity) { builder.AddInt(2, (int)Rarity, 0); }
-  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep ProductionStep) { builder.AddInt(3, (int)ProductionStep, 0); }
+  public static void AddRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity rarity) { builder.AddInt(2, (int)rarity, 0); }
+  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionstep) { builder.AddInt(3, (int)productionstep, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(4, LocalizeEtcId, 0); }
-  public static void AddItemCategory(FlatBufferBuilder builder, FlatDataGlobal.ItemCategory ItemCategory) { builder.AddInt(5, (int)ItemCategory, 0); }
+  public static void AddItemcategory(FlatBufferBuilder builder, FlatDataGlobal.ItemCategory itemcategory) { builder.AddInt(5, (int)itemcategory, 0); }
   public static void AddQuality(FlatBufferBuilder builder, long Quality) { builder.AddLong(6, Quality, 0); }
   public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(7, IconOffset.Value, 0); }
   public static void AddSpriteName(FlatBufferBuilder builder, StringOffset SpriteNameOffset) { builder.AddOffset(8, SpriteNameOffset.Value, 0); }
@@ -163,7 +163,7 @@ public struct ItemExcel : IFlatbufferObject
   public static void AddUsingResultParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType UsingResultParcelType) { builder.AddInt(12, (int)UsingResultParcelType, 0); }
   public static void AddUsingResultId(FlatBufferBuilder builder, long UsingResultId) { builder.AddLong(13, UsingResultId, 0); }
   public static void AddUsingResultAmount(FlatBufferBuilder builder, long UsingResultAmount) { builder.AddLong(14, UsingResultAmount, 0); }
-  public static void AddMailType(FlatBufferBuilder builder, FlatDataGlobal.MailType MailType) { builder.AddInt(15, (int)MailType, 0); }
+  public static void AddMailtype(FlatBufferBuilder builder, FlatDataGlobal.MailType mailtype) { builder.AddInt(15, (int)mailtype, 0); }
   public static void AddExpiryChangeParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType ExpiryChangeParcelType) { builder.AddInt(16, (int)ExpiryChangeParcelType, 0); }
   public static void AddExpiryChangeId(FlatBufferBuilder builder, long ExpiryChangeId) { builder.AddLong(17, ExpiryChangeId, 0); }
   public static void AddExpiryChangeAmount(FlatBufferBuilder builder, long ExpiryChangeAmount) { builder.AddLong(18, ExpiryChangeAmount, 0); }

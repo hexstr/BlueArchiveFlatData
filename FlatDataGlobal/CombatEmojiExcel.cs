@@ -20,7 +20,7 @@ public struct CombatEmojiExcel : IFlatbufferObject
   public CombatEmojiExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long UniqueId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.EmojiEvent EmojiEvent { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.EmojiEvent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EmojiEvent.EnterConver; } }
+  public FlatDataGlobal.EmojiEvent Emojievent { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.EmojiEvent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EmojiEvent.EnterConver; } }
   public int OrderOfPriority { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public bool EmojiDuration { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool EmojiReversal { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
@@ -29,7 +29,7 @@ public struct CombatEmojiExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.CombatEmojiExcel> CreateCombatEmojiExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
-      FlatDataGlobal.EmojiEvent EmojiEvent = FlatDataGlobal.EmojiEvent.EnterConver,
+      FlatDataGlobal.EmojiEvent emojievent = FlatDataGlobal.EmojiEvent.EnterConver,
       int OrderOfPriority = 0,
       bool EmojiDuration = false,
       bool EmojiReversal = false,
@@ -39,7 +39,7 @@ public struct CombatEmojiExcel : IFlatbufferObject
     CombatEmojiExcel.AddUniqueId(builder, UniqueId);
     CombatEmojiExcel.AddShowEmojiDelay(builder, ShowEmojiDelay);
     CombatEmojiExcel.AddOrderOfPriority(builder, OrderOfPriority);
-    CombatEmojiExcel.AddEmojiEvent(builder, EmojiEvent);
+    CombatEmojiExcel.AddEmojievent(builder, emojievent);
     CombatEmojiExcel.AddEmojiTurnOn(builder, EmojiTurnOn);
     CombatEmojiExcel.AddEmojiReversal(builder, EmojiReversal);
     CombatEmojiExcel.AddEmojiDuration(builder, EmojiDuration);
@@ -48,7 +48,7 @@ public struct CombatEmojiExcel : IFlatbufferObject
 
   public static void StartCombatEmojiExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
-  public static void AddEmojiEvent(FlatBufferBuilder builder, FlatDataGlobal.EmojiEvent EmojiEvent) { builder.AddInt(1, (int)EmojiEvent, 0); }
+  public static void AddEmojievent(FlatBufferBuilder builder, FlatDataGlobal.EmojiEvent emojievent) { builder.AddInt(1, (int)emojievent, 0); }
   public static void AddOrderOfPriority(FlatBufferBuilder builder, int OrderOfPriority) { builder.AddInt(2, OrderOfPriority, 0); }
   public static void AddEmojiDuration(FlatBufferBuilder builder, bool EmojiDuration) { builder.AddBool(3, EmojiDuration, false); }
   public static void AddEmojiReversal(FlatBufferBuilder builder, bool EmojiReversal) { builder.AddBool(4, EmojiReversal, false); }

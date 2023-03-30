@@ -21,14 +21,14 @@ public struct GachaCraftNodeExcel : IFlatbufferObject
 
   public long ID { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long Tier { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.Tag Tag_(int j) { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Tag)0; }
-  public int Tag_Length { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.Tag Tag(int j) { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Tag)0; }
+  public int TagLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.Tag> GetTag_Bytes() { return __p.__vector_as_span<FlatDataGlobal.Tag>(8, 4); }
+  public Span<FlatDataGlobal.Tag> GetTagBytes() { return __p.__vector_as_span<FlatDataGlobal.Tag>(8, 4); }
 #else
-  public ArraySegment<byte>? GetTag_Bytes() { return __p.__vector_as_arraysegment(8); }
+  public ArraySegment<byte>? GetTagBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
-  public FlatDataGlobal.Tag[] GetTag_Array() { int o = __p.__offset(8); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Tag[] a = new FlatDataGlobal.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Tag)__p.bb.GetInt(p + i * 4); } return a; }
+  public FlatDataGlobal.Tag[] GetTagArray() { int o = __p.__offset(8); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Tag[] a = new FlatDataGlobal.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Tag)__p.bb.GetInt(p + i * 4); } return a; }
   public long NodeQuality { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string Icon { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -43,7 +43,7 @@ public struct GachaCraftNodeExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.GachaCraftNodeExcel> CreateGachaCraftNodeExcel(FlatBufferBuilder builder,
       long ID = 0,
       long Tier = 0,
-      VectorOffset Tag_Offset = default(VectorOffset),
+      VectorOffset TagOffset = default(VectorOffset),
       long NodeQuality = 0,
       StringOffset IconOffset = default(StringOffset),
       uint LocalizeKey = 0,
@@ -55,19 +55,19 @@ public struct GachaCraftNodeExcel : IFlatbufferObject
     GachaCraftNodeExcel.AddID(builder, ID);
     GachaCraftNodeExcel.AddLocalizeKey(builder, LocalizeKey);
     GachaCraftNodeExcel.AddIcon(builder, IconOffset);
-    GachaCraftNodeExcel.AddTag_(builder, Tag_Offset);
+    GachaCraftNodeExcel.AddTag(builder, TagOffset);
     return GachaCraftNodeExcel.EndGachaCraftNodeExcel(builder);
   }
 
   public static void StartGachaCraftNodeExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddID(FlatBufferBuilder builder, long ID) { builder.AddLong(0, ID, 0); }
   public static void AddTier(FlatBufferBuilder builder, long Tier) { builder.AddLong(1, Tier, 0); }
-  public static void AddTag_(FlatBufferBuilder builder, VectorOffset Tag_Offset) { builder.AddOffset(2, Tag_Offset.Value, 0); }
-  public static VectorOffset CreateTag_Vector(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateTag_VectorBlock(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateTag_VectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateTag_VectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartTag_Vector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddTag(FlatBufferBuilder builder, VectorOffset TagOffset) { builder.AddOffset(2, TagOffset.Value, 0); }
+  public static VectorOffset CreateTagVector(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateTagVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateTagVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateTagVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartTagVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddNodeQuality(FlatBufferBuilder builder, long NodeQuality) { builder.AddLong(3, NodeQuality, 0); }
   public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(4, IconOffset.Value, 0); }
   public static void AddLocalizeKey(FlatBufferBuilder builder, uint LocalizeKey) { builder.AddUint(5, LocalizeKey, 0); }

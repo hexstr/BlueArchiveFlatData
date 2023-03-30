@@ -21,6 +21,7 @@ public enum ContentType : int
   Conquest = 11,
   EventContentStoryStage = 12,
   CampaignExtraStage = 13,
+  StoryStrategyStage = 14,
 };
 
 

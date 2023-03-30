@@ -20,7 +20,7 @@ public struct RecipeIngredientExcel : IFlatbufferObject
   public RecipeIngredientExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.RecipeType RecipeType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RecipeType.None; } }
+  public FlatDataGlobal.RecipeType Recipetype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RecipeType.None; } }
   public FlatDataGlobal.ParcelType CostParcelType(int j) { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
   public int CostParcelTypeLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -73,7 +73,7 @@ public struct RecipeIngredientExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.RecipeIngredientExcel> CreateRecipeIngredientExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataGlobal.RecipeType RecipeType = FlatDataGlobal.RecipeType.None,
+      FlatDataGlobal.RecipeType recipetype = FlatDataGlobal.RecipeType.None,
       VectorOffset CostParcelTypeOffset = default(VectorOffset),
       VectorOffset CostIdOffset = default(VectorOffset),
       VectorOffset CostAmountOffset = default(VectorOffset),
@@ -90,13 +90,13 @@ public struct RecipeIngredientExcel : IFlatbufferObject
     RecipeIngredientExcel.AddCostAmount(builder, CostAmountOffset);
     RecipeIngredientExcel.AddCostId(builder, CostIdOffset);
     RecipeIngredientExcel.AddCostParcelType(builder, CostParcelTypeOffset);
-    RecipeIngredientExcel.AddRecipeType(builder, RecipeType);
+    RecipeIngredientExcel.AddRecipetype(builder, recipetype);
     return RecipeIngredientExcel.EndRecipeIngredientExcel(builder);
   }
 
   public static void StartRecipeIngredientExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddRecipeType(FlatBufferBuilder builder, FlatDataGlobal.RecipeType RecipeType) { builder.AddInt(1, (int)RecipeType, 0); }
+  public static void AddRecipetype(FlatBufferBuilder builder, FlatDataGlobal.RecipeType recipetype) { builder.AddInt(1, (int)recipetype, 0); }
   public static void AddCostParcelType(FlatBufferBuilder builder, VectorOffset CostParcelTypeOffset) { builder.AddOffset(2, CostParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateCostParcelTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateCostParcelTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }

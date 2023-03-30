@@ -73,7 +73,7 @@ public struct SchoolDungeonStageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetStarGoalAmountBytes() { return __p.__vector_as_arraysegment(26); }
 #endif
   public int[] GetStarGoalAmountArray() { return __p.__vector_as_array<int>(26); }
-  public FlatDataGlobal.StageTopography StageTopography { get { int o = __p.__offset(28); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
+  public FlatDataGlobal.StageTopography Stagetopography { get { int o = __p.__offset(28); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
   public long RecommandLevel { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long StageRewardId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PlayTimeLimitInSeconds { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -91,7 +91,7 @@ public struct SchoolDungeonStageExcel : IFlatbufferObject
       int GroundId = 0,
       VectorOffset StarGoalOffset = default(VectorOffset),
       VectorOffset StarGoalAmountOffset = default(VectorOffset),
-      FlatDataGlobal.StageTopography StageTopography = FlatDataGlobal.StageTopography.Street,
+      FlatDataGlobal.StageTopography stagetopography = FlatDataGlobal.StageTopography.Street,
       long RecommandLevel = 0,
       long StageRewardId = 0,
       long PlayTimeLimitInSeconds = 0) {
@@ -102,7 +102,7 @@ public struct SchoolDungeonStageExcel : IFlatbufferObject
     SchoolDungeonStageExcel.AddPrevStageId(builder, PrevStageId);
     SchoolDungeonStageExcel.AddBattleDuration(builder, BattleDuration);
     SchoolDungeonStageExcel.AddStageId(builder, StageId);
-    SchoolDungeonStageExcel.AddStageTopography(builder, StageTopography);
+    SchoolDungeonStageExcel.AddStagetopography(builder, stagetopography);
     SchoolDungeonStageExcel.AddStarGoalAmount(builder, StarGoalAmountOffset);
     SchoolDungeonStageExcel.AddStarGoal(builder, StarGoalOffset);
     SchoolDungeonStageExcel.AddGroundId(builder, GroundId);
@@ -158,7 +158,7 @@ public struct SchoolDungeonStageExcel : IFlatbufferObject
   public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartStarGoalAmountVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography StageTopography) { builder.AddInt(12, (int)StageTopography, 0); }
+  public static void AddStagetopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stagetopography) { builder.AddInt(12, (int)stagetopography, 0); }
   public static void AddRecommandLevel(FlatBufferBuilder builder, long RecommandLevel) { builder.AddLong(13, RecommandLevel, 0); }
   public static void AddStageRewardId(FlatBufferBuilder builder, long StageRewardId) { builder.AddLong(14, StageRewardId, 0); }
   public static void AddPlayTimeLimitInSeconds(FlatBufferBuilder builder, long PlayTimeLimitInSeconds) { builder.AddLong(15, PlayTimeLimitInSeconds, 0); }

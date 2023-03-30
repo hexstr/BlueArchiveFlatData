@@ -21,7 +21,7 @@ public struct EquipmentGearExcel : IFlatbufferObject
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long CharacterId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.StatLevelUpType StatLevelUpType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatLevelUpType.Standard; } }
+  public FlatDataGlobal.StatLevelUpType Statleveluptype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatLevelUpType.Standard; } }
   public long Tier { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long NextTierEquipment { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long RecipeId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -29,7 +29,7 @@ public struct EquipmentGearExcel : IFlatbufferObject
   public long MaxLevel { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PreviousSkillGroupId { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long AfterSkillGroupId { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.StatType StatType { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.StatType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatType.None; } }
+  public FlatDataGlobal.StatType Stattype { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.StatType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatType.None; } }
   public FlatDataGlobal.Tag Tags(int j) { int o = __p.__offset(26); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Tag)0; }
   public int TagsLength { get { int o = __p.__offset(26); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -58,7 +58,7 @@ public struct EquipmentGearExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.EquipmentGearExcel> CreateEquipmentGearExcel(FlatBufferBuilder builder,
       long Id = 0,
       long CharacterId = 0,
-      FlatDataGlobal.StatLevelUpType StatLevelUpType = FlatDataGlobal.StatLevelUpType.Standard,
+      FlatDataGlobal.StatLevelUpType statleveluptype = FlatDataGlobal.StatLevelUpType.Standard,
       long Tier = 0,
       long NextTierEquipment = 0,
       long RecipeId = 0,
@@ -66,7 +66,7 @@ public struct EquipmentGearExcel : IFlatbufferObject
       long MaxLevel = 0,
       long PreviousSkillGroupId = 0,
       long AfterSkillGroupId = 0,
-      FlatDataGlobal.StatType StatType = FlatDataGlobal.StatType.None,
+      FlatDataGlobal.StatType stattype = FlatDataGlobal.StatType.None,
       VectorOffset TagsOffset = default(VectorOffset),
       long MinStatValue = 0,
       long MaxStatValue = 0,
@@ -87,15 +87,15 @@ public struct EquipmentGearExcel : IFlatbufferObject
     EquipmentGearExcel.AddLocalizeEtcId(builder, LocalizeEtcIdOffset);
     EquipmentGearExcel.AddIcon(builder, IconOffset);
     EquipmentGearExcel.AddTags(builder, TagsOffset);
-    EquipmentGearExcel.AddStatType(builder, StatType);
-    EquipmentGearExcel.AddStatLevelUpType(builder, StatLevelUpType);
+    EquipmentGearExcel.AddStattype(builder, stattype);
+    EquipmentGearExcel.AddStatleveluptype(builder, statleveluptype);
     return EquipmentGearExcel.EndEquipmentGearExcel(builder);
   }
 
   public static void StartEquipmentGearExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(1, CharacterId, 0); }
-  public static void AddStatLevelUpType(FlatBufferBuilder builder, FlatDataGlobal.StatLevelUpType StatLevelUpType) { builder.AddInt(2, (int)StatLevelUpType, 0); }
+  public static void AddStatleveluptype(FlatBufferBuilder builder, FlatDataGlobal.StatLevelUpType statleveluptype) { builder.AddInt(2, (int)statleveluptype, 0); }
   public static void AddTier(FlatBufferBuilder builder, long Tier) { builder.AddLong(3, Tier, 0); }
   public static void AddNextTierEquipment(FlatBufferBuilder builder, long NextTierEquipment) { builder.AddLong(4, NextTierEquipment, 0); }
   public static void AddRecipeId(FlatBufferBuilder builder, long RecipeId) { builder.AddLong(5, RecipeId, 0); }
@@ -103,7 +103,7 @@ public struct EquipmentGearExcel : IFlatbufferObject
   public static void AddMaxLevel(FlatBufferBuilder builder, long MaxLevel) { builder.AddLong(7, MaxLevel, 0); }
   public static void AddPreviousSkillGroupId(FlatBufferBuilder builder, long PreviousSkillGroupId) { builder.AddLong(8, PreviousSkillGroupId, 0); }
   public static void AddAfterSkillGroupId(FlatBufferBuilder builder, long AfterSkillGroupId) { builder.AddLong(9, AfterSkillGroupId, 0); }
-  public static void AddStatType(FlatBufferBuilder builder, FlatDataGlobal.StatType StatType) { builder.AddInt(10, (int)StatType, 0); }
+  public static void AddStattype(FlatBufferBuilder builder, FlatDataGlobal.StatType stattype) { builder.AddInt(10, (int)stattype, 0); }
   public static void AddTags(FlatBufferBuilder builder, VectorOffset TagsOffset) { builder.AddOffset(11, TagsOffset.Value, 0); }
   public static VectorOffset CreateTagsVector(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }

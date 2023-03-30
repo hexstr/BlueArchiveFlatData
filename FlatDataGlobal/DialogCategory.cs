@@ -57,6 +57,17 @@ public enum DialogCategory : int
   GlobalAttendance03 = 47,
   GlobalAttendance04 = 48,
   GlobalAttendance05 = 49,
+  UIAttendanceEvent09 = 50,
+  UIAttendanceEvent10 = 51,
+  UIAttendanceEvent11 = 52,
+  DialogName01 = 53,
+  DialogName02 = 54,
+  DialogName03 = 55,
+  DialogName04 = 56,
+  DialogName05 = 57,
+  DialogName06 = 58,
+  DialogName07 = 59,
+  DialogName08 = 60,
 };
 
 

@@ -40,7 +40,7 @@ public struct WorldRaidConditionExcel : IFlatbufferObject
   public ArraySegment<byte>? GetCampaignStageIDBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
   public long[] GetCampaignStageIDArray() { return __p.__vector_as_array<long>(14); }
-  public FlatDataGlobal.MultipleConditionCheckType MultipleConditionCheckType { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.MultipleConditionCheckType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MultipleConditionCheckType.And; } }
+  public FlatDataGlobal.MultipleConditionCheckType Multipleconditionchecktype { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.MultipleConditionCheckType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MultipleConditionCheckType.And; } }
   public string AfterWhenDate { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetAfterWhenDateBytes() { return __p.__vector_as_span<byte>(18, 1); }
@@ -64,7 +64,7 @@ public struct WorldRaidConditionExcel : IFlatbufferObject
       long AccountLevel = 0,
       VectorOffset ScenarioModeIdOffset = default(VectorOffset),
       VectorOffset CampaignStageIDOffset = default(VectorOffset),
-      FlatDataGlobal.MultipleConditionCheckType MultipleConditionCheckType = FlatDataGlobal.MultipleConditionCheckType.And,
+      FlatDataGlobal.MultipleConditionCheckType multipleconditionchecktype = FlatDataGlobal.MultipleConditionCheckType.And,
       StringOffset AfterWhenDateOffset = default(StringOffset),
       VectorOffset WorldRaidBossKillOffset = default(VectorOffset)) {
     builder.StartTable(9);
@@ -72,7 +72,7 @@ public struct WorldRaidConditionExcel : IFlatbufferObject
     WorldRaidConditionExcel.AddId(builder, Id);
     WorldRaidConditionExcel.AddWorldRaidBossKill(builder, WorldRaidBossKillOffset);
     WorldRaidConditionExcel.AddAfterWhenDate(builder, AfterWhenDateOffset);
-    WorldRaidConditionExcel.AddMultipleConditionCheckType(builder, MultipleConditionCheckType);
+    WorldRaidConditionExcel.AddMultipleconditionchecktype(builder, multipleconditionchecktype);
     WorldRaidConditionExcel.AddCampaignStageID(builder, CampaignStageIDOffset);
     WorldRaidConditionExcel.AddScenarioModeId(builder, ScenarioModeIdOffset);
     WorldRaidConditionExcel.AddLockUI(builder, LockUIOffset);
@@ -102,7 +102,7 @@ public struct WorldRaidConditionExcel : IFlatbufferObject
   public static VectorOffset CreateCampaignStageIDVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCampaignStageIDVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCampaignStageIDVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddMultipleConditionCheckType(FlatBufferBuilder builder, FlatDataGlobal.MultipleConditionCheckType MultipleConditionCheckType) { builder.AddInt(6, (int)MultipleConditionCheckType, 0); }
+  public static void AddMultipleconditionchecktype(FlatBufferBuilder builder, FlatDataGlobal.MultipleConditionCheckType multipleconditionchecktype) { builder.AddInt(6, (int)multipleconditionchecktype, 0); }
   public static void AddAfterWhenDate(FlatBufferBuilder builder, StringOffset AfterWhenDateOffset) { builder.AddOffset(7, AfterWhenDateOffset.Value, 0); }
   public static void AddWorldRaidBossKill(FlatBufferBuilder builder, VectorOffset WorldRaidBossKillOffset) { builder.AddOffset(8, WorldRaidBossKillOffset.Value, 0); }
   public static VectorOffset CreateWorldRaidBossKillVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }

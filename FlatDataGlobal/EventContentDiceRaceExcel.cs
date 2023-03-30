@@ -29,25 +29,35 @@ public struct EventContentDiceRaceExcel : IFlatbufferObject
   public byte[] GetBgImagePathArray() { return __p.__vector_as_array<byte>(6); }
   public long DiceCostGoodsId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int SkipableLap { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string DiceRacePawnPrefab { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetDiceRacePawnPrefabBytes() { return __p.__vector_as_span<byte>(12, 1); }
+#else
+  public ArraySegment<byte>? GetDiceRacePawnPrefabBytes() { return __p.__vector_as_arraysegment(12); }
+#endif
+  public byte[] GetDiceRacePawnPrefabArray() { return __p.__vector_as_array<byte>(12); }
 
   public static Offset<FlatDataGlobal.EventContentDiceRaceExcel> CreateEventContentDiceRaceExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
       StringOffset BgImagePathOffset = default(StringOffset),
       long DiceCostGoodsId = 0,
-      int SkipableLap = 0) {
-    builder.StartTable(4);
+      int SkipableLap = 0,
+      StringOffset DiceRacePawnPrefabOffset = default(StringOffset)) {
+    builder.StartTable(5);
     EventContentDiceRaceExcel.AddDiceCostGoodsId(builder, DiceCostGoodsId);
     EventContentDiceRaceExcel.AddEventContentId(builder, EventContentId);
+    EventContentDiceRaceExcel.AddDiceRacePawnPrefab(builder, DiceRacePawnPrefabOffset);
     EventContentDiceRaceExcel.AddSkipableLap(builder, SkipableLap);
     EventContentDiceRaceExcel.AddBgImagePath(builder, BgImagePathOffset);
     return EventContentDiceRaceExcel.EndEventContentDiceRaceExcel(builder);
   }
 
-  public static void StartEventContentDiceRaceExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
+  public static void StartEventContentDiceRaceExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddBgImagePath(FlatBufferBuilder builder, StringOffset BgImagePathOffset) { builder.AddOffset(1, BgImagePathOffset.Value, 0); }
   public static void AddDiceCostGoodsId(FlatBufferBuilder builder, long DiceCostGoodsId) { builder.AddLong(2, DiceCostGoodsId, 0); }
   public static void AddSkipableLap(FlatBufferBuilder builder, int SkipableLap) { builder.AddInt(3, SkipableLap, 0); }
+  public static void AddDiceRacePawnPrefab(FlatBufferBuilder builder, StringOffset DiceRacePawnPrefabOffset) { builder.AddOffset(4, DiceRacePawnPrefabOffset.Value, 0); }
   public static Offset<FlatDataGlobal.EventContentDiceRaceExcel> EndEventContentDiceRaceExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentDiceRaceExcel>(o);

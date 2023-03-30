@@ -21,7 +21,7 @@ public struct GachaElementRecursiveExcel : IFlatbufferObject
 
   public long ID { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long GachaGroupID { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ParcelType ParcelType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public FlatDataGlobal.ParcelType Parceltype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
   public long ParcelID { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int ParcelAmountMin { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int ParcelAmountMax { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
@@ -31,7 +31,7 @@ public struct GachaElementRecursiveExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.GachaElementRecursiveExcel> CreateGachaElementRecursiveExcel(FlatBufferBuilder builder,
       long ID = 0,
       long GachaGroupID = 0,
-      FlatDataGlobal.ParcelType ParcelType = FlatDataGlobal.ParcelType.None,
+      FlatDataGlobal.ParcelType parceltype = FlatDataGlobal.ParcelType.None,
       long ParcelID = 0,
       int ParcelAmountMin = 0,
       int ParcelAmountMax = 0,
@@ -45,14 +45,14 @@ public struct GachaElementRecursiveExcel : IFlatbufferObject
     GachaElementRecursiveExcel.AddProb(builder, Prob);
     GachaElementRecursiveExcel.AddParcelAmountMax(builder, ParcelAmountMax);
     GachaElementRecursiveExcel.AddParcelAmountMin(builder, ParcelAmountMin);
-    GachaElementRecursiveExcel.AddParcelType(builder, ParcelType);
+    GachaElementRecursiveExcel.AddParceltype(builder, parceltype);
     return GachaElementRecursiveExcel.EndGachaElementRecursiveExcel(builder);
   }
 
   public static void StartGachaElementRecursiveExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddID(FlatBufferBuilder builder, long ID) { builder.AddLong(0, ID, 0); }
   public static void AddGachaGroupID(FlatBufferBuilder builder, long GachaGroupID) { builder.AddLong(1, GachaGroupID, 0); }
-  public static void AddParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType ParcelType) { builder.AddInt(2, (int)ParcelType, 0); }
+  public static void AddParceltype(FlatBufferBuilder builder, FlatDataGlobal.ParcelType parceltype) { builder.AddInt(2, (int)parceltype, 0); }
   public static void AddParcelID(FlatBufferBuilder builder, long ParcelID) { builder.AddLong(3, ParcelID, 0); }
   public static void AddParcelAmountMin(FlatBufferBuilder builder, int ParcelAmountMin) { builder.AddInt(4, ParcelAmountMin, 0); }
   public static void AddParcelAmountMax(FlatBufferBuilder builder, int ParcelAmountMax) { builder.AddInt(5, ParcelAmountMax, 0); }

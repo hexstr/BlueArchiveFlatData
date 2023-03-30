@@ -21,7 +21,7 @@ public struct SchoolDungeonRewardExcel : IFlatbufferObject
 
   public long GroupId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.SchoolDungeonType DungeonType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.SchoolDungeonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.SchoolDungeonType.SchoolA; } }
-  public FlatDataGlobal.RewardTag RewardTag { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.RewardTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RewardTag.Default; } }
+  public FlatDataGlobal.RewardTag Rewardtag { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.RewardTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RewardTag.Default; } }
   public FlatDataGlobal.ParcelType RewardParcelType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
   public long RewardParcelId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long RewardParcelAmount { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -31,7 +31,7 @@ public struct SchoolDungeonRewardExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.SchoolDungeonRewardExcel> CreateSchoolDungeonRewardExcel(FlatBufferBuilder builder,
       long GroupId = 0,
       FlatDataGlobal.SchoolDungeonType DungeonType = FlatDataGlobal.SchoolDungeonType.SchoolA,
-      FlatDataGlobal.RewardTag RewardTag = FlatDataGlobal.RewardTag.Default,
+      FlatDataGlobal.RewardTag rewardtag = FlatDataGlobal.RewardTag.Default,
       FlatDataGlobal.ParcelType RewardParcelType = FlatDataGlobal.ParcelType.None,
       long RewardParcelId = 0,
       long RewardParcelAmount = 0,
@@ -43,7 +43,7 @@ public struct SchoolDungeonRewardExcel : IFlatbufferObject
     SchoolDungeonRewardExcel.AddRewardParcelId(builder, RewardParcelId);
     SchoolDungeonRewardExcel.AddGroupId(builder, GroupId);
     SchoolDungeonRewardExcel.AddRewardParcelType(builder, RewardParcelType);
-    SchoolDungeonRewardExcel.AddRewardTag(builder, RewardTag);
+    SchoolDungeonRewardExcel.AddRewardtag(builder, rewardtag);
     SchoolDungeonRewardExcel.AddDungeonType(builder, DungeonType);
     SchoolDungeonRewardExcel.AddIsDisplayed(builder, IsDisplayed);
     return SchoolDungeonRewardExcel.EndSchoolDungeonRewardExcel(builder);
@@ -52,7 +52,7 @@ public struct SchoolDungeonRewardExcel : IFlatbufferObject
   public static void StartSchoolDungeonRewardExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(0, GroupId, 0); }
   public static void AddDungeonType(FlatBufferBuilder builder, FlatDataGlobal.SchoolDungeonType DungeonType) { builder.AddInt(1, (int)DungeonType, 0); }
-  public static void AddRewardTag(FlatBufferBuilder builder, FlatDataGlobal.RewardTag RewardTag) { builder.AddInt(2, (int)RewardTag, 0); }
+  public static void AddRewardtag(FlatBufferBuilder builder, FlatDataGlobal.RewardTag rewardtag) { builder.AddInt(2, (int)rewardtag, 0); }
   public static void AddRewardParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType RewardParcelType) { builder.AddInt(3, (int)RewardParcelType, 0); }
   public static void AddRewardParcelId(FlatBufferBuilder builder, long RewardParcelId) { builder.AddLong(4, RewardParcelId, 0); }
   public static void AddRewardParcelAmount(FlatBufferBuilder builder, long RewardParcelAmount) { builder.AddLong(5, RewardParcelAmount, 0); }

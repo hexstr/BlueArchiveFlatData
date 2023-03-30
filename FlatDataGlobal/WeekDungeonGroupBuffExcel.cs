@@ -33,7 +33,7 @@ public struct WeekDungeonGroupBuffExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.WeekDungeonGroupBuffExcel> CreateWeekDungeonGroupBuffExcel(FlatBufferBuilder builder,
       long WeekDungeonBuffId = 0,
-      FlatDataGlobal.School School = FlatDataGlobal.School.None,
+      FlatDataGlobal.School school = FlatDataGlobal.School.None,
       uint RecommandLocalizeEtcId = 0,
       uint FormationLocalizeEtcId = 0,
       StringOffset SkillGroupIdOffset = default(StringOffset)) {
@@ -42,13 +42,13 @@ public struct WeekDungeonGroupBuffExcel : IFlatbufferObject
     WeekDungeonGroupBuffExcel.AddSkillGroupId(builder, SkillGroupIdOffset);
     WeekDungeonGroupBuffExcel.AddFormationLocalizeEtcId(builder, FormationLocalizeEtcId);
     WeekDungeonGroupBuffExcel.AddRecommandLocalizeEtcId(builder, RecommandLocalizeEtcId);
-    WeekDungeonGroupBuffExcel.AddSchool(builder, School);
+    WeekDungeonGroupBuffExcel.AddSchool(builder, school);
     return WeekDungeonGroupBuffExcel.EndWeekDungeonGroupBuffExcel(builder);
   }
 
   public static void StartWeekDungeonGroupBuffExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddWeekDungeonBuffId(FlatBufferBuilder builder, long WeekDungeonBuffId) { builder.AddLong(0, WeekDungeonBuffId, 0); }
-  public static void AddSchool(FlatBufferBuilder builder, FlatDataGlobal.School School) { builder.AddInt(1, (int)School, 0); }
+  public static void AddSchool(FlatBufferBuilder builder, FlatDataGlobal.School school) { builder.AddInt(1, (int)school, 0); }
   public static void AddRecommandLocalizeEtcId(FlatBufferBuilder builder, uint RecommandLocalizeEtcId) { builder.AddUint(2, RecommandLocalizeEtcId, 0); }
   public static void AddFormationLocalizeEtcId(FlatBufferBuilder builder, uint FormationLocalizeEtcId) { builder.AddUint(3, FormationLocalizeEtcId, 0); }
   public static void AddSkillGroupId(FlatBufferBuilder builder, StringOffset SkillGroupIdOffset) { builder.AddOffset(4, SkillGroupIdOffset.Value, 0); }

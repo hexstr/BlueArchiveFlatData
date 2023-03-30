@@ -20,7 +20,7 @@ public struct CharacterAIExcel : IFlatbufferObject
   public CharacterAIExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.EngageType EngageType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.EngageType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EngageType.SearchAndMove; } }
+  public FlatDataGlobal.EngageType Engagetype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.EngageType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EngageType.SearchAndMove; } }
   public FlatDataGlobal.PositioningType Positioning { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.PositioningType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.PositioningType.CloseToObstacle; } }
   public long DistanceReduceRatioObstaclePath { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long DistanceReduceObstaclePath { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -33,7 +33,7 @@ public struct CharacterAIExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.CharacterAIExcel> CreateCharacterAIExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataGlobal.EngageType EngageType = FlatDataGlobal.EngageType.SearchAndMove,
+      FlatDataGlobal.EngageType engagetype = FlatDataGlobal.EngageType.SearchAndMove,
       FlatDataGlobal.PositioningType Positioning = FlatDataGlobal.PositioningType.CloseToObstacle,
       long DistanceReduceRatioObstaclePath = 0,
       long DistanceReduceObstaclePath = 0,
@@ -51,7 +51,7 @@ public struct CharacterAIExcel : IFlatbufferObject
     CharacterAIExcel.AddDistanceReduceRatioObstaclePath(builder, DistanceReduceRatioObstaclePath);
     CharacterAIExcel.AddId(builder, Id);
     CharacterAIExcel.AddPositioning(builder, Positioning);
-    CharacterAIExcel.AddEngageType(builder, EngageType);
+    CharacterAIExcel.AddEngagetype(builder, engagetype);
     CharacterAIExcel.AddHasTargetSwitchingMotion(builder, HasTargetSwitchingMotion);
     CharacterAIExcel.AddCanUseObstacleOfStandMotion(builder, CanUseObstacleOfStandMotion);
     CharacterAIExcel.AddCanUseObstacleOfKneelMotion(builder, CanUseObstacleOfKneelMotion);
@@ -60,7 +60,7 @@ public struct CharacterAIExcel : IFlatbufferObject
 
   public static void StartCharacterAIExcel(FlatBufferBuilder builder) { builder.StartTable(11); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddEngageType(FlatBufferBuilder builder, FlatDataGlobal.EngageType EngageType) { builder.AddInt(1, (int)EngageType, 0); }
+  public static void AddEngagetype(FlatBufferBuilder builder, FlatDataGlobal.EngageType engagetype) { builder.AddInt(1, (int)engagetype, 0); }
   public static void AddPositioning(FlatBufferBuilder builder, FlatDataGlobal.PositioningType Positioning) { builder.AddInt(2, (int)Positioning, 0); }
   public static void AddDistanceReduceRatioObstaclePath(FlatBufferBuilder builder, long DistanceReduceRatioObstaclePath) { builder.AddLong(3, DistanceReduceRatioObstaclePath, 0); }
   public static void AddDistanceReduceObstaclePath(FlatBufferBuilder builder, long DistanceReduceObstaclePath) { builder.AddLong(4, DistanceReduceObstaclePath, 0); }

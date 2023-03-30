@@ -21,68 +21,76 @@ public struct AttendanceExcel : IFlatbufferObject
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.AttendanceType Type { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.AttendanceType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.AttendanceType.Basic; } }
-  public long DisplayOrder { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.AccountState AccountType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.AccountState)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.AccountState.WaitingSignIn; } }
-  public long AccountLevelLimit { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string Title { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string CountdownPrefab { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTitleBytes() { return __p.__vector_as_span<byte>(14, 1); }
+  public Span<byte> GetCountdownPrefabBytes() { return __p.__vector_as_span<byte>(8, 1); }
 #else
-  public ArraySegment<byte>? GetTitleBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetCountdownPrefabBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
-  public byte[] GetTitleArray() { return __p.__vector_as_array<byte>(14); }
-  public string InfomationLocalizeCode { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetCountdownPrefabArray() { return __p.__vector_as_array<byte>(8); }
+  public long DisplayOrder { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.AccountState AccountType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.AccountState)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.AccountState.WaitingSignIn; } }
+  public long AccountLevelLimit { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string Title { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetInfomationLocalizeCodeBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<byte> GetTitleBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetInfomationLocalizeCodeBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetTitleBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetInfomationLocalizeCodeArray() { return __p.__vector_as_array<byte>(16); }
-  public FlatDataGlobal.AttendanceCountRule CountRule { get { int o = __p.__offset(18); return o != 0 ? (FlatDataGlobal.AttendanceCountRule)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.AttendanceCountRule.Accumulation; } }
-  public FlatDataGlobal.AttendanceResetType CountReset { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.AttendanceResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.AttendanceResetType.User; } }
-  public long BookSize { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string StartDate { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetTitleArray() { return __p.__vector_as_array<byte>(16); }
+  public string InfomationLocalizeCode { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetStartDateBytes() { return __p.__vector_as_span<byte>(24, 1); }
+  public Span<byte> GetInfomationLocalizeCodeBytes() { return __p.__vector_as_span<byte>(18, 1); }
 #else
-  public ArraySegment<byte>? GetStartDateBytes() { return __p.__vector_as_arraysegment(24); }
+  public ArraySegment<byte>? GetInfomationLocalizeCodeBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public byte[] GetStartDateArray() { return __p.__vector_as_array<byte>(24); }
-  public string StartableEndDate { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetInfomationLocalizeCodeArray() { return __p.__vector_as_array<byte>(18); }
+  public FlatDataGlobal.AttendanceCountRule CountRule { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.AttendanceCountRule)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.AttendanceCountRule.Accumulation; } }
+  public FlatDataGlobal.AttendanceResetType CountReset { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.AttendanceResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.AttendanceResetType.User; } }
+  public long BookSize { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string StartDate { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetStartableEndDateBytes() { return __p.__vector_as_span<byte>(26, 1); }
+  public Span<byte> GetStartDateBytes() { return __p.__vector_as_span<byte>(26, 1); }
 #else
-  public ArraySegment<byte>? GetStartableEndDateBytes() { return __p.__vector_as_arraysegment(26); }
+  public ArraySegment<byte>? GetStartDateBytes() { return __p.__vector_as_arraysegment(26); }
 #endif
-  public byte[] GetStartableEndDateArray() { return __p.__vector_as_array<byte>(26); }
-  public string EndDate { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetStartDateArray() { return __p.__vector_as_array<byte>(26); }
+  public string StartableEndDate { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEndDateBytes() { return __p.__vector_as_span<byte>(28, 1); }
+  public Span<byte> GetStartableEndDateBytes() { return __p.__vector_as_span<byte>(28, 1); }
 #else
-  public ArraySegment<byte>? GetEndDateBytes() { return __p.__vector_as_arraysegment(28); }
+  public ArraySegment<byte>? GetStartableEndDateBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
-  public byte[] GetEndDateArray() { return __p.__vector_as_array<byte>(28); }
-  public long ExpiryDate { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.MailType MailType { get { int o = __p.__offset(32); return o != 0 ? (FlatDataGlobal.MailType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MailType.System; } }
-  public FlatDataGlobal.DialogCategory DialogCategory { get { int o = __p.__offset(34); return o != 0 ? (FlatDataGlobal.DialogCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCategory.Cafe; } }
-  public string TitleImagePath { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetStartableEndDateArray() { return __p.__vector_as_array<byte>(28); }
+  public string EndDate { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTitleImagePathBytes() { return __p.__vector_as_span<byte>(36, 1); }
+  public Span<byte> GetEndDateBytes() { return __p.__vector_as_span<byte>(30, 1); }
 #else
-  public ArraySegment<byte>? GetTitleImagePathBytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetEndDateBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
-  public byte[] GetTitleImagePathArray() { return __p.__vector_as_array<byte>(36); }
-  public string DecorationImagePath { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEndDateArray() { return __p.__vector_as_array<byte>(30); }
+  public long ExpiryDate { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.MailType Mailtype { get { int o = __p.__offset(34); return o != 0 ? (FlatDataGlobal.MailType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MailType.System; } }
+  public FlatDataGlobal.DialogCategory Dialogcategory { get { int o = __p.__offset(36); return o != 0 ? (FlatDataGlobal.DialogCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCategory.Cafe; } }
+  public string TitleImagePath { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDecorationImagePathBytes() { return __p.__vector_as_span<byte>(38, 1); }
+  public Span<byte> GetTitleImagePathBytes() { return __p.__vector_as_span<byte>(38, 1); }
 #else
-  public ArraySegment<byte>? GetDecorationImagePathBytes() { return __p.__vector_as_arraysegment(38); }
+  public ArraySegment<byte>? GetTitleImagePathBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public byte[] GetDecorationImagePathArray() { return __p.__vector_as_array<byte>(38); }
+  public byte[] GetTitleImagePathArray() { return __p.__vector_as_array<byte>(38); }
+  public string DecorationImagePath { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetDecorationImagePathBytes() { return __p.__vector_as_span<byte>(40, 1); }
+#else
+  public ArraySegment<byte>? GetDecorationImagePathBytes() { return __p.__vector_as_arraysegment(40); }
+#endif
+  public byte[] GetDecorationImagePathArray() { return __p.__vector_as_array<byte>(40); }
 
   public static Offset<FlatDataGlobal.AttendanceExcel> CreateAttendanceExcel(FlatBufferBuilder builder,
       long Id = 0,
       FlatDataGlobal.AttendanceType Type = FlatDataGlobal.AttendanceType.Basic,
+      StringOffset CountdownPrefabOffset = default(StringOffset),
       long DisplayOrder = 0,
       FlatDataGlobal.AccountState AccountType = FlatDataGlobal.AccountState.WaitingSignIn,
       long AccountLevelLimit = 0,
@@ -95,11 +103,11 @@ public struct AttendanceExcel : IFlatbufferObject
       StringOffset StartableEndDateOffset = default(StringOffset),
       StringOffset EndDateOffset = default(StringOffset),
       long ExpiryDate = 0,
-      FlatDataGlobal.MailType MailType = FlatDataGlobal.MailType.System,
-      FlatDataGlobal.DialogCategory DialogCategory = FlatDataGlobal.DialogCategory.Cafe,
+      FlatDataGlobal.MailType mailtype = FlatDataGlobal.MailType.System,
+      FlatDataGlobal.DialogCategory dialogcategory = FlatDataGlobal.DialogCategory.Cafe,
       StringOffset TitleImagePathOffset = default(StringOffset),
       StringOffset DecorationImagePathOffset = default(StringOffset)) {
-    builder.StartTable(18);
+    builder.StartTable(19);
     AttendanceExcel.AddExpiryDate(builder, ExpiryDate);
     AttendanceExcel.AddBookSize(builder, BookSize);
     AttendanceExcel.AddAccountLevelLimit(builder, AccountLevelLimit);
@@ -107,8 +115,8 @@ public struct AttendanceExcel : IFlatbufferObject
     AttendanceExcel.AddId(builder, Id);
     AttendanceExcel.AddDecorationImagePath(builder, DecorationImagePathOffset);
     AttendanceExcel.AddTitleImagePath(builder, TitleImagePathOffset);
-    AttendanceExcel.AddDialogCategory(builder, DialogCategory);
-    AttendanceExcel.AddMailType(builder, MailType);
+    AttendanceExcel.AddDialogcategory(builder, dialogcategory);
+    AttendanceExcel.AddMailtype(builder, mailtype);
     AttendanceExcel.AddEndDate(builder, EndDateOffset);
     AttendanceExcel.AddStartableEndDate(builder, StartableEndDateOffset);
     AttendanceExcel.AddStartDate(builder, StartDateOffset);
@@ -117,29 +125,31 @@ public struct AttendanceExcel : IFlatbufferObject
     AttendanceExcel.AddInfomationLocalizeCode(builder, InfomationLocalizeCodeOffset);
     AttendanceExcel.AddTitle(builder, TitleOffset);
     AttendanceExcel.AddAccountType(builder, AccountType);
+    AttendanceExcel.AddCountdownPrefab(builder, CountdownPrefabOffset);
     AttendanceExcel.AddType(builder, Type);
     return AttendanceExcel.EndAttendanceExcel(builder);
   }
 
-  public static void StartAttendanceExcel(FlatBufferBuilder builder) { builder.StartTable(18); }
+  public static void StartAttendanceExcel(FlatBufferBuilder builder) { builder.StartTable(19); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddType(FlatBufferBuilder builder, FlatDataGlobal.AttendanceType Type) { builder.AddInt(1, (int)Type, 0); }
-  public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(2, DisplayOrder, 0); }
-  public static void AddAccountType(FlatBufferBuilder builder, FlatDataGlobal.AccountState AccountType) { builder.AddInt(3, (int)AccountType, 0); }
-  public static void AddAccountLevelLimit(FlatBufferBuilder builder, long AccountLevelLimit) { builder.AddLong(4, AccountLevelLimit, 0); }
-  public static void AddTitle(FlatBufferBuilder builder, StringOffset TitleOffset) { builder.AddOffset(5, TitleOffset.Value, 0); }
-  public static void AddInfomationLocalizeCode(FlatBufferBuilder builder, StringOffset InfomationLocalizeCodeOffset) { builder.AddOffset(6, InfomationLocalizeCodeOffset.Value, 0); }
-  public static void AddCountRule(FlatBufferBuilder builder, FlatDataGlobal.AttendanceCountRule CountRule) { builder.AddInt(7, (int)CountRule, 0); }
-  public static void AddCountReset(FlatBufferBuilder builder, FlatDataGlobal.AttendanceResetType CountReset) { builder.AddInt(8, (int)CountReset, 0); }
-  public static void AddBookSize(FlatBufferBuilder builder, long BookSize) { builder.AddLong(9, BookSize, 0); }
-  public static void AddStartDate(FlatBufferBuilder builder, StringOffset StartDateOffset) { builder.AddOffset(10, StartDateOffset.Value, 0); }
-  public static void AddStartableEndDate(FlatBufferBuilder builder, StringOffset StartableEndDateOffset) { builder.AddOffset(11, StartableEndDateOffset.Value, 0); }
-  public static void AddEndDate(FlatBufferBuilder builder, StringOffset EndDateOffset) { builder.AddOffset(12, EndDateOffset.Value, 0); }
-  public static void AddExpiryDate(FlatBufferBuilder builder, long ExpiryDate) { builder.AddLong(13, ExpiryDate, 0); }
-  public static void AddMailType(FlatBufferBuilder builder, FlatDataGlobal.MailType MailType) { builder.AddInt(14, (int)MailType, 0); }
-  public static void AddDialogCategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory DialogCategory) { builder.AddInt(15, (int)DialogCategory, 0); }
-  public static void AddTitleImagePath(FlatBufferBuilder builder, StringOffset TitleImagePathOffset) { builder.AddOffset(16, TitleImagePathOffset.Value, 0); }
-  public static void AddDecorationImagePath(FlatBufferBuilder builder, StringOffset DecorationImagePathOffset) { builder.AddOffset(17, DecorationImagePathOffset.Value, 0); }
+  public static void AddCountdownPrefab(FlatBufferBuilder builder, StringOffset CountdownPrefabOffset) { builder.AddOffset(2, CountdownPrefabOffset.Value, 0); }
+  public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(3, DisplayOrder, 0); }
+  public static void AddAccountType(FlatBufferBuilder builder, FlatDataGlobal.AccountState AccountType) { builder.AddInt(4, (int)AccountType, 0); }
+  public static void AddAccountLevelLimit(FlatBufferBuilder builder, long AccountLevelLimit) { builder.AddLong(5, AccountLevelLimit, 0); }
+  public static void AddTitle(FlatBufferBuilder builder, StringOffset TitleOffset) { builder.AddOffset(6, TitleOffset.Value, 0); }
+  public static void AddInfomationLocalizeCode(FlatBufferBuilder builder, StringOffset InfomationLocalizeCodeOffset) { builder.AddOffset(7, InfomationLocalizeCodeOffset.Value, 0); }
+  public static void AddCountRule(FlatBufferBuilder builder, FlatDataGlobal.AttendanceCountRule CountRule) { builder.AddInt(8, (int)CountRule, 0); }
+  public static void AddCountReset(FlatBufferBuilder builder, FlatDataGlobal.AttendanceResetType CountReset) { builder.AddInt(9, (int)CountReset, 0); }
+  public static void AddBookSize(FlatBufferBuilder builder, long BookSize) { builder.AddLong(10, BookSize, 0); }
+  public static void AddStartDate(FlatBufferBuilder builder, StringOffset StartDateOffset) { builder.AddOffset(11, StartDateOffset.Value, 0); }
+  public static void AddStartableEndDate(FlatBufferBuilder builder, StringOffset StartableEndDateOffset) { builder.AddOffset(12, StartableEndDateOffset.Value, 0); }
+  public static void AddEndDate(FlatBufferBuilder builder, StringOffset EndDateOffset) { builder.AddOffset(13, EndDateOffset.Value, 0); }
+  public static void AddExpiryDate(FlatBufferBuilder builder, long ExpiryDate) { builder.AddLong(14, ExpiryDate, 0); }
+  public static void AddMailtype(FlatBufferBuilder builder, FlatDataGlobal.MailType mailtype) { builder.AddInt(15, (int)mailtype, 0); }
+  public static void AddDialogcategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory dialogcategory) { builder.AddInt(16, (int)dialogcategory, 0); }
+  public static void AddTitleImagePath(FlatBufferBuilder builder, StringOffset TitleImagePathOffset) { builder.AddOffset(17, TitleImagePathOffset.Value, 0); }
+  public static void AddDecorationImagePath(FlatBufferBuilder builder, StringOffset DecorationImagePathOffset) { builder.AddOffset(18, DecorationImagePathOffset.Value, 0); }
   public static Offset<FlatDataGlobal.AttendanceExcel> EndAttendanceExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.AttendanceExcel>(o);

@@ -28,7 +28,7 @@ public struct CharacterWeaponExcel : IFlatbufferObject
 #endif
   public byte[] GetImagePathArray() { return __p.__vector_as_array<byte>(6); }
   public long SetRecipe { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.StatLevelUpType StatLevelUpType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatLevelUpType.Standard; } }
+  public FlatDataGlobal.StatLevelUpType Statleveluptype { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatLevelUpType.Standard; } }
   public long AttackPower { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long AttackPower100 { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long MaxHP { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -84,7 +84,7 @@ public struct CharacterWeaponExcel : IFlatbufferObject
       long Id = 0,
       StringOffset ImagePathOffset = default(StringOffset),
       long SetRecipe = 0,
-      FlatDataGlobal.StatLevelUpType StatLevelUpType = FlatDataGlobal.StatLevelUpType.Standard,
+      FlatDataGlobal.StatLevelUpType statleveluptype = FlatDataGlobal.StatLevelUpType.Standard,
       long AttackPower = 0,
       long AttackPower100 = 0,
       long MaxHP = 0,
@@ -114,7 +114,7 @@ public struct CharacterWeaponExcel : IFlatbufferObject
     CharacterWeaponExcel.AddMaxLevel(builder, MaxLevelOffset);
     CharacterWeaponExcel.AddRecipeId(builder, RecipeIdOffset);
     CharacterWeaponExcel.AddUnlock(builder, UnlockOffset);
-    CharacterWeaponExcel.AddStatLevelUpType(builder, StatLevelUpType);
+    CharacterWeaponExcel.AddStatleveluptype(builder, statleveluptype);
     CharacterWeaponExcel.AddImagePath(builder, ImagePathOffset);
     return CharacterWeaponExcel.EndCharacterWeaponExcel(builder);
   }
@@ -123,7 +123,7 @@ public struct CharacterWeaponExcel : IFlatbufferObject
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddImagePath(FlatBufferBuilder builder, StringOffset ImagePathOffset) { builder.AddOffset(1, ImagePathOffset.Value, 0); }
   public static void AddSetRecipe(FlatBufferBuilder builder, long SetRecipe) { builder.AddLong(2, SetRecipe, 0); }
-  public static void AddStatLevelUpType(FlatBufferBuilder builder, FlatDataGlobal.StatLevelUpType StatLevelUpType) { builder.AddInt(3, (int)StatLevelUpType, 0); }
+  public static void AddStatleveluptype(FlatBufferBuilder builder, FlatDataGlobal.StatLevelUpType statleveluptype) { builder.AddInt(3, (int)statleveluptype, 0); }
   public static void AddAttackPower(FlatBufferBuilder builder, long AttackPower) { builder.AddLong(4, AttackPower, 0); }
   public static void AddAttackPower100(FlatBufferBuilder builder, long AttackPower100) { builder.AddLong(5, AttackPower100, 0); }
   public static void AddMaxHP(FlatBufferBuilder builder, long MaxHP) { builder.AddLong(6, MaxHP, 0); }

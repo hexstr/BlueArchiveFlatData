@@ -227,9 +227,13 @@ public struct ConstCommonExcel : IFlatbufferObject
   public int CafePresetEditNameLength { get { int o = __p.__offset(320); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int FormationPresetEchelonTabTextLengthKr { get { int o = __p.__offset(322); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int FormationPresetEchelonSlotTextLengthKr { get { int o = __p.__offset(324); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long LowMemorySizeGL { get { int o = __p.__offset(326); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int CharProfileRowIntervalKr { get { int o = __p.__offset(326); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CharProfileRowIntervalJp { get { int o = __p.__offset(328); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CharProfilePopupRowIntervalKr { get { int o = __p.__offset(330); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CharProfilePopupRowIntervalJp { get { int o = __p.__offset(332); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long LowMemorySizeGL { get { int o = __p.__offset(334); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
-  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(162); }
+  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(166); }
   public static void AddCampaignMainStageMaxRank(FlatBufferBuilder builder, int CampaignMainStageMaxRank) { builder.AddInt(0, CampaignMainStageMaxRank, 0); }
   public static void AddCampaignMainStageBestRecord(FlatBufferBuilder builder, int CampaignMainStageBestRecord) { builder.AddInt(1, CampaignMainStageBestRecord, 0); }
   public static void AddHardAdventurePlayCountRecoverDailyNumber(FlatBufferBuilder builder, int HardAdventurePlayCountRecoverDailyNumber) { builder.AddInt(2, HardAdventurePlayCountRecoverDailyNumber, 0); }
@@ -416,7 +420,11 @@ public struct ConstCommonExcel : IFlatbufferObject
   public static void AddCafePresetEditNameLength(FlatBufferBuilder builder, int CafePresetEditNameLength) { builder.AddInt(158, CafePresetEditNameLength, 0); }
   public static void AddFormationPresetEchelonTabTextLengthKr(FlatBufferBuilder builder, int FormationPresetEchelonTabTextLengthKr) { builder.AddInt(159, FormationPresetEchelonTabTextLengthKr, 0); }
   public static void AddFormationPresetEchelonSlotTextLengthKr(FlatBufferBuilder builder, int FormationPresetEchelonSlotTextLengthKr) { builder.AddInt(160, FormationPresetEchelonSlotTextLengthKr, 0); }
-  public static void AddLowMemorySizeGL(FlatBufferBuilder builder, long LowMemorySizeGL) { builder.AddLong(161, LowMemorySizeGL, 0); }
+  public static void AddCharProfileRowIntervalKr(FlatBufferBuilder builder, int CharProfileRowIntervalKr) { builder.AddInt(161, CharProfileRowIntervalKr, 0); }
+  public static void AddCharProfileRowIntervalJp(FlatBufferBuilder builder, int CharProfileRowIntervalJp) { builder.AddInt(162, CharProfileRowIntervalJp, 0); }
+  public static void AddCharProfilePopupRowIntervalKr(FlatBufferBuilder builder, int CharProfilePopupRowIntervalKr) { builder.AddInt(163, CharProfilePopupRowIntervalKr, 0); }
+  public static void AddCharProfilePopupRowIntervalJp(FlatBufferBuilder builder, int CharProfilePopupRowIntervalJp) { builder.AddInt(164, CharProfilePopupRowIntervalJp, 0); }
+  public static void AddLowMemorySizeGL(FlatBufferBuilder builder, long LowMemorySizeGL) { builder.AddLong(165, LowMemorySizeGL, 0); }
   public static Offset<FlatDataGlobal.ConstCommonExcel> EndConstCommonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstCommonExcel>(o);

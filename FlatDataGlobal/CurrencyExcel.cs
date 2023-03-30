@@ -39,8 +39,8 @@ public struct CurrencyExcel : IFlatbufferObject
   public FlatDataGlobal.Rarity Rarity { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Rarity.N; } }
   public int AutoChargeMsc { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int AutoChargeAmount { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.CurrencyOverChargeType CurrencyOverChargeType { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.CurrencyOverChargeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CurrencyOverChargeType.CanNotCharge; } }
-  public FlatDataGlobal.CurrencyAdditionalChargeType CurrencyAdditionalChargeType { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.CurrencyAdditionalChargeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CurrencyAdditionalChargeType.EnableAutoChargeOverLimit; } }
+  public FlatDataGlobal.CurrencyOverChargeType Currencyoverchargetype { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.CurrencyOverChargeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CurrencyOverChargeType.CanNotCharge; } }
+  public FlatDataGlobal.CurrencyAdditionalChargeType Currencyadditionalchargetype { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.CurrencyAdditionalChargeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CurrencyAdditionalChargeType.EnableAutoChargeOverLimit; } }
   public long ChargeLimit { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long OverChargeLimit { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string SpriteName { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
@@ -66,11 +66,11 @@ public struct CurrencyExcel : IFlatbufferObject
       FlatDataGlobal.CurrencyTypes CurrencyType = FlatDataGlobal.CurrencyTypes.Invalid,
       StringOffset CurrencyNameOffset = default(StringOffset),
       StringOffset IconOffset = default(StringOffset),
-      FlatDataGlobal.Rarity Rarity = FlatDataGlobal.Rarity.N,
+      FlatDataGlobal.Rarity rarity = FlatDataGlobal.Rarity.N,
       int AutoChargeMsc = 0,
       int AutoChargeAmount = 0,
-      FlatDataGlobal.CurrencyOverChargeType CurrencyOverChargeType = FlatDataGlobal.CurrencyOverChargeType.CanNotCharge,
-      FlatDataGlobal.CurrencyAdditionalChargeType CurrencyAdditionalChargeType = FlatDataGlobal.CurrencyAdditionalChargeType.EnableAutoChargeOverLimit,
+      FlatDataGlobal.CurrencyOverChargeType currencyoverchargetype = FlatDataGlobal.CurrencyOverChargeType.CanNotCharge,
+      FlatDataGlobal.CurrencyAdditionalChargeType currencyadditionalchargetype = FlatDataGlobal.CurrencyAdditionalChargeType.EnableAutoChargeOverLimit,
       long ChargeLimit = 0,
       long OverChargeLimit = 0,
       StringOffset SpriteNameOffset = default(StringOffset),
@@ -83,11 +83,11 @@ public struct CurrencyExcel : IFlatbufferObject
     CurrencyExcel.AddID(builder, ID);
     CurrencyExcel.AddDailyRefillTime(builder, DailyRefillTimeOffset);
     CurrencyExcel.AddSpriteName(builder, SpriteNameOffset);
-    CurrencyExcel.AddCurrencyAdditionalChargeType(builder, CurrencyAdditionalChargeType);
-    CurrencyExcel.AddCurrencyOverChargeType(builder, CurrencyOverChargeType);
+    CurrencyExcel.AddCurrencyadditionalchargetype(builder, currencyadditionalchargetype);
+    CurrencyExcel.AddCurrencyoverchargetype(builder, currencyoverchargetype);
     CurrencyExcel.AddAutoChargeAmount(builder, AutoChargeAmount);
     CurrencyExcel.AddAutoChargeMsc(builder, AutoChargeMsc);
-    CurrencyExcel.AddRarity(builder, Rarity);
+    CurrencyExcel.AddRarity(builder, rarity);
     CurrencyExcel.AddIcon(builder, IconOffset);
     CurrencyExcel.AddCurrencyName(builder, CurrencyNameOffset);
     CurrencyExcel.AddCurrencyType(builder, CurrencyType);
@@ -101,11 +101,11 @@ public struct CurrencyExcel : IFlatbufferObject
   public static void AddCurrencyType(FlatBufferBuilder builder, FlatDataGlobal.CurrencyTypes CurrencyType) { builder.AddInt(2, (int)CurrencyType, 0); }
   public static void AddCurrencyName(FlatBufferBuilder builder, StringOffset CurrencyNameOffset) { builder.AddOffset(3, CurrencyNameOffset.Value, 0); }
   public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(4, IconOffset.Value, 0); }
-  public static void AddRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity Rarity) { builder.AddInt(5, (int)Rarity, 0); }
+  public static void AddRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity rarity) { builder.AddInt(5, (int)rarity, 0); }
   public static void AddAutoChargeMsc(FlatBufferBuilder builder, int AutoChargeMsc) { builder.AddInt(6, AutoChargeMsc, 0); }
   public static void AddAutoChargeAmount(FlatBufferBuilder builder, int AutoChargeAmount) { builder.AddInt(7, AutoChargeAmount, 0); }
-  public static void AddCurrencyOverChargeType(FlatBufferBuilder builder, FlatDataGlobal.CurrencyOverChargeType CurrencyOverChargeType) { builder.AddInt(8, (int)CurrencyOverChargeType, 0); }
-  public static void AddCurrencyAdditionalChargeType(FlatBufferBuilder builder, FlatDataGlobal.CurrencyAdditionalChargeType CurrencyAdditionalChargeType) { builder.AddInt(9, (int)CurrencyAdditionalChargeType, 0); }
+  public static void AddCurrencyoverchargetype(FlatBufferBuilder builder, FlatDataGlobal.CurrencyOverChargeType currencyoverchargetype) { builder.AddInt(8, (int)currencyoverchargetype, 0); }
+  public static void AddCurrencyadditionalchargetype(FlatBufferBuilder builder, FlatDataGlobal.CurrencyAdditionalChargeType currencyadditionalchargetype) { builder.AddInt(9, (int)currencyadditionalchargetype, 0); }
   public static void AddChargeLimit(FlatBufferBuilder builder, long ChargeLimit) { builder.AddLong(10, ChargeLimit, 0); }
   public static void AddOverChargeLimit(FlatBufferBuilder builder, long OverChargeLimit) { builder.AddLong(11, OverChargeLimit, 0); }
   public static void AddSpriteName(FlatBufferBuilder builder, StringOffset SpriteNameOffset) { builder.AddOffset(12, SpriteNameOffset.Value, 0); }

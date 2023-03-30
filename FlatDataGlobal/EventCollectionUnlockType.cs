@@ -13,7 +13,7 @@ public enum EventCollectionUnlockType : int
   ClearSpecificEventMission = 3,
   PurchaseSpecificItemCount = 4,
   SpecificEventLocationRank = 5,
-  DiceRaceConsumeDieCount = 6,
+  DiceRaceConsumeDiceCount = 6,
 };
 
 

@@ -22,22 +22,19 @@ public struct ConstEventCommonExcel : IFlatbufferObject
   public int EventContentHardStageCount { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long EventStrategyPlayTimeLimitInSeconds { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long SubEventChangeLimitSeconds { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long SubEventCostItemId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool SubEventInstantClear { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long CardShopProbWeightCount { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.Rarity CardShopProbWeightRarity { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Rarity.N; } }
+  public bool SubEventInstantClear { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long CardShopProbWeightCount { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.Rarity CardShopProbWeightRarity { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Rarity.N; } }
 
   public static Offset<FlatDataGlobal.ConstEventCommonExcel> CreateConstEventCommonExcel(FlatBufferBuilder builder,
       int EventContentHardStageCount = 0,
       long EventStrategyPlayTimeLimitInSeconds = 0,
       long SubEventChangeLimitSeconds = 0,
-      long SubEventCostItemId = 0,
       bool SubEventInstantClear = false,
       long CardShopProbWeightCount = 0,
       FlatDataGlobal.Rarity CardShopProbWeightRarity = FlatDataGlobal.Rarity.N) {
-    builder.StartTable(7);
+    builder.StartTable(6);
     ConstEventCommonExcel.AddCardShopProbWeightCount(builder, CardShopProbWeightCount);
-    ConstEventCommonExcel.AddSubEventCostItemId(builder, SubEventCostItemId);
     ConstEventCommonExcel.AddSubEventChangeLimitSeconds(builder, SubEventChangeLimitSeconds);
     ConstEventCommonExcel.AddEventStrategyPlayTimeLimitInSeconds(builder, EventStrategyPlayTimeLimitInSeconds);
     ConstEventCommonExcel.AddCardShopProbWeightRarity(builder, CardShopProbWeightRarity);
@@ -46,14 +43,13 @@ public struct ConstEventCommonExcel : IFlatbufferObject
     return ConstEventCommonExcel.EndConstEventCommonExcel(builder);
   }
 
-  public static void StartConstEventCommonExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
+  public static void StartConstEventCommonExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
   public static void AddEventContentHardStageCount(FlatBufferBuilder builder, int EventContentHardStageCount) { builder.AddInt(0, EventContentHardStageCount, 0); }
   public static void AddEventStrategyPlayTimeLimitInSeconds(FlatBufferBuilder builder, long EventStrategyPlayTimeLimitInSeconds) { builder.AddLong(1, EventStrategyPlayTimeLimitInSeconds, 0); }
   public static void AddSubEventChangeLimitSeconds(FlatBufferBuilder builder, long SubEventChangeLimitSeconds) { builder.AddLong(2, SubEventChangeLimitSeconds, 0); }
-  public static void AddSubEventCostItemId(FlatBufferBuilder builder, long SubEventCostItemId) { builder.AddLong(3, SubEventCostItemId, 0); }
-  public static void AddSubEventInstantClear(FlatBufferBuilder builder, bool SubEventInstantClear) { builder.AddBool(4, SubEventInstantClear, false); }
-  public static void AddCardShopProbWeightCount(FlatBufferBuilder builder, long CardShopProbWeightCount) { builder.AddLong(5, CardShopProbWeightCount, 0); }
-  public static void AddCardShopProbWeightRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity CardShopProbWeightRarity) { builder.AddInt(6, (int)CardShopProbWeightRarity, 0); }
+  public static void AddSubEventInstantClear(FlatBufferBuilder builder, bool SubEventInstantClear) { builder.AddBool(3, SubEventInstantClear, false); }
+  public static void AddCardShopProbWeightCount(FlatBufferBuilder builder, long CardShopProbWeightCount) { builder.AddLong(4, CardShopProbWeightCount, 0); }
+  public static void AddCardShopProbWeightRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity CardShopProbWeightRarity) { builder.AddInt(5, (int)CardShopProbWeightRarity, 0); }
   public static Offset<FlatDataGlobal.ConstEventCommonExcel> EndConstEventCommonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstEventCommonExcel>(o);

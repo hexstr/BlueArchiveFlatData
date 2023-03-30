@@ -21,13 +21,13 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
 
   public long CharacterId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long EventID { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ProductionStep ProductionStep { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
-  public FlatDataGlobal.DialogCategory DialogCategory { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.DialogCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCategory.Cafe; } }
-  public FlatDataGlobal.DialogCondition DialogCondition { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.DialogCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCondition.Idle; } }
-  public FlatDataGlobal.DialogConditionDetail DialogConditionDetail { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.DialogConditionDetail)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogConditionDetail.None; } }
+  public FlatDataGlobal.ProductionStep Productionstep { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
+  public FlatDataGlobal.DialogCategory Dialogcategory { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.DialogCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCategory.Cafe; } }
+  public FlatDataGlobal.DialogCondition Dialogcondition { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.DialogCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCondition.Idle; } }
+  public FlatDataGlobal.DialogConditionDetail Dialogconditiondetail { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.DialogConditionDetail)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogConditionDetail.None; } }
   public long DialogConditionDetailValue { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long GroupId { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.DialogType DialogType { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.DialogType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogType.Talk; } }
+  public FlatDataGlobal.DialogType Dialogtype { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.DialogType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogType.Talk; } }
   public string ActionName { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetActionNameBytes() { return __p.__vector_as_span<byte>(22, 1); }
@@ -92,13 +92,13 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.CharacterDialogEventExcel> CreateCharacterDialogEventExcel(FlatBufferBuilder builder,
       long CharacterId = 0,
       long EventID = 0,
-      FlatDataGlobal.ProductionStep ProductionStep = FlatDataGlobal.ProductionStep.ToDo,
-      FlatDataGlobal.DialogCategory DialogCategory = FlatDataGlobal.DialogCategory.Cafe,
-      FlatDataGlobal.DialogCondition DialogCondition = FlatDataGlobal.DialogCondition.Idle,
-      FlatDataGlobal.DialogConditionDetail DialogConditionDetail = FlatDataGlobal.DialogConditionDetail.None,
+      FlatDataGlobal.ProductionStep productionstep = FlatDataGlobal.ProductionStep.ToDo,
+      FlatDataGlobal.DialogCategory dialogcategory = FlatDataGlobal.DialogCategory.Cafe,
+      FlatDataGlobal.DialogCondition dialogcondition = FlatDataGlobal.DialogCondition.Idle,
+      FlatDataGlobal.DialogConditionDetail dialogconditiondetail = FlatDataGlobal.DialogConditionDetail.None,
       long DialogConditionDetailValue = 0,
       long GroupId = 0,
-      FlatDataGlobal.DialogType DialogType = FlatDataGlobal.DialogType.Talk,
+      FlatDataGlobal.DialogType dialogtype = FlatDataGlobal.DialogType.Talk,
       StringOffset ActionNameOffset = default(StringOffset),
       long Duration = 0,
       StringOffset AnimationNameOffset = default(StringOffset),
@@ -130,24 +130,24 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
     CharacterDialogEventExcel.AddLocalizeKR(builder, LocalizeKROffset);
     CharacterDialogEventExcel.AddAnimationName(builder, AnimationNameOffset);
     CharacterDialogEventExcel.AddActionName(builder, ActionNameOffset);
-    CharacterDialogEventExcel.AddDialogType(builder, DialogType);
-    CharacterDialogEventExcel.AddDialogConditionDetail(builder, DialogConditionDetail);
-    CharacterDialogEventExcel.AddDialogCondition(builder, DialogCondition);
-    CharacterDialogEventExcel.AddDialogCategory(builder, DialogCategory);
-    CharacterDialogEventExcel.AddProductionStep(builder, ProductionStep);
+    CharacterDialogEventExcel.AddDialogtype(builder, dialogtype);
+    CharacterDialogEventExcel.AddDialogconditiondetail(builder, dialogconditiondetail);
+    CharacterDialogEventExcel.AddDialogcondition(builder, dialogcondition);
+    CharacterDialogEventExcel.AddDialogcategory(builder, dialogcategory);
+    CharacterDialogEventExcel.AddProductionstep(builder, productionstep);
     return CharacterDialogEventExcel.EndCharacterDialogEventExcel(builder);
   }
 
   public static void StartCharacterDialogEventExcel(FlatBufferBuilder builder) { builder.StartTable(22); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
   public static void AddEventID(FlatBufferBuilder builder, long EventID) { builder.AddLong(1, EventID, 0); }
-  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep ProductionStep) { builder.AddInt(2, (int)ProductionStep, 0); }
-  public static void AddDialogCategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory DialogCategory) { builder.AddInt(3, (int)DialogCategory, 0); }
-  public static void AddDialogCondition(FlatBufferBuilder builder, FlatDataGlobal.DialogCondition DialogCondition) { builder.AddInt(4, (int)DialogCondition, 0); }
-  public static void AddDialogConditionDetail(FlatBufferBuilder builder, FlatDataGlobal.DialogConditionDetail DialogConditionDetail) { builder.AddInt(5, (int)DialogConditionDetail, 0); }
+  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionstep) { builder.AddInt(2, (int)productionstep, 0); }
+  public static void AddDialogcategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory dialogcategory) { builder.AddInt(3, (int)dialogcategory, 0); }
+  public static void AddDialogcondition(FlatBufferBuilder builder, FlatDataGlobal.DialogCondition dialogcondition) { builder.AddInt(4, (int)dialogcondition, 0); }
+  public static void AddDialogconditiondetail(FlatBufferBuilder builder, FlatDataGlobal.DialogConditionDetail dialogconditiondetail) { builder.AddInt(5, (int)dialogconditiondetail, 0); }
   public static void AddDialogConditionDetailValue(FlatBufferBuilder builder, long DialogConditionDetailValue) { builder.AddLong(6, DialogConditionDetailValue, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(7, GroupId, 0); }
-  public static void AddDialogType(FlatBufferBuilder builder, FlatDataGlobal.DialogType DialogType) { builder.AddInt(8, (int)DialogType, 0); }
+  public static void AddDialogtype(FlatBufferBuilder builder, FlatDataGlobal.DialogType dialogtype) { builder.AddInt(8, (int)dialogtype, 0); }
   public static void AddActionName(FlatBufferBuilder builder, StringOffset ActionNameOffset) { builder.AddOffset(9, ActionNameOffset.Value, 0); }
   public static void AddDuration(FlatBufferBuilder builder, long Duration) { builder.AddLong(10, Duration, 0); }
   public static void AddAnimationName(FlatBufferBuilder builder, StringOffset AnimationNameOffset) { builder.AddOffset(11, AnimationNameOffset.Value, 0); }

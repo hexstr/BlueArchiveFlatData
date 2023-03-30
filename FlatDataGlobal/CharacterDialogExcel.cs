@@ -20,9 +20,9 @@ public struct CharacterDialogExcel : IFlatbufferObject
   public CharacterDialogExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long CharacterId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ProductionStep ProductionStep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
-  public FlatDataGlobal.DialogCategory DialogCategory { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.DialogCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCategory.Cafe; } }
-  public FlatDataGlobal.DialogCondition DialogCondition { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.DialogCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCondition.Idle; } }
+  public FlatDataGlobal.ProductionStep Productionstep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
+  public FlatDataGlobal.DialogCategory Dialogcategory { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.DialogCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCategory.Cafe; } }
+  public FlatDataGlobal.DialogCondition Dialogcondition { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.DialogCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCondition.Idle; } }
   public FlatDataGlobal.Anniversary Anniversary { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.Anniversary)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Anniversary.None; } }
   public string StartDate { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -39,7 +39,7 @@ public struct CharacterDialogExcel : IFlatbufferObject
 #endif
   public byte[] GetEndDateArray() { return __p.__vector_as_array<byte>(16); }
   public long GroupId { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.DialogType DialogType { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.DialogType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogType.Talk; } }
+  public FlatDataGlobal.DialogType Dialogtype { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.DialogType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogType.Talk; } }
   public string ActionName { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetActionNameBytes() { return __p.__vector_as_span<byte>(22, 1); }
@@ -104,14 +104,14 @@ public struct CharacterDialogExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.CharacterDialogExcel> CreateCharacterDialogExcel(FlatBufferBuilder builder,
       long CharacterId = 0,
-      FlatDataGlobal.ProductionStep ProductionStep = FlatDataGlobal.ProductionStep.ToDo,
-      FlatDataGlobal.DialogCategory DialogCategory = FlatDataGlobal.DialogCategory.Cafe,
-      FlatDataGlobal.DialogCondition DialogCondition = FlatDataGlobal.DialogCondition.Idle,
-      FlatDataGlobal.Anniversary Anniversary = FlatDataGlobal.Anniversary.None,
+      FlatDataGlobal.ProductionStep productionstep = FlatDataGlobal.ProductionStep.ToDo,
+      FlatDataGlobal.DialogCategory dialogcategory = FlatDataGlobal.DialogCategory.Cafe,
+      FlatDataGlobal.DialogCondition dialogcondition = FlatDataGlobal.DialogCondition.Idle,
+      FlatDataGlobal.Anniversary anniversary = FlatDataGlobal.Anniversary.None,
       StringOffset StartDateOffset = default(StringOffset),
       StringOffset EndDateOffset = default(StringOffset),
       long GroupId = 0,
-      FlatDataGlobal.DialogType DialogType = FlatDataGlobal.DialogType.Talk,
+      FlatDataGlobal.DialogType dialogtype = FlatDataGlobal.DialogType.Talk,
       StringOffset ActionNameOffset = default(StringOffset),
       long Duration = 0,
       StringOffset AnimationNameOffset = default(StringOffset),
@@ -142,27 +142,27 @@ public struct CharacterDialogExcel : IFlatbufferObject
     CharacterDialogExcel.AddLocalizeKR(builder, LocalizeKROffset);
     CharacterDialogExcel.AddAnimationName(builder, AnimationNameOffset);
     CharacterDialogExcel.AddActionName(builder, ActionNameOffset);
-    CharacterDialogExcel.AddDialogType(builder, DialogType);
+    CharacterDialogExcel.AddDialogtype(builder, dialogtype);
     CharacterDialogExcel.AddEndDate(builder, EndDateOffset);
     CharacterDialogExcel.AddStartDate(builder, StartDateOffset);
-    CharacterDialogExcel.AddAnniversary(builder, Anniversary);
-    CharacterDialogExcel.AddDialogCondition(builder, DialogCondition);
-    CharacterDialogExcel.AddDialogCategory(builder, DialogCategory);
-    CharacterDialogExcel.AddProductionStep(builder, ProductionStep);
+    CharacterDialogExcel.AddAnniversary(builder, anniversary);
+    CharacterDialogExcel.AddDialogcondition(builder, dialogcondition);
+    CharacterDialogExcel.AddDialogcategory(builder, dialogcategory);
+    CharacterDialogExcel.AddProductionstep(builder, productionstep);
     CharacterDialogExcel.AddTeenMode(builder, TeenMode);
     return CharacterDialogExcel.EndCharacterDialogExcel(builder);
   }
 
   public static void StartCharacterDialogExcel(FlatBufferBuilder builder) { builder.StartTable(23); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
-  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep ProductionStep) { builder.AddInt(1, (int)ProductionStep, 0); }
-  public static void AddDialogCategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory DialogCategory) { builder.AddInt(2, (int)DialogCategory, 0); }
-  public static void AddDialogCondition(FlatBufferBuilder builder, FlatDataGlobal.DialogCondition DialogCondition) { builder.AddInt(3, (int)DialogCondition, 0); }
-  public static void AddAnniversary(FlatBufferBuilder builder, FlatDataGlobal.Anniversary Anniversary) { builder.AddInt(4, (int)Anniversary, 0); }
+  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionstep) { builder.AddInt(1, (int)productionstep, 0); }
+  public static void AddDialogcategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory dialogcategory) { builder.AddInt(2, (int)dialogcategory, 0); }
+  public static void AddDialogcondition(FlatBufferBuilder builder, FlatDataGlobal.DialogCondition dialogcondition) { builder.AddInt(3, (int)dialogcondition, 0); }
+  public static void AddAnniversary(FlatBufferBuilder builder, FlatDataGlobal.Anniversary anniversary) { builder.AddInt(4, (int)anniversary, 0); }
   public static void AddStartDate(FlatBufferBuilder builder, StringOffset StartDateOffset) { builder.AddOffset(5, StartDateOffset.Value, 0); }
   public static void AddEndDate(FlatBufferBuilder builder, StringOffset EndDateOffset) { builder.AddOffset(6, EndDateOffset.Value, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(7, GroupId, 0); }
-  public static void AddDialogType(FlatBufferBuilder builder, FlatDataGlobal.DialogType DialogType) { builder.AddInt(8, (int)DialogType, 0); }
+  public static void AddDialogtype(FlatBufferBuilder builder, FlatDataGlobal.DialogType dialogtype) { builder.AddInt(8, (int)dialogtype, 0); }
   public static void AddActionName(FlatBufferBuilder builder, StringOffset ActionNameOffset) { builder.AddOffset(9, ActionNameOffset.Value, 0); }
   public static void AddDuration(FlatBufferBuilder builder, long Duration) { builder.AddLong(10, Duration, 0); }
   public static void AddAnimationName(FlatBufferBuilder builder, StringOffset AnimationNameOffset) { builder.AddOffset(11, AnimationNameOffset.Value, 0); }

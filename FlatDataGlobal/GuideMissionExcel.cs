@@ -23,7 +23,7 @@ public struct GuideMissionExcel : IFlatbufferObject
   public long Id { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.MissionCategory Category { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.MissionCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MissionCategory.Challenge; } }
   public bool IsLegacy { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long LoginCount { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long TabNumber { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PreMissionId(int j) { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
   public int PreMissionIdLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -66,37 +66,38 @@ public struct GuideMissionExcel : IFlatbufferObject
   public ArraySegment<byte>? GetCompleteConditionParameterNameBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
   public byte[] GetCompleteConditionParameterNameArray() { return __p.__vector_as_array<byte>(30); }
-  public FlatDataGlobal.ParcelType MissionRewardParcelType(int j) { int o = __p.__offset(32); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
-  public int MissionRewardParcelTypeLength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public bool IsAutoClearForScenario { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.ParcelType MissionRewardParcelType(int j) { int o = __p.__offset(34); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
+  public int MissionRewardParcelTypeLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.ParcelType> GetMissionRewardParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(32, 4); }
+  public Span<FlatDataGlobal.ParcelType> GetMissionRewardParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(34, 4); }
 #else
-  public ArraySegment<byte>? GetMissionRewardParcelTypeBytes() { return __p.__vector_as_arraysegment(32); }
+  public ArraySegment<byte>? GetMissionRewardParcelTypeBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
-  public FlatDataGlobal.ParcelType[] GetMissionRewardParcelTypeArray() { int o = __p.__offset(32); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
-  public long MissionRewardParcelId(int j) { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int MissionRewardParcelIdLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.ParcelType[] GetMissionRewardParcelTypeArray() { int o = __p.__offset(34); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
+  public long MissionRewardParcelId(int j) { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int MissionRewardParcelIdLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetMissionRewardParcelIdBytes() { return __p.__vector_as_span<long>(34, 8); }
+  public Span<long> GetMissionRewardParcelIdBytes() { return __p.__vector_as_span<long>(36, 8); }
 #else
-  public ArraySegment<byte>? GetMissionRewardParcelIdBytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetMissionRewardParcelIdBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public long[] GetMissionRewardParcelIdArray() { return __p.__vector_as_array<long>(34); }
-  public int MissionRewardAmount(int j) { int o = __p.__offset(36); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int MissionRewardAmountLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetMissionRewardParcelIdArray() { return __p.__vector_as_array<long>(36); }
+  public int MissionRewardAmount(int j) { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int MissionRewardAmountLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetMissionRewardAmountBytes() { return __p.__vector_as_span<int>(36, 4); }
+  public Span<int> GetMissionRewardAmountBytes() { return __p.__vector_as_span<int>(38, 4); }
 #else
-  public ArraySegment<byte>? GetMissionRewardAmountBytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetMissionRewardAmountBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public int[] GetMissionRewardAmountArray() { return __p.__vector_as_array<int>(36); }
+  public int[] GetMissionRewardAmountArray() { return __p.__vector_as_array<int>(38); }
 
   public static Offset<FlatDataGlobal.GuideMissionExcel> CreateGuideMissionExcel(FlatBufferBuilder builder,
       long SeasonId = 0,
       long Id = 0,
       FlatDataGlobal.MissionCategory Category = FlatDataGlobal.MissionCategory.Challenge,
       bool IsLegacy = false,
-      long LoginCount = 0,
+      long TabNumber = 0,
       VectorOffset PreMissionIdOffset = default(VectorOffset),
       StringOffset DescriptionOffset = default(StringOffset),
       FlatDataGlobal.MissionToastDisplayConditionType ToastDisplayType = FlatDataGlobal.MissionToastDisplayConditionType.Always,
@@ -106,12 +107,13 @@ public struct GuideMissionExcel : IFlatbufferObject
       long CompleteConditionCount = 0,
       VectorOffset CompleteConditionParameterOffset = default(VectorOffset),
       StringOffset CompleteConditionParameterNameOffset = default(StringOffset),
+      bool IsAutoClearForScenario = false,
       VectorOffset MissionRewardParcelTypeOffset = default(VectorOffset),
       VectorOffset MissionRewardParcelIdOffset = default(VectorOffset),
       VectorOffset MissionRewardAmountOffset = default(VectorOffset)) {
-    builder.StartTable(17);
+    builder.StartTable(18);
     GuideMissionExcel.AddCompleteConditionCount(builder, CompleteConditionCount);
-    GuideMissionExcel.AddLoginCount(builder, LoginCount);
+    GuideMissionExcel.AddTabNumber(builder, TabNumber);
     GuideMissionExcel.AddId(builder, Id);
     GuideMissionExcel.AddSeasonId(builder, SeasonId);
     GuideMissionExcel.AddMissionRewardAmount(builder, MissionRewardAmountOffset);
@@ -126,16 +128,17 @@ public struct GuideMissionExcel : IFlatbufferObject
     GuideMissionExcel.AddDescription(builder, DescriptionOffset);
     GuideMissionExcel.AddPreMissionId(builder, PreMissionIdOffset);
     GuideMissionExcel.AddCategory(builder, Category);
+    GuideMissionExcel.AddIsAutoClearForScenario(builder, IsAutoClearForScenario);
     GuideMissionExcel.AddIsLegacy(builder, IsLegacy);
     return GuideMissionExcel.EndGuideMissionExcel(builder);
   }
 
-  public static void StartGuideMissionExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
+  public static void StartGuideMissionExcel(FlatBufferBuilder builder) { builder.StartTable(18); }
   public static void AddSeasonId(FlatBufferBuilder builder, long SeasonId) { builder.AddLong(0, SeasonId, 0); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(1, Id, 0); }
   public static void AddCategory(FlatBufferBuilder builder, FlatDataGlobal.MissionCategory Category) { builder.AddInt(2, (int)Category, 0); }
   public static void AddIsLegacy(FlatBufferBuilder builder, bool IsLegacy) { builder.AddBool(3, IsLegacy, false); }
-  public static void AddLoginCount(FlatBufferBuilder builder, long LoginCount) { builder.AddLong(4, LoginCount, 0); }
+  public static void AddTabNumber(FlatBufferBuilder builder, long TabNumber) { builder.AddLong(4, TabNumber, 0); }
   public static void AddPreMissionId(FlatBufferBuilder builder, VectorOffset PreMissionIdOffset) { builder.AddOffset(5, PreMissionIdOffset.Value, 0); }
   public static VectorOffset CreatePreMissionIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreatePreMissionIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
@@ -160,19 +163,20 @@ public struct GuideMissionExcel : IFlatbufferObject
   public static VectorOffset CreateCompleteConditionParameterVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCompleteConditionParameterVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
   public static void AddCompleteConditionParameterName(FlatBufferBuilder builder, StringOffset CompleteConditionParameterNameOffset) { builder.AddOffset(13, CompleteConditionParameterNameOffset.Value, 0); }
-  public static void AddMissionRewardParcelType(FlatBufferBuilder builder, VectorOffset MissionRewardParcelTypeOffset) { builder.AddOffset(14, MissionRewardParcelTypeOffset.Value, 0); }
+  public static void AddIsAutoClearForScenario(FlatBufferBuilder builder, bool IsAutoClearForScenario) { builder.AddBool(14, IsAutoClearForScenario, false); }
+  public static void AddMissionRewardParcelType(FlatBufferBuilder builder, VectorOffset MissionRewardParcelTypeOffset) { builder.AddOffset(15, MissionRewardParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateMissionRewardParcelTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardParcelTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardParcelTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ParcelType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardParcelTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ParcelType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartMissionRewardParcelTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddMissionRewardParcelId(FlatBufferBuilder builder, VectorOffset MissionRewardParcelIdOffset) { builder.AddOffset(15, MissionRewardParcelIdOffset.Value, 0); }
+  public static void AddMissionRewardParcelId(FlatBufferBuilder builder, VectorOffset MissionRewardParcelIdOffset) { builder.AddOffset(16, MissionRewardParcelIdOffset.Value, 0); }
   public static VectorOffset CreateMissionRewardParcelIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardParcelIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardParcelIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardParcelIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartMissionRewardParcelIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddMissionRewardAmount(FlatBufferBuilder builder, VectorOffset MissionRewardAmountOffset) { builder.AddOffset(16, MissionRewardAmountOffset.Value, 0); }
+  public static void AddMissionRewardAmount(FlatBufferBuilder builder, VectorOffset MissionRewardAmountOffset) { builder.AddOffset(17, MissionRewardAmountOffset.Value, 0); }
   public static VectorOffset CreateMissionRewardAmountVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardAmountVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }

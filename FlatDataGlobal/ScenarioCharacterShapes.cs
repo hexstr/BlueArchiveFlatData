@@ -10,8 +10,8 @@ public enum ScenarioCharacterShapes : int
   None = 0,
   Signal = 1,
   BlackSilhouette = 2,
-  Closeup = 4,
-  Highlight = 8,
+  Closeup = 3,
+  Highlight = 4,
 };
 
 

@@ -21,25 +21,27 @@ public struct ShiftingCraftRecipeExcel : IFlatbufferObject
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long DisplayOrder { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ParcelType ResultParcel { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
-  public long ResultId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ResultAmount { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RequireItemId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RequireItemAmount { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RequireGold { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.Tag IngredientTag(int j) { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Tag)0; }
-  public int IngredientTagLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int NotificationId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.ParcelType ResultParcel { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public long ResultId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ResultAmount { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RequireItemId { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RequireItemAmount { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RequireGold { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.Tag IngredientTag(int j) { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Tag)0; }
+  public int IngredientTagLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.Tag> GetIngredientTagBytes() { return __p.__vector_as_span<FlatDataGlobal.Tag>(20, 4); }
+  public Span<FlatDataGlobal.Tag> GetIngredientTagBytes() { return __p.__vector_as_span<FlatDataGlobal.Tag>(22, 4); }
 #else
-  public ArraySegment<byte>? GetIngredientTagBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetIngredientTagBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public FlatDataGlobal.Tag[] GetIngredientTagArray() { int o = __p.__offset(20); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Tag[] a = new FlatDataGlobal.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Tag)__p.bb.GetInt(p + i * 4); } return a; }
-  public long IngredientExp { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.Tag[] GetIngredientTagArray() { int o = __p.__offset(22); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Tag[] a = new FlatDataGlobal.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Tag)__p.bb.GetInt(p + i * 4); } return a; }
+  public long IngredientExp { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.ShiftingCraftRecipeExcel> CreateShiftingCraftRecipeExcel(FlatBufferBuilder builder,
       long Id = 0,
       long DisplayOrder = 0,
+      int NotificationId = 0,
       FlatDataGlobal.ParcelType ResultParcel = FlatDataGlobal.ParcelType.None,
       long ResultId = 0,
       long ResultAmount = 0,
@@ -48,7 +50,7 @@ public struct ShiftingCraftRecipeExcel : IFlatbufferObject
       long RequireGold = 0,
       VectorOffset IngredientTagOffset = default(VectorOffset),
       long IngredientExp = 0) {
-    builder.StartTable(10);
+    builder.StartTable(11);
     ShiftingCraftRecipeExcel.AddIngredientExp(builder, IngredientExp);
     ShiftingCraftRecipeExcel.AddRequireGold(builder, RequireGold);
     ShiftingCraftRecipeExcel.AddRequireItemAmount(builder, RequireItemAmount);
@@ -59,25 +61,27 @@ public struct ShiftingCraftRecipeExcel : IFlatbufferObject
     ShiftingCraftRecipeExcel.AddId(builder, Id);
     ShiftingCraftRecipeExcel.AddIngredientTag(builder, IngredientTagOffset);
     ShiftingCraftRecipeExcel.AddResultParcel(builder, ResultParcel);
+    ShiftingCraftRecipeExcel.AddNotificationId(builder, NotificationId);
     return ShiftingCraftRecipeExcel.EndShiftingCraftRecipeExcel(builder);
   }
 
-  public static void StartShiftingCraftRecipeExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
+  public static void StartShiftingCraftRecipeExcel(FlatBufferBuilder builder) { builder.StartTable(11); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(1, DisplayOrder, 0); }
-  public static void AddResultParcel(FlatBufferBuilder builder, FlatDataGlobal.ParcelType ResultParcel) { builder.AddInt(2, (int)ResultParcel, 0); }
-  public static void AddResultId(FlatBufferBuilder builder, long ResultId) { builder.AddLong(3, ResultId, 0); }
-  public static void AddResultAmount(FlatBufferBuilder builder, long ResultAmount) { builder.AddLong(4, ResultAmount, 0); }
-  public static void AddRequireItemId(FlatBufferBuilder builder, long RequireItemId) { builder.AddLong(5, RequireItemId, 0); }
-  public static void AddRequireItemAmount(FlatBufferBuilder builder, long RequireItemAmount) { builder.AddLong(6, RequireItemAmount, 0); }
-  public static void AddRequireGold(FlatBufferBuilder builder, long RequireGold) { builder.AddLong(7, RequireGold, 0); }
-  public static void AddIngredientTag(FlatBufferBuilder builder, VectorOffset IngredientTagOffset) { builder.AddOffset(8, IngredientTagOffset.Value, 0); }
+  public static void AddNotificationId(FlatBufferBuilder builder, int NotificationId) { builder.AddInt(2, NotificationId, 0); }
+  public static void AddResultParcel(FlatBufferBuilder builder, FlatDataGlobal.ParcelType ResultParcel) { builder.AddInt(3, (int)ResultParcel, 0); }
+  public static void AddResultId(FlatBufferBuilder builder, long ResultId) { builder.AddLong(4, ResultId, 0); }
+  public static void AddResultAmount(FlatBufferBuilder builder, long ResultAmount) { builder.AddLong(5, ResultAmount, 0); }
+  public static void AddRequireItemId(FlatBufferBuilder builder, long RequireItemId) { builder.AddLong(6, RequireItemId, 0); }
+  public static void AddRequireItemAmount(FlatBufferBuilder builder, long RequireItemAmount) { builder.AddLong(7, RequireItemAmount, 0); }
+  public static void AddRequireGold(FlatBufferBuilder builder, long RequireGold) { builder.AddLong(8, RequireGold, 0); }
+  public static void AddIngredientTag(FlatBufferBuilder builder, VectorOffset IngredientTagOffset) { builder.AddOffset(9, IngredientTagOffset.Value, 0); }
   public static VectorOffset CreateIngredientTagVector(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateIngredientTagVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateIngredientTagVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateIngredientTagVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartIngredientTagVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddIngredientExp(FlatBufferBuilder builder, long IngredientExp) { builder.AddLong(9, IngredientExp, 0); }
+  public static void AddIngredientExp(FlatBufferBuilder builder, long IngredientExp) { builder.AddLong(10, IngredientExp, 0); }
   public static Offset<FlatDataGlobal.ShiftingCraftRecipeExcel> EndShiftingCraftRecipeExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ShiftingCraftRecipeExcel>(o);

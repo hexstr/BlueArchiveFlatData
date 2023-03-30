@@ -55,16 +55,45 @@ public struct WorldRaidBossGroupExcel : IFlatbufferObject
   public long WorldBossHPNa { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long WorldBossHPGlobal { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public bool UIHideBeforeSpawn { get { int o = __p.__offset(26); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long WorldBossClearRewardGroupId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long AnotherBossKilled(int j) { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int AnotherBossKilledLength { get { int o = __p.__offset(30); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public bool HideAnotherBossKilled { get { int o = __p.__offset(28); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long WorldBossClearRewardGroupId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long AnotherBossKilled(int j) { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int AnotherBossKilledLength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetAnotherBossKilledBytes() { return __p.__vector_as_span<long>(30, 8); }
+  public Span<long> GetAnotherBossKilledBytes() { return __p.__vector_as_span<long>(32, 8); }
 #else
-  public ArraySegment<byte>? GetAnotherBossKilledBytes() { return __p.__vector_as_arraysegment(30); }
+  public ArraySegment<byte>? GetAnotherBossKilledBytes() { return __p.__vector_as_arraysegment(32); }
 #endif
-  public long[] GetAnotherBossKilledArray() { return __p.__vector_as_array<long>(30); }
-  public long BlackListGroupId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long[] GetAnotherBossKilledArray() { return __p.__vector_as_array<long>(32); }
+  public long EchelonConstraintGroupId { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string ExclusiveOperatorBossSpawn { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetExclusiveOperatorBossSpawnBytes() { return __p.__vector_as_span<byte>(36, 1); }
+#else
+  public ArraySegment<byte>? GetExclusiveOperatorBossSpawnBytes() { return __p.__vector_as_arraysegment(36); }
+#endif
+  public byte[] GetExclusiveOperatorBossSpawnArray() { return __p.__vector_as_array<byte>(36); }
+  public string ExclusiveOperatorBossKill { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetExclusiveOperatorBossKillBytes() { return __p.__vector_as_span<byte>(38, 1); }
+#else
+  public ArraySegment<byte>? GetExclusiveOperatorBossKillBytes() { return __p.__vector_as_arraysegment(38); }
+#endif
+  public byte[] GetExclusiveOperatorBossKillArray() { return __p.__vector_as_array<byte>(38); }
+  public string ExclusiveOperatorScenarioBattle { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetExclusiveOperatorScenarioBattleBytes() { return __p.__vector_as_span<byte>(40, 1); }
+#else
+  public ArraySegment<byte>? GetExclusiveOperatorScenarioBattleBytes() { return __p.__vector_as_arraysegment(40); }
+#endif
+  public byte[] GetExclusiveOperatorScenarioBattleArray() { return __p.__vector_as_array<byte>(40); }
+  public string ExclusiveOperatorBossDamaged { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetExclusiveOperatorBossDamagedBytes() { return __p.__vector_as_span<byte>(42, 1); }
+#else
+  public ArraySegment<byte>? GetExclusiveOperatorBossDamagedBytes() { return __p.__vector_as_arraysegment(42); }
+#endif
+  public byte[] GetExclusiveOperatorBossDamagedArray() { return __p.__vector_as_array<byte>(42); }
 
   public static Offset<FlatDataGlobal.WorldRaidBossGroupExcel> CreateWorldRaidBossGroupExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -79,11 +108,16 @@ public struct WorldRaidBossGroupExcel : IFlatbufferObject
       long WorldBossHPNa = 0,
       long WorldBossHPGlobal = 0,
       bool UIHideBeforeSpawn = false,
+      bool HideAnotherBossKilled = false,
       long WorldBossClearRewardGroupId = 0,
       VectorOffset AnotherBossKilledOffset = default(VectorOffset),
-      long BlackListGroupId = 0) {
-    builder.StartTable(15);
-    WorldRaidBossGroupExcel.AddBlackListGroupId(builder, BlackListGroupId);
+      long EchelonConstraintGroupId = 0,
+      StringOffset ExclusiveOperatorBossSpawnOffset = default(StringOffset),
+      StringOffset ExclusiveOperatorBossKillOffset = default(StringOffset),
+      StringOffset ExclusiveOperatorScenarioBattleOffset = default(StringOffset),
+      StringOffset ExclusiveOperatorBossDamagedOffset = default(StringOffset)) {
+    builder.StartTable(20);
+    WorldRaidBossGroupExcel.AddEchelonConstraintGroupId(builder, EchelonConstraintGroupId);
     WorldRaidBossGroupExcel.AddWorldBossClearRewardGroupId(builder, WorldBossClearRewardGroupId);
     WorldRaidBossGroupExcel.AddWorldBossHPGlobal(builder, WorldBossHPGlobal);
     WorldRaidBossGroupExcel.AddWorldBossHPNa(builder, WorldBossHPNa);
@@ -92,16 +126,21 @@ public struct WorldRaidBossGroupExcel : IFlatbufferObject
     WorldRaidBossGroupExcel.AddWorldBossHP(builder, WorldBossHP);
     WorldRaidBossGroupExcel.AddWorldRaidBossGroupId(builder, WorldRaidBossGroupId);
     WorldRaidBossGroupExcel.AddId(builder, Id);
+    WorldRaidBossGroupExcel.AddExclusiveOperatorBossDamaged(builder, ExclusiveOperatorBossDamagedOffset);
+    WorldRaidBossGroupExcel.AddExclusiveOperatorScenarioBattle(builder, ExclusiveOperatorScenarioBattleOffset);
+    WorldRaidBossGroupExcel.AddExclusiveOperatorBossKill(builder, ExclusiveOperatorBossKillOffset);
+    WorldRaidBossGroupExcel.AddExclusiveOperatorBossSpawn(builder, ExclusiveOperatorBossSpawnOffset);
     WorldRaidBossGroupExcel.AddAnotherBossKilled(builder, AnotherBossKilledOffset);
     WorldRaidBossGroupExcel.AddWorldBossParcelPortrait(builder, WorldBossParcelPortraitOffset);
     WorldRaidBossGroupExcel.AddWorldBossPopupBG(builder, WorldBossPopupBGOffset);
     WorldRaidBossGroupExcel.AddWorldBossPopupPortrait(builder, WorldBossPopupPortraitOffset);
     WorldRaidBossGroupExcel.AddWorldBossName(builder, WorldBossNameOffset);
+    WorldRaidBossGroupExcel.AddHideAnotherBossKilled(builder, HideAnotherBossKilled);
     WorldRaidBossGroupExcel.AddUIHideBeforeSpawn(builder, UIHideBeforeSpawn);
     return WorldRaidBossGroupExcel.EndWorldRaidBossGroupExcel(builder);
   }
 
-  public static void StartWorldRaidBossGroupExcel(FlatBufferBuilder builder) { builder.StartTable(15); }
+  public static void StartWorldRaidBossGroupExcel(FlatBufferBuilder builder) { builder.StartTable(20); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddWorldRaidBossGroupId(FlatBufferBuilder builder, long WorldRaidBossGroupId) { builder.AddLong(1, WorldRaidBossGroupId, 0); }
   public static void AddWorldBossName(FlatBufferBuilder builder, StringOffset WorldBossNameOffset) { builder.AddOffset(2, WorldBossNameOffset.Value, 0); }
@@ -114,14 +153,19 @@ public struct WorldRaidBossGroupExcel : IFlatbufferObject
   public static void AddWorldBossHPNa(FlatBufferBuilder builder, long WorldBossHPNa) { builder.AddLong(9, WorldBossHPNa, 0); }
   public static void AddWorldBossHPGlobal(FlatBufferBuilder builder, long WorldBossHPGlobal) { builder.AddLong(10, WorldBossHPGlobal, 0); }
   public static void AddUIHideBeforeSpawn(FlatBufferBuilder builder, bool UIHideBeforeSpawn) { builder.AddBool(11, UIHideBeforeSpawn, false); }
-  public static void AddWorldBossClearRewardGroupId(FlatBufferBuilder builder, long WorldBossClearRewardGroupId) { builder.AddLong(12, WorldBossClearRewardGroupId, 0); }
-  public static void AddAnotherBossKilled(FlatBufferBuilder builder, VectorOffset AnotherBossKilledOffset) { builder.AddOffset(13, AnotherBossKilledOffset.Value, 0); }
+  public static void AddHideAnotherBossKilled(FlatBufferBuilder builder, bool HideAnotherBossKilled) { builder.AddBool(12, HideAnotherBossKilled, false); }
+  public static void AddWorldBossClearRewardGroupId(FlatBufferBuilder builder, long WorldBossClearRewardGroupId) { builder.AddLong(13, WorldBossClearRewardGroupId, 0); }
+  public static void AddAnotherBossKilled(FlatBufferBuilder builder, VectorOffset AnotherBossKilledOffset) { builder.AddOffset(14, AnotherBossKilledOffset.Value, 0); }
   public static VectorOffset CreateAnotherBossKilledVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateAnotherBossKilledVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateAnotherBossKilledVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateAnotherBossKilledVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartAnotherBossKilledVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddBlackListGroupId(FlatBufferBuilder builder, long BlackListGroupId) { builder.AddLong(14, BlackListGroupId, 0); }
+  public static void AddEchelonConstraintGroupId(FlatBufferBuilder builder, long EchelonConstraintGroupId) { builder.AddLong(15, EchelonConstraintGroupId, 0); }
+  public static void AddExclusiveOperatorBossSpawn(FlatBufferBuilder builder, StringOffset ExclusiveOperatorBossSpawnOffset) { builder.AddOffset(16, ExclusiveOperatorBossSpawnOffset.Value, 0); }
+  public static void AddExclusiveOperatorBossKill(FlatBufferBuilder builder, StringOffset ExclusiveOperatorBossKillOffset) { builder.AddOffset(17, ExclusiveOperatorBossKillOffset.Value, 0); }
+  public static void AddExclusiveOperatorScenarioBattle(FlatBufferBuilder builder, StringOffset ExclusiveOperatorScenarioBattleOffset) { builder.AddOffset(18, ExclusiveOperatorScenarioBattleOffset.Value, 0); }
+  public static void AddExclusiveOperatorBossDamaged(FlatBufferBuilder builder, StringOffset ExclusiveOperatorBossDamagedOffset) { builder.AddOffset(19, ExclusiveOperatorBossDamagedOffset.Value, 0); }
   public static Offset<FlatDataGlobal.WorldRaidBossGroupExcel> EndWorldRaidBossGroupExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.WorldRaidBossGroupExcel>(o);

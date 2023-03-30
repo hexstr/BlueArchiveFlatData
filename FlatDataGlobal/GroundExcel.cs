@@ -30,51 +30,57 @@ public struct GroundExcel : IFlatbufferObject
 #endif
   public byte[] GetGroundSceneNameArray() { return __p.__vector_as_array<byte>(8); }
   public long FormationGroupId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.StageTopography StageTopography { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
+  public FlatDataGlobal.StageTopography Stagetopography { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
   public FlatDataGlobal.BulletType EnemyBulletType { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.BulletType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.BulletType.Normal; } }
   public FlatDataGlobal.ArmorType EnemyArmorType { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.ArmorType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ArmorType.LightArmor; } }
-  public long LevelMinion { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long LevelElite { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long LevelChampion { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long LevelBoss { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ObstacleLevel { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long GradeMinion { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long GradeElite { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long GradeChampion { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long GradeBoss { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long PlayerSightPointAdd { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long PlayerSightPointRate { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long PlayerAttackRangeAdd { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long PlayerAttackRangeRate { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnemySightPointAdd { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnemySightPointRate { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnemyAttackRangeAdd { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnemyAttackRangeRate { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long PlayerSkillRangeAdd { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long PlayerSkillRangeRate { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnemySkillRangeAdd { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnemySkillRangeRate { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool PlayerSightRangeMax { get { int o = __p.__offset(60); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool EnemySightRangeMax { get { int o = __p.__offset(62); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long TSSAirUnitHeight { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool IsRaid { get { int o = __p.__offset(66); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long BGMId { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool WarningUI { get { int o = __p.__offset(70); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool TSSHatchOpen { get { int o = __p.__offset(72); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long LevelNPC { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LevelMinion { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LevelElite { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LevelChampion { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LevelBoss { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ObstacleLevel { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long GradeNPC { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long GradeMinion { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long GradeElite { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long GradeChampion { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long GradeBoss { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long PlayerSightPointAdd { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long PlayerSightPointRate { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long PlayerAttackRangeAdd { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long PlayerAttackRangeRate { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnemySightPointAdd { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnemySightPointRate { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnemyAttackRangeAdd { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnemyAttackRangeRate { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long PlayerSkillRangeAdd { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long PlayerSkillRangeRate { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnemySkillRangeAdd { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnemySkillRangeRate { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool PlayerSightRangeMax { get { int o = __p.__offset(64); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool EnemySightRangeMax { get { int o = __p.__offset(66); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long TSSAirUnitHeight { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool IsRaid { get { int o = __p.__offset(70); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long BGMId { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool WarningUI { get { int o = __p.__offset(74); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool TSSHatchOpen { get { int o = __p.__offset(76); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.TacticSpeed ForcedTacticSpeed { get { int o = __p.__offset(78); return o != 0 ? (FlatDataGlobal.TacticSpeed)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticSpeed.None; } }
+  public FlatDataGlobal.TacticSkillUse ForcedSkillUse { get { int o = __p.__offset(80); return o != 0 ? (FlatDataGlobal.TacticSkillUse)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticSkillUse.None; } }
 
   public static Offset<FlatDataGlobal.GroundExcel> CreateGroundExcel(FlatBufferBuilder builder,
       long Id = 0,
       VectorOffset StageFileNameOffset = default(VectorOffset),
       StringOffset GroundSceneNameOffset = default(StringOffset),
       long FormationGroupId = 0,
-      FlatDataGlobal.StageTopography StageTopography = FlatDataGlobal.StageTopography.Street,
+      FlatDataGlobal.StageTopography stagetopography = FlatDataGlobal.StageTopography.Street,
       FlatDataGlobal.BulletType EnemyBulletType = FlatDataGlobal.BulletType.Normal,
       FlatDataGlobal.ArmorType EnemyArmorType = FlatDataGlobal.ArmorType.LightArmor,
+      long LevelNPC = 0,
       long LevelMinion = 0,
       long LevelElite = 0,
       long LevelChampion = 0,
       long LevelBoss = 0,
       long ObstacleLevel = 0,
+      long GradeNPC = 0,
       long GradeMinion = 0,
       long GradeElite = 0,
       long GradeChampion = 0,
@@ -97,8 +103,10 @@ public struct GroundExcel : IFlatbufferObject
       bool IsRaid = false,
       long BGMId = 0,
       bool WarningUI = false,
-      bool TSSHatchOpen = false) {
-    builder.StartTable(35);
+      bool TSSHatchOpen = false,
+      FlatDataGlobal.TacticSpeed ForcedTacticSpeed = FlatDataGlobal.TacticSpeed.None,
+      FlatDataGlobal.TacticSkillUse ForcedSkillUse = FlatDataGlobal.TacticSkillUse.None) {
+    builder.StartTable(39);
     GroundExcel.AddBGMId(builder, BGMId);
     GroundExcel.AddTSSAirUnitHeight(builder, TSSAirUnitHeight);
     GroundExcel.AddEnemySkillRangeRate(builder, EnemySkillRangeRate);
@@ -117,16 +125,20 @@ public struct GroundExcel : IFlatbufferObject
     GroundExcel.AddGradeChampion(builder, GradeChampion);
     GroundExcel.AddGradeElite(builder, GradeElite);
     GroundExcel.AddGradeMinion(builder, GradeMinion);
+    GroundExcel.AddGradeNPC(builder, GradeNPC);
     GroundExcel.AddObstacleLevel(builder, ObstacleLevel);
     GroundExcel.AddLevelBoss(builder, LevelBoss);
     GroundExcel.AddLevelChampion(builder, LevelChampion);
     GroundExcel.AddLevelElite(builder, LevelElite);
     GroundExcel.AddLevelMinion(builder, LevelMinion);
+    GroundExcel.AddLevelNPC(builder, LevelNPC);
     GroundExcel.AddFormationGroupId(builder, FormationGroupId);
     GroundExcel.AddId(builder, Id);
+    GroundExcel.AddForcedSkillUse(builder, ForcedSkillUse);
+    GroundExcel.AddForcedTacticSpeed(builder, ForcedTacticSpeed);
     GroundExcel.AddEnemyArmorType(builder, EnemyArmorType);
     GroundExcel.AddEnemyBulletType(builder, EnemyBulletType);
-    GroundExcel.AddStageTopography(builder, StageTopography);
+    GroundExcel.AddStagetopography(builder, stagetopography);
     GroundExcel.AddGroundSceneName(builder, GroundSceneNameOffset);
     GroundExcel.AddStageFileName(builder, StageFileNameOffset);
     GroundExcel.AddTSSHatchOpen(builder, TSSHatchOpen);
@@ -137,7 +149,7 @@ public struct GroundExcel : IFlatbufferObject
     return GroundExcel.EndGroundExcel(builder);
   }
 
-  public static void StartGroundExcel(FlatBufferBuilder builder) { builder.StartTable(35); }
+  public static void StartGroundExcel(FlatBufferBuilder builder) { builder.StartTable(39); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddStageFileName(FlatBufferBuilder builder, VectorOffset StageFileNameOffset) { builder.AddOffset(1, StageFileNameOffset.Value, 0); }
   public static VectorOffset CreateStageFileNameVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
@@ -147,37 +159,41 @@ public struct GroundExcel : IFlatbufferObject
   public static void StartStageFileNameVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddGroundSceneName(FlatBufferBuilder builder, StringOffset GroundSceneNameOffset) { builder.AddOffset(2, GroundSceneNameOffset.Value, 0); }
   public static void AddFormationGroupId(FlatBufferBuilder builder, long FormationGroupId) { builder.AddLong(3, FormationGroupId, 0); }
-  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography StageTopography) { builder.AddInt(4, (int)StageTopography, 0); }
+  public static void AddStagetopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stagetopography) { builder.AddInt(4, (int)stagetopography, 0); }
   public static void AddEnemyBulletType(FlatBufferBuilder builder, FlatDataGlobal.BulletType EnemyBulletType) { builder.AddInt(5, (int)EnemyBulletType, 0); }
   public static void AddEnemyArmorType(FlatBufferBuilder builder, FlatDataGlobal.ArmorType EnemyArmorType) { builder.AddInt(6, (int)EnemyArmorType, 0); }
-  public static void AddLevelMinion(FlatBufferBuilder builder, long LevelMinion) { builder.AddLong(7, LevelMinion, 0); }
-  public static void AddLevelElite(FlatBufferBuilder builder, long LevelElite) { builder.AddLong(8, LevelElite, 0); }
-  public static void AddLevelChampion(FlatBufferBuilder builder, long LevelChampion) { builder.AddLong(9, LevelChampion, 0); }
-  public static void AddLevelBoss(FlatBufferBuilder builder, long LevelBoss) { builder.AddLong(10, LevelBoss, 0); }
-  public static void AddObstacleLevel(FlatBufferBuilder builder, long ObstacleLevel) { builder.AddLong(11, ObstacleLevel, 0); }
-  public static void AddGradeMinion(FlatBufferBuilder builder, long GradeMinion) { builder.AddLong(12, GradeMinion, 0); }
-  public static void AddGradeElite(FlatBufferBuilder builder, long GradeElite) { builder.AddLong(13, GradeElite, 0); }
-  public static void AddGradeChampion(FlatBufferBuilder builder, long GradeChampion) { builder.AddLong(14, GradeChampion, 0); }
-  public static void AddGradeBoss(FlatBufferBuilder builder, long GradeBoss) { builder.AddLong(15, GradeBoss, 0); }
-  public static void AddPlayerSightPointAdd(FlatBufferBuilder builder, long PlayerSightPointAdd) { builder.AddLong(16, PlayerSightPointAdd, 0); }
-  public static void AddPlayerSightPointRate(FlatBufferBuilder builder, long PlayerSightPointRate) { builder.AddLong(17, PlayerSightPointRate, 0); }
-  public static void AddPlayerAttackRangeAdd(FlatBufferBuilder builder, long PlayerAttackRangeAdd) { builder.AddLong(18, PlayerAttackRangeAdd, 0); }
-  public static void AddPlayerAttackRangeRate(FlatBufferBuilder builder, long PlayerAttackRangeRate) { builder.AddLong(19, PlayerAttackRangeRate, 0); }
-  public static void AddEnemySightPointAdd(FlatBufferBuilder builder, long EnemySightPointAdd) { builder.AddLong(20, EnemySightPointAdd, 0); }
-  public static void AddEnemySightPointRate(FlatBufferBuilder builder, long EnemySightPointRate) { builder.AddLong(21, EnemySightPointRate, 0); }
-  public static void AddEnemyAttackRangeAdd(FlatBufferBuilder builder, long EnemyAttackRangeAdd) { builder.AddLong(22, EnemyAttackRangeAdd, 0); }
-  public static void AddEnemyAttackRangeRate(FlatBufferBuilder builder, long EnemyAttackRangeRate) { builder.AddLong(23, EnemyAttackRangeRate, 0); }
-  public static void AddPlayerSkillRangeAdd(FlatBufferBuilder builder, long PlayerSkillRangeAdd) { builder.AddLong(24, PlayerSkillRangeAdd, 0); }
-  public static void AddPlayerSkillRangeRate(FlatBufferBuilder builder, long PlayerSkillRangeRate) { builder.AddLong(25, PlayerSkillRangeRate, 0); }
-  public static void AddEnemySkillRangeAdd(FlatBufferBuilder builder, long EnemySkillRangeAdd) { builder.AddLong(26, EnemySkillRangeAdd, 0); }
-  public static void AddEnemySkillRangeRate(FlatBufferBuilder builder, long EnemySkillRangeRate) { builder.AddLong(27, EnemySkillRangeRate, 0); }
-  public static void AddPlayerSightRangeMax(FlatBufferBuilder builder, bool PlayerSightRangeMax) { builder.AddBool(28, PlayerSightRangeMax, false); }
-  public static void AddEnemySightRangeMax(FlatBufferBuilder builder, bool EnemySightRangeMax) { builder.AddBool(29, EnemySightRangeMax, false); }
-  public static void AddTSSAirUnitHeight(FlatBufferBuilder builder, long TSSAirUnitHeight) { builder.AddLong(30, TSSAirUnitHeight, 0); }
-  public static void AddIsRaid(FlatBufferBuilder builder, bool IsRaid) { builder.AddBool(31, IsRaid, false); }
-  public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(32, BGMId, 0); }
-  public static void AddWarningUI(FlatBufferBuilder builder, bool WarningUI) { builder.AddBool(33, WarningUI, false); }
-  public static void AddTSSHatchOpen(FlatBufferBuilder builder, bool TSSHatchOpen) { builder.AddBool(34, TSSHatchOpen, false); }
+  public static void AddLevelNPC(FlatBufferBuilder builder, long LevelNPC) { builder.AddLong(7, LevelNPC, 0); }
+  public static void AddLevelMinion(FlatBufferBuilder builder, long LevelMinion) { builder.AddLong(8, LevelMinion, 0); }
+  public static void AddLevelElite(FlatBufferBuilder builder, long LevelElite) { builder.AddLong(9, LevelElite, 0); }
+  public static void AddLevelChampion(FlatBufferBuilder builder, long LevelChampion) { builder.AddLong(10, LevelChampion, 0); }
+  public static void AddLevelBoss(FlatBufferBuilder builder, long LevelBoss) { builder.AddLong(11, LevelBoss, 0); }
+  public static void AddObstacleLevel(FlatBufferBuilder builder, long ObstacleLevel) { builder.AddLong(12, ObstacleLevel, 0); }
+  public static void AddGradeNPC(FlatBufferBuilder builder, long GradeNPC) { builder.AddLong(13, GradeNPC, 0); }
+  public static void AddGradeMinion(FlatBufferBuilder builder, long GradeMinion) { builder.AddLong(14, GradeMinion, 0); }
+  public static void AddGradeElite(FlatBufferBuilder builder, long GradeElite) { builder.AddLong(15, GradeElite, 0); }
+  public static void AddGradeChampion(FlatBufferBuilder builder, long GradeChampion) { builder.AddLong(16, GradeChampion, 0); }
+  public static void AddGradeBoss(FlatBufferBuilder builder, long GradeBoss) { builder.AddLong(17, GradeBoss, 0); }
+  public static void AddPlayerSightPointAdd(FlatBufferBuilder builder, long PlayerSightPointAdd) { builder.AddLong(18, PlayerSightPointAdd, 0); }
+  public static void AddPlayerSightPointRate(FlatBufferBuilder builder, long PlayerSightPointRate) { builder.AddLong(19, PlayerSightPointRate, 0); }
+  public static void AddPlayerAttackRangeAdd(FlatBufferBuilder builder, long PlayerAttackRangeAdd) { builder.AddLong(20, PlayerAttackRangeAdd, 0); }
+  public static void AddPlayerAttackRangeRate(FlatBufferBuilder builder, long PlayerAttackRangeRate) { builder.AddLong(21, PlayerAttackRangeRate, 0); }
+  public static void AddEnemySightPointAdd(FlatBufferBuilder builder, long EnemySightPointAdd) { builder.AddLong(22, EnemySightPointAdd, 0); }
+  public static void AddEnemySightPointRate(FlatBufferBuilder builder, long EnemySightPointRate) { builder.AddLong(23, EnemySightPointRate, 0); }
+  public static void AddEnemyAttackRangeAdd(FlatBufferBuilder builder, long EnemyAttackRangeAdd) { builder.AddLong(24, EnemyAttackRangeAdd, 0); }
+  public static void AddEnemyAttackRangeRate(FlatBufferBuilder builder, long EnemyAttackRangeRate) { builder.AddLong(25, EnemyAttackRangeRate, 0); }
+  public static void AddPlayerSkillRangeAdd(FlatBufferBuilder builder, long PlayerSkillRangeAdd) { builder.AddLong(26, PlayerSkillRangeAdd, 0); }
+  public static void AddPlayerSkillRangeRate(FlatBufferBuilder builder, long PlayerSkillRangeRate) { builder.AddLong(27, PlayerSkillRangeRate, 0); }
+  public static void AddEnemySkillRangeAdd(FlatBufferBuilder builder, long EnemySkillRangeAdd) { builder.AddLong(28, EnemySkillRangeAdd, 0); }
+  public static void AddEnemySkillRangeRate(FlatBufferBuilder builder, long EnemySkillRangeRate) { builder.AddLong(29, EnemySkillRangeRate, 0); }
+  public static void AddPlayerSightRangeMax(FlatBufferBuilder builder, bool PlayerSightRangeMax) { builder.AddBool(30, PlayerSightRangeMax, false); }
+  public static void AddEnemySightRangeMax(FlatBufferBuilder builder, bool EnemySightRangeMax) { builder.AddBool(31, EnemySightRangeMax, false); }
+  public static void AddTSSAirUnitHeight(FlatBufferBuilder builder, long TSSAirUnitHeight) { builder.AddLong(32, TSSAirUnitHeight, 0); }
+  public static void AddIsRaid(FlatBufferBuilder builder, bool IsRaid) { builder.AddBool(33, IsRaid, false); }
+  public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(34, BGMId, 0); }
+  public static void AddWarningUI(FlatBufferBuilder builder, bool WarningUI) { builder.AddBool(35, WarningUI, false); }
+  public static void AddTSSHatchOpen(FlatBufferBuilder builder, bool TSSHatchOpen) { builder.AddBool(36, TSSHatchOpen, false); }
+  public static void AddForcedTacticSpeed(FlatBufferBuilder builder, FlatDataGlobal.TacticSpeed ForcedTacticSpeed) { builder.AddInt(37, (int)ForcedTacticSpeed, 0); }
+  public static void AddForcedSkillUse(FlatBufferBuilder builder, FlatDataGlobal.TacticSkillUse ForcedSkillUse) { builder.AddInt(38, (int)ForcedSkillUse, 0); }
   public static Offset<FlatDataGlobal.GroundExcel> EndGroundExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.GroundExcel>(o);

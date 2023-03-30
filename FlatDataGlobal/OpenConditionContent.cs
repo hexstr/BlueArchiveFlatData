@@ -53,6 +53,7 @@ public enum OpenConditionContent : int
   WorldRaid = 43,
   Tactic_Skip = 44,
   Mulligan = 45,
+  EventPermanent = 46,
 };
 
 

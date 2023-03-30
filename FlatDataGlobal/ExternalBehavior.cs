@@ -22,6 +22,9 @@ public enum ExternalBehavior : int
   AlivePartsUseExSkill = 12,
   ActivatePart = 13,
   AddGroggy = 14,
+  SelectTargetToUseSkillAlly = 15,
+  ForceChangePhase = 16,
+  ClearUseSkillEndGroupId = 17,
 };
 
 

@@ -26,6 +26,7 @@ public enum EchelonType : int
   WorldRaid = 16,
   Conquest = 17,
   ConquestManage = 18,
+  StoryStrategyStage = 19,
 };
 
 

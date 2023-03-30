@@ -20,69 +20,89 @@ public struct CafeInteractionExcel : IFlatbufferObject
   public CafeInteractionExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long CharacterId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool IsCollabo { get { int o = __p.__offset(6); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.BubbleType BubbleType_(int j) { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.BubbleType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.BubbleType)0; }
-  public int BubbleType_Length { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public bool IgnoreIfUnobtained { get { int o = __p.__offset(6); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string IgnoreIfUnobtainedStartDate { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.BubbleType> GetBubbleType_Bytes() { return __p.__vector_as_span<FlatDataGlobal.BubbleType>(8, 4); }
+  public Span<byte> GetIgnoreIfUnobtainedStartDateBytes() { return __p.__vector_as_span<byte>(8, 1); }
 #else
-  public ArraySegment<byte>? GetBubbleType_Bytes() { return __p.__vector_as_arraysegment(8); }
+  public ArraySegment<byte>? GetIgnoreIfUnobtainedStartDateBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
-  public FlatDataGlobal.BubbleType[] GetBubbleType_Array() { int o = __p.__offset(8); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.BubbleType[] a = new FlatDataGlobal.BubbleType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.BubbleType)__p.bb.GetInt(p + i * 4); } return a; }
-  public long BubbleDuration(int j) { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int BubbleDurationLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetIgnoreIfUnobtainedStartDateArray() { return __p.__vector_as_array<byte>(8); }
+  public string IgnoreIfUnobtainedEndDate { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetBubbleDurationBytes() { return __p.__vector_as_span<long>(10, 8); }
+  public Span<byte> GetIgnoreIfUnobtainedEndDateBytes() { return __p.__vector_as_span<byte>(10, 1); }
 #else
-  public ArraySegment<byte>? GetBubbleDurationBytes() { return __p.__vector_as_arraysegment(10); }
+  public ArraySegment<byte>? GetIgnoreIfUnobtainedEndDateBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
-  public long[] GetBubbleDurationArray() { return __p.__vector_as_array<long>(10); }
-  public FlatDataGlobal.ParcelType FavorEmoticonRewardParcelType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
-  public long FavorEmoticonRewardId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FavorEmoticonRewardAmount { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string CafeCharacterState(int j) { int o = __p.__offset(18); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int CafeCharacterStateLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetIgnoreIfUnobtainedEndDateArray() { return __p.__vector_as_array<byte>(10); }
+  public FlatDataGlobal.BubbleType BubbleType(int j) { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.BubbleType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.BubbleType)0; }
+  public int BubbleTypeLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<FlatDataGlobal.BubbleType> GetBubbleTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.BubbleType>(12, 4); }
+#else
+  public ArraySegment<byte>? GetBubbleTypeBytes() { return __p.__vector_as_arraysegment(12); }
+#endif
+  public FlatDataGlobal.BubbleType[] GetBubbleTypeArray() { int o = __p.__offset(12); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.BubbleType[] a = new FlatDataGlobal.BubbleType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.BubbleType)__p.bb.GetInt(p + i * 4); } return a; }
+  public long BubbleDuration(int j) { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int BubbleDurationLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<long> GetBubbleDurationBytes() { return __p.__vector_as_span<long>(14, 8); }
+#else
+  public ArraySegment<byte>? GetBubbleDurationBytes() { return __p.__vector_as_arraysegment(14); }
+#endif
+  public long[] GetBubbleDurationArray() { return __p.__vector_as_array<long>(14); }
+  public FlatDataGlobal.ParcelType FavorEmoticonRewardParcelType { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public long FavorEmoticonRewardId { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FavorEmoticonRewardAmount { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string CafeCharacterState(int j) { int o = __p.__offset(22); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int CafeCharacterStateLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
 
   public static Offset<FlatDataGlobal.CafeInteractionExcel> CreateCafeInteractionExcel(FlatBufferBuilder builder,
       long CharacterId = 0,
-      bool IsCollabo = false,
-      VectorOffset BubbleType_Offset = default(VectorOffset),
+      bool IgnoreIfUnobtained = false,
+      StringOffset IgnoreIfUnobtainedStartDateOffset = default(StringOffset),
+      StringOffset IgnoreIfUnobtainedEndDateOffset = default(StringOffset),
+      VectorOffset BubbleTypeOffset = default(VectorOffset),
       VectorOffset BubbleDurationOffset = default(VectorOffset),
       FlatDataGlobal.ParcelType FavorEmoticonRewardParcelType = FlatDataGlobal.ParcelType.None,
       long FavorEmoticonRewardId = 0,
       long FavorEmoticonRewardAmount = 0,
       VectorOffset CafeCharacterStateOffset = default(VectorOffset)) {
-    builder.StartTable(8);
+    builder.StartTable(10);
     CafeInteractionExcel.AddFavorEmoticonRewardAmount(builder, FavorEmoticonRewardAmount);
     CafeInteractionExcel.AddFavorEmoticonRewardId(builder, FavorEmoticonRewardId);
     CafeInteractionExcel.AddCharacterId(builder, CharacterId);
     CafeInteractionExcel.AddCafeCharacterState(builder, CafeCharacterStateOffset);
     CafeInteractionExcel.AddFavorEmoticonRewardParcelType(builder, FavorEmoticonRewardParcelType);
     CafeInteractionExcel.AddBubbleDuration(builder, BubbleDurationOffset);
-    CafeInteractionExcel.AddBubbleType_(builder, BubbleType_Offset);
-    CafeInteractionExcel.AddIsCollabo(builder, IsCollabo);
+    CafeInteractionExcel.AddBubbleType(builder, BubbleTypeOffset);
+    CafeInteractionExcel.AddIgnoreIfUnobtainedEndDate(builder, IgnoreIfUnobtainedEndDateOffset);
+    CafeInteractionExcel.AddIgnoreIfUnobtainedStartDate(builder, IgnoreIfUnobtainedStartDateOffset);
+    CafeInteractionExcel.AddIgnoreIfUnobtained(builder, IgnoreIfUnobtained);
     return CafeInteractionExcel.EndCafeInteractionExcel(builder);
   }
 
-  public static void StartCafeInteractionExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
+  public static void StartCafeInteractionExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
-  public static void AddIsCollabo(FlatBufferBuilder builder, bool IsCollabo) { builder.AddBool(1, IsCollabo, false); }
-  public static void AddBubbleType_(FlatBufferBuilder builder, VectorOffset BubbleType_Offset) { builder.AddOffset(2, BubbleType_Offset.Value, 0); }
-  public static VectorOffset CreateBubbleType_Vector(FlatBufferBuilder builder, FlatDataGlobal.BubbleType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateBubbleType_VectorBlock(FlatBufferBuilder builder, FlatDataGlobal.BubbleType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateBubbleType_VectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.BubbleType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateBubbleType_VectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.BubbleType>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartBubbleType_Vector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddBubbleDuration(FlatBufferBuilder builder, VectorOffset BubbleDurationOffset) { builder.AddOffset(3, BubbleDurationOffset.Value, 0); }
+  public static void AddIgnoreIfUnobtained(FlatBufferBuilder builder, bool IgnoreIfUnobtained) { builder.AddBool(1, IgnoreIfUnobtained, false); }
+  public static void AddIgnoreIfUnobtainedStartDate(FlatBufferBuilder builder, StringOffset IgnoreIfUnobtainedStartDateOffset) { builder.AddOffset(2, IgnoreIfUnobtainedStartDateOffset.Value, 0); }
+  public static void AddIgnoreIfUnobtainedEndDate(FlatBufferBuilder builder, StringOffset IgnoreIfUnobtainedEndDateOffset) { builder.AddOffset(3, IgnoreIfUnobtainedEndDateOffset.Value, 0); }
+  public static void AddBubbleType(FlatBufferBuilder builder, VectorOffset BubbleTypeOffset) { builder.AddOffset(4, BubbleTypeOffset.Value, 0); }
+  public static VectorOffset CreateBubbleTypeVector(FlatBufferBuilder builder, FlatDataGlobal.BubbleType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateBubbleTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.BubbleType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateBubbleTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.BubbleType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateBubbleTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.BubbleType>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartBubbleTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddBubbleDuration(FlatBufferBuilder builder, VectorOffset BubbleDurationOffset) { builder.AddOffset(5, BubbleDurationOffset.Value, 0); }
   public static VectorOffset CreateBubbleDurationVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateBubbleDurationVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBubbleDurationVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBubbleDurationVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartBubbleDurationVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddFavorEmoticonRewardParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType FavorEmoticonRewardParcelType) { builder.AddInt(4, (int)FavorEmoticonRewardParcelType, 0); }
-  public static void AddFavorEmoticonRewardId(FlatBufferBuilder builder, long FavorEmoticonRewardId) { builder.AddLong(5, FavorEmoticonRewardId, 0); }
-  public static void AddFavorEmoticonRewardAmount(FlatBufferBuilder builder, long FavorEmoticonRewardAmount) { builder.AddLong(6, FavorEmoticonRewardAmount, 0); }
-  public static void AddCafeCharacterState(FlatBufferBuilder builder, VectorOffset CafeCharacterStateOffset) { builder.AddOffset(7, CafeCharacterStateOffset.Value, 0); }
+  public static void AddFavorEmoticonRewardParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType FavorEmoticonRewardParcelType) { builder.AddInt(6, (int)FavorEmoticonRewardParcelType, 0); }
+  public static void AddFavorEmoticonRewardId(FlatBufferBuilder builder, long FavorEmoticonRewardId) { builder.AddLong(7, FavorEmoticonRewardId, 0); }
+  public static void AddFavorEmoticonRewardAmount(FlatBufferBuilder builder, long FavorEmoticonRewardAmount) { builder.AddLong(8, FavorEmoticonRewardAmount, 0); }
+  public static void AddCafeCharacterState(FlatBufferBuilder builder, VectorOffset CafeCharacterStateOffset) { builder.AddOffset(9, CafeCharacterStateOffset.Value, 0); }
   public static VectorOffset CreateCafeCharacterStateVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }

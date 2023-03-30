@@ -19,13 +19,13 @@ public struct PresetParcelsExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public PresetParcelsExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public FlatDataGlobal.ParcelType ParcelType { get { int o = __p.__offset(4); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public FlatDataGlobal.ParcelType Parceltype { get { int o = __p.__offset(4); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
   public long ParcelId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PresetGroupId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ParcelAmount { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.PresetParcelsExcel> CreatePresetParcelsExcel(FlatBufferBuilder builder,
-      FlatDataGlobal.ParcelType ParcelType = FlatDataGlobal.ParcelType.None,
+      FlatDataGlobal.ParcelType parceltype = FlatDataGlobal.ParcelType.None,
       long ParcelId = 0,
       long PresetGroupId = 0,
       long ParcelAmount = 0) {
@@ -33,12 +33,12 @@ public struct PresetParcelsExcel : IFlatbufferObject
     PresetParcelsExcel.AddParcelAmount(builder, ParcelAmount);
     PresetParcelsExcel.AddPresetGroupId(builder, PresetGroupId);
     PresetParcelsExcel.AddParcelId(builder, ParcelId);
-    PresetParcelsExcel.AddParcelType(builder, ParcelType);
+    PresetParcelsExcel.AddParceltype(builder, parceltype);
     return PresetParcelsExcel.EndPresetParcelsExcel(builder);
   }
 
   public static void StartPresetParcelsExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
-  public static void AddParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType ParcelType) { builder.AddInt(0, (int)ParcelType, 0); }
+  public static void AddParceltype(FlatBufferBuilder builder, FlatDataGlobal.ParcelType parceltype) { builder.AddInt(0, (int)parceltype, 0); }
   public static void AddParcelId(FlatBufferBuilder builder, long ParcelId) { builder.AddLong(1, ParcelId, 0); }
   public static void AddPresetGroupId(FlatBufferBuilder builder, long PresetGroupId) { builder.AddLong(2, PresetGroupId, 0); }
   public static void AddParcelAmount(FlatBufferBuilder builder, long ParcelAmount) { builder.AddLong(3, ParcelAmount, 0); }

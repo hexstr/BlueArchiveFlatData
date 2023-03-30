@@ -132,9 +132,10 @@ public struct ConstCombatExcel : IFlatbufferObject
   public long WORLDBOSSBATTLEVERYHIGHNa { get { int o = __p.__offset(164); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long WORLDBOSSBATTLEVERYHIGHGlobal { get { int o = __p.__offset(166); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long WorldRaidAutoSyncTermSecond { get { int o = __p.__offset(168); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WorldRaidBossParcelReactionDelay { get { int o = __p.__offset(170); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RaidRankingJumpMinimumWaitingTime { get { int o = __p.__offset(172); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public float EffectTeleportDistance { get { int o = __p.__offset(174); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public long WorldRaidBossHpDecreaseTerm { get { int o = __p.__offset(170); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WorldRaidBossParcelReactionDelay { get { int o = __p.__offset(172); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RaidRankingJumpMinimumWaitingTime { get { int o = __p.__offset(174); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public float EffectTeleportDistance { get { int o = __p.__offset(176); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
 
   public static Offset<FlatDataGlobal.ConstCombatExcel> CreateConstCombatExcel(FlatBufferBuilder builder,
       int SkillHandCount = 0,
@@ -220,12 +221,14 @@ public struct ConstCombatExcel : IFlatbufferObject
       long WORLDBOSSBATTLEVERYHIGHNa = 0,
       long WORLDBOSSBATTLEVERYHIGHGlobal = 0,
       long WorldRaidAutoSyncTermSecond = 0,
+      long WorldRaidBossHpDecreaseTerm = 0,
       long WorldRaidBossParcelReactionDelay = 0,
       long RaidRankingJumpMinimumWaitingTime = 0,
       float EffectTeleportDistance = 0.0f) {
-    builder.StartTable(86);
+    builder.StartTable(87);
     ConstCombatExcel.AddRaidRankingJumpMinimumWaitingTime(builder, RaidRankingJumpMinimumWaitingTime);
     ConstCombatExcel.AddWorldRaidBossParcelReactionDelay(builder, WorldRaidBossParcelReactionDelay);
+    ConstCombatExcel.AddWorldRaidBossHpDecreaseTerm(builder, WorldRaidBossHpDecreaseTerm);
     ConstCombatExcel.AddWorldRaidAutoSyncTermSecond(builder, WorldRaidAutoSyncTermSecond);
     ConstCombatExcel.AddWORLDBOSSBATTLEVERYHIGHGlobal(builder, WORLDBOSSBATTLEVERYHIGHGlobal);
     ConstCombatExcel.AddWORLDBOSSBATTLEVERYHIGHNa(builder, WORLDBOSSBATTLEVERYHIGHNa);
@@ -313,7 +316,7 @@ public struct ConstCombatExcel : IFlatbufferObject
     return ConstCombatExcel.EndConstCombatExcel(builder);
   }
 
-  public static void StartConstCombatExcel(FlatBufferBuilder builder) { builder.StartTable(86); }
+  public static void StartConstCombatExcel(FlatBufferBuilder builder) { builder.StartTable(87); }
   public static void AddSkillHandCount(FlatBufferBuilder builder, int SkillHandCount) { builder.AddInt(0, SkillHandCount, 0); }
   public static void AddDyingTime(FlatBufferBuilder builder, int DyingTime) { builder.AddInt(1, DyingTime, 0); }
   public static void AddBuffIconBlinkTime(FlatBufferBuilder builder, int BuffIconBlinkTime) { builder.AddInt(2, BuffIconBlinkTime, 0); }
@@ -397,9 +400,10 @@ public struct ConstCombatExcel : IFlatbufferObject
   public static void AddWORLDBOSSBATTLEVERYHIGHNa(FlatBufferBuilder builder, long WORLDBOSSBATTLEVERYHIGHNa) { builder.AddLong(80, WORLDBOSSBATTLEVERYHIGHNa, 0); }
   public static void AddWORLDBOSSBATTLEVERYHIGHGlobal(FlatBufferBuilder builder, long WORLDBOSSBATTLEVERYHIGHGlobal) { builder.AddLong(81, WORLDBOSSBATTLEVERYHIGHGlobal, 0); }
   public static void AddWorldRaidAutoSyncTermSecond(FlatBufferBuilder builder, long WorldRaidAutoSyncTermSecond) { builder.AddLong(82, WorldRaidAutoSyncTermSecond, 0); }
-  public static void AddWorldRaidBossParcelReactionDelay(FlatBufferBuilder builder, long WorldRaidBossParcelReactionDelay) { builder.AddLong(83, WorldRaidBossParcelReactionDelay, 0); }
-  public static void AddRaidRankingJumpMinimumWaitingTime(FlatBufferBuilder builder, long RaidRankingJumpMinimumWaitingTime) { builder.AddLong(84, RaidRankingJumpMinimumWaitingTime, 0); }
-  public static void AddEffectTeleportDistance(FlatBufferBuilder builder, float EffectTeleportDistance) { builder.AddFloat(85, EffectTeleportDistance, 0.0f); }
+  public static void AddWorldRaidBossHpDecreaseTerm(FlatBufferBuilder builder, long WorldRaidBossHpDecreaseTerm) { builder.AddLong(83, WorldRaidBossHpDecreaseTerm, 0); }
+  public static void AddWorldRaidBossParcelReactionDelay(FlatBufferBuilder builder, long WorldRaidBossParcelReactionDelay) { builder.AddLong(84, WorldRaidBossParcelReactionDelay, 0); }
+  public static void AddRaidRankingJumpMinimumWaitingTime(FlatBufferBuilder builder, long RaidRankingJumpMinimumWaitingTime) { builder.AddLong(85, RaidRankingJumpMinimumWaitingTime, 0); }
+  public static void AddEffectTeleportDistance(FlatBufferBuilder builder, float EffectTeleportDistance) { builder.AddFloat(86, EffectTeleportDistance, 0.0f); }
   public static Offset<FlatDataGlobal.ConstCombatExcel> EndConstCombatExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstCombatExcel>(o);

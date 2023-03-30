@@ -47,7 +47,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
 #endif
   public long[] GetBossCharacterIdArray() { return __p.__vector_as_array<long>(18); }
   public long AssistCharacterLimitCount { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.WorldRaidDifficulty WorldRaidDifficulty { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.WorldRaidDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.WorldRaidDifficulty.None; } }
+  public FlatDataGlobal.WorldRaidDifficulty Worldraiddifficulty { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.WorldRaidDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.WorldRaidDifficulty.None; } }
   public bool DifficultyOpenCondition { get { int o = __p.__offset(24); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long RaidEnterAmount { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long BattleDuration { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -89,9 +89,11 @@ public struct WorldRaidStageExcel : IFlatbufferObject
   public long TimeLinePhase { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public uint EnterScenarioKey { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public uint ClearScenarioKey { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public bool IsRaidScenarioBattle { get { int o = __p.__offset(52); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool ShowSkillCard { get { int o = __p.__offset(54); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public uint BossBGInfoKey { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public bool UseFixedEchelon { get { int o = __p.__offset(52); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long FixedEchelonId { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool IsRaidScenarioBattle { get { int o = __p.__offset(56); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool ShowSkillCard { get { int o = __p.__offset(58); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public uint BossBGInfoKey { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
 
   public static Offset<FlatDataGlobal.WorldRaidStageExcel> CreateWorldRaidStageExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -103,7 +105,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
       long RaidCharacterId = 0,
       VectorOffset BossCharacterIdOffset = default(VectorOffset),
       long AssistCharacterLimitCount = 0,
-      FlatDataGlobal.WorldRaidDifficulty WorldRaidDifficulty = FlatDataGlobal.WorldRaidDifficulty.None,
+      FlatDataGlobal.WorldRaidDifficulty worldraiddifficulty = FlatDataGlobal.WorldRaidDifficulty.None,
       bool DifficultyOpenCondition = false,
       long RaidEnterAmount = 0,
       long BattleDuration = 0,
@@ -118,10 +120,13 @@ public struct WorldRaidStageExcel : IFlatbufferObject
       long TimeLinePhase = 0,
       uint EnterScenarioKey = 0,
       uint ClearScenarioKey = 0,
+      bool UseFixedEchelon = false,
+      long FixedEchelonId = 0,
       bool IsRaidScenarioBattle = false,
       bool ShowSkillCard = false,
       uint BossBGInfoKey = 0) {
-    builder.StartTable(27);
+    builder.StartTable(29);
+    WorldRaidStageExcel.AddFixedEchelonId(builder, FixedEchelonId);
     WorldRaidStageExcel.AddTimeLinePhase(builder, TimeLinePhase);
     WorldRaidStageExcel.AddRaidRewardGroupId(builder, RaidRewardGroupId);
     WorldRaidStageExcel.AddRaidBattleEndRewardGroupId(builder, RaidBattleEndRewardGroupId);
@@ -140,19 +145,20 @@ public struct WorldRaidStageExcel : IFlatbufferObject
     WorldRaidStageExcel.AddBattleReadyTimelinePhaseEnd(builder, BattleReadyTimelinePhaseEndOffset);
     WorldRaidStageExcel.AddBattleReadyTimelinePhaseStart(builder, BattleReadyTimelinePhaseStartOffset);
     WorldRaidStageExcel.AddBattleReadyTimelinePath(builder, BattleReadyTimelinePathOffset);
-    WorldRaidStageExcel.AddWorldRaidDifficulty(builder, WorldRaidDifficulty);
+    WorldRaidStageExcel.AddWorldraiddifficulty(builder, worldraiddifficulty);
     WorldRaidStageExcel.AddBossCharacterId(builder, BossCharacterIdOffset);
     WorldRaidStageExcel.AddBGPath(builder, BGPathOffset);
     WorldRaidStageExcel.AddPortraitPath(builder, PortraitPathOffset);
     WorldRaidStageExcel.AddShowSkillCard(builder, ShowSkillCard);
     WorldRaidStageExcel.AddIsRaidScenarioBattle(builder, IsRaidScenarioBattle);
+    WorldRaidStageExcel.AddUseFixedEchelon(builder, UseFixedEchelon);
     WorldRaidStageExcel.AddDifficultyOpenCondition(builder, DifficultyOpenCondition);
     WorldRaidStageExcel.AddUseBossAIPhaseSync(builder, UseBossAIPhaseSync);
     WorldRaidStageExcel.AddUseBossIndex(builder, UseBossIndex);
     return WorldRaidStageExcel.EndWorldRaidStageExcel(builder);
   }
 
-  public static void StartWorldRaidStageExcel(FlatBufferBuilder builder) { builder.StartTable(27); }
+  public static void StartWorldRaidStageExcel(FlatBufferBuilder builder) { builder.StartTable(29); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddUseBossIndex(FlatBufferBuilder builder, bool UseBossIndex) { builder.AddBool(1, UseBossIndex, false); }
   public static void AddUseBossAIPhaseSync(FlatBufferBuilder builder, bool UseBossAIPhaseSync) { builder.AddBool(2, UseBossAIPhaseSync, false); }
@@ -167,7 +173,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
   public static VectorOffset CreateBossCharacterIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartBossCharacterIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
   public static void AddAssistCharacterLimitCount(FlatBufferBuilder builder, long AssistCharacterLimitCount) { builder.AddLong(8, AssistCharacterLimitCount, 0); }
-  public static void AddWorldRaidDifficulty(FlatBufferBuilder builder, FlatDataGlobal.WorldRaidDifficulty WorldRaidDifficulty) { builder.AddInt(9, (int)WorldRaidDifficulty, 0); }
+  public static void AddWorldraiddifficulty(FlatBufferBuilder builder, FlatDataGlobal.WorldRaidDifficulty worldraiddifficulty) { builder.AddInt(9, (int)worldraiddifficulty, 0); }
   public static void AddDifficultyOpenCondition(FlatBufferBuilder builder, bool DifficultyOpenCondition) { builder.AddBool(10, DifficultyOpenCondition, false); }
   public static void AddRaidEnterAmount(FlatBufferBuilder builder, long RaidEnterAmount) { builder.AddLong(11, RaidEnterAmount, 0); }
   public static void AddBattleDuration(FlatBufferBuilder builder, long BattleDuration) { builder.AddLong(12, BattleDuration, 0); }
@@ -197,9 +203,11 @@ public struct WorldRaidStageExcel : IFlatbufferObject
   public static void AddTimeLinePhase(FlatBufferBuilder builder, long TimeLinePhase) { builder.AddLong(21, TimeLinePhase, 0); }
   public static void AddEnterScenarioKey(FlatBufferBuilder builder, uint EnterScenarioKey) { builder.AddUint(22, EnterScenarioKey, 0); }
   public static void AddClearScenarioKey(FlatBufferBuilder builder, uint ClearScenarioKey) { builder.AddUint(23, ClearScenarioKey, 0); }
-  public static void AddIsRaidScenarioBattle(FlatBufferBuilder builder, bool IsRaidScenarioBattle) { builder.AddBool(24, IsRaidScenarioBattle, false); }
-  public static void AddShowSkillCard(FlatBufferBuilder builder, bool ShowSkillCard) { builder.AddBool(25, ShowSkillCard, false); }
-  public static void AddBossBGInfoKey(FlatBufferBuilder builder, uint BossBGInfoKey) { builder.AddUint(26, BossBGInfoKey, 0); }
+  public static void AddUseFixedEchelon(FlatBufferBuilder builder, bool UseFixedEchelon) { builder.AddBool(24, UseFixedEchelon, false); }
+  public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(25, FixedEchelonId, 0); }
+  public static void AddIsRaidScenarioBattle(FlatBufferBuilder builder, bool IsRaidScenarioBattle) { builder.AddBool(26, IsRaidScenarioBattle, false); }
+  public static void AddShowSkillCard(FlatBufferBuilder builder, bool ShowSkillCard) { builder.AddBool(27, ShowSkillCard, false); }
+  public static void AddBossBGInfoKey(FlatBufferBuilder builder, uint BossBGInfoKey) { builder.AddUint(28, BossBGInfoKey, 0); }
   public static Offset<FlatDataGlobal.WorldRaidStageExcel> EndWorldRaidStageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.WorldRaidStageExcel>(o);

@@ -20,26 +20,26 @@ public struct EventContentDiceRaceProbExcel : IFlatbufferObject
   public EventContentDiceRaceProbExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.EventContentDiceRaceResultType EventContentDiceRaceResultType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.EventContentDiceRaceResultType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentDiceRaceResultType.DiceResult1; } }
+  public FlatDataGlobal.EventContentDiceRaceResultType Eventcontentdiceraceresulttype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.EventContentDiceRaceResultType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentDiceRaceResultType.DiceResult1; } }
   public int DiceResult { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int Prob { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.EventContentDiceRaceProbExcel> CreateEventContentDiceRaceProbExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
-      FlatDataGlobal.EventContentDiceRaceResultType EventContentDiceRaceResultType = FlatDataGlobal.EventContentDiceRaceResultType.DiceResult1,
+      FlatDataGlobal.EventContentDiceRaceResultType eventcontentdiceraceresulttype = FlatDataGlobal.EventContentDiceRaceResultType.DiceResult1,
       int DiceResult = 0,
       int Prob = 0) {
     builder.StartTable(4);
     EventContentDiceRaceProbExcel.AddEventContentId(builder, EventContentId);
     EventContentDiceRaceProbExcel.AddProb(builder, Prob);
     EventContentDiceRaceProbExcel.AddDiceResult(builder, DiceResult);
-    EventContentDiceRaceProbExcel.AddEventContentDiceRaceResultType(builder, EventContentDiceRaceResultType);
+    EventContentDiceRaceProbExcel.AddEventcontentdiceraceresulttype(builder, eventcontentdiceraceresulttype);
     return EventContentDiceRaceProbExcel.EndEventContentDiceRaceProbExcel(builder);
   }
 
   public static void StartEventContentDiceRaceProbExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
-  public static void AddEventContentDiceRaceResultType(FlatBufferBuilder builder, FlatDataGlobal.EventContentDiceRaceResultType EventContentDiceRaceResultType) { builder.AddInt(1, (int)EventContentDiceRaceResultType, 0); }
+  public static void AddEventcontentdiceraceresulttype(FlatBufferBuilder builder, FlatDataGlobal.EventContentDiceRaceResultType eventcontentdiceraceresulttype) { builder.AddInt(1, (int)eventcontentdiceraceresulttype, 0); }
   public static void AddDiceResult(FlatBufferBuilder builder, int DiceResult) { builder.AddInt(2, DiceResult, 0); }
   public static void AddProb(FlatBufferBuilder builder, int Prob) { builder.AddInt(3, Prob, 0); }
   public static Offset<FlatDataGlobal.EventContentDiceRaceProbExcel> EndEventContentDiceRaceProbExcel(FlatBufferBuilder builder) {

@@ -20,7 +20,7 @@ public struct ScenarioCharacterNameExcel : IFlatbufferObject
   public ScenarioCharacterNameExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public uint CharacterName { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public FlatDataGlobal.ProductionStep ProductionStep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
+  public FlatDataGlobal.ProductionStep Productionstep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
   public string NameKR { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetNameKRBytes() { return __p.__vector_as_span<byte>(8, 1); }
@@ -109,7 +109,7 @@ public struct ScenarioCharacterNameExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.ScenarioCharacterNameExcel> CreateScenarioCharacterNameExcel(FlatBufferBuilder builder,
       uint CharacterName = 0,
-      FlatDataGlobal.ProductionStep ProductionStep = FlatDataGlobal.ProductionStep.ToDo,
+      FlatDataGlobal.ProductionStep productionstep = FlatDataGlobal.ProductionStep.ToDo,
       StringOffset NameKROffset = default(StringOffset),
       StringOffset NicknameKROffset = default(StringOffset),
       StringOffset NameJPOffset = default(StringOffset),
@@ -137,14 +137,14 @@ public struct ScenarioCharacterNameExcel : IFlatbufferObject
     ScenarioCharacterNameExcel.AddNameJP(builder, NameJPOffset);
     ScenarioCharacterNameExcel.AddNicknameKR(builder, NicknameKROffset);
     ScenarioCharacterNameExcel.AddNameKR(builder, NameKROffset);
-    ScenarioCharacterNameExcel.AddProductionStep(builder, ProductionStep);
+    ScenarioCharacterNameExcel.AddProductionstep(builder, productionstep);
     ScenarioCharacterNameExcel.AddCharacterName(builder, CharacterName);
     return ScenarioCharacterNameExcel.EndScenarioCharacterNameExcel(builder);
   }
 
   public static void StartScenarioCharacterNameExcel(FlatBufferBuilder builder) { builder.StartTable(15); }
   public static void AddCharacterName(FlatBufferBuilder builder, uint CharacterName) { builder.AddUint(0, CharacterName, 0); }
-  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep ProductionStep) { builder.AddInt(1, (int)ProductionStep, 0); }
+  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionstep) { builder.AddInt(1, (int)productionstep, 0); }
   public static void AddNameKR(FlatBufferBuilder builder, StringOffset NameKROffset) { builder.AddOffset(2, NameKROffset.Value, 0); }
   public static void AddNicknameKR(FlatBufferBuilder builder, StringOffset NicknameKROffset) { builder.AddOffset(3, NicknameKROffset.Value, 0); }
   public static void AddNameJP(FlatBufferBuilder builder, StringOffset NameJPOffset) { builder.AddOffset(4, NameJPOffset.Value, 0); }

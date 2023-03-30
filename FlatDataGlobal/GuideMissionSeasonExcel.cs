@@ -99,6 +99,7 @@ public struct GuideMissionSeasonExcel : IFlatbufferObject
   public FlatDataGlobal.ParcelType RequirementParcelType { get { int o = __p.__offset(38); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
   public long RequirementParcelId { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int RequirementParcelAmount { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.GuideMissionTabType TabType { get { int o = __p.__offset(44); return o != 0 ? (FlatDataGlobal.GuideMissionTabType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.GuideMissionTabType.None; } }
 
   public static Offset<FlatDataGlobal.GuideMissionSeasonExcel> CreateGuideMissionSeasonExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -120,13 +121,15 @@ public struct GuideMissionSeasonExcel : IFlatbufferObject
       StringOffset TitleImageOffset = default(StringOffset),
       FlatDataGlobal.ParcelType RequirementParcelType = FlatDataGlobal.ParcelType.None,
       long RequirementParcelId = 0,
-      int RequirementParcelAmount = 0) {
-    builder.StartTable(20);
+      int RequirementParcelAmount = 0,
+      FlatDataGlobal.GuideMissionTabType TabType = FlatDataGlobal.GuideMissionTabType.None) {
+    builder.StartTable(21);
     GuideMissionSeasonExcel.AddRequirementParcelId(builder, RequirementParcelId);
     GuideMissionSeasonExcel.AddSpineCharacterId(builder, SpineCharacterId);
     GuideMissionSeasonExcel.AddExpiryDate(builder, ExpiryDate);
     GuideMissionSeasonExcel.AddMaximumLoginCount(builder, MaximumLoginCount);
     GuideMissionSeasonExcel.AddId(builder, Id);
+    GuideMissionSeasonExcel.AddTabType(builder, TabType);
     GuideMissionSeasonExcel.AddRequirementParcelAmount(builder, RequirementParcelAmount);
     GuideMissionSeasonExcel.AddRequirementParcelType(builder, RequirementParcelType);
     GuideMissionSeasonExcel.AddTitleImage(builder, TitleImageOffset);
@@ -145,7 +148,7 @@ public struct GuideMissionSeasonExcel : IFlatbufferObject
     return GuideMissionSeasonExcel.EndGuideMissionSeasonExcel(builder);
   }
 
-  public static void StartGuideMissionSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(20); }
+  public static void StartGuideMissionSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(21); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddTitleLocalizeCode(FlatBufferBuilder builder, StringOffset TitleLocalizeCodeOffset) { builder.AddOffset(1, TitleLocalizeCodeOffset.Value, 0); }
   public static void AddInfomationLocalizeCode(FlatBufferBuilder builder, StringOffset InfomationLocalizeCodeOffset) { builder.AddOffset(2, InfomationLocalizeCodeOffset.Value, 0); }
@@ -166,6 +169,7 @@ public struct GuideMissionSeasonExcel : IFlatbufferObject
   public static void AddRequirementParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType RequirementParcelType) { builder.AddInt(17, (int)RequirementParcelType, 0); }
   public static void AddRequirementParcelId(FlatBufferBuilder builder, long RequirementParcelId) { builder.AddLong(18, RequirementParcelId, 0); }
   public static void AddRequirementParcelAmount(FlatBufferBuilder builder, int RequirementParcelAmount) { builder.AddInt(19, RequirementParcelAmount, 0); }
+  public static void AddTabType(FlatBufferBuilder builder, FlatDataGlobal.GuideMissionTabType TabType) { builder.AddInt(20, (int)TabType, 0); }
   public static Offset<FlatDataGlobal.GuideMissionSeasonExcel> EndGuideMissionSeasonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.GuideMissionSeasonExcel>(o);

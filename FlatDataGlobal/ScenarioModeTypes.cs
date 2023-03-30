@@ -11,6 +11,7 @@ public enum ScenarioModeTypes : int
   Main = 1,
   Sub = 2,
   Replay = 3,
+  Mini = 4,
 };
 
 

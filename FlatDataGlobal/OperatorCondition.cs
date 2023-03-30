@@ -27,6 +27,10 @@ public enum OperatorCondition : int
   TimeAttackDungeonStart = 17,
   TimeAttackDungeonVictory = 18,
   TimeAttackDungeonDefeat = 19,
+  WorldRaidBossSpawn = 20,
+  WorldRaidBossKill = 21,
+  WorldRaidBossDamaged = 22,
+  WorldRaidScenarioBattle = 23,
 };
 
 

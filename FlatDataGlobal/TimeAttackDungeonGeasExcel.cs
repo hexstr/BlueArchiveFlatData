@@ -20,7 +20,7 @@ public struct TimeAttackDungeonGeasExcel : IFlatbufferObject
   public TimeAttackDungeonGeasExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.TimeAttackDungeonType TimeAttackDungeonType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.TimeAttackDungeonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TimeAttackDungeonType.None; } }
+  public FlatDataGlobal.TimeAttackDungeonType Timeattackdungeontype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.TimeAttackDungeonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TimeAttackDungeonType.None; } }
   public uint LocalizeEtcKey { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public long BattleDuration { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ClearDefaultPoint { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -62,7 +62,7 @@ public struct TimeAttackDungeonGeasExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.TimeAttackDungeonGeasExcel> CreateTimeAttackDungeonGeasExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataGlobal.TimeAttackDungeonType TimeAttackDungeonType = FlatDataGlobal.TimeAttackDungeonType.None,
+      FlatDataGlobal.TimeAttackDungeonType timeattackdungeontype = FlatDataGlobal.TimeAttackDungeonType.None,
       uint LocalizeEtcKey = 0,
       long BattleDuration = 0,
       long ClearDefaultPoint = 0,
@@ -93,13 +93,13 @@ public struct TimeAttackDungeonGeasExcel : IFlatbufferObject
     TimeAttackDungeonGeasExcel.AddRecommandLevel(builder, RecommandLevel);
     TimeAttackDungeonGeasExcel.AddDifficulty(builder, Difficulty);
     TimeAttackDungeonGeasExcel.AddLocalizeEtcKey(builder, LocalizeEtcKey);
-    TimeAttackDungeonGeasExcel.AddTimeAttackDungeonType(builder, TimeAttackDungeonType);
+    TimeAttackDungeonGeasExcel.AddTimeattackdungeontype(builder, timeattackdungeontype);
     return TimeAttackDungeonGeasExcel.EndTimeAttackDungeonGeasExcel(builder);
   }
 
   public static void StartTimeAttackDungeonGeasExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddTimeAttackDungeonType(FlatBufferBuilder builder, FlatDataGlobal.TimeAttackDungeonType TimeAttackDungeonType) { builder.AddInt(1, (int)TimeAttackDungeonType, 0); }
+  public static void AddTimeattackdungeontype(FlatBufferBuilder builder, FlatDataGlobal.TimeAttackDungeonType timeattackdungeontype) { builder.AddInt(1, (int)timeattackdungeontype, 0); }
   public static void AddLocalizeEtcKey(FlatBufferBuilder builder, uint LocalizeEtcKey) { builder.AddUint(2, LocalizeEtcKey, 0); }
   public static void AddBattleDuration(FlatBufferBuilder builder, long BattleDuration) { builder.AddLong(3, BattleDuration, 0); }
   public static void AddClearDefaultPoint(FlatBufferBuilder builder, long ClearDefaultPoint) { builder.AddLong(4, ClearDefaultPoint, 0); }

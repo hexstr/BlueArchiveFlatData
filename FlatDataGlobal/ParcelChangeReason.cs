@@ -143,6 +143,14 @@ public enum ParcelChangeReason : int
   Item_SelectRecruit = 133,
   Adventure_EnterExtraStage = 134,
   Adventure_ExtraStageBattleResult = 135,
+  Scenario_EnterMainStage = 136,
+  Scenario_MainStageResult = 137,
+  Scenario_RetreatMainStage = 138,
+  EventContent_DiceRaceRollReward = 139,
+  EventContent_DiceRaceLapReward = 140,
+  ShiftingCraft_BeginProcess = 141,
+  ShiftingCraft_CompleteProcess = 142,
+  ShiftingCraft_Reward = 143,
 };
 
 

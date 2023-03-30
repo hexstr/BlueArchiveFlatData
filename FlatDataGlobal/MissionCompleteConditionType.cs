@@ -128,6 +128,8 @@ public enum MissionCompleteConditionType : int
   UpgradeConquestBaseTileCount = 118,
   KillConquestBoss = 119,
   ClearEventConquestTileTimeLimitFromSecond = 120,
+  DiceRaceUseDiceCount = 121,
+  DiceRaceFinishLapCount = 122,
 };
 
 

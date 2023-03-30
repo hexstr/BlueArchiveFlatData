@@ -20,16 +20,16 @@ public struct RecipeExcel : IFlatbufferObject
   public RecipeExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.RecipeType RecipeType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RecipeType.None; } }
+  public FlatDataGlobal.RecipeType Recipetype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RecipeType.None; } }
   public long RecipeIngredientId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ParcelType ParcelType_(int j) { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
-  public int ParcelType_Length { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.ParcelType ParcelType(int j) { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
+  public int ParcelTypeLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.ParcelType> GetParcelType_Bytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(10, 4); }
+  public Span<FlatDataGlobal.ParcelType> GetParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(10, 4); }
 #else
-  public ArraySegment<byte>? GetParcelType_Bytes() { return __p.__vector_as_arraysegment(10); }
+  public ArraySegment<byte>? GetParcelTypeBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
-  public FlatDataGlobal.ParcelType[] GetParcelType_Array() { int o = __p.__offset(10); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
+  public FlatDataGlobal.ParcelType[] GetParcelTypeArray() { int o = __p.__offset(10); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
   public long ParcelId(int j) { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
   public int ParcelIdLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -57,9 +57,9 @@ public struct RecipeExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.RecipeExcel> CreateRecipeExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataGlobal.RecipeType RecipeType = FlatDataGlobal.RecipeType.None,
+      FlatDataGlobal.RecipeType recipetype = FlatDataGlobal.RecipeType.None,
       long RecipeIngredientId = 0,
-      VectorOffset ParcelType_Offset = default(VectorOffset),
+      VectorOffset ParcelTypeOffset = default(VectorOffset),
       VectorOffset ParcelIdOffset = default(VectorOffset),
       VectorOffset ResultAmountMinOffset = default(VectorOffset),
       VectorOffset ResultAmountMaxOffset = default(VectorOffset)) {
@@ -69,21 +69,21 @@ public struct RecipeExcel : IFlatbufferObject
     RecipeExcel.AddResultAmountMax(builder, ResultAmountMaxOffset);
     RecipeExcel.AddResultAmountMin(builder, ResultAmountMinOffset);
     RecipeExcel.AddParcelId(builder, ParcelIdOffset);
-    RecipeExcel.AddParcelType_(builder, ParcelType_Offset);
-    RecipeExcel.AddRecipeType(builder, RecipeType);
+    RecipeExcel.AddParcelType(builder, ParcelTypeOffset);
+    RecipeExcel.AddRecipetype(builder, recipetype);
     return RecipeExcel.EndRecipeExcel(builder);
   }
 
   public static void StartRecipeExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddRecipeType(FlatBufferBuilder builder, FlatDataGlobal.RecipeType RecipeType) { builder.AddInt(1, (int)RecipeType, 0); }
+  public static void AddRecipetype(FlatBufferBuilder builder, FlatDataGlobal.RecipeType recipetype) { builder.AddInt(1, (int)recipetype, 0); }
   public static void AddRecipeIngredientId(FlatBufferBuilder builder, long RecipeIngredientId) { builder.AddLong(2, RecipeIngredientId, 0); }
-  public static void AddParcelType_(FlatBufferBuilder builder, VectorOffset ParcelType_Offset) { builder.AddOffset(3, ParcelType_Offset.Value, 0); }
-  public static VectorOffset CreateParcelType_Vector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateParcelType_VectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateParcelType_VectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ParcelType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateParcelType_VectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ParcelType>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartParcelType_Vector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddParcelType(FlatBufferBuilder builder, VectorOffset ParcelTypeOffset) { builder.AddOffset(3, ParcelTypeOffset.Value, 0); }
+  public static VectorOffset CreateParcelTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateParcelTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateParcelTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ParcelType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateParcelTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ParcelType>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartParcelTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddParcelId(FlatBufferBuilder builder, VectorOffset ParcelIdOffset) { builder.AddOffset(4, ParcelIdOffset.Value, 0); }
   public static VectorOffset CreateParcelIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateParcelIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
