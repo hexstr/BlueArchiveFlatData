@@ -13,6 +13,7 @@ public enum BulletType : int
   Siege = 3,
   Mystic = 4,
   None = 5,
+  Sonic = 6,
 };
 
 

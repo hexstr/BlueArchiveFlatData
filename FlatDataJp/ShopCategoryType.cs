@@ -34,6 +34,11 @@ public enum ShopCategoryType : int
   FesGacha = 24,
   TimeAttack = 25,
   Chaser = 26,
+  ChaserTicket = 27,
+  SchoolDungeonTicket = 28,
+  AcademyTicket = 29,
+  Special = 30,
+  Care = 31,
 };
 
 

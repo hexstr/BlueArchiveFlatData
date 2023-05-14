@@ -20,14 +20,14 @@ public struct ConquestGroupBonusExcel : IFlatbufferObject
   public ConquestGroupBonusExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long ConquestBonusId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.School School_(int j) { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.School)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.School)0; }
-  public int School_Length { get { int o = __p.__offset(6); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataJp.School School(int j) { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.School)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.School)0; }
+  public int SchoolLength { get { int o = __p.__offset(6); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataJp.School> GetSchool_Bytes() { return __p.__vector_as_span<FlatDataJp.School>(6, 4); }
+  public Span<FlatDataJp.School> GetSchoolBytes() { return __p.__vector_as_span<FlatDataJp.School>(6, 4); }
 #else
-  public ArraySegment<byte>? GetSchool_Bytes() { return __p.__vector_as_arraysegment(6); }
+  public ArraySegment<byte>? GetSchoolBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
-  public FlatDataJp.School[] GetSchool_Array() { int o = __p.__offset(6); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.School[] a = new FlatDataJp.School[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.School)__p.bb.GetInt(p + i * 4); } return a; }
+  public FlatDataJp.School[] GetSchoolArray() { int o = __p.__offset(6); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.School[] a = new FlatDataJp.School[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.School)__p.bb.GetInt(p + i * 4); } return a; }
   public uint RecommandLocalizeEtcId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public FlatDataJp.EventContentItemType ConquestItemType(int j) { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.EventContentItemType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.EventContentItemType)0; }
   public int ConquestItemTypeLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
@@ -88,7 +88,7 @@ public struct ConquestGroupBonusExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.ConquestGroupBonusExcel> CreateConquestGroupBonusExcel(FlatBufferBuilder builder,
       long ConquestBonusId = 0,
-      VectorOffset School_Offset = default(VectorOffset),
+      VectorOffset SchoolOffset = default(VectorOffset),
       uint RecommandLocalizeEtcId = 0,
       VectorOffset ConquestItemTypeOffset = default(VectorOffset),
       VectorOffset BonusCharacterCount1Offset = default(VectorOffset),
@@ -107,18 +107,18 @@ public struct ConquestGroupBonusExcel : IFlatbufferObject
     ConquestGroupBonusExcel.AddBonusCharacterCount1(builder, BonusCharacterCount1Offset);
     ConquestGroupBonusExcel.AddConquestItemType(builder, ConquestItemTypeOffset);
     ConquestGroupBonusExcel.AddRecommandLocalizeEtcId(builder, RecommandLocalizeEtcId);
-    ConquestGroupBonusExcel.AddSchool_(builder, School_Offset);
+    ConquestGroupBonusExcel.AddSchool(builder, SchoolOffset);
     return ConquestGroupBonusExcel.EndConquestGroupBonusExcel(builder);
   }
 
   public static void StartConquestGroupBonusExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
   public static void AddConquestBonusId(FlatBufferBuilder builder, long ConquestBonusId) { builder.AddLong(0, ConquestBonusId, 0); }
-  public static void AddSchool_(FlatBufferBuilder builder, VectorOffset School_Offset) { builder.AddOffset(1, School_Offset.Value, 0); }
-  public static VectorOffset CreateSchool_Vector(FlatBufferBuilder builder, FlatDataJp.School[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateSchool_VectorBlock(FlatBufferBuilder builder, FlatDataJp.School[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSchool_VectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.School> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSchool_VectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.School>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartSchool_Vector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddSchool(FlatBufferBuilder builder, VectorOffset SchoolOffset) { builder.AddOffset(1, SchoolOffset.Value, 0); }
+  public static VectorOffset CreateSchoolVector(FlatBufferBuilder builder, FlatDataJp.School[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateSchoolVectorBlock(FlatBufferBuilder builder, FlatDataJp.School[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSchoolVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.School> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSchoolVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.School>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSchoolVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddRecommandLocalizeEtcId(FlatBufferBuilder builder, uint RecommandLocalizeEtcId) { builder.AddUint(2, RecommandLocalizeEtcId, 0); }
   public static void AddConquestItemType(FlatBufferBuilder builder, VectorOffset ConquestItemTypeOffset) { builder.AddOffset(3, ConquestItemTypeOffset.Value, 0); }
   public static VectorOffset CreateConquestItemTypeVector(FlatBufferBuilder builder, FlatDataJp.EventContentItemType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }

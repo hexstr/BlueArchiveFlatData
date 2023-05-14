@@ -20,7 +20,7 @@ public struct FurnitureExcel : IFlatbufferObject
   public FurnitureExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ProductionStep ProductionStep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
+  public FlatDataJp.ProductionStep Productionstep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
   public FlatDataJp.Rarity Rarity { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.Rarity.N; } }
   public FlatDataJp.FurnitureCategory Category { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.FurnitureCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.FurnitureCategory.Furnitures; } }
   public FlatDataJp.FurnitureSubCategory SubCategory { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.FurnitureSubCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.FurnitureSubCategory.Table; } }
@@ -91,7 +91,7 @@ public struct FurnitureExcel : IFlatbufferObject
   public FlatDataJp.Tag[] GetTagsArray() { int o = __p.__offset(56); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.Tag[] a = new FlatDataJp.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.Tag)__p.bb.GetInt(p + i * 4); } return a; }
   public long CraftQuality { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ShiftingCraftQuality { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.FurnitureFunctionType FurnitureFunctionType { get { int o = __p.__offset(62); return o != 0 ? (FlatDataJp.FurnitureFunctionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.FurnitureFunctionType.None; } }
+  public FlatDataJp.FurnitureFunctionType Furniturefunctiontype { get { int o = __p.__offset(62); return o != 0 ? (FlatDataJp.FurnitureFunctionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.FurnitureFunctionType.None; } }
   public string FunctionParameter(int j) { int o = __p.__offset(64); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
   public int FunctionParameterLength { get { int o = __p.__offset(64); return o != 0 ? __p.__vector_len(o) : 0; } }
   public long EventCollectionId { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -108,8 +108,8 @@ public struct FurnitureExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.FurnitureExcel> CreateFurnitureExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataJp.ProductionStep ProductionStep = FlatDataJp.ProductionStep.ToDo,
-      FlatDataJp.Rarity Rarity = FlatDataJp.Rarity.N,
+      FlatDataJp.ProductionStep productionstep = FlatDataJp.ProductionStep.ToDo,
+      FlatDataJp.Rarity rarity = FlatDataJp.Rarity.N,
       FlatDataJp.FurnitureCategory Category = FlatDataJp.FurnitureCategory.Furnitures,
       FlatDataJp.FurnitureSubCategory SubCategory = FlatDataJp.FurnitureSubCategory.Table,
       uint LocalizeEtcId = 0,
@@ -136,7 +136,7 @@ public struct FurnitureExcel : IFlatbufferObject
       VectorOffset TagsOffset = default(VectorOffset),
       long CraftQuality = 0,
       long ShiftingCraftQuality = 0,
-      FlatDataJp.FurnitureFunctionType FurnitureFunctionType = FlatDataJp.FurnitureFunctionType.None,
+      FlatDataJp.FurnitureFunctionType furniturefunctiontype = FlatDataJp.FurnitureFunctionType.None,
       VectorOffset FunctionParameterOffset = default(VectorOffset),
       long EventCollectionId = 0,
       long FurnitureBubbleOffsetX = 0,
@@ -164,7 +164,7 @@ public struct FurnitureExcel : IFlatbufferObject
     FurnitureExcel.AddCafeCharacterStateAdd(builder, CafeCharacterStateAddOffset);
     FurnitureExcel.AddCafeCharacterStateReq(builder, CafeCharacterStateReqOffset);
     FurnitureExcel.AddFunctionParameter(builder, FunctionParameterOffset);
-    FurnitureExcel.AddFurnitureFunctionType(builder, FurnitureFunctionType);
+    FurnitureExcel.AddFurniturefunctiontype(builder, furniturefunctiontype);
     FurnitureExcel.AddTags(builder, TagsOffset);
     FurnitureExcel.AddCornerPrefab(builder, CornerPrefabOffset);
     FurnitureExcel.AddSubExpandPrefab(builder, SubExpandPrefabOffset);
@@ -180,8 +180,8 @@ public struct FurnitureExcel : IFlatbufferObject
     FurnitureExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
     FurnitureExcel.AddSubCategory(builder, SubCategory);
     FurnitureExcel.AddCategory(builder, Category);
-    FurnitureExcel.AddRarity(builder, Rarity);
-    FurnitureExcel.AddProductionStep(builder, ProductionStep);
+    FurnitureExcel.AddRarity(builder, rarity);
+    FurnitureExcel.AddProductionstep(builder, productionstep);
     FurnitureExcel.AddReverseRotation(builder, ReverseRotation);
     FurnitureExcel.AddEnable(builder, Enable);
     return FurnitureExcel.EndFurnitureExcel(builder);
@@ -189,8 +189,8 @@ public struct FurnitureExcel : IFlatbufferObject
 
   public static void StartFurnitureExcel(FlatBufferBuilder builder) { builder.StartTable(38); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataJp.ProductionStep ProductionStep) { builder.AddInt(1, (int)ProductionStep, 0); }
-  public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity Rarity) { builder.AddInt(2, (int)Rarity, 0); }
+  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataJp.ProductionStep productionstep) { builder.AddInt(1, (int)productionstep, 0); }
+  public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity rarity) { builder.AddInt(2, (int)rarity, 0); }
   public static void AddCategory(FlatBufferBuilder builder, FlatDataJp.FurnitureCategory Category) { builder.AddInt(3, (int)Category, 0); }
   public static void AddSubCategory(FlatBufferBuilder builder, FlatDataJp.FurnitureSubCategory SubCategory) { builder.AddInt(4, (int)SubCategory, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(5, LocalizeEtcId, 0); }
@@ -222,7 +222,7 @@ public struct FurnitureExcel : IFlatbufferObject
   public static void StartTagsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddCraftQuality(FlatBufferBuilder builder, long CraftQuality) { builder.AddLong(27, CraftQuality, 0); }
   public static void AddShiftingCraftQuality(FlatBufferBuilder builder, long ShiftingCraftQuality) { builder.AddLong(28, ShiftingCraftQuality, 0); }
-  public static void AddFurnitureFunctionType(FlatBufferBuilder builder, FlatDataJp.FurnitureFunctionType FurnitureFunctionType) { builder.AddInt(29, (int)FurnitureFunctionType, 0); }
+  public static void AddFurniturefunctiontype(FlatBufferBuilder builder, FlatDataJp.FurnitureFunctionType furniturefunctiontype) { builder.AddInt(29, (int)furniturefunctiontype, 0); }
   public static void AddFunctionParameter(FlatBufferBuilder builder, VectorOffset FunctionParameterOffset) { builder.AddOffset(30, FunctionParameterOffset.Value, 0); }
   public static VectorOffset CreateFunctionParameterVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateFunctionParameterVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }

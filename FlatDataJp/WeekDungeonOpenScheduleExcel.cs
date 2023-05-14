@@ -19,7 +19,7 @@ public struct WeekDungeonOpenScheduleExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public WeekDungeonOpenScheduleExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public FlatDataJp.WeekDay WeekDay { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.WeekDay)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.WeekDay.Sunday; } }
+  public FlatDataJp.WeekDay Weekday { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.WeekDay)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.WeekDay.Sunday; } }
   public FlatDataJp.WeekDungeonType Open(int j) { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.WeekDungeonType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.WeekDungeonType)0; }
   public int OpenLength { get { int o = __p.__offset(6); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -30,16 +30,16 @@ public struct WeekDungeonOpenScheduleExcel : IFlatbufferObject
   public FlatDataJp.WeekDungeonType[] GetOpenArray() { int o = __p.__offset(6); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.WeekDungeonType[] a = new FlatDataJp.WeekDungeonType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.WeekDungeonType)__p.bb.GetInt(p + i * 4); } return a; }
 
   public static Offset<FlatDataJp.WeekDungeonOpenScheduleExcel> CreateWeekDungeonOpenScheduleExcel(FlatBufferBuilder builder,
-      FlatDataJp.WeekDay WeekDay = FlatDataJp.WeekDay.Sunday,
+      FlatDataJp.WeekDay weekday = FlatDataJp.WeekDay.Sunday,
       VectorOffset OpenOffset = default(VectorOffset)) {
     builder.StartTable(2);
     WeekDungeonOpenScheduleExcel.AddOpen(builder, OpenOffset);
-    WeekDungeonOpenScheduleExcel.AddWeekDay(builder, WeekDay);
+    WeekDungeonOpenScheduleExcel.AddWeekday(builder, weekday);
     return WeekDungeonOpenScheduleExcel.EndWeekDungeonOpenScheduleExcel(builder);
   }
 
   public static void StartWeekDungeonOpenScheduleExcel(FlatBufferBuilder builder) { builder.StartTable(2); }
-  public static void AddWeekDay(FlatBufferBuilder builder, FlatDataJp.WeekDay WeekDay) { builder.AddInt(0, (int)WeekDay, 0); }
+  public static void AddWeekday(FlatBufferBuilder builder, FlatDataJp.WeekDay weekday) { builder.AddInt(0, (int)weekday, 0); }
   public static void AddOpen(FlatBufferBuilder builder, VectorOffset OpenOffset) { builder.AddOffset(1, OpenOffset.Value, 0); }
   public static VectorOffset CreateOpenVector(FlatBufferBuilder builder, FlatDataJp.WeekDungeonType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateOpenVectorBlock(FlatBufferBuilder builder, FlatDataJp.WeekDungeonType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }

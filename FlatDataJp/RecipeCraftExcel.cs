@@ -27,7 +27,7 @@ public struct RecipeCraftExcel : IFlatbufferObject
   public ArraySegment<byte>? GetDevNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetDevNameArray() { return __p.__vector_as_array<byte>(6); }
-  public FlatDataJp.RecipeType RecipeType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.RecipeType.None; } }
+  public FlatDataJp.RecipeType Recipetype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.RecipeType.None; } }
   public long RecipeIngredientId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string RecipeIngredientDevName { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -36,14 +36,14 @@ public struct RecipeCraftExcel : IFlatbufferObject
   public ArraySegment<byte>? GetRecipeIngredientDevNameBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
   public byte[] GetRecipeIngredientDevNameArray() { return __p.__vector_as_array<byte>(12); }
-  public FlatDataJp.ParcelType ParcelType_(int j) { int o = __p.__offset(14); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.ParcelType)0; }
-  public int ParcelType_Length { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataJp.ParcelType ParcelType(int j) { int o = __p.__offset(14); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.ParcelType)0; }
+  public int ParcelTypeLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataJp.ParcelType> GetParcelType_Bytes() { return __p.__vector_as_span<FlatDataJp.ParcelType>(14, 4); }
+  public Span<FlatDataJp.ParcelType> GetParcelTypeBytes() { return __p.__vector_as_span<FlatDataJp.ParcelType>(14, 4); }
 #else
-  public ArraySegment<byte>? GetParcelType_Bytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetParcelTypeBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
-  public FlatDataJp.ParcelType[] GetParcelType_Array() { int o = __p.__offset(14); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.ParcelType[] a = new FlatDataJp.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
+  public FlatDataJp.ParcelType[] GetParcelTypeArray() { int o = __p.__offset(14); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.ParcelType[] a = new FlatDataJp.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
   public long ParcelId(int j) { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
   public int ParcelIdLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -74,10 +74,10 @@ public struct RecipeCraftExcel : IFlatbufferObject
   public static Offset<FlatDataJp.RecipeCraftExcel> CreateRecipeCraftExcel(FlatBufferBuilder builder,
       long Id = 0,
       StringOffset DevNameOffset = default(StringOffset),
-      FlatDataJp.RecipeType RecipeType = FlatDataJp.RecipeType.None,
+      FlatDataJp.RecipeType recipetype = FlatDataJp.RecipeType.None,
       long RecipeIngredientId = 0,
       StringOffset RecipeIngredientDevNameOffset = default(StringOffset),
-      VectorOffset ParcelType_Offset = default(VectorOffset),
+      VectorOffset ParcelTypeOffset = default(VectorOffset),
       VectorOffset ParcelIdOffset = default(VectorOffset),
       VectorOffset ParcelDevNameOffset = default(VectorOffset),
       VectorOffset ResultAmountMinOffset = default(VectorOffset),
@@ -89,9 +89,9 @@ public struct RecipeCraftExcel : IFlatbufferObject
     RecipeCraftExcel.AddResultAmountMin(builder, ResultAmountMinOffset);
     RecipeCraftExcel.AddParcelDevName(builder, ParcelDevNameOffset);
     RecipeCraftExcel.AddParcelId(builder, ParcelIdOffset);
-    RecipeCraftExcel.AddParcelType_(builder, ParcelType_Offset);
+    RecipeCraftExcel.AddParcelType(builder, ParcelTypeOffset);
     RecipeCraftExcel.AddRecipeIngredientDevName(builder, RecipeIngredientDevNameOffset);
-    RecipeCraftExcel.AddRecipeType(builder, RecipeType);
+    RecipeCraftExcel.AddRecipetype(builder, recipetype);
     RecipeCraftExcel.AddDevName(builder, DevNameOffset);
     return RecipeCraftExcel.EndRecipeCraftExcel(builder);
   }
@@ -99,15 +99,15 @@ public struct RecipeCraftExcel : IFlatbufferObject
   public static void StartRecipeCraftExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddDevName(FlatBufferBuilder builder, StringOffset DevNameOffset) { builder.AddOffset(1, DevNameOffset.Value, 0); }
-  public static void AddRecipeType(FlatBufferBuilder builder, FlatDataJp.RecipeType RecipeType) { builder.AddInt(2, (int)RecipeType, 0); }
+  public static void AddRecipetype(FlatBufferBuilder builder, FlatDataJp.RecipeType recipetype) { builder.AddInt(2, (int)recipetype, 0); }
   public static void AddRecipeIngredientId(FlatBufferBuilder builder, long RecipeIngredientId) { builder.AddLong(3, RecipeIngredientId, 0); }
   public static void AddRecipeIngredientDevName(FlatBufferBuilder builder, StringOffset RecipeIngredientDevNameOffset) { builder.AddOffset(4, RecipeIngredientDevNameOffset.Value, 0); }
-  public static void AddParcelType_(FlatBufferBuilder builder, VectorOffset ParcelType_Offset) { builder.AddOffset(5, ParcelType_Offset.Value, 0); }
-  public static VectorOffset CreateParcelType_Vector(FlatBufferBuilder builder, FlatDataJp.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateParcelType_VectorBlock(FlatBufferBuilder builder, FlatDataJp.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateParcelType_VectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.ParcelType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateParcelType_VectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.ParcelType>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartParcelType_Vector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddParcelType(FlatBufferBuilder builder, VectorOffset ParcelTypeOffset) { builder.AddOffset(5, ParcelTypeOffset.Value, 0); }
+  public static VectorOffset CreateParcelTypeVector(FlatBufferBuilder builder, FlatDataJp.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateParcelTypeVectorBlock(FlatBufferBuilder builder, FlatDataJp.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateParcelTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.ParcelType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateParcelTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.ParcelType>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartParcelTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddParcelId(FlatBufferBuilder builder, VectorOffset ParcelIdOffset) { builder.AddOffset(6, ParcelIdOffset.Value, 0); }
   public static VectorOffset CreateParcelIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateParcelIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }

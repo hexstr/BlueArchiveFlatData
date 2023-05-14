@@ -35,7 +35,7 @@ public struct SkillExcel : IFlatbufferObject
   public int ExtraEnemySkillCost { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int NPCSkillCost { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int ExtraNPCSkillCost { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.BulletType BulletType { get { int o = __p.__offset(24); return o != 0 ? (FlatDataJp.BulletType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.BulletType.Normal; } }
+  public FlatDataJp.BulletType Bullettype { get { int o = __p.__offset(24); return o != 0 ? (FlatDataJp.BulletType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.BulletType.Normal; } }
   public int StartCoolTime { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int CoolTime { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int EnemyStartCoolTime { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
@@ -66,7 +66,7 @@ public struct SkillExcel : IFlatbufferObject
       int ExtraEnemySkillCost = 0,
       int NPCSkillCost = 0,
       int ExtraNPCSkillCost = 0,
-      FlatDataJp.BulletType BulletType = FlatDataJp.BulletType.Normal,
+      FlatDataJp.BulletType bullettype = FlatDataJp.BulletType.Normal,
       int StartCoolTime = 0,
       int CoolTime = 0,
       int EnemyStartCoolTime = 0,
@@ -91,7 +91,7 @@ public struct SkillExcel : IFlatbufferObject
     SkillExcel.AddEnemyStartCoolTime(builder, EnemyStartCoolTime);
     SkillExcel.AddCoolTime(builder, CoolTime);
     SkillExcel.AddStartCoolTime(builder, StartCoolTime);
-    SkillExcel.AddBulletType(builder, BulletType);
+    SkillExcel.AddBullettype(builder, bullettype);
     SkillExcel.AddExtraNPCSkillCost(builder, ExtraNPCSkillCost);
     SkillExcel.AddNPCSkillCost(builder, NPCSkillCost);
     SkillExcel.AddExtraEnemySkillCost(builder, ExtraEnemySkillCost);
@@ -117,7 +117,7 @@ public struct SkillExcel : IFlatbufferObject
   public static void AddExtraEnemySkillCost(FlatBufferBuilder builder, int ExtraEnemySkillCost) { builder.AddInt(7, ExtraEnemySkillCost, 0); }
   public static void AddNPCSkillCost(FlatBufferBuilder builder, int NPCSkillCost) { builder.AddInt(8, NPCSkillCost, 0); }
   public static void AddExtraNPCSkillCost(FlatBufferBuilder builder, int ExtraNPCSkillCost) { builder.AddInt(9, ExtraNPCSkillCost, 0); }
-  public static void AddBulletType(FlatBufferBuilder builder, FlatDataJp.BulletType BulletType) { builder.AddInt(10, (int)BulletType, 0); }
+  public static void AddBullettype(FlatBufferBuilder builder, FlatDataJp.BulletType bullettype) { builder.AddInt(10, (int)bullettype, 0); }
   public static void AddStartCoolTime(FlatBufferBuilder builder, int StartCoolTime) { builder.AddInt(11, StartCoolTime, 0); }
   public static void AddCoolTime(FlatBufferBuilder builder, int CoolTime) { builder.AddInt(12, CoolTime, 0); }
   public static void AddEnemyStartCoolTime(FlatBufferBuilder builder, int EnemyStartCoolTime) { builder.AddInt(13, EnemyStartCoolTime, 0); }

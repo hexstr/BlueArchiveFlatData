@@ -49,7 +49,7 @@ public struct EventContentShopExcel : IFlatbufferObject
   public byte[] GetSalePeriodToArray() { return __p.__vector_as_array<byte>(20); }
   public long PurchaseCooltimeMin { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PurchaseCountLimit { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.PurchaseCountResetType PurchaseCountResetType { get { int o = __p.__offset(26); return o != 0 ? (FlatDataJp.PurchaseCountResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.PurchaseCountResetType.None; } }
+  public FlatDataJp.PurchaseCountResetType Purchasecountresettype { get { int o = __p.__offset(26); return o != 0 ? (FlatDataJp.PurchaseCountResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.PurchaseCountResetType.None; } }
   public string BuyReportEventName { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetBuyReportEventNameBytes() { return __p.__vector_as_span<byte>(28, 1); }
@@ -71,7 +71,7 @@ public struct EventContentShopExcel : IFlatbufferObject
       StringOffset SalePeriodToOffset = default(StringOffset),
       long PurchaseCooltimeMin = 0,
       long PurchaseCountLimit = 0,
-      FlatDataJp.PurchaseCountResetType PurchaseCountResetType = FlatDataJp.PurchaseCountResetType.None,
+      FlatDataJp.PurchaseCountResetType purchasecountresettype = FlatDataJp.PurchaseCountResetType.None,
       StringOffset BuyReportEventNameOffset = default(StringOffset),
       bool RestrictBuyWhenInventoryFull = false) {
     builder.StartTable(14);
@@ -81,7 +81,7 @@ public struct EventContentShopExcel : IFlatbufferObject
     EventContentShopExcel.AddId(builder, Id);
     EventContentShopExcel.AddEventContentId(builder, EventContentId);
     EventContentShopExcel.AddBuyReportEventName(builder, BuyReportEventNameOffset);
-    EventContentShopExcel.AddPurchaseCountResetType(builder, PurchaseCountResetType);
+    EventContentShopExcel.AddPurchasecountresettype(builder, purchasecountresettype);
     EventContentShopExcel.AddSalePeriodTo(builder, SalePeriodToOffset);
     EventContentShopExcel.AddSalePeriodFrom(builder, SalePeriodFromOffset);
     EventContentShopExcel.AddGoodsId(builder, GoodsIdOffset);
@@ -109,7 +109,7 @@ public struct EventContentShopExcel : IFlatbufferObject
   public static void AddSalePeriodTo(FlatBufferBuilder builder, StringOffset SalePeriodToOffset) { builder.AddOffset(8, SalePeriodToOffset.Value, 0); }
   public static void AddPurchaseCooltimeMin(FlatBufferBuilder builder, long PurchaseCooltimeMin) { builder.AddLong(9, PurchaseCooltimeMin, 0); }
   public static void AddPurchaseCountLimit(FlatBufferBuilder builder, long PurchaseCountLimit) { builder.AddLong(10, PurchaseCountLimit, 0); }
-  public static void AddPurchaseCountResetType(FlatBufferBuilder builder, FlatDataJp.PurchaseCountResetType PurchaseCountResetType) { builder.AddInt(11, (int)PurchaseCountResetType, 0); }
+  public static void AddPurchasecountresettype(FlatBufferBuilder builder, FlatDataJp.PurchaseCountResetType purchasecountresettype) { builder.AddInt(11, (int)purchasecountresettype, 0); }
   public static void AddBuyReportEventName(FlatBufferBuilder builder, StringOffset BuyReportEventNameOffset) { builder.AddOffset(12, BuyReportEventNameOffset.Value, 0); }
   public static void AddRestrictBuyWhenInventoryFull(FlatBufferBuilder builder, bool RestrictBuyWhenInventoryFull) { builder.AddBool(13, RestrictBuyWhenInventoryFull, false); }
   public static Offset<FlatDataJp.EventContentShopExcel> EndEventContentShopExcel(FlatBufferBuilder builder) {

@@ -20,7 +20,7 @@ public struct WeekDungeonExcel : IFlatbufferObject
   public WeekDungeonExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long StageId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.WeekDungeonType WeekDungeonType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.WeekDungeonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.WeekDungeonType.None; } }
+  public FlatDataJp.WeekDungeonType Weekdungeontype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.WeekDungeonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.WeekDungeonType.None; } }
   public int Difficulty { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long BattleDuration { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PrevStageId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -65,7 +65,7 @@ public struct WeekDungeonExcel : IFlatbufferObject
   public ArraySegment<byte>? GetStarGoalAmountBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
   public int[] GetStarGoalAmountArray() { return __p.__vector_as_array<int>(24); }
-  public FlatDataJp.StageTopography StageTopography { get { int o = __p.__offset(26); return o != 0 ? (FlatDataJp.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageTopography.Street; } }
+  public FlatDataJp.StageTopography Stagetopography { get { int o = __p.__offset(26); return o != 0 ? (FlatDataJp.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageTopography.Street; } }
   public long RecommandLevel { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long StageRewardId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PlayTimeLimitInSeconds { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -82,7 +82,7 @@ public struct WeekDungeonExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.WeekDungeonExcel> CreateWeekDungeonExcel(FlatBufferBuilder builder,
       long StageId = 0,
-      FlatDataJp.WeekDungeonType WeekDungeonType = FlatDataJp.WeekDungeonType.None,
+      FlatDataJp.WeekDungeonType weekdungeontype = FlatDataJp.WeekDungeonType.None,
       int Difficulty = 0,
       long BattleDuration = 0,
       long PrevStageId = 0,
@@ -92,7 +92,7 @@ public struct WeekDungeonExcel : IFlatbufferObject
       int GroundId = 0,
       VectorOffset StarGoalOffset = default(VectorOffset),
       VectorOffset StarGoalAmountOffset = default(VectorOffset),
-      FlatDataJp.StageTopography StageTopography = FlatDataJp.StageTopography.Street,
+      FlatDataJp.StageTopography stagetopography = FlatDataJp.StageTopography.Street,
       long RecommandLevel = 0,
       long StageRewardId = 0,
       long PlayTimeLimitInSeconds = 0,
@@ -109,7 +109,7 @@ public struct WeekDungeonExcel : IFlatbufferObject
     WeekDungeonExcel.AddBattleDuration(builder, BattleDuration);
     WeekDungeonExcel.AddStageId(builder, StageId);
     WeekDungeonExcel.AddGroupBuffID(builder, GroupBuffIDOffset);
-    WeekDungeonExcel.AddStageTopography(builder, StageTopography);
+    WeekDungeonExcel.AddStagetopography(builder, stagetopography);
     WeekDungeonExcel.AddStarGoalAmount(builder, StarGoalAmountOffset);
     WeekDungeonExcel.AddStarGoal(builder, StarGoalOffset);
     WeekDungeonExcel.AddGroundId(builder, GroundId);
@@ -117,13 +117,13 @@ public struct WeekDungeonExcel : IFlatbufferObject
     WeekDungeonExcel.AddStageEnterCostId(builder, StageEnterCostIdOffset);
     WeekDungeonExcel.AddStageEnterCostType(builder, StageEnterCostTypeOffset);
     WeekDungeonExcel.AddDifficulty(builder, Difficulty);
-    WeekDungeonExcel.AddWeekDungeonType(builder, WeekDungeonType);
+    WeekDungeonExcel.AddWeekdungeontype(builder, weekdungeontype);
     return WeekDungeonExcel.EndWeekDungeonExcel(builder);
   }
 
   public static void StartWeekDungeonExcel(FlatBufferBuilder builder) { builder.StartTable(18); }
   public static void AddStageId(FlatBufferBuilder builder, long StageId) { builder.AddLong(0, StageId, 0); }
-  public static void AddWeekDungeonType(FlatBufferBuilder builder, FlatDataJp.WeekDungeonType WeekDungeonType) { builder.AddInt(1, (int)WeekDungeonType, 0); }
+  public static void AddWeekdungeontype(FlatBufferBuilder builder, FlatDataJp.WeekDungeonType weekdungeontype) { builder.AddInt(1, (int)weekdungeontype, 0); }
   public static void AddDifficulty(FlatBufferBuilder builder, int Difficulty) { builder.AddInt(2, Difficulty, 0); }
   public static void AddBattleDuration(FlatBufferBuilder builder, long BattleDuration) { builder.AddLong(3, BattleDuration, 0); }
   public static void AddPrevStageId(FlatBufferBuilder builder, long PrevStageId) { builder.AddLong(4, PrevStageId, 0); }
@@ -158,7 +158,7 @@ public struct WeekDungeonExcel : IFlatbufferObject
   public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartStarGoalAmountVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataJp.StageTopography StageTopography) { builder.AddInt(11, (int)StageTopography, 0); }
+  public static void AddStagetopography(FlatBufferBuilder builder, FlatDataJp.StageTopography stagetopography) { builder.AddInt(11, (int)stagetopography, 0); }
   public static void AddRecommandLevel(FlatBufferBuilder builder, long RecommandLevel) { builder.AddLong(12, RecommandLevel, 0); }
   public static void AddStageRewardId(FlatBufferBuilder builder, long StageRewardId) { builder.AddLong(13, StageRewardId, 0); }
   public static void AddPlayTimeLimitInSeconds(FlatBufferBuilder builder, long PlayTimeLimitInSeconds) { builder.AddLong(14, PlayTimeLimitInSeconds, 0); }

@@ -72,7 +72,7 @@ public struct RaidStageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetEnterTimeLineBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
   public byte[] GetEnterTimeLineArray() { return __p.__vector_as_array<byte>(34); }
-  public FlatDataJp.TacticEnvironment TacticEnvironment { get { int o = __p.__offset(36); return o != 0 ? (FlatDataJp.TacticEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticEnvironment.None; } }
+  public FlatDataJp.TacticEnvironment Tacticenvironment { get { int o = __p.__offset(36); return o != 0 ? (FlatDataJp.TacticEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticEnvironment.None; } }
   public int SeasonDamageRatio { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long DefaultClearScore { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long MaximumScore { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -136,7 +136,7 @@ public struct RaidStageExcel : IFlatbufferObject
       StringOffset BGPathOffset = default(StringOffset),
       long RaidCharacterId = 0,
       VectorOffset BossCharacterIdOffset = default(VectorOffset),
-      FlatDataJp.Difficulty Difficulty = FlatDataJp.Difficulty.Normal,
+      FlatDataJp.Difficulty difficulty = FlatDataJp.Difficulty.Normal,
       bool DifficultyOpenCondition = false,
       long MaxPlayerCount = 0,
       int RaidRoomLifeTime = 0,
@@ -144,7 +144,7 @@ public struct RaidStageExcel : IFlatbufferObject
       long GroundId = 0,
       StringOffset GroundDevNameOffset = default(StringOffset),
       StringOffset EnterTimeLineOffset = default(StringOffset),
-      FlatDataJp.TacticEnvironment TacticEnvironment = FlatDataJp.TacticEnvironment.None,
+      FlatDataJp.TacticEnvironment tacticenvironment = FlatDataJp.TacticEnvironment.None,
       int SeasonDamageRatio = 0,
       long DefaultClearScore = 0,
       long MaximumScore = 0,
@@ -190,11 +190,11 @@ public struct RaidStageExcel : IFlatbufferObject
     RaidStageExcel.AddBattleReadyTimelinePath(builder, BattleReadyTimelinePathOffset);
     RaidStageExcel.AddRaidRewardDevName(builder, RaidRewardDevNameOffset);
     RaidStageExcel.AddSeasonDamageRatio(builder, SeasonDamageRatio);
-    RaidStageExcel.AddTacticEnvironment(builder, TacticEnvironment);
+    RaidStageExcel.AddTacticenvironment(builder, tacticenvironment);
     RaidStageExcel.AddEnterTimeLine(builder, EnterTimeLineOffset);
     RaidStageExcel.AddGroundDevName(builder, GroundDevNameOffset);
     RaidStageExcel.AddRaidRoomLifeTime(builder, RaidRoomLifeTime);
-    RaidStageExcel.AddDifficulty(builder, Difficulty);
+    RaidStageExcel.AddDifficulty(builder, difficulty);
     RaidStageExcel.AddBossCharacterId(builder, BossCharacterIdOffset);
     RaidStageExcel.AddBGPath(builder, BGPathOffset);
     RaidStageExcel.AddPortraitPath(builder, PortraitPathOffset);
@@ -220,7 +220,7 @@ public struct RaidStageExcel : IFlatbufferObject
   public static VectorOffset CreateBossCharacterIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBossCharacterIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartBossCharacterIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddDifficulty(FlatBufferBuilder builder, FlatDataJp.Difficulty Difficulty) { builder.AddInt(8, (int)Difficulty, 0); }
+  public static void AddDifficulty(FlatBufferBuilder builder, FlatDataJp.Difficulty difficulty) { builder.AddInt(8, (int)difficulty, 0); }
   public static void AddDifficultyOpenCondition(FlatBufferBuilder builder, bool DifficultyOpenCondition) { builder.AddBool(9, DifficultyOpenCondition, false); }
   public static void AddMaxPlayerCount(FlatBufferBuilder builder, long MaxPlayerCount) { builder.AddLong(10, MaxPlayerCount, 0); }
   public static void AddRaidRoomLifeTime(FlatBufferBuilder builder, int RaidRoomLifeTime) { builder.AddInt(11, RaidRoomLifeTime, 0); }
@@ -228,7 +228,7 @@ public struct RaidStageExcel : IFlatbufferObject
   public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(13, GroundId, 0); }
   public static void AddGroundDevName(FlatBufferBuilder builder, StringOffset GroundDevNameOffset) { builder.AddOffset(14, GroundDevNameOffset.Value, 0); }
   public static void AddEnterTimeLine(FlatBufferBuilder builder, StringOffset EnterTimeLineOffset) { builder.AddOffset(15, EnterTimeLineOffset.Value, 0); }
-  public static void AddTacticEnvironment(FlatBufferBuilder builder, FlatDataJp.TacticEnvironment TacticEnvironment) { builder.AddInt(16, (int)TacticEnvironment, 0); }
+  public static void AddTacticenvironment(FlatBufferBuilder builder, FlatDataJp.TacticEnvironment tacticenvironment) { builder.AddInt(16, (int)tacticenvironment, 0); }
   public static void AddSeasonDamageRatio(FlatBufferBuilder builder, int SeasonDamageRatio) { builder.AddInt(17, SeasonDamageRatio, 0); }
   public static void AddDefaultClearScore(FlatBufferBuilder builder, long DefaultClearScore) { builder.AddLong(18, DefaultClearScore, 0); }
   public static void AddMaximumScore(FlatBufferBuilder builder, long MaximumScore) { builder.AddLong(19, MaximumScore, 0); }

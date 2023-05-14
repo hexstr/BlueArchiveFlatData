@@ -56,7 +56,7 @@ public struct EventContentCardShopExcel : IFlatbufferObject
   public static Offset<FlatDataJp.EventContentCardShopExcel> CreateEventContentCardShopExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
       long Id = 0,
-      FlatDataJp.Rarity Rarity = FlatDataJp.Rarity.N,
+      FlatDataJp.Rarity rarity = FlatDataJp.Rarity.N,
       long CostGoodsId = 0,
       int CardGroupId = 0,
       bool IsLegacy = false,
@@ -77,7 +77,7 @@ public struct EventContentCardShopExcel : IFlatbufferObject
     EventContentCardShopExcel.AddProb(builder, Prob);
     EventContentCardShopExcel.AddRefreshGroup(builder, RefreshGroup);
     EventContentCardShopExcel.AddCardGroupId(builder, CardGroupId);
-    EventContentCardShopExcel.AddRarity(builder, Rarity);
+    EventContentCardShopExcel.AddRarity(builder, rarity);
     EventContentCardShopExcel.AddIsLegacy(builder, IsLegacy);
     return EventContentCardShopExcel.EndEventContentCardShopExcel(builder);
   }
@@ -85,7 +85,7 @@ public struct EventContentCardShopExcel : IFlatbufferObject
   public static void StartEventContentCardShopExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(1, Id, 0); }
-  public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity Rarity) { builder.AddInt(2, (int)Rarity, 0); }
+  public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity rarity) { builder.AddInt(2, (int)rarity, 0); }
   public static void AddCostGoodsId(FlatBufferBuilder builder, long CostGoodsId) { builder.AddLong(3, CostGoodsId, 0); }
   public static void AddCardGroupId(FlatBufferBuilder builder, int CardGroupId) { builder.AddInt(4, CardGroupId, 0); }
   public static void AddIsLegacy(FlatBufferBuilder builder, bool IsLegacy) { builder.AddBool(5, IsLegacy, false); }

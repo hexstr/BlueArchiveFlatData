@@ -21,7 +21,7 @@ public struct ConquestEventExcel : IFlatbufferObject
 
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long MainStoryEventContentId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ConquestEventType ConquestEventType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.ConquestEventType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ConquestEventType.None; } }
+  public FlatDataJp.ConquestEventType Conquesteventtype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.ConquestEventType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ConquestEventType.None; } }
   public bool UseErosion { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool UseUnexpectedEvent { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool UseCalculate { get { int o = __p.__offset(14); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
@@ -75,39 +75,47 @@ public struct ConquestEventExcel : IFlatbufferObject
   public ArraySegment<byte>? GetLocalizeStepBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
   public byte[] GetLocalizeStepArray() { return __p.__vector_as_array<byte>(42); }
-  public string LocalizeMapInfo { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string LocalizeTile { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeMapInfoBytes() { return __p.__vector_as_span<byte>(44, 1); }
+  public Span<byte> GetLocalizeTileBytes() { return __p.__vector_as_span<byte>(44, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeMapInfoBytes() { return __p.__vector_as_arraysegment(44); }
+  public ArraySegment<byte>? GetLocalizeTileBytes() { return __p.__vector_as_arraysegment(44); }
 #endif
-  public byte[] GetLocalizeMapInfoArray() { return __p.__vector_as_array<byte>(44); }
-  public string LocalizeManage { get { int o = __p.__offset(46); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeTileArray() { return __p.__vector_as_array<byte>(44); }
+  public string LocalizeMapInfo { get { int o = __p.__offset(46); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeManageBytes() { return __p.__vector_as_span<byte>(46, 1); }
+  public Span<byte> GetLocalizeMapInfoBytes() { return __p.__vector_as_span<byte>(46, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeManageBytes() { return __p.__vector_as_arraysegment(46); }
+  public ArraySegment<byte>? GetLocalizeMapInfoBytes() { return __p.__vector_as_arraysegment(46); }
 #endif
-  public byte[] GetLocalizeManageArray() { return __p.__vector_as_array<byte>(46); }
-  public string LocalizeUpgrade { get { int o = __p.__offset(48); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeMapInfoArray() { return __p.__vector_as_array<byte>(46); }
+  public string LocalizeManage { get { int o = __p.__offset(48); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeUpgradeBytes() { return __p.__vector_as_span<byte>(48, 1); }
+  public Span<byte> GetLocalizeManageBytes() { return __p.__vector_as_span<byte>(48, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeUpgradeBytes() { return __p.__vector_as_arraysegment(48); }
+  public ArraySegment<byte>? GetLocalizeManageBytes() { return __p.__vector_as_arraysegment(48); }
 #endif
-  public byte[] GetLocalizeUpgradeArray() { return __p.__vector_as_array<byte>(48); }
-  public string LocalizeTreasureBox { get { int o = __p.__offset(50); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeManageArray() { return __p.__vector_as_array<byte>(48); }
+  public string LocalizeUpgrade { get { int o = __p.__offset(50); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeTreasureBoxBytes() { return __p.__vector_as_span<byte>(50, 1); }
+  public Span<byte> GetLocalizeUpgradeBytes() { return __p.__vector_as_span<byte>(50, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeTreasureBoxBytes() { return __p.__vector_as_arraysegment(50); }
+  public ArraySegment<byte>? GetLocalizeUpgradeBytes() { return __p.__vector_as_arraysegment(50); }
 #endif
-  public byte[] GetLocalizeTreasureBoxArray() { return __p.__vector_as_array<byte>(50); }
+  public byte[] GetLocalizeUpgradeArray() { return __p.__vector_as_array<byte>(50); }
+  public string LocalizeTreasureBox { get { int o = __p.__offset(52); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetLocalizeTreasureBoxBytes() { return __p.__vector_as_span<byte>(52, 1); }
+#else
+  public ArraySegment<byte>? GetLocalizeTreasureBoxBytes() { return __p.__vector_as_arraysegment(52); }
+#endif
+  public byte[] GetLocalizeTreasureBoxArray() { return __p.__vector_as_array<byte>(52); }
+  public long IndividualErosionDailyCount { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataJp.ConquestEventExcel> CreateConquestEventExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
       long MainStoryEventContentId = 0,
-      FlatDataJp.ConquestEventType ConquestEventType = FlatDataJp.ConquestEventType.None,
+      FlatDataJp.ConquestEventType conquesteventtype = FlatDataJp.ConquestEventType.None,
       bool UseErosion = false,
       bool UseUnexpectedEvent = false,
       bool UseCalculate = false,
@@ -125,11 +133,14 @@ public struct ConquestEventExcel : IFlatbufferObject
       StringOffset LocalizeUnexpectedOffset = default(StringOffset),
       StringOffset LocalizeErosionsOffset = default(StringOffset),
       StringOffset LocalizeStepOffset = default(StringOffset),
+      StringOffset LocalizeTileOffset = default(StringOffset),
       StringOffset LocalizeMapInfoOffset = default(StringOffset),
       StringOffset LocalizeManageOffset = default(StringOffset),
       StringOffset LocalizeUpgradeOffset = default(StringOffset),
-      StringOffset LocalizeTreasureBoxOffset = default(StringOffset)) {
-    builder.StartTable(24);
+      StringOffset LocalizeTreasureBoxOffset = default(StringOffset),
+      long IndividualErosionDailyCount = 0) {
+    builder.StartTable(26);
+    ConquestEventExcel.AddIndividualErosionDailyCount(builder, IndividualErosionDailyCount);
     ConquestEventExcel.AddMapEnterScenarioGroupId(builder, MapEnterScenarioGroupId);
     ConquestEventExcel.AddMainStoryEventContentId(builder, MainStoryEventContentId);
     ConquestEventExcel.AddEventContentId(builder, EventContentId);
@@ -137,6 +148,7 @@ public struct ConquestEventExcel : IFlatbufferObject
     ConquestEventExcel.AddLocalizeUpgrade(builder, LocalizeUpgradeOffset);
     ConquestEventExcel.AddLocalizeManage(builder, LocalizeManageOffset);
     ConquestEventExcel.AddLocalizeMapInfo(builder, LocalizeMapInfoOffset);
+    ConquestEventExcel.AddLocalizeTile(builder, LocalizeTileOffset);
     ConquestEventExcel.AddLocalizeStep(builder, LocalizeStepOffset);
     ConquestEventExcel.AddLocalizeErosions(builder, LocalizeErosionsOffset);
     ConquestEventExcel.AddLocalizeUnexpected(builder, LocalizeUnexpectedOffset);
@@ -149,7 +161,7 @@ public struct ConquestEventExcel : IFlatbufferObject
     ConquestEventExcel.AddEvnetScenarioBG(builder, EvnetScenarioBGOffset);
     ConquestEventExcel.AddEvnetMapNameLocalize(builder, EvnetMapNameLocalizeOffset);
     ConquestEventExcel.AddEvnetMapGoalLocalize(builder, EvnetMapGoalLocalizeOffset);
-    ConquestEventExcel.AddConquestEventType(builder, ConquestEventType);
+    ConquestEventExcel.AddConquesteventtype(builder, conquesteventtype);
     ConquestEventExcel.AddUseConquestObject(builder, UseConquestObject);
     ConquestEventExcel.AddUseCalculate(builder, UseCalculate);
     ConquestEventExcel.AddUseUnexpectedEvent(builder, UseUnexpectedEvent);
@@ -157,10 +169,10 @@ public struct ConquestEventExcel : IFlatbufferObject
     return ConquestEventExcel.EndConquestEventExcel(builder);
   }
 
-  public static void StartConquestEventExcel(FlatBufferBuilder builder) { builder.StartTable(24); }
+  public static void StartConquestEventExcel(FlatBufferBuilder builder) { builder.StartTable(26); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddMainStoryEventContentId(FlatBufferBuilder builder, long MainStoryEventContentId) { builder.AddLong(1, MainStoryEventContentId, 0); }
-  public static void AddConquestEventType(FlatBufferBuilder builder, FlatDataJp.ConquestEventType ConquestEventType) { builder.AddInt(2, (int)ConquestEventType, 0); }
+  public static void AddConquesteventtype(FlatBufferBuilder builder, FlatDataJp.ConquestEventType conquesteventtype) { builder.AddInt(2, (int)conquesteventtype, 0); }
   public static void AddUseErosion(FlatBufferBuilder builder, bool UseErosion) { builder.AddBool(3, UseErosion, false); }
   public static void AddUseUnexpectedEvent(FlatBufferBuilder builder, bool UseUnexpectedEvent) { builder.AddBool(4, UseUnexpectedEvent, false); }
   public static void AddUseCalculate(FlatBufferBuilder builder, bool UseCalculate) { builder.AddBool(5, UseCalculate, false); }
@@ -178,10 +190,12 @@ public struct ConquestEventExcel : IFlatbufferObject
   public static void AddLocalizeUnexpected(FlatBufferBuilder builder, StringOffset LocalizeUnexpectedOffset) { builder.AddOffset(17, LocalizeUnexpectedOffset.Value, 0); }
   public static void AddLocalizeErosions(FlatBufferBuilder builder, StringOffset LocalizeErosionsOffset) { builder.AddOffset(18, LocalizeErosionsOffset.Value, 0); }
   public static void AddLocalizeStep(FlatBufferBuilder builder, StringOffset LocalizeStepOffset) { builder.AddOffset(19, LocalizeStepOffset.Value, 0); }
-  public static void AddLocalizeMapInfo(FlatBufferBuilder builder, StringOffset LocalizeMapInfoOffset) { builder.AddOffset(20, LocalizeMapInfoOffset.Value, 0); }
-  public static void AddLocalizeManage(FlatBufferBuilder builder, StringOffset LocalizeManageOffset) { builder.AddOffset(21, LocalizeManageOffset.Value, 0); }
-  public static void AddLocalizeUpgrade(FlatBufferBuilder builder, StringOffset LocalizeUpgradeOffset) { builder.AddOffset(22, LocalizeUpgradeOffset.Value, 0); }
-  public static void AddLocalizeTreasureBox(FlatBufferBuilder builder, StringOffset LocalizeTreasureBoxOffset) { builder.AddOffset(23, LocalizeTreasureBoxOffset.Value, 0); }
+  public static void AddLocalizeTile(FlatBufferBuilder builder, StringOffset LocalizeTileOffset) { builder.AddOffset(20, LocalizeTileOffset.Value, 0); }
+  public static void AddLocalizeMapInfo(FlatBufferBuilder builder, StringOffset LocalizeMapInfoOffset) { builder.AddOffset(21, LocalizeMapInfoOffset.Value, 0); }
+  public static void AddLocalizeManage(FlatBufferBuilder builder, StringOffset LocalizeManageOffset) { builder.AddOffset(22, LocalizeManageOffset.Value, 0); }
+  public static void AddLocalizeUpgrade(FlatBufferBuilder builder, StringOffset LocalizeUpgradeOffset) { builder.AddOffset(23, LocalizeUpgradeOffset.Value, 0); }
+  public static void AddLocalizeTreasureBox(FlatBufferBuilder builder, StringOffset LocalizeTreasureBoxOffset) { builder.AddOffset(24, LocalizeTreasureBoxOffset.Value, 0); }
+  public static void AddIndividualErosionDailyCount(FlatBufferBuilder builder, long IndividualErosionDailyCount) { builder.AddLong(25, IndividualErosionDailyCount, 0); }
   public static Offset<FlatDataJp.ConquestEventExcel> EndConquestEventExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.ConquestEventExcel>(o);

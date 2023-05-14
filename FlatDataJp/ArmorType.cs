@@ -12,6 +12,7 @@ public enum ArmorType : int
   Unarmed = 2,
   Structure = 3,
   Normal = 4,
+  ElasticArmor = 5,
 };
 
 

@@ -19,14 +19,14 @@ public struct CharacterWeaponExpBonusExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public CharacterWeaponExpBonusExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public FlatDataJp.WeaponType WeaponType { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.WeaponType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.WeaponType.None; } }
+  public FlatDataJp.WeaponType Weapontype { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.WeaponType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.WeaponType.None; } }
   public int WeaponExpGrowthA { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int WeaponExpGrowthB { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int WeaponExpGrowthC { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int WeaponExpGrowthZ { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataJp.CharacterWeaponExpBonusExcel> CreateCharacterWeaponExpBonusExcel(FlatBufferBuilder builder,
-      FlatDataJp.WeaponType WeaponType = FlatDataJp.WeaponType.None,
+      FlatDataJp.WeaponType weapontype = FlatDataJp.WeaponType.None,
       int WeaponExpGrowthA = 0,
       int WeaponExpGrowthB = 0,
       int WeaponExpGrowthC = 0,
@@ -36,12 +36,12 @@ public struct CharacterWeaponExpBonusExcel : IFlatbufferObject
     CharacterWeaponExpBonusExcel.AddWeaponExpGrowthC(builder, WeaponExpGrowthC);
     CharacterWeaponExpBonusExcel.AddWeaponExpGrowthB(builder, WeaponExpGrowthB);
     CharacterWeaponExpBonusExcel.AddWeaponExpGrowthA(builder, WeaponExpGrowthA);
-    CharacterWeaponExpBonusExcel.AddWeaponType(builder, WeaponType);
+    CharacterWeaponExpBonusExcel.AddWeapontype(builder, weapontype);
     return CharacterWeaponExpBonusExcel.EndCharacterWeaponExpBonusExcel(builder);
   }
 
   public static void StartCharacterWeaponExpBonusExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
-  public static void AddWeaponType(FlatBufferBuilder builder, FlatDataJp.WeaponType WeaponType) { builder.AddInt(0, (int)WeaponType, 0); }
+  public static void AddWeapontype(FlatBufferBuilder builder, FlatDataJp.WeaponType weapontype) { builder.AddInt(0, (int)weapontype, 0); }
   public static void AddWeaponExpGrowthA(FlatBufferBuilder builder, int WeaponExpGrowthA) { builder.AddInt(1, WeaponExpGrowthA, 0); }
   public static void AddWeaponExpGrowthB(FlatBufferBuilder builder, int WeaponExpGrowthB) { builder.AddInt(2, WeaponExpGrowthB, 0); }
   public static void AddWeaponExpGrowthC(FlatBufferBuilder builder, int WeaponExpGrowthC) { builder.AddInt(3, WeaponExpGrowthC, 0); }

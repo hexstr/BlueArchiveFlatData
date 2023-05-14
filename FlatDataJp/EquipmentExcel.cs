@@ -20,7 +20,7 @@ public struct EquipmentExcel : IFlatbufferObject
   public EquipmentExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.EquipmentCategory EquipmentCategory { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EquipmentCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EquipmentCategory.Unable; } }
+  public FlatDataJp.EquipmentCategory Equipmentcategory { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EquipmentCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EquipmentCategory.Unable; } }
   public FlatDataJp.Rarity Rarity { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.Rarity.N; } }
   public uint LocalizeEtcId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public bool Wear { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
@@ -65,8 +65,8 @@ public struct EquipmentExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.EquipmentExcel> CreateEquipmentExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataJp.EquipmentCategory EquipmentCategory = FlatDataJp.EquipmentCategory.Unable,
-      FlatDataJp.Rarity Rarity = FlatDataJp.Rarity.N,
+      FlatDataJp.EquipmentCategory equipmentcategory = FlatDataJp.EquipmentCategory.Unable,
+      FlatDataJp.Rarity rarity = FlatDataJp.Rarity.N,
       uint LocalizeEtcId = 0,
       bool Wear = false,
       int MaxLevel = 0,
@@ -96,16 +96,16 @@ public struct EquipmentExcel : IFlatbufferObject
     EquipmentExcel.AddRecipeId(builder, RecipeId);
     EquipmentExcel.AddMaxLevel(builder, MaxLevel);
     EquipmentExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
-    EquipmentExcel.AddRarity(builder, Rarity);
-    EquipmentExcel.AddEquipmentCategory(builder, EquipmentCategory);
+    EquipmentExcel.AddRarity(builder, rarity);
+    EquipmentExcel.AddEquipmentcategory(builder, equipmentcategory);
     EquipmentExcel.AddWear(builder, Wear);
     return EquipmentExcel.EndEquipmentExcel(builder);
   }
 
   public static void StartEquipmentExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddEquipmentCategory(FlatBufferBuilder builder, FlatDataJp.EquipmentCategory EquipmentCategory) { builder.AddInt(1, (int)EquipmentCategory, 0); }
-  public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity Rarity) { builder.AddInt(2, (int)Rarity, 0); }
+  public static void AddEquipmentcategory(FlatBufferBuilder builder, FlatDataJp.EquipmentCategory equipmentcategory) { builder.AddInt(1, (int)equipmentcategory, 0); }
+  public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity rarity) { builder.AddInt(2, (int)rarity, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(3, LocalizeEtcId, 0); }
   public static void AddWear(FlatBufferBuilder builder, bool Wear) { builder.AddBool(4, Wear, false); }
   public static void AddMaxLevel(FlatBufferBuilder builder, int MaxLevel) { builder.AddInt(5, MaxLevel, 0); }

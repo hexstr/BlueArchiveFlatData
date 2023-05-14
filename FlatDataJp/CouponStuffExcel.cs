@@ -20,7 +20,7 @@ public struct CouponStuffExcel : IFlatbufferObject
   public CouponStuffExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long StuffId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ParcelType ParcelType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
+  public FlatDataJp.ParcelType Parceltype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
   public long ParcelId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int LimitAmount { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public string CouponStuffNameLocalizeKey { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
@@ -33,7 +33,7 @@ public struct CouponStuffExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.CouponStuffExcel> CreateCouponStuffExcel(FlatBufferBuilder builder,
       long StuffId = 0,
-      FlatDataJp.ParcelType ParcelType = FlatDataJp.ParcelType.None,
+      FlatDataJp.ParcelType parceltype = FlatDataJp.ParcelType.None,
       long ParcelId = 0,
       int LimitAmount = 0,
       StringOffset CouponStuffNameLocalizeKeyOffset = default(StringOffset)) {
@@ -42,13 +42,13 @@ public struct CouponStuffExcel : IFlatbufferObject
     CouponStuffExcel.AddStuffId(builder, StuffId);
     CouponStuffExcel.AddCouponStuffNameLocalizeKey(builder, CouponStuffNameLocalizeKeyOffset);
     CouponStuffExcel.AddLimitAmount(builder, LimitAmount);
-    CouponStuffExcel.AddParcelType(builder, ParcelType);
+    CouponStuffExcel.AddParceltype(builder, parceltype);
     return CouponStuffExcel.EndCouponStuffExcel(builder);
   }
 
   public static void StartCouponStuffExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddStuffId(FlatBufferBuilder builder, long StuffId) { builder.AddLong(0, StuffId, 0); }
-  public static void AddParcelType(FlatBufferBuilder builder, FlatDataJp.ParcelType ParcelType) { builder.AddInt(1, (int)ParcelType, 0); }
+  public static void AddParceltype(FlatBufferBuilder builder, FlatDataJp.ParcelType parceltype) { builder.AddInt(1, (int)parceltype, 0); }
   public static void AddParcelId(FlatBufferBuilder builder, long ParcelId) { builder.AddLong(2, ParcelId, 0); }
   public static void AddLimitAmount(FlatBufferBuilder builder, int LimitAmount) { builder.AddInt(3, LimitAmount, 0); }
   public static void AddCouponStuffNameLocalizeKey(FlatBufferBuilder builder, StringOffset CouponStuffNameLocalizeKeyOffset) { builder.AddOffset(4, CouponStuffNameLocalizeKeyOffset.Value, 0); }

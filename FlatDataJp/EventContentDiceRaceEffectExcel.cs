@@ -20,7 +20,7 @@ public struct EventContentDiceRaceEffectExcel : IFlatbufferObject
   public EventContentDiceRaceEffectExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.EventContentDiceRaceResultType EventContentDiceRaceResultType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EventContentDiceRaceResultType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventContentDiceRaceResultType.DiceResult1; } }
+  public FlatDataJp.EventContentDiceRaceResultType Eventcontentdiceraceresulttype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EventContentDiceRaceResultType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventContentDiceRaceResultType.DiceResult1; } }
   public string AniClip { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetAniClipBytes() { return __p.__vector_as_span<byte>(8, 1); }
@@ -33,20 +33,20 @@ public struct EventContentDiceRaceEffectExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.EventContentDiceRaceEffectExcel> CreateEventContentDiceRaceEffectExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
-      FlatDataJp.EventContentDiceRaceResultType EventContentDiceRaceResultType = FlatDataJp.EventContentDiceRaceResultType.DiceResult1,
+      FlatDataJp.EventContentDiceRaceResultType eventcontentdiceraceresulttype = FlatDataJp.EventContentDiceRaceResultType.DiceResult1,
       StringOffset AniClipOffset = default(StringOffset),
       VectorOffset VoiceClipsOffset = default(VectorOffset)) {
     builder.StartTable(4);
     EventContentDiceRaceEffectExcel.AddEventContentId(builder, EventContentId);
     EventContentDiceRaceEffectExcel.AddVoiceClips(builder, VoiceClipsOffset);
     EventContentDiceRaceEffectExcel.AddAniClip(builder, AniClipOffset);
-    EventContentDiceRaceEffectExcel.AddEventContentDiceRaceResultType(builder, EventContentDiceRaceResultType);
+    EventContentDiceRaceEffectExcel.AddEventcontentdiceraceresulttype(builder, eventcontentdiceraceresulttype);
     return EventContentDiceRaceEffectExcel.EndEventContentDiceRaceEffectExcel(builder);
   }
 
   public static void StartEventContentDiceRaceEffectExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
-  public static void AddEventContentDiceRaceResultType(FlatBufferBuilder builder, FlatDataJp.EventContentDiceRaceResultType EventContentDiceRaceResultType) { builder.AddInt(1, (int)EventContentDiceRaceResultType, 0); }
+  public static void AddEventcontentdiceraceresulttype(FlatBufferBuilder builder, FlatDataJp.EventContentDiceRaceResultType eventcontentdiceraceresulttype) { builder.AddInt(1, (int)eventcontentdiceraceresulttype, 0); }
   public static void AddAniClip(FlatBufferBuilder builder, StringOffset AniClipOffset) { builder.AddOffset(2, AniClipOffset.Value, 0); }
   public static void AddVoiceClips(FlatBufferBuilder builder, VectorOffset VoiceClipsOffset) { builder.AddOffset(3, VoiceClipsOffset.Value, 0); }
   public static VectorOffset CreateVoiceClipsVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }

@@ -19,7 +19,7 @@ public struct SystemMailExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public SystemMailExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public FlatDataJp.MailType MailType { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.MailType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MailType.System; } }
+  public FlatDataJp.MailType Mailtype { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.MailType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MailType.System; } }
   public long ExpiredDay { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string Sender { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -37,7 +37,7 @@ public struct SystemMailExcel : IFlatbufferObject
   public byte[] GetCommentArray() { return __p.__vector_as_array<byte>(10); }
 
   public static Offset<FlatDataJp.SystemMailExcel> CreateSystemMailExcel(FlatBufferBuilder builder,
-      FlatDataJp.MailType MailType = FlatDataJp.MailType.System,
+      FlatDataJp.MailType mailtype = FlatDataJp.MailType.System,
       long ExpiredDay = 0,
       StringOffset SenderOffset = default(StringOffset),
       StringOffset CommentOffset = default(StringOffset)) {
@@ -45,12 +45,12 @@ public struct SystemMailExcel : IFlatbufferObject
     SystemMailExcel.AddExpiredDay(builder, ExpiredDay);
     SystemMailExcel.AddComment(builder, CommentOffset);
     SystemMailExcel.AddSender(builder, SenderOffset);
-    SystemMailExcel.AddMailType(builder, MailType);
+    SystemMailExcel.AddMailtype(builder, mailtype);
     return SystemMailExcel.EndSystemMailExcel(builder);
   }
 
   public static void StartSystemMailExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
-  public static void AddMailType(FlatBufferBuilder builder, FlatDataJp.MailType MailType) { builder.AddInt(0, (int)MailType, 0); }
+  public static void AddMailtype(FlatBufferBuilder builder, FlatDataJp.MailType mailtype) { builder.AddInt(0, (int)mailtype, 0); }
   public static void AddExpiredDay(FlatBufferBuilder builder, long ExpiredDay) { builder.AddLong(1, ExpiredDay, 0); }
   public static void AddSender(FlatBufferBuilder builder, StringOffset SenderOffset) { builder.AddOffset(2, SenderOffset.Value, 0); }
   public static void AddComment(FlatBufferBuilder builder, StringOffset CommentOffset) { builder.AddOffset(3, CommentOffset.Value, 0); }

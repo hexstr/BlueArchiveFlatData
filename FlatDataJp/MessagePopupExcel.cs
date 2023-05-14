@@ -20,7 +20,7 @@ public struct MessagePopupExcel : IFlatbufferObject
   public MessagePopupExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public uint StringId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public FlatDataJp.MessagePopupLayout MessagePopupLayout { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.MessagePopupLayout)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MessagePopupLayout.TextOnly; } }
+  public FlatDataJp.MessagePopupLayout Messagepopuplayout { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.MessagePopupLayout)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MessagePopupLayout.TextOnly; } }
   public FlatDataJp.MessagePopupImagePositionType OrderType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.MessagePopupImagePositionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MessagePopupImagePositionType.ImageFirst; } }
   public string Image { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -55,7 +55,7 @@ public struct MessagePopupExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.MessagePopupExcel> CreateMessagePopupExcel(FlatBufferBuilder builder,
       uint StringId = 0,
-      FlatDataJp.MessagePopupLayout MessagePopupLayout = FlatDataJp.MessagePopupLayout.TextOnly,
+      FlatDataJp.MessagePopupLayout messagepopuplayout = FlatDataJp.MessagePopupLayout.TextOnly,
       FlatDataJp.MessagePopupImagePositionType OrderType = FlatDataJp.MessagePopupImagePositionType.ImageFirst,
       StringOffset ImageOffset = default(StringOffset),
       uint TitleText = 0,
@@ -74,7 +74,7 @@ public struct MessagePopupExcel : IFlatbufferObject
     MessagePopupExcel.AddTitleText(builder, TitleText);
     MessagePopupExcel.AddImage(builder, ImageOffset);
     MessagePopupExcel.AddOrderType(builder, OrderType);
-    MessagePopupExcel.AddMessagePopupLayout(builder, MessagePopupLayout);
+    MessagePopupExcel.AddMessagepopuplayout(builder, messagepopuplayout);
     MessagePopupExcel.AddStringId(builder, StringId);
     MessagePopupExcel.AddDisplayXButton(builder, DisplayXButton);
     return MessagePopupExcel.EndMessagePopupExcel(builder);
@@ -82,7 +82,7 @@ public struct MessagePopupExcel : IFlatbufferObject
 
   public static void StartMessagePopupExcel(FlatBufferBuilder builder) { builder.StartTable(11); }
   public static void AddStringId(FlatBufferBuilder builder, uint StringId) { builder.AddUint(0, StringId, 0); }
-  public static void AddMessagePopupLayout(FlatBufferBuilder builder, FlatDataJp.MessagePopupLayout MessagePopupLayout) { builder.AddInt(1, (int)MessagePopupLayout, 0); }
+  public static void AddMessagepopuplayout(FlatBufferBuilder builder, FlatDataJp.MessagePopupLayout messagepopuplayout) { builder.AddInt(1, (int)messagepopuplayout, 0); }
   public static void AddOrderType(FlatBufferBuilder builder, FlatDataJp.MessagePopupImagePositionType OrderType) { builder.AddInt(2, (int)OrderType, 0); }
   public static void AddImage(FlatBufferBuilder builder, StringOffset ImageOffset) { builder.AddOffset(3, ImageOffset.Value, 0); }
   public static void AddTitleText(FlatBufferBuilder builder, uint TitleText) { builder.AddUint(4, TitleText, 0); }

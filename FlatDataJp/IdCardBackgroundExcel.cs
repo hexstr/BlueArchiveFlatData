@@ -42,7 +42,7 @@ public struct IdCardBackgroundExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.IdCardBackgroundExcel> CreateIdCardBackgroundExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataJp.Rarity Rarity = FlatDataJp.Rarity.N,
+      FlatDataJp.Rarity rarity = FlatDataJp.Rarity.N,
       long DisplayOrder = 0,
       bool CollectionVisible = false,
       bool IsDefault = false,
@@ -55,7 +55,7 @@ public struct IdCardBackgroundExcel : IFlatbufferObject
     IdCardBackgroundExcel.AddIcon(builder, IconOffset);
     IdCardBackgroundExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
     IdCardBackgroundExcel.AddBgPath(builder, BgPathOffset);
-    IdCardBackgroundExcel.AddRarity(builder, Rarity);
+    IdCardBackgroundExcel.AddRarity(builder, rarity);
     IdCardBackgroundExcel.AddIsDefault(builder, IsDefault);
     IdCardBackgroundExcel.AddCollectionVisible(builder, CollectionVisible);
     return IdCardBackgroundExcel.EndIdCardBackgroundExcel(builder);
@@ -63,7 +63,7 @@ public struct IdCardBackgroundExcel : IFlatbufferObject
 
   public static void StartIdCardBackgroundExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity Rarity) { builder.AddInt(1, (int)Rarity, 0); }
+  public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity rarity) { builder.AddInt(1, (int)rarity, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(2, DisplayOrder, 0); }
   public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(3, CollectionVisible, false); }
   public static void AddIsDefault(FlatBufferBuilder builder, bool IsDefault) { builder.AddBool(4, IsDefault, false); }

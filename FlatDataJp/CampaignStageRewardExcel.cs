@@ -20,7 +20,7 @@ public struct CampaignStageRewardExcel : IFlatbufferObject
   public CampaignStageRewardExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long GroupId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.RewardTag RewardTag { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.RewardTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.RewardTag.Default; } }
+  public FlatDataJp.RewardTag Rewardtag { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.RewardTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.RewardTag.Default; } }
   public int StageRewardProb { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public FlatDataJp.ParcelType StageRewardParcelType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
   public long StageRewardId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -29,7 +29,7 @@ public struct CampaignStageRewardExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.CampaignStageRewardExcel> CreateCampaignStageRewardExcel(FlatBufferBuilder builder,
       long GroupId = 0,
-      FlatDataJp.RewardTag RewardTag = FlatDataJp.RewardTag.Default,
+      FlatDataJp.RewardTag rewardtag = FlatDataJp.RewardTag.Default,
       int StageRewardProb = 0,
       FlatDataJp.ParcelType StageRewardParcelType = FlatDataJp.ParcelType.None,
       long StageRewardId = 0,
@@ -41,14 +41,14 @@ public struct CampaignStageRewardExcel : IFlatbufferObject
     CampaignStageRewardExcel.AddStageRewardAmount(builder, StageRewardAmount);
     CampaignStageRewardExcel.AddStageRewardParcelType(builder, StageRewardParcelType);
     CampaignStageRewardExcel.AddStageRewardProb(builder, StageRewardProb);
-    CampaignStageRewardExcel.AddRewardTag(builder, RewardTag);
+    CampaignStageRewardExcel.AddRewardtag(builder, rewardtag);
     CampaignStageRewardExcel.AddIsDisplayed(builder, IsDisplayed);
     return CampaignStageRewardExcel.EndCampaignStageRewardExcel(builder);
   }
 
   public static void StartCampaignStageRewardExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(0, GroupId, 0); }
-  public static void AddRewardTag(FlatBufferBuilder builder, FlatDataJp.RewardTag RewardTag) { builder.AddInt(1, (int)RewardTag, 0); }
+  public static void AddRewardtag(FlatBufferBuilder builder, FlatDataJp.RewardTag rewardtag) { builder.AddInt(1, (int)rewardtag, 0); }
   public static void AddStageRewardProb(FlatBufferBuilder builder, int StageRewardProb) { builder.AddInt(2, StageRewardProb, 0); }
   public static void AddStageRewardParcelType(FlatBufferBuilder builder, FlatDataJp.ParcelType StageRewardParcelType) { builder.AddInt(3, (int)StageRewardParcelType, 0); }
   public static void AddStageRewardId(FlatBufferBuilder builder, long StageRewardId) { builder.AddLong(4, StageRewardId, 0); }

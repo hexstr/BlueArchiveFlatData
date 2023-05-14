@@ -20,23 +20,23 @@ public struct EventContentCurrencyItemExcel : IFlatbufferObject
   public EventContentCurrencyItemExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.EventContentItemType EventContentItemType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EventContentItemType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventContentItemType.EventPoint; } }
+  public FlatDataJp.EventContentItemType Eventcontentitemtype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EventContentItemType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventContentItemType.EventPoint; } }
   public long ItemUniqueId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataJp.EventContentCurrencyItemExcel> CreateEventContentCurrencyItemExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
-      FlatDataJp.EventContentItemType EventContentItemType = FlatDataJp.EventContentItemType.EventPoint,
+      FlatDataJp.EventContentItemType eventcontentitemtype = FlatDataJp.EventContentItemType.EventPoint,
       long ItemUniqueId = 0) {
     builder.StartTable(3);
     EventContentCurrencyItemExcel.AddItemUniqueId(builder, ItemUniqueId);
     EventContentCurrencyItemExcel.AddEventContentId(builder, EventContentId);
-    EventContentCurrencyItemExcel.AddEventContentItemType(builder, EventContentItemType);
+    EventContentCurrencyItemExcel.AddEventcontentitemtype(builder, eventcontentitemtype);
     return EventContentCurrencyItemExcel.EndEventContentCurrencyItemExcel(builder);
   }
 
   public static void StartEventContentCurrencyItemExcel(FlatBufferBuilder builder) { builder.StartTable(3); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
-  public static void AddEventContentItemType(FlatBufferBuilder builder, FlatDataJp.EventContentItemType EventContentItemType) { builder.AddInt(1, (int)EventContentItemType, 0); }
+  public static void AddEventcontentitemtype(FlatBufferBuilder builder, FlatDataJp.EventContentItemType eventcontentitemtype) { builder.AddInt(1, (int)eventcontentitemtype, 0); }
   public static void AddItemUniqueId(FlatBufferBuilder builder, long ItemUniqueId) { builder.AddLong(2, ItemUniqueId, 0); }
   public static Offset<FlatDataJp.EventContentCurrencyItemExcel> EndEventContentCurrencyItemExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();

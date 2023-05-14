@@ -20,7 +20,7 @@ public struct BGMExcel : IFlatbufferObject
   public BGMExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ProductionStep ProductionStep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
+  public FlatDataJp.ProductionStep Productionstep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
   public string Path { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetPathBytes() { return __p.__vector_as_span<byte>(8, 1); }
@@ -36,7 +36,7 @@ public struct BGMExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.BGMExcel> CreateBGMExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataJp.ProductionStep ProductionStep = FlatDataJp.ProductionStep.ToDo,
+      FlatDataJp.ProductionStep productionstep = FlatDataJp.ProductionStep.ToDo,
       StringOffset PathOffset = default(StringOffset),
       float Volume = 0.0f,
       float LoopStartTime = 0.0f,
@@ -51,13 +51,13 @@ public struct BGMExcel : IFlatbufferObject
     BGMExcel.AddLoopStartTime(builder, LoopStartTime);
     BGMExcel.AddVolume(builder, Volume);
     BGMExcel.AddPath(builder, PathOffset);
-    BGMExcel.AddProductionStep(builder, ProductionStep);
+    BGMExcel.AddProductionstep(builder, productionstep);
     return BGMExcel.EndBGMExcel(builder);
   }
 
   public static void StartBGMExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataJp.ProductionStep ProductionStep) { builder.AddInt(1, (int)ProductionStep, 0); }
+  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataJp.ProductionStep productionstep) { builder.AddInt(1, (int)productionstep, 0); }
   public static void AddPath(FlatBufferBuilder builder, StringOffset PathOffset) { builder.AddOffset(2, PathOffset.Value, 0); }
   public static void AddVolume(FlatBufferBuilder builder, float Volume) { builder.AddFloat(3, Volume, 0.0f); }
   public static void AddLoopStartTime(FlatBufferBuilder builder, float LoopStartTime) { builder.AddFloat(4, LoopStartTime, 0.0f); }

@@ -55,15 +55,16 @@ public enum DialogCategory : int
   UIAttendanceEvent09 = 45,
   UIAttendanceEvent10 = 46,
   UIAttendanceEvent11 = 47,
-  DialogName01 = 48,
-  DialogName02 = 49,
-  DialogName03 = 50,
-  DialogName04 = 51,
-  DialogName05 = 52,
-  DialogName06 = 53,
-  DialogName07 = 54,
+  UIWorkPlanaSit = 48,
+  UIWorkPlanaUmbrella = 49,
+  UIWorkPlanaCabinet = 50,
+  UIWorkCoexist_AronaSleepSit = 51,
+  UIWorkCoexist_PlanaWatchSky = 52,
+  UIWorkCoexist_PlanaSitPeek = 53,
+  UIWorkCoexist_AronaSleepPeek = 54,
   UIEventArchive = 55,
   UIAttendanceEvent12 = 56,
+  UIAttendanceEvent13 = 57,
 };
 
 

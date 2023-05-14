@@ -35,14 +35,14 @@ public struct CafeInteractionExcel : IFlatbufferObject
   public ArraySegment<byte>? GetIgnoreIfUnobtainedEndDateBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetIgnoreIfUnobtainedEndDateArray() { return __p.__vector_as_array<byte>(10); }
-  public FlatDataJp.BubbleType BubbleType_(int j) { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.BubbleType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.BubbleType)0; }
-  public int BubbleType_Length { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataJp.BubbleType BubbleType(int j) { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.BubbleType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.BubbleType)0; }
+  public int BubbleTypeLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataJp.BubbleType> GetBubbleType_Bytes() { return __p.__vector_as_span<FlatDataJp.BubbleType>(12, 4); }
+  public Span<FlatDataJp.BubbleType> GetBubbleTypeBytes() { return __p.__vector_as_span<FlatDataJp.BubbleType>(12, 4); }
 #else
-  public ArraySegment<byte>? GetBubbleType_Bytes() { return __p.__vector_as_arraysegment(12); }
+  public ArraySegment<byte>? GetBubbleTypeBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
-  public FlatDataJp.BubbleType[] GetBubbleType_Array() { int o = __p.__offset(12); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.BubbleType[] a = new FlatDataJp.BubbleType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.BubbleType)__p.bb.GetInt(p + i * 4); } return a; }
+  public FlatDataJp.BubbleType[] GetBubbleTypeArray() { int o = __p.__offset(12); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.BubbleType[] a = new FlatDataJp.BubbleType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.BubbleType)__p.bb.GetInt(p + i * 4); } return a; }
   public long BubbleDuration(int j) { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
   public int BubbleDurationLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -62,7 +62,7 @@ public struct CafeInteractionExcel : IFlatbufferObject
       bool IgnoreIfUnobtained = false,
       StringOffset IgnoreIfUnobtainedStartDateOffset = default(StringOffset),
       StringOffset IgnoreIfUnobtainedEndDateOffset = default(StringOffset),
-      VectorOffset BubbleType_Offset = default(VectorOffset),
+      VectorOffset BubbleTypeOffset = default(VectorOffset),
       VectorOffset BubbleDurationOffset = default(VectorOffset),
       FlatDataJp.ParcelType FavorEmoticonRewardParcelType = FlatDataJp.ParcelType.None,
       long FavorEmoticonRewardId = 0,
@@ -75,7 +75,7 @@ public struct CafeInteractionExcel : IFlatbufferObject
     CafeInteractionExcel.AddCafeCharacterState(builder, CafeCharacterStateOffset);
     CafeInteractionExcel.AddFavorEmoticonRewardParcelType(builder, FavorEmoticonRewardParcelType);
     CafeInteractionExcel.AddBubbleDuration(builder, BubbleDurationOffset);
-    CafeInteractionExcel.AddBubbleType_(builder, BubbleType_Offset);
+    CafeInteractionExcel.AddBubbleType(builder, BubbleTypeOffset);
     CafeInteractionExcel.AddIgnoreIfUnobtainedEndDate(builder, IgnoreIfUnobtainedEndDateOffset);
     CafeInteractionExcel.AddIgnoreIfUnobtainedStartDate(builder, IgnoreIfUnobtainedStartDateOffset);
     CafeInteractionExcel.AddIgnoreIfUnobtained(builder, IgnoreIfUnobtained);
@@ -87,12 +87,12 @@ public struct CafeInteractionExcel : IFlatbufferObject
   public static void AddIgnoreIfUnobtained(FlatBufferBuilder builder, bool IgnoreIfUnobtained) { builder.AddBool(1, IgnoreIfUnobtained, false); }
   public static void AddIgnoreIfUnobtainedStartDate(FlatBufferBuilder builder, StringOffset IgnoreIfUnobtainedStartDateOffset) { builder.AddOffset(2, IgnoreIfUnobtainedStartDateOffset.Value, 0); }
   public static void AddIgnoreIfUnobtainedEndDate(FlatBufferBuilder builder, StringOffset IgnoreIfUnobtainedEndDateOffset) { builder.AddOffset(3, IgnoreIfUnobtainedEndDateOffset.Value, 0); }
-  public static void AddBubbleType_(FlatBufferBuilder builder, VectorOffset BubbleType_Offset) { builder.AddOffset(4, BubbleType_Offset.Value, 0); }
-  public static VectorOffset CreateBubbleType_Vector(FlatBufferBuilder builder, FlatDataJp.BubbleType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateBubbleType_VectorBlock(FlatBufferBuilder builder, FlatDataJp.BubbleType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateBubbleType_VectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.BubbleType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateBubbleType_VectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.BubbleType>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartBubbleType_Vector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddBubbleType(FlatBufferBuilder builder, VectorOffset BubbleTypeOffset) { builder.AddOffset(4, BubbleTypeOffset.Value, 0); }
+  public static VectorOffset CreateBubbleTypeVector(FlatBufferBuilder builder, FlatDataJp.BubbleType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateBubbleTypeVectorBlock(FlatBufferBuilder builder, FlatDataJp.BubbleType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateBubbleTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.BubbleType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateBubbleTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.BubbleType>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartBubbleTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddBubbleDuration(FlatBufferBuilder builder, VectorOffset BubbleDurationOffset) { builder.AddOffset(5, BubbleDurationOffset.Value, 0); }
   public static VectorOffset CreateBubbleDurationVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateBubbleDurationVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }

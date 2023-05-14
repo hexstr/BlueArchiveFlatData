@@ -48,7 +48,7 @@ public struct ShopExcel : IFlatbufferObject
   public byte[] GetSalePeriodToArray() { return __p.__vector_as_array<byte>(18); }
   public long PurchaseCooltimeMin { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PurchaseCountLimit { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.PurchaseCountResetType PurchaseCountResetType { get { int o = __p.__offset(24); return o != 0 ? (FlatDataJp.PurchaseCountResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.PurchaseCountResetType.None; } }
+  public FlatDataJp.PurchaseCountResetType Purchasecountresettype { get { int o = __p.__offset(24); return o != 0 ? (FlatDataJp.PurchaseCountResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.PurchaseCountResetType.None; } }
   public string BuyReportEventName { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetBuyReportEventNameBytes() { return __p.__vector_as_span<byte>(26, 1); }
@@ -57,6 +57,7 @@ public struct ShopExcel : IFlatbufferObject
 #endif
   public byte[] GetBuyReportEventNameArray() { return __p.__vector_as_array<byte>(26); }
   public bool RestrictBuyWhenInventoryFull { get { int o = __p.__offset(28); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataJp.ProductDisplayTag DisplayTag { get { int o = __p.__offset(30); return o != 0 ? (FlatDataJp.ProductDisplayTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductDisplayTag.None; } }
 
   public static Offset<FlatDataJp.ShopExcel> CreateShopExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -69,16 +70,18 @@ public struct ShopExcel : IFlatbufferObject
       StringOffset SalePeriodToOffset = default(StringOffset),
       long PurchaseCooltimeMin = 0,
       long PurchaseCountLimit = 0,
-      FlatDataJp.PurchaseCountResetType PurchaseCountResetType = FlatDataJp.PurchaseCountResetType.None,
+      FlatDataJp.PurchaseCountResetType purchasecountresettype = FlatDataJp.PurchaseCountResetType.None,
       StringOffset BuyReportEventNameOffset = default(StringOffset),
-      bool RestrictBuyWhenInventoryFull = false) {
-    builder.StartTable(13);
+      bool RestrictBuyWhenInventoryFull = false,
+      FlatDataJp.ProductDisplayTag DisplayTag = FlatDataJp.ProductDisplayTag.None) {
+    builder.StartTable(14);
     ShopExcel.AddPurchaseCountLimit(builder, PurchaseCountLimit);
     ShopExcel.AddPurchaseCooltimeMin(builder, PurchaseCooltimeMin);
     ShopExcel.AddDisplayOrder(builder, DisplayOrder);
     ShopExcel.AddId(builder, Id);
+    ShopExcel.AddDisplayTag(builder, DisplayTag);
     ShopExcel.AddBuyReportEventName(builder, BuyReportEventNameOffset);
-    ShopExcel.AddPurchaseCountResetType(builder, PurchaseCountResetType);
+    ShopExcel.AddPurchasecountresettype(builder, purchasecountresettype);
     ShopExcel.AddSalePeriodTo(builder, SalePeriodToOffset);
     ShopExcel.AddSalePeriodFrom(builder, SalePeriodFromOffset);
     ShopExcel.AddGoodsId(builder, GoodsIdOffset);
@@ -89,7 +92,7 @@ public struct ShopExcel : IFlatbufferObject
     return ShopExcel.EndShopExcel(builder);
   }
 
-  public static void StartShopExcel(FlatBufferBuilder builder) { builder.StartTable(13); }
+  public static void StartShopExcel(FlatBufferBuilder builder) { builder.StartTable(14); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(1, LocalizeEtcId, 0); }
   public static void AddCategoryType(FlatBufferBuilder builder, FlatDataJp.ShopCategoryType CategoryType) { builder.AddInt(2, (int)CategoryType, 0); }
@@ -105,9 +108,10 @@ public struct ShopExcel : IFlatbufferObject
   public static void AddSalePeriodTo(FlatBufferBuilder builder, StringOffset SalePeriodToOffset) { builder.AddOffset(7, SalePeriodToOffset.Value, 0); }
   public static void AddPurchaseCooltimeMin(FlatBufferBuilder builder, long PurchaseCooltimeMin) { builder.AddLong(8, PurchaseCooltimeMin, 0); }
   public static void AddPurchaseCountLimit(FlatBufferBuilder builder, long PurchaseCountLimit) { builder.AddLong(9, PurchaseCountLimit, 0); }
-  public static void AddPurchaseCountResetType(FlatBufferBuilder builder, FlatDataJp.PurchaseCountResetType PurchaseCountResetType) { builder.AddInt(10, (int)PurchaseCountResetType, 0); }
+  public static void AddPurchasecountresettype(FlatBufferBuilder builder, FlatDataJp.PurchaseCountResetType purchasecountresettype) { builder.AddInt(10, (int)purchasecountresettype, 0); }
   public static void AddBuyReportEventName(FlatBufferBuilder builder, StringOffset BuyReportEventNameOffset) { builder.AddOffset(11, BuyReportEventNameOffset.Value, 0); }
   public static void AddRestrictBuyWhenInventoryFull(FlatBufferBuilder builder, bool RestrictBuyWhenInventoryFull) { builder.AddBool(12, RestrictBuyWhenInventoryFull, false); }
+  public static void AddDisplayTag(FlatBufferBuilder builder, FlatDataJp.ProductDisplayTag DisplayTag) { builder.AddInt(13, (int)DisplayTag, 0); }
   public static Offset<FlatDataJp.ShopExcel> EndShopExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.ShopExcel>(o);

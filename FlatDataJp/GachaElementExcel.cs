@@ -21,7 +21,7 @@ public struct GachaElementExcel : IFlatbufferObject
 
   public long ID { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long GachaGroupID { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ParcelType ParcelType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
+  public FlatDataJp.ParcelType Parceltype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
   public long ParcelID { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataJp.Rarity Rarity { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.Rarity.N; } }
   public int ParcelAmountMin { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
@@ -32,9 +32,9 @@ public struct GachaElementExcel : IFlatbufferObject
   public static Offset<FlatDataJp.GachaElementExcel> CreateGachaElementExcel(FlatBufferBuilder builder,
       long ID = 0,
       long GachaGroupID = 0,
-      FlatDataJp.ParcelType ParcelType = FlatDataJp.ParcelType.None,
+      FlatDataJp.ParcelType parceltype = FlatDataJp.ParcelType.None,
       long ParcelID = 0,
-      FlatDataJp.Rarity Rarity = FlatDataJp.Rarity.N,
+      FlatDataJp.Rarity rarity = FlatDataJp.Rarity.N,
       int ParcelAmountMin = 0,
       int ParcelAmountMax = 0,
       int Prob = 0,
@@ -47,17 +47,17 @@ public struct GachaElementExcel : IFlatbufferObject
     GachaElementExcel.AddProb(builder, Prob);
     GachaElementExcel.AddParcelAmountMax(builder, ParcelAmountMax);
     GachaElementExcel.AddParcelAmountMin(builder, ParcelAmountMin);
-    GachaElementExcel.AddRarity(builder, Rarity);
-    GachaElementExcel.AddParcelType(builder, ParcelType);
+    GachaElementExcel.AddRarity(builder, rarity);
+    GachaElementExcel.AddParceltype(builder, parceltype);
     return GachaElementExcel.EndGachaElementExcel(builder);
   }
 
   public static void StartGachaElementExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
   public static void AddID(FlatBufferBuilder builder, long ID) { builder.AddLong(0, ID, 0); }
   public static void AddGachaGroupID(FlatBufferBuilder builder, long GachaGroupID) { builder.AddLong(1, GachaGroupID, 0); }
-  public static void AddParcelType(FlatBufferBuilder builder, FlatDataJp.ParcelType ParcelType) { builder.AddInt(2, (int)ParcelType, 0); }
+  public static void AddParceltype(FlatBufferBuilder builder, FlatDataJp.ParcelType parceltype) { builder.AddInt(2, (int)parceltype, 0); }
   public static void AddParcelID(FlatBufferBuilder builder, long ParcelID) { builder.AddLong(3, ParcelID, 0); }
-  public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity Rarity) { builder.AddInt(4, (int)Rarity, 0); }
+  public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity rarity) { builder.AddInt(4, (int)rarity, 0); }
   public static void AddParcelAmountMin(FlatBufferBuilder builder, int ParcelAmountMin) { builder.AddInt(5, ParcelAmountMin, 0); }
   public static void AddParcelAmountMax(FlatBufferBuilder builder, int ParcelAmountMax) { builder.AddInt(6, ParcelAmountMax, 0); }
   public static void AddProb(FlatBufferBuilder builder, int Prob) { builder.AddInt(7, Prob, 0); }

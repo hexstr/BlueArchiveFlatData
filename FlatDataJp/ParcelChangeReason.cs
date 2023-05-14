@@ -147,6 +147,8 @@ public enum ParcelChangeReason : int
   ShiftingCraft_BeginProcess = 137,
   ShiftingCraft_CompleteProcess = 138,
   ShiftingCraft_Reward = 139,
+  MiniGame_ShootingBattleResult = 140,
+  MiniGame_ShootingSweep = 141,
 };
 
 

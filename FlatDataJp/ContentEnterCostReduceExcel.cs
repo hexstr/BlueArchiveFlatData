@@ -20,7 +20,7 @@ public struct ContentEnterCostReduceExcel : IFlatbufferObject
   public ContentEnterCostReduceExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long EnterCostReduceGroupId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ContentType ContentType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ContentType.None; } }
+  public FlatDataJp.ContentType Contenttype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ContentType.None; } }
   public long StageId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataJp.ParcelType ReduceEnterCostType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
   public long ReduceEnterCostId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -28,7 +28,7 @@ public struct ContentEnterCostReduceExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.ContentEnterCostReduceExcel> CreateContentEnterCostReduceExcel(FlatBufferBuilder builder,
       long EnterCostReduceGroupId = 0,
-      FlatDataJp.ContentType ContentType = FlatDataJp.ContentType.None,
+      FlatDataJp.ContentType contenttype = FlatDataJp.ContentType.None,
       long StageId = 0,
       FlatDataJp.ParcelType ReduceEnterCostType = FlatDataJp.ParcelType.None,
       long ReduceEnterCostId = 0,
@@ -39,13 +39,13 @@ public struct ContentEnterCostReduceExcel : IFlatbufferObject
     ContentEnterCostReduceExcel.AddStageId(builder, StageId);
     ContentEnterCostReduceExcel.AddEnterCostReduceGroupId(builder, EnterCostReduceGroupId);
     ContentEnterCostReduceExcel.AddReduceEnterCostType(builder, ReduceEnterCostType);
-    ContentEnterCostReduceExcel.AddContentType(builder, ContentType);
+    ContentEnterCostReduceExcel.AddContenttype(builder, contenttype);
     return ContentEnterCostReduceExcel.EndContentEnterCostReduceExcel(builder);
   }
 
   public static void StartContentEnterCostReduceExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
   public static void AddEnterCostReduceGroupId(FlatBufferBuilder builder, long EnterCostReduceGroupId) { builder.AddLong(0, EnterCostReduceGroupId, 0); }
-  public static void AddContentType(FlatBufferBuilder builder, FlatDataJp.ContentType ContentType) { builder.AddInt(1, (int)ContentType, 0); }
+  public static void AddContenttype(FlatBufferBuilder builder, FlatDataJp.ContentType contenttype) { builder.AddInt(1, (int)contenttype, 0); }
   public static void AddStageId(FlatBufferBuilder builder, long StageId) { builder.AddLong(2, StageId, 0); }
   public static void AddReduceEnterCostType(FlatBufferBuilder builder, FlatDataJp.ParcelType ReduceEnterCostType) { builder.AddInt(3, (int)ReduceEnterCostType, 0); }
   public static void AddReduceEnterCostId(FlatBufferBuilder builder, long ReduceEnterCostId) { builder.AddLong(4, ReduceEnterCostId, 0); }

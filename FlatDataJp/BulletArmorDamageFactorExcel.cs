@@ -26,20 +26,20 @@ public struct BulletArmorDamageFactorExcel : IFlatbufferObject
   public ArraySegment<byte>? GetDamageFactorGroupIdBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetDamageFactorGroupIdArray() { return __p.__vector_as_array<byte>(4); }
-  public FlatDataJp.BulletType BulletType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.BulletType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.BulletType.Normal; } }
-  public FlatDataJp.ArmorType ArmorType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.ArmorType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ArmorType.LightArmor; } }
+  public FlatDataJp.BulletType Bullettype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.BulletType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.BulletType.Normal; } }
+  public FlatDataJp.ArmorType Armortype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.ArmorType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ArmorType.LightArmor; } }
   public long DamageRate { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.DamageAttribute DamageAttribute { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.DamageAttribute)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.DamageAttribute.Resist; } }
+  public FlatDataJp.DamageAttribute Damageattribute { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.DamageAttribute)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.DamageAttribute.Resist; } }
   public long MinDamageRate { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long MaxDamageRate { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public bool ShowHighlightFloater { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataJp.BulletArmorDamageFactorExcel> CreateBulletArmorDamageFactorExcel(FlatBufferBuilder builder,
       StringOffset DamageFactorGroupIdOffset = default(StringOffset),
-      FlatDataJp.BulletType BulletType = FlatDataJp.BulletType.Normal,
-      FlatDataJp.ArmorType ArmorType = FlatDataJp.ArmorType.LightArmor,
+      FlatDataJp.BulletType bullettype = FlatDataJp.BulletType.Normal,
+      FlatDataJp.ArmorType armortype = FlatDataJp.ArmorType.LightArmor,
       long DamageRate = 0,
-      FlatDataJp.DamageAttribute DamageAttribute = FlatDataJp.DamageAttribute.Resist,
+      FlatDataJp.DamageAttribute damageattribute = FlatDataJp.DamageAttribute.Resist,
       long MinDamageRate = 0,
       long MaxDamageRate = 0,
       bool ShowHighlightFloater = false) {
@@ -47,9 +47,9 @@ public struct BulletArmorDamageFactorExcel : IFlatbufferObject
     BulletArmorDamageFactorExcel.AddMaxDamageRate(builder, MaxDamageRate);
     BulletArmorDamageFactorExcel.AddMinDamageRate(builder, MinDamageRate);
     BulletArmorDamageFactorExcel.AddDamageRate(builder, DamageRate);
-    BulletArmorDamageFactorExcel.AddDamageAttribute(builder, DamageAttribute);
-    BulletArmorDamageFactorExcel.AddArmorType(builder, ArmorType);
-    BulletArmorDamageFactorExcel.AddBulletType(builder, BulletType);
+    BulletArmorDamageFactorExcel.AddDamageattribute(builder, damageattribute);
+    BulletArmorDamageFactorExcel.AddArmortype(builder, armortype);
+    BulletArmorDamageFactorExcel.AddBullettype(builder, bullettype);
     BulletArmorDamageFactorExcel.AddDamageFactorGroupId(builder, DamageFactorGroupIdOffset);
     BulletArmorDamageFactorExcel.AddShowHighlightFloater(builder, ShowHighlightFloater);
     return BulletArmorDamageFactorExcel.EndBulletArmorDamageFactorExcel(builder);
@@ -57,10 +57,10 @@ public struct BulletArmorDamageFactorExcel : IFlatbufferObject
 
   public static void StartBulletArmorDamageFactorExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddDamageFactorGroupId(FlatBufferBuilder builder, StringOffset DamageFactorGroupIdOffset) { builder.AddOffset(0, DamageFactorGroupIdOffset.Value, 0); }
-  public static void AddBulletType(FlatBufferBuilder builder, FlatDataJp.BulletType BulletType) { builder.AddInt(1, (int)BulletType, 0); }
-  public static void AddArmorType(FlatBufferBuilder builder, FlatDataJp.ArmorType ArmorType) { builder.AddInt(2, (int)ArmorType, 0); }
+  public static void AddBullettype(FlatBufferBuilder builder, FlatDataJp.BulletType bullettype) { builder.AddInt(1, (int)bullettype, 0); }
+  public static void AddArmortype(FlatBufferBuilder builder, FlatDataJp.ArmorType armortype) { builder.AddInt(2, (int)armortype, 0); }
   public static void AddDamageRate(FlatBufferBuilder builder, long DamageRate) { builder.AddLong(3, DamageRate, 0); }
-  public static void AddDamageAttribute(FlatBufferBuilder builder, FlatDataJp.DamageAttribute DamageAttribute) { builder.AddInt(4, (int)DamageAttribute, 0); }
+  public static void AddDamageattribute(FlatBufferBuilder builder, FlatDataJp.DamageAttribute damageattribute) { builder.AddInt(4, (int)damageattribute, 0); }
   public static void AddMinDamageRate(FlatBufferBuilder builder, long MinDamageRate) { builder.AddLong(5, MinDamageRate, 0); }
   public static void AddMaxDamageRate(FlatBufferBuilder builder, long MaxDamageRate) { builder.AddLong(6, MaxDamageRate, 0); }
   public static void AddShowHighlightFloater(FlatBufferBuilder builder, bool ShowHighlightFloater) { builder.AddBool(7, ShowHighlightFloater, false); }

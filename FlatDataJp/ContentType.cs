@@ -25,6 +25,8 @@ public enum ContentType : int
   ScenarioMode = 15,
   EventContent = 16,
   WorldRaid = 17,
+  EliminateRaid = 18,
+  Chaser = 19,
 };
 
 

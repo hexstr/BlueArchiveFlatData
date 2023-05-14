@@ -97,6 +97,7 @@ public struct WorldRaidBossGroupExcel : IFlatbufferObject
   public ArraySegment<byte>? GetExclusiveOperatorBossDamagedBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
   public byte[] GetExclusiveOperatorBossDamagedArray() { return __p.__vector_as_array<byte>(36); }
+  public long BossGroupOpenCondition { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataJp.WorldRaidBossGroupExcel> CreateWorldRaidBossGroupExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -115,8 +116,10 @@ public struct WorldRaidBossGroupExcel : IFlatbufferObject
       StringOffset ExclusiveOperatorBossSpawnOffset = default(StringOffset),
       StringOffset ExclusiveOperatorBossKillOffset = default(StringOffset),
       StringOffset ExclusiveOperatorScenarioBattleOffset = default(StringOffset),
-      StringOffset ExclusiveOperatorBossDamagedOffset = default(StringOffset)) {
-    builder.StartTable(17);
+      StringOffset ExclusiveOperatorBossDamagedOffset = default(StringOffset),
+      long BossGroupOpenCondition = 0) {
+    builder.StartTable(18);
+    WorldRaidBossGroupExcel.AddBossGroupOpenCondition(builder, BossGroupOpenCondition);
     WorldRaidBossGroupExcel.AddEchelonConstraintGroupId(builder, EchelonConstraintGroupId);
     WorldRaidBossGroupExcel.AddWorldBossClearRewardGroupId(builder, WorldBossClearRewardGroupId);
     WorldRaidBossGroupExcel.AddWorldBossHP(builder, WorldBossHP);
@@ -137,7 +140,7 @@ public struct WorldRaidBossGroupExcel : IFlatbufferObject
     return WorldRaidBossGroupExcel.EndWorldRaidBossGroupExcel(builder);
   }
 
-  public static void StartWorldRaidBossGroupExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
+  public static void StartWorldRaidBossGroupExcel(FlatBufferBuilder builder) { builder.StartTable(18); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddWorldRaidBossGroupId(FlatBufferBuilder builder, long WorldRaidBossGroupId) { builder.AddLong(1, WorldRaidBossGroupId, 0); }
   public static void AddWorldBossName(FlatBufferBuilder builder, StringOffset WorldBossNameOffset) { builder.AddOffset(2, WorldBossNameOffset.Value, 0); }
@@ -160,6 +163,7 @@ public struct WorldRaidBossGroupExcel : IFlatbufferObject
   public static void AddExclusiveOperatorBossKill(FlatBufferBuilder builder, StringOffset ExclusiveOperatorBossKillOffset) { builder.AddOffset(14, ExclusiveOperatorBossKillOffset.Value, 0); }
   public static void AddExclusiveOperatorScenarioBattle(FlatBufferBuilder builder, StringOffset ExclusiveOperatorScenarioBattleOffset) { builder.AddOffset(15, ExclusiveOperatorScenarioBattleOffset.Value, 0); }
   public static void AddExclusiveOperatorBossDamaged(FlatBufferBuilder builder, StringOffset ExclusiveOperatorBossDamagedOffset) { builder.AddOffset(16, ExclusiveOperatorBossDamagedOffset.Value, 0); }
+  public static void AddBossGroupOpenCondition(FlatBufferBuilder builder, long BossGroupOpenCondition) { builder.AddLong(17, BossGroupOpenCondition, 0); }
   public static Offset<FlatDataJp.WorldRaidBossGroupExcel> EndWorldRaidBossGroupExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.WorldRaidBossGroupExcel>(o);

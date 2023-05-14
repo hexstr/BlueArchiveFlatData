@@ -20,7 +20,7 @@ public struct MemoryLobbyExcel : IFlatbufferObject
   public MemoryLobbyExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ProductionStep ProductionStep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
+  public FlatDataJp.ProductionStep Productionstep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
   public uint LocalizeEtcId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public long CharacterId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string PrefabName { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
@@ -62,7 +62,7 @@ public struct MemoryLobbyExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.MemoryLobbyExcel> CreateMemoryLobbyExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataJp.ProductionStep ProductionStep = FlatDataJp.ProductionStep.ToDo,
+      FlatDataJp.ProductionStep productionstep = FlatDataJp.ProductionStep.ToDo,
       uint LocalizeEtcId = 0,
       long CharacterId = 0,
       StringOffset PrefabNameOffset = default(StringOffset),
@@ -81,13 +81,13 @@ public struct MemoryLobbyExcel : IFlatbufferObject
     MemoryLobbyExcel.AddSlotTextureName(builder, SlotTextureNameOffset);
     MemoryLobbyExcel.AddPrefabName(builder, PrefabNameOffset);
     MemoryLobbyExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
-    MemoryLobbyExcel.AddProductionStep(builder, ProductionStep);
+    MemoryLobbyExcel.AddProductionstep(builder, productionstep);
     return MemoryLobbyExcel.EndMemoryLobbyExcel(builder);
   }
 
   public static void StartMemoryLobbyExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataJp.ProductionStep ProductionStep) { builder.AddInt(1, (int)ProductionStep, 0); }
+  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataJp.ProductionStep productionstep) { builder.AddInt(1, (int)productionstep, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(2, LocalizeEtcId, 0); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(3, CharacterId, 0); }
   public static void AddPrefabName(FlatBufferBuilder builder, StringOffset PrefabNameOffset) { builder.AddOffset(4, PrefabNameOffset.Value, 0); }

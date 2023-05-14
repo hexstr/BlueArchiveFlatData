@@ -30,7 +30,7 @@ public struct GroundExcel : IFlatbufferObject
 #endif
   public byte[] GetGroundSceneNameArray() { return __p.__vector_as_array<byte>(8); }
   public long FormationGroupId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.StageTopography StageTopography { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageTopography.Street; } }
+  public FlatDataJp.StageTopography Stagetopography { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageTopography.Street; } }
   public FlatDataJp.BulletType EnemyBulletType { get { int o = __p.__offset(14); return o != 0 ? (FlatDataJp.BulletType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.BulletType.Normal; } }
   public FlatDataJp.ArmorType EnemyArmorType { get { int o = __p.__offset(16); return o != 0 ? (FlatDataJp.ArmorType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ArmorType.LightArmor; } }
   public long LevelNPC { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -59,20 +59,21 @@ public struct GroundExcel : IFlatbufferObject
   public bool PlayerSightRangeMax { get { int o = __p.__offset(64); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool EnemySightRangeMax { get { int o = __p.__offset(66); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long TSSAirUnitHeight { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool IsRaid { get { int o = __p.__offset(70); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool IsPhaseBGM { get { int o = __p.__offset(70); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long BGMId { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public bool WarningUI { get { int o = __p.__offset(74); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool TSSHatchOpen { get { int o = __p.__offset(76); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public FlatDataJp.TacticSpeed ForcedTacticSpeed { get { int o = __p.__offset(78); return o != 0 ? (FlatDataJp.TacticSpeed)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticSpeed.None; } }
   public FlatDataJp.TacticSkillUse ForcedSkillUse { get { int o = __p.__offset(80); return o != 0 ? (FlatDataJp.TacticSkillUse)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticSkillUse.None; } }
   public FlatDataJp.ShowSkillCutIn ShowNPCSkillCutIn { get { int o = __p.__offset(82); return o != 0 ? (FlatDataJp.ShowSkillCutIn)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ShowSkillCutIn.None; } }
+  public bool ImmuneHitBeforeTimeOutEnd { get { int o = __p.__offset(84); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataJp.GroundExcel> CreateGroundExcel(FlatBufferBuilder builder,
       long Id = 0,
       VectorOffset StageFileNameOffset = default(VectorOffset),
       StringOffset GroundSceneNameOffset = default(StringOffset),
       long FormationGroupId = 0,
-      FlatDataJp.StageTopography StageTopography = FlatDataJp.StageTopography.Street,
+      FlatDataJp.StageTopography stagetopography = FlatDataJp.StageTopography.Street,
       FlatDataJp.BulletType EnemyBulletType = FlatDataJp.BulletType.Normal,
       FlatDataJp.ArmorType EnemyArmorType = FlatDataJp.ArmorType.LightArmor,
       long LevelNPC = 0,
@@ -101,14 +102,15 @@ public struct GroundExcel : IFlatbufferObject
       bool PlayerSightRangeMax = false,
       bool EnemySightRangeMax = false,
       long TSSAirUnitHeight = 0,
-      bool IsRaid = false,
+      bool IsPhaseBGM = false,
       long BGMId = 0,
       bool WarningUI = false,
       bool TSSHatchOpen = false,
       FlatDataJp.TacticSpeed ForcedTacticSpeed = FlatDataJp.TacticSpeed.None,
       FlatDataJp.TacticSkillUse ForcedSkillUse = FlatDataJp.TacticSkillUse.None,
-      FlatDataJp.ShowSkillCutIn ShowNPCSkillCutIn = FlatDataJp.ShowSkillCutIn.None) {
-    builder.StartTable(40);
+      FlatDataJp.ShowSkillCutIn ShowNPCSkillCutIn = FlatDataJp.ShowSkillCutIn.None,
+      bool ImmuneHitBeforeTimeOutEnd = false) {
+    builder.StartTable(41);
     GroundExcel.AddBGMId(builder, BGMId);
     GroundExcel.AddTSSAirUnitHeight(builder, TSSAirUnitHeight);
     GroundExcel.AddEnemySkillRangeRate(builder, EnemySkillRangeRate);
@@ -141,18 +143,19 @@ public struct GroundExcel : IFlatbufferObject
     GroundExcel.AddForcedTacticSpeed(builder, ForcedTacticSpeed);
     GroundExcel.AddEnemyArmorType(builder, EnemyArmorType);
     GroundExcel.AddEnemyBulletType(builder, EnemyBulletType);
-    GroundExcel.AddStageTopography(builder, StageTopography);
+    GroundExcel.AddStagetopography(builder, stagetopography);
     GroundExcel.AddGroundSceneName(builder, GroundSceneNameOffset);
     GroundExcel.AddStageFileName(builder, StageFileNameOffset);
+    GroundExcel.AddImmuneHitBeforeTimeOutEnd(builder, ImmuneHitBeforeTimeOutEnd);
     GroundExcel.AddTSSHatchOpen(builder, TSSHatchOpen);
     GroundExcel.AddWarningUI(builder, WarningUI);
-    GroundExcel.AddIsRaid(builder, IsRaid);
+    GroundExcel.AddIsPhaseBGM(builder, IsPhaseBGM);
     GroundExcel.AddEnemySightRangeMax(builder, EnemySightRangeMax);
     GroundExcel.AddPlayerSightRangeMax(builder, PlayerSightRangeMax);
     return GroundExcel.EndGroundExcel(builder);
   }
 
-  public static void StartGroundExcel(FlatBufferBuilder builder) { builder.StartTable(40); }
+  public static void StartGroundExcel(FlatBufferBuilder builder) { builder.StartTable(41); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddStageFileName(FlatBufferBuilder builder, VectorOffset StageFileNameOffset) { builder.AddOffset(1, StageFileNameOffset.Value, 0); }
   public static VectorOffset CreateStageFileNameVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
@@ -162,7 +165,7 @@ public struct GroundExcel : IFlatbufferObject
   public static void StartStageFileNameVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddGroundSceneName(FlatBufferBuilder builder, StringOffset GroundSceneNameOffset) { builder.AddOffset(2, GroundSceneNameOffset.Value, 0); }
   public static void AddFormationGroupId(FlatBufferBuilder builder, long FormationGroupId) { builder.AddLong(3, FormationGroupId, 0); }
-  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataJp.StageTopography StageTopography) { builder.AddInt(4, (int)StageTopography, 0); }
+  public static void AddStagetopography(FlatBufferBuilder builder, FlatDataJp.StageTopography stagetopography) { builder.AddInt(4, (int)stagetopography, 0); }
   public static void AddEnemyBulletType(FlatBufferBuilder builder, FlatDataJp.BulletType EnemyBulletType) { builder.AddInt(5, (int)EnemyBulletType, 0); }
   public static void AddEnemyArmorType(FlatBufferBuilder builder, FlatDataJp.ArmorType EnemyArmorType) { builder.AddInt(6, (int)EnemyArmorType, 0); }
   public static void AddLevelNPC(FlatBufferBuilder builder, long LevelNPC) { builder.AddLong(7, LevelNPC, 0); }
@@ -191,13 +194,14 @@ public struct GroundExcel : IFlatbufferObject
   public static void AddPlayerSightRangeMax(FlatBufferBuilder builder, bool PlayerSightRangeMax) { builder.AddBool(30, PlayerSightRangeMax, false); }
   public static void AddEnemySightRangeMax(FlatBufferBuilder builder, bool EnemySightRangeMax) { builder.AddBool(31, EnemySightRangeMax, false); }
   public static void AddTSSAirUnitHeight(FlatBufferBuilder builder, long TSSAirUnitHeight) { builder.AddLong(32, TSSAirUnitHeight, 0); }
-  public static void AddIsRaid(FlatBufferBuilder builder, bool IsRaid) { builder.AddBool(33, IsRaid, false); }
+  public static void AddIsPhaseBGM(FlatBufferBuilder builder, bool IsPhaseBGM) { builder.AddBool(33, IsPhaseBGM, false); }
   public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(34, BGMId, 0); }
   public static void AddWarningUI(FlatBufferBuilder builder, bool WarningUI) { builder.AddBool(35, WarningUI, false); }
   public static void AddTSSHatchOpen(FlatBufferBuilder builder, bool TSSHatchOpen) { builder.AddBool(36, TSSHatchOpen, false); }
   public static void AddForcedTacticSpeed(FlatBufferBuilder builder, FlatDataJp.TacticSpeed ForcedTacticSpeed) { builder.AddInt(37, (int)ForcedTacticSpeed, 0); }
   public static void AddForcedSkillUse(FlatBufferBuilder builder, FlatDataJp.TacticSkillUse ForcedSkillUse) { builder.AddInt(38, (int)ForcedSkillUse, 0); }
   public static void AddShowNPCSkillCutIn(FlatBufferBuilder builder, FlatDataJp.ShowSkillCutIn ShowNPCSkillCutIn) { builder.AddInt(39, (int)ShowNPCSkillCutIn, 0); }
+  public static void AddImmuneHitBeforeTimeOutEnd(FlatBufferBuilder builder, bool ImmuneHitBeforeTimeOutEnd) { builder.AddBool(40, ImmuneHitBeforeTimeOutEnd, false); }
   public static Offset<FlatDataJp.GroundExcel> EndGroundExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.GroundExcel>(o);

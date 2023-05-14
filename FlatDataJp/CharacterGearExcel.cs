@@ -21,7 +21,7 @@ public struct CharacterGearExcel : IFlatbufferObject
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long CharacterId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.StatLevelUpType StatLevelUpType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatLevelUpType.Standard; } }
+  public FlatDataJp.StatLevelUpType Statleveluptype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatLevelUpType.Standard; } }
   public long Tier { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long NextTierEquipment { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long RecipeId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -64,7 +64,7 @@ public struct CharacterGearExcel : IFlatbufferObject
   public static Offset<FlatDataJp.CharacterGearExcel> CreateCharacterGearExcel(FlatBufferBuilder builder,
       long Id = 0,
       long CharacterId = 0,
-      FlatDataJp.StatLevelUpType StatLevelUpType = FlatDataJp.StatLevelUpType.Standard,
+      FlatDataJp.StatLevelUpType statleveluptype = FlatDataJp.StatLevelUpType.Standard,
       long Tier = 0,
       long NextTierEquipment = 0,
       long RecipeId = 0,
@@ -94,14 +94,14 @@ public struct CharacterGearExcel : IFlatbufferObject
     CharacterGearExcel.AddStatType(builder, StatType);
     CharacterGearExcel.AddAfterSkillGroupId(builder, AfterSkillGroupIdOffset);
     CharacterGearExcel.AddPreviousSkillGroupId(builder, PreviousSkillGroupIdOffset);
-    CharacterGearExcel.AddStatLevelUpType(builder, StatLevelUpType);
+    CharacterGearExcel.AddStatleveluptype(builder, statleveluptype);
     return CharacterGearExcel.EndCharacterGearExcel(builder);
   }
 
   public static void StartCharacterGearExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(1, CharacterId, 0); }
-  public static void AddStatLevelUpType(FlatBufferBuilder builder, FlatDataJp.StatLevelUpType StatLevelUpType) { builder.AddInt(2, (int)StatLevelUpType, 0); }
+  public static void AddStatleveluptype(FlatBufferBuilder builder, FlatDataJp.StatLevelUpType statleveluptype) { builder.AddInt(2, (int)statleveluptype, 0); }
   public static void AddTier(FlatBufferBuilder builder, long Tier) { builder.AddLong(3, Tier, 0); }
   public static void AddNextTierEquipment(FlatBufferBuilder builder, long NextTierEquipment) { builder.AddLong(4, NextTierEquipment, 0); }
   public static void AddRecipeId(FlatBufferBuilder builder, long RecipeId) { builder.AddLong(5, RecipeId, 0); }

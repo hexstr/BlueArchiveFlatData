@@ -43,24 +43,31 @@ public struct ConquestTileExcel : IFlatbufferObject
   public ArraySegment<byte>? GetTileNameLocalizeBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
   public byte[] GetTileNameLocalizeArray() { return __p.__vector_as_array<byte>(14); }
-  public bool Playable { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataJp.ConquestTileType TileType { get { int o = __p.__offset(18); return o != 0 ? (FlatDataJp.ConquestTileType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ConquestTileType.None; } }
-  public bool NotMapFog { get { int o = __p.__offset(20); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long GroupBonusId { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ParcelType ConquestCostType { get { int o = __p.__offset(24); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
-  public long ConquestCostId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int ConquestCostAmount { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.ParcelType ManageCostType { get { int o = __p.__offset(30); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
-  public long ManageCostId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int ManageCostAmount { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long ConquestRewardId { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long MassErosionId { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ParcelType Upgrade2CostType { get { int o = __p.__offset(40); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
-  public long Upgrade2CostId { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int Upgrade2CostAmount { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.ParcelType Upgrade3CostType { get { int o = __p.__offset(46); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
-  public long Upgrade3CostId { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int Upgrade3CostAmount { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string TileImageName { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetTileImageNameBytes() { return __p.__vector_as_span<byte>(16, 1); }
+#else
+  public ArraySegment<byte>? GetTileImageNameBytes() { return __p.__vector_as_arraysegment(16); }
+#endif
+  public byte[] GetTileImageNameArray() { return __p.__vector_as_array<byte>(16); }
+  public bool Playable { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataJp.ConquestTileType TileType { get { int o = __p.__offset(20); return o != 0 ? (FlatDataJp.ConquestTileType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ConquestTileType.None; } }
+  public bool NotMapFog { get { int o = __p.__offset(22); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long GroupBonusId { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataJp.ParcelType ConquestCostType { get { int o = __p.__offset(26); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
+  public long ConquestCostId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int ConquestCostAmount { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.ParcelType ManageCostType { get { int o = __p.__offset(32); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
+  public long ManageCostId { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int ManageCostAmount { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long ConquestRewardId { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long MassErosionId { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataJp.ParcelType Upgrade2CostType { get { int o = __p.__offset(42); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
+  public long Upgrade2CostId { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int Upgrade2CostAmount { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.ParcelType Upgrade3CostType { get { int o = __p.__offset(48); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
+  public long Upgrade3CostId { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int Upgrade3CostAmount { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataJp.ConquestTileExcel> CreateConquestTileExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -69,6 +76,7 @@ public struct ConquestTileExcel : IFlatbufferObject
       int Step = 0,
       StringOffset PrefabNameOffset = default(StringOffset),
       StringOffset TileNameLocalizeOffset = default(StringOffset),
+      StringOffset TileImageNameOffset = default(StringOffset),
       bool Playable = false,
       FlatDataJp.ConquestTileType TileType = FlatDataJp.ConquestTileType.None,
       bool NotMapFog = false,
@@ -87,7 +95,7 @@ public struct ConquestTileExcel : IFlatbufferObject
       FlatDataJp.ParcelType Upgrade3CostType = FlatDataJp.ParcelType.None,
       long Upgrade3CostId = 0,
       int Upgrade3CostAmount = 0) {
-    builder.StartTable(24);
+    builder.StartTable(25);
     ConquestTileExcel.AddUpgrade3CostId(builder, Upgrade3CostId);
     ConquestTileExcel.AddUpgrade2CostId(builder, Upgrade2CostId);
     ConquestTileExcel.AddMassErosionId(builder, MassErosionId);
@@ -106,6 +114,7 @@ public struct ConquestTileExcel : IFlatbufferObject
     ConquestTileExcel.AddConquestCostAmount(builder, ConquestCostAmount);
     ConquestTileExcel.AddConquestCostType(builder, ConquestCostType);
     ConquestTileExcel.AddTileType(builder, TileType);
+    ConquestTileExcel.AddTileImageName(builder, TileImageNameOffset);
     ConquestTileExcel.AddTileNameLocalize(builder, TileNameLocalizeOffset);
     ConquestTileExcel.AddPrefabName(builder, PrefabNameOffset);
     ConquestTileExcel.AddStep(builder, Step);
@@ -115,31 +124,32 @@ public struct ConquestTileExcel : IFlatbufferObject
     return ConquestTileExcel.EndConquestTileExcel(builder);
   }
 
-  public static void StartConquestTileExcel(FlatBufferBuilder builder) { builder.StartTable(24); }
+  public static void StartConquestTileExcel(FlatBufferBuilder builder) { builder.StartTable(25); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(1, NameOffset.Value, 0); }
   public static void AddEventId(FlatBufferBuilder builder, long EventId) { builder.AddLong(2, EventId, 0); }
   public static void AddStep(FlatBufferBuilder builder, int Step) { builder.AddInt(3, Step, 0); }
   public static void AddPrefabName(FlatBufferBuilder builder, StringOffset PrefabNameOffset) { builder.AddOffset(4, PrefabNameOffset.Value, 0); }
   public static void AddTileNameLocalize(FlatBufferBuilder builder, StringOffset TileNameLocalizeOffset) { builder.AddOffset(5, TileNameLocalizeOffset.Value, 0); }
-  public static void AddPlayable(FlatBufferBuilder builder, bool Playable) { builder.AddBool(6, Playable, false); }
-  public static void AddTileType(FlatBufferBuilder builder, FlatDataJp.ConquestTileType TileType) { builder.AddInt(7, (int)TileType, 0); }
-  public static void AddNotMapFog(FlatBufferBuilder builder, bool NotMapFog) { builder.AddBool(8, NotMapFog, false); }
-  public static void AddGroupBonusId(FlatBufferBuilder builder, long GroupBonusId) { builder.AddLong(9, GroupBonusId, 0); }
-  public static void AddConquestCostType(FlatBufferBuilder builder, FlatDataJp.ParcelType ConquestCostType) { builder.AddInt(10, (int)ConquestCostType, 0); }
-  public static void AddConquestCostId(FlatBufferBuilder builder, long ConquestCostId) { builder.AddLong(11, ConquestCostId, 0); }
-  public static void AddConquestCostAmount(FlatBufferBuilder builder, int ConquestCostAmount) { builder.AddInt(12, ConquestCostAmount, 0); }
-  public static void AddManageCostType(FlatBufferBuilder builder, FlatDataJp.ParcelType ManageCostType) { builder.AddInt(13, (int)ManageCostType, 0); }
-  public static void AddManageCostId(FlatBufferBuilder builder, long ManageCostId) { builder.AddLong(14, ManageCostId, 0); }
-  public static void AddManageCostAmount(FlatBufferBuilder builder, int ManageCostAmount) { builder.AddInt(15, ManageCostAmount, 0); }
-  public static void AddConquestRewardId(FlatBufferBuilder builder, long ConquestRewardId) { builder.AddLong(16, ConquestRewardId, 0); }
-  public static void AddMassErosionId(FlatBufferBuilder builder, long MassErosionId) { builder.AddLong(17, MassErosionId, 0); }
-  public static void AddUpgrade2CostType(FlatBufferBuilder builder, FlatDataJp.ParcelType Upgrade2CostType) { builder.AddInt(18, (int)Upgrade2CostType, 0); }
-  public static void AddUpgrade2CostId(FlatBufferBuilder builder, long Upgrade2CostId) { builder.AddLong(19, Upgrade2CostId, 0); }
-  public static void AddUpgrade2CostAmount(FlatBufferBuilder builder, int Upgrade2CostAmount) { builder.AddInt(20, Upgrade2CostAmount, 0); }
-  public static void AddUpgrade3CostType(FlatBufferBuilder builder, FlatDataJp.ParcelType Upgrade3CostType) { builder.AddInt(21, (int)Upgrade3CostType, 0); }
-  public static void AddUpgrade3CostId(FlatBufferBuilder builder, long Upgrade3CostId) { builder.AddLong(22, Upgrade3CostId, 0); }
-  public static void AddUpgrade3CostAmount(FlatBufferBuilder builder, int Upgrade3CostAmount) { builder.AddInt(23, Upgrade3CostAmount, 0); }
+  public static void AddTileImageName(FlatBufferBuilder builder, StringOffset TileImageNameOffset) { builder.AddOffset(6, TileImageNameOffset.Value, 0); }
+  public static void AddPlayable(FlatBufferBuilder builder, bool Playable) { builder.AddBool(7, Playable, false); }
+  public static void AddTileType(FlatBufferBuilder builder, FlatDataJp.ConquestTileType TileType) { builder.AddInt(8, (int)TileType, 0); }
+  public static void AddNotMapFog(FlatBufferBuilder builder, bool NotMapFog) { builder.AddBool(9, NotMapFog, false); }
+  public static void AddGroupBonusId(FlatBufferBuilder builder, long GroupBonusId) { builder.AddLong(10, GroupBonusId, 0); }
+  public static void AddConquestCostType(FlatBufferBuilder builder, FlatDataJp.ParcelType ConquestCostType) { builder.AddInt(11, (int)ConquestCostType, 0); }
+  public static void AddConquestCostId(FlatBufferBuilder builder, long ConquestCostId) { builder.AddLong(12, ConquestCostId, 0); }
+  public static void AddConquestCostAmount(FlatBufferBuilder builder, int ConquestCostAmount) { builder.AddInt(13, ConquestCostAmount, 0); }
+  public static void AddManageCostType(FlatBufferBuilder builder, FlatDataJp.ParcelType ManageCostType) { builder.AddInt(14, (int)ManageCostType, 0); }
+  public static void AddManageCostId(FlatBufferBuilder builder, long ManageCostId) { builder.AddLong(15, ManageCostId, 0); }
+  public static void AddManageCostAmount(FlatBufferBuilder builder, int ManageCostAmount) { builder.AddInt(16, ManageCostAmount, 0); }
+  public static void AddConquestRewardId(FlatBufferBuilder builder, long ConquestRewardId) { builder.AddLong(17, ConquestRewardId, 0); }
+  public static void AddMassErosionId(FlatBufferBuilder builder, long MassErosionId) { builder.AddLong(18, MassErosionId, 0); }
+  public static void AddUpgrade2CostType(FlatBufferBuilder builder, FlatDataJp.ParcelType Upgrade2CostType) { builder.AddInt(19, (int)Upgrade2CostType, 0); }
+  public static void AddUpgrade2CostId(FlatBufferBuilder builder, long Upgrade2CostId) { builder.AddLong(20, Upgrade2CostId, 0); }
+  public static void AddUpgrade2CostAmount(FlatBufferBuilder builder, int Upgrade2CostAmount) { builder.AddInt(21, Upgrade2CostAmount, 0); }
+  public static void AddUpgrade3CostType(FlatBufferBuilder builder, FlatDataJp.ParcelType Upgrade3CostType) { builder.AddInt(22, (int)Upgrade3CostType, 0); }
+  public static void AddUpgrade3CostId(FlatBufferBuilder builder, long Upgrade3CostId) { builder.AddLong(23, Upgrade3CostId, 0); }
+  public static void AddUpgrade3CostAmount(FlatBufferBuilder builder, int Upgrade3CostAmount) { builder.AddInt(24, Upgrade3CostAmount, 0); }
   public static Offset<FlatDataJp.ConquestTileExcel> EndConquestTileExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.ConquestTileExcel>(o);

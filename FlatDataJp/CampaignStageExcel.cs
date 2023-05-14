@@ -74,7 +74,7 @@ public struct CampaignStageExcel : IFlatbufferObject
   public byte[] GetStrategyMapBGArray() { return __p.__vector_as_array<byte>(32); }
   public long CampaignStageRewardId { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int MaxTurn { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.StageTopography StageTopography { get { int o = __p.__offset(38); return o != 0 ? (FlatDataJp.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageTopography.Street; } }
+  public FlatDataJp.StageTopography Stagetopography { get { int o = __p.__offset(38); return o != 0 ? (FlatDataJp.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageTopography.Street; } }
   public int RecommandLevel { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public string BgmId { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -83,9 +83,9 @@ public struct CampaignStageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetBgmIdBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
   public byte[] GetBgmIdArray() { return __p.__vector_as_array<byte>(42); }
-  public FlatDataJp.StrategyEnvironment StrategyEnvironment { get { int o = __p.__offset(44); return o != 0 ? (FlatDataJp.StrategyEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StrategyEnvironment.None; } }
+  public FlatDataJp.StrategyEnvironment Strategyenvironment { get { int o = __p.__offset(44); return o != 0 ? (FlatDataJp.StrategyEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StrategyEnvironment.None; } }
   public long GroundId { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ContentType ContentType { get { int o = __p.__offset(48); return o != 0 ? (FlatDataJp.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ContentType.None; } }
+  public FlatDataJp.ContentType Contenttype { get { int o = __p.__offset(48); return o != 0 ? (FlatDataJp.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ContentType.None; } }
   public long BGMId { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string FirstClearReportEventName { get { int o = __p.__offset(52); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -115,12 +115,12 @@ public struct CampaignStageExcel : IFlatbufferObject
       StringOffset StrategyMapBGOffset = default(StringOffset),
       long CampaignStageRewardId = 0,
       int MaxTurn = 0,
-      FlatDataJp.StageTopography StageTopography = FlatDataJp.StageTopography.Street,
+      FlatDataJp.StageTopography stagetopography = FlatDataJp.StageTopography.Street,
       int RecommandLevel = 0,
       StringOffset BgmIdOffset = default(StringOffset),
-      FlatDataJp.StrategyEnvironment StrategyEnvironment = FlatDataJp.StrategyEnvironment.None,
+      FlatDataJp.StrategyEnvironment strategyenvironment = FlatDataJp.StrategyEnvironment.None,
       long GroundId = 0,
-      FlatDataJp.ContentType ContentType = FlatDataJp.ContentType.None,
+      FlatDataJp.ContentType contenttype = FlatDataJp.ContentType.None,
       long BGMId = 0,
       StringOffset FirstClearReportEventNameOffset = default(StringOffset),
       long TacticRewardExp = 0,
@@ -138,11 +138,11 @@ public struct CampaignStageExcel : IFlatbufferObject
     CampaignStageExcel.AddCleardScenarioId(builder, CleardScenarioId);
     CampaignStageExcel.AddId(builder, Id);
     CampaignStageExcel.AddFirstClearReportEventName(builder, FirstClearReportEventNameOffset);
-    CampaignStageExcel.AddContentType(builder, ContentType);
-    CampaignStageExcel.AddStrategyEnvironment(builder, StrategyEnvironment);
+    CampaignStageExcel.AddContenttype(builder, contenttype);
+    CampaignStageExcel.AddStrategyenvironment(builder, strategyenvironment);
     CampaignStageExcel.AddBgmId(builder, BgmIdOffset);
     CampaignStageExcel.AddRecommandLevel(builder, RecommandLevel);
-    CampaignStageExcel.AddStageTopography(builder, StageTopography);
+    CampaignStageExcel.AddStagetopography(builder, stagetopography);
     CampaignStageExcel.AddMaxTurn(builder, MaxTurn);
     CampaignStageExcel.AddStrategyMapBG(builder, StrategyMapBGOffset);
     CampaignStageExcel.AddStrategyMap(builder, StrategyMapOffset);
@@ -184,12 +184,12 @@ public struct CampaignStageExcel : IFlatbufferObject
   public static void AddStrategyMapBG(FlatBufferBuilder builder, StringOffset StrategyMapBGOffset) { builder.AddOffset(14, StrategyMapBGOffset.Value, 0); }
   public static void AddCampaignStageRewardId(FlatBufferBuilder builder, long CampaignStageRewardId) { builder.AddLong(15, CampaignStageRewardId, 0); }
   public static void AddMaxTurn(FlatBufferBuilder builder, int MaxTurn) { builder.AddInt(16, MaxTurn, 0); }
-  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataJp.StageTopography StageTopography) { builder.AddInt(17, (int)StageTopography, 0); }
+  public static void AddStagetopography(FlatBufferBuilder builder, FlatDataJp.StageTopography stagetopography) { builder.AddInt(17, (int)stagetopography, 0); }
   public static void AddRecommandLevel(FlatBufferBuilder builder, int RecommandLevel) { builder.AddInt(18, RecommandLevel, 0); }
   public static void AddBgmId(FlatBufferBuilder builder, StringOffset BgmIdOffset) { builder.AddOffset(19, BgmIdOffset.Value, 0); }
-  public static void AddStrategyEnvironment(FlatBufferBuilder builder, FlatDataJp.StrategyEnvironment StrategyEnvironment) { builder.AddInt(20, (int)StrategyEnvironment, 0); }
+  public static void AddStrategyenvironment(FlatBufferBuilder builder, FlatDataJp.StrategyEnvironment strategyenvironment) { builder.AddInt(20, (int)strategyenvironment, 0); }
   public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(21, GroundId, 0); }
-  public static void AddContentType(FlatBufferBuilder builder, FlatDataJp.ContentType ContentType) { builder.AddInt(22, (int)ContentType, 0); }
+  public static void AddContenttype(FlatBufferBuilder builder, FlatDataJp.ContentType contenttype) { builder.AddInt(22, (int)contenttype, 0); }
   public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(23, BGMId, 0); }
   public static void AddFirstClearReportEventName(FlatBufferBuilder builder, StringOffset FirstClearReportEventNameOffset) { builder.AddOffset(24, FirstClearReportEventNameOffset.Value, 0); }
   public static void AddTacticRewardExp(FlatBufferBuilder builder, long TacticRewardExp) { builder.AddLong(25, TacticRewardExp, 0); }

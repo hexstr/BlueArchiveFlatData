@@ -22,26 +22,30 @@ public struct BGMUIExcel : IFlatbufferObject
   public uint UIPrefab { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public long BGMId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long BGMId2nd { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EventContentId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long BGMId3rd { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EventContentId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataJp.BGMUIExcel> CreateBGMUIExcel(FlatBufferBuilder builder,
       uint UIPrefab = 0,
       long BGMId = 0,
       long BGMId2nd = 0,
+      long BGMId3rd = 0,
       long EventContentId = 0) {
-    builder.StartTable(4);
+    builder.StartTable(5);
     BGMUIExcel.AddEventContentId(builder, EventContentId);
+    BGMUIExcel.AddBGMId3rd(builder, BGMId3rd);
     BGMUIExcel.AddBGMId2nd(builder, BGMId2nd);
     BGMUIExcel.AddBGMId(builder, BGMId);
     BGMUIExcel.AddUIPrefab(builder, UIPrefab);
     return BGMUIExcel.EndBGMUIExcel(builder);
   }
 
-  public static void StartBGMUIExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
+  public static void StartBGMUIExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddUIPrefab(FlatBufferBuilder builder, uint UIPrefab) { builder.AddUint(0, UIPrefab, 0); }
   public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(1, BGMId, 0); }
   public static void AddBGMId2nd(FlatBufferBuilder builder, long BGMId2nd) { builder.AddLong(2, BGMId2nd, 0); }
-  public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(3, EventContentId, 0); }
+  public static void AddBGMId3rd(FlatBufferBuilder builder, long BGMId3rd) { builder.AddLong(3, BGMId3rd, 0); }
+  public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(4, EventContentId, 0); }
   public static Offset<FlatDataJp.BGMUIExcel> EndBGMUIExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.BGMUIExcel>(o);

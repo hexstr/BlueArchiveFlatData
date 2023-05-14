@@ -40,8 +40,6 @@ public struct AcademyRewardExcelTable : IFlatbufferObject
     int o = builder.EndTable();
     return new Offset<FlatDataJp.AcademyRewardExcelTable>(o);
   }
-  public static void FinishAcademyRewardExcelTableBuffer(FlatBufferBuilder builder, Offset<FlatDataJp.AcademyRewardExcelTable> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedAcademyRewardExcelTableBuffer(FlatBufferBuilder builder, Offset<FlatDataJp.AcademyRewardExcelTable> offset) { builder.FinishSizePrefixed(offset.Value); }
 }
 
 
