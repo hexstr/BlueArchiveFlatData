@@ -100,7 +100,10 @@ public struct CharacterDialogExcel : IFlatbufferObject
   public int VoiceClipsTwLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
   public string VoiceClipsEn(int j) { int o = __p.__offset(46); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
   public int VoiceClipsEnLength { get { int o = __p.__offset(46); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public bool TeenMode { get { int o = __p.__offset(48); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool ApplyPosition { get { int o = __p.__offset(48); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public float PosX { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float PosY { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public bool TeenMode { get { int o = __p.__offset(54); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.CharacterDialogExcel> CreateCharacterDialogExcel(FlatBufferBuilder builder,
       long CharacterId = 0,
@@ -125,11 +128,16 @@ public struct CharacterDialogExcel : IFlatbufferObject
       VectorOffset VoiceClipsThOffset = default(VectorOffset),
       VectorOffset VoiceClipsTwOffset = default(VectorOffset),
       VectorOffset VoiceClipsEnOffset = default(VectorOffset),
+      bool ApplyPosition = false,
+      float PosX = 0.0f,
+      float PosY = 0.0f,
       bool TeenMode = false) {
-    builder.StartTable(23);
+    builder.StartTable(26);
     CharacterDialogExcel.AddDuration(builder, Duration);
     CharacterDialogExcel.AddGroupId(builder, GroupId);
     CharacterDialogExcel.AddCharacterId(builder, CharacterId);
+    CharacterDialogExcel.AddPosY(builder, PosY);
+    CharacterDialogExcel.AddPosX(builder, PosX);
     CharacterDialogExcel.AddVoiceClipsEn(builder, VoiceClipsEnOffset);
     CharacterDialogExcel.AddVoiceClipsTw(builder, VoiceClipsTwOffset);
     CharacterDialogExcel.AddVoiceClipsTh(builder, VoiceClipsThOffset);
@@ -150,10 +158,11 @@ public struct CharacterDialogExcel : IFlatbufferObject
     CharacterDialogExcel.AddDialogcategory(builder, dialogcategory);
     CharacterDialogExcel.AddProductionstep(builder, productionstep);
     CharacterDialogExcel.AddTeenMode(builder, TeenMode);
+    CharacterDialogExcel.AddApplyPosition(builder, ApplyPosition);
     return CharacterDialogExcel.EndCharacterDialogExcel(builder);
   }
 
-  public static void StartCharacterDialogExcel(FlatBufferBuilder builder) { builder.StartTable(23); }
+  public static void StartCharacterDialogExcel(FlatBufferBuilder builder) { builder.StartTable(26); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
   public static void AddProductionstep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionstep) { builder.AddInt(1, (int)productionstep, 0); }
   public static void AddDialogcategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory dialogcategory) { builder.AddInt(2, (int)dialogcategory, 0); }
@@ -201,7 +210,10 @@ public struct CharacterDialogExcel : IFlatbufferObject
   public static VectorOffset CreateVoiceClipsEnVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsEnVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartVoiceClipsEnVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddTeenMode(FlatBufferBuilder builder, bool TeenMode) { builder.AddBool(22, TeenMode, false); }
+  public static void AddApplyPosition(FlatBufferBuilder builder, bool ApplyPosition) { builder.AddBool(22, ApplyPosition, false); }
+  public static void AddPosX(FlatBufferBuilder builder, float PosX) { builder.AddFloat(23, PosX, 0.0f); }
+  public static void AddPosY(FlatBufferBuilder builder, float PosY) { builder.AddFloat(24, PosY, 0.0f); }
+  public static void AddTeenMode(FlatBufferBuilder builder, bool TeenMode) { builder.AddBool(25, TeenMode, false); }
   public static Offset<FlatDataGlobal.CharacterDialogExcel> EndCharacterDialogExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterDialogExcel>(o);

@@ -28,7 +28,7 @@ public struct ConquestMapExcel : IFlatbufferObject
 #endif
   public byte[] GetDevNameArray() { return __p.__vector_as_array<byte>(6); }
   public FlatDataGlobal.StageDifficulty MapDifficulty { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.StageDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageDifficulty.None; } }
-  public int StepCount { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int StepIndex { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public string ConquestMap { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetConquestMapBytes() { return __p.__vector_as_span<byte>(12, 1); }
@@ -36,65 +36,73 @@ public struct ConquestMapExcel : IFlatbufferObject
   public ArraySegment<byte>? GetConquestMapBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
   public byte[] GetConquestMapArray() { return __p.__vector_as_array<byte>(12); }
-  public long OpenDateOffset { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string MapGoalLocalize { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long StepEnterScenarioGroupId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.ConquestConditionType StepOpenConditionType(int j) { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.ConquestConditionType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ConquestConditionType)0; }
+  public int StepOpenConditionTypeLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMapGoalLocalizeBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<FlatDataGlobal.ConquestConditionType> GetStepOpenConditionTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ConquestConditionType>(16, 4); }
 #else
-  public ArraySegment<byte>? GetMapGoalLocalizeBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetStepOpenConditionTypeBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetMapGoalLocalizeArray() { return __p.__vector_as_array<byte>(16); }
-  public string MapNameLocalize { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataGlobal.ConquestConditionType[] GetStepOpenConditionTypeArray() { int o = __p.__offset(16); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ConquestConditionType[] a = new FlatDataGlobal.ConquestConditionType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ConquestConditionType)__p.bb.GetInt(p + i * 4); } return a; }
+  public string StepOpenConditionParameter(int j) { int o = __p.__offset(18); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int StepOpenConditionParameterLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string MapGoalLocalize { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMapNameLocalizeBytes() { return __p.__vector_as_span<byte>(18, 1); }
+  public Span<byte> GetMapGoalLocalizeBytes() { return __p.__vector_as_span<byte>(20, 1); }
 #else
-  public ArraySegment<byte>? GetMapNameLocalizeBytes() { return __p.__vector_as_arraysegment(18); }
+  public ArraySegment<byte>? GetMapGoalLocalizeBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public byte[] GetMapNameLocalizeArray() { return __p.__vector_as_array<byte>(18); }
-  public long MapEnterScenarioGroupId { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string ConquestMapBG { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetMapGoalLocalizeArray() { return __p.__vector_as_array<byte>(20); }
+  public string StepGoalLocalize { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetConquestMapBGBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetStepGoalLocalizeBytes() { return __p.__vector_as_span<byte>(22, 1); }
 #else
-  public ArraySegment<byte>? GetConquestMapBGBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetStepGoalLocalizeBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetConquestMapBGArray() { return __p.__vector_as_array<byte>(22); }
-  public string MapScenarioBG { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetStepGoalLocalizeArray() { return __p.__vector_as_array<byte>(22); }
+  public string StepNameLocalize { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMapScenarioBGBytes() { return __p.__vector_as_span<byte>(24, 1); }
+  public Span<byte> GetStepNameLocalizeBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetMapScenarioBGBytes() { return __p.__vector_as_arraysegment(24); }
+  public ArraySegment<byte>? GetStepNameLocalizeBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetMapScenarioBGArray() { return __p.__vector_as_array<byte>(24); }
-  public long BgmId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public byte[] GetStepNameLocalizeArray() { return __p.__vector_as_array<byte>(24); }
+  public string ConquestMapBG { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetConquestMapBGBytes() { return __p.__vector_as_span<byte>(26, 1); }
+#else
+  public ArraySegment<byte>? GetConquestMapBGBytes() { return __p.__vector_as_arraysegment(26); }
+#endif
+  public byte[] GetConquestMapBGArray() { return __p.__vector_as_array<byte>(26); }
   public long CameraSettingId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.ConquestMapExcel> CreateConquestMapExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
       StringOffset DevNameOffset = default(StringOffset),
       FlatDataGlobal.StageDifficulty MapDifficulty = FlatDataGlobal.StageDifficulty.None,
-      int StepCount = 0,
+      int StepIndex = 0,
       StringOffset ConquestMapOffset = default(StringOffset),
-      long OpenDateOffset = 0,
+      long StepEnterScenarioGroupId = 0,
+      VectorOffset StepOpenConditionTypeOffset = default(VectorOffset),
+      VectorOffset StepOpenConditionParameterOffset = default(VectorOffset),
       StringOffset MapGoalLocalizeOffset = default(StringOffset),
-      StringOffset MapNameLocalizeOffset = default(StringOffset),
-      long MapEnterScenarioGroupId = 0,
+      StringOffset StepGoalLocalizeOffset = default(StringOffset),
+      StringOffset StepNameLocalizeOffset = default(StringOffset),
       StringOffset ConquestMapBGOffset = default(StringOffset),
-      StringOffset MapScenarioBGOffset = default(StringOffset),
-      long BgmId = 0,
       long CameraSettingId = 0) {
     builder.StartTable(13);
     ConquestMapExcel.AddCameraSettingId(builder, CameraSettingId);
-    ConquestMapExcel.AddBgmId(builder, BgmId);
-    ConquestMapExcel.AddMapEnterScenarioGroupId(builder, MapEnterScenarioGroupId);
-    ConquestMapExcel.AddOpenDateOffset(builder, OpenDateOffset);
+    ConquestMapExcel.AddStepEnterScenarioGroupId(builder, StepEnterScenarioGroupId);
     ConquestMapExcel.AddEventContentId(builder, EventContentId);
-    ConquestMapExcel.AddMapScenarioBG(builder, MapScenarioBGOffset);
     ConquestMapExcel.AddConquestMapBG(builder, ConquestMapBGOffset);
-    ConquestMapExcel.AddMapNameLocalize(builder, MapNameLocalizeOffset);
+    ConquestMapExcel.AddStepNameLocalize(builder, StepNameLocalizeOffset);
+    ConquestMapExcel.AddStepGoalLocalize(builder, StepGoalLocalizeOffset);
     ConquestMapExcel.AddMapGoalLocalize(builder, MapGoalLocalizeOffset);
+    ConquestMapExcel.AddStepOpenConditionParameter(builder, StepOpenConditionParameterOffset);
+    ConquestMapExcel.AddStepOpenConditionType(builder, StepOpenConditionTypeOffset);
     ConquestMapExcel.AddConquestMap(builder, ConquestMapOffset);
-    ConquestMapExcel.AddStepCount(builder, StepCount);
+    ConquestMapExcel.AddStepIndex(builder, StepIndex);
     ConquestMapExcel.AddMapDifficulty(builder, MapDifficulty);
     ConquestMapExcel.AddDevName(builder, DevNameOffset);
     return ConquestMapExcel.EndConquestMapExcel(builder);
@@ -104,15 +112,25 @@ public struct ConquestMapExcel : IFlatbufferObject
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddDevName(FlatBufferBuilder builder, StringOffset DevNameOffset) { builder.AddOffset(1, DevNameOffset.Value, 0); }
   public static void AddMapDifficulty(FlatBufferBuilder builder, FlatDataGlobal.StageDifficulty MapDifficulty) { builder.AddInt(2, (int)MapDifficulty, 0); }
-  public static void AddStepCount(FlatBufferBuilder builder, int StepCount) { builder.AddInt(3, StepCount, 0); }
+  public static void AddStepIndex(FlatBufferBuilder builder, int StepIndex) { builder.AddInt(3, StepIndex, 0); }
   public static void AddConquestMap(FlatBufferBuilder builder, StringOffset ConquestMapOffset) { builder.AddOffset(4, ConquestMapOffset.Value, 0); }
-  public static void AddOpenDateOffset(FlatBufferBuilder builder, long OpenDateOffset) { builder.AddLong(5, OpenDateOffset, 0); }
-  public static void AddMapGoalLocalize(FlatBufferBuilder builder, StringOffset MapGoalLocalizeOffset) { builder.AddOffset(6, MapGoalLocalizeOffset.Value, 0); }
-  public static void AddMapNameLocalize(FlatBufferBuilder builder, StringOffset MapNameLocalizeOffset) { builder.AddOffset(7, MapNameLocalizeOffset.Value, 0); }
-  public static void AddMapEnterScenarioGroupId(FlatBufferBuilder builder, long MapEnterScenarioGroupId) { builder.AddLong(8, MapEnterScenarioGroupId, 0); }
-  public static void AddConquestMapBG(FlatBufferBuilder builder, StringOffset ConquestMapBGOffset) { builder.AddOffset(9, ConquestMapBGOffset.Value, 0); }
-  public static void AddMapScenarioBG(FlatBufferBuilder builder, StringOffset MapScenarioBGOffset) { builder.AddOffset(10, MapScenarioBGOffset.Value, 0); }
-  public static void AddBgmId(FlatBufferBuilder builder, long BgmId) { builder.AddLong(11, BgmId, 0); }
+  public static void AddStepEnterScenarioGroupId(FlatBufferBuilder builder, long StepEnterScenarioGroupId) { builder.AddLong(5, StepEnterScenarioGroupId, 0); }
+  public static void AddStepOpenConditionType(FlatBufferBuilder builder, VectorOffset StepOpenConditionTypeOffset) { builder.AddOffset(6, StepOpenConditionTypeOffset.Value, 0); }
+  public static VectorOffset CreateStepOpenConditionTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ConquestConditionType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateStepOpenConditionTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ConquestConditionType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStepOpenConditionTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ConquestConditionType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStepOpenConditionTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ConquestConditionType>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartStepOpenConditionTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddStepOpenConditionParameter(FlatBufferBuilder builder, VectorOffset StepOpenConditionParameterOffset) { builder.AddOffset(7, StepOpenConditionParameterOffset.Value, 0); }
+  public static VectorOffset CreateStepOpenConditionParameterVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateStepOpenConditionParameterVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStepOpenConditionParameterVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStepOpenConditionParameterVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartStepOpenConditionParameterVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddMapGoalLocalize(FlatBufferBuilder builder, StringOffset MapGoalLocalizeOffset) { builder.AddOffset(8, MapGoalLocalizeOffset.Value, 0); }
+  public static void AddStepGoalLocalize(FlatBufferBuilder builder, StringOffset StepGoalLocalizeOffset) { builder.AddOffset(9, StepGoalLocalizeOffset.Value, 0); }
+  public static void AddStepNameLocalize(FlatBufferBuilder builder, StringOffset StepNameLocalizeOffset) { builder.AddOffset(10, StepNameLocalizeOffset.Value, 0); }
+  public static void AddConquestMapBG(FlatBufferBuilder builder, StringOffset ConquestMapBGOffset) { builder.AddOffset(11, ConquestMapBGOffset.Value, 0); }
   public static void AddCameraSettingId(FlatBufferBuilder builder, long CameraSettingId) { builder.AddLong(12, CameraSettingId, 0); }
   public static Offset<FlatDataGlobal.ConquestMapExcel> EndConquestMapExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();

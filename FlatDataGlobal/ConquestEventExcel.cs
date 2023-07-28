@@ -20,113 +20,109 @@ public struct ConquestEventExcel : IFlatbufferObject
   public ConquestEventExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ConquestEventType Conquesteventtype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.ConquestEventType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ConquestEventType.None; } }
-  public long ErosionsId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long UnexpectedEventId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CalculateId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ObjectId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string EvnetMapGoalLocalize { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long MainStoryEventContentId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.ConquestEventType Conquesteventtype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ConquestEventType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ConquestEventType.None; } }
+  public bool UseErosion { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool UseUnexpectedEvent { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool UseCalculate { get { int o = __p.__offset(14); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool UseConquestObject { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string EvnetMapGoalLocalize { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEvnetMapGoalLocalizeBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<byte> GetEvnetMapGoalLocalizeBytes() { return __p.__vector_as_span<byte>(18, 1); }
 #else
-  public ArraySegment<byte>? GetEvnetMapGoalLocalizeBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetEvnetMapGoalLocalizeBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public byte[] GetEvnetMapGoalLocalizeArray() { return __p.__vector_as_array<byte>(16); }
-  public string EvnetMapNameLocalize { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEvnetMapGoalLocalizeArray() { return __p.__vector_as_array<byte>(18); }
+  public string EvnetMapNameLocalize { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEvnetMapNameLocalizeBytes() { return __p.__vector_as_span<byte>(18, 1); }
+  public Span<byte> GetEvnetMapNameLocalizeBytes() { return __p.__vector_as_span<byte>(20, 1); }
 #else
-  public ArraySegment<byte>? GetEvnetMapNameLocalizeBytes() { return __p.__vector_as_arraysegment(18); }
+  public ArraySegment<byte>? GetEvnetMapNameLocalizeBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public byte[] GetEvnetMapNameLocalizeArray() { return __p.__vector_as_array<byte>(18); }
-  public string MapEnterScenarioGroupId { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEvnetMapNameLocalizeArray() { return __p.__vector_as_array<byte>(20); }
+  public long MapEnterScenarioGroupId { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string EvnetScenarioBG { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMapEnterScenarioGroupIdBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetEvnetScenarioBGBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetMapEnterScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetEvnetScenarioBGBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetMapEnterScenarioGroupIdArray() { return __p.__vector_as_array<byte>(20); }
-  public string EvnetScenarioBG { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEvnetScenarioBGArray() { return __p.__vector_as_array<byte>(24); }
+  public int ManageUnitChange { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int AssistCount { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int PlayTimeLimitInSeconds { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int AnimationUnitAmountMin { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int AnimationUnitAmountMax { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public float AnimationUnitDelay { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public string LocalizeUnexpected { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEvnetScenarioBGBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetLocalizeUnexpectedBytes() { return __p.__vector_as_span<byte>(38, 1); }
 #else
-  public ArraySegment<byte>? GetEvnetScenarioBGBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetLocalizeUnexpectedBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public byte[] GetEvnetScenarioBGArray() { return __p.__vector_as_array<byte>(22); }
-  public int ManageUnitChange { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int AssistCount { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int PlayTimeLimitInSeconds { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int AnimationUnitAmountMin { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int AnimationUnitAmountMax { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public float AnimationUnitDelay { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public FlatDataGlobal.ParcelType FirstRewardType { get { int o = __p.__offset(36); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
-  public long FirstRewardUniqueId { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FirstRewardAmount { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string LocalizeUnexpected { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeUnexpectedArray() { return __p.__vector_as_array<byte>(38); }
+  public string LocalizeErosions { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeUnexpectedBytes() { return __p.__vector_as_span<byte>(42, 1); }
+  public Span<byte> GetLocalizeErosionsBytes() { return __p.__vector_as_span<byte>(40, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeUnexpectedBytes() { return __p.__vector_as_arraysegment(42); }
+  public ArraySegment<byte>? GetLocalizeErosionsBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
-  public byte[] GetLocalizeUnexpectedArray() { return __p.__vector_as_array<byte>(42); }
-  public string LocalizeErosions { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeErosionsArray() { return __p.__vector_as_array<byte>(40); }
+  public string LocalizeStep { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeErosionsBytes() { return __p.__vector_as_span<byte>(44, 1); }
+  public Span<byte> GetLocalizeStepBytes() { return __p.__vector_as_span<byte>(42, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeErosionsBytes() { return __p.__vector_as_arraysegment(44); }
+  public ArraySegment<byte>? GetLocalizeStepBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public byte[] GetLocalizeErosionsArray() { return __p.__vector_as_array<byte>(44); }
-  public string LocalizeStep { get { int o = __p.__offset(46); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeStepArray() { return __p.__vector_as_array<byte>(42); }
+  public string LocalizeTile { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeStepBytes() { return __p.__vector_as_span<byte>(46, 1); }
+  public Span<byte> GetLocalizeTileBytes() { return __p.__vector_as_span<byte>(44, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeStepBytes() { return __p.__vector_as_arraysegment(46); }
+  public ArraySegment<byte>? GetLocalizeTileBytes() { return __p.__vector_as_arraysegment(44); }
 #endif
-  public byte[] GetLocalizeStepArray() { return __p.__vector_as_array<byte>(46); }
-  public string LocalizeMapInfo { get { int o = __p.__offset(48); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeTileArray() { return __p.__vector_as_array<byte>(44); }
+  public string LocalizeMapInfo { get { int o = __p.__offset(46); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeMapInfoBytes() { return __p.__vector_as_span<byte>(48, 1); }
+  public Span<byte> GetLocalizeMapInfoBytes() { return __p.__vector_as_span<byte>(46, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeMapInfoBytes() { return __p.__vector_as_arraysegment(48); }
+  public ArraySegment<byte>? GetLocalizeMapInfoBytes() { return __p.__vector_as_arraysegment(46); }
 #endif
-  public byte[] GetLocalizeMapInfoArray() { return __p.__vector_as_array<byte>(48); }
-  public string LocalizeManage { get { int o = __p.__offset(50); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeMapInfoArray() { return __p.__vector_as_array<byte>(46); }
+  public string LocalizeManage { get { int o = __p.__offset(48); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeManageBytes() { return __p.__vector_as_span<byte>(50, 1); }
+  public Span<byte> GetLocalizeManageBytes() { return __p.__vector_as_span<byte>(48, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeManageBytes() { return __p.__vector_as_arraysegment(50); }
+  public ArraySegment<byte>? GetLocalizeManageBytes() { return __p.__vector_as_arraysegment(48); }
 #endif
-  public byte[] GetLocalizeManageArray() { return __p.__vector_as_array<byte>(50); }
-  public string LocalizeUpgrade { get { int o = __p.__offset(52); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeManageArray() { return __p.__vector_as_array<byte>(48); }
+  public string LocalizeUpgrade { get { int o = __p.__offset(50); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeUpgradeBytes() { return __p.__vector_as_span<byte>(52, 1); }
+  public Span<byte> GetLocalizeUpgradeBytes() { return __p.__vector_as_span<byte>(50, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeUpgradeBytes() { return __p.__vector_as_arraysegment(52); }
+  public ArraySegment<byte>? GetLocalizeUpgradeBytes() { return __p.__vector_as_arraysegment(50); }
 #endif
-  public byte[] GetLocalizeUpgradeArray() { return __p.__vector_as_array<byte>(52); }
-  public string LocalizeTreasureBox { get { int o = __p.__offset(54); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeUpgradeArray() { return __p.__vector_as_array<byte>(50); }
+  public string LocalizeTreasureBox { get { int o = __p.__offset(52); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeTreasureBoxBytes() { return __p.__vector_as_span<byte>(54, 1); }
+  public Span<byte> GetLocalizeTreasureBoxBytes() { return __p.__vector_as_span<byte>(52, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeTreasureBoxBytes() { return __p.__vector_as_arraysegment(54); }
+  public ArraySegment<byte>? GetLocalizeTreasureBoxBytes() { return __p.__vector_as_arraysegment(52); }
 #endif
-  public byte[] GetLocalizeTreasureBoxArray() { return __p.__vector_as_array<byte>(54); }
-  public long UnexpectedEventConditionAmount { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long UnexpectedEventOccurDailyLimitCount { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ParcelType CalculateConditionParcelType { get { int o = __p.__offset(60); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
-  public long CalculateConditionParcelUniqueId { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CalculateConditionParcelAmount { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public byte[] GetLocalizeTreasureBoxArray() { return __p.__vector_as_array<byte>(52); }
+  public long IndividualErosionDailyCount { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.ConquestEventExcel> CreateConquestEventExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
+      long MainStoryEventContentId = 0,
       FlatDataGlobal.ConquestEventType conquesteventtype = FlatDataGlobal.ConquestEventType.None,
-      long ErosionsId = 0,
-      long UnexpectedEventId = 0,
-      long CalculateId = 0,
-      long ObjectId = 0,
+      bool UseErosion = false,
+      bool UseUnexpectedEvent = false,
+      bool UseCalculate = false,
+      bool UseConquestObject = false,
       StringOffset EvnetMapGoalLocalizeOffset = default(StringOffset),
       StringOffset EvnetMapNameLocalizeOffset = default(StringOffset),
-      StringOffset MapEnterScenarioGroupIdOffset = default(StringOffset),
+      long MapEnterScenarioGroupId = 0,
       StringOffset EvnetScenarioBGOffset = default(StringOffset),
       int ManageUnitChange = 0,
       int AssistCount = 0,
@@ -134,42 +130,28 @@ public struct ConquestEventExcel : IFlatbufferObject
       int AnimationUnitAmountMin = 0,
       int AnimationUnitAmountMax = 0,
       float AnimationUnitDelay = 0.0f,
-      FlatDataGlobal.ParcelType FirstRewardType = FlatDataGlobal.ParcelType.None,
-      long FirstRewardUniqueId = 0,
-      long FirstRewardAmount = 0,
       StringOffset LocalizeUnexpectedOffset = default(StringOffset),
       StringOffset LocalizeErosionsOffset = default(StringOffset),
       StringOffset LocalizeStepOffset = default(StringOffset),
+      StringOffset LocalizeTileOffset = default(StringOffset),
       StringOffset LocalizeMapInfoOffset = default(StringOffset),
       StringOffset LocalizeManageOffset = default(StringOffset),
       StringOffset LocalizeUpgradeOffset = default(StringOffset),
       StringOffset LocalizeTreasureBoxOffset = default(StringOffset),
-      long UnexpectedEventConditionAmount = 0,
-      long UnexpectedEventOccurDailyLimitCount = 0,
-      FlatDataGlobal.ParcelType CalculateConditionParcelType = FlatDataGlobal.ParcelType.None,
-      long CalculateConditionParcelUniqueId = 0,
-      long CalculateConditionParcelAmount = 0) {
-    builder.StartTable(31);
-    ConquestEventExcel.AddCalculateConditionParcelAmount(builder, CalculateConditionParcelAmount);
-    ConquestEventExcel.AddCalculateConditionParcelUniqueId(builder, CalculateConditionParcelUniqueId);
-    ConquestEventExcel.AddUnexpectedEventOccurDailyLimitCount(builder, UnexpectedEventOccurDailyLimitCount);
-    ConquestEventExcel.AddUnexpectedEventConditionAmount(builder, UnexpectedEventConditionAmount);
-    ConquestEventExcel.AddFirstRewardAmount(builder, FirstRewardAmount);
-    ConquestEventExcel.AddFirstRewardUniqueId(builder, FirstRewardUniqueId);
-    ConquestEventExcel.AddObjectId(builder, ObjectId);
-    ConquestEventExcel.AddCalculateId(builder, CalculateId);
-    ConquestEventExcel.AddUnexpectedEventId(builder, UnexpectedEventId);
-    ConquestEventExcel.AddErosionsId(builder, ErosionsId);
+      long IndividualErosionDailyCount = 0) {
+    builder.StartTable(26);
+    ConquestEventExcel.AddIndividualErosionDailyCount(builder, IndividualErosionDailyCount);
+    ConquestEventExcel.AddMapEnterScenarioGroupId(builder, MapEnterScenarioGroupId);
+    ConquestEventExcel.AddMainStoryEventContentId(builder, MainStoryEventContentId);
     ConquestEventExcel.AddEventContentId(builder, EventContentId);
-    ConquestEventExcel.AddCalculateConditionParcelType(builder, CalculateConditionParcelType);
     ConquestEventExcel.AddLocalizeTreasureBox(builder, LocalizeTreasureBoxOffset);
     ConquestEventExcel.AddLocalizeUpgrade(builder, LocalizeUpgradeOffset);
     ConquestEventExcel.AddLocalizeManage(builder, LocalizeManageOffset);
     ConquestEventExcel.AddLocalizeMapInfo(builder, LocalizeMapInfoOffset);
+    ConquestEventExcel.AddLocalizeTile(builder, LocalizeTileOffset);
     ConquestEventExcel.AddLocalizeStep(builder, LocalizeStepOffset);
     ConquestEventExcel.AddLocalizeErosions(builder, LocalizeErosionsOffset);
     ConquestEventExcel.AddLocalizeUnexpected(builder, LocalizeUnexpectedOffset);
-    ConquestEventExcel.AddFirstRewardType(builder, FirstRewardType);
     ConquestEventExcel.AddAnimationUnitDelay(builder, AnimationUnitDelay);
     ConquestEventExcel.AddAnimationUnitAmountMax(builder, AnimationUnitAmountMax);
     ConquestEventExcel.AddAnimationUnitAmountMin(builder, AnimationUnitAmountMin);
@@ -177,45 +159,43 @@ public struct ConquestEventExcel : IFlatbufferObject
     ConquestEventExcel.AddAssistCount(builder, AssistCount);
     ConquestEventExcel.AddManageUnitChange(builder, ManageUnitChange);
     ConquestEventExcel.AddEvnetScenarioBG(builder, EvnetScenarioBGOffset);
-    ConquestEventExcel.AddMapEnterScenarioGroupId(builder, MapEnterScenarioGroupIdOffset);
     ConquestEventExcel.AddEvnetMapNameLocalize(builder, EvnetMapNameLocalizeOffset);
     ConquestEventExcel.AddEvnetMapGoalLocalize(builder, EvnetMapGoalLocalizeOffset);
     ConquestEventExcel.AddConquesteventtype(builder, conquesteventtype);
+    ConquestEventExcel.AddUseConquestObject(builder, UseConquestObject);
+    ConquestEventExcel.AddUseCalculate(builder, UseCalculate);
+    ConquestEventExcel.AddUseUnexpectedEvent(builder, UseUnexpectedEvent);
+    ConquestEventExcel.AddUseErosion(builder, UseErosion);
     return ConquestEventExcel.EndConquestEventExcel(builder);
   }
 
-  public static void StartConquestEventExcel(FlatBufferBuilder builder) { builder.StartTable(31); }
+  public static void StartConquestEventExcel(FlatBufferBuilder builder) { builder.StartTable(26); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
-  public static void AddConquesteventtype(FlatBufferBuilder builder, FlatDataGlobal.ConquestEventType conquesteventtype) { builder.AddInt(1, (int)conquesteventtype, 0); }
-  public static void AddErosionsId(FlatBufferBuilder builder, long ErosionsId) { builder.AddLong(2, ErosionsId, 0); }
-  public static void AddUnexpectedEventId(FlatBufferBuilder builder, long UnexpectedEventId) { builder.AddLong(3, UnexpectedEventId, 0); }
-  public static void AddCalculateId(FlatBufferBuilder builder, long CalculateId) { builder.AddLong(4, CalculateId, 0); }
-  public static void AddObjectId(FlatBufferBuilder builder, long ObjectId) { builder.AddLong(5, ObjectId, 0); }
-  public static void AddEvnetMapGoalLocalize(FlatBufferBuilder builder, StringOffset EvnetMapGoalLocalizeOffset) { builder.AddOffset(6, EvnetMapGoalLocalizeOffset.Value, 0); }
-  public static void AddEvnetMapNameLocalize(FlatBufferBuilder builder, StringOffset EvnetMapNameLocalizeOffset) { builder.AddOffset(7, EvnetMapNameLocalizeOffset.Value, 0); }
-  public static void AddMapEnterScenarioGroupId(FlatBufferBuilder builder, StringOffset MapEnterScenarioGroupIdOffset) { builder.AddOffset(8, MapEnterScenarioGroupIdOffset.Value, 0); }
-  public static void AddEvnetScenarioBG(FlatBufferBuilder builder, StringOffset EvnetScenarioBGOffset) { builder.AddOffset(9, EvnetScenarioBGOffset.Value, 0); }
-  public static void AddManageUnitChange(FlatBufferBuilder builder, int ManageUnitChange) { builder.AddInt(10, ManageUnitChange, 0); }
-  public static void AddAssistCount(FlatBufferBuilder builder, int AssistCount) { builder.AddInt(11, AssistCount, 0); }
-  public static void AddPlayTimeLimitInSeconds(FlatBufferBuilder builder, int PlayTimeLimitInSeconds) { builder.AddInt(12, PlayTimeLimitInSeconds, 0); }
-  public static void AddAnimationUnitAmountMin(FlatBufferBuilder builder, int AnimationUnitAmountMin) { builder.AddInt(13, AnimationUnitAmountMin, 0); }
-  public static void AddAnimationUnitAmountMax(FlatBufferBuilder builder, int AnimationUnitAmountMax) { builder.AddInt(14, AnimationUnitAmountMax, 0); }
-  public static void AddAnimationUnitDelay(FlatBufferBuilder builder, float AnimationUnitDelay) { builder.AddFloat(15, AnimationUnitDelay, 0.0f); }
-  public static void AddFirstRewardType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType FirstRewardType) { builder.AddInt(16, (int)FirstRewardType, 0); }
-  public static void AddFirstRewardUniqueId(FlatBufferBuilder builder, long FirstRewardUniqueId) { builder.AddLong(17, FirstRewardUniqueId, 0); }
-  public static void AddFirstRewardAmount(FlatBufferBuilder builder, long FirstRewardAmount) { builder.AddLong(18, FirstRewardAmount, 0); }
-  public static void AddLocalizeUnexpected(FlatBufferBuilder builder, StringOffset LocalizeUnexpectedOffset) { builder.AddOffset(19, LocalizeUnexpectedOffset.Value, 0); }
-  public static void AddLocalizeErosions(FlatBufferBuilder builder, StringOffset LocalizeErosionsOffset) { builder.AddOffset(20, LocalizeErosionsOffset.Value, 0); }
-  public static void AddLocalizeStep(FlatBufferBuilder builder, StringOffset LocalizeStepOffset) { builder.AddOffset(21, LocalizeStepOffset.Value, 0); }
-  public static void AddLocalizeMapInfo(FlatBufferBuilder builder, StringOffset LocalizeMapInfoOffset) { builder.AddOffset(22, LocalizeMapInfoOffset.Value, 0); }
-  public static void AddLocalizeManage(FlatBufferBuilder builder, StringOffset LocalizeManageOffset) { builder.AddOffset(23, LocalizeManageOffset.Value, 0); }
-  public static void AddLocalizeUpgrade(FlatBufferBuilder builder, StringOffset LocalizeUpgradeOffset) { builder.AddOffset(24, LocalizeUpgradeOffset.Value, 0); }
-  public static void AddLocalizeTreasureBox(FlatBufferBuilder builder, StringOffset LocalizeTreasureBoxOffset) { builder.AddOffset(25, LocalizeTreasureBoxOffset.Value, 0); }
-  public static void AddUnexpectedEventConditionAmount(FlatBufferBuilder builder, long UnexpectedEventConditionAmount) { builder.AddLong(26, UnexpectedEventConditionAmount, 0); }
-  public static void AddUnexpectedEventOccurDailyLimitCount(FlatBufferBuilder builder, long UnexpectedEventOccurDailyLimitCount) { builder.AddLong(27, UnexpectedEventOccurDailyLimitCount, 0); }
-  public static void AddCalculateConditionParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType CalculateConditionParcelType) { builder.AddInt(28, (int)CalculateConditionParcelType, 0); }
-  public static void AddCalculateConditionParcelUniqueId(FlatBufferBuilder builder, long CalculateConditionParcelUniqueId) { builder.AddLong(29, CalculateConditionParcelUniqueId, 0); }
-  public static void AddCalculateConditionParcelAmount(FlatBufferBuilder builder, long CalculateConditionParcelAmount) { builder.AddLong(30, CalculateConditionParcelAmount, 0); }
+  public static void AddMainStoryEventContentId(FlatBufferBuilder builder, long MainStoryEventContentId) { builder.AddLong(1, MainStoryEventContentId, 0); }
+  public static void AddConquesteventtype(FlatBufferBuilder builder, FlatDataGlobal.ConquestEventType conquesteventtype) { builder.AddInt(2, (int)conquesteventtype, 0); }
+  public static void AddUseErosion(FlatBufferBuilder builder, bool UseErosion) { builder.AddBool(3, UseErosion, false); }
+  public static void AddUseUnexpectedEvent(FlatBufferBuilder builder, bool UseUnexpectedEvent) { builder.AddBool(4, UseUnexpectedEvent, false); }
+  public static void AddUseCalculate(FlatBufferBuilder builder, bool UseCalculate) { builder.AddBool(5, UseCalculate, false); }
+  public static void AddUseConquestObject(FlatBufferBuilder builder, bool UseConquestObject) { builder.AddBool(6, UseConquestObject, false); }
+  public static void AddEvnetMapGoalLocalize(FlatBufferBuilder builder, StringOffset EvnetMapGoalLocalizeOffset) { builder.AddOffset(7, EvnetMapGoalLocalizeOffset.Value, 0); }
+  public static void AddEvnetMapNameLocalize(FlatBufferBuilder builder, StringOffset EvnetMapNameLocalizeOffset) { builder.AddOffset(8, EvnetMapNameLocalizeOffset.Value, 0); }
+  public static void AddMapEnterScenarioGroupId(FlatBufferBuilder builder, long MapEnterScenarioGroupId) { builder.AddLong(9, MapEnterScenarioGroupId, 0); }
+  public static void AddEvnetScenarioBG(FlatBufferBuilder builder, StringOffset EvnetScenarioBGOffset) { builder.AddOffset(10, EvnetScenarioBGOffset.Value, 0); }
+  public static void AddManageUnitChange(FlatBufferBuilder builder, int ManageUnitChange) { builder.AddInt(11, ManageUnitChange, 0); }
+  public static void AddAssistCount(FlatBufferBuilder builder, int AssistCount) { builder.AddInt(12, AssistCount, 0); }
+  public static void AddPlayTimeLimitInSeconds(FlatBufferBuilder builder, int PlayTimeLimitInSeconds) { builder.AddInt(13, PlayTimeLimitInSeconds, 0); }
+  public static void AddAnimationUnitAmountMin(FlatBufferBuilder builder, int AnimationUnitAmountMin) { builder.AddInt(14, AnimationUnitAmountMin, 0); }
+  public static void AddAnimationUnitAmountMax(FlatBufferBuilder builder, int AnimationUnitAmountMax) { builder.AddInt(15, AnimationUnitAmountMax, 0); }
+  public static void AddAnimationUnitDelay(FlatBufferBuilder builder, float AnimationUnitDelay) { builder.AddFloat(16, AnimationUnitDelay, 0.0f); }
+  public static void AddLocalizeUnexpected(FlatBufferBuilder builder, StringOffset LocalizeUnexpectedOffset) { builder.AddOffset(17, LocalizeUnexpectedOffset.Value, 0); }
+  public static void AddLocalizeErosions(FlatBufferBuilder builder, StringOffset LocalizeErosionsOffset) { builder.AddOffset(18, LocalizeErosionsOffset.Value, 0); }
+  public static void AddLocalizeStep(FlatBufferBuilder builder, StringOffset LocalizeStepOffset) { builder.AddOffset(19, LocalizeStepOffset.Value, 0); }
+  public static void AddLocalizeTile(FlatBufferBuilder builder, StringOffset LocalizeTileOffset) { builder.AddOffset(20, LocalizeTileOffset.Value, 0); }
+  public static void AddLocalizeMapInfo(FlatBufferBuilder builder, StringOffset LocalizeMapInfoOffset) { builder.AddOffset(21, LocalizeMapInfoOffset.Value, 0); }
+  public static void AddLocalizeManage(FlatBufferBuilder builder, StringOffset LocalizeManageOffset) { builder.AddOffset(22, LocalizeManageOffset.Value, 0); }
+  public static void AddLocalizeUpgrade(FlatBufferBuilder builder, StringOffset LocalizeUpgradeOffset) { builder.AddOffset(23, LocalizeUpgradeOffset.Value, 0); }
+  public static void AddLocalizeTreasureBox(FlatBufferBuilder builder, StringOffset LocalizeTreasureBoxOffset) { builder.AddOffset(24, LocalizeTreasureBoxOffset.Value, 0); }
+  public static void AddIndividualErosionDailyCount(FlatBufferBuilder builder, long IndividualErosionDailyCount) { builder.AddLong(25, IndividualErosionDailyCount, 0); }
   public static Offset<FlatDataGlobal.ConquestEventExcel> EndConquestEventExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConquestEventExcel>(o);

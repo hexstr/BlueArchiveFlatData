@@ -57,6 +57,7 @@ public struct EventContentShopExcel : IFlatbufferObject
   public ArraySegment<byte>? GetBuyReportEventNameBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
   public byte[] GetBuyReportEventNameArray() { return __p.__vector_as_array<byte>(28); }
+  public bool RestrictBuyWhenInventoryFull { get { int o = __p.__offset(30); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.EventContentShopExcel> CreateEventContentShopExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
@@ -71,8 +72,9 @@ public struct EventContentShopExcel : IFlatbufferObject
       long PurchaseCooltimeMin = 0,
       long PurchaseCountLimit = 0,
       FlatDataGlobal.PurchaseCountResetType purchasecountresettype = FlatDataGlobal.PurchaseCountResetType.None,
-      StringOffset BuyReportEventNameOffset = default(StringOffset)) {
-    builder.StartTable(13);
+      StringOffset BuyReportEventNameOffset = default(StringOffset),
+      bool RestrictBuyWhenInventoryFull = false) {
+    builder.StartTable(14);
     EventContentShopExcel.AddPurchaseCountLimit(builder, PurchaseCountLimit);
     EventContentShopExcel.AddPurchaseCooltimeMin(builder, PurchaseCooltimeMin);
     EventContentShopExcel.AddDisplayOrder(builder, DisplayOrder);
@@ -85,11 +87,12 @@ public struct EventContentShopExcel : IFlatbufferObject
     EventContentShopExcel.AddGoodsId(builder, GoodsIdOffset);
     EventContentShopExcel.AddCategoryType(builder, CategoryType);
     EventContentShopExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
+    EventContentShopExcel.AddRestrictBuyWhenInventoryFull(builder, RestrictBuyWhenInventoryFull);
     EventContentShopExcel.AddIsLegacy(builder, IsLegacy);
     return EventContentShopExcel.EndEventContentShopExcel(builder);
   }
 
-  public static void StartEventContentShopExcel(FlatBufferBuilder builder) { builder.StartTable(13); }
+  public static void StartEventContentShopExcel(FlatBufferBuilder builder) { builder.StartTable(14); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(1, Id, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(2, LocalizeEtcId, 0); }
@@ -108,6 +111,7 @@ public struct EventContentShopExcel : IFlatbufferObject
   public static void AddPurchaseCountLimit(FlatBufferBuilder builder, long PurchaseCountLimit) { builder.AddLong(10, PurchaseCountLimit, 0); }
   public static void AddPurchasecountresettype(FlatBufferBuilder builder, FlatDataGlobal.PurchaseCountResetType purchasecountresettype) { builder.AddInt(11, (int)purchasecountresettype, 0); }
   public static void AddBuyReportEventName(FlatBufferBuilder builder, StringOffset BuyReportEventNameOffset) { builder.AddOffset(12, BuyReportEventNameOffset.Value, 0); }
+  public static void AddRestrictBuyWhenInventoryFull(FlatBufferBuilder builder, bool RestrictBuyWhenInventoryFull) { builder.AddBool(13, RestrictBuyWhenInventoryFull, false); }
   public static Offset<FlatDataGlobal.EventContentShopExcel> EndEventContentShopExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentShopExcel>(o);

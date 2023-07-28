@@ -47,36 +47,42 @@ public struct CharacterStatExcel : IFlatbufferObject
   public long EnhanceExplosionRate { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long EnhancePierceRate { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long EnhanceMysticRate { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnhanceSiegeRate { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnhanceNormalRate { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnhanceLightArmorRate { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnhanceHeavyArmorRate { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnhanceUnarmedRate { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnhanceStructureRate { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnhanceNormalArmorRate { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ExtendBuffDuration { get { int o = __p.__offset(74); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ExtendDebuffDuration { get { int o = __p.__offset(76); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ExtendCrowdControlDuration { get { int o = __p.__offset(78); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long AmmoCount { get { int o = __p.__offset(80); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long AmmoCost { get { int o = __p.__offset(82); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long IgnoreDelayCount { get { int o = __p.__offset(84); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long NormalAttackSpeed { get { int o = __p.__offset(86); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long Range { get { int o = __p.__offset(88); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long InitialRangeRate { get { int o = __p.__offset(90); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long MoveSpeed { get { int o = __p.__offset(92); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long SightPoint { get { int o = __p.__offset(94); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ActiveGauge { get { int o = __p.__offset(96); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int GroggyGauge { get { int o = __p.__offset(98); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int GroggyTime { get { int o = __p.__offset(100); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long StrategyMobility { get { int o = __p.__offset(102); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ActionCount { get { int o = __p.__offset(104); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long StrategySightRange { get { int o = __p.__offset(106); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long DamageRatio { get { int o = __p.__offset(108); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long DamagedRatio { get { int o = __p.__offset(110); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.TerrainAdaptationStat StreetBattleAdaptation { get { int o = __p.__offset(112); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
-  public FlatDataGlobal.TerrainAdaptationStat OutdoorBattleAdaptation { get { int o = __p.__offset(114); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
-  public FlatDataGlobal.TerrainAdaptationStat IndoorBattleAdaptation { get { int o = __p.__offset(116); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
-  public long RegenCost { get { int o = __p.__offset(118); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceSonicRate { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceSiegeRate { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceNormalRate { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceLightArmorRate { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceHeavyArmorRate { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceUnarmedRate { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceElasticArmorRate { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceStructureRate { get { int o = __p.__offset(74); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceNormalArmorRate { get { int o = __p.__offset(76); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ExtendBuffDuration { get { int o = __p.__offset(78); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ExtendDebuffDuration { get { int o = __p.__offset(80); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ExtendCrowdControlDuration { get { int o = __p.__offset(82); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long AmmoCount { get { int o = __p.__offset(84); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long AmmoCost { get { int o = __p.__offset(86); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long IgnoreDelayCount { get { int o = __p.__offset(88); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long NormalAttackSpeed { get { int o = __p.__offset(90); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long Range { get { int o = __p.__offset(92); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long InitialRangeRate { get { int o = __p.__offset(94); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long MoveSpeed { get { int o = __p.__offset(96); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long SightPoint { get { int o = __p.__offset(98); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ActiveGauge { get { int o = __p.__offset(100); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int GroggyGauge { get { int o = __p.__offset(102); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int GroggyTime { get { int o = __p.__offset(104); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long StrategyMobility { get { int o = __p.__offset(106); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ActionCount { get { int o = __p.__offset(108); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long StrategySightRange { get { int o = __p.__offset(110); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DamageRatio { get { int o = __p.__offset(112); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DamagedRatio { get { int o = __p.__offset(114); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DamageRatio2Increase { get { int o = __p.__offset(116); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DamageRatio2Decrease { get { int o = __p.__offset(118); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DamagedRatio2Increase { get { int o = __p.__offset(120); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DamagedRatio2Decrease { get { int o = __p.__offset(122); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.TerrainAdaptationStat StreetBattleAdaptation { get { int o = __p.__offset(124); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
+  public FlatDataGlobal.TerrainAdaptationStat OutdoorBattleAdaptation { get { int o = __p.__offset(126); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
+  public FlatDataGlobal.TerrainAdaptationStat IndoorBattleAdaptation { get { int o = __p.__offset(128); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
+  public long RegenCost { get { int o = __p.__offset(130); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.CharacterStatExcel> CreateCharacterStatExcel(FlatBufferBuilder builder,
       long CharacterId = 0,
@@ -107,11 +113,13 @@ public struct CharacterStatExcel : IFlatbufferObject
       long EnhanceExplosionRate = 0,
       long EnhancePierceRate = 0,
       long EnhanceMysticRate = 0,
+      long EnhanceSonicRate = 0,
       long EnhanceSiegeRate = 0,
       long EnhanceNormalRate = 0,
       long EnhanceLightArmorRate = 0,
       long EnhanceHeavyArmorRate = 0,
       long EnhanceUnarmedRate = 0,
+      long EnhanceElasticArmorRate = 0,
       long EnhanceStructureRate = 0,
       long EnhanceNormalArmorRate = 0,
       long ExtendBuffDuration = 0,
@@ -133,12 +141,20 @@ public struct CharacterStatExcel : IFlatbufferObject
       long StrategySightRange = 0,
       long DamageRatio = 0,
       long DamagedRatio = 0,
+      long DamageRatio2Increase = 0,
+      long DamageRatio2Decrease = 0,
+      long DamagedRatio2Increase = 0,
+      long DamagedRatio2Decrease = 0,
       FlatDataGlobal.TerrainAdaptationStat StreetBattleAdaptation = FlatDataGlobal.TerrainAdaptationStat.D,
       FlatDataGlobal.TerrainAdaptationStat OutdoorBattleAdaptation = FlatDataGlobal.TerrainAdaptationStat.D,
       FlatDataGlobal.TerrainAdaptationStat IndoorBattleAdaptation = FlatDataGlobal.TerrainAdaptationStat.D,
       long RegenCost = 0) {
-    builder.StartTable(58);
+    builder.StartTable(64);
     CharacterStatExcel.AddRegenCost(builder, RegenCost);
+    CharacterStatExcel.AddDamagedRatio2Decrease(builder, DamagedRatio2Decrease);
+    CharacterStatExcel.AddDamagedRatio2Increase(builder, DamagedRatio2Increase);
+    CharacterStatExcel.AddDamageRatio2Decrease(builder, DamageRatio2Decrease);
+    CharacterStatExcel.AddDamageRatio2Increase(builder, DamageRatio2Increase);
     CharacterStatExcel.AddDamagedRatio(builder, DamagedRatio);
     CharacterStatExcel.AddDamageRatio(builder, DamageRatio);
     CharacterStatExcel.AddStrategySightRange(builder, StrategySightRange);
@@ -158,11 +174,13 @@ public struct CharacterStatExcel : IFlatbufferObject
     CharacterStatExcel.AddExtendBuffDuration(builder, ExtendBuffDuration);
     CharacterStatExcel.AddEnhanceNormalArmorRate(builder, EnhanceNormalArmorRate);
     CharacterStatExcel.AddEnhanceStructureRate(builder, EnhanceStructureRate);
+    CharacterStatExcel.AddEnhanceElasticArmorRate(builder, EnhanceElasticArmorRate);
     CharacterStatExcel.AddEnhanceUnarmedRate(builder, EnhanceUnarmedRate);
     CharacterStatExcel.AddEnhanceHeavyArmorRate(builder, EnhanceHeavyArmorRate);
     CharacterStatExcel.AddEnhanceLightArmorRate(builder, EnhanceLightArmorRate);
     CharacterStatExcel.AddEnhanceNormalRate(builder, EnhanceNormalRate);
     CharacterStatExcel.AddEnhanceSiegeRate(builder, EnhanceSiegeRate);
+    CharacterStatExcel.AddEnhanceSonicRate(builder, EnhanceSonicRate);
     CharacterStatExcel.AddEnhanceMysticRate(builder, EnhanceMysticRate);
     CharacterStatExcel.AddEnhancePierceRate(builder, EnhancePierceRate);
     CharacterStatExcel.AddEnhanceExplosionRate(builder, EnhanceExplosionRate);
@@ -199,7 +217,7 @@ public struct CharacterStatExcel : IFlatbufferObject
     return CharacterStatExcel.EndCharacterStatExcel(builder);
   }
 
-  public static void StartCharacterStatExcel(FlatBufferBuilder builder) { builder.StartTable(58); }
+  public static void StartCharacterStatExcel(FlatBufferBuilder builder) { builder.StartTable(64); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
   public static void AddStabilityRate(FlatBufferBuilder builder, long StabilityRate) { builder.AddLong(1, StabilityRate, 0); }
   public static void AddStabilityPoint(FlatBufferBuilder builder, long StabilityPoint) { builder.AddLong(2, StabilityPoint, 0); }
@@ -228,36 +246,42 @@ public struct CharacterStatExcel : IFlatbufferObject
   public static void AddEnhanceExplosionRate(FlatBufferBuilder builder, long EnhanceExplosionRate) { builder.AddLong(25, EnhanceExplosionRate, 0); }
   public static void AddEnhancePierceRate(FlatBufferBuilder builder, long EnhancePierceRate) { builder.AddLong(26, EnhancePierceRate, 0); }
   public static void AddEnhanceMysticRate(FlatBufferBuilder builder, long EnhanceMysticRate) { builder.AddLong(27, EnhanceMysticRate, 0); }
-  public static void AddEnhanceSiegeRate(FlatBufferBuilder builder, long EnhanceSiegeRate) { builder.AddLong(28, EnhanceSiegeRate, 0); }
-  public static void AddEnhanceNormalRate(FlatBufferBuilder builder, long EnhanceNormalRate) { builder.AddLong(29, EnhanceNormalRate, 0); }
-  public static void AddEnhanceLightArmorRate(FlatBufferBuilder builder, long EnhanceLightArmorRate) { builder.AddLong(30, EnhanceLightArmorRate, 0); }
-  public static void AddEnhanceHeavyArmorRate(FlatBufferBuilder builder, long EnhanceHeavyArmorRate) { builder.AddLong(31, EnhanceHeavyArmorRate, 0); }
-  public static void AddEnhanceUnarmedRate(FlatBufferBuilder builder, long EnhanceUnarmedRate) { builder.AddLong(32, EnhanceUnarmedRate, 0); }
-  public static void AddEnhanceStructureRate(FlatBufferBuilder builder, long EnhanceStructureRate) { builder.AddLong(33, EnhanceStructureRate, 0); }
-  public static void AddEnhanceNormalArmorRate(FlatBufferBuilder builder, long EnhanceNormalArmorRate) { builder.AddLong(34, EnhanceNormalArmorRate, 0); }
-  public static void AddExtendBuffDuration(FlatBufferBuilder builder, long ExtendBuffDuration) { builder.AddLong(35, ExtendBuffDuration, 0); }
-  public static void AddExtendDebuffDuration(FlatBufferBuilder builder, long ExtendDebuffDuration) { builder.AddLong(36, ExtendDebuffDuration, 0); }
-  public static void AddExtendCrowdControlDuration(FlatBufferBuilder builder, long ExtendCrowdControlDuration) { builder.AddLong(37, ExtendCrowdControlDuration, 0); }
-  public static void AddAmmoCount(FlatBufferBuilder builder, long AmmoCount) { builder.AddLong(38, AmmoCount, 0); }
-  public static void AddAmmoCost(FlatBufferBuilder builder, long AmmoCost) { builder.AddLong(39, AmmoCost, 0); }
-  public static void AddIgnoreDelayCount(FlatBufferBuilder builder, long IgnoreDelayCount) { builder.AddLong(40, IgnoreDelayCount, 0); }
-  public static void AddNormalAttackSpeed(FlatBufferBuilder builder, long NormalAttackSpeed) { builder.AddLong(41, NormalAttackSpeed, 0); }
-  public static void AddRange(FlatBufferBuilder builder, long Range) { builder.AddLong(42, Range, 0); }
-  public static void AddInitialRangeRate(FlatBufferBuilder builder, long InitialRangeRate) { builder.AddLong(43, InitialRangeRate, 0); }
-  public static void AddMoveSpeed(FlatBufferBuilder builder, long MoveSpeed) { builder.AddLong(44, MoveSpeed, 0); }
-  public static void AddSightPoint(FlatBufferBuilder builder, long SightPoint) { builder.AddLong(45, SightPoint, 0); }
-  public static void AddActiveGauge(FlatBufferBuilder builder, long ActiveGauge) { builder.AddLong(46, ActiveGauge, 0); }
-  public static void AddGroggyGauge(FlatBufferBuilder builder, int GroggyGauge) { builder.AddInt(47, GroggyGauge, 0); }
-  public static void AddGroggyTime(FlatBufferBuilder builder, int GroggyTime) { builder.AddInt(48, GroggyTime, 0); }
-  public static void AddStrategyMobility(FlatBufferBuilder builder, long StrategyMobility) { builder.AddLong(49, StrategyMobility, 0); }
-  public static void AddActionCount(FlatBufferBuilder builder, long ActionCount) { builder.AddLong(50, ActionCount, 0); }
-  public static void AddStrategySightRange(FlatBufferBuilder builder, long StrategySightRange) { builder.AddLong(51, StrategySightRange, 0); }
-  public static void AddDamageRatio(FlatBufferBuilder builder, long DamageRatio) { builder.AddLong(52, DamageRatio, 0); }
-  public static void AddDamagedRatio(FlatBufferBuilder builder, long DamagedRatio) { builder.AddLong(53, DamagedRatio, 0); }
-  public static void AddStreetBattleAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat StreetBattleAdaptation) { builder.AddInt(54, (int)StreetBattleAdaptation, 0); }
-  public static void AddOutdoorBattleAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat OutdoorBattleAdaptation) { builder.AddInt(55, (int)OutdoorBattleAdaptation, 0); }
-  public static void AddIndoorBattleAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat IndoorBattleAdaptation) { builder.AddInt(56, (int)IndoorBattleAdaptation, 0); }
-  public static void AddRegenCost(FlatBufferBuilder builder, long RegenCost) { builder.AddLong(57, RegenCost, 0); }
+  public static void AddEnhanceSonicRate(FlatBufferBuilder builder, long EnhanceSonicRate) { builder.AddLong(28, EnhanceSonicRate, 0); }
+  public static void AddEnhanceSiegeRate(FlatBufferBuilder builder, long EnhanceSiegeRate) { builder.AddLong(29, EnhanceSiegeRate, 0); }
+  public static void AddEnhanceNormalRate(FlatBufferBuilder builder, long EnhanceNormalRate) { builder.AddLong(30, EnhanceNormalRate, 0); }
+  public static void AddEnhanceLightArmorRate(FlatBufferBuilder builder, long EnhanceLightArmorRate) { builder.AddLong(31, EnhanceLightArmorRate, 0); }
+  public static void AddEnhanceHeavyArmorRate(FlatBufferBuilder builder, long EnhanceHeavyArmorRate) { builder.AddLong(32, EnhanceHeavyArmorRate, 0); }
+  public static void AddEnhanceUnarmedRate(FlatBufferBuilder builder, long EnhanceUnarmedRate) { builder.AddLong(33, EnhanceUnarmedRate, 0); }
+  public static void AddEnhanceElasticArmorRate(FlatBufferBuilder builder, long EnhanceElasticArmorRate) { builder.AddLong(34, EnhanceElasticArmorRate, 0); }
+  public static void AddEnhanceStructureRate(FlatBufferBuilder builder, long EnhanceStructureRate) { builder.AddLong(35, EnhanceStructureRate, 0); }
+  public static void AddEnhanceNormalArmorRate(FlatBufferBuilder builder, long EnhanceNormalArmorRate) { builder.AddLong(36, EnhanceNormalArmorRate, 0); }
+  public static void AddExtendBuffDuration(FlatBufferBuilder builder, long ExtendBuffDuration) { builder.AddLong(37, ExtendBuffDuration, 0); }
+  public static void AddExtendDebuffDuration(FlatBufferBuilder builder, long ExtendDebuffDuration) { builder.AddLong(38, ExtendDebuffDuration, 0); }
+  public static void AddExtendCrowdControlDuration(FlatBufferBuilder builder, long ExtendCrowdControlDuration) { builder.AddLong(39, ExtendCrowdControlDuration, 0); }
+  public static void AddAmmoCount(FlatBufferBuilder builder, long AmmoCount) { builder.AddLong(40, AmmoCount, 0); }
+  public static void AddAmmoCost(FlatBufferBuilder builder, long AmmoCost) { builder.AddLong(41, AmmoCost, 0); }
+  public static void AddIgnoreDelayCount(FlatBufferBuilder builder, long IgnoreDelayCount) { builder.AddLong(42, IgnoreDelayCount, 0); }
+  public static void AddNormalAttackSpeed(FlatBufferBuilder builder, long NormalAttackSpeed) { builder.AddLong(43, NormalAttackSpeed, 0); }
+  public static void AddRange(FlatBufferBuilder builder, long Range) { builder.AddLong(44, Range, 0); }
+  public static void AddInitialRangeRate(FlatBufferBuilder builder, long InitialRangeRate) { builder.AddLong(45, InitialRangeRate, 0); }
+  public static void AddMoveSpeed(FlatBufferBuilder builder, long MoveSpeed) { builder.AddLong(46, MoveSpeed, 0); }
+  public static void AddSightPoint(FlatBufferBuilder builder, long SightPoint) { builder.AddLong(47, SightPoint, 0); }
+  public static void AddActiveGauge(FlatBufferBuilder builder, long ActiveGauge) { builder.AddLong(48, ActiveGauge, 0); }
+  public static void AddGroggyGauge(FlatBufferBuilder builder, int GroggyGauge) { builder.AddInt(49, GroggyGauge, 0); }
+  public static void AddGroggyTime(FlatBufferBuilder builder, int GroggyTime) { builder.AddInt(50, GroggyTime, 0); }
+  public static void AddStrategyMobility(FlatBufferBuilder builder, long StrategyMobility) { builder.AddLong(51, StrategyMobility, 0); }
+  public static void AddActionCount(FlatBufferBuilder builder, long ActionCount) { builder.AddLong(52, ActionCount, 0); }
+  public static void AddStrategySightRange(FlatBufferBuilder builder, long StrategySightRange) { builder.AddLong(53, StrategySightRange, 0); }
+  public static void AddDamageRatio(FlatBufferBuilder builder, long DamageRatio) { builder.AddLong(54, DamageRatio, 0); }
+  public static void AddDamagedRatio(FlatBufferBuilder builder, long DamagedRatio) { builder.AddLong(55, DamagedRatio, 0); }
+  public static void AddDamageRatio2Increase(FlatBufferBuilder builder, long DamageRatio2Increase) { builder.AddLong(56, DamageRatio2Increase, 0); }
+  public static void AddDamageRatio2Decrease(FlatBufferBuilder builder, long DamageRatio2Decrease) { builder.AddLong(57, DamageRatio2Decrease, 0); }
+  public static void AddDamagedRatio2Increase(FlatBufferBuilder builder, long DamagedRatio2Increase) { builder.AddLong(58, DamagedRatio2Increase, 0); }
+  public static void AddDamagedRatio2Decrease(FlatBufferBuilder builder, long DamagedRatio2Decrease) { builder.AddLong(59, DamagedRatio2Decrease, 0); }
+  public static void AddStreetBattleAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat StreetBattleAdaptation) { builder.AddInt(60, (int)StreetBattleAdaptation, 0); }
+  public static void AddOutdoorBattleAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat OutdoorBattleAdaptation) { builder.AddInt(61, (int)OutdoorBattleAdaptation, 0); }
+  public static void AddIndoorBattleAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat IndoorBattleAdaptation) { builder.AddInt(62, (int)IndoorBattleAdaptation, 0); }
+  public static void AddRegenCost(FlatBufferBuilder builder, long RegenCost) { builder.AddLong(63, RegenCost, 0); }
   public static Offset<FlatDataGlobal.CharacterStatExcel> EndCharacterStatExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterStatExcel>(o);

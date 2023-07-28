@@ -44,6 +44,9 @@ public enum ContentLockType : int
   RaidSeasonReward = 34,
   RaidRankingReward = 35,
   Friend = 36,
+  Main_L_1_2 = 37,
+  Main_L_1_3 = 38,
+  Main_L_1_4 = 39,
 };
 
 

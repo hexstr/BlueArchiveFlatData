@@ -130,6 +130,8 @@ public enum MissionCompleteConditionType : int
   ClearEventConquestTileTimeLimitFromSecond = 120,
   DiceRaceUseDiceCount = 121,
   DiceRaceFinishLapCount = 122,
+  FortuneGachaCount = 123,
+  FortuneGachaCountByGrade = 124,
 };
 
 

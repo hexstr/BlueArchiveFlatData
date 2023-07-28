@@ -22,6 +22,9 @@ public enum ContentType : int
   EventContentStoryStage = 12,
   CampaignExtraStage = 13,
   StoryStrategyStage = 14,
+  ScenarioMode = 15,
+  EventContent = 16,
+  WorldRaid = 17,
 };
 
 

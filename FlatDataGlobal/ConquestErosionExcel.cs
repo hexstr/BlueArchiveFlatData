@@ -19,133 +19,105 @@ public struct ConquestErosionExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public ConquestErosionExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public long GroupId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long Id { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ConquestEventType ErosionType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ConquestEventType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ConquestEventType.None; } }
+  public FlatDataGlobal.ConquestErosionType ErosionType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ConquestErosionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ConquestErosionType.None; } }
   public int Phase { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public bool PhaseAlarm { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public int ErosionOccurStep { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.PhaseStartConditionType PhaseStartConditionType(int j) { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.PhaseStartConditionType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.PhaseStartConditionType)0; }
+  public int StepIndex { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.ConquestConditionType PhaseStartConditionType(int j) { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.ConquestConditionType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ConquestConditionType)0; }
   public int PhaseStartConditionTypeLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.PhaseStartConditionType> GetPhaseStartConditionTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.PhaseStartConditionType>(16, 4); }
+  public Span<FlatDataGlobal.ConquestConditionType> GetPhaseStartConditionTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ConquestConditionType>(16, 4); }
 #else
   public ArraySegment<byte>? GetPhaseStartConditionTypeBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public FlatDataGlobal.PhaseStartConditionType[] GetPhaseStartConditionTypeArray() { int o = __p.__offset(16); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.PhaseStartConditionType[] a = new FlatDataGlobal.PhaseStartConditionType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.PhaseStartConditionType)__p.bb.GetInt(p + i * 4); } return a; }
-  public string PhaseStartConditionParameter1(int j) { int o = __p.__offset(18); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int PhaseStartConditionParameter1Length { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string PhaseStartConditionParameter2 { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataGlobal.ConquestConditionType[] GetPhaseStartConditionTypeArray() { int o = __p.__offset(16); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ConquestConditionType[] a = new FlatDataGlobal.ConquestConditionType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ConquestConditionType)__p.bb.GetInt(p + i * 4); } return a; }
+  public string PhaseStartConditionParameter(int j) { int o = __p.__offset(18); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int PhaseStartConditionParameterLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.ConquestConditionType PhaseBeforeExposeConditionType(int j) { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.ConquestConditionType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ConquestConditionType)0; }
+  public int PhaseBeforeExposeConditionTypeLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetPhaseStartConditionParameter2Bytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<FlatDataGlobal.ConquestConditionType> GetPhaseBeforeExposeConditionTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ConquestConditionType>(20, 4); }
 #else
-  public ArraySegment<byte>? GetPhaseStartConditionParameter2Bytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetPhaseBeforeExposeConditionTypeBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public byte[] GetPhaseStartConditionParameter2Array() { return __p.__vector_as_array<byte>(20); }
-  public string PhaseStartConditionParameter3 { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetPhaseStartConditionParameter3Bytes() { return __p.__vector_as_span<byte>(22, 1); }
-#else
-  public ArraySegment<byte>? GetPhaseStartConditionParameter3Bytes() { return __p.__vector_as_arraysegment(22); }
-#endif
-  public byte[] GetPhaseStartConditionParameter3Array() { return __p.__vector_as_array<byte>(22); }
-  public FlatDataGlobal.PhaseBeforeExposeConditionType PhaseBeforeExposeConditionType(int j) { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.PhaseBeforeExposeConditionType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.PhaseBeforeExposeConditionType)0; }
-  public int PhaseBeforeExposeConditionTypeLength { get { int o = __p.__offset(24); return o != 0 ? __p.__vector_len(o) : 0; } }
-#if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.PhaseBeforeExposeConditionType> GetPhaseBeforeExposeConditionTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.PhaseBeforeExposeConditionType>(24, 4); }
-#else
-  public ArraySegment<byte>? GetPhaseBeforeExposeConditionTypeBytes() { return __p.__vector_as_arraysegment(24); }
-#endif
-  public FlatDataGlobal.PhaseBeforeExposeConditionType[] GetPhaseBeforeExposeConditionTypeArray() { int o = __p.__offset(24); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.PhaseBeforeExposeConditionType[] a = new FlatDataGlobal.PhaseBeforeExposeConditionType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.PhaseBeforeExposeConditionType)__p.bb.GetInt(p + i * 4); } return a; }
-  public string PhaseBeforeExposeConditionParameter1(int j) { int o = __p.__offset(26); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int PhaseBeforeExposeConditionParameter1Length { get { int o = __p.__offset(26); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string PhaseBeforeExposeConditionParameter2 { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetPhaseBeforeExposeConditionParameter2Bytes() { return __p.__vector_as_span<byte>(28, 1); }
-#else
-  public ArraySegment<byte>? GetPhaseBeforeExposeConditionParameter2Bytes() { return __p.__vector_as_arraysegment(28); }
-#endif
-  public byte[] GetPhaseBeforeExposeConditionParameter2Array() { return __p.__vector_as_array<byte>(28); }
-  public string PhaseBeforeExposeConditionParameter3 { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetPhaseBeforeExposeConditionParameter3Bytes() { return __p.__vector_as_span<byte>(30, 1); }
-#else
-  public ArraySegment<byte>? GetPhaseBeforeExposeConditionParameter3Bytes() { return __p.__vector_as_arraysegment(30); }
-#endif
-  public byte[] GetPhaseBeforeExposeConditionParameter3Array() { return __p.__vector_as_array<byte>(30); }
-  public long ConquestRewardId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.ConquestConditionType[] GetPhaseBeforeExposeConditionTypeArray() { int o = __p.__offset(20); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ConquestConditionType[] a = new FlatDataGlobal.ConquestConditionType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ConquestConditionType)__p.bb.GetInt(p + i * 4); } return a; }
+  public string PhaseBeforeExposeConditionParameter(int j) { int o = __p.__offset(22); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int PhaseBeforeExposeConditionParameterLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.ParcelType ErosionBattleConditionParcelType { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public long ErosionBattleConditionParcelUniqueId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ErosionBattleConditionParcelAmount { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ConquestRewardId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.ConquestErosionExcel> CreateConquestErosionExcel(FlatBufferBuilder builder,
-      long GroupId = 0,
+      long EventContentId = 0,
       long Id = 0,
-      FlatDataGlobal.ConquestEventType ErosionType = FlatDataGlobal.ConquestEventType.None,
+      FlatDataGlobal.ConquestErosionType ErosionType = FlatDataGlobal.ConquestErosionType.None,
       int Phase = 0,
       bool PhaseAlarm = false,
-      int ErosionOccurStep = 0,
+      int StepIndex = 0,
       VectorOffset PhaseStartConditionTypeOffset = default(VectorOffset),
-      VectorOffset PhaseStartConditionParameter1Offset = default(VectorOffset),
-      StringOffset PhaseStartConditionParameter2Offset = default(StringOffset),
-      StringOffset PhaseStartConditionParameter3Offset = default(StringOffset),
+      VectorOffset PhaseStartConditionParameterOffset = default(VectorOffset),
       VectorOffset PhaseBeforeExposeConditionTypeOffset = default(VectorOffset),
-      VectorOffset PhaseBeforeExposeConditionParameter1Offset = default(VectorOffset),
-      StringOffset PhaseBeforeExposeConditionParameter2Offset = default(StringOffset),
-      StringOffset PhaseBeforeExposeConditionParameter3Offset = default(StringOffset),
+      VectorOffset PhaseBeforeExposeConditionParameterOffset = default(VectorOffset),
+      FlatDataGlobal.ParcelType ErosionBattleConditionParcelType = FlatDataGlobal.ParcelType.None,
+      long ErosionBattleConditionParcelUniqueId = 0,
+      long ErosionBattleConditionParcelAmount = 0,
       long ConquestRewardId = 0) {
-    builder.StartTable(15);
+    builder.StartTable(14);
     ConquestErosionExcel.AddConquestRewardId(builder, ConquestRewardId);
+    ConquestErosionExcel.AddErosionBattleConditionParcelAmount(builder, ErosionBattleConditionParcelAmount);
+    ConquestErosionExcel.AddErosionBattleConditionParcelUniqueId(builder, ErosionBattleConditionParcelUniqueId);
     ConquestErosionExcel.AddId(builder, Id);
-    ConquestErosionExcel.AddGroupId(builder, GroupId);
-    ConquestErosionExcel.AddPhaseBeforeExposeConditionParameter3(builder, PhaseBeforeExposeConditionParameter3Offset);
-    ConquestErosionExcel.AddPhaseBeforeExposeConditionParameter2(builder, PhaseBeforeExposeConditionParameter2Offset);
-    ConquestErosionExcel.AddPhaseBeforeExposeConditionParameter1(builder, PhaseBeforeExposeConditionParameter1Offset);
+    ConquestErosionExcel.AddEventContentId(builder, EventContentId);
+    ConquestErosionExcel.AddErosionBattleConditionParcelType(builder, ErosionBattleConditionParcelType);
+    ConquestErosionExcel.AddPhaseBeforeExposeConditionParameter(builder, PhaseBeforeExposeConditionParameterOffset);
     ConquestErosionExcel.AddPhaseBeforeExposeConditionType(builder, PhaseBeforeExposeConditionTypeOffset);
-    ConquestErosionExcel.AddPhaseStartConditionParameter3(builder, PhaseStartConditionParameter3Offset);
-    ConquestErosionExcel.AddPhaseStartConditionParameter2(builder, PhaseStartConditionParameter2Offset);
-    ConquestErosionExcel.AddPhaseStartConditionParameter1(builder, PhaseStartConditionParameter1Offset);
+    ConquestErosionExcel.AddPhaseStartConditionParameter(builder, PhaseStartConditionParameterOffset);
     ConquestErosionExcel.AddPhaseStartConditionType(builder, PhaseStartConditionTypeOffset);
-    ConquestErosionExcel.AddErosionOccurStep(builder, ErosionOccurStep);
+    ConquestErosionExcel.AddStepIndex(builder, StepIndex);
     ConquestErosionExcel.AddPhase(builder, Phase);
     ConquestErosionExcel.AddErosionType(builder, ErosionType);
     ConquestErosionExcel.AddPhaseAlarm(builder, PhaseAlarm);
     return ConquestErosionExcel.EndConquestErosionExcel(builder);
   }
 
-  public static void StartConquestErosionExcel(FlatBufferBuilder builder) { builder.StartTable(15); }
-  public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(0, GroupId, 0); }
+  public static void StartConquestErosionExcel(FlatBufferBuilder builder) { builder.StartTable(14); }
+  public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(1, Id, 0); }
-  public static void AddErosionType(FlatBufferBuilder builder, FlatDataGlobal.ConquestEventType ErosionType) { builder.AddInt(2, (int)ErosionType, 0); }
+  public static void AddErosionType(FlatBufferBuilder builder, FlatDataGlobal.ConquestErosionType ErosionType) { builder.AddInt(2, (int)ErosionType, 0); }
   public static void AddPhase(FlatBufferBuilder builder, int Phase) { builder.AddInt(3, Phase, 0); }
   public static void AddPhaseAlarm(FlatBufferBuilder builder, bool PhaseAlarm) { builder.AddBool(4, PhaseAlarm, false); }
-  public static void AddErosionOccurStep(FlatBufferBuilder builder, int ErosionOccurStep) { builder.AddInt(5, ErosionOccurStep, 0); }
+  public static void AddStepIndex(FlatBufferBuilder builder, int StepIndex) { builder.AddInt(5, StepIndex, 0); }
   public static void AddPhaseStartConditionType(FlatBufferBuilder builder, VectorOffset PhaseStartConditionTypeOffset) { builder.AddOffset(6, PhaseStartConditionTypeOffset.Value, 0); }
-  public static VectorOffset CreatePhaseStartConditionTypeVector(FlatBufferBuilder builder, FlatDataGlobal.PhaseStartConditionType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
-  public static VectorOffset CreatePhaseStartConditionTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.PhaseStartConditionType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreatePhaseStartConditionTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.PhaseStartConditionType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreatePhaseStartConditionTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.PhaseStartConditionType>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseStartConditionTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ConquestConditionType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseStartConditionTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ConquestConditionType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseStartConditionTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ConquestConditionType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseStartConditionTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ConquestConditionType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartPhaseStartConditionTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddPhaseStartConditionParameter1(FlatBufferBuilder builder, VectorOffset PhaseStartConditionParameter1Offset) { builder.AddOffset(7, PhaseStartConditionParameter1Offset.Value, 0); }
-  public static VectorOffset CreatePhaseStartConditionParameter1Vector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreatePhaseStartConditionParameter1VectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreatePhaseStartConditionParameter1VectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreatePhaseStartConditionParameter1VectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartPhaseStartConditionParameter1Vector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddPhaseStartConditionParameter2(FlatBufferBuilder builder, StringOffset PhaseStartConditionParameter2Offset) { builder.AddOffset(8, PhaseStartConditionParameter2Offset.Value, 0); }
-  public static void AddPhaseStartConditionParameter3(FlatBufferBuilder builder, StringOffset PhaseStartConditionParameter3Offset) { builder.AddOffset(9, PhaseStartConditionParameter3Offset.Value, 0); }
-  public static void AddPhaseBeforeExposeConditionType(FlatBufferBuilder builder, VectorOffset PhaseBeforeExposeConditionTypeOffset) { builder.AddOffset(10, PhaseBeforeExposeConditionTypeOffset.Value, 0); }
-  public static VectorOffset CreatePhaseBeforeExposeConditionTypeVector(FlatBufferBuilder builder, FlatDataGlobal.PhaseBeforeExposeConditionType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
-  public static VectorOffset CreatePhaseBeforeExposeConditionTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.PhaseBeforeExposeConditionType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreatePhaseBeforeExposeConditionTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.PhaseBeforeExposeConditionType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreatePhaseBeforeExposeConditionTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.PhaseBeforeExposeConditionType>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void AddPhaseStartConditionParameter(FlatBufferBuilder builder, VectorOffset PhaseStartConditionParameterOffset) { builder.AddOffset(7, PhaseStartConditionParameterOffset.Value, 0); }
+  public static VectorOffset CreatePhaseStartConditionParameterVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseStartConditionParameterVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseStartConditionParameterVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseStartConditionParameterVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartPhaseStartConditionParameterVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddPhaseBeforeExposeConditionType(FlatBufferBuilder builder, VectorOffset PhaseBeforeExposeConditionTypeOffset) { builder.AddOffset(8, PhaseBeforeExposeConditionTypeOffset.Value, 0); }
+  public static VectorOffset CreatePhaseBeforeExposeConditionTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ConquestConditionType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseBeforeExposeConditionTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ConquestConditionType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseBeforeExposeConditionTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ConquestConditionType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseBeforeExposeConditionTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ConquestConditionType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartPhaseBeforeExposeConditionTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddPhaseBeforeExposeConditionParameter1(FlatBufferBuilder builder, VectorOffset PhaseBeforeExposeConditionParameter1Offset) { builder.AddOffset(11, PhaseBeforeExposeConditionParameter1Offset.Value, 0); }
-  public static VectorOffset CreatePhaseBeforeExposeConditionParameter1Vector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreatePhaseBeforeExposeConditionParameter1VectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreatePhaseBeforeExposeConditionParameter1VectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreatePhaseBeforeExposeConditionParameter1VectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartPhaseBeforeExposeConditionParameter1Vector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddPhaseBeforeExposeConditionParameter2(FlatBufferBuilder builder, StringOffset PhaseBeforeExposeConditionParameter2Offset) { builder.AddOffset(12, PhaseBeforeExposeConditionParameter2Offset.Value, 0); }
-  public static void AddPhaseBeforeExposeConditionParameter3(FlatBufferBuilder builder, StringOffset PhaseBeforeExposeConditionParameter3Offset) { builder.AddOffset(13, PhaseBeforeExposeConditionParameter3Offset.Value, 0); }
-  public static void AddConquestRewardId(FlatBufferBuilder builder, long ConquestRewardId) { builder.AddLong(14, ConquestRewardId, 0); }
+  public static void AddPhaseBeforeExposeConditionParameter(FlatBufferBuilder builder, VectorOffset PhaseBeforeExposeConditionParameterOffset) { builder.AddOffset(9, PhaseBeforeExposeConditionParameterOffset.Value, 0); }
+  public static VectorOffset CreatePhaseBeforeExposeConditionParameterVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseBeforeExposeConditionParameterVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseBeforeExposeConditionParameterVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePhaseBeforeExposeConditionParameterVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartPhaseBeforeExposeConditionParameterVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddErosionBattleConditionParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType ErosionBattleConditionParcelType) { builder.AddInt(10, (int)ErosionBattleConditionParcelType, 0); }
+  public static void AddErosionBattleConditionParcelUniqueId(FlatBufferBuilder builder, long ErosionBattleConditionParcelUniqueId) { builder.AddLong(11, ErosionBattleConditionParcelUniqueId, 0); }
+  public static void AddErosionBattleConditionParcelAmount(FlatBufferBuilder builder, long ErosionBattleConditionParcelAmount) { builder.AddLong(12, ErosionBattleConditionParcelAmount, 0); }
+  public static void AddConquestRewardId(FlatBufferBuilder builder, long ConquestRewardId) { builder.AddLong(13, ConquestRewardId, 0); }
   public static Offset<FlatDataGlobal.ConquestErosionExcel> EndConquestErosionExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConquestErosionExcel>(o);

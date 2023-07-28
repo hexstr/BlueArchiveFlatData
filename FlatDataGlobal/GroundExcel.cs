@@ -59,12 +59,13 @@ public struct GroundExcel : IFlatbufferObject
   public bool PlayerSightRangeMax { get { int o = __p.__offset(64); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool EnemySightRangeMax { get { int o = __p.__offset(66); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long TSSAirUnitHeight { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool IsRaid { get { int o = __p.__offset(70); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool IsPhaseBGM { get { int o = __p.__offset(70); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long BGMId { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public bool WarningUI { get { int o = __p.__offset(74); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool TSSHatchOpen { get { int o = __p.__offset(76); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public FlatDataGlobal.TacticSpeed ForcedTacticSpeed { get { int o = __p.__offset(78); return o != 0 ? (FlatDataGlobal.TacticSpeed)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticSpeed.None; } }
   public FlatDataGlobal.TacticSkillUse ForcedSkillUse { get { int o = __p.__offset(80); return o != 0 ? (FlatDataGlobal.TacticSkillUse)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticSkillUse.None; } }
+  public FlatDataGlobal.ShowSkillCutIn ShowNPCSkillCutIn { get { int o = __p.__offset(82); return o != 0 ? (FlatDataGlobal.ShowSkillCutIn)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ShowSkillCutIn.None; } }
 
   public static Offset<FlatDataGlobal.GroundExcel> CreateGroundExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -100,13 +101,14 @@ public struct GroundExcel : IFlatbufferObject
       bool PlayerSightRangeMax = false,
       bool EnemySightRangeMax = false,
       long TSSAirUnitHeight = 0,
-      bool IsRaid = false,
+      bool IsPhaseBGM = false,
       long BGMId = 0,
       bool WarningUI = false,
       bool TSSHatchOpen = false,
       FlatDataGlobal.TacticSpeed ForcedTacticSpeed = FlatDataGlobal.TacticSpeed.None,
-      FlatDataGlobal.TacticSkillUse ForcedSkillUse = FlatDataGlobal.TacticSkillUse.None) {
-    builder.StartTable(39);
+      FlatDataGlobal.TacticSkillUse ForcedSkillUse = FlatDataGlobal.TacticSkillUse.None,
+      FlatDataGlobal.ShowSkillCutIn ShowNPCSkillCutIn = FlatDataGlobal.ShowSkillCutIn.None) {
+    builder.StartTable(40);
     GroundExcel.AddBGMId(builder, BGMId);
     GroundExcel.AddTSSAirUnitHeight(builder, TSSAirUnitHeight);
     GroundExcel.AddEnemySkillRangeRate(builder, EnemySkillRangeRate);
@@ -134,6 +136,7 @@ public struct GroundExcel : IFlatbufferObject
     GroundExcel.AddLevelNPC(builder, LevelNPC);
     GroundExcel.AddFormationGroupId(builder, FormationGroupId);
     GroundExcel.AddId(builder, Id);
+    GroundExcel.AddShowNPCSkillCutIn(builder, ShowNPCSkillCutIn);
     GroundExcel.AddForcedSkillUse(builder, ForcedSkillUse);
     GroundExcel.AddForcedTacticSpeed(builder, ForcedTacticSpeed);
     GroundExcel.AddEnemyArmorType(builder, EnemyArmorType);
@@ -143,13 +146,13 @@ public struct GroundExcel : IFlatbufferObject
     GroundExcel.AddStageFileName(builder, StageFileNameOffset);
     GroundExcel.AddTSSHatchOpen(builder, TSSHatchOpen);
     GroundExcel.AddWarningUI(builder, WarningUI);
-    GroundExcel.AddIsRaid(builder, IsRaid);
+    GroundExcel.AddIsPhaseBGM(builder, IsPhaseBGM);
     GroundExcel.AddEnemySightRangeMax(builder, EnemySightRangeMax);
     GroundExcel.AddPlayerSightRangeMax(builder, PlayerSightRangeMax);
     return GroundExcel.EndGroundExcel(builder);
   }
 
-  public static void StartGroundExcel(FlatBufferBuilder builder) { builder.StartTable(39); }
+  public static void StartGroundExcel(FlatBufferBuilder builder) { builder.StartTable(40); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddStageFileName(FlatBufferBuilder builder, VectorOffset StageFileNameOffset) { builder.AddOffset(1, StageFileNameOffset.Value, 0); }
   public static VectorOffset CreateStageFileNameVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
@@ -188,12 +191,13 @@ public struct GroundExcel : IFlatbufferObject
   public static void AddPlayerSightRangeMax(FlatBufferBuilder builder, bool PlayerSightRangeMax) { builder.AddBool(30, PlayerSightRangeMax, false); }
   public static void AddEnemySightRangeMax(FlatBufferBuilder builder, bool EnemySightRangeMax) { builder.AddBool(31, EnemySightRangeMax, false); }
   public static void AddTSSAirUnitHeight(FlatBufferBuilder builder, long TSSAirUnitHeight) { builder.AddLong(32, TSSAirUnitHeight, 0); }
-  public static void AddIsRaid(FlatBufferBuilder builder, bool IsRaid) { builder.AddBool(33, IsRaid, false); }
+  public static void AddIsPhaseBGM(FlatBufferBuilder builder, bool IsPhaseBGM) { builder.AddBool(33, IsPhaseBGM, false); }
   public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(34, BGMId, 0); }
   public static void AddWarningUI(FlatBufferBuilder builder, bool WarningUI) { builder.AddBool(35, WarningUI, false); }
   public static void AddTSSHatchOpen(FlatBufferBuilder builder, bool TSSHatchOpen) { builder.AddBool(36, TSSHatchOpen, false); }
   public static void AddForcedTacticSpeed(FlatBufferBuilder builder, FlatDataGlobal.TacticSpeed ForcedTacticSpeed) { builder.AddInt(37, (int)ForcedTacticSpeed, 0); }
   public static void AddForcedSkillUse(FlatBufferBuilder builder, FlatDataGlobal.TacticSkillUse ForcedSkillUse) { builder.AddInt(38, (int)ForcedSkillUse, 0); }
+  public static void AddShowNPCSkillCutIn(FlatBufferBuilder builder, FlatDataGlobal.ShowSkillCutIn ShowNPCSkillCutIn) { builder.AddInt(39, (int)ShowNPCSkillCutIn, 0); }
   public static Offset<FlatDataGlobal.GroundExcel> EndGroundExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.GroundExcel>(o);

@@ -14,6 +14,7 @@ public enum ResetContentType : int
   ArenaDefenseVictoryReward = 4,
   WeeklyMasterCoin = 5,
   WorldRaidGemEnterCount = 6,
+  ConquestDailyErosionCheck = 7,
 };
 
 

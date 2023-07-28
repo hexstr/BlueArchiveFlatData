@@ -5,11 +5,11 @@
 namespace FlatDataGlobal
 {
 
-public enum PhaseStartConditionType : int
+public enum ShowSkillCutIn : int
 {
   None = 0,
-  OpenDateOffset = 1,
-  ItemUse = 2,
+  Once = 1,
+  Always = 2,
 };
 
 

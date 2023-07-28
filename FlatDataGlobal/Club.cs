@@ -47,6 +47,9 @@ public enum Club : int
   Emergentology = 37,
   RabbitPlatoon = 38,
   PandemoniumSociety = 39,
+  HotSpringsDepartment = 40,
+  TeaParty = 41,
+  PublicPeaceBureau = 42,
 };
 
 

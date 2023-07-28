@@ -34,22 +34,30 @@ public struct EventContentSpoilerPopupExcel : IFlatbufferObject
   public ArraySegment<byte>? GetSpoilerPopupDescriptionBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
   public byte[] GetSpoilerPopupDescriptionArray() { return __p.__vector_as_array<byte>(8); }
+  public bool IsWarningPopUp { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long ConditionScenarioModeId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.EventContentSpoilerPopupExcel> CreateEventContentSpoilerPopupExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
       StringOffset SpoilerPopupTitleOffset = default(StringOffset),
-      StringOffset SpoilerPopupDescriptionOffset = default(StringOffset)) {
-    builder.StartTable(3);
+      StringOffset SpoilerPopupDescriptionOffset = default(StringOffset),
+      bool IsWarningPopUp = false,
+      long ConditionScenarioModeId = 0) {
+    builder.StartTable(5);
+    EventContentSpoilerPopupExcel.AddConditionScenarioModeId(builder, ConditionScenarioModeId);
     EventContentSpoilerPopupExcel.AddEventContentId(builder, EventContentId);
     EventContentSpoilerPopupExcel.AddSpoilerPopupDescription(builder, SpoilerPopupDescriptionOffset);
     EventContentSpoilerPopupExcel.AddSpoilerPopupTitle(builder, SpoilerPopupTitleOffset);
+    EventContentSpoilerPopupExcel.AddIsWarningPopUp(builder, IsWarningPopUp);
     return EventContentSpoilerPopupExcel.EndEventContentSpoilerPopupExcel(builder);
   }
 
-  public static void StartEventContentSpoilerPopupExcel(FlatBufferBuilder builder) { builder.StartTable(3); }
+  public static void StartEventContentSpoilerPopupExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddSpoilerPopupTitle(FlatBufferBuilder builder, StringOffset SpoilerPopupTitleOffset) { builder.AddOffset(1, SpoilerPopupTitleOffset.Value, 0); }
   public static void AddSpoilerPopupDescription(FlatBufferBuilder builder, StringOffset SpoilerPopupDescriptionOffset) { builder.AddOffset(2, SpoilerPopupDescriptionOffset.Value, 0); }
+  public static void AddIsWarningPopUp(FlatBufferBuilder builder, bool IsWarningPopUp) { builder.AddBool(3, IsWarningPopUp, false); }
+  public static void AddConditionScenarioModeId(FlatBufferBuilder builder, long ConditionScenarioModeId) { builder.AddLong(4, ConditionScenarioModeId, 0); }
   public static Offset<FlatDataGlobal.EventContentSpoilerPopupExcel> EndEventContentSpoilerPopupExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentSpoilerPopupExcel>(o);

@@ -13,6 +13,7 @@ public enum Difficulty : int
   Hardcore = 3,
   Extreme = 4,
   Insane = 5,
+  Torment = 6,
 };
 
 

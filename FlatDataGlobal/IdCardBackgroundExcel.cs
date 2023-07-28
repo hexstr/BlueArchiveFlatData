@@ -31,15 +31,14 @@ public struct IdCardBackgroundExcel : IFlatbufferObject
   public ArraySegment<byte>? GetBgPathBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
   public byte[] GetBgPathArray() { return __p.__vector_as_array<byte>(14); }
-  public long MatchingItemId { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public uint LocalizeEtcId { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public string Icon { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public uint LocalizeEtcId { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public string Icon { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIconBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetIconBytes() { return __p.__vector_as_span<byte>(18, 1); }
 #else
-  public ArraySegment<byte>? GetIconBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetIconBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public byte[] GetIconArray() { return __p.__vector_as_array<byte>(20); }
+  public byte[] GetIconArray() { return __p.__vector_as_array<byte>(18); }
 
   public static Offset<FlatDataGlobal.IdCardBackgroundExcel> CreateIdCardBackgroundExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -48,11 +47,9 @@ public struct IdCardBackgroundExcel : IFlatbufferObject
       bool CollectionVisible = false,
       bool IsDefault = false,
       StringOffset BgPathOffset = default(StringOffset),
-      long MatchingItemId = 0,
       uint LocalizeEtcId = 0,
       StringOffset IconOffset = default(StringOffset)) {
-    builder.StartTable(9);
-    IdCardBackgroundExcel.AddMatchingItemId(builder, MatchingItemId);
+    builder.StartTable(8);
     IdCardBackgroundExcel.AddDisplayOrder(builder, DisplayOrder);
     IdCardBackgroundExcel.AddId(builder, Id);
     IdCardBackgroundExcel.AddIcon(builder, IconOffset);
@@ -64,16 +61,15 @@ public struct IdCardBackgroundExcel : IFlatbufferObject
     return IdCardBackgroundExcel.EndIdCardBackgroundExcel(builder);
   }
 
-  public static void StartIdCardBackgroundExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
+  public static void StartIdCardBackgroundExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity rarity) { builder.AddInt(1, (int)rarity, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(2, DisplayOrder, 0); }
   public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(3, CollectionVisible, false); }
   public static void AddIsDefault(FlatBufferBuilder builder, bool IsDefault) { builder.AddBool(4, IsDefault, false); }
   public static void AddBgPath(FlatBufferBuilder builder, StringOffset BgPathOffset) { builder.AddOffset(5, BgPathOffset.Value, 0); }
-  public static void AddMatchingItemId(FlatBufferBuilder builder, long MatchingItemId) { builder.AddLong(6, MatchingItemId, 0); }
-  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(7, LocalizeEtcId, 0); }
-  public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(8, IconOffset.Value, 0); }
+  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(6, LocalizeEtcId, 0); }
+  public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(7, IconOffset.Value, 0); }
   public static Offset<FlatDataGlobal.IdCardBackgroundExcel> EndIdCardBackgroundExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.IdCardBackgroundExcel>(o);

@@ -27,24 +27,30 @@ public struct StoryStrategyExcel : IFlatbufferObject
   public ArraySegment<byte>? GetNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetNameArray() { return __p.__vector_as_array<byte>(6); }
-  public int StageEnterEchelonCount { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long BattleDuration { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WhiteListId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string StrategyMap { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string Localize { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetStrategyMapBytes() { return __p.__vector_as_span<byte>(14, 1); }
+  public Span<byte> GetLocalizeBytes() { return __p.__vector_as_span<byte>(8, 1); }
 #else
-  public ArraySegment<byte>? GetStrategyMapBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetLocalizeBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
-  public byte[] GetStrategyMapArray() { return __p.__vector_as_array<byte>(14); }
-  public string StrategyMapBG { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeArray() { return __p.__vector_as_array<byte>(8); }
+  public int StageEnterEchelonCount { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long BattleDuration { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WhiteListId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string StrategyMap { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetStrategyMapBGBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<byte> GetStrategyMapBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetStrategyMapBGBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetStrategyMapBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetStrategyMapBGArray() { return __p.__vector_as_array<byte>(16); }
-  public long SenarioModeRewardId { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public byte[] GetStrategyMapArray() { return __p.__vector_as_array<byte>(16); }
+  public string StrategyMapBG { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetStrategyMapBGBytes() { return __p.__vector_as_span<byte>(18, 1); }
+#else
+  public ArraySegment<byte>? GetStrategyMapBGBytes() { return __p.__vector_as_arraysegment(18); }
+#endif
+  public byte[] GetStrategyMapBGArray() { return __p.__vector_as_array<byte>(18); }
   public int MaxTurn { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public FlatDataGlobal.StageTopography Stagetopography { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
   public int RecommandLevel { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
@@ -62,12 +68,12 @@ public struct StoryStrategyExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.StoryStrategyExcel> CreateStoryStrategyExcel(FlatBufferBuilder builder,
       long Id = 0,
       StringOffset NameOffset = default(StringOffset),
+      StringOffset LocalizeOffset = default(StringOffset),
       int StageEnterEchelonCount = 0,
       long BattleDuration = 0,
       long WhiteListId = 0,
       StringOffset StrategyMapOffset = default(StringOffset),
       StringOffset StrategyMapBGOffset = default(StringOffset),
-      long SenarioModeRewardId = 0,
       int MaxTurn = 0,
       FlatDataGlobal.StageTopography stagetopography = FlatDataGlobal.StageTopography.Street,
       int RecommandLevel = 0,
@@ -77,7 +83,6 @@ public struct StoryStrategyExcel : IFlatbufferObject
       StringOffset FirstClearReportEventNameOffset = default(StringOffset)) {
     builder.StartTable(15);
     StoryStrategyExcel.AddBGMId(builder, BGMId);
-    StoryStrategyExcel.AddSenarioModeRewardId(builder, SenarioModeRewardId);
     StoryStrategyExcel.AddWhiteListId(builder, WhiteListId);
     StoryStrategyExcel.AddBattleDuration(builder, BattleDuration);
     StoryStrategyExcel.AddId(builder, Id);
@@ -90,6 +95,7 @@ public struct StoryStrategyExcel : IFlatbufferObject
     StoryStrategyExcel.AddStrategyMapBG(builder, StrategyMapBGOffset);
     StoryStrategyExcel.AddStrategyMap(builder, StrategyMapOffset);
     StoryStrategyExcel.AddStageEnterEchelonCount(builder, StageEnterEchelonCount);
+    StoryStrategyExcel.AddLocalize(builder, LocalizeOffset);
     StoryStrategyExcel.AddName(builder, NameOffset);
     return StoryStrategyExcel.EndStoryStrategyExcel(builder);
   }
@@ -97,12 +103,12 @@ public struct StoryStrategyExcel : IFlatbufferObject
   public static void StartStoryStrategyExcel(FlatBufferBuilder builder) { builder.StartTable(15); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(1, NameOffset.Value, 0); }
-  public static void AddStageEnterEchelonCount(FlatBufferBuilder builder, int StageEnterEchelonCount) { builder.AddInt(2, StageEnterEchelonCount, 0); }
-  public static void AddBattleDuration(FlatBufferBuilder builder, long BattleDuration) { builder.AddLong(3, BattleDuration, 0); }
-  public static void AddWhiteListId(FlatBufferBuilder builder, long WhiteListId) { builder.AddLong(4, WhiteListId, 0); }
-  public static void AddStrategyMap(FlatBufferBuilder builder, StringOffset StrategyMapOffset) { builder.AddOffset(5, StrategyMapOffset.Value, 0); }
-  public static void AddStrategyMapBG(FlatBufferBuilder builder, StringOffset StrategyMapBGOffset) { builder.AddOffset(6, StrategyMapBGOffset.Value, 0); }
-  public static void AddSenarioModeRewardId(FlatBufferBuilder builder, long SenarioModeRewardId) { builder.AddLong(7, SenarioModeRewardId, 0); }
+  public static void AddLocalize(FlatBufferBuilder builder, StringOffset LocalizeOffset) { builder.AddOffset(2, LocalizeOffset.Value, 0); }
+  public static void AddStageEnterEchelonCount(FlatBufferBuilder builder, int StageEnterEchelonCount) { builder.AddInt(3, StageEnterEchelonCount, 0); }
+  public static void AddBattleDuration(FlatBufferBuilder builder, long BattleDuration) { builder.AddLong(4, BattleDuration, 0); }
+  public static void AddWhiteListId(FlatBufferBuilder builder, long WhiteListId) { builder.AddLong(5, WhiteListId, 0); }
+  public static void AddStrategyMap(FlatBufferBuilder builder, StringOffset StrategyMapOffset) { builder.AddOffset(6, StrategyMapOffset.Value, 0); }
+  public static void AddStrategyMapBG(FlatBufferBuilder builder, StringOffset StrategyMapBGOffset) { builder.AddOffset(7, StrategyMapBGOffset.Value, 0); }
   public static void AddMaxTurn(FlatBufferBuilder builder, int MaxTurn) { builder.AddInt(8, MaxTurn, 0); }
   public static void AddStagetopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stagetopography) { builder.AddInt(9, (int)stagetopography, 0); }
   public static void AddRecommandLevel(FlatBufferBuilder builder, int RecommandLevel) { builder.AddInt(10, RecommandLevel, 0); }

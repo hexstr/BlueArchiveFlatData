@@ -19,6 +19,8 @@ public enum ScenarioContentType : int
   EventContentMeetup = 9,
   TimeAttack = 10,
   Mission = 11,
+  EventContentPermanentPrologue = 12,
+  EventContentReturnSeason = 13,
 };
 
 

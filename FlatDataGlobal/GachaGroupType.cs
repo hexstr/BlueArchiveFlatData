@@ -10,6 +10,7 @@ public enum GachaGroupType : int
   None = 0,
   Reward_General = 1,
   System_Craft = 2,
+  Reward_Pack = 3,
 };
 
 

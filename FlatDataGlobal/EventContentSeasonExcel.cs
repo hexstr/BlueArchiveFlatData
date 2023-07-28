@@ -140,7 +140,7 @@ public struct EventContentSeasonExcel : IFlatbufferObject
 #endif
   public byte[] GetMinigameRhythmMissionBgPrefabNameArray() { return __p.__vector_as_array<byte>(60); }
   public bool EventAssist { get { int o = __p.__offset(62); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool IsPermanent { get { int o = __p.__offset(64); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.EventContentReleaseType Eventcontentreleasetype { get { int o = __p.__offset(64); return o != 0 ? (FlatDataGlobal.EventContentReleaseType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentReleaseType.None; } }
   public long EventContentStageRewardIdPermanent { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.RewardTag RewardTagPermanent { get { int o = __p.__offset(68); return o != 0 ? (FlatDataGlobal.RewardTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RewardTag.Default; } }
 
@@ -175,7 +175,7 @@ public struct EventContentSeasonExcel : IFlatbufferObject
       StringOffset MinigameVictoryPrefabNameOffset = default(StringOffset),
       StringOffset MinigameRhythmMissionBgPrefabNameOffset = default(StringOffset),
       bool EventAssist = false,
-      bool IsPermanent = false,
+      FlatDataGlobal.EventContentReleaseType eventcontentreleasetype = FlatDataGlobal.EventContentReleaseType.None,
       long EventContentStageRewardIdPermanent = 0,
       FlatDataGlobal.RewardTag RewardTagPermanent = FlatDataGlobal.RewardTag.Default) {
     builder.StartTable(33);
@@ -188,6 +188,7 @@ public struct EventContentSeasonExcel : IFlatbufferObject
     EventContentSeasonExcel.AddOriginalEventContentId(builder, OriginalEventContentId);
     EventContentSeasonExcel.AddEventContentId(builder, EventContentId);
     EventContentSeasonExcel.AddRewardTagPermanent(builder, RewardTagPermanent);
+    EventContentSeasonExcel.AddEventcontentreleasetype(builder, eventcontentreleasetype);
     EventContentSeasonExcel.AddMinigameRhythmMissionBgPrefabName(builder, MinigameRhythmMissionBgPrefabNameOffset);
     EventContentSeasonExcel.AddMinigameVictoryPrefabName(builder, MinigameVictoryPrefabNameOffset);
     EventContentSeasonExcel.AddMinigameLobbyPrefabName(builder, MinigameLobbyPrefabNameOffset);
@@ -207,7 +208,6 @@ public struct EventContentSeasonExcel : IFlatbufferObject
     EventContentSeasonExcel.AddOpenconditioncontent(builder, openconditioncontent);
     EventContentSeasonExcel.AddEventcontenttype(builder, eventcontenttype);
     EventContentSeasonExcel.AddName(builder, NameOffset);
-    EventContentSeasonExcel.AddIsPermanent(builder, IsPermanent);
     EventContentSeasonExcel.AddEventAssist(builder, EventAssist);
     EventContentSeasonExcel.AddSubEvent(builder, SubEvent);
     EventContentSeasonExcel.AddEventDisplay(builder, EventDisplay);
@@ -251,7 +251,7 @@ public struct EventContentSeasonExcel : IFlatbufferObject
   public static void AddMinigameVictoryPrefabName(FlatBufferBuilder builder, StringOffset MinigameVictoryPrefabNameOffset) { builder.AddOffset(27, MinigameVictoryPrefabNameOffset.Value, 0); }
   public static void AddMinigameRhythmMissionBgPrefabName(FlatBufferBuilder builder, StringOffset MinigameRhythmMissionBgPrefabNameOffset) { builder.AddOffset(28, MinigameRhythmMissionBgPrefabNameOffset.Value, 0); }
   public static void AddEventAssist(FlatBufferBuilder builder, bool EventAssist) { builder.AddBool(29, EventAssist, false); }
-  public static void AddIsPermanent(FlatBufferBuilder builder, bool IsPermanent) { builder.AddBool(30, IsPermanent, false); }
+  public static void AddEventcontentreleasetype(FlatBufferBuilder builder, FlatDataGlobal.EventContentReleaseType eventcontentreleasetype) { builder.AddInt(30, (int)eventcontentreleasetype, 0); }
   public static void AddEventContentStageRewardIdPermanent(FlatBufferBuilder builder, long EventContentStageRewardIdPermanent) { builder.AddLong(31, EventContentStageRewardIdPermanent, 0); }
   public static void AddRewardTagPermanent(FlatBufferBuilder builder, FlatDataGlobal.RewardTag RewardTagPermanent) { builder.AddInt(32, (int)RewardTagPermanent, 0); }
   public static Offset<FlatDataGlobal.EventContentSeasonExcel> EndEventContentSeasonExcel(FlatBufferBuilder builder) {

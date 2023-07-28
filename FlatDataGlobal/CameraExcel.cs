@@ -25,10 +25,11 @@ public struct CameraExcel : IFlatbufferObject
   public float RotationX { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public float RotationY { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public bool MoveInstantly { get { int o = __p.__offset(14); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public float LeftMargin { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float BottomMargin { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public bool IgnoreEnemies { get { int o = __p.__offset(20); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool UseRailPointCompensation { get { int o = __p.__offset(22); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool MoveInstantlyRotationSave { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public float LeftMargin { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float BottomMargin { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public bool IgnoreEnemies { get { int o = __p.__offset(22); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool UseRailPointCompensation { get { int o = __p.__offset(24); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.CameraExcel> CreateCameraExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
@@ -37,11 +38,12 @@ public struct CameraExcel : IFlatbufferObject
       float RotationX = 0.0f,
       float RotationY = 0.0f,
       bool MoveInstantly = false,
+      bool MoveInstantlyRotationSave = false,
       float LeftMargin = 0.0f,
       float BottomMargin = 0.0f,
       bool IgnoreEnemies = false,
       bool UseRailPointCompensation = false) {
-    builder.StartTable(10);
+    builder.StartTable(11);
     CameraExcel.AddUniqueId(builder, UniqueId);
     CameraExcel.AddBottomMargin(builder, BottomMargin);
     CameraExcel.AddLeftMargin(builder, LeftMargin);
@@ -51,21 +53,23 @@ public struct CameraExcel : IFlatbufferObject
     CameraExcel.AddMinDistance(builder, MinDistance);
     CameraExcel.AddUseRailPointCompensation(builder, UseRailPointCompensation);
     CameraExcel.AddIgnoreEnemies(builder, IgnoreEnemies);
+    CameraExcel.AddMoveInstantlyRotationSave(builder, MoveInstantlyRotationSave);
     CameraExcel.AddMoveInstantly(builder, MoveInstantly);
     return CameraExcel.EndCameraExcel(builder);
   }
 
-  public static void StartCameraExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
+  public static void StartCameraExcel(FlatBufferBuilder builder) { builder.StartTable(11); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
   public static void AddMinDistance(FlatBufferBuilder builder, float MinDistance) { builder.AddFloat(1, MinDistance, 0.0f); }
   public static void AddMaxDistance(FlatBufferBuilder builder, float MaxDistance) { builder.AddFloat(2, MaxDistance, 0.0f); }
   public static void AddRotationX(FlatBufferBuilder builder, float RotationX) { builder.AddFloat(3, RotationX, 0.0f); }
   public static void AddRotationY(FlatBufferBuilder builder, float RotationY) { builder.AddFloat(4, RotationY, 0.0f); }
   public static void AddMoveInstantly(FlatBufferBuilder builder, bool MoveInstantly) { builder.AddBool(5, MoveInstantly, false); }
-  public static void AddLeftMargin(FlatBufferBuilder builder, float LeftMargin) { builder.AddFloat(6, LeftMargin, 0.0f); }
-  public static void AddBottomMargin(FlatBufferBuilder builder, float BottomMargin) { builder.AddFloat(7, BottomMargin, 0.0f); }
-  public static void AddIgnoreEnemies(FlatBufferBuilder builder, bool IgnoreEnemies) { builder.AddBool(8, IgnoreEnemies, false); }
-  public static void AddUseRailPointCompensation(FlatBufferBuilder builder, bool UseRailPointCompensation) { builder.AddBool(9, UseRailPointCompensation, false); }
+  public static void AddMoveInstantlyRotationSave(FlatBufferBuilder builder, bool MoveInstantlyRotationSave) { builder.AddBool(6, MoveInstantlyRotationSave, false); }
+  public static void AddLeftMargin(FlatBufferBuilder builder, float LeftMargin) { builder.AddFloat(7, LeftMargin, 0.0f); }
+  public static void AddBottomMargin(FlatBufferBuilder builder, float BottomMargin) { builder.AddFloat(8, BottomMargin, 0.0f); }
+  public static void AddIgnoreEnemies(FlatBufferBuilder builder, bool IgnoreEnemies) { builder.AddBool(9, IgnoreEnemies, false); }
+  public static void AddUseRailPointCompensation(FlatBufferBuilder builder, bool UseRailPointCompensation) { builder.AddBool(10, UseRailPointCompensation, false); }
   public static Offset<FlatDataGlobal.CameraExcel> EndCameraExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CameraExcel>(o);

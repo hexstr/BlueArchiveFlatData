@@ -53,34 +53,34 @@ public struct ScenarioScriptMain3Excel : IFlatbufferObject
   public ArraySegment<byte>? GetTextJpBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
   public byte[] GetTextJpArray() { return __p.__vector_as_array<byte>(22); }
-  public string VoiceJp { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string TextTh { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVoiceJpBytes() { return __p.__vector_as_span<byte>(24, 1); }
+  public Span<byte> GetTextThBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetVoiceJpBytes() { return __p.__vector_as_arraysegment(24); }
+  public ArraySegment<byte>? GetTextThBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetVoiceJpArray() { return __p.__vector_as_array<byte>(24); }
-  public string TextTh { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetTextThArray() { return __p.__vector_as_array<byte>(24); }
+  public string TextTw { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTextThBytes() { return __p.__vector_as_span<byte>(26, 1); }
+  public Span<byte> GetTextTwBytes() { return __p.__vector_as_span<byte>(26, 1); }
 #else
-  public ArraySegment<byte>? GetTextThBytes() { return __p.__vector_as_arraysegment(26); }
+  public ArraySegment<byte>? GetTextTwBytes() { return __p.__vector_as_arraysegment(26); }
 #endif
-  public byte[] GetTextThArray() { return __p.__vector_as_array<byte>(26); }
-  public string TextTw { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetTextTwArray() { return __p.__vector_as_array<byte>(26); }
+  public string TextEn { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTextTwBytes() { return __p.__vector_as_span<byte>(28, 1); }
+  public Span<byte> GetTextEnBytes() { return __p.__vector_as_span<byte>(28, 1); }
 #else
-  public ArraySegment<byte>? GetTextTwBytes() { return __p.__vector_as_arraysegment(28); }
+  public ArraySegment<byte>? GetTextEnBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
-  public byte[] GetTextTwArray() { return __p.__vector_as_array<byte>(28); }
-  public string TextEn { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetTextEnArray() { return __p.__vector_as_array<byte>(28); }
+  public string VoiceJp { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTextEnBytes() { return __p.__vector_as_span<byte>(30, 1); }
+  public Span<byte> GetVoiceJpBytes() { return __p.__vector_as_span<byte>(30, 1); }
 #else
-  public ArraySegment<byte>? GetTextEnBytes() { return __p.__vector_as_arraysegment(30); }
+  public ArraySegment<byte>? GetVoiceJpBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
-  public byte[] GetTextEnArray() { return __p.__vector_as_array<byte>(30); }
+  public byte[] GetVoiceJpArray() { return __p.__vector_as_array<byte>(30); }
   public bool TeenMode { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.ScenarioScriptMain3Excel> CreateScenarioScriptMain3Excel(FlatBufferBuilder builder,
@@ -94,19 +94,19 @@ public struct ScenarioScriptMain3Excel : IFlatbufferObject
       StringOffset PopupFileNameOffset = default(StringOffset),
       StringOffset ScriptKrOffset = default(StringOffset),
       StringOffset TextJpOffset = default(StringOffset),
-      StringOffset VoiceJpOffset = default(StringOffset),
       StringOffset TextThOffset = default(StringOffset),
       StringOffset TextTwOffset = default(StringOffset),
       StringOffset TextEnOffset = default(StringOffset),
+      StringOffset VoiceJpOffset = default(StringOffset),
       bool TeenMode = false) {
     builder.StartTable(15);
     ScenarioScriptMain3Excel.AddBGMId(builder, BGMId);
     ScenarioScriptMain3Excel.AddSelectionGroup(builder, SelectionGroup);
     ScenarioScriptMain3Excel.AddGroupId(builder, GroupId);
+    ScenarioScriptMain3Excel.AddVoiceJp(builder, VoiceJpOffset);
     ScenarioScriptMain3Excel.AddTextEn(builder, TextEnOffset);
     ScenarioScriptMain3Excel.AddTextTw(builder, TextTwOffset);
     ScenarioScriptMain3Excel.AddTextTh(builder, TextThOffset);
-    ScenarioScriptMain3Excel.AddVoiceJp(builder, VoiceJpOffset);
     ScenarioScriptMain3Excel.AddTextJp(builder, TextJpOffset);
     ScenarioScriptMain3Excel.AddScriptKr(builder, ScriptKrOffset);
     ScenarioScriptMain3Excel.AddPopupFileName(builder, PopupFileNameOffset);
@@ -129,10 +129,10 @@ public struct ScenarioScriptMain3Excel : IFlatbufferObject
   public static void AddPopupFileName(FlatBufferBuilder builder, StringOffset PopupFileNameOffset) { builder.AddOffset(7, PopupFileNameOffset.Value, 0); }
   public static void AddScriptKr(FlatBufferBuilder builder, StringOffset ScriptKrOffset) { builder.AddOffset(8, ScriptKrOffset.Value, 0); }
   public static void AddTextJp(FlatBufferBuilder builder, StringOffset TextJpOffset) { builder.AddOffset(9, TextJpOffset.Value, 0); }
-  public static void AddVoiceJp(FlatBufferBuilder builder, StringOffset VoiceJpOffset) { builder.AddOffset(10, VoiceJpOffset.Value, 0); }
-  public static void AddTextTh(FlatBufferBuilder builder, StringOffset TextThOffset) { builder.AddOffset(11, TextThOffset.Value, 0); }
-  public static void AddTextTw(FlatBufferBuilder builder, StringOffset TextTwOffset) { builder.AddOffset(12, TextTwOffset.Value, 0); }
-  public static void AddTextEn(FlatBufferBuilder builder, StringOffset TextEnOffset) { builder.AddOffset(13, TextEnOffset.Value, 0); }
+  public static void AddTextTh(FlatBufferBuilder builder, StringOffset TextThOffset) { builder.AddOffset(10, TextThOffset.Value, 0); }
+  public static void AddTextTw(FlatBufferBuilder builder, StringOffset TextTwOffset) { builder.AddOffset(11, TextTwOffset.Value, 0); }
+  public static void AddTextEn(FlatBufferBuilder builder, StringOffset TextEnOffset) { builder.AddOffset(12, TextEnOffset.Value, 0); }
+  public static void AddVoiceJp(FlatBufferBuilder builder, StringOffset VoiceJpOffset) { builder.AddOffset(13, VoiceJpOffset.Value, 0); }
   public static void AddTeenMode(FlatBufferBuilder builder, bool TeenMode) { builder.AddBool(14, TeenMode, false); }
   public static Offset<FlatDataGlobal.ScenarioScriptMain3Excel> EndScenarioScriptMain3Excel(FlatBufferBuilder builder) {
     int o = builder.EndTable();

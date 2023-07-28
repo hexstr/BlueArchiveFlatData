@@ -36,70 +36,79 @@ public struct GuideMissionSeasonExcel : IFlatbufferObject
   public byte[] GetInfomationLocalizeCodeArray() { return __p.__vector_as_array<byte>(8); }
   public FlatDataGlobal.AccountState AccountType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.AccountState)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.AccountState.WaitingSignIn; } }
   public bool Enabled { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string StartDate { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string BannerOpenDate { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetStartDateBytes() { return __p.__vector_as_span<byte>(14, 1); }
+  public Span<byte> GetBannerOpenDateBytes() { return __p.__vector_as_span<byte>(14, 1); }
 #else
-  public ArraySegment<byte>? GetStartDateBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetBannerOpenDateBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
-  public byte[] GetStartDateArray() { return __p.__vector_as_array<byte>(14); }
-  public string StartableEndDate { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetBannerOpenDateArray() { return __p.__vector_as_array<byte>(14); }
+  public string StartDate { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetStartableEndDateBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<byte> GetStartDateBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetStartableEndDateBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetStartDateBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetStartableEndDateArray() { return __p.__vector_as_array<byte>(16); }
-  public string EndDate { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetStartDateArray() { return __p.__vector_as_array<byte>(16); }
+  public string StartableEndDate { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEndDateBytes() { return __p.__vector_as_span<byte>(18, 1); }
+  public Span<byte> GetStartableEndDateBytes() { return __p.__vector_as_span<byte>(18, 1); }
 #else
-  public ArraySegment<byte>? GetEndDateBytes() { return __p.__vector_as_arraysegment(18); }
+  public ArraySegment<byte>? GetStartableEndDateBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public byte[] GetEndDateArray() { return __p.__vector_as_array<byte>(18); }
-  public bool CloseBannerAfterCompletion { get { int o = __p.__offset(20); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long MaximumLoginCount { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ExpiryDate { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long SpineCharacterId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string RequirementParcelImage { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetStartableEndDateArray() { return __p.__vector_as_array<byte>(18); }
+  public string EndDate { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetRequirementParcelImageBytes() { return __p.__vector_as_span<byte>(28, 1); }
+  public Span<byte> GetEndDateBytes() { return __p.__vector_as_span<byte>(20, 1); }
 #else
-  public ArraySegment<byte>? GetRequirementParcelImageBytes() { return __p.__vector_as_arraysegment(28); }
+  public ArraySegment<byte>? GetEndDateBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public byte[] GetRequirementParcelImageArray() { return __p.__vector_as_array<byte>(28); }
-  public string RewardImage { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEndDateArray() { return __p.__vector_as_array<byte>(20); }
+  public bool CloseBannerAfterCompletion { get { int o = __p.__offset(22); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long MaximumLoginCount { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ExpiryDate { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long SpineCharacterId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string RequirementParcelImage { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetRewardImageBytes() { return __p.__vector_as_span<byte>(30, 1); }
+  public Span<byte> GetRequirementParcelImageBytes() { return __p.__vector_as_span<byte>(30, 1); }
 #else
-  public ArraySegment<byte>? GetRewardImageBytes() { return __p.__vector_as_arraysegment(30); }
+  public ArraySegment<byte>? GetRequirementParcelImageBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
-  public byte[] GetRewardImageArray() { return __p.__vector_as_array<byte>(30); }
-  public string LobbyBannerImage { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetRequirementParcelImageArray() { return __p.__vector_as_array<byte>(30); }
+  public string RewardImage { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLobbyBannerImageBytes() { return __p.__vector_as_span<byte>(32, 1); }
+  public Span<byte> GetRewardImageBytes() { return __p.__vector_as_span<byte>(32, 1); }
 #else
-  public ArraySegment<byte>? GetLobbyBannerImageBytes() { return __p.__vector_as_arraysegment(32); }
+  public ArraySegment<byte>? GetRewardImageBytes() { return __p.__vector_as_arraysegment(32); }
 #endif
-  public byte[] GetLobbyBannerImageArray() { return __p.__vector_as_array<byte>(32); }
-  public string BackgroundImage { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetRewardImageArray() { return __p.__vector_as_array<byte>(32); }
+  public string LobbyBannerImage { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBackgroundImageBytes() { return __p.__vector_as_span<byte>(34, 1); }
+  public Span<byte> GetLobbyBannerImageBytes() { return __p.__vector_as_span<byte>(34, 1); }
 #else
-  public ArraySegment<byte>? GetBackgroundImageBytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetLobbyBannerImageBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
-  public byte[] GetBackgroundImageArray() { return __p.__vector_as_array<byte>(34); }
-  public string TitleImage { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLobbyBannerImageArray() { return __p.__vector_as_array<byte>(34); }
+  public string BackgroundImage { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTitleImageBytes() { return __p.__vector_as_span<byte>(36, 1); }
+  public Span<byte> GetBackgroundImageBytes() { return __p.__vector_as_span<byte>(36, 1); }
 #else
-  public ArraySegment<byte>? GetTitleImageBytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetBackgroundImageBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public byte[] GetTitleImageArray() { return __p.__vector_as_array<byte>(36); }
-  public FlatDataGlobal.ParcelType RequirementParcelType { get { int o = __p.__offset(38); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
-  public long RequirementParcelId { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int RequirementParcelAmount { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.GuideMissionTabType TabType { get { int o = __p.__offset(44); return o != 0 ? (FlatDataGlobal.GuideMissionTabType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.GuideMissionTabType.None; } }
+  public byte[] GetBackgroundImageArray() { return __p.__vector_as_array<byte>(36); }
+  public string TitleImage { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetTitleImageBytes() { return __p.__vector_as_span<byte>(38, 1); }
+#else
+  public ArraySegment<byte>? GetTitleImageBytes() { return __p.__vector_as_arraysegment(38); }
+#endif
+  public byte[] GetTitleImageArray() { return __p.__vector_as_array<byte>(38); }
+  public FlatDataGlobal.ParcelType RequirementParcelType { get { int o = __p.__offset(40); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public long RequirementParcelId { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int RequirementParcelAmount { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.GuideMissionTabType TabType { get { int o = __p.__offset(46); return o != 0 ? (FlatDataGlobal.GuideMissionTabType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.GuideMissionTabType.None; } }
+  public bool IsPermanent { get { int o = __p.__offset(48); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long PreSeasonId { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.GuideMissionSeasonExcel> CreateGuideMissionSeasonExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -107,6 +116,7 @@ public struct GuideMissionSeasonExcel : IFlatbufferObject
       StringOffset InfomationLocalizeCodeOffset = default(StringOffset),
       FlatDataGlobal.AccountState AccountType = FlatDataGlobal.AccountState.WaitingSignIn,
       bool Enabled = false,
+      StringOffset BannerOpenDateOffset = default(StringOffset),
       StringOffset StartDateOffset = default(StringOffset),
       StringOffset StartableEndDateOffset = default(StringOffset),
       StringOffset EndDateOffset = default(StringOffset),
@@ -122,8 +132,11 @@ public struct GuideMissionSeasonExcel : IFlatbufferObject
       FlatDataGlobal.ParcelType RequirementParcelType = FlatDataGlobal.ParcelType.None,
       long RequirementParcelId = 0,
       int RequirementParcelAmount = 0,
-      FlatDataGlobal.GuideMissionTabType TabType = FlatDataGlobal.GuideMissionTabType.None) {
-    builder.StartTable(21);
+      FlatDataGlobal.GuideMissionTabType TabType = FlatDataGlobal.GuideMissionTabType.None,
+      bool IsPermanent = false,
+      long PreSeasonId = 0) {
+    builder.StartTable(24);
+    GuideMissionSeasonExcel.AddPreSeasonId(builder, PreSeasonId);
     GuideMissionSeasonExcel.AddRequirementParcelId(builder, RequirementParcelId);
     GuideMissionSeasonExcel.AddSpineCharacterId(builder, SpineCharacterId);
     GuideMissionSeasonExcel.AddExpiryDate(builder, ExpiryDate);
@@ -140,36 +153,41 @@ public struct GuideMissionSeasonExcel : IFlatbufferObject
     GuideMissionSeasonExcel.AddEndDate(builder, EndDateOffset);
     GuideMissionSeasonExcel.AddStartableEndDate(builder, StartableEndDateOffset);
     GuideMissionSeasonExcel.AddStartDate(builder, StartDateOffset);
+    GuideMissionSeasonExcel.AddBannerOpenDate(builder, BannerOpenDateOffset);
     GuideMissionSeasonExcel.AddAccountType(builder, AccountType);
     GuideMissionSeasonExcel.AddInfomationLocalizeCode(builder, InfomationLocalizeCodeOffset);
     GuideMissionSeasonExcel.AddTitleLocalizeCode(builder, TitleLocalizeCodeOffset);
+    GuideMissionSeasonExcel.AddIsPermanent(builder, IsPermanent);
     GuideMissionSeasonExcel.AddCloseBannerAfterCompletion(builder, CloseBannerAfterCompletion);
     GuideMissionSeasonExcel.AddEnabled(builder, Enabled);
     return GuideMissionSeasonExcel.EndGuideMissionSeasonExcel(builder);
   }
 
-  public static void StartGuideMissionSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(21); }
+  public static void StartGuideMissionSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(24); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddTitleLocalizeCode(FlatBufferBuilder builder, StringOffset TitleLocalizeCodeOffset) { builder.AddOffset(1, TitleLocalizeCodeOffset.Value, 0); }
   public static void AddInfomationLocalizeCode(FlatBufferBuilder builder, StringOffset InfomationLocalizeCodeOffset) { builder.AddOffset(2, InfomationLocalizeCodeOffset.Value, 0); }
   public static void AddAccountType(FlatBufferBuilder builder, FlatDataGlobal.AccountState AccountType) { builder.AddInt(3, (int)AccountType, 0); }
   public static void AddEnabled(FlatBufferBuilder builder, bool Enabled) { builder.AddBool(4, Enabled, false); }
-  public static void AddStartDate(FlatBufferBuilder builder, StringOffset StartDateOffset) { builder.AddOffset(5, StartDateOffset.Value, 0); }
-  public static void AddStartableEndDate(FlatBufferBuilder builder, StringOffset StartableEndDateOffset) { builder.AddOffset(6, StartableEndDateOffset.Value, 0); }
-  public static void AddEndDate(FlatBufferBuilder builder, StringOffset EndDateOffset) { builder.AddOffset(7, EndDateOffset.Value, 0); }
-  public static void AddCloseBannerAfterCompletion(FlatBufferBuilder builder, bool CloseBannerAfterCompletion) { builder.AddBool(8, CloseBannerAfterCompletion, false); }
-  public static void AddMaximumLoginCount(FlatBufferBuilder builder, long MaximumLoginCount) { builder.AddLong(9, MaximumLoginCount, 0); }
-  public static void AddExpiryDate(FlatBufferBuilder builder, long ExpiryDate) { builder.AddLong(10, ExpiryDate, 0); }
-  public static void AddSpineCharacterId(FlatBufferBuilder builder, long SpineCharacterId) { builder.AddLong(11, SpineCharacterId, 0); }
-  public static void AddRequirementParcelImage(FlatBufferBuilder builder, StringOffset RequirementParcelImageOffset) { builder.AddOffset(12, RequirementParcelImageOffset.Value, 0); }
-  public static void AddRewardImage(FlatBufferBuilder builder, StringOffset RewardImageOffset) { builder.AddOffset(13, RewardImageOffset.Value, 0); }
-  public static void AddLobbyBannerImage(FlatBufferBuilder builder, StringOffset LobbyBannerImageOffset) { builder.AddOffset(14, LobbyBannerImageOffset.Value, 0); }
-  public static void AddBackgroundImage(FlatBufferBuilder builder, StringOffset BackgroundImageOffset) { builder.AddOffset(15, BackgroundImageOffset.Value, 0); }
-  public static void AddTitleImage(FlatBufferBuilder builder, StringOffset TitleImageOffset) { builder.AddOffset(16, TitleImageOffset.Value, 0); }
-  public static void AddRequirementParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType RequirementParcelType) { builder.AddInt(17, (int)RequirementParcelType, 0); }
-  public static void AddRequirementParcelId(FlatBufferBuilder builder, long RequirementParcelId) { builder.AddLong(18, RequirementParcelId, 0); }
-  public static void AddRequirementParcelAmount(FlatBufferBuilder builder, int RequirementParcelAmount) { builder.AddInt(19, RequirementParcelAmount, 0); }
-  public static void AddTabType(FlatBufferBuilder builder, FlatDataGlobal.GuideMissionTabType TabType) { builder.AddInt(20, (int)TabType, 0); }
+  public static void AddBannerOpenDate(FlatBufferBuilder builder, StringOffset BannerOpenDateOffset) { builder.AddOffset(5, BannerOpenDateOffset.Value, 0); }
+  public static void AddStartDate(FlatBufferBuilder builder, StringOffset StartDateOffset) { builder.AddOffset(6, StartDateOffset.Value, 0); }
+  public static void AddStartableEndDate(FlatBufferBuilder builder, StringOffset StartableEndDateOffset) { builder.AddOffset(7, StartableEndDateOffset.Value, 0); }
+  public static void AddEndDate(FlatBufferBuilder builder, StringOffset EndDateOffset) { builder.AddOffset(8, EndDateOffset.Value, 0); }
+  public static void AddCloseBannerAfterCompletion(FlatBufferBuilder builder, bool CloseBannerAfterCompletion) { builder.AddBool(9, CloseBannerAfterCompletion, false); }
+  public static void AddMaximumLoginCount(FlatBufferBuilder builder, long MaximumLoginCount) { builder.AddLong(10, MaximumLoginCount, 0); }
+  public static void AddExpiryDate(FlatBufferBuilder builder, long ExpiryDate) { builder.AddLong(11, ExpiryDate, 0); }
+  public static void AddSpineCharacterId(FlatBufferBuilder builder, long SpineCharacterId) { builder.AddLong(12, SpineCharacterId, 0); }
+  public static void AddRequirementParcelImage(FlatBufferBuilder builder, StringOffset RequirementParcelImageOffset) { builder.AddOffset(13, RequirementParcelImageOffset.Value, 0); }
+  public static void AddRewardImage(FlatBufferBuilder builder, StringOffset RewardImageOffset) { builder.AddOffset(14, RewardImageOffset.Value, 0); }
+  public static void AddLobbyBannerImage(FlatBufferBuilder builder, StringOffset LobbyBannerImageOffset) { builder.AddOffset(15, LobbyBannerImageOffset.Value, 0); }
+  public static void AddBackgroundImage(FlatBufferBuilder builder, StringOffset BackgroundImageOffset) { builder.AddOffset(16, BackgroundImageOffset.Value, 0); }
+  public static void AddTitleImage(FlatBufferBuilder builder, StringOffset TitleImageOffset) { builder.AddOffset(17, TitleImageOffset.Value, 0); }
+  public static void AddRequirementParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType RequirementParcelType) { builder.AddInt(18, (int)RequirementParcelType, 0); }
+  public static void AddRequirementParcelId(FlatBufferBuilder builder, long RequirementParcelId) { builder.AddLong(19, RequirementParcelId, 0); }
+  public static void AddRequirementParcelAmount(FlatBufferBuilder builder, int RequirementParcelAmount) { builder.AddInt(20, RequirementParcelAmount, 0); }
+  public static void AddTabType(FlatBufferBuilder builder, FlatDataGlobal.GuideMissionTabType TabType) { builder.AddInt(21, (int)TabType, 0); }
+  public static void AddIsPermanent(FlatBufferBuilder builder, bool IsPermanent) { builder.AddBool(22, IsPermanent, false); }
+  public static void AddPreSeasonId(FlatBufferBuilder builder, long PreSeasonId) { builder.AddLong(23, PreSeasonId, 0); }
   public static Offset<FlatDataGlobal.GuideMissionSeasonExcel> EndGuideMissionSeasonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.GuideMissionSeasonExcel>(o);

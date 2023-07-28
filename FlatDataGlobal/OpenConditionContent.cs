@@ -54,6 +54,9 @@ public enum OpenConditionContent : int
   Tactic_Skip = 44,
   Mulligan = 45,
   EventPermanent = 46,
+  Main_L_1_2 = 47,
+  Main_L_1_3 = 48,
+  Main_L_1_4 = 49,
 };
 
 

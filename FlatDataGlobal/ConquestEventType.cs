@@ -8,8 +8,8 @@ namespace FlatDataGlobal
 public enum ConquestEventType : int
 {
   None = 0,
-  E_815 = 1,
-  E_822 = 2,
+  Event01 = 1,
+  Event02 = 2,
 };
 
 

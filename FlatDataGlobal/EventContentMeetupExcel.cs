@@ -23,20 +23,27 @@ public struct EventContentMeetupExcel : IFlatbufferObject
   public long EventContentId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long CharacterId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ConditionScenarioGroupId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ActiveConditionEventContentStageId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ActiveConditionEventContentStageId(int j) { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ActiveConditionEventContentStageIdLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<long> GetActiveConditionEventContentStageIdBytes() { return __p.__vector_as_span<long>(12, 8); }
+#else
+  public ArraySegment<byte>? GetActiveConditionEventContentStageIdBytes() { return __p.__vector_as_arraysegment(12); }
+#endif
+  public long[] GetActiveConditionEventContentStageIdArray() { return __p.__vector_as_array<long>(12); }
 
   public static Offset<FlatDataGlobal.EventContentMeetupExcel> CreateEventContentMeetupExcel(FlatBufferBuilder builder,
       long Id = 0,
       long EventContentId = 0,
       long CharacterId = 0,
       long ConditionScenarioGroupId = 0,
-      long ActiveConditionEventContentStageId = 0) {
+      VectorOffset ActiveConditionEventContentStageIdOffset = default(VectorOffset)) {
     builder.StartTable(5);
-    EventContentMeetupExcel.AddActiveConditionEventContentStageId(builder, ActiveConditionEventContentStageId);
     EventContentMeetupExcel.AddConditionScenarioGroupId(builder, ConditionScenarioGroupId);
     EventContentMeetupExcel.AddCharacterId(builder, CharacterId);
     EventContentMeetupExcel.AddEventContentId(builder, EventContentId);
     EventContentMeetupExcel.AddId(builder, Id);
+    EventContentMeetupExcel.AddActiveConditionEventContentStageId(builder, ActiveConditionEventContentStageIdOffset);
     return EventContentMeetupExcel.EndEventContentMeetupExcel(builder);
   }
 
@@ -45,7 +52,12 @@ public struct EventContentMeetupExcel : IFlatbufferObject
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(1, EventContentId, 0); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(2, CharacterId, 0); }
   public static void AddConditionScenarioGroupId(FlatBufferBuilder builder, long ConditionScenarioGroupId) { builder.AddLong(3, ConditionScenarioGroupId, 0); }
-  public static void AddActiveConditionEventContentStageId(FlatBufferBuilder builder, long ActiveConditionEventContentStageId) { builder.AddLong(4, ActiveConditionEventContentStageId, 0); }
+  public static void AddActiveConditionEventContentStageId(FlatBufferBuilder builder, VectorOffset ActiveConditionEventContentStageIdOffset) { builder.AddOffset(4, ActiveConditionEventContentStageIdOffset.Value, 0); }
+  public static VectorOffset CreateActiveConditionEventContentStageIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateActiveConditionEventContentStageIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateActiveConditionEventContentStageIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateActiveConditionEventContentStageIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartActiveConditionEventContentStageIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
   public static Offset<FlatDataGlobal.EventContentMeetupExcel> EndEventContentMeetupExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentMeetupExcel>(o);

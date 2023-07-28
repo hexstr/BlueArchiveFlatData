@@ -157,6 +157,7 @@ enum BulletType: int {
 	Siege,
 	Mystic,
 	None,
+	Sonic,
 }
 enum ActionType: int {
 	Crush,
@@ -181,6 +182,7 @@ enum ArmorType: int {
 	Unarmed,
 	Structure,
 	Normal,
+	ElasticArmor,
 }
 enum WeaponType: int {
 	None,
@@ -202,6 +204,7 @@ enum WeaponType: int {
 	Binah,
 	MT,
 	Relic,
+	FT,
 }
 enum EntityMaterialType: int {
 	Wood,
@@ -351,6 +354,7 @@ enum Difficulty: int {
 	Hardcore,
 	Extreme,
 	Insane,
+	Torment,
 }
 enum EngageType: int {
 	SearchAndMove,
@@ -567,6 +571,11 @@ enum TacticSkillUse: int {
 	Auto,
 	Manual,
 }
+enum ShowSkillCutIn: int {
+	None,
+	Once,
+	Always,
+}
 enum StatLevelUpType: int {
 	Standard,
 	Premature,
@@ -640,7 +649,13 @@ enum StatType: int {
 	EnhanceNormalRate,
 	EnhanceStructureRate,
 	EnhanceNormalArmorRate,
+	DamageRatio2Increase,
+	DamageRatio2Decrease,
+	DamagedRatio2Increase,
+	DamagedRatio2Decrease,
 	Max,
+	EnhanceSonicRate,
+	EnhanceElasticArmorRate,
 }
 enum ProductionStep: int {
 	ToDo,
@@ -694,6 +709,8 @@ enum ConquestEnemyType: int {
 	Boss,
 	UnexpectedEvent,
 	Challenge,
+	IndividualErosion,
+	MassErosion,
 }
 enum ConquestTeamType: int {
 	None,
@@ -733,28 +750,20 @@ enum TileState: int {
 }
 enum ConquestEventType: int {
 	None,
-	E_815,
-	E_822,
+	Event01,
+	Event02,
 }
-enum StepOpenConditionType: int {
+enum ConquestConditionType: int {
 	None,
 	OpenDateOffset,
 	ItemAcquire,
+	ParcelUse,
+	KillUnit,
 }
 enum ConquestErosionType: int {
 	None,
 	IndividualErosion,
 	MassErosion,
-}
-enum PhaseStartConditionType: int {
-	None,
-	OpenDateOffset,
-	ItemUse,
-}
-enum PhaseBeforeExposeConditionType: int {
-	None,
-	StartPhaseDateOffset,
-	ItemUse,
 }
 enum ContentType: int {
 	None,
@@ -772,6 +781,9 @@ enum ContentType: int {
 	EventContentStoryStage,
 	CampaignExtraStage,
 	StoryStrategyStage,
+	ScenarioMode,
+	EventContent,
+	WorldRaid,
 }
 enum EventContentType: int {
 	Stage,
@@ -795,6 +807,7 @@ enum EventContentType: int {
 	WorldRaid,
 	DiceRace,
 	MiniGameRhythmMission,
+	WorldRaidEntrance,
 }
 enum OpenCondition: int {
 	Hide,
@@ -809,6 +822,7 @@ enum ResetContentType: int {
 	ArenaDefenseVictoryReward,
 	WeeklyMasterCoin,
 	WorldRaidGemEnterCount,
+	ConquestDailyErosionCheck,
 }
 enum WeekDungeonType: int {
 	None,
@@ -873,6 +887,9 @@ enum OpenConditionContent: int {
 	Tactic_Skip,
 	Mulligan,
 	EventPermanent,
+	Main_L_1_2,
+	Main_L_1_3,
+	Main_L_1_4,
 }
 enum ContentLockType: int {
 	None,
@@ -912,6 +929,9 @@ enum ContentLockType: int {
 	RaidSeasonReward,
 	RaidRankingReward,
 	Friend,
+	Main_L_1_2,
+	Main_L_1_3,
+	Main_L_1_4,
 }
 enum TutorialFailureContentType: int {
 	None,
@@ -1072,6 +1092,11 @@ enum RankingSearchType: int {
 	Rank,
 	Score,
 }
+enum EventContentReleaseType: int {
+	None,
+	Permanent,
+	MainStory,
+}
 enum EquipmentCategory: int {
 	Unable,
 	Exp,
@@ -1201,6 +1226,15 @@ enum RewardTag: int {
 	TimeWeight,
 	ProductWeekly,
 	ProductBiweekly,
+	EventPermanentReward,
+	ConquestManageEvent,
+	ConquestManageDefault,
+	ConquestCalculateDefault,
+	ConquestCalculateLevel2,
+	ConquestCalculateLevel3,
+	ConquestFootholdUpgrade2,
+	ConquestFootholdUpgrade3,
+	ConquestErosionPenalty,
 }
 enum ArenaRewardType: int {
 	None,
@@ -1237,6 +1271,7 @@ enum GachaTicketType: int {
 	NormalOnce,
 	StartDash,
 	SelectRecruit,
+	PackagePropertyThreeStar,
 }
 enum EventChangeType: int {
 	MainSub,
@@ -1325,6 +1360,19 @@ enum AttendanceCountRule: int {
 enum AttendanceResetType: int {
 	User,
 	Server,
+}
+enum Geas: int {
+	ForwardProjectile,
+	DiagonalProjectile,
+	SideProjectile,
+	Pierce,
+	Reflect,
+	Burn,
+	Chill,
+	AttackPower,
+	AttackSpeed,
+	Critical,
+	Heal,
 }
 enum MissionCategory: int {
 	Challenge,
@@ -1469,6 +1517,8 @@ enum MissionCompleteConditionType: int {
 	ClearEventConquestTileTimeLimitFromSecond,
 	DiceRaceUseDiceCount,
 	DiceRaceFinishLapCount,
+	FortuneGachaCount,
+	FortuneGachaCountByGrade,
 }
 enum AccountAchievementType: int {
 	TotalLoginCount,
@@ -1604,6 +1654,7 @@ enum GachaGroupType: int {
 	None,
 	Reward_General,
 	System_Craft,
+	Reward_Pack,
 }
 enum ParcelChangeReason: int {
 	None,
@@ -1839,33 +1890,34 @@ enum DialogCategory: int {
 	UIEventCardShop,
 	UISchoolDungeon,
 	UIAttendanceEvent,
-	UIAttendanceEvent04,
-	UIAttendanceEvent05,
-	UIAttendanceEvent06,
-	UIAttendanceEvent07,
-	UIAttendanceEvent08,
 	UISpecialOperationLobby,
 	WeaponGet,
+	UIAttendanceEvent04,
 	UIEventFortuneGachaShop,
+	UIAttendanceEvent05,
+	UIAttendanceEvent06,
 	UIMission,
 	UIEventMission,
+	UIAttendanceEvent08,
+	UIAttendanceEvent07,
 	UIEventMiniGameMission,
+	UIAttendanceEvent09,
+	UIAttendanceEvent10,
+	UIAttendanceEvent11,
+	UIWorkPlanaSit,
+	UIWorkPlanaUmbrella,
+	UIWorkPlanaCabinet,
+	UIWorkCoexist_AronaSleepSit,
+	UIWorkCoexist_PlanaWatchSky,
+	UIWorkCoexist_PlanaSitPeek,
+	UIWorkCoexist_AronaSleepPeek,
+	UIEventArchive,
+	UIAttendanceEvent12,
 	GlobalAttendance01,
 	GlobalAttendance02,
 	GlobalAttendance03,
 	GlobalAttendance04,
 	GlobalAttendance05,
-	UIAttendanceEvent09,
-	UIAttendanceEvent10,
-	UIAttendanceEvent11,
-	DialogName01,
-	DialogName02,
-	DialogName03,
-	DialogName04,
-	DialogName05,
-	DialogName06,
-	DialogName07,
-	DialogName08,
 }
 enum DialogCondition: int {
 	Idle,
@@ -1993,6 +2045,8 @@ enum ScenarioContentType: int {
 	EventContentMeetup,
 	TimeAttack,
 	Mission,
+	EventContentPermanentPrologue,
+	EventContentReturnSeason,
 }
 enum PurchaseCountResetType: int {
 	None,
@@ -2649,29 +2703,29 @@ enum Tag: int {
 	Holiday,
 	Perorozilla_MiddleSize,
 	Perorozilla_SmallSize,
-	TagName0438,
-	TagName0439,
-	TagName0440,
-	TagName0441,
-	TagName0442,
-	TagName0443,
-	TagName0444,
-	TagName0445,
-	TagName0446,
-	TagName0447,
-	TagName0448,
-	TagName0449,
-	TagName0450,
-	TagName0451,
-	TagName0452,
-	TagName0453,
-	TagName0454,
-	TagName0455,
-	TagName0456,
-	TagName0457,
-	TagName0458,
-	TagName0459,
-	TagName0460,
+	F_Haruna_Newyear,
+	F_Haruna_Newyear2,
+	F_Mine,
+	F_Mine2,
+	F_Junko_Newyear,
+	F_Junko_Newyear2,
+	F_Fuuka_Newyear,
+	F_Fuuka_Newyear2,
+	F_Megu,
+	F_Megu2,
+	F_Sakurako,
+	F_Sakurako2,
+	F_Kanna,
+	F_Kanna2,
+	F_Mika,
+	F_Mika2,
+	UnNamedGuardianMiddle,
+	F_Toki,
+	F_Toki2,
+	F_Koyuki,
+	F_Koyuki2,
+	F_Nagisa,
+	F_Nagisa2,
 	TagName0461,
 	TagName0462,
 	TagName0463,
@@ -5254,6 +5308,9 @@ enum Club: int {
 	Emergentology,
 	RabbitPlatoon,
 	PandemoniumSociety,
+	HotSpringsDepartment,
+	TeaParty,
+	PublicPeaceBureau,
 }
 table GroundVector3 {
 	X: float;
@@ -5675,6 +5732,15 @@ table AudioAnimatorExcel {
 	VoiceHash: [uint];
 }
 
+table BattleLevelFactorExcelTable {
+	DataList: [BattleLevelFactorExcel];
+}
+
+table BattleLevelFactorExcel {
+	LevelDiff: int;
+	DamageRate: long;
+}
+
 table BGMExcelTable {
 	DataList: [BGMExcel];
 }
@@ -5707,6 +5773,8 @@ table BGMUIExcelTable {
 table BGMUIExcel {
 	UIPrefab: uint;
 	BGMId: long;
+	BGMId2nd: long;
+	BGMId3rd: long;
 	EventContentId: long;
 }
 
@@ -5721,15 +5789,6 @@ table BGM_GlobalExcel {
 	BGMIdTh: long;
 	BGMIdTw: long;
 	BGMIdEn: long;
-}
-
-table BattleLevelFactorExcelTable {
-	DataList: [BattleLevelFactorExcel];
-}
-
-table BattleLevelFactorExcel {
-	LevelDiff: int;
-	DamageRate: long;
 }
 
 table BossExternalBTExcelTable {
@@ -5832,6 +5891,7 @@ table CameraExcel {
 	RotationX: float;
 	RotationY: float;
 	MoveInstantly: bool;
+	MoveInstantlyRotationSave: bool;
 	LeftMargin: float;
 	BottomMargin: float;
 	IgnoreEnemies: bool;
@@ -5964,6 +6024,19 @@ table CampaignUnitExcel {
 	IsTacticSkip: bool;
 }
 
+table CharacterAcademyTagsExcelTable {
+	DataList: [CharacterAcademyTagsExcel];
+}
+
+table CharacterAcademyTagsExcel {
+	Id: long;
+	FavorTags: [Tag];
+	FavorItemTags: [Tag];
+	FavorItemUniqueTags: [Tag];
+	ForbiddenTags: [Tag];
+	ZoneWhiteListTags: [Tag];
+}
+
 table CharacterAIExcelTable {
 	DataList: [CharacterAIExcel];
 }
@@ -5980,19 +6053,6 @@ table CharacterAIExcel {
 	CanUseObstacleOfKneelMotion: bool;
 	CanUseObstacleOfStandMotion: bool;
 	HasTargetSwitchingMotion: bool;
-}
-
-table CharacterAcademyTagsExcelTable {
-	DataList: [CharacterAcademyTagsExcel];
-}
-
-table CharacterAcademyTagsExcel {
-	Id: long;
-	FavorTags: [Tag];
-	FavorItemTags: [Tag];
-	FavorItemUniqueTags: [Tag];
-	ForbiddenTags: [Tag];
-	ZoneWhiteListTags: [Tag];
 }
 
 table CharacterCombatSkinExcelTable {
@@ -6061,6 +6121,9 @@ table CharacterDialogExcel {
 	VoiceClipsTh: [string];
 	VoiceClipsTw: [string];
 	VoiceClipsEn: [string];
+	ApplyPosition: bool;
+	PosX: float;
+	PosY: float;
 	TeenMode: bool;
 }
 
@@ -6105,8 +6168,10 @@ table CharacterExcel {
 	EquipmentSlot: [EquipmentCategory];
 	SpineResourceName: string;
 	SpineResourceNameDiorama: string;
+	SpineResourceNameDioramaForFormConversion: string;
 	entitymaterialtype: EntityMaterialType;
 	ModelPrefabName: string;
+	CafeModelPrefabName: string;
 	TextureDir: string;
 	TextureEchelon: string;
 	CollectionTexturePath: string;
@@ -6114,6 +6179,7 @@ table CharacterExcel {
 	UseObjectHPBAR: bool;
 	TextureBoss: string;
 	TextureSkillCard: [string];
+	TextureSkillCardForFormConversion: string;
 	WeaponImagePath: string;
 	WeaponLocalizeId: uint;
 	DisplayEnemyInfo: bool;
@@ -6269,11 +6335,13 @@ table CharacterStatExcel {
 	EnhanceExplosionRate: long;
 	EnhancePierceRate: long;
 	EnhanceMysticRate: long;
+	EnhanceSonicRate: long;
 	EnhanceSiegeRate: long;
 	EnhanceNormalRate: long;
 	EnhanceLightArmorRate: long;
 	EnhanceHeavyArmorRate: long;
 	EnhanceUnarmedRate: long;
+	EnhanceElasticArmorRate: long;
 	EnhanceStructureRate: long;
 	EnhanceNormalArmorRate: long;
 	ExtendBuffDuration: long;
@@ -6295,6 +6363,10 @@ table CharacterStatExcel {
 	StrategySightRange: long;
 	DamageRatio: long;
 	DamagedRatio: long;
+	DamageRatio2Increase: long;
+	DamageRatio2Decrease: long;
+	DamagedRatio2Increase: long;
+	DamagedRatio2Decrease: long;
 	StreetBattleAdaptation: TerrainAdaptationStat;
 	OutdoorBattleAdaptation: TerrainAdaptationStat;
 	IndoorBattleAdaptation: TerrainAdaptationStat;
@@ -6454,7 +6526,7 @@ table ConquestCalculateExcelTable {
 }
 
 table ConquestCalculateExcel {
-	Id: long;
+	EventContentId: long;
 	CalculateConditionParcelType: ParcelType;
 	CalculateConditionParcelUniqueId: long;
 	CalculateConditionParcelAmount: long;
@@ -6466,12 +6538,12 @@ table ConquestCameraSettingExcelTable {
 
 table ConquestCameraSettingExcel {
 	Id: long;
-	ConquestMapBoundaryOffsetLeft: [float];
-	ConquestMapBoundaryOffsetRight: [float];
-	ConquestMapBoundaryOffsetTop: [float];
-	ConquestMapBoundaryOffsetBottom: [float];
-	ConquestMapCenterOffsetX: [float];
-	ConquestMapCenterOffsetY: [float];
+	ConquestMapBoundaryOffsetLeft: float;
+	ConquestMapBoundaryOffsetRight: float;
+	ConquestMapBoundaryOffsetTop: float;
+	ConquestMapBoundaryOffsetBottom: float;
+	ConquestMapCenterOffsetX: float;
+	ConquestMapCenterOffsetY: float;
 	CameraAngle: float;
 	CameraZoomMax: float;
 	CameraZoomMin: float;
@@ -6483,21 +6555,32 @@ table ConquestErosionExcelTable {
 }
 
 table ConquestErosionExcel {
-	GroupId: long;
+	EventContentId: long;
 	Id: long;
-	ErosionType: ConquestEventType;
+	ErosionType: ConquestErosionType;
 	Phase: int;
 	PhaseAlarm: bool;
-	ErosionOccurStep: int;
-	PhaseStartConditionType: [PhaseStartConditionType];
-	PhaseStartConditionParameter1: [string];
-	PhaseStartConditionParameter2: string;
-	PhaseStartConditionParameter3: string;
-	PhaseBeforeExposeConditionType: [PhaseBeforeExposeConditionType];
-	PhaseBeforeExposeConditionParameter1: [string];
-	PhaseBeforeExposeConditionParameter2: string;
-	PhaseBeforeExposeConditionParameter3: string;
+	StepIndex: int;
+	PhaseStartConditionType: [ConquestConditionType];
+	PhaseStartConditionParameter: [string];
+	PhaseBeforeExposeConditionType: [ConquestConditionType];
+	PhaseBeforeExposeConditionParameter: [string];
+	ErosionBattleConditionParcelType: ParcelType;
+	ErosionBattleConditionParcelUniqueId: long;
+	ErosionBattleConditionParcelAmount: long;
 	ConquestRewardId: long;
+}
+
+table ConquestErosionUnitExcelTable {
+	DataList: [ConquestErosionUnitExcel];
+}
+
+table ConquestErosionUnitExcel {
+	TilePrefabId: long;
+	MassErosionUnitId: long;
+	MassErosionUnitRotationY: float;
+	IndividualErosionUnitId: long;
+	IndividualErosionUnitRotationY: float;
 }
 
 table ConquestEventExcelTable {
@@ -6506,14 +6589,15 @@ table ConquestEventExcelTable {
 
 table ConquestEventExcel {
 	EventContentId: long;
+	MainStoryEventContentId: long;
 	conquesteventtype: ConquestEventType;
-	ErosionsId: long;
-	UnexpectedEventId: long;
-	CalculateId: long;
-	ObjectId: long;
+	UseErosion: bool;
+	UseUnexpectedEvent: bool;
+	UseCalculate: bool;
+	UseConquestObject: bool;
 	EvnetMapGoalLocalize: string;
 	EvnetMapNameLocalize: string;
-	MapEnterScenarioGroupId: string;
+	MapEnterScenarioGroupId: long;
 	EvnetScenarioBG: string;
 	ManageUnitChange: int;
 	AssistCount: int;
@@ -6521,21 +6605,15 @@ table ConquestEventExcel {
 	AnimationUnitAmountMin: int;
 	AnimationUnitAmountMax: int;
 	AnimationUnitDelay: float;
-	FirstRewardType: ParcelType;
-	FirstRewardUniqueId: long;
-	FirstRewardAmount: long;
 	LocalizeUnexpected: string;
 	LocalizeErosions: string;
 	LocalizeStep: string;
+	LocalizeTile: string;
 	LocalizeMapInfo: string;
 	LocalizeManage: string;
 	LocalizeUpgrade: string;
 	LocalizeTreasureBox: string;
-	UnexpectedEventConditionAmount: long;
-	UnexpectedEventOccurDailyLimitCount: long;
-	CalculateConditionParcelType: ParcelType;
-	CalculateConditionParcelUniqueId: long;
-	CalculateConditionParcelAmount: long;
+	IndividualErosionDailyCount: long;
 }
 
 table ConquestGroupBonusExcelTable {
@@ -6574,15 +6652,15 @@ table ConquestMapExcel {
 	EventContentId: long;
 	DevName: string;
 	MapDifficulty: StageDifficulty;
-	StepCount: int;
+	StepIndex: int;
 	ConquestMap: string;
-	OpenDateOffset: long;
+	StepEnterScenarioGroupId: long;
+	StepOpenConditionType: [ConquestConditionType];
+	StepOpenConditionParameter: [string];
 	MapGoalLocalize: string;
-	MapNameLocalize: string;
-	MapEnterScenarioGroupId: long;
+	StepGoalLocalize: string;
+	StepNameLocalize: string;
 	ConquestMapBG: string;
-	MapScenarioBG: string;
-	BgmId: long;
 	CameraSettingId: long;
 }
 
@@ -6591,18 +6669,18 @@ table ConquestObjectExcelTable {
 }
 
 table ConquestObjectExcel {
-	GroupId: long;
 	Id: long;
+	EventContentId: long;
+	conquestobjecttype: ConquestObjectType;
 	Key: uint;
 	Name: string;
-	Step: int;
 	PrefabName: string;
-	conquestobjecttype: ConquestObjectType;
-	ConquestRewardName: string;
 	ConquestRewardParcelType: ParcelType;
 	ConquestRewardID: long;
 	ConquestRewardAmount: int;
 	Disposable: bool;
+	StepIndex: int;
+	StepObjectCount: int;
 }
 
 table ConquestPlayGuideExcelTable {
@@ -6629,7 +6707,20 @@ table ConquestProgressResourceExcel {
 	ProgressResource: string;
 	Voice: [string];
 	ProgressLocalizeCode: string;
-	ProgressTime: string;
+}
+
+table ConquestRewardExcelTable {
+	DataList: [ConquestRewardExcel];
+}
+
+table ConquestRewardExcel {
+	GroupId: long;
+	rewardtag: RewardTag;
+	RewardProb: int;
+	RewardParcelType: ParcelType;
+	RewardId: long;
+	RewardAmount: int;
+	IsDisplayed: bool;
 }
 
 table ConquestStepExcelTable {
@@ -6662,6 +6753,7 @@ table ConquestTileExcel {
 	Step: int;
 	PrefabName: string;
 	TileNameLocalize: string;
+	TileImageName: string;
 	Playable: bool;
 	TileType: ConquestTileType;
 	NotMapFog: bool;
@@ -6672,21 +6764,14 @@ table ConquestTileExcel {
 	ManageCostType: ParcelType;
 	ManageCostId: long;
 	ManageCostAmount: int;
-	ManageRewardId: long;
+	ConquestRewardId: long;
+	MassErosionId: long;
 	Upgrade2CostType: ParcelType;
 	Upgrade2CostId: long;
 	Upgrade2CostAmount: int;
-	Upgrade2RewardId: long;
 	Upgrade3CostType: ParcelType;
 	Upgrade3CostId: long;
 	Upgrade3CostAmount: int;
-	Upgrade3RewardId: long;
-	CalculateRewardId: long;
-	CalculateLevel2BonusPercentage: long;
-	CalculateLevel3BonusPercentage: long;
-	CalculateLevel1RewardId: long;
-	CalculateLevel2RewardId: long;
-	CalculateLevel3RewardId: long;
 }
 
 table ConquestUnexpectedEventExcelTable {
@@ -6694,13 +6779,12 @@ table ConquestUnexpectedEventExcelTable {
 }
 
 table ConquestUnexpectedEventExcel {
-	GroupId: long;
-	Id: long;
+	EventContentId: long;
 	UnexpectedEventConditionType: ParcelType;
 	UnexpectedEventConditionUniqueId: long;
 	UnexpectedEventConditionAmount: long;
 	UnexpectedEventOccurDailyLimitCount: int;
-	UnexpectedStep: int;
+	UnitCountPerStep: int;
 	UnexpectedEventPrefab: [string];
 	UnexpectedEventUnitId: [long];
 }
@@ -6716,6 +6800,7 @@ table ConquestUnitExcel {
 	PrefabName: string;
 	Scale: float;
 	ShieldEffectScale: float;
+	UnitFxPrefabName: string;
 	PointAnimation: string;
 	EnemyType: ConquestEnemyType;
 	Team: ConquestTeamType;
@@ -6727,11 +6812,14 @@ table ConquestUnitExcel {
 	StarGoalAmount: [int];
 	GroupBuffId: long;
 	StageEnterCostType: ParcelType;
-	StageEnterCostId: int;
+	StageEnterCostId: long;
 	StageEnterCostAmount: int;
+	ManageEchelonStageEnterCostType: ParcelType;
+	ManageEchelonStageEnterCostId: long;
+	ManageEchelonStageEnterCostAmount: int;
 	EnterScenarioGroupId: long;
 	ClearScenarioGroupId: long;
-	StageRewardId: long;
+	ConquestRewardId: long;
 	stagetopography: StageTopography;
 	RecommandLevel: int;
 	TacticRewardExp: long;
@@ -7156,6 +7244,26 @@ table ContentsScenarioExcel {
 	ScenarioGroupId: [long];
 }
 
+table ContentsShortcutExcelTable {
+	DataList: [ContentsShortcutExcel];
+}
+
+table ContentsShortcutExcel {
+	UniqueId: long;
+	contenttype: ContentType;
+	EventContentId: long;
+	ScenarioModeVolume: long;
+	ScenarioModeChapter: long;
+	ShortcutOpenTime: string;
+	ShortcutCloseTime: string;
+	ConditionContentId: long;
+	ConquestMapDifficulty: StageDifficulty;
+	ConquestStepIndex: int;
+	ShortcutContentId: long;
+	ShortcutUIName: [string];
+	Localize: string;
+}
+
 table CouponStuffExcelTable {
 	DataList: [CouponStuffExcel];
 }
@@ -7320,39 +7428,6 @@ table EquipmentExcel {
 	ShiftingCraftQuality: long;
 	ShopCategory: [ShopCategoryType];
 	ShortcutTypeId: long;
-}
-
-table EquipmentGearExcelTable {
-	DataList: [EquipmentGearExcel];
-}
-
-table EquipmentGearExcel {
-	Id: long;
-	CharacterId: long;
-	statleveluptype: StatLevelUpType;
-	Tier: long;
-	NextTierEquipment: long;
-	RecipeId: long;
-	OpenFavorLevel: long;
-	MaxLevel: long;
-	PreviousSkillGroupId: long;
-	AfterSkillGroupId: long;
-	stattype: StatType;
-	Tags: [Tag];
-	MinStatValue: long;
-	MaxStatValue: long;
-	Icon: string;
-	LocalizeEtcId: string;
-}
-
-table EquipmentGearLevelExcelTable {
-	DataList: [EquipmentGearLevelExcel];
-}
-
-table EquipmentGearLevelExcel {
-	Level: int;
-	TierLevelExp: [long];
-	TotalExp: [long];
 }
 
 table EquipmentLevelExcelTable {
@@ -7674,6 +7749,9 @@ table EventContentFortuneGachaModifyExcel {
 	EventContentId: int;
 	TargetGrade: int;
 	ProbModifyStartCount: int;
+	UsePrefabName: string;
+	BucketImagePath: string;
+	ShopBgImagePath: string;
 }
 
 table EventContentFortuneGachaShopExcelTable {
@@ -7766,7 +7844,7 @@ table EventContentMeetupExcel {
 	EventContentId: long;
 	CharacterId: long;
 	ConditionScenarioGroupId: long;
-	ActiveConditionEventContentStageId: long;
+	ActiveConditionEventContentStageId: [long];
 }
 
 table EventContentMissionExcelTable {
@@ -7843,6 +7921,7 @@ table EventContentScenarioExcel {
 	RecollectionNumber: long;
 	IsRecollection: bool;
 	IsMeetup: bool;
+	IsOmnibus: bool;
 	ScenarioGroupId: [long];
 	ScenarioConditionType: EventContentScenarioConditionType;
 	ConditionAmount: long;
@@ -7857,7 +7936,6 @@ table EventContentScenarioExcel {
 	RewardParcelType: [ParcelType];
 	RewardId: [long];
 	RewardAmount: [int];
-	IsOmnibus: bool;
 }
 
 table EventContentSeasonExcelTable {
@@ -7895,7 +7973,7 @@ table EventContentSeasonExcel {
 	MinigameVictoryPrefabName: string;
 	MinigameRhythmMissionBgPrefabName: string;
 	EventAssist: bool;
-	IsPermanent: bool;
+	eventcontentreleasetype: EventContentReleaseType;
 	EventContentStageRewardIdPermanent: long;
 	RewardTagPermanent: RewardTag;
 }
@@ -7918,6 +7996,7 @@ table EventContentShopExcel {
 	PurchaseCountLimit: long;
 	purchasecountresettype: PurchaseCountResetType;
 	BuyReportEventName: string;
+	RestrictBuyWhenInventoryFull: bool;
 }
 
 table EventContentShopInfoExcelTable {
@@ -7988,6 +8067,8 @@ table EventContentSpoilerPopupExcel {
 	EventContentId: long;
 	SpoilerPopupTitle: string;
 	SpoilerPopupDescription: string;
+	IsWarningPopUp: bool;
+	ConditionScenarioModeId: long;
 }
 
 table EventContentStageExcelTable {
@@ -8118,6 +8199,7 @@ table FixedEchelonSettingExcelTable {
 
 table FixedEchelonSettingExcel {
 	FixedEchelonID: long;
+	EchelonSceneSkip: bool;
 	MainLeaderSlot: int;
 	MainCharacterID: [long];
 	MainLevel: [int];
@@ -8225,6 +8307,7 @@ table FurnitureExcel {
 	CafeCharacterStateReq: [string];
 	CafeCharacterStateAdd: [string];
 	CafeCharacterStateMake: [string];
+	CafeCharacterStateOnly: [string];
 }
 
 table FurnitureGroupExcelTable {
@@ -8369,12 +8452,13 @@ table GroundExcel {
 	PlayerSightRangeMax: bool;
 	EnemySightRangeMax: bool;
 	TSSAirUnitHeight: long;
-	IsRaid: bool;
+	IsPhaseBGM: bool;
 	BGMId: long;
 	WarningUI: bool;
 	TSSHatchOpen: bool;
 	ForcedTacticSpeed: TacticSpeed;
 	ForcedSkillUse: TacticSkillUse;
+	ShowNPCSkillCutIn: ShowSkillCutIn;
 }
 
 table GroundGridFlat {
@@ -8408,6 +8492,10 @@ table GroundModuleRewardExcel {
 	RewardParcelProbability: long;
 	IsDisplayed: bool;
 	DropItemModelPrefabPath: string;
+}
+
+table GroundNodeLayerFlat {
+	Layers: [byte];
 }
 
 table GuideMissionExcelTable {
@@ -8461,6 +8549,7 @@ table GuideMissionSeasonExcel {
 	InfomationLocalizeCode: string;
 	AccountType: AccountState;
 	Enabled: bool;
+	BannerOpenDate: string;
 	StartDate: string;
 	StartableEndDate: string;
 	EndDate: string;
@@ -8477,6 +8566,8 @@ table GuideMissionSeasonExcel {
 	RequirementParcelId: long;
 	RequirementParcelAmount: int;
 	TabType: GuideMissionTabType;
+	IsPermanent: bool;
+	PreSeasonId: long;
 }
 
 table HpBarAbbreviationExcelTable {
@@ -8500,7 +8591,6 @@ table IdCardBackgroundExcel {
 	CollectionVisible: bool;
 	IsDefault: bool;
 	BgPath: string;
-	MatchingItemId: long;
 	LocalizeEtcId: uint;
 	Icon: string;
 }
@@ -9085,6 +9175,52 @@ table MiniGameRhythmExcel {
 	ComboImagePath: string;
 }
 
+table MiniGameShootingCharacterExcelTable {
+	DataList: [MiniGameShootingCharacterExcel];
+}
+
+table MiniGameShootingCharacterExcel {
+	UniqueId: long;
+	ModelPrefabName: string;
+	BodyRadius: long;
+	NormalAttackSkillData: string;
+	MaxHP: long;
+	AttackPower: long;
+	DefensePower: long;
+	CriticalRate: long;
+	CriticalDamageRate: long;
+	AttackRange: long;
+	MoveSpeed: long;
+	ShotTime: long;
+}
+
+table MiniGameShootingGeasExcelTable {
+	DataList: [MiniGameShootingGeasExcel];
+}
+
+table MiniGameShootingGeasExcel {
+	UniqueId: long;
+	GeasType: Geas;
+	Icon: string;
+	Probability: long;
+	MaxOverlapCount: int;
+	GeasData: string;
+}
+
+table MiniGameShootingStageExcelTable {
+	DataList: [MiniGameShootingStageExcel];
+}
+
+table MiniGameShootingStageExcel {
+	UniqueId: long;
+	BgmId: long;
+	difficulty: Difficulty;
+	DesignLevel: string;
+	ArtLevel: string;
+	StartBattleDuration: long;
+	DefaultBattleDuration: long;
+}
+
 table MissionExcelTable {
 	DataList: [MissionExcel];
 }
@@ -9644,6 +9780,8 @@ table ScenarioModeExcel {
 	EpisodeId: long;
 	Hide: bool;
 	Open: bool;
+	ScenarioOpenDate: string;
+	ScenarioCloseDate: string;
 	FrontScenarioGroupId: [long];
 	StrategyId: long;
 	GroundId: long;
@@ -9651,6 +9789,8 @@ table ScenarioModeExcel {
 	BattleDuration: long;
 	BackScenarioGroupId: [long];
 	ClearedModeId: [long];
+	ScenarioModeRewardId: long;
+	IsScenarioSpecialReward: bool;
 	AccountLevelLimit: long;
 	ClearedStageId: long;
 	NeedClub: Club;
@@ -9660,6 +9800,8 @@ table ScenarioModeExcel {
 	eventcontenttype: EventContentType;
 	EventContentCondition: long;
 	EventContentConditionGroup: long;
+	MapDifficulty: StageDifficulty;
+	StepIndex: int;
 	EventIconParcelPath: string;
 	Lof: bool;
 	stagetopography: StageTopography;
@@ -9672,10 +9814,13 @@ table ScenarioModeRewardExcelTable {
 }
 
 table ScenarioModeRewardExcel {
-	ModeId: long;
-	RewardParcelType: [ParcelType];
-	RewardParcelId: [long];
-	RewardParcelAmount: [int];
+	ScenarioModeRewardId: long;
+	rewardtag: RewardTag;
+	RewardProb: int;
+	RewardParcelType: ParcelType;
+	RewardParcelId: long;
+	RewardParcelAmount: int;
+	IsDisplayed: bool;
 }
 
 table ScenarioReplayExcelTable {
@@ -9692,6 +9837,21 @@ table ScenarioReplayExcel {
 	GroundId: long;
 	BattleDuration: long;
 	BackScenarioGroupId: [long];
+}
+
+table ScenarioResourceInfoExcelTable {
+	DataList: [ScenarioResourceInfoExcel];
+}
+
+table ScenarioResourceInfoExcel {
+	Id: long;
+	ScenarioModeId: long;
+	VideoName: string;
+	BgmId: string;
+	AudioName: string;
+	SpinePath: string;
+	Ratio: int;
+	LobbyAniPath: string;
 }
 
 table ScenarioScriptContentExcelTable {
@@ -9907,10 +10067,10 @@ table ScenarioScriptGroup3Excel {
 	PopupFileName: string;
 	ScriptKr: string;
 	TextJp: string;
-	VoiceJp: string;
 	TextTh: string;
 	TextTw: string;
 	TextEn: string;
+	VoiceJp: string;
 	TeenMode: bool;
 }
 
@@ -9973,10 +10133,10 @@ table ScenarioScriptMain3Excel {
 	PopupFileName: string;
 	ScriptKr: string;
 	TextJp: string;
-	VoiceJp: string;
 	TextTh: string;
 	TextTw: string;
 	TextEn: string;
+	VoiceJp: string;
 	TeenMode: bool;
 }
 
@@ -10125,6 +10285,7 @@ table ShopExcel {
 	PurchaseCountLimit: long;
 	purchasecountresettype: PurchaseCountResetType;
 	BuyReportEventName: string;
+	RestrictBuyWhenInventoryFull: bool;
 }
 
 table ShopFreeRecruitExcelTable {
@@ -10184,6 +10345,7 @@ table ShopRecruitExcel {
 	DisplayOrder: long;
 	GachaBannerPath: string;
 	MovieBannerPath: [string];
+	MovieBannerPathTeen: [string];
 	LinkedRobbyBannerId: long;
 	InfoCharacterId: [long];
 	SalePeriodFrom: string;
@@ -10282,6 +10444,15 @@ table SpecialLobbyIllustExcel {
 	RewardTextureName: string;
 }
 
+table SpineLipsyncExcelTable {
+	DataList: [SpineLipsyncExcel];
+}
+
+table SpineLipsyncExcel {
+	ClipNameKey: uint;
+	AnimJson: string;
+}
+
 table StatLevelInterpolationExcelTable {
 	DataList: [StatLevelInterpolationExcel];
 }
@@ -10298,12 +10469,12 @@ table StoryStrategyExcelTable {
 table StoryStrategyExcel {
 	Id: long;
 	Name: string;
+	Localize: string;
 	StageEnterEchelonCount: int;
 	BattleDuration: long;
 	WhiteListId: long;
 	StrategyMap: string;
 	StrategyMapBG: string;
-	SenarioModeRewardId: long;
 	MaxTurn: int;
 	stagetopography: StageTopography;
 	RecommandLevel: int;
@@ -10344,6 +10515,32 @@ table SystemMailExcel {
 	ExpiredDay: long;
 	Sender: string;
 	Comment: string;
+}
+
+table TacticalSupportSystemExcelTable {
+	DataList: [TacticalSupportSystemExcel];
+}
+
+table TacticalSupportSystemExcel {
+	Id: long;
+	SummonedTime: long;
+	DefaultPersonalityId: long;
+	CanTargeting: bool;
+	CanCover: bool;
+	ObstacleUniqueName: string;
+	ObstacleCoverRange: long;
+	SummonSkilllGroupId: string;
+	CrashObstacleOBBWidth: long;
+	CrashObstacleOBBHeight: long;
+	IsTSSBlockedNodeCheck: bool;
+	NumberOfUses: int;
+	InventoryOffsetX: float;
+	InventoryOffsetY: float;
+	InventoryOffsetZ: float;
+	InteractionChar: [long];
+	CharacterInteractionStartDelay: long;
+	GetOnStartEffectPath: string;
+	GetOnEndEffectPath: string;
 }
 
 table TacticArenaSimulatorSettingExcelTable {
@@ -10427,32 +10624,6 @@ table TacticTimeAttackSimulatorConfigExcel {
 	AttackStrikerNum: long;
 	AttackSpecialNum: long;
 	GeasId: long;
-}
-
-table TacticalSupportSystemExcelTable {
-	DataList: [TacticalSupportSystemExcel];
-}
-
-table TacticalSupportSystemExcel {
-	Id: long;
-	SummonedTime: long;
-	DefaultPersonalityId: long;
-	CanTargeting: bool;
-	CanCover: bool;
-	ObstacleUniqueName: string;
-	ObstacleCoverRange: long;
-	SummonSkilllGroupId: string;
-	CrashObstacleOBBWidth: long;
-	CrashObstacleOBBHeight: long;
-	IsTSSBlockedNodeCheck: bool;
-	NumberOfUses: int;
-	InventoryOffsetX: float;
-	InventoryOffsetY: float;
-	InventoryOffsetZ: float;
-	InteractionChar: [long];
-	CharacterInteractionStartDelay: long;
-	GetOnStartEffectPath: string;
-	GetOnEndEffectPath: string;
 }
 
 table TagSettingExcelTable {
@@ -10782,6 +10953,7 @@ table WorldRaidBossGroupExcel {
 	WorldBossPopupPortrait: string;
 	WorldBossPopupBG: string;
 	WorldBossParcelPortrait: string;
+	WorldBossListParcel: string;
 	WorldBossHP: long;
 	WorldBossHPTw: long;
 	WorldBossHPAsia: long;
@@ -10796,6 +10968,7 @@ table WorldRaidBossGroupExcel {
 	ExclusiveOperatorBossKill: string;
 	ExclusiveOperatorScenarioBattle: string;
 	ExclusiveOperatorBossDamaged: string;
+	BossGroupOpenCondition: long;
 }
 
 table WorldRaidConditionExcelTable {
@@ -10814,18 +10987,13 @@ table WorldRaidConditionExcel {
 	WorldRaidBossKill: [long];
 }
 
-table WorldRaidEchelonBlackListExcelTable {
-	DataList: [WorldRaidEchelonBlackListExcel];
+table WorldRaidFavorBuffExcelTable {
+	DataList: [WorldRaidFavorBuffExcel];
 }
 
-table WorldRaidEchelonBlackListExcel {
-	GroupId: long;
-	BlackListCharacterId: [long];
-	BlackListPersonalityId: [long];
-	BlackListWeaponType: WeaponType;
-	BlacklistSchool: School;
-	BlacklistClub: Club;
-	BlacklistRole: TacticRole;
+table WorldRaidFavorBuffExcel {
+	WorldRaidFavorRank: long;
+	WorldRaidFavorRankBonus: long;
 }
 
 table WorldRaidSeasonManageExcelTable {
@@ -10840,13 +11008,20 @@ table WorldRaidSeasonManageExcel {
 	WorldRaidLobbyBanner: string;
 	WorldRaidLobbyBannerShow: bool;
 	SeasonOpenCondition: long;
-	WorldRaidLobbyEnterScenario: uint;
+	WorldRaidLobbyEnterScenario: long;
 	CanPlayNotSeasonTime: bool;
+	WorldRaidUniqueThemeLobbyUI: bool;
+	WorldRaidUniqueThemeName: string;
+	CanWorldRaidGemEnter: bool;
+	HideWorldRaidTicketUI: bool;
+	UseWorldRaidCommonToast: bool;
 	OpenRaidBossGroupId: [long];
 	BossSpawnTime: [string];
 	EliminateTime: [string];
-	SenarioOutputConditionId: [long];
-	ConditionSenarioGroupid: [uint];
+	ScenarioOutputConditionId: [long];
+	ConditionScenarioGroupid: [long];
+	WorldRaidMapEnterOperator: string;
+	UseFavorRankBuff: bool;
 }
 
 table WorldRaidStageExcelTable {
@@ -10866,6 +11041,7 @@ table WorldRaidStageExcel {
 	worldraiddifficulty: WorldRaidDifficulty;
 	DifficultyOpenCondition: bool;
 	RaidEnterAmount: long;
+	ReEnterAmount: long;
 	BattleDuration: long;
 	GroundId: long;
 	RaidBattleEndRewardGroupId: long;
@@ -10873,16 +11049,21 @@ table WorldRaidStageExcel {
 	BattleReadyTimelinePath: [string];
 	BattleReadyTimelinePhaseStart: [int];
 	BattleReadyTimelinePhaseEnd: [int];
+	BeforeVictoryTimelinePath: string;
 	VictoryTimelinePath: string;
 	PhaseChangeTimelinePath: string;
 	TimeLinePhase: long;
-	EnterScenarioKey: uint;
-	ClearScenarioKey: uint;
+	EnterScenarioKey: long;
+	ClearScenarioKey: long;
 	UseFixedEchelon: bool;
 	FixedEchelonId: long;
 	IsRaidScenarioBattle: bool;
 	ShowSkillCard: bool;
 	BossBGInfoKey: uint;
+	DamageToWorldBoss: long;
+	AllyPassiveSkill: [string];
+	AllyPassiveSkillLevel: [int];
+	SaveCurrentLocalBossHP: bool;
 }
 
 table WorldRaidStageRewardExcelTable {
@@ -10898,4 +11079,5 @@ table WorldRaidStageRewardExcel {
 	ClearStageRewardParcelUniqueName: string;
 	ClearStageRewardAmount: long;
 }
+
 

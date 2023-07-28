@@ -19,26 +19,26 @@ public struct ConquestCalculateExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public ConquestCalculateExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.ParcelType CalculateConditionParcelType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
   public long CalculateConditionParcelUniqueId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long CalculateConditionParcelAmount { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.ConquestCalculateExcel> CreateConquestCalculateExcel(FlatBufferBuilder builder,
-      long Id = 0,
+      long EventContentId = 0,
       FlatDataGlobal.ParcelType CalculateConditionParcelType = FlatDataGlobal.ParcelType.None,
       long CalculateConditionParcelUniqueId = 0,
       long CalculateConditionParcelAmount = 0) {
     builder.StartTable(4);
     ConquestCalculateExcel.AddCalculateConditionParcelAmount(builder, CalculateConditionParcelAmount);
     ConquestCalculateExcel.AddCalculateConditionParcelUniqueId(builder, CalculateConditionParcelUniqueId);
-    ConquestCalculateExcel.AddId(builder, Id);
+    ConquestCalculateExcel.AddEventContentId(builder, EventContentId);
     ConquestCalculateExcel.AddCalculateConditionParcelType(builder, CalculateConditionParcelType);
     return ConquestCalculateExcel.EndConquestCalculateExcel(builder);
   }
 
   public static void StartConquestCalculateExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
-  public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
+  public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddCalculateConditionParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType CalculateConditionParcelType) { builder.AddInt(1, (int)CalculateConditionParcelType, 0); }
   public static void AddCalculateConditionParcelUniqueId(FlatBufferBuilder builder, long CalculateConditionParcelUniqueId) { builder.AddLong(2, CalculateConditionParcelUniqueId, 0); }
   public static void AddCalculateConditionParcelAmount(FlatBufferBuilder builder, long CalculateConditionParcelAmount) { builder.AddLong(3, CalculateConditionParcelAmount, 0); }

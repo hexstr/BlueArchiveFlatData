@@ -5,11 +5,11 @@
 namespace FlatDataGlobal
 {
 
-public enum PhaseBeforeExposeConditionType : int
+public enum EventContentReleaseType : int
 {
   None = 0,
-  StartPhaseDateOffset = 1,
-  ItemUse = 2,
+  Permanent = 1,
+  MainStory = 2,
 };
 
 

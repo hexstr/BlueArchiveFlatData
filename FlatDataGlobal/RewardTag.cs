@@ -18,6 +18,15 @@ public enum RewardTag : int
   TimeWeight = 8,
   ProductWeekly = 9,
   ProductBiweekly = 10,
+  EventPermanentReward = 11,
+  ConquestManageEvent = 12,
+  ConquestManageDefault = 13,
+  ConquestCalculateDefault = 14,
+  ConquestCalculateLevel2 = 15,
+  ConquestCalculateLevel3 = 16,
+  ConquestFootholdUpgrade2 = 17,
+  ConquestFootholdUpgrade3 = 18,
+  ConquestErosionPenalty = 19,
 };
 
 

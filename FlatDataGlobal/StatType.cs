@@ -66,7 +66,13 @@ public enum StatType : int
   EnhanceNormalRate = 56,
   EnhanceStructureRate = 57,
   EnhanceNormalArmorRate = 58,
-  Max = 59,
+  DamageRatio2Increase = 59,
+  DamageRatio2Decrease = 60,
+  DamagedRatio2Increase = 61,
+  DamagedRatio2Decrease = 62,
+  Max = 63,
+  EnhanceSonicRate = 64,
+  EnhanceElasticArmorRate = 65,
 };
 
 
