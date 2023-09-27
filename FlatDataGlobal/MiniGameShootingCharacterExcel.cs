@@ -20,35 +20,49 @@ public struct MiniGameShootingCharacterExcel : IFlatbufferObject
   public MiniGameShootingCharacterExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long UniqueId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string ModelPrefabName { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string SpineResourceName { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetModelPrefabNameBytes() { return __p.__vector_as_span<byte>(6, 1); }
+  public Span<byte> GetSpineResourceNameBytes() { return __p.__vector_as_span<byte>(6, 1); }
 #else
-  public ArraySegment<byte>? GetModelPrefabNameBytes() { return __p.__vector_as_arraysegment(6); }
+  public ArraySegment<byte>? GetSpineResourceNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
-  public byte[] GetModelPrefabNameArray() { return __p.__vector_as_array<byte>(6); }
-  public long BodyRadius { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string NormalAttackSkillData { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSpineResourceNameArray() { return __p.__vector_as_array<byte>(6); }
+  public float BodyRadius { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public string ModelPrefabName { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetNormalAttackSkillDataBytes() { return __p.__vector_as_span<byte>(10, 1); }
+  public Span<byte> GetModelPrefabNameBytes() { return __p.__vector_as_span<byte>(10, 1); }
 #else
-  public ArraySegment<byte>? GetNormalAttackSkillDataBytes() { return __p.__vector_as_arraysegment(10); }
+  public ArraySegment<byte>? GetModelPrefabNameBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
-  public byte[] GetNormalAttackSkillDataArray() { return __p.__vector_as_array<byte>(10); }
-  public long MaxHP { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long AttackPower { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long DefensePower { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CriticalRate { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CriticalDamageRate { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long AttackRange { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long MoveSpeed { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ShotTime { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public byte[] GetModelPrefabNameArray() { return __p.__vector_as_array<byte>(10); }
+  public string NormalAttackSkillData { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetNormalAttackSkillDataBytes() { return __p.__vector_as_span<byte>(12, 1); }
+#else
+  public ArraySegment<byte>? GetNormalAttackSkillDataBytes() { return __p.__vector_as_arraysegment(12); }
+#endif
+  public byte[] GetNormalAttackSkillDataArray() { return __p.__vector_as_array<byte>(12); }
+  public string PublicSkillData(int j) { int o = __p.__offset(14); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int PublicSkillDataLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long MaxHP { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long AttackPower { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DefensePower { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CriticalRate { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CriticalDamageRate { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long AttackRange { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long MoveSpeed { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ShotTime { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool IsBoss { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public float Scale { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public bool IgnoreObstacleCheck { get { int o = __p.__offset(36); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.MiniGameShootingCharacterExcel> CreateMiniGameShootingCharacterExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
+      StringOffset SpineResourceNameOffset = default(StringOffset),
+      float BodyRadius = 0.0f,
       StringOffset ModelPrefabNameOffset = default(StringOffset),
-      long BodyRadius = 0,
       StringOffset NormalAttackSkillDataOffset = default(StringOffset),
+      VectorOffset PublicSkillDataOffset = default(VectorOffset),
       long MaxHP = 0,
       long AttackPower = 0,
       long DefensePower = 0,
@@ -56,8 +70,11 @@ public struct MiniGameShootingCharacterExcel : IFlatbufferObject
       long CriticalDamageRate = 0,
       long AttackRange = 0,
       long MoveSpeed = 0,
-      long ShotTime = 0) {
-    builder.StartTable(12);
+      long ShotTime = 0,
+      bool IsBoss = false,
+      float Scale = 0.0f,
+      bool IgnoreObstacleCheck = false) {
+    builder.StartTable(17);
     MiniGameShootingCharacterExcel.AddShotTime(builder, ShotTime);
     MiniGameShootingCharacterExcel.AddMoveSpeed(builder, MoveSpeed);
     MiniGameShootingCharacterExcel.AddAttackRange(builder, AttackRange);
@@ -66,26 +83,41 @@ public struct MiniGameShootingCharacterExcel : IFlatbufferObject
     MiniGameShootingCharacterExcel.AddDefensePower(builder, DefensePower);
     MiniGameShootingCharacterExcel.AddAttackPower(builder, AttackPower);
     MiniGameShootingCharacterExcel.AddMaxHP(builder, MaxHP);
-    MiniGameShootingCharacterExcel.AddBodyRadius(builder, BodyRadius);
     MiniGameShootingCharacterExcel.AddUniqueId(builder, UniqueId);
+    MiniGameShootingCharacterExcel.AddScale(builder, Scale);
+    MiniGameShootingCharacterExcel.AddPublicSkillData(builder, PublicSkillDataOffset);
     MiniGameShootingCharacterExcel.AddNormalAttackSkillData(builder, NormalAttackSkillDataOffset);
     MiniGameShootingCharacterExcel.AddModelPrefabName(builder, ModelPrefabNameOffset);
+    MiniGameShootingCharacterExcel.AddBodyRadius(builder, BodyRadius);
+    MiniGameShootingCharacterExcel.AddSpineResourceName(builder, SpineResourceNameOffset);
+    MiniGameShootingCharacterExcel.AddIgnoreObstacleCheck(builder, IgnoreObstacleCheck);
+    MiniGameShootingCharacterExcel.AddIsBoss(builder, IsBoss);
     return MiniGameShootingCharacterExcel.EndMiniGameShootingCharacterExcel(builder);
   }
 
-  public static void StartMiniGameShootingCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
+  public static void StartMiniGameShootingCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
-  public static void AddModelPrefabName(FlatBufferBuilder builder, StringOffset ModelPrefabNameOffset) { builder.AddOffset(1, ModelPrefabNameOffset.Value, 0); }
-  public static void AddBodyRadius(FlatBufferBuilder builder, long BodyRadius) { builder.AddLong(2, BodyRadius, 0); }
-  public static void AddNormalAttackSkillData(FlatBufferBuilder builder, StringOffset NormalAttackSkillDataOffset) { builder.AddOffset(3, NormalAttackSkillDataOffset.Value, 0); }
-  public static void AddMaxHP(FlatBufferBuilder builder, long MaxHP) { builder.AddLong(4, MaxHP, 0); }
-  public static void AddAttackPower(FlatBufferBuilder builder, long AttackPower) { builder.AddLong(5, AttackPower, 0); }
-  public static void AddDefensePower(FlatBufferBuilder builder, long DefensePower) { builder.AddLong(6, DefensePower, 0); }
-  public static void AddCriticalRate(FlatBufferBuilder builder, long CriticalRate) { builder.AddLong(7, CriticalRate, 0); }
-  public static void AddCriticalDamageRate(FlatBufferBuilder builder, long CriticalDamageRate) { builder.AddLong(8, CriticalDamageRate, 0); }
-  public static void AddAttackRange(FlatBufferBuilder builder, long AttackRange) { builder.AddLong(9, AttackRange, 0); }
-  public static void AddMoveSpeed(FlatBufferBuilder builder, long MoveSpeed) { builder.AddLong(10, MoveSpeed, 0); }
-  public static void AddShotTime(FlatBufferBuilder builder, long ShotTime) { builder.AddLong(11, ShotTime, 0); }
+  public static void AddSpineResourceName(FlatBufferBuilder builder, StringOffset SpineResourceNameOffset) { builder.AddOffset(1, SpineResourceNameOffset.Value, 0); }
+  public static void AddBodyRadius(FlatBufferBuilder builder, float BodyRadius) { builder.AddFloat(2, BodyRadius, 0.0f); }
+  public static void AddModelPrefabName(FlatBufferBuilder builder, StringOffset ModelPrefabNameOffset) { builder.AddOffset(3, ModelPrefabNameOffset.Value, 0); }
+  public static void AddNormalAttackSkillData(FlatBufferBuilder builder, StringOffset NormalAttackSkillDataOffset) { builder.AddOffset(4, NormalAttackSkillDataOffset.Value, 0); }
+  public static void AddPublicSkillData(FlatBufferBuilder builder, VectorOffset PublicSkillDataOffset) { builder.AddOffset(5, PublicSkillDataOffset.Value, 0); }
+  public static VectorOffset CreatePublicSkillDataVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreatePublicSkillDataVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePublicSkillDataVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePublicSkillDataVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartPublicSkillDataVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddMaxHP(FlatBufferBuilder builder, long MaxHP) { builder.AddLong(6, MaxHP, 0); }
+  public static void AddAttackPower(FlatBufferBuilder builder, long AttackPower) { builder.AddLong(7, AttackPower, 0); }
+  public static void AddDefensePower(FlatBufferBuilder builder, long DefensePower) { builder.AddLong(8, DefensePower, 0); }
+  public static void AddCriticalRate(FlatBufferBuilder builder, long CriticalRate) { builder.AddLong(9, CriticalRate, 0); }
+  public static void AddCriticalDamageRate(FlatBufferBuilder builder, long CriticalDamageRate) { builder.AddLong(10, CriticalDamageRate, 0); }
+  public static void AddAttackRange(FlatBufferBuilder builder, long AttackRange) { builder.AddLong(11, AttackRange, 0); }
+  public static void AddMoveSpeed(FlatBufferBuilder builder, long MoveSpeed) { builder.AddLong(12, MoveSpeed, 0); }
+  public static void AddShotTime(FlatBufferBuilder builder, long ShotTime) { builder.AddLong(13, ShotTime, 0); }
+  public static void AddIsBoss(FlatBufferBuilder builder, bool IsBoss) { builder.AddBool(14, IsBoss, false); }
+  public static void AddScale(FlatBufferBuilder builder, float Scale) { builder.AddFloat(15, Scale, 0.0f); }
+  public static void AddIgnoreObstacleCheck(FlatBufferBuilder builder, bool IgnoreObstacleCheck) { builder.AddBool(16, IgnoreObstacleCheck, false); }
   public static Offset<FlatDataGlobal.MiniGameShootingCharacterExcel> EndMiniGameShootingCharacterExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.MiniGameShootingCharacterExcel>(o);

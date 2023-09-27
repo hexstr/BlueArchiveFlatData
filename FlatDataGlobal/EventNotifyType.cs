@@ -11,6 +11,7 @@ public enum EventNotifyType : int
   AccountExpIncreaseEvent = 1,
   RaidSeasonManager = 2,
   TimeAttackDungeonSeasonManage = 3,
+  EliminateRaidSeasonManage = 4,
 };
 
 

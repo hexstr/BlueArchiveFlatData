@@ -66,6 +66,15 @@ public struct GroundExcel : IFlatbufferObject
   public FlatDataGlobal.TacticSpeed ForcedTacticSpeed { get { int o = __p.__offset(78); return o != 0 ? (FlatDataGlobal.TacticSpeed)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticSpeed.None; } }
   public FlatDataGlobal.TacticSkillUse ForcedSkillUse { get { int o = __p.__offset(80); return o != 0 ? (FlatDataGlobal.TacticSkillUse)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticSkillUse.None; } }
   public FlatDataGlobal.ShowSkillCutIn ShowNPCSkillCutIn { get { int o = __p.__offset(82); return o != 0 ? (FlatDataGlobal.ShowSkillCutIn)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ShowSkillCutIn.None; } }
+  public bool ImmuneHitBeforeTimeOutEnd { get { int o = __p.__offset(84); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool UIBattleHideFromScratch { get { int o = __p.__offset(86); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string BattleReadyTimelinePath { get { int o = __p.__offset(88); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetBattleReadyTimelinePathBytes() { return __p.__vector_as_span<byte>(88, 1); }
+#else
+  public ArraySegment<byte>? GetBattleReadyTimelinePathBytes() { return __p.__vector_as_arraysegment(88); }
+#endif
+  public byte[] GetBattleReadyTimelinePathArray() { return __p.__vector_as_array<byte>(88); }
 
   public static Offset<FlatDataGlobal.GroundExcel> CreateGroundExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -107,8 +116,11 @@ public struct GroundExcel : IFlatbufferObject
       bool TSSHatchOpen = false,
       FlatDataGlobal.TacticSpeed ForcedTacticSpeed = FlatDataGlobal.TacticSpeed.None,
       FlatDataGlobal.TacticSkillUse ForcedSkillUse = FlatDataGlobal.TacticSkillUse.None,
-      FlatDataGlobal.ShowSkillCutIn ShowNPCSkillCutIn = FlatDataGlobal.ShowSkillCutIn.None) {
-    builder.StartTable(40);
+      FlatDataGlobal.ShowSkillCutIn ShowNPCSkillCutIn = FlatDataGlobal.ShowSkillCutIn.None,
+      bool ImmuneHitBeforeTimeOutEnd = false,
+      bool UIBattleHideFromScratch = false,
+      StringOffset BattleReadyTimelinePathOffset = default(StringOffset)) {
+    builder.StartTable(43);
     GroundExcel.AddBGMId(builder, BGMId);
     GroundExcel.AddTSSAirUnitHeight(builder, TSSAirUnitHeight);
     GroundExcel.AddEnemySkillRangeRate(builder, EnemySkillRangeRate);
@@ -136,6 +148,7 @@ public struct GroundExcel : IFlatbufferObject
     GroundExcel.AddLevelNPC(builder, LevelNPC);
     GroundExcel.AddFormationGroupId(builder, FormationGroupId);
     GroundExcel.AddId(builder, Id);
+    GroundExcel.AddBattleReadyTimelinePath(builder, BattleReadyTimelinePathOffset);
     GroundExcel.AddShowNPCSkillCutIn(builder, ShowNPCSkillCutIn);
     GroundExcel.AddForcedSkillUse(builder, ForcedSkillUse);
     GroundExcel.AddForcedTacticSpeed(builder, ForcedTacticSpeed);
@@ -144,6 +157,8 @@ public struct GroundExcel : IFlatbufferObject
     GroundExcel.AddStagetopography(builder, stagetopography);
     GroundExcel.AddGroundSceneName(builder, GroundSceneNameOffset);
     GroundExcel.AddStageFileName(builder, StageFileNameOffset);
+    GroundExcel.AddUIBattleHideFromScratch(builder, UIBattleHideFromScratch);
+    GroundExcel.AddImmuneHitBeforeTimeOutEnd(builder, ImmuneHitBeforeTimeOutEnd);
     GroundExcel.AddTSSHatchOpen(builder, TSSHatchOpen);
     GroundExcel.AddWarningUI(builder, WarningUI);
     GroundExcel.AddIsPhaseBGM(builder, IsPhaseBGM);
@@ -152,7 +167,7 @@ public struct GroundExcel : IFlatbufferObject
     return GroundExcel.EndGroundExcel(builder);
   }
 
-  public static void StartGroundExcel(FlatBufferBuilder builder) { builder.StartTable(40); }
+  public static void StartGroundExcel(FlatBufferBuilder builder) { builder.StartTable(43); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddStageFileName(FlatBufferBuilder builder, VectorOffset StageFileNameOffset) { builder.AddOffset(1, StageFileNameOffset.Value, 0); }
   public static VectorOffset CreateStageFileNameVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
@@ -198,6 +213,9 @@ public struct GroundExcel : IFlatbufferObject
   public static void AddForcedTacticSpeed(FlatBufferBuilder builder, FlatDataGlobal.TacticSpeed ForcedTacticSpeed) { builder.AddInt(37, (int)ForcedTacticSpeed, 0); }
   public static void AddForcedSkillUse(FlatBufferBuilder builder, FlatDataGlobal.TacticSkillUse ForcedSkillUse) { builder.AddInt(38, (int)ForcedSkillUse, 0); }
   public static void AddShowNPCSkillCutIn(FlatBufferBuilder builder, FlatDataGlobal.ShowSkillCutIn ShowNPCSkillCutIn) { builder.AddInt(39, (int)ShowNPCSkillCutIn, 0); }
+  public static void AddImmuneHitBeforeTimeOutEnd(FlatBufferBuilder builder, bool ImmuneHitBeforeTimeOutEnd) { builder.AddBool(40, ImmuneHitBeforeTimeOutEnd, false); }
+  public static void AddUIBattleHideFromScratch(FlatBufferBuilder builder, bool UIBattleHideFromScratch) { builder.AddBool(41, UIBattleHideFromScratch, false); }
+  public static void AddBattleReadyTimelinePath(FlatBufferBuilder builder, StringOffset BattleReadyTimelinePathOffset) { builder.AddOffset(42, BattleReadyTimelinePathOffset.Value, 0); }
   public static Offset<FlatDataGlobal.GroundExcel> EndGroundExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.GroundExcel>(o);

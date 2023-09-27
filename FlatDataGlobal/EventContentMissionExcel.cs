@@ -60,83 +60,84 @@ public struct EventContentMissionExcel : IFlatbufferObject
   public long AccountLevel { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string ShortcutUI(int j) { int o = __p.__offset(32); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
   public int ShortcutUILength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public FlatDataGlobal.MissionCompleteConditionType CompleteConditionType { get { int o = __p.__offset(34); return o != 0 ? (FlatDataGlobal.MissionCompleteConditionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MissionCompleteConditionType.None; } }
-  public bool IsCompleteExtensionTime { get { int o = __p.__offset(36); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long CompleteConditionCount { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CompleteConditionParameter(int j) { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int CompleteConditionParameterLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long ChallengeStageShortcut { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.MissionCompleteConditionType CompleteConditionType { get { int o = __p.__offset(36); return o != 0 ? (FlatDataGlobal.MissionCompleteConditionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MissionCompleteConditionType.None; } }
+  public bool IsCompleteExtensionTime { get { int o = __p.__offset(38); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long CompleteConditionCount { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CompleteConditionParameter(int j) { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int CompleteConditionParameterLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetCompleteConditionParameterBytes() { return __p.__vector_as_span<long>(40, 8); }
+  public Span<long> GetCompleteConditionParameterBytes() { return __p.__vector_as_span<long>(42, 8); }
 #else
-  public ArraySegment<byte>? GetCompleteConditionParameterBytes() { return __p.__vector_as_arraysegment(40); }
+  public ArraySegment<byte>? GetCompleteConditionParameterBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public long[] GetCompleteConditionParameterArray() { return __p.__vector_as_array<long>(40); }
-  public string CompleteConditionParameterName(int j) { int o = __p.__offset(42); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int CompleteConditionParameterNameLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string RewardIcon { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long[] GetCompleteConditionParameterArray() { return __p.__vector_as_array<long>(42); }
+  public string CompleteConditionParameterName(int j) { int o = __p.__offset(44); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int CompleteConditionParameterNameLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string RewardIcon { get { int o = __p.__offset(46); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetRewardIconBytes() { return __p.__vector_as_span<byte>(44, 1); }
+  public Span<byte> GetRewardIconBytes() { return __p.__vector_as_span<byte>(46, 1); }
 #else
-  public ArraySegment<byte>? GetRewardIconBytes() { return __p.__vector_as_arraysegment(44); }
+  public ArraySegment<byte>? GetRewardIconBytes() { return __p.__vector_as_arraysegment(46); }
 #endif
-  public byte[] GetRewardIconArray() { return __p.__vector_as_array<byte>(44); }
-  public long CompleteConditionMissionId(int j) { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int CompleteConditionMissionIdLength { get { int o = __p.__offset(46); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetRewardIconArray() { return __p.__vector_as_array<byte>(46); }
+  public long CompleteConditionMissionId(int j) { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int CompleteConditionMissionIdLength { get { int o = __p.__offset(48); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetCompleteConditionMissionIdBytes() { return __p.__vector_as_span<long>(46, 8); }
+  public Span<long> GetCompleteConditionMissionIdBytes() { return __p.__vector_as_span<long>(48, 8); }
 #else
-  public ArraySegment<byte>? GetCompleteConditionMissionIdBytes() { return __p.__vector_as_arraysegment(46); }
+  public ArraySegment<byte>? GetCompleteConditionMissionIdBytes() { return __p.__vector_as_arraysegment(48); }
 #endif
-  public long[] GetCompleteConditionMissionIdArray() { return __p.__vector_as_array<long>(46); }
-  public long CompleteConditionMissionCount { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ParcelType MissionRewardParcelType(int j) { int o = __p.__offset(50); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
-  public int MissionRewardParcelTypeLength { get { int o = __p.__offset(50); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetCompleteConditionMissionIdArray() { return __p.__vector_as_array<long>(48); }
+  public long CompleteConditionMissionCount { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.ParcelType MissionRewardParcelType(int j) { int o = __p.__offset(52); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
+  public int MissionRewardParcelTypeLength { get { int o = __p.__offset(52); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.ParcelType> GetMissionRewardParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(50, 4); }
+  public Span<FlatDataGlobal.ParcelType> GetMissionRewardParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(52, 4); }
 #else
-  public ArraySegment<byte>? GetMissionRewardParcelTypeBytes() { return __p.__vector_as_arraysegment(50); }
+  public ArraySegment<byte>? GetMissionRewardParcelTypeBytes() { return __p.__vector_as_arraysegment(52); }
 #endif
-  public FlatDataGlobal.ParcelType[] GetMissionRewardParcelTypeArray() { int o = __p.__offset(50); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
-  public long MissionRewardParcelId(int j) { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int MissionRewardParcelIdLength { get { int o = __p.__offset(52); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.ParcelType[] GetMissionRewardParcelTypeArray() { int o = __p.__offset(52); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
+  public long MissionRewardParcelId(int j) { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int MissionRewardParcelIdLength { get { int o = __p.__offset(54); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetMissionRewardParcelIdBytes() { return __p.__vector_as_span<long>(52, 8); }
+  public Span<long> GetMissionRewardParcelIdBytes() { return __p.__vector_as_span<long>(54, 8); }
 #else
-  public ArraySegment<byte>? GetMissionRewardParcelIdBytes() { return __p.__vector_as_arraysegment(52); }
+  public ArraySegment<byte>? GetMissionRewardParcelIdBytes() { return __p.__vector_as_arraysegment(54); }
 #endif
-  public long[] GetMissionRewardParcelIdArray() { return __p.__vector_as_array<long>(52); }
-  public int MissionRewardAmount(int j) { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int MissionRewardAmountLength { get { int o = __p.__offset(54); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetMissionRewardParcelIdArray() { return __p.__vector_as_array<long>(54); }
+  public int MissionRewardAmount(int j) { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int MissionRewardAmountLength { get { int o = __p.__offset(56); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetMissionRewardAmountBytes() { return __p.__vector_as_span<int>(54, 4); }
+  public Span<int> GetMissionRewardAmountBytes() { return __p.__vector_as_span<int>(56, 4); }
 #else
-  public ArraySegment<byte>? GetMissionRewardAmountBytes() { return __p.__vector_as_arraysegment(54); }
+  public ArraySegment<byte>? GetMissionRewardAmountBytes() { return __p.__vector_as_arraysegment(56); }
 #endif
-  public int[] GetMissionRewardAmountArray() { return __p.__vector_as_array<int>(54); }
-  public FlatDataGlobal.ParcelType ConditionRewardParcelType(int j) { int o = __p.__offset(56); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
-  public int ConditionRewardParcelTypeLength { get { int o = __p.__offset(56); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetMissionRewardAmountArray() { return __p.__vector_as_array<int>(56); }
+  public FlatDataGlobal.ParcelType ConditionRewardParcelType(int j) { int o = __p.__offset(58); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
+  public int ConditionRewardParcelTypeLength { get { int o = __p.__offset(58); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.ParcelType> GetConditionRewardParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(56, 4); }
+  public Span<FlatDataGlobal.ParcelType> GetConditionRewardParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(58, 4); }
 #else
-  public ArraySegment<byte>? GetConditionRewardParcelTypeBytes() { return __p.__vector_as_arraysegment(56); }
+  public ArraySegment<byte>? GetConditionRewardParcelTypeBytes() { return __p.__vector_as_arraysegment(58); }
 #endif
-  public FlatDataGlobal.ParcelType[] GetConditionRewardParcelTypeArray() { int o = __p.__offset(56); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
-  public long ConditionRewardParcelId(int j) { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int ConditionRewardParcelIdLength { get { int o = __p.__offset(58); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.ParcelType[] GetConditionRewardParcelTypeArray() { int o = __p.__offset(58); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
+  public long ConditionRewardParcelId(int j) { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ConditionRewardParcelIdLength { get { int o = __p.__offset(60); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetConditionRewardParcelIdBytes() { return __p.__vector_as_span<long>(58, 8); }
+  public Span<long> GetConditionRewardParcelIdBytes() { return __p.__vector_as_span<long>(60, 8); }
 #else
-  public ArraySegment<byte>? GetConditionRewardParcelIdBytes() { return __p.__vector_as_arraysegment(58); }
+  public ArraySegment<byte>? GetConditionRewardParcelIdBytes() { return __p.__vector_as_arraysegment(60); }
 #endif
-  public long[] GetConditionRewardParcelIdArray() { return __p.__vector_as_array<long>(58); }
-  public int ConditionRewardAmount(int j) { int o = __p.__offset(60); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int ConditionRewardAmountLength { get { int o = __p.__offset(60); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetConditionRewardParcelIdArray() { return __p.__vector_as_array<long>(60); }
+  public int ConditionRewardAmount(int j) { int o = __p.__offset(62); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int ConditionRewardAmountLength { get { int o = __p.__offset(62); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetConditionRewardAmountBytes() { return __p.__vector_as_span<int>(60, 4); }
+  public Span<int> GetConditionRewardAmountBytes() { return __p.__vector_as_span<int>(62, 4); }
 #else
-  public ArraySegment<byte>? GetConditionRewardAmountBytes() { return __p.__vector_as_arraysegment(60); }
+  public ArraySegment<byte>? GetConditionRewardAmountBytes() { return __p.__vector_as_arraysegment(62); }
 #endif
-  public int[] GetConditionRewardAmountArray() { return __p.__vector_as_array<int>(60); }
+  public int[] GetConditionRewardAmountArray() { return __p.__vector_as_array<int>(62); }
 
   public static Offset<FlatDataGlobal.EventContentMissionExcel> CreateEventContentMissionExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -154,6 +155,7 @@ public struct EventContentMissionExcel : IFlatbufferObject
       FlatDataGlobal.AccountState AccountType = FlatDataGlobal.AccountState.WaitingSignIn,
       long AccountLevel = 0,
       VectorOffset ShortcutUIOffset = default(VectorOffset),
+      long ChallengeStageShortcut = 0,
       FlatDataGlobal.MissionCompleteConditionType CompleteConditionType = FlatDataGlobal.MissionCompleteConditionType.None,
       bool IsCompleteExtensionTime = false,
       long CompleteConditionCount = 0,
@@ -168,9 +170,10 @@ public struct EventContentMissionExcel : IFlatbufferObject
       VectorOffset ConditionRewardParcelTypeOffset = default(VectorOffset),
       VectorOffset ConditionRewardParcelIdOffset = default(VectorOffset),
       VectorOffset ConditionRewardAmountOffset = default(VectorOffset)) {
-    builder.StartTable(29);
+    builder.StartTable(30);
     EventContentMissionExcel.AddCompleteConditionMissionCount(builder, CompleteConditionMissionCount);
     EventContentMissionExcel.AddCompleteConditionCount(builder, CompleteConditionCount);
+    EventContentMissionExcel.AddChallengeStageShortcut(builder, ChallengeStageShortcut);
     EventContentMissionExcel.AddAccountLevel(builder, AccountLevel);
     EventContentMissionExcel.AddDisplayOrder(builder, DisplayOrder);
     EventContentMissionExcel.AddGroupId(builder, GroupId);
@@ -201,7 +204,7 @@ public struct EventContentMissionExcel : IFlatbufferObject
     return EventContentMissionExcel.EndEventContentMissionExcel(builder);
   }
 
-  public static void StartEventContentMissionExcel(FlatBufferBuilder builder) { builder.StartTable(29); }
+  public static void StartEventContentMissionExcel(FlatBufferBuilder builder) { builder.StartTable(30); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(1, EventContentId, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(2, GroupId, 0); }
@@ -227,60 +230,61 @@ public struct EventContentMissionExcel : IFlatbufferObject
   public static VectorOffset CreateShortcutUIVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateShortcutUIVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartShortcutUIVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddCompleteConditionType(FlatBufferBuilder builder, FlatDataGlobal.MissionCompleteConditionType CompleteConditionType) { builder.AddInt(15, (int)CompleteConditionType, 0); }
-  public static void AddIsCompleteExtensionTime(FlatBufferBuilder builder, bool IsCompleteExtensionTime) { builder.AddBool(16, IsCompleteExtensionTime, false); }
-  public static void AddCompleteConditionCount(FlatBufferBuilder builder, long CompleteConditionCount) { builder.AddLong(17, CompleteConditionCount, 0); }
-  public static void AddCompleteConditionParameter(FlatBufferBuilder builder, VectorOffset CompleteConditionParameterOffset) { builder.AddOffset(18, CompleteConditionParameterOffset.Value, 0); }
+  public static void AddChallengeStageShortcut(FlatBufferBuilder builder, long ChallengeStageShortcut) { builder.AddLong(15, ChallengeStageShortcut, 0); }
+  public static void AddCompleteConditionType(FlatBufferBuilder builder, FlatDataGlobal.MissionCompleteConditionType CompleteConditionType) { builder.AddInt(16, (int)CompleteConditionType, 0); }
+  public static void AddIsCompleteExtensionTime(FlatBufferBuilder builder, bool IsCompleteExtensionTime) { builder.AddBool(17, IsCompleteExtensionTime, false); }
+  public static void AddCompleteConditionCount(FlatBufferBuilder builder, long CompleteConditionCount) { builder.AddLong(18, CompleteConditionCount, 0); }
+  public static void AddCompleteConditionParameter(FlatBufferBuilder builder, VectorOffset CompleteConditionParameterOffset) { builder.AddOffset(19, CompleteConditionParameterOffset.Value, 0); }
   public static VectorOffset CreateCompleteConditionParameterVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateCompleteConditionParameterVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCompleteConditionParameterVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCompleteConditionParameterVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCompleteConditionParameterVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddCompleteConditionParameterName(FlatBufferBuilder builder, VectorOffset CompleteConditionParameterNameOffset) { builder.AddOffset(19, CompleteConditionParameterNameOffset.Value, 0); }
+  public static void AddCompleteConditionParameterName(FlatBufferBuilder builder, VectorOffset CompleteConditionParameterNameOffset) { builder.AddOffset(20, CompleteConditionParameterNameOffset.Value, 0); }
   public static VectorOffset CreateCompleteConditionParameterNameVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateCompleteConditionParameterNameVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCompleteConditionParameterNameVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCompleteConditionParameterNameVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCompleteConditionParameterNameVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddRewardIcon(FlatBufferBuilder builder, StringOffset RewardIconOffset) { builder.AddOffset(20, RewardIconOffset.Value, 0); }
-  public static void AddCompleteConditionMissionId(FlatBufferBuilder builder, VectorOffset CompleteConditionMissionIdOffset) { builder.AddOffset(21, CompleteConditionMissionIdOffset.Value, 0); }
+  public static void AddRewardIcon(FlatBufferBuilder builder, StringOffset RewardIconOffset) { builder.AddOffset(21, RewardIconOffset.Value, 0); }
+  public static void AddCompleteConditionMissionId(FlatBufferBuilder builder, VectorOffset CompleteConditionMissionIdOffset) { builder.AddOffset(22, CompleteConditionMissionIdOffset.Value, 0); }
   public static VectorOffset CreateCompleteConditionMissionIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateCompleteConditionMissionIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCompleteConditionMissionIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCompleteConditionMissionIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCompleteConditionMissionIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddCompleteConditionMissionCount(FlatBufferBuilder builder, long CompleteConditionMissionCount) { builder.AddLong(22, CompleteConditionMissionCount, 0); }
-  public static void AddMissionRewardParcelType(FlatBufferBuilder builder, VectorOffset MissionRewardParcelTypeOffset) { builder.AddOffset(23, MissionRewardParcelTypeOffset.Value, 0); }
+  public static void AddCompleteConditionMissionCount(FlatBufferBuilder builder, long CompleteConditionMissionCount) { builder.AddLong(23, CompleteConditionMissionCount, 0); }
+  public static void AddMissionRewardParcelType(FlatBufferBuilder builder, VectorOffset MissionRewardParcelTypeOffset) { builder.AddOffset(24, MissionRewardParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateMissionRewardParcelTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardParcelTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardParcelTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ParcelType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardParcelTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ParcelType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartMissionRewardParcelTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddMissionRewardParcelId(FlatBufferBuilder builder, VectorOffset MissionRewardParcelIdOffset) { builder.AddOffset(24, MissionRewardParcelIdOffset.Value, 0); }
+  public static void AddMissionRewardParcelId(FlatBufferBuilder builder, VectorOffset MissionRewardParcelIdOffset) { builder.AddOffset(25, MissionRewardParcelIdOffset.Value, 0); }
   public static VectorOffset CreateMissionRewardParcelIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardParcelIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardParcelIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardParcelIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartMissionRewardParcelIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddMissionRewardAmount(FlatBufferBuilder builder, VectorOffset MissionRewardAmountOffset) { builder.AddOffset(25, MissionRewardAmountOffset.Value, 0); }
+  public static void AddMissionRewardAmount(FlatBufferBuilder builder, VectorOffset MissionRewardAmountOffset) { builder.AddOffset(26, MissionRewardAmountOffset.Value, 0); }
   public static VectorOffset CreateMissionRewardAmountVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardAmountVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMissionRewardAmountVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartMissionRewardAmountVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddConditionRewardParcelType(FlatBufferBuilder builder, VectorOffset ConditionRewardParcelTypeOffset) { builder.AddOffset(26, ConditionRewardParcelTypeOffset.Value, 0); }
+  public static void AddConditionRewardParcelType(FlatBufferBuilder builder, VectorOffset ConditionRewardParcelTypeOffset) { builder.AddOffset(27, ConditionRewardParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateConditionRewardParcelTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateConditionRewardParcelTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateConditionRewardParcelTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ParcelType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateConditionRewardParcelTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ParcelType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartConditionRewardParcelTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddConditionRewardParcelId(FlatBufferBuilder builder, VectorOffset ConditionRewardParcelIdOffset) { builder.AddOffset(27, ConditionRewardParcelIdOffset.Value, 0); }
+  public static void AddConditionRewardParcelId(FlatBufferBuilder builder, VectorOffset ConditionRewardParcelIdOffset) { builder.AddOffset(28, ConditionRewardParcelIdOffset.Value, 0); }
   public static VectorOffset CreateConditionRewardParcelIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateConditionRewardParcelIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateConditionRewardParcelIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateConditionRewardParcelIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartConditionRewardParcelIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddConditionRewardAmount(FlatBufferBuilder builder, VectorOffset ConditionRewardAmountOffset) { builder.AddOffset(28, ConditionRewardAmountOffset.Value, 0); }
+  public static void AddConditionRewardAmount(FlatBufferBuilder builder, VectorOffset ConditionRewardAmountOffset) { builder.AddOffset(29, ConditionRewardAmountOffset.Value, 0); }
   public static VectorOffset CreateConditionRewardAmountVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateConditionRewardAmountVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateConditionRewardAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }

@@ -22,48 +22,51 @@ public struct RecipeExcel : IFlatbufferObject
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.RecipeType Recipetype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RecipeType.None; } }
   public long RecipeIngredientId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ParcelType ParcelType(int j) { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
-  public int ParcelTypeLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long RecipeSelectionGroupId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.ParcelType ParcelType(int j) { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
+  public int ParcelTypeLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.ParcelType> GetParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(10, 4); }
+  public Span<FlatDataGlobal.ParcelType> GetParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(12, 4); }
 #else
-  public ArraySegment<byte>? GetParcelTypeBytes() { return __p.__vector_as_arraysegment(10); }
+  public ArraySegment<byte>? GetParcelTypeBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
-  public FlatDataGlobal.ParcelType[] GetParcelTypeArray() { int o = __p.__offset(10); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
-  public long ParcelId(int j) { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int ParcelIdLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.ParcelType[] GetParcelTypeArray() { int o = __p.__offset(12); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
+  public long ParcelId(int j) { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ParcelIdLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetParcelIdBytes() { return __p.__vector_as_span<long>(12, 8); }
+  public Span<long> GetParcelIdBytes() { return __p.__vector_as_span<long>(14, 8); }
 #else
-  public ArraySegment<byte>? GetParcelIdBytes() { return __p.__vector_as_arraysegment(12); }
+  public ArraySegment<byte>? GetParcelIdBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
-  public long[] GetParcelIdArray() { return __p.__vector_as_array<long>(12); }
-  public long ResultAmountMin(int j) { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int ResultAmountMinLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetParcelIdArray() { return __p.__vector_as_array<long>(14); }
+  public long ResultAmountMin(int j) { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ResultAmountMinLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetResultAmountMinBytes() { return __p.__vector_as_span<long>(14, 8); }
+  public Span<long> GetResultAmountMinBytes() { return __p.__vector_as_span<long>(16, 8); }
 #else
-  public ArraySegment<byte>? GetResultAmountMinBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetResultAmountMinBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public long[] GetResultAmountMinArray() { return __p.__vector_as_array<long>(14); }
-  public long ResultAmountMax(int j) { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int ResultAmountMaxLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetResultAmountMinArray() { return __p.__vector_as_array<long>(16); }
+  public long ResultAmountMax(int j) { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ResultAmountMaxLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetResultAmountMaxBytes() { return __p.__vector_as_span<long>(16, 8); }
+  public Span<long> GetResultAmountMaxBytes() { return __p.__vector_as_span<long>(18, 8); }
 #else
-  public ArraySegment<byte>? GetResultAmountMaxBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetResultAmountMaxBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public long[] GetResultAmountMaxArray() { return __p.__vector_as_array<long>(16); }
+  public long[] GetResultAmountMaxArray() { return __p.__vector_as_array<long>(18); }
 
   public static Offset<FlatDataGlobal.RecipeExcel> CreateRecipeExcel(FlatBufferBuilder builder,
       long Id = 0,
       FlatDataGlobal.RecipeType recipetype = FlatDataGlobal.RecipeType.None,
       long RecipeIngredientId = 0,
+      long RecipeSelectionGroupId = 0,
       VectorOffset ParcelTypeOffset = default(VectorOffset),
       VectorOffset ParcelIdOffset = default(VectorOffset),
       VectorOffset ResultAmountMinOffset = default(VectorOffset),
       VectorOffset ResultAmountMaxOffset = default(VectorOffset)) {
-    builder.StartTable(7);
+    builder.StartTable(8);
+    RecipeExcel.AddRecipeSelectionGroupId(builder, RecipeSelectionGroupId);
     RecipeExcel.AddRecipeIngredientId(builder, RecipeIngredientId);
     RecipeExcel.AddId(builder, Id);
     RecipeExcel.AddResultAmountMax(builder, ResultAmountMaxOffset);
@@ -74,29 +77,30 @@ public struct RecipeExcel : IFlatbufferObject
     return RecipeExcel.EndRecipeExcel(builder);
   }
 
-  public static void StartRecipeExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
+  public static void StartRecipeExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddRecipetype(FlatBufferBuilder builder, FlatDataGlobal.RecipeType recipetype) { builder.AddInt(1, (int)recipetype, 0); }
   public static void AddRecipeIngredientId(FlatBufferBuilder builder, long RecipeIngredientId) { builder.AddLong(2, RecipeIngredientId, 0); }
-  public static void AddParcelType(FlatBufferBuilder builder, VectorOffset ParcelTypeOffset) { builder.AddOffset(3, ParcelTypeOffset.Value, 0); }
+  public static void AddRecipeSelectionGroupId(FlatBufferBuilder builder, long RecipeSelectionGroupId) { builder.AddLong(3, RecipeSelectionGroupId, 0); }
+  public static void AddParcelType(FlatBufferBuilder builder, VectorOffset ParcelTypeOffset) { builder.AddOffset(4, ParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateParcelTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateParcelTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateParcelTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ParcelType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateParcelTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ParcelType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartParcelTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddParcelId(FlatBufferBuilder builder, VectorOffset ParcelIdOffset) { builder.AddOffset(4, ParcelIdOffset.Value, 0); }
+  public static void AddParcelId(FlatBufferBuilder builder, VectorOffset ParcelIdOffset) { builder.AddOffset(5, ParcelIdOffset.Value, 0); }
   public static VectorOffset CreateParcelIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateParcelIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateParcelIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateParcelIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartParcelIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddResultAmountMin(FlatBufferBuilder builder, VectorOffset ResultAmountMinOffset) { builder.AddOffset(5, ResultAmountMinOffset.Value, 0); }
+  public static void AddResultAmountMin(FlatBufferBuilder builder, VectorOffset ResultAmountMinOffset) { builder.AddOffset(6, ResultAmountMinOffset.Value, 0); }
   public static VectorOffset CreateResultAmountMinVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateResultAmountMinVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateResultAmountMinVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateResultAmountMinVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartResultAmountMinVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddResultAmountMax(FlatBufferBuilder builder, VectorOffset ResultAmountMaxOffset) { builder.AddOffset(6, ResultAmountMaxOffset.Value, 0); }
+  public static void AddResultAmountMax(FlatBufferBuilder builder, VectorOffset ResultAmountMaxOffset) { builder.AddOffset(7, ResultAmountMaxOffset.Value, 0); }
   public static VectorOffset CreateResultAmountMaxVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateResultAmountMaxVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateResultAmountMaxVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }

@@ -232,8 +232,10 @@ public struct ConstCommonExcel : IFlatbufferObject
   public int CharProfilePopupRowIntervalKr { get { int o = __p.__offset(330); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int CharProfilePopupRowIntervalJp { get { int o = __p.__offset(332); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long LowMemorySizeGL { get { int o = __p.__offset(334); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int BeforehandGachaCount1 { get { int o = __p.__offset(336); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int BeforehandGachaGroup1 { get { int o = __p.__offset(338); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
-  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(166); }
+  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(168); }
   public static void AddCampaignMainStageMaxRank(FlatBufferBuilder builder, int CampaignMainStageMaxRank) { builder.AddInt(0, CampaignMainStageMaxRank, 0); }
   public static void AddCampaignMainStageBestRecord(FlatBufferBuilder builder, int CampaignMainStageBestRecord) { builder.AddInt(1, CampaignMainStageBestRecord, 0); }
   public static void AddHardAdventurePlayCountRecoverDailyNumber(FlatBufferBuilder builder, int HardAdventurePlayCountRecoverDailyNumber) { builder.AddInt(2, HardAdventurePlayCountRecoverDailyNumber, 0); }
@@ -425,6 +427,8 @@ public struct ConstCommonExcel : IFlatbufferObject
   public static void AddCharProfilePopupRowIntervalKr(FlatBufferBuilder builder, int CharProfilePopupRowIntervalKr) { builder.AddInt(163, CharProfilePopupRowIntervalKr, 0); }
   public static void AddCharProfilePopupRowIntervalJp(FlatBufferBuilder builder, int CharProfilePopupRowIntervalJp) { builder.AddInt(164, CharProfilePopupRowIntervalJp, 0); }
   public static void AddLowMemorySizeGL(FlatBufferBuilder builder, long LowMemorySizeGL) { builder.AddLong(165, LowMemorySizeGL, 0); }
+  public static void AddBeforehandGachaCount1(FlatBufferBuilder builder, int BeforehandGachaCount1) { builder.AddInt(166, BeforehandGachaCount1, 0); }
+  public static void AddBeforehandGachaGroup1(FlatBufferBuilder builder, int BeforehandGachaGroup1) { builder.AddInt(167, BeforehandGachaGroup1, 0); }
   public static Offset<FlatDataGlobal.ConstCommonExcel> EndConstCommonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstCommonExcel>(o);

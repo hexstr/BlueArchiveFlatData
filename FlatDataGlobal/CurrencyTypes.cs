@@ -29,7 +29,12 @@ public enum CurrencyTypes : int
   WorldRaidTicketA = 19,
   WorldRaidTicketB = 20,
   WorldRaidTicketC = 21,
-  Max = 22,
+  ChaserTotalTicket = 22,
+  SchoolDungeonTotalTicket = 23,
+  EliminateTicketA = 24,
+  EliminateTicketB = 25,
+  EliminateTicketC = 26,
+  Max = 27,
 };
 
 

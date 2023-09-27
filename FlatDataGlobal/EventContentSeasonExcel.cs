@@ -132,17 +132,25 @@ public struct EventContentSeasonExcel : IFlatbufferObject
   public ArraySegment<byte>? GetMinigameVictoryPrefabNameBytes() { return __p.__vector_as_arraysegment(58); }
 #endif
   public byte[] GetMinigameVictoryPrefabNameArray() { return __p.__vector_as_array<byte>(58); }
-  public string MinigameRhythmMissionBgPrefabName { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string MinigameMissionBgPrefabName { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMinigameRhythmMissionBgPrefabNameBytes() { return __p.__vector_as_span<byte>(60, 1); }
+  public Span<byte> GetMinigameMissionBgPrefabNameBytes() { return __p.__vector_as_span<byte>(60, 1); }
 #else
-  public ArraySegment<byte>? GetMinigameRhythmMissionBgPrefabNameBytes() { return __p.__vector_as_arraysegment(60); }
+  public ArraySegment<byte>? GetMinigameMissionBgPrefabNameBytes() { return __p.__vector_as_arraysegment(60); }
 #endif
-  public byte[] GetMinigameRhythmMissionBgPrefabNameArray() { return __p.__vector_as_array<byte>(60); }
-  public bool EventAssist { get { int o = __p.__offset(62); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.EventContentReleaseType Eventcontentreleasetype { get { int o = __p.__offset(64); return o != 0 ? (FlatDataGlobal.EventContentReleaseType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentReleaseType.None; } }
-  public long EventContentStageRewardIdPermanent { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.RewardTag RewardTagPermanent { get { int o = __p.__offset(68); return o != 0 ? (FlatDataGlobal.RewardTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RewardTag.Default; } }
+  public byte[] GetMinigameMissionBgPrefabNameArray() { return __p.__vector_as_array<byte>(60); }
+  public string CardBgImagePath { get { int o = __p.__offset(62); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetCardBgImagePathBytes() { return __p.__vector_as_span<byte>(62, 1); }
+#else
+  public ArraySegment<byte>? GetCardBgImagePathBytes() { return __p.__vector_as_arraysegment(62); }
+#endif
+  public byte[] GetCardBgImagePathArray() { return __p.__vector_as_array<byte>(62); }
+  public bool EventAssist { get { int o = __p.__offset(64); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.EventContentReleaseType Eventcontentreleasetype { get { int o = __p.__offset(66); return o != 0 ? (FlatDataGlobal.EventContentReleaseType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentReleaseType.None; } }
+  public long EventContentStageRewardIdPermanent { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.RewardTag RewardTagPermanent { get { int o = __p.__offset(70); return o != 0 ? (FlatDataGlobal.RewardTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RewardTag.Default; } }
+  public long MiniEventShortCutScenarioModeId { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.EventContentSeasonExcel> CreateEventContentSeasonExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
@@ -173,12 +181,15 @@ public struct EventContentSeasonExcel : IFlatbufferObject
       StringOffset ShiftMainBgImagePathOffset = default(StringOffset),
       StringOffset MinigameLobbyPrefabNameOffset = default(StringOffset),
       StringOffset MinigameVictoryPrefabNameOffset = default(StringOffset),
-      StringOffset MinigameRhythmMissionBgPrefabNameOffset = default(StringOffset),
+      StringOffset MinigameMissionBgPrefabNameOffset = default(StringOffset),
+      StringOffset CardBgImagePathOffset = default(StringOffset),
       bool EventAssist = false,
       FlatDataGlobal.EventContentReleaseType eventcontentreleasetype = FlatDataGlobal.EventContentReleaseType.None,
       long EventContentStageRewardIdPermanent = 0,
-      FlatDataGlobal.RewardTag RewardTagPermanent = FlatDataGlobal.RewardTag.Default) {
-    builder.StartTable(33);
+      FlatDataGlobal.RewardTag RewardTagPermanent = FlatDataGlobal.RewardTag.Default,
+      long MiniEventShortCutScenarioModeId = 0) {
+    builder.StartTable(35);
+    EventContentSeasonExcel.AddMiniEventShortCutScenarioModeId(builder, MiniEventShortCutScenarioModeId);
     EventContentSeasonExcel.AddEventContentStageRewardIdPermanent(builder, EventContentStageRewardIdPermanent);
     EventContentSeasonExcel.AddShiftTriggerStageId(builder, ShiftTriggerStageId);
     EventContentSeasonExcel.AddMinigamePrologScenarioGroupId(builder, MinigamePrologScenarioGroupId);
@@ -189,7 +200,8 @@ public struct EventContentSeasonExcel : IFlatbufferObject
     EventContentSeasonExcel.AddEventContentId(builder, EventContentId);
     EventContentSeasonExcel.AddRewardTagPermanent(builder, RewardTagPermanent);
     EventContentSeasonExcel.AddEventcontentreleasetype(builder, eventcontentreleasetype);
-    EventContentSeasonExcel.AddMinigameRhythmMissionBgPrefabName(builder, MinigameRhythmMissionBgPrefabNameOffset);
+    EventContentSeasonExcel.AddCardBgImagePath(builder, CardBgImagePathOffset);
+    EventContentSeasonExcel.AddMinigameMissionBgPrefabName(builder, MinigameMissionBgPrefabNameOffset);
     EventContentSeasonExcel.AddMinigameVictoryPrefabName(builder, MinigameVictoryPrefabNameOffset);
     EventContentSeasonExcel.AddMinigameLobbyPrefabName(builder, MinigameLobbyPrefabNameOffset);
     EventContentSeasonExcel.AddShiftMainBgImagePath(builder, ShiftMainBgImagePathOffset);
@@ -215,7 +227,7 @@ public struct EventContentSeasonExcel : IFlatbufferObject
     return EventContentSeasonExcel.EndEventContentSeasonExcel(builder);
   }
 
-  public static void StartEventContentSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(33); }
+  public static void StartEventContentSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(35); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddOriginalEventContentId(FlatBufferBuilder builder, long OriginalEventContentId) { builder.AddLong(1, OriginalEventContentId, 0); }
   public static void AddIsReturn(FlatBufferBuilder builder, bool IsReturn) { builder.AddBool(2, IsReturn, false); }
@@ -249,11 +261,13 @@ public struct EventContentSeasonExcel : IFlatbufferObject
   public static void AddShiftMainBgImagePath(FlatBufferBuilder builder, StringOffset ShiftMainBgImagePathOffset) { builder.AddOffset(25, ShiftMainBgImagePathOffset.Value, 0); }
   public static void AddMinigameLobbyPrefabName(FlatBufferBuilder builder, StringOffset MinigameLobbyPrefabNameOffset) { builder.AddOffset(26, MinigameLobbyPrefabNameOffset.Value, 0); }
   public static void AddMinigameVictoryPrefabName(FlatBufferBuilder builder, StringOffset MinigameVictoryPrefabNameOffset) { builder.AddOffset(27, MinigameVictoryPrefabNameOffset.Value, 0); }
-  public static void AddMinigameRhythmMissionBgPrefabName(FlatBufferBuilder builder, StringOffset MinigameRhythmMissionBgPrefabNameOffset) { builder.AddOffset(28, MinigameRhythmMissionBgPrefabNameOffset.Value, 0); }
-  public static void AddEventAssist(FlatBufferBuilder builder, bool EventAssist) { builder.AddBool(29, EventAssist, false); }
-  public static void AddEventcontentreleasetype(FlatBufferBuilder builder, FlatDataGlobal.EventContentReleaseType eventcontentreleasetype) { builder.AddInt(30, (int)eventcontentreleasetype, 0); }
-  public static void AddEventContentStageRewardIdPermanent(FlatBufferBuilder builder, long EventContentStageRewardIdPermanent) { builder.AddLong(31, EventContentStageRewardIdPermanent, 0); }
-  public static void AddRewardTagPermanent(FlatBufferBuilder builder, FlatDataGlobal.RewardTag RewardTagPermanent) { builder.AddInt(32, (int)RewardTagPermanent, 0); }
+  public static void AddMinigameMissionBgPrefabName(FlatBufferBuilder builder, StringOffset MinigameMissionBgPrefabNameOffset) { builder.AddOffset(28, MinigameMissionBgPrefabNameOffset.Value, 0); }
+  public static void AddCardBgImagePath(FlatBufferBuilder builder, StringOffset CardBgImagePathOffset) { builder.AddOffset(29, CardBgImagePathOffset.Value, 0); }
+  public static void AddEventAssist(FlatBufferBuilder builder, bool EventAssist) { builder.AddBool(30, EventAssist, false); }
+  public static void AddEventcontentreleasetype(FlatBufferBuilder builder, FlatDataGlobal.EventContentReleaseType eventcontentreleasetype) { builder.AddInt(31, (int)eventcontentreleasetype, 0); }
+  public static void AddEventContentStageRewardIdPermanent(FlatBufferBuilder builder, long EventContentStageRewardIdPermanent) { builder.AddLong(32, EventContentStageRewardIdPermanent, 0); }
+  public static void AddRewardTagPermanent(FlatBufferBuilder builder, FlatDataGlobal.RewardTag RewardTagPermanent) { builder.AddInt(33, (int)RewardTagPermanent, 0); }
+  public static void AddMiniEventShortCutScenarioModeId(FlatBufferBuilder builder, long MiniEventShortCutScenarioModeId) { builder.AddLong(34, MiniEventShortCutScenarioModeId, 0); }
   public static Offset<FlatDataGlobal.EventContentSeasonExcel> EndEventContentSeasonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentSeasonExcel>(o);

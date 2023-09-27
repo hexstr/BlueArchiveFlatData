@@ -24,6 +24,10 @@ public enum VoiceEvent : int
   BattleCover = 14,
   BattleMove = 15,
   BattleMoveToForamtionBeacon = 16,
+  MGS_GameStart = 17,
+  MGS_CharacterSelect = 18,
+  MGS_Attacking = 19,
+  MGS_GeasGet = 20,
 };
 
 

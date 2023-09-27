@@ -19,7 +19,7 @@ public struct BossExternalBTExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public BossExternalBTExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public long CharacterId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ExternalBTId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long AIPhase { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.ExternalBTNodeType Externalbtnodetype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ExternalBTNodeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ExternalBTNodeType.Sequence; } }
   public FlatDataGlobal.ExternalBTTrigger Externalbttrigger { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.ExternalBTTrigger)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ExternalBTTrigger.None; } }
@@ -41,7 +41,7 @@ public struct BossExternalBTExcel : IFlatbufferObject
   public byte[] GetBehaviorArgumentArray() { return __p.__vector_as_array<byte>(18); }
 
   public static Offset<FlatDataGlobal.BossExternalBTExcel> CreateBossExternalBTExcel(FlatBufferBuilder builder,
-      long CharacterId = 0,
+      long ExternalBTId = 0,
       long AIPhase = 0,
       FlatDataGlobal.ExternalBTNodeType externalbtnodetype = FlatDataGlobal.ExternalBTNodeType.Sequence,
       FlatDataGlobal.ExternalBTTrigger externalbttrigger = FlatDataGlobal.ExternalBTTrigger.None,
@@ -52,7 +52,7 @@ public struct BossExternalBTExcel : IFlatbufferObject
     builder.StartTable(8);
     BossExternalBTExcel.AddBehaviorRate(builder, BehaviorRate);
     BossExternalBTExcel.AddAIPhase(builder, AIPhase);
-    BossExternalBTExcel.AddCharacterId(builder, CharacterId);
+    BossExternalBTExcel.AddExternalBTId(builder, ExternalBTId);
     BossExternalBTExcel.AddBehaviorArgument(builder, BehaviorArgumentOffset);
     BossExternalBTExcel.AddExternalbehavior(builder, externalbehavior);
     BossExternalBTExcel.AddTriggerArgument(builder, TriggerArgumentOffset);
@@ -62,7 +62,7 @@ public struct BossExternalBTExcel : IFlatbufferObject
   }
 
   public static void StartBossExternalBTExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
-  public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
+  public static void AddExternalBTId(FlatBufferBuilder builder, long ExternalBTId) { builder.AddLong(0, ExternalBTId, 0); }
   public static void AddAIPhase(FlatBufferBuilder builder, long AIPhase) { builder.AddLong(1, AIPhase, 0); }
   public static void AddExternalbtnodetype(FlatBufferBuilder builder, FlatDataGlobal.ExternalBTNodeType externalbtnodetype) { builder.AddInt(2, (int)externalbtnodetype, 0); }
   public static void AddExternalbttrigger(FlatBufferBuilder builder, FlatDataGlobal.ExternalBTTrigger externalbttrigger) { builder.AddInt(3, (int)externalbttrigger, 0); }

@@ -33,8 +33,15 @@ public enum ShopCategoryType : int
   DirectPayGacha_DontUseGlobal = 23,
   FesGacha = 24,
   TimeAttack = 25,
-  GlobalSpecialGacha = 26,
-  Chaser = 27,
+  Chaser = 26,
+  ChaserTicket = 27,
+  SchoolDungeonTicket = 28,
+  AcademyTicket = 29,
+  Special = 30,
+  Care = 31,
+  BeforehandGacha = 32,
+  EliminateRaid = 33,
+  GlobalSpecialGacha = 34,
 };
 
 

@@ -64,11 +64,13 @@ public enum DialogCategory : int
   UIWorkCoexist_AronaSleepPeek = 54,
   UIEventArchive = 55,
   UIAttendanceEvent12 = 56,
-  GlobalAttendance01 = 57,
-  GlobalAttendance02 = 58,
-  GlobalAttendance03 = 59,
-  GlobalAttendance04 = 60,
-  GlobalAttendance05 = 61,
+  UIAttendanceEvent13 = 57,
+  UIAttendanceEvent14 = 58,
+  GlobalAttendance01 = 59,
+  GlobalAttendance02 = 60,
+  GlobalAttendance03 = 61,
+  GlobalAttendance04 = 62,
+  GlobalAttendance05 = 63,
 };
 
 

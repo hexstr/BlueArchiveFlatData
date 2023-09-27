@@ -57,6 +57,7 @@ public enum OpenConditionContent : int
   Main_L_1_2 = 47,
   Main_L_1_3 = 48,
   Main_L_1_4 = 49,
+  EliminateRaid = 50,
 };
 
 

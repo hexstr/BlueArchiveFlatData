@@ -28,6 +28,7 @@ public enum ParcelType : int
   ProductMonthly = 18,
   CharacterGear = 19,
   IdCardBackground = 20,
+  Emblem = 21,
 };
 
 

@@ -28,6 +28,7 @@ public enum AccountAchievementType : int
   KillEnemyWithDecagrammatonSPOTagCount = 18,
   EventPoint = 19,
   ConquestCalculateReward = 20,
+  TotalJoinEliminateRaidCount = 21,
 };
 
 

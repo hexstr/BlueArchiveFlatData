@@ -151,6 +151,16 @@ public enum ParcelChangeReason : int
   ShiftingCraft_BeginProcess = 141,
   ShiftingCraft_CompleteProcess = 142,
   ShiftingCraft_Reward = 143,
+  MiniGame_ShootingBattleResult = 144,
+  MiniGame_ShootingSweep = 145,
+  EliminateRaid_Failed = 146,
+  EliminateRaid_Reward = 147,
+  EliminateRaid_SeasonReward = 148,
+  EliminateRaid_CreateBattle = 149,
+  EliminateRaid_Sweep = 150,
+  Item_AutoSynth = 151,
+  ContentSweep_MultiSweep = 152,
+  Emblem_Acquire = 153,
 };
 
 

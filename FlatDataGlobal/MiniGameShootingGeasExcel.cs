@@ -37,6 +37,8 @@ public struct MiniGameShootingGeasExcel : IFlatbufferObject
   public ArraySegment<byte>? GetGeasDataBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
   public byte[] GetGeasDataArray() { return __p.__vector_as_array<byte>(14); }
+  public long NeedGeasId { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool HideInPausePopup { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.MiniGameShootingGeasExcel> CreateMiniGameShootingGeasExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
@@ -44,24 +46,30 @@ public struct MiniGameShootingGeasExcel : IFlatbufferObject
       StringOffset IconOffset = default(StringOffset),
       long Probability = 0,
       int MaxOverlapCount = 0,
-      StringOffset GeasDataOffset = default(StringOffset)) {
-    builder.StartTable(6);
+      StringOffset GeasDataOffset = default(StringOffset),
+      long NeedGeasId = 0,
+      bool HideInPausePopup = false) {
+    builder.StartTable(8);
+    MiniGameShootingGeasExcel.AddNeedGeasId(builder, NeedGeasId);
     MiniGameShootingGeasExcel.AddProbability(builder, Probability);
     MiniGameShootingGeasExcel.AddUniqueId(builder, UniqueId);
     MiniGameShootingGeasExcel.AddGeasData(builder, GeasDataOffset);
     MiniGameShootingGeasExcel.AddMaxOverlapCount(builder, MaxOverlapCount);
     MiniGameShootingGeasExcel.AddIcon(builder, IconOffset);
     MiniGameShootingGeasExcel.AddGeasType(builder, GeasType);
+    MiniGameShootingGeasExcel.AddHideInPausePopup(builder, HideInPausePopup);
     return MiniGameShootingGeasExcel.EndMiniGameShootingGeasExcel(builder);
   }
 
-  public static void StartMiniGameShootingGeasExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
+  public static void StartMiniGameShootingGeasExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
   public static void AddGeasType(FlatBufferBuilder builder, FlatDataGlobal.Geas GeasType) { builder.AddInt(1, (int)GeasType, 0); }
   public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(2, IconOffset.Value, 0); }
   public static void AddProbability(FlatBufferBuilder builder, long Probability) { builder.AddLong(3, Probability, 0); }
   public static void AddMaxOverlapCount(FlatBufferBuilder builder, int MaxOverlapCount) { builder.AddInt(4, MaxOverlapCount, 0); }
   public static void AddGeasData(FlatBufferBuilder builder, StringOffset GeasDataOffset) { builder.AddOffset(5, GeasDataOffset.Value, 0); }
+  public static void AddNeedGeasId(FlatBufferBuilder builder, long NeedGeasId) { builder.AddLong(6, NeedGeasId, 0); }
+  public static void AddHideInPausePopup(FlatBufferBuilder builder, bool HideInPausePopup) { builder.AddBool(7, HideInPausePopup, false); }
   public static Offset<FlatDataGlobal.MiniGameShootingGeasExcel> EndMiniGameShootingGeasExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.MiniGameShootingGeasExcel>(o);

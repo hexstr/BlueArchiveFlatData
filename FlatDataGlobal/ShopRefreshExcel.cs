@@ -34,6 +34,7 @@ public struct ShopRefreshExcel : IFlatbufferObject
   public ArraySegment<byte>? GetBuyReportEventNameBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
   public byte[] GetBuyReportEventNameArray() { return __p.__vector_as_array<byte>(20); }
+  public FlatDataGlobal.ProductDisplayTag DisplayTag { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.ProductDisplayTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductDisplayTag.None; } }
 
   public static Offset<FlatDataGlobal.ShopRefreshExcel> CreateShopRefreshExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -44,11 +45,13 @@ public struct ShopRefreshExcel : IFlatbufferObject
       FlatDataGlobal.ShopCategoryType CategoryType = FlatDataGlobal.ShopCategoryType.General,
       int RefreshGroup = 0,
       int Prob = 0,
-      StringOffset BuyReportEventNameOffset = default(StringOffset)) {
-    builder.StartTable(9);
+      StringOffset BuyReportEventNameOffset = default(StringOffset),
+      FlatDataGlobal.ProductDisplayTag DisplayTag = FlatDataGlobal.ProductDisplayTag.None) {
+    builder.StartTable(10);
     ShopRefreshExcel.AddDisplayOrder(builder, DisplayOrder);
     ShopRefreshExcel.AddGoodsId(builder, GoodsId);
     ShopRefreshExcel.AddId(builder, Id);
+    ShopRefreshExcel.AddDisplayTag(builder, DisplayTag);
     ShopRefreshExcel.AddBuyReportEventName(builder, BuyReportEventNameOffset);
     ShopRefreshExcel.AddProb(builder, Prob);
     ShopRefreshExcel.AddRefreshGroup(builder, RefreshGroup);
@@ -58,7 +61,7 @@ public struct ShopRefreshExcel : IFlatbufferObject
     return ShopRefreshExcel.EndShopRefreshExcel(builder);
   }
 
-  public static void StartShopRefreshExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
+  public static void StartShopRefreshExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(1, LocalizeEtcId, 0); }
   public static void AddIsLegacy(FlatBufferBuilder builder, bool IsLegacy) { builder.AddBool(2, IsLegacy, false); }
@@ -68,6 +71,7 @@ public struct ShopRefreshExcel : IFlatbufferObject
   public static void AddRefreshGroup(FlatBufferBuilder builder, int RefreshGroup) { builder.AddInt(6, RefreshGroup, 0); }
   public static void AddProb(FlatBufferBuilder builder, int Prob) { builder.AddInt(7, Prob, 0); }
   public static void AddBuyReportEventName(FlatBufferBuilder builder, StringOffset BuyReportEventNameOffset) { builder.AddOffset(8, BuyReportEventNameOffset.Value, 0); }
+  public static void AddDisplayTag(FlatBufferBuilder builder, FlatDataGlobal.ProductDisplayTag DisplayTag) { builder.AddInt(9, (int)DisplayTag, 0); }
   public static Offset<FlatDataGlobal.ShopRefreshExcel> EndShopRefreshExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ShopRefreshExcel>(o);

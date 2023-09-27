@@ -10,6 +10,7 @@ public enum SchoolDungeonType : int
   SchoolA = 0,
   SchoolB = 1,
   SchoolC = 2,
+  None = 3,
 };
 
 

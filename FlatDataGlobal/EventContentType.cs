@@ -29,6 +29,12 @@ public enum EventContentType : int
   DiceRace = 19,
   MiniGameRhythmMission = 20,
   WorldRaidEntrance = 21,
+  MiniEvent = 22,
+  MiniGameShooting = 23,
+  MiniGameShootingMission = 24,
+  MiniGameTBG = 25,
+  TimeAttackDungeon = 26,
+  EliminateRaid = 27,
 };
 
 

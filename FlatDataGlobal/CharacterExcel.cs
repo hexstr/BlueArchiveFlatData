@@ -73,164 +73,165 @@ public struct CharacterExcel : IFlatbufferObject
   public bool Jumpable { get { int o = __p.__offset(58); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long PersonalityId { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long CharacterAIId { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string ScenarioCharacter { get { int o = __p.__offset(64); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long ExternalBTId { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string ScenarioCharacter { get { int o = __p.__offset(66); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetScenarioCharacterBytes() { return __p.__vector_as_span<byte>(64, 1); }
+  public Span<byte> GetScenarioCharacterBytes() { return __p.__vector_as_span<byte>(66, 1); }
 #else
-  public ArraySegment<byte>? GetScenarioCharacterBytes() { return __p.__vector_as_arraysegment(64); }
+  public ArraySegment<byte>? GetScenarioCharacterBytes() { return __p.__vector_as_arraysegment(66); }
 #endif
-  public byte[] GetScenarioCharacterArray() { return __p.__vector_as_array<byte>(64); }
-  public uint SpawnTemplateId { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public int FavorLevelupType { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.EquipmentCategory EquipmentSlot(int j) { int o = __p.__offset(70); return o != 0 ? (FlatDataGlobal.EquipmentCategory)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.EquipmentCategory)0; }
-  public int EquipmentSlotLength { get { int o = __p.__offset(70); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetScenarioCharacterArray() { return __p.__vector_as_array<byte>(66); }
+  public uint SpawnTemplateId { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public int FavorLevelupType { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.EquipmentCategory EquipmentSlot(int j) { int o = __p.__offset(72); return o != 0 ? (FlatDataGlobal.EquipmentCategory)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.EquipmentCategory)0; }
+  public int EquipmentSlotLength { get { int o = __p.__offset(72); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.EquipmentCategory> GetEquipmentSlotBytes() { return __p.__vector_as_span<FlatDataGlobal.EquipmentCategory>(70, 4); }
+  public Span<FlatDataGlobal.EquipmentCategory> GetEquipmentSlotBytes() { return __p.__vector_as_span<FlatDataGlobal.EquipmentCategory>(72, 4); }
 #else
-  public ArraySegment<byte>? GetEquipmentSlotBytes() { return __p.__vector_as_arraysegment(70); }
+  public ArraySegment<byte>? GetEquipmentSlotBytes() { return __p.__vector_as_arraysegment(72); }
 #endif
-  public FlatDataGlobal.EquipmentCategory[] GetEquipmentSlotArray() { int o = __p.__offset(70); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.EquipmentCategory[] a = new FlatDataGlobal.EquipmentCategory[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.EquipmentCategory)__p.bb.GetInt(p + i * 4); } return a; }
-  public string SpineResourceName { get { int o = __p.__offset(72); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataGlobal.EquipmentCategory[] GetEquipmentSlotArray() { int o = __p.__offset(72); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.EquipmentCategory[] a = new FlatDataGlobal.EquipmentCategory[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.EquipmentCategory)__p.bb.GetInt(p + i * 4); } return a; }
+  public string SpineResourceName { get { int o = __p.__offset(74); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSpineResourceNameBytes() { return __p.__vector_as_span<byte>(72, 1); }
+  public Span<byte> GetSpineResourceNameBytes() { return __p.__vector_as_span<byte>(74, 1); }
 #else
-  public ArraySegment<byte>? GetSpineResourceNameBytes() { return __p.__vector_as_arraysegment(72); }
+  public ArraySegment<byte>? GetSpineResourceNameBytes() { return __p.__vector_as_arraysegment(74); }
 #endif
-  public byte[] GetSpineResourceNameArray() { return __p.__vector_as_array<byte>(72); }
-  public string SpineResourceNameDiorama { get { int o = __p.__offset(74); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSpineResourceNameArray() { return __p.__vector_as_array<byte>(74); }
+  public string SpineResourceNameDiorama { get { int o = __p.__offset(76); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSpineResourceNameDioramaBytes() { return __p.__vector_as_span<byte>(74, 1); }
+  public Span<byte> GetSpineResourceNameDioramaBytes() { return __p.__vector_as_span<byte>(76, 1); }
 #else
-  public ArraySegment<byte>? GetSpineResourceNameDioramaBytes() { return __p.__vector_as_arraysegment(74); }
+  public ArraySegment<byte>? GetSpineResourceNameDioramaBytes() { return __p.__vector_as_arraysegment(76); }
 #endif
-  public byte[] GetSpineResourceNameDioramaArray() { return __p.__vector_as_array<byte>(74); }
-  public string SpineResourceNameDioramaForFormConversion { get { int o = __p.__offset(76); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSpineResourceNameDioramaArray() { return __p.__vector_as_array<byte>(76); }
+  public string SpineResourceNameDioramaForFormConversion { get { int o = __p.__offset(78); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSpineResourceNameDioramaForFormConversionBytes() { return __p.__vector_as_span<byte>(76, 1); }
+  public Span<byte> GetSpineResourceNameDioramaForFormConversionBytes() { return __p.__vector_as_span<byte>(78, 1); }
 #else
-  public ArraySegment<byte>? GetSpineResourceNameDioramaForFormConversionBytes() { return __p.__vector_as_arraysegment(76); }
+  public ArraySegment<byte>? GetSpineResourceNameDioramaForFormConversionBytes() { return __p.__vector_as_arraysegment(78); }
 #endif
-  public byte[] GetSpineResourceNameDioramaForFormConversionArray() { return __p.__vector_as_array<byte>(76); }
-  public FlatDataGlobal.EntityMaterialType Entitymaterialtype { get { int o = __p.__offset(78); return o != 0 ? (FlatDataGlobal.EntityMaterialType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EntityMaterialType.Wood; } }
-  public string ModelPrefabName { get { int o = __p.__offset(80); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSpineResourceNameDioramaForFormConversionArray() { return __p.__vector_as_array<byte>(78); }
+  public FlatDataGlobal.EntityMaterialType Entitymaterialtype { get { int o = __p.__offset(80); return o != 0 ? (FlatDataGlobal.EntityMaterialType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EntityMaterialType.Wood; } }
+  public string ModelPrefabName { get { int o = __p.__offset(82); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetModelPrefabNameBytes() { return __p.__vector_as_span<byte>(80, 1); }
+  public Span<byte> GetModelPrefabNameBytes() { return __p.__vector_as_span<byte>(82, 1); }
 #else
-  public ArraySegment<byte>? GetModelPrefabNameBytes() { return __p.__vector_as_arraysegment(80); }
+  public ArraySegment<byte>? GetModelPrefabNameBytes() { return __p.__vector_as_arraysegment(82); }
 #endif
-  public byte[] GetModelPrefabNameArray() { return __p.__vector_as_array<byte>(80); }
-  public string CafeModelPrefabName { get { int o = __p.__offset(82); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetModelPrefabNameArray() { return __p.__vector_as_array<byte>(82); }
+  public string CafeModelPrefabName { get { int o = __p.__offset(84); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetCafeModelPrefabNameBytes() { return __p.__vector_as_span<byte>(82, 1); }
+  public Span<byte> GetCafeModelPrefabNameBytes() { return __p.__vector_as_span<byte>(84, 1); }
 #else
-  public ArraySegment<byte>? GetCafeModelPrefabNameBytes() { return __p.__vector_as_arraysegment(82); }
+  public ArraySegment<byte>? GetCafeModelPrefabNameBytes() { return __p.__vector_as_arraysegment(84); }
 #endif
-  public byte[] GetCafeModelPrefabNameArray() { return __p.__vector_as_array<byte>(82); }
-  public string TextureDir { get { int o = __p.__offset(84); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetCafeModelPrefabNameArray() { return __p.__vector_as_array<byte>(84); }
+  public string TextureDir { get { int o = __p.__offset(86); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTextureDirBytes() { return __p.__vector_as_span<byte>(84, 1); }
+  public Span<byte> GetTextureDirBytes() { return __p.__vector_as_span<byte>(86, 1); }
 #else
-  public ArraySegment<byte>? GetTextureDirBytes() { return __p.__vector_as_arraysegment(84); }
+  public ArraySegment<byte>? GetTextureDirBytes() { return __p.__vector_as_arraysegment(86); }
 #endif
-  public byte[] GetTextureDirArray() { return __p.__vector_as_array<byte>(84); }
-  public string TextureEchelon { get { int o = __p.__offset(86); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetTextureDirArray() { return __p.__vector_as_array<byte>(86); }
+  public string TextureEchelon { get { int o = __p.__offset(88); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTextureEchelonBytes() { return __p.__vector_as_span<byte>(86, 1); }
+  public Span<byte> GetTextureEchelonBytes() { return __p.__vector_as_span<byte>(88, 1); }
 #else
-  public ArraySegment<byte>? GetTextureEchelonBytes() { return __p.__vector_as_arraysegment(86); }
+  public ArraySegment<byte>? GetTextureEchelonBytes() { return __p.__vector_as_arraysegment(88); }
 #endif
-  public byte[] GetTextureEchelonArray() { return __p.__vector_as_array<byte>(86); }
-  public string CollectionTexturePath { get { int o = __p.__offset(88); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetTextureEchelonArray() { return __p.__vector_as_array<byte>(88); }
+  public string CollectionTexturePath { get { int o = __p.__offset(90); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetCollectionTexturePathBytes() { return __p.__vector_as_span<byte>(88, 1); }
+  public Span<byte> GetCollectionTexturePathBytes() { return __p.__vector_as_span<byte>(90, 1); }
 #else
-  public ArraySegment<byte>? GetCollectionTexturePathBytes() { return __p.__vector_as_arraysegment(88); }
+  public ArraySegment<byte>? GetCollectionTexturePathBytes() { return __p.__vector_as_arraysegment(90); }
 #endif
-  public byte[] GetCollectionTexturePathArray() { return __p.__vector_as_array<byte>(88); }
-  public string CollectionBGTexturePath { get { int o = __p.__offset(90); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetCollectionTexturePathArray() { return __p.__vector_as_array<byte>(90); }
+  public string CollectionBGTexturePath { get { int o = __p.__offset(92); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetCollectionBGTexturePathBytes() { return __p.__vector_as_span<byte>(90, 1); }
+  public Span<byte> GetCollectionBGTexturePathBytes() { return __p.__vector_as_span<byte>(92, 1); }
 #else
-  public ArraySegment<byte>? GetCollectionBGTexturePathBytes() { return __p.__vector_as_arraysegment(90); }
+  public ArraySegment<byte>? GetCollectionBGTexturePathBytes() { return __p.__vector_as_arraysegment(92); }
 #endif
-  public byte[] GetCollectionBGTexturePathArray() { return __p.__vector_as_array<byte>(90); }
-  public bool UseObjectHPBAR { get { int o = __p.__offset(92); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string TextureBoss { get { int o = __p.__offset(94); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetCollectionBGTexturePathArray() { return __p.__vector_as_array<byte>(92); }
+  public bool UseObjectHPBAR { get { int o = __p.__offset(94); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string TextureBoss { get { int o = __p.__offset(96); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTextureBossBytes() { return __p.__vector_as_span<byte>(94, 1); }
+  public Span<byte> GetTextureBossBytes() { return __p.__vector_as_span<byte>(96, 1); }
 #else
-  public ArraySegment<byte>? GetTextureBossBytes() { return __p.__vector_as_arraysegment(94); }
+  public ArraySegment<byte>? GetTextureBossBytes() { return __p.__vector_as_arraysegment(96); }
 #endif
-  public byte[] GetTextureBossArray() { return __p.__vector_as_array<byte>(94); }
-  public string TextureSkillCard(int j) { int o = __p.__offset(96); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int TextureSkillCardLength { get { int o = __p.__offset(96); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string TextureSkillCardForFormConversion { get { int o = __p.__offset(98); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetTextureBossArray() { return __p.__vector_as_array<byte>(96); }
+  public string TextureSkillCard(int j) { int o = __p.__offset(98); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int TextureSkillCardLength { get { int o = __p.__offset(98); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string TextureSkillCardForFormConversion { get { int o = __p.__offset(100); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTextureSkillCardForFormConversionBytes() { return __p.__vector_as_span<byte>(98, 1); }
+  public Span<byte> GetTextureSkillCardForFormConversionBytes() { return __p.__vector_as_span<byte>(100, 1); }
 #else
-  public ArraySegment<byte>? GetTextureSkillCardForFormConversionBytes() { return __p.__vector_as_arraysegment(98); }
+  public ArraySegment<byte>? GetTextureSkillCardForFormConversionBytes() { return __p.__vector_as_arraysegment(100); }
 #endif
-  public byte[] GetTextureSkillCardForFormConversionArray() { return __p.__vector_as_array<byte>(98); }
-  public string WeaponImagePath { get { int o = __p.__offset(100); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetTextureSkillCardForFormConversionArray() { return __p.__vector_as_array<byte>(100); }
+  public string WeaponImagePath { get { int o = __p.__offset(102); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetWeaponImagePathBytes() { return __p.__vector_as_span<byte>(100, 1); }
+  public Span<byte> GetWeaponImagePathBytes() { return __p.__vector_as_span<byte>(102, 1); }
 #else
-  public ArraySegment<byte>? GetWeaponImagePathBytes() { return __p.__vector_as_arraysegment(100); }
+  public ArraySegment<byte>? GetWeaponImagePathBytes() { return __p.__vector_as_arraysegment(102); }
 #endif
-  public byte[] GetWeaponImagePathArray() { return __p.__vector_as_array<byte>(100); }
-  public uint WeaponLocalizeId { get { int o = __p.__offset(102); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public bool DisplayEnemyInfo { get { int o = __p.__offset(104); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long BodyRadius { get { int o = __p.__offset(106); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RandomEffectRadius { get { int o = __p.__offset(108); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool HPBarHide { get { int o = __p.__offset(110); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public float HpBarHeight { get { int o = __p.__offset(112); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float HighlightFloaterHeight { get { int o = __p.__offset(114); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float EmojiOffsetX { get { int o = __p.__offset(116); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float EmojiOffsetY { get { int o = __p.__offset(118); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public int MoveStartFrame { get { int o = __p.__offset(120); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int MoveEndFrame { get { int o = __p.__offset(122); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int JumpMotionFrame { get { int o = __p.__offset(124); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int AppearFrame { get { int o = __p.__offset(126); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool CanMove { get { int o = __p.__offset(128); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool CanFix { get { int o = __p.__offset(130); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool CanCrowdControl { get { int o = __p.__offset(132); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool CanBattleItemMove { get { int o = __p.__offset(134); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool IsAirUnit { get { int o = __p.__offset(136); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long AirUnitHeight { get { int o = __p.__offset(138); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.Tag Tags(int j) { int o = __p.__offset(140); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Tag)0; }
-  public int TagsLength { get { int o = __p.__offset(140); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetWeaponImagePathArray() { return __p.__vector_as_array<byte>(102); }
+  public uint WeaponLocalizeId { get { int o = __p.__offset(104); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public bool DisplayEnemyInfo { get { int o = __p.__offset(106); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long BodyRadius { get { int o = __p.__offset(108); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RandomEffectRadius { get { int o = __p.__offset(110); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool HPBarHide { get { int o = __p.__offset(112); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public float HpBarHeight { get { int o = __p.__offset(114); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float HighlightFloaterHeight { get { int o = __p.__offset(116); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float EmojiOffsetX { get { int o = __p.__offset(118); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float EmojiOffsetY { get { int o = __p.__offset(120); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public int MoveStartFrame { get { int o = __p.__offset(122); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MoveEndFrame { get { int o = __p.__offset(124); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int JumpMotionFrame { get { int o = __p.__offset(126); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int AppearFrame { get { int o = __p.__offset(128); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool CanMove { get { int o = __p.__offset(130); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool CanFix { get { int o = __p.__offset(132); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool CanCrowdControl { get { int o = __p.__offset(134); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool CanBattleItemMove { get { int o = __p.__offset(136); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool IsAirUnit { get { int o = __p.__offset(138); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long AirUnitHeight { get { int o = __p.__offset(140); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.Tag Tags(int j) { int o = __p.__offset(142); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Tag)0; }
+  public int TagsLength { get { int o = __p.__offset(142); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.Tag> GetTagsBytes() { return __p.__vector_as_span<FlatDataGlobal.Tag>(140, 4); }
+  public Span<FlatDataGlobal.Tag> GetTagsBytes() { return __p.__vector_as_span<FlatDataGlobal.Tag>(142, 4); }
 #else
-  public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(140); }
+  public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(142); }
 #endif
-  public FlatDataGlobal.Tag[] GetTagsArray() { int o = __p.__offset(140); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Tag[] a = new FlatDataGlobal.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Tag)__p.bb.GetInt(p + i * 4); } return a; }
-  public long SecretStoneItemId { get { int o = __p.__offset(142); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int SecretStoneItemAmount { get { int o = __p.__offset(144); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long CharacterPieceItemId { get { int o = __p.__offset(146); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int CharacterPieceItemAmount { get { int o = __p.__offset(148); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long CombineRecipeId { get { int o = __p.__offset(150); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string InformationPacel { get { int o = __p.__offset(152); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataGlobal.Tag[] GetTagsArray() { int o = __p.__offset(142); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Tag[] a = new FlatDataGlobal.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Tag)__p.bb.GetInt(p + i * 4); } return a; }
+  public long SecretStoneItemId { get { int o = __p.__offset(144); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int SecretStoneItemAmount { get { int o = __p.__offset(146); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long CharacterPieceItemId { get { int o = __p.__offset(148); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int CharacterPieceItemAmount { get { int o = __p.__offset(150); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long CombineRecipeId { get { int o = __p.__offset(152); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string InformationPacel { get { int o = __p.__offset(154); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetInformationPacelBytes() { return __p.__vector_as_span<byte>(152, 1); }
+  public Span<byte> GetInformationPacelBytes() { return __p.__vector_as_span<byte>(154, 1); }
 #else
-  public ArraySegment<byte>? GetInformationPacelBytes() { return __p.__vector_as_arraysegment(152); }
+  public ArraySegment<byte>? GetInformationPacelBytes() { return __p.__vector_as_arraysegment(154); }
 #endif
-  public byte[] GetInformationPacelArray() { return __p.__vector_as_array<byte>(152); }
-  public string AnimationSSR { get { int o = __p.__offset(154); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetInformationPacelArray() { return __p.__vector_as_array<byte>(154); }
+  public string AnimationSSR { get { int o = __p.__offset(156); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAnimationSSRBytes() { return __p.__vector_as_span<byte>(154, 1); }
+  public Span<byte> GetAnimationSSRBytes() { return __p.__vector_as_span<byte>(156, 1); }
 #else
-  public ArraySegment<byte>? GetAnimationSSRBytes() { return __p.__vector_as_arraysegment(154); }
+  public ArraySegment<byte>? GetAnimationSSRBytes() { return __p.__vector_as_arraysegment(156); }
 #endif
-  public byte[] GetAnimationSSRArray() { return __p.__vector_as_array<byte>(154); }
-  public string EnterStrategyAnimationName { get { int o = __p.__offset(156); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetAnimationSSRArray() { return __p.__vector_as_array<byte>(156); }
+  public string EnterStrategyAnimationName { get { int o = __p.__offset(158); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_span<byte>(156, 1); }
+  public Span<byte> GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_span<byte>(158, 1); }
 #else
-  public ArraySegment<byte>? GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_arraysegment(156); }
+  public ArraySegment<byte>? GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_arraysegment(158); }
 #endif
-  public byte[] GetEnterStrategyAnimationNameArray() { return __p.__vector_as_array<byte>(156); }
+  public byte[] GetEnterStrategyAnimationNameArray() { return __p.__vector_as_array<byte>(158); }
 
   public static Offset<FlatDataGlobal.CharacterExcel> CreateCharacterExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -263,6 +264,7 @@ public struct CharacterExcel : IFlatbufferObject
       bool Jumpable = false,
       long PersonalityId = 0,
       long CharacterAIId = 0,
+      long ExternalBTId = 0,
       StringOffset ScenarioCharacterOffset = default(StringOffset),
       uint SpawnTemplateId = 0,
       int FavorLevelupType = 0,
@@ -310,13 +312,14 @@ public struct CharacterExcel : IFlatbufferObject
       StringOffset InformationPacelOffset = default(StringOffset),
       StringOffset AnimationSSROffset = default(StringOffset),
       StringOffset EnterStrategyAnimationNameOffset = default(StringOffset)) {
-    builder.StartTable(77);
+    builder.StartTable(78);
     CharacterExcel.AddCombineRecipeId(builder, CombineRecipeId);
     CharacterExcel.AddCharacterPieceItemId(builder, CharacterPieceItemId);
     CharacterExcel.AddSecretStoneItemId(builder, SecretStoneItemId);
     CharacterExcel.AddAirUnitHeight(builder, AirUnitHeight);
     CharacterExcel.AddRandomEffectRadius(builder, RandomEffectRadius);
     CharacterExcel.AddBodyRadius(builder, BodyRadius);
+    CharacterExcel.AddExternalBTId(builder, ExternalBTId);
     CharacterExcel.AddCharacterAIId(builder, CharacterAIId);
     CharacterExcel.AddPersonalityId(builder, PersonalityId);
     CharacterExcel.AddId(builder, Id);
@@ -391,7 +394,7 @@ public struct CharacterExcel : IFlatbufferObject
     return CharacterExcel.EndCharacterExcel(builder);
   }
 
-  public static void StartCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(77); }
+  public static void StartCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(78); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddDevName(FlatBufferBuilder builder, StringOffset DevNameOffset) { builder.AddOffset(1, DevNameOffset.Value, 0); }
   public static void AddProductionstep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionstep) { builder.AddInt(2, (int)productionstep, 0); }
@@ -422,68 +425,69 @@ public struct CharacterExcel : IFlatbufferObject
   public static void AddJumpable(FlatBufferBuilder builder, bool Jumpable) { builder.AddBool(27, Jumpable, false); }
   public static void AddPersonalityId(FlatBufferBuilder builder, long PersonalityId) { builder.AddLong(28, PersonalityId, 0); }
   public static void AddCharacterAIId(FlatBufferBuilder builder, long CharacterAIId) { builder.AddLong(29, CharacterAIId, 0); }
-  public static void AddScenarioCharacter(FlatBufferBuilder builder, StringOffset ScenarioCharacterOffset) { builder.AddOffset(30, ScenarioCharacterOffset.Value, 0); }
-  public static void AddSpawnTemplateId(FlatBufferBuilder builder, uint SpawnTemplateId) { builder.AddUint(31, SpawnTemplateId, 0); }
-  public static void AddFavorLevelupType(FlatBufferBuilder builder, int FavorLevelupType) { builder.AddInt(32, FavorLevelupType, 0); }
-  public static void AddEquipmentSlot(FlatBufferBuilder builder, VectorOffset EquipmentSlotOffset) { builder.AddOffset(33, EquipmentSlotOffset.Value, 0); }
+  public static void AddExternalBTId(FlatBufferBuilder builder, long ExternalBTId) { builder.AddLong(30, ExternalBTId, 0); }
+  public static void AddScenarioCharacter(FlatBufferBuilder builder, StringOffset ScenarioCharacterOffset) { builder.AddOffset(31, ScenarioCharacterOffset.Value, 0); }
+  public static void AddSpawnTemplateId(FlatBufferBuilder builder, uint SpawnTemplateId) { builder.AddUint(32, SpawnTemplateId, 0); }
+  public static void AddFavorLevelupType(FlatBufferBuilder builder, int FavorLevelupType) { builder.AddInt(33, FavorLevelupType, 0); }
+  public static void AddEquipmentSlot(FlatBufferBuilder builder, VectorOffset EquipmentSlotOffset) { builder.AddOffset(34, EquipmentSlotOffset.Value, 0); }
   public static VectorOffset CreateEquipmentSlotVector(FlatBufferBuilder builder, FlatDataGlobal.EquipmentCategory[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateEquipmentSlotVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.EquipmentCategory[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEquipmentSlotVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.EquipmentCategory> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEquipmentSlotVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.EquipmentCategory>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartEquipmentSlotVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSpineResourceName(FlatBufferBuilder builder, StringOffset SpineResourceNameOffset) { builder.AddOffset(34, SpineResourceNameOffset.Value, 0); }
-  public static void AddSpineResourceNameDiorama(FlatBufferBuilder builder, StringOffset SpineResourceNameDioramaOffset) { builder.AddOffset(35, SpineResourceNameDioramaOffset.Value, 0); }
-  public static void AddSpineResourceNameDioramaForFormConversion(FlatBufferBuilder builder, StringOffset SpineResourceNameDioramaForFormConversionOffset) { builder.AddOffset(36, SpineResourceNameDioramaForFormConversionOffset.Value, 0); }
-  public static void AddEntitymaterialtype(FlatBufferBuilder builder, FlatDataGlobal.EntityMaterialType entitymaterialtype) { builder.AddInt(37, (int)entitymaterialtype, 0); }
-  public static void AddModelPrefabName(FlatBufferBuilder builder, StringOffset ModelPrefabNameOffset) { builder.AddOffset(38, ModelPrefabNameOffset.Value, 0); }
-  public static void AddCafeModelPrefabName(FlatBufferBuilder builder, StringOffset CafeModelPrefabNameOffset) { builder.AddOffset(39, CafeModelPrefabNameOffset.Value, 0); }
-  public static void AddTextureDir(FlatBufferBuilder builder, StringOffset TextureDirOffset) { builder.AddOffset(40, TextureDirOffset.Value, 0); }
-  public static void AddTextureEchelon(FlatBufferBuilder builder, StringOffset TextureEchelonOffset) { builder.AddOffset(41, TextureEchelonOffset.Value, 0); }
-  public static void AddCollectionTexturePath(FlatBufferBuilder builder, StringOffset CollectionTexturePathOffset) { builder.AddOffset(42, CollectionTexturePathOffset.Value, 0); }
-  public static void AddCollectionBGTexturePath(FlatBufferBuilder builder, StringOffset CollectionBGTexturePathOffset) { builder.AddOffset(43, CollectionBGTexturePathOffset.Value, 0); }
-  public static void AddUseObjectHPBAR(FlatBufferBuilder builder, bool UseObjectHPBAR) { builder.AddBool(44, UseObjectHPBAR, false); }
-  public static void AddTextureBoss(FlatBufferBuilder builder, StringOffset TextureBossOffset) { builder.AddOffset(45, TextureBossOffset.Value, 0); }
-  public static void AddTextureSkillCard(FlatBufferBuilder builder, VectorOffset TextureSkillCardOffset) { builder.AddOffset(46, TextureSkillCardOffset.Value, 0); }
+  public static void AddSpineResourceName(FlatBufferBuilder builder, StringOffset SpineResourceNameOffset) { builder.AddOffset(35, SpineResourceNameOffset.Value, 0); }
+  public static void AddSpineResourceNameDiorama(FlatBufferBuilder builder, StringOffset SpineResourceNameDioramaOffset) { builder.AddOffset(36, SpineResourceNameDioramaOffset.Value, 0); }
+  public static void AddSpineResourceNameDioramaForFormConversion(FlatBufferBuilder builder, StringOffset SpineResourceNameDioramaForFormConversionOffset) { builder.AddOffset(37, SpineResourceNameDioramaForFormConversionOffset.Value, 0); }
+  public static void AddEntitymaterialtype(FlatBufferBuilder builder, FlatDataGlobal.EntityMaterialType entitymaterialtype) { builder.AddInt(38, (int)entitymaterialtype, 0); }
+  public static void AddModelPrefabName(FlatBufferBuilder builder, StringOffset ModelPrefabNameOffset) { builder.AddOffset(39, ModelPrefabNameOffset.Value, 0); }
+  public static void AddCafeModelPrefabName(FlatBufferBuilder builder, StringOffset CafeModelPrefabNameOffset) { builder.AddOffset(40, CafeModelPrefabNameOffset.Value, 0); }
+  public static void AddTextureDir(FlatBufferBuilder builder, StringOffset TextureDirOffset) { builder.AddOffset(41, TextureDirOffset.Value, 0); }
+  public static void AddTextureEchelon(FlatBufferBuilder builder, StringOffset TextureEchelonOffset) { builder.AddOffset(42, TextureEchelonOffset.Value, 0); }
+  public static void AddCollectionTexturePath(FlatBufferBuilder builder, StringOffset CollectionTexturePathOffset) { builder.AddOffset(43, CollectionTexturePathOffset.Value, 0); }
+  public static void AddCollectionBGTexturePath(FlatBufferBuilder builder, StringOffset CollectionBGTexturePathOffset) { builder.AddOffset(44, CollectionBGTexturePathOffset.Value, 0); }
+  public static void AddUseObjectHPBAR(FlatBufferBuilder builder, bool UseObjectHPBAR) { builder.AddBool(45, UseObjectHPBAR, false); }
+  public static void AddTextureBoss(FlatBufferBuilder builder, StringOffset TextureBossOffset) { builder.AddOffset(46, TextureBossOffset.Value, 0); }
+  public static void AddTextureSkillCard(FlatBufferBuilder builder, VectorOffset TextureSkillCardOffset) { builder.AddOffset(47, TextureSkillCardOffset.Value, 0); }
   public static VectorOffset CreateTextureSkillCardVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateTextureSkillCardVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTextureSkillCardVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTextureSkillCardVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartTextureSkillCardVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddTextureSkillCardForFormConversion(FlatBufferBuilder builder, StringOffset TextureSkillCardForFormConversionOffset) { builder.AddOffset(47, TextureSkillCardForFormConversionOffset.Value, 0); }
-  public static void AddWeaponImagePath(FlatBufferBuilder builder, StringOffset WeaponImagePathOffset) { builder.AddOffset(48, WeaponImagePathOffset.Value, 0); }
-  public static void AddWeaponLocalizeId(FlatBufferBuilder builder, uint WeaponLocalizeId) { builder.AddUint(49, WeaponLocalizeId, 0); }
-  public static void AddDisplayEnemyInfo(FlatBufferBuilder builder, bool DisplayEnemyInfo) { builder.AddBool(50, DisplayEnemyInfo, false); }
-  public static void AddBodyRadius(FlatBufferBuilder builder, long BodyRadius) { builder.AddLong(51, BodyRadius, 0); }
-  public static void AddRandomEffectRadius(FlatBufferBuilder builder, long RandomEffectRadius) { builder.AddLong(52, RandomEffectRadius, 0); }
-  public static void AddHPBarHide(FlatBufferBuilder builder, bool HPBarHide) { builder.AddBool(53, HPBarHide, false); }
-  public static void AddHpBarHeight(FlatBufferBuilder builder, float HpBarHeight) { builder.AddFloat(54, HpBarHeight, 0.0f); }
-  public static void AddHighlightFloaterHeight(FlatBufferBuilder builder, float HighlightFloaterHeight) { builder.AddFloat(55, HighlightFloaterHeight, 0.0f); }
-  public static void AddEmojiOffsetX(FlatBufferBuilder builder, float EmojiOffsetX) { builder.AddFloat(56, EmojiOffsetX, 0.0f); }
-  public static void AddEmojiOffsetY(FlatBufferBuilder builder, float EmojiOffsetY) { builder.AddFloat(57, EmojiOffsetY, 0.0f); }
-  public static void AddMoveStartFrame(FlatBufferBuilder builder, int MoveStartFrame) { builder.AddInt(58, MoveStartFrame, 0); }
-  public static void AddMoveEndFrame(FlatBufferBuilder builder, int MoveEndFrame) { builder.AddInt(59, MoveEndFrame, 0); }
-  public static void AddJumpMotionFrame(FlatBufferBuilder builder, int JumpMotionFrame) { builder.AddInt(60, JumpMotionFrame, 0); }
-  public static void AddAppearFrame(FlatBufferBuilder builder, int AppearFrame) { builder.AddInt(61, AppearFrame, 0); }
-  public static void AddCanMove(FlatBufferBuilder builder, bool CanMove) { builder.AddBool(62, CanMove, false); }
-  public static void AddCanFix(FlatBufferBuilder builder, bool CanFix) { builder.AddBool(63, CanFix, false); }
-  public static void AddCanCrowdControl(FlatBufferBuilder builder, bool CanCrowdControl) { builder.AddBool(64, CanCrowdControl, false); }
-  public static void AddCanBattleItemMove(FlatBufferBuilder builder, bool CanBattleItemMove) { builder.AddBool(65, CanBattleItemMove, false); }
-  public static void AddIsAirUnit(FlatBufferBuilder builder, bool IsAirUnit) { builder.AddBool(66, IsAirUnit, false); }
-  public static void AddAirUnitHeight(FlatBufferBuilder builder, long AirUnitHeight) { builder.AddLong(67, AirUnitHeight, 0); }
-  public static void AddTags(FlatBufferBuilder builder, VectorOffset TagsOffset) { builder.AddOffset(68, TagsOffset.Value, 0); }
+  public static void AddTextureSkillCardForFormConversion(FlatBufferBuilder builder, StringOffset TextureSkillCardForFormConversionOffset) { builder.AddOffset(48, TextureSkillCardForFormConversionOffset.Value, 0); }
+  public static void AddWeaponImagePath(FlatBufferBuilder builder, StringOffset WeaponImagePathOffset) { builder.AddOffset(49, WeaponImagePathOffset.Value, 0); }
+  public static void AddWeaponLocalizeId(FlatBufferBuilder builder, uint WeaponLocalizeId) { builder.AddUint(50, WeaponLocalizeId, 0); }
+  public static void AddDisplayEnemyInfo(FlatBufferBuilder builder, bool DisplayEnemyInfo) { builder.AddBool(51, DisplayEnemyInfo, false); }
+  public static void AddBodyRadius(FlatBufferBuilder builder, long BodyRadius) { builder.AddLong(52, BodyRadius, 0); }
+  public static void AddRandomEffectRadius(FlatBufferBuilder builder, long RandomEffectRadius) { builder.AddLong(53, RandomEffectRadius, 0); }
+  public static void AddHPBarHide(FlatBufferBuilder builder, bool HPBarHide) { builder.AddBool(54, HPBarHide, false); }
+  public static void AddHpBarHeight(FlatBufferBuilder builder, float HpBarHeight) { builder.AddFloat(55, HpBarHeight, 0.0f); }
+  public static void AddHighlightFloaterHeight(FlatBufferBuilder builder, float HighlightFloaterHeight) { builder.AddFloat(56, HighlightFloaterHeight, 0.0f); }
+  public static void AddEmojiOffsetX(FlatBufferBuilder builder, float EmojiOffsetX) { builder.AddFloat(57, EmojiOffsetX, 0.0f); }
+  public static void AddEmojiOffsetY(FlatBufferBuilder builder, float EmojiOffsetY) { builder.AddFloat(58, EmojiOffsetY, 0.0f); }
+  public static void AddMoveStartFrame(FlatBufferBuilder builder, int MoveStartFrame) { builder.AddInt(59, MoveStartFrame, 0); }
+  public static void AddMoveEndFrame(FlatBufferBuilder builder, int MoveEndFrame) { builder.AddInt(60, MoveEndFrame, 0); }
+  public static void AddJumpMotionFrame(FlatBufferBuilder builder, int JumpMotionFrame) { builder.AddInt(61, JumpMotionFrame, 0); }
+  public static void AddAppearFrame(FlatBufferBuilder builder, int AppearFrame) { builder.AddInt(62, AppearFrame, 0); }
+  public static void AddCanMove(FlatBufferBuilder builder, bool CanMove) { builder.AddBool(63, CanMove, false); }
+  public static void AddCanFix(FlatBufferBuilder builder, bool CanFix) { builder.AddBool(64, CanFix, false); }
+  public static void AddCanCrowdControl(FlatBufferBuilder builder, bool CanCrowdControl) { builder.AddBool(65, CanCrowdControl, false); }
+  public static void AddCanBattleItemMove(FlatBufferBuilder builder, bool CanBattleItemMove) { builder.AddBool(66, CanBattleItemMove, false); }
+  public static void AddIsAirUnit(FlatBufferBuilder builder, bool IsAirUnit) { builder.AddBool(67, IsAirUnit, false); }
+  public static void AddAirUnitHeight(FlatBufferBuilder builder, long AirUnitHeight) { builder.AddLong(68, AirUnitHeight, 0); }
+  public static void AddTags(FlatBufferBuilder builder, VectorOffset TagsOffset) { builder.AddOffset(69, TagsOffset.Value, 0); }
   public static VectorOffset CreateTagsVector(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartTagsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSecretStoneItemId(FlatBufferBuilder builder, long SecretStoneItemId) { builder.AddLong(69, SecretStoneItemId, 0); }
-  public static void AddSecretStoneItemAmount(FlatBufferBuilder builder, int SecretStoneItemAmount) { builder.AddInt(70, SecretStoneItemAmount, 0); }
-  public static void AddCharacterPieceItemId(FlatBufferBuilder builder, long CharacterPieceItemId) { builder.AddLong(71, CharacterPieceItemId, 0); }
-  public static void AddCharacterPieceItemAmount(FlatBufferBuilder builder, int CharacterPieceItemAmount) { builder.AddInt(72, CharacterPieceItemAmount, 0); }
-  public static void AddCombineRecipeId(FlatBufferBuilder builder, long CombineRecipeId) { builder.AddLong(73, CombineRecipeId, 0); }
-  public static void AddInformationPacel(FlatBufferBuilder builder, StringOffset InformationPacelOffset) { builder.AddOffset(74, InformationPacelOffset.Value, 0); }
-  public static void AddAnimationSSR(FlatBufferBuilder builder, StringOffset AnimationSSROffset) { builder.AddOffset(75, AnimationSSROffset.Value, 0); }
-  public static void AddEnterStrategyAnimationName(FlatBufferBuilder builder, StringOffset EnterStrategyAnimationNameOffset) { builder.AddOffset(76, EnterStrategyAnimationNameOffset.Value, 0); }
+  public static void AddSecretStoneItemId(FlatBufferBuilder builder, long SecretStoneItemId) { builder.AddLong(70, SecretStoneItemId, 0); }
+  public static void AddSecretStoneItemAmount(FlatBufferBuilder builder, int SecretStoneItemAmount) { builder.AddInt(71, SecretStoneItemAmount, 0); }
+  public static void AddCharacterPieceItemId(FlatBufferBuilder builder, long CharacterPieceItemId) { builder.AddLong(72, CharacterPieceItemId, 0); }
+  public static void AddCharacterPieceItemAmount(FlatBufferBuilder builder, int CharacterPieceItemAmount) { builder.AddInt(73, CharacterPieceItemAmount, 0); }
+  public static void AddCombineRecipeId(FlatBufferBuilder builder, long CombineRecipeId) { builder.AddLong(74, CombineRecipeId, 0); }
+  public static void AddInformationPacel(FlatBufferBuilder builder, StringOffset InformationPacelOffset) { builder.AddOffset(75, InformationPacelOffset.Value, 0); }
+  public static void AddAnimationSSR(FlatBufferBuilder builder, StringOffset AnimationSSROffset) { builder.AddOffset(76, AnimationSSROffset.Value, 0); }
+  public static void AddEnterStrategyAnimationName(FlatBufferBuilder builder, StringOffset EnterStrategyAnimationNameOffset) { builder.AddOffset(77, EnterStrategyAnimationNameOffset.Value, 0); }
   public static Offset<FlatDataGlobal.CharacterExcel> EndCharacterExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterExcel>(o);

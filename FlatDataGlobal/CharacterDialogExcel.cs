@@ -20,93 +20,105 @@ public struct CharacterDialogExcel : IFlatbufferObject
   public CharacterDialogExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long CharacterId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ProductionStep Productionstep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
-  public FlatDataGlobal.DialogCategory Dialogcategory { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.DialogCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCategory.Cafe; } }
-  public FlatDataGlobal.DialogCondition Dialogcondition { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.DialogCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCondition.Idle; } }
-  public FlatDataGlobal.Anniversary Anniversary { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.Anniversary)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Anniversary.None; } }
-  public string StartDate { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long DisplayOrder { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.ProductionStep Productionstep { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
+  public FlatDataGlobal.DialogCategory Dialogcategory { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.DialogCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCategory.Cafe; } }
+  public FlatDataGlobal.DialogCondition Dialogcondition { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.DialogCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCondition.Idle; } }
+  public FlatDataGlobal.Anniversary Anniversary { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.Anniversary)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Anniversary.None; } }
+  public string StartDate { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetStartDateBytes() { return __p.__vector_as_span<byte>(14, 1); }
+  public Span<byte> GetStartDateBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetStartDateBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetStartDateBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetStartDateArray() { return __p.__vector_as_array<byte>(14); }
-  public string EndDate { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetStartDateArray() { return __p.__vector_as_array<byte>(16); }
+  public string EndDate { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEndDateBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<byte> GetEndDateBytes() { return __p.__vector_as_span<byte>(18, 1); }
 #else
-  public ArraySegment<byte>? GetEndDateBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetEndDateBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public byte[] GetEndDateArray() { return __p.__vector_as_array<byte>(16); }
-  public long GroupId { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.DialogType Dialogtype { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.DialogType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogType.Talk; } }
-  public string ActionName { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEndDateArray() { return __p.__vector_as_array<byte>(18); }
+  public long GroupId { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.DialogType Dialogtype { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.DialogType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogType.Talk; } }
+  public string ActionName { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetActionNameBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetActionNameBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetActionNameBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetActionNameBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetActionNameArray() { return __p.__vector_as_array<byte>(22); }
-  public long Duration { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string AnimationName { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetActionNameArray() { return __p.__vector_as_array<byte>(24); }
+  public long Duration { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string AnimationName { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAnimationNameBytes() { return __p.__vector_as_span<byte>(26, 1); }
+  public Span<byte> GetAnimationNameBytes() { return __p.__vector_as_span<byte>(28, 1); }
 #else
-  public ArraySegment<byte>? GetAnimationNameBytes() { return __p.__vector_as_arraysegment(26); }
+  public ArraySegment<byte>? GetAnimationNameBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
-  public byte[] GetAnimationNameArray() { return __p.__vector_as_array<byte>(26); }
-  public string LocalizeKR { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetAnimationNameArray() { return __p.__vector_as_array<byte>(28); }
+  public string LocalizeKR { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeKRBytes() { return __p.__vector_as_span<byte>(28, 1); }
+  public Span<byte> GetLocalizeKRBytes() { return __p.__vector_as_span<byte>(30, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeKRBytes() { return __p.__vector_as_arraysegment(28); }
+  public ArraySegment<byte>? GetLocalizeKRBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
-  public byte[] GetLocalizeKRArray() { return __p.__vector_as_array<byte>(28); }
-  public string LocalizeJP { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeKRArray() { return __p.__vector_as_array<byte>(30); }
+  public string LocalizeJP { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeJPBytes() { return __p.__vector_as_span<byte>(30, 1); }
+  public Span<byte> GetLocalizeJPBytes() { return __p.__vector_as_span<byte>(32, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeJPBytes() { return __p.__vector_as_arraysegment(30); }
+  public ArraySegment<byte>? GetLocalizeJPBytes() { return __p.__vector_as_arraysegment(32); }
 #endif
-  public byte[] GetLocalizeJPArray() { return __p.__vector_as_array<byte>(30); }
-  public string LocalizeTH { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeJPArray() { return __p.__vector_as_array<byte>(32); }
+  public string LocalizeTH { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeTHBytes() { return __p.__vector_as_span<byte>(32, 1); }
+  public Span<byte> GetLocalizeTHBytes() { return __p.__vector_as_span<byte>(34, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeTHBytes() { return __p.__vector_as_arraysegment(32); }
+  public ArraySegment<byte>? GetLocalizeTHBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
-  public byte[] GetLocalizeTHArray() { return __p.__vector_as_array<byte>(32); }
-  public string LocalizeTW { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeTHArray() { return __p.__vector_as_array<byte>(34); }
+  public string LocalizeTW { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeTWBytes() { return __p.__vector_as_span<byte>(34, 1); }
+  public Span<byte> GetLocalizeTWBytes() { return __p.__vector_as_span<byte>(36, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeTWBytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetLocalizeTWBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public byte[] GetLocalizeTWArray() { return __p.__vector_as_array<byte>(34); }
-  public string LocalizeEN { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeTWArray() { return __p.__vector_as_array<byte>(36); }
+  public string LocalizeEN { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeENBytes() { return __p.__vector_as_span<byte>(36, 1); }
+  public Span<byte> GetLocalizeENBytes() { return __p.__vector_as_span<byte>(38, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeENBytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetLocalizeENBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public byte[] GetLocalizeENArray() { return __p.__vector_as_array<byte>(36); }
-  public string VoiceClipsKr(int j) { int o = __p.__offset(38); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsKrLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string VoiceClipsJp(int j) { int o = __p.__offset(40); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsJpLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string VoiceClipsTh(int j) { int o = __p.__offset(42); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsThLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string VoiceClipsTw(int j) { int o = __p.__offset(44); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsTwLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string VoiceClipsEn(int j) { int o = __p.__offset(46); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsEnLength { get { int o = __p.__offset(46); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public bool ApplyPosition { get { int o = __p.__offset(48); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public float PosX { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float PosY { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public bool TeenMode { get { int o = __p.__offset(54); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public byte[] GetLocalizeENArray() { return __p.__vector_as_array<byte>(38); }
+  public string VoiceClipsKr(int j) { int o = __p.__offset(40); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int VoiceClipsKrLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string VoiceClipsJp(int j) { int o = __p.__offset(42); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int VoiceClipsJpLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string VoiceClipsTh(int j) { int o = __p.__offset(44); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int VoiceClipsThLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string VoiceClipsTw(int j) { int o = __p.__offset(46); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int VoiceClipsTwLength { get { int o = __p.__offset(46); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string VoiceClipsEn(int j) { int o = __p.__offset(48); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int VoiceClipsEnLength { get { int o = __p.__offset(48); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public bool ApplyPosition { get { int o = __p.__offset(50); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public float PosX { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float PosY { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public bool CollectionVisible { get { int o = __p.__offset(56); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.CVCollectionType Cvcollectiontype { get { int o = __p.__offset(58); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
+  public long UnlockFavorRank { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string LocalizeCVGroup { get { int o = __p.__offset(62); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetLocalizeCVGroupBytes() { return __p.__vector_as_span<byte>(62, 1); }
+#else
+  public ArraySegment<byte>? GetLocalizeCVGroupBytes() { return __p.__vector_as_arraysegment(62); }
+#endif
+  public byte[] GetLocalizeCVGroupArray() { return __p.__vector_as_array<byte>(62); }
+  public bool TeenMode { get { int o = __p.__offset(64); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.CharacterDialogExcel> CreateCharacterDialogExcel(FlatBufferBuilder builder,
       long CharacterId = 0,
+      long DisplayOrder = 0,
       FlatDataGlobal.ProductionStep productionstep = FlatDataGlobal.ProductionStep.ToDo,
       FlatDataGlobal.DialogCategory dialogcategory = FlatDataGlobal.DialogCategory.Cafe,
       FlatDataGlobal.DialogCondition dialogcondition = FlatDataGlobal.DialogCondition.Idle,
@@ -131,11 +143,19 @@ public struct CharacterDialogExcel : IFlatbufferObject
       bool ApplyPosition = false,
       float PosX = 0.0f,
       float PosY = 0.0f,
+      bool CollectionVisible = false,
+      FlatDataGlobal.CVCollectionType cvcollectiontype = FlatDataGlobal.CVCollectionType.CVNormal,
+      long UnlockFavorRank = 0,
+      StringOffset LocalizeCVGroupOffset = default(StringOffset),
       bool TeenMode = false) {
-    builder.StartTable(26);
+    builder.StartTable(31);
+    CharacterDialogExcel.AddUnlockFavorRank(builder, UnlockFavorRank);
     CharacterDialogExcel.AddDuration(builder, Duration);
     CharacterDialogExcel.AddGroupId(builder, GroupId);
+    CharacterDialogExcel.AddDisplayOrder(builder, DisplayOrder);
     CharacterDialogExcel.AddCharacterId(builder, CharacterId);
+    CharacterDialogExcel.AddLocalizeCVGroup(builder, LocalizeCVGroupOffset);
+    CharacterDialogExcel.AddCvcollectiontype(builder, cvcollectiontype);
     CharacterDialogExcel.AddPosY(builder, PosY);
     CharacterDialogExcel.AddPosX(builder, PosX);
     CharacterDialogExcel.AddVoiceClipsEn(builder, VoiceClipsEnOffset);
@@ -158,62 +178,68 @@ public struct CharacterDialogExcel : IFlatbufferObject
     CharacterDialogExcel.AddDialogcategory(builder, dialogcategory);
     CharacterDialogExcel.AddProductionstep(builder, productionstep);
     CharacterDialogExcel.AddTeenMode(builder, TeenMode);
+    CharacterDialogExcel.AddCollectionVisible(builder, CollectionVisible);
     CharacterDialogExcel.AddApplyPosition(builder, ApplyPosition);
     return CharacterDialogExcel.EndCharacterDialogExcel(builder);
   }
 
-  public static void StartCharacterDialogExcel(FlatBufferBuilder builder) { builder.StartTable(26); }
+  public static void StartCharacterDialogExcel(FlatBufferBuilder builder) { builder.StartTable(31); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
-  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionstep) { builder.AddInt(1, (int)productionstep, 0); }
-  public static void AddDialogcategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory dialogcategory) { builder.AddInt(2, (int)dialogcategory, 0); }
-  public static void AddDialogcondition(FlatBufferBuilder builder, FlatDataGlobal.DialogCondition dialogcondition) { builder.AddInt(3, (int)dialogcondition, 0); }
-  public static void AddAnniversary(FlatBufferBuilder builder, FlatDataGlobal.Anniversary anniversary) { builder.AddInt(4, (int)anniversary, 0); }
-  public static void AddStartDate(FlatBufferBuilder builder, StringOffset StartDateOffset) { builder.AddOffset(5, StartDateOffset.Value, 0); }
-  public static void AddEndDate(FlatBufferBuilder builder, StringOffset EndDateOffset) { builder.AddOffset(6, EndDateOffset.Value, 0); }
-  public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(7, GroupId, 0); }
-  public static void AddDialogtype(FlatBufferBuilder builder, FlatDataGlobal.DialogType dialogtype) { builder.AddInt(8, (int)dialogtype, 0); }
-  public static void AddActionName(FlatBufferBuilder builder, StringOffset ActionNameOffset) { builder.AddOffset(9, ActionNameOffset.Value, 0); }
-  public static void AddDuration(FlatBufferBuilder builder, long Duration) { builder.AddLong(10, Duration, 0); }
-  public static void AddAnimationName(FlatBufferBuilder builder, StringOffset AnimationNameOffset) { builder.AddOffset(11, AnimationNameOffset.Value, 0); }
-  public static void AddLocalizeKR(FlatBufferBuilder builder, StringOffset LocalizeKROffset) { builder.AddOffset(12, LocalizeKROffset.Value, 0); }
-  public static void AddLocalizeJP(FlatBufferBuilder builder, StringOffset LocalizeJPOffset) { builder.AddOffset(13, LocalizeJPOffset.Value, 0); }
-  public static void AddLocalizeTH(FlatBufferBuilder builder, StringOffset LocalizeTHOffset) { builder.AddOffset(14, LocalizeTHOffset.Value, 0); }
-  public static void AddLocalizeTW(FlatBufferBuilder builder, StringOffset LocalizeTWOffset) { builder.AddOffset(15, LocalizeTWOffset.Value, 0); }
-  public static void AddLocalizeEN(FlatBufferBuilder builder, StringOffset LocalizeENOffset) { builder.AddOffset(16, LocalizeENOffset.Value, 0); }
-  public static void AddVoiceClipsKr(FlatBufferBuilder builder, VectorOffset VoiceClipsKrOffset) { builder.AddOffset(17, VoiceClipsKrOffset.Value, 0); }
+  public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(1, DisplayOrder, 0); }
+  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionstep) { builder.AddInt(2, (int)productionstep, 0); }
+  public static void AddDialogcategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory dialogcategory) { builder.AddInt(3, (int)dialogcategory, 0); }
+  public static void AddDialogcondition(FlatBufferBuilder builder, FlatDataGlobal.DialogCondition dialogcondition) { builder.AddInt(4, (int)dialogcondition, 0); }
+  public static void AddAnniversary(FlatBufferBuilder builder, FlatDataGlobal.Anniversary anniversary) { builder.AddInt(5, (int)anniversary, 0); }
+  public static void AddStartDate(FlatBufferBuilder builder, StringOffset StartDateOffset) { builder.AddOffset(6, StartDateOffset.Value, 0); }
+  public static void AddEndDate(FlatBufferBuilder builder, StringOffset EndDateOffset) { builder.AddOffset(7, EndDateOffset.Value, 0); }
+  public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(8, GroupId, 0); }
+  public static void AddDialogtype(FlatBufferBuilder builder, FlatDataGlobal.DialogType dialogtype) { builder.AddInt(9, (int)dialogtype, 0); }
+  public static void AddActionName(FlatBufferBuilder builder, StringOffset ActionNameOffset) { builder.AddOffset(10, ActionNameOffset.Value, 0); }
+  public static void AddDuration(FlatBufferBuilder builder, long Duration) { builder.AddLong(11, Duration, 0); }
+  public static void AddAnimationName(FlatBufferBuilder builder, StringOffset AnimationNameOffset) { builder.AddOffset(12, AnimationNameOffset.Value, 0); }
+  public static void AddLocalizeKR(FlatBufferBuilder builder, StringOffset LocalizeKROffset) { builder.AddOffset(13, LocalizeKROffset.Value, 0); }
+  public static void AddLocalizeJP(FlatBufferBuilder builder, StringOffset LocalizeJPOffset) { builder.AddOffset(14, LocalizeJPOffset.Value, 0); }
+  public static void AddLocalizeTH(FlatBufferBuilder builder, StringOffset LocalizeTHOffset) { builder.AddOffset(15, LocalizeTHOffset.Value, 0); }
+  public static void AddLocalizeTW(FlatBufferBuilder builder, StringOffset LocalizeTWOffset) { builder.AddOffset(16, LocalizeTWOffset.Value, 0); }
+  public static void AddLocalizeEN(FlatBufferBuilder builder, StringOffset LocalizeENOffset) { builder.AddOffset(17, LocalizeENOffset.Value, 0); }
+  public static void AddVoiceClipsKr(FlatBufferBuilder builder, VectorOffset VoiceClipsKrOffset) { builder.AddOffset(18, VoiceClipsKrOffset.Value, 0); }
   public static VectorOffset CreateVoiceClipsKrVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsKrVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsKrVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsKrVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartVoiceClipsKrVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVoiceClipsJp(FlatBufferBuilder builder, VectorOffset VoiceClipsJpOffset) { builder.AddOffset(18, VoiceClipsJpOffset.Value, 0); }
+  public static void AddVoiceClipsJp(FlatBufferBuilder builder, VectorOffset VoiceClipsJpOffset) { builder.AddOffset(19, VoiceClipsJpOffset.Value, 0); }
   public static VectorOffset CreateVoiceClipsJpVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsJpVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsJpVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsJpVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartVoiceClipsJpVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVoiceClipsTh(FlatBufferBuilder builder, VectorOffset VoiceClipsThOffset) { builder.AddOffset(19, VoiceClipsThOffset.Value, 0); }
+  public static void AddVoiceClipsTh(FlatBufferBuilder builder, VectorOffset VoiceClipsThOffset) { builder.AddOffset(20, VoiceClipsThOffset.Value, 0); }
   public static VectorOffset CreateVoiceClipsThVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsThVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsThVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsThVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartVoiceClipsThVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVoiceClipsTw(FlatBufferBuilder builder, VectorOffset VoiceClipsTwOffset) { builder.AddOffset(20, VoiceClipsTwOffset.Value, 0); }
+  public static void AddVoiceClipsTw(FlatBufferBuilder builder, VectorOffset VoiceClipsTwOffset) { builder.AddOffset(21, VoiceClipsTwOffset.Value, 0); }
   public static VectorOffset CreateVoiceClipsTwVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsTwVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsTwVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsTwVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartVoiceClipsTwVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVoiceClipsEn(FlatBufferBuilder builder, VectorOffset VoiceClipsEnOffset) { builder.AddOffset(21, VoiceClipsEnOffset.Value, 0); }
+  public static void AddVoiceClipsEn(FlatBufferBuilder builder, VectorOffset VoiceClipsEnOffset) { builder.AddOffset(22, VoiceClipsEnOffset.Value, 0); }
   public static VectorOffset CreateVoiceClipsEnVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsEnVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsEnVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceClipsEnVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartVoiceClipsEnVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddApplyPosition(FlatBufferBuilder builder, bool ApplyPosition) { builder.AddBool(22, ApplyPosition, false); }
-  public static void AddPosX(FlatBufferBuilder builder, float PosX) { builder.AddFloat(23, PosX, 0.0f); }
-  public static void AddPosY(FlatBufferBuilder builder, float PosY) { builder.AddFloat(24, PosY, 0.0f); }
-  public static void AddTeenMode(FlatBufferBuilder builder, bool TeenMode) { builder.AddBool(25, TeenMode, false); }
+  public static void AddApplyPosition(FlatBufferBuilder builder, bool ApplyPosition) { builder.AddBool(23, ApplyPosition, false); }
+  public static void AddPosX(FlatBufferBuilder builder, float PosX) { builder.AddFloat(24, PosX, 0.0f); }
+  public static void AddPosY(FlatBufferBuilder builder, float PosY) { builder.AddFloat(25, PosY, 0.0f); }
+  public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(26, CollectionVisible, false); }
+  public static void AddCvcollectiontype(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cvcollectiontype) { builder.AddInt(27, (int)cvcollectiontype, 0); }
+  public static void AddUnlockFavorRank(FlatBufferBuilder builder, long UnlockFavorRank) { builder.AddLong(28, UnlockFavorRank, 0); }
+  public static void AddLocalizeCVGroup(FlatBufferBuilder builder, StringOffset LocalizeCVGroupOffset) { builder.AddOffset(29, LocalizeCVGroupOffset.Value, 0); }
+  public static void AddTeenMode(FlatBufferBuilder builder, bool TeenMode) { builder.AddBool(30, TeenMode, false); }
   public static Offset<FlatDataGlobal.CharacterDialogExcel> EndCharacterDialogExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterDialogExcel>(o);

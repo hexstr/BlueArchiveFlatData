@@ -50,6 +50,9 @@ public enum Club : int
   HotSpringsDepartment = 40,
   TeaParty = 41,
   PublicPeaceBureau = 42,
+  Genryumon = 43,
+  BlackTortoisePromenade = 44,
+  LaborParty = 45,
 };
 
 

@@ -95,7 +95,25 @@ public struct EventContentStageExcel : IFlatbufferObject
   public long BGMId { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public bool InstantClear { get { int o = __p.__offset(64); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long BuffContentId { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool ChallengeDisplay { get { int o = __p.__offset(68); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long FixedEchelonId { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool ChallengeDisplay { get { int o = __p.__offset(70); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.StarGoalType StarGoal(int j) { int o = __p.__offset(72); return o != 0 ? (FlatDataGlobal.StarGoalType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.StarGoalType)0; }
+  public int StarGoalLength { get { int o = __p.__offset(72); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<FlatDataGlobal.StarGoalType> GetStarGoalBytes() { return __p.__vector_as_span<FlatDataGlobal.StarGoalType>(72, 4); }
+#else
+  public ArraySegment<byte>? GetStarGoalBytes() { return __p.__vector_as_arraysegment(72); }
+#endif
+  public FlatDataGlobal.StarGoalType[] GetStarGoalArray() { int o = __p.__offset(72); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.StarGoalType[] a = new FlatDataGlobal.StarGoalType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.StarGoalType)__p.bb.GetInt(p + i * 4); } return a; }
+  public int StarGoalAmount(int j) { int o = __p.__offset(74); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int StarGoalAmountLength { get { int o = __p.__offset(74); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetStarGoalAmountBytes() { return __p.__vector_as_span<int>(74, 4); }
+#else
+  public ArraySegment<byte>? GetStarGoalAmountBytes() { return __p.__vector_as_arraysegment(74); }
+#endif
+  public int[] GetStarGoalAmountArray() { return __p.__vector_as_array<int>(74); }
+  public bool IsDefeatBattle { get { int o = __p.__offset(76); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.EventContentStageExcel> CreateEventContentStageExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -130,8 +148,13 @@ public struct EventContentStageExcel : IFlatbufferObject
       long BGMId = 0,
       bool InstantClear = false,
       long BuffContentId = 0,
-      bool ChallengeDisplay = false) {
-    builder.StartTable(33);
+      long FixedEchelonId = 0,
+      bool ChallengeDisplay = false,
+      VectorOffset StarGoalOffset = default(VectorOffset),
+      VectorOffset StarGoalAmountOffset = default(VectorOffset),
+      bool IsDefeatBattle = false) {
+    builder.StartTable(37);
+    EventContentStageExcel.AddFixedEchelonId(builder, FixedEchelonId);
     EventContentStageExcel.AddBuffContentId(builder, BuffContentId);
     EventContentStageExcel.AddBGMId(builder, BGMId);
     EventContentStageExcel.AddGroundID(builder, GroundID);
@@ -146,6 +169,8 @@ public struct EventContentStageExcel : IFlatbufferObject
     EventContentStageExcel.AddPrevStageId(builder, PrevStageId);
     EventContentStageExcel.AddEventContentId(builder, EventContentId);
     EventContentStageExcel.AddId(builder, Id);
+    EventContentStageExcel.AddStarGoalAmount(builder, StarGoalAmountOffset);
+    EventContentStageExcel.AddStarGoal(builder, StarGoalOffset);
     EventContentStageExcel.AddContenttype(builder, contenttype);
     EventContentStageExcel.AddStrategyenvironment(builder, strategyenvironment);
     EventContentStageExcel.AddBgmId(builder, BgmIdOffset);
@@ -163,12 +188,13 @@ public struct EventContentStageExcel : IFlatbufferObject
     EventContentStageExcel.AddStageNumber(builder, StageNumberOffset);
     EventContentStageExcel.AddStagedifficulty(builder, stagedifficulty);
     EventContentStageExcel.AddName(builder, NameOffset);
+    EventContentStageExcel.AddIsDefeatBattle(builder, IsDefeatBattle);
     EventContentStageExcel.AddChallengeDisplay(builder, ChallengeDisplay);
     EventContentStageExcel.AddInstantClear(builder, InstantClear);
     return EventContentStageExcel.EndEventContentStageExcel(builder);
   }
 
-  public static void StartEventContentStageExcel(FlatBufferBuilder builder) { builder.StartTable(33); }
+  public static void StartEventContentStageExcel(FlatBufferBuilder builder) { builder.StartTable(37); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(1, NameOffset.Value, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(2, EventContentId, 0); }
@@ -211,7 +237,21 @@ public struct EventContentStageExcel : IFlatbufferObject
   public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(29, BGMId, 0); }
   public static void AddInstantClear(FlatBufferBuilder builder, bool InstantClear) { builder.AddBool(30, InstantClear, false); }
   public static void AddBuffContentId(FlatBufferBuilder builder, long BuffContentId) { builder.AddLong(31, BuffContentId, 0); }
-  public static void AddChallengeDisplay(FlatBufferBuilder builder, bool ChallengeDisplay) { builder.AddBool(32, ChallengeDisplay, false); }
+  public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(32, FixedEchelonId, 0); }
+  public static void AddChallengeDisplay(FlatBufferBuilder builder, bool ChallengeDisplay) { builder.AddBool(33, ChallengeDisplay, false); }
+  public static void AddStarGoal(FlatBufferBuilder builder, VectorOffset StarGoalOffset) { builder.AddOffset(34, StarGoalOffset.Value, 0); }
+  public static VectorOffset CreateStarGoalVector(FlatBufferBuilder builder, FlatDataGlobal.StarGoalType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.StarGoalType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.StarGoalType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.StarGoalType>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartStarGoalVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddStarGoalAmount(FlatBufferBuilder builder, VectorOffset StarGoalAmountOffset) { builder.AddOffset(35, StarGoalAmountOffset.Value, 0); }
+  public static VectorOffset CreateStarGoalAmountVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartStarGoalAmountVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddIsDefeatBattle(FlatBufferBuilder builder, bool IsDefeatBattle) { builder.AddBool(36, IsDefeatBattle, false); }
   public static Offset<FlatDataGlobal.EventContentStageExcel> EndEventContentStageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentStageExcel>(o);
