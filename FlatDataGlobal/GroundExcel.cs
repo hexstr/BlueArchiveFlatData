@@ -30,7 +30,7 @@ public struct GroundExcel : IFlatbufferObject
 #endif
   public byte[] GetGroundSceneNameArray() { return __p.__vector_as_array<byte>(8); }
   public long FormationGroupId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.StageTopography Stagetopography { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
+  public FlatDataGlobal.StageTopography StageTopography { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
   public FlatDataGlobal.BulletType EnemyBulletType { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.BulletType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.BulletType.Normal; } }
   public FlatDataGlobal.ArmorType EnemyArmorType { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.ArmorType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ArmorType.LightArmor; } }
   public long LevelNPC { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -81,7 +81,7 @@ public struct GroundExcel : IFlatbufferObject
       VectorOffset StageFileNameOffset = default(VectorOffset),
       StringOffset GroundSceneNameOffset = default(StringOffset),
       long FormationGroupId = 0,
-      FlatDataGlobal.StageTopography stagetopography = FlatDataGlobal.StageTopography.Street,
+      FlatDataGlobal.StageTopography stageTopography = FlatDataGlobal.StageTopography.Street,
       FlatDataGlobal.BulletType EnemyBulletType = FlatDataGlobal.BulletType.Normal,
       FlatDataGlobal.ArmorType EnemyArmorType = FlatDataGlobal.ArmorType.LightArmor,
       long LevelNPC = 0,
@@ -154,7 +154,7 @@ public struct GroundExcel : IFlatbufferObject
     GroundExcel.AddForcedTacticSpeed(builder, ForcedTacticSpeed);
     GroundExcel.AddEnemyArmorType(builder, EnemyArmorType);
     GroundExcel.AddEnemyBulletType(builder, EnemyBulletType);
-    GroundExcel.AddStagetopography(builder, stagetopography);
+    GroundExcel.AddStageTopography(builder, stageTopography);
     GroundExcel.AddGroundSceneName(builder, GroundSceneNameOffset);
     GroundExcel.AddStageFileName(builder, StageFileNameOffset);
     GroundExcel.AddUIBattleHideFromScratch(builder, UIBattleHideFromScratch);
@@ -177,7 +177,7 @@ public struct GroundExcel : IFlatbufferObject
   public static void StartStageFileNameVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddGroundSceneName(FlatBufferBuilder builder, StringOffset GroundSceneNameOffset) { builder.AddOffset(2, GroundSceneNameOffset.Value, 0); }
   public static void AddFormationGroupId(FlatBufferBuilder builder, long FormationGroupId) { builder.AddLong(3, FormationGroupId, 0); }
-  public static void AddStagetopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stagetopography) { builder.AddInt(4, (int)stagetopography, 0); }
+  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stageTopography) { builder.AddInt(4, (int)stageTopography, 0); }
   public static void AddEnemyBulletType(FlatBufferBuilder builder, FlatDataGlobal.BulletType EnemyBulletType) { builder.AddInt(5, (int)EnemyBulletType, 0); }
   public static void AddEnemyArmorType(FlatBufferBuilder builder, FlatDataGlobal.ArmorType EnemyArmorType) { builder.AddInt(6, (int)EnemyArmorType, 0); }
   public static void AddLevelNPC(FlatBufferBuilder builder, long LevelNPC) { builder.AddLong(7, LevelNPC, 0); }

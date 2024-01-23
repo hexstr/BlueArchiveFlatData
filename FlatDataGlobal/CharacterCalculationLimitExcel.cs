@@ -20,14 +20,14 @@ public struct CharacterCalculationLimitExcel : IFlatbufferObject
   public CharacterCalculationLimitExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.TacticEntityType Tacticentitytype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.TacticEntityType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticEntityType.None; } }
+  public FlatDataGlobal.TacticEntityType TacticEntityType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.TacticEntityType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticEntityType.None; } }
   public FlatDataGlobal.BattleCalculationStat CalculationValue { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.BattleCalculationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.BattleCalculationStat.FinalDamage; } }
   public long MinValue { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long MaxValue { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.CharacterCalculationLimitExcel> CreateCharacterCalculationLimitExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataGlobal.TacticEntityType tacticentitytype = FlatDataGlobal.TacticEntityType.None,
+      FlatDataGlobal.TacticEntityType tacticEntityType = FlatDataGlobal.TacticEntityType.None,
       FlatDataGlobal.BattleCalculationStat CalculationValue = FlatDataGlobal.BattleCalculationStat.FinalDamage,
       long MinValue = 0,
       long MaxValue = 0) {
@@ -36,13 +36,13 @@ public struct CharacterCalculationLimitExcel : IFlatbufferObject
     CharacterCalculationLimitExcel.AddMinValue(builder, MinValue);
     CharacterCalculationLimitExcel.AddId(builder, Id);
     CharacterCalculationLimitExcel.AddCalculationValue(builder, CalculationValue);
-    CharacterCalculationLimitExcel.AddTacticentitytype(builder, tacticentitytype);
+    CharacterCalculationLimitExcel.AddTacticEntityType(builder, tacticEntityType);
     return CharacterCalculationLimitExcel.EndCharacterCalculationLimitExcel(builder);
   }
 
   public static void StartCharacterCalculationLimitExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddTacticentitytype(FlatBufferBuilder builder, FlatDataGlobal.TacticEntityType tacticentitytype) { builder.AddInt(1, (int)tacticentitytype, 0); }
+  public static void AddTacticEntityType(FlatBufferBuilder builder, FlatDataGlobal.TacticEntityType tacticEntityType) { builder.AddInt(1, (int)tacticEntityType, 0); }
   public static void AddCalculationValue(FlatBufferBuilder builder, FlatDataGlobal.BattleCalculationStat CalculationValue) { builder.AddInt(2, (int)CalculationValue, 0); }
   public static void AddMinValue(FlatBufferBuilder builder, long MinValue) { builder.AddLong(3, MinValue, 0); }
   public static void AddMaxValue(FlatBufferBuilder builder, long MaxValue) { builder.AddLong(4, MaxValue, 0); }

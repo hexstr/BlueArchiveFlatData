@@ -21,7 +21,7 @@ public struct ConquestEventExcel : IFlatbufferObject
 
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long MainStoryEventContentId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ConquestEventType Conquesteventtype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ConquestEventType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ConquestEventType.None; } }
+  public FlatDataGlobal.ConquestEventType ConquestEventType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ConquestEventType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ConquestEventType.None; } }
   public bool UseErosion { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool UseUnexpectedEvent { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool UseCalculate { get { int o = __p.__offset(14); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
@@ -115,7 +115,7 @@ public struct ConquestEventExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.ConquestEventExcel> CreateConquestEventExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
       long MainStoryEventContentId = 0,
-      FlatDataGlobal.ConquestEventType conquesteventtype = FlatDataGlobal.ConquestEventType.None,
+      FlatDataGlobal.ConquestEventType conquestEventType = FlatDataGlobal.ConquestEventType.None,
       bool UseErosion = false,
       bool UseUnexpectedEvent = false,
       bool UseCalculate = false,
@@ -161,7 +161,7 @@ public struct ConquestEventExcel : IFlatbufferObject
     ConquestEventExcel.AddEvnetScenarioBG(builder, EvnetScenarioBGOffset);
     ConquestEventExcel.AddEvnetMapNameLocalize(builder, EvnetMapNameLocalizeOffset);
     ConquestEventExcel.AddEvnetMapGoalLocalize(builder, EvnetMapGoalLocalizeOffset);
-    ConquestEventExcel.AddConquesteventtype(builder, conquesteventtype);
+    ConquestEventExcel.AddConquestEventType(builder, conquestEventType);
     ConquestEventExcel.AddUseConquestObject(builder, UseConquestObject);
     ConquestEventExcel.AddUseCalculate(builder, UseCalculate);
     ConquestEventExcel.AddUseUnexpectedEvent(builder, UseUnexpectedEvent);
@@ -172,7 +172,7 @@ public struct ConquestEventExcel : IFlatbufferObject
   public static void StartConquestEventExcel(FlatBufferBuilder builder) { builder.StartTable(26); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddMainStoryEventContentId(FlatBufferBuilder builder, long MainStoryEventContentId) { builder.AddLong(1, MainStoryEventContentId, 0); }
-  public static void AddConquesteventtype(FlatBufferBuilder builder, FlatDataGlobal.ConquestEventType conquesteventtype) { builder.AddInt(2, (int)conquesteventtype, 0); }
+  public static void AddConquestEventType(FlatBufferBuilder builder, FlatDataGlobal.ConquestEventType conquestEventType) { builder.AddInt(2, (int)conquestEventType, 0); }
   public static void AddUseErosion(FlatBufferBuilder builder, bool UseErosion) { builder.AddBool(3, UseErosion, false); }
   public static void AddUseUnexpectedEvent(FlatBufferBuilder builder, bool UseUnexpectedEvent) { builder.AddBool(4, UseUnexpectedEvent, false); }
   public static void AddUseCalculate(FlatBufferBuilder builder, bool UseCalculate) { builder.AddBool(5, UseCalculate, false); }

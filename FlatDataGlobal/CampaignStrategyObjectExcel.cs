@@ -35,7 +35,7 @@ public struct CampaignStrategyObjectExcel : IFlatbufferObject
   public ArraySegment<byte>? GetPrefabNameBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetPrefabNameArray() { return __p.__vector_as_array<byte>(10); }
-  public FlatDataGlobal.StrategyObjectType Strategyobjecttype { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.StrategyObjectType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StrategyObjectType.None; } }
+  public FlatDataGlobal.StrategyObjectType StrategyObjectType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.StrategyObjectType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StrategyObjectType.None; } }
   public FlatDataGlobal.ParcelType StrategyRewardParcelType { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
   public long StrategyRewardID { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string StrategyRewardName { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
@@ -58,7 +58,7 @@ public struct CampaignStrategyObjectExcel : IFlatbufferObject
       uint Key = 0,
       StringOffset NameOffset = default(StringOffset),
       StringOffset PrefabNameOffset = default(StringOffset),
-      FlatDataGlobal.StrategyObjectType strategyobjecttype = FlatDataGlobal.StrategyObjectType.None,
+      FlatDataGlobal.StrategyObjectType strategyObjectType = FlatDataGlobal.StrategyObjectType.None,
       FlatDataGlobal.ParcelType StrategyRewardParcelType = FlatDataGlobal.ParcelType.None,
       long StrategyRewardID = 0,
       StringOffset StrategyRewardNameOffset = default(StringOffset),
@@ -80,7 +80,7 @@ public struct CampaignStrategyObjectExcel : IFlatbufferObject
     CampaignStrategyObjectExcel.AddStrategyRewardAmount(builder, StrategyRewardAmount);
     CampaignStrategyObjectExcel.AddStrategyRewardName(builder, StrategyRewardNameOffset);
     CampaignStrategyObjectExcel.AddStrategyRewardParcelType(builder, StrategyRewardParcelType);
-    CampaignStrategyObjectExcel.AddStrategyobjecttype(builder, strategyobjecttype);
+    CampaignStrategyObjectExcel.AddStrategyObjectType(builder, strategyObjectType);
     CampaignStrategyObjectExcel.AddPrefabName(builder, PrefabNameOffset);
     CampaignStrategyObjectExcel.AddName(builder, NameOffset);
     CampaignStrategyObjectExcel.AddKey(builder, Key);
@@ -93,7 +93,7 @@ public struct CampaignStrategyObjectExcel : IFlatbufferObject
   public static void AddKey(FlatBufferBuilder builder, uint Key) { builder.AddUint(1, Key, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(2, NameOffset.Value, 0); }
   public static void AddPrefabName(FlatBufferBuilder builder, StringOffset PrefabNameOffset) { builder.AddOffset(3, PrefabNameOffset.Value, 0); }
-  public static void AddStrategyobjecttype(FlatBufferBuilder builder, FlatDataGlobal.StrategyObjectType strategyobjecttype) { builder.AddInt(4, (int)strategyobjecttype, 0); }
+  public static void AddStrategyObjectType(FlatBufferBuilder builder, FlatDataGlobal.StrategyObjectType strategyObjectType) { builder.AddInt(4, (int)strategyObjectType, 0); }
   public static void AddStrategyRewardParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType StrategyRewardParcelType) { builder.AddInt(5, (int)StrategyRewardParcelType, 0); }
   public static void AddStrategyRewardID(FlatBufferBuilder builder, long StrategyRewardID) { builder.AddLong(6, StrategyRewardID, 0); }
   public static void AddStrategyRewardName(FlatBufferBuilder builder, StringOffset StrategyRewardNameOffset) { builder.AddOffset(7, StrategyRewardNameOffset.Value, 0); }

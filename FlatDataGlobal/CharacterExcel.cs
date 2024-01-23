@@ -27,7 +27,7 @@ public struct CharacterExcel : IFlatbufferObject
   public ArraySegment<byte>? GetDevNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetDevNameArray() { return __p.__vector_as_array<byte>(6); }
-  public FlatDataGlobal.ProductionStep Productionstep { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
+  public FlatDataGlobal.ProductionStep ProductionStep { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
   public bool CollectionVisible { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public string ReleaseDate { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -54,22 +54,22 @@ public struct CharacterExcel : IFlatbufferObject
   public uint LocalizeEtcId { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public FlatDataGlobal.Rarity Rarity { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Rarity.N; } }
   public bool IsNPC { get { int o = __p.__offset(24); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.TacticEntityType Tacticentitytype { get { int o = __p.__offset(26); return o != 0 ? (FlatDataGlobal.TacticEntityType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticEntityType.None; } }
+  public FlatDataGlobal.TacticEntityType TacticEntityType { get { int o = __p.__offset(26); return o != 0 ? (FlatDataGlobal.TacticEntityType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticEntityType.None; } }
   public bool CanSurvive { get { int o = __p.__offset(28); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool IsDummy { get { int o = __p.__offset(30); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public int SubPartsCount { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.TacticRole Tacticrole { get { int o = __p.__offset(34); return o != 0 ? (FlatDataGlobal.TacticRole)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticRole.None; } }
-  public FlatDataGlobal.WeaponType Weapontype { get { int o = __p.__offset(36); return o != 0 ? (FlatDataGlobal.WeaponType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.WeaponType.None; } }
-  public FlatDataGlobal.TacticRange Tacticrange { get { int o = __p.__offset(38); return o != 0 ? (FlatDataGlobal.TacticRange)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticRange.Back; } }
-  public FlatDataGlobal.BulletType Bullettype { get { int o = __p.__offset(40); return o != 0 ? (FlatDataGlobal.BulletType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.BulletType.Normal; } }
-  public FlatDataGlobal.ArmorType Armortype { get { int o = __p.__offset(42); return o != 0 ? (FlatDataGlobal.ArmorType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ArmorType.LightArmor; } }
-  public FlatDataGlobal.AimIKType Aimiktype { get { int o = __p.__offset(44); return o != 0 ? (FlatDataGlobal.AimIKType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.AimIKType.None; } }
+  public FlatDataGlobal.TacticRole TacticRole { get { int o = __p.__offset(34); return o != 0 ? (FlatDataGlobal.TacticRole)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticRole.None; } }
+  public FlatDataGlobal.WeaponType WeaponType { get { int o = __p.__offset(36); return o != 0 ? (FlatDataGlobal.WeaponType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.WeaponType.None; } }
+  public FlatDataGlobal.TacticRange TacticRange { get { int o = __p.__offset(38); return o != 0 ? (FlatDataGlobal.TacticRange)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticRange.Back; } }
+  public FlatDataGlobal.BulletType BulletType { get { int o = __p.__offset(40); return o != 0 ? (FlatDataGlobal.BulletType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.BulletType.Normal; } }
+  public FlatDataGlobal.ArmorType ArmorType { get { int o = __p.__offset(42); return o != 0 ? (FlatDataGlobal.ArmorType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ArmorType.LightArmor; } }
+  public FlatDataGlobal.AimIKType AimIKType { get { int o = __p.__offset(44); return o != 0 ? (FlatDataGlobal.AimIKType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.AimIKType.None; } }
   public FlatDataGlobal.School School { get { int o = __p.__offset(46); return o != 0 ? (FlatDataGlobal.School)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.School.None; } }
   public FlatDataGlobal.Club Club { get { int o = __p.__offset(48); return o != 0 ? (FlatDataGlobal.Club)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Club.None; } }
   public int DefaultStarGrade { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int MaxStarGrade { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.StatLevelUpType Statleveluptype { get { int o = __p.__offset(54); return o != 0 ? (FlatDataGlobal.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatLevelUpType.Standard; } }
-  public FlatDataGlobal.SquadType Squadtype { get { int o = __p.__offset(56); return o != 0 ? (FlatDataGlobal.SquadType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.SquadType.None; } }
+  public FlatDataGlobal.StatLevelUpType StatLevelUpType { get { int o = __p.__offset(54); return o != 0 ? (FlatDataGlobal.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatLevelUpType.Standard; } }
+  public FlatDataGlobal.SquadType SquadType { get { int o = __p.__offset(56); return o != 0 ? (FlatDataGlobal.SquadType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.SquadType.None; } }
   public bool Jumpable { get { int o = __p.__offset(58); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long PersonalityId { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long CharacterAIId { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -112,7 +112,7 @@ public struct CharacterExcel : IFlatbufferObject
   public ArraySegment<byte>? GetSpineResourceNameDioramaForFormConversionBytes() { return __p.__vector_as_arraysegment(78); }
 #endif
   public byte[] GetSpineResourceNameDioramaForFormConversionArray() { return __p.__vector_as_array<byte>(78); }
-  public FlatDataGlobal.EntityMaterialType Entitymaterialtype { get { int o = __p.__offset(80); return o != 0 ? (FlatDataGlobal.EntityMaterialType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EntityMaterialType.Wood; } }
+  public FlatDataGlobal.EntityMaterialType EntityMaterialType { get { int o = __p.__offset(80); return o != 0 ? (FlatDataGlobal.EntityMaterialType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EntityMaterialType.Wood; } }
   public string ModelPrefabName { get { int o = __p.__offset(82); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetModelPrefabNameBytes() { return __p.__vector_as_span<byte>(82, 1); }
@@ -236,7 +236,7 @@ public struct CharacterExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.CharacterExcel> CreateCharacterExcel(FlatBufferBuilder builder,
       long Id = 0,
       StringOffset DevNameOffset = default(StringOffset),
-      FlatDataGlobal.ProductionStep productionstep = FlatDataGlobal.ProductionStep.ToDo,
+      FlatDataGlobal.ProductionStep productionStep = FlatDataGlobal.ProductionStep.ToDo,
       bool CollectionVisible = false,
       StringOffset ReleaseDateOffset = default(StringOffset),
       StringOffset CollectionVisibleStartDateOffset = default(StringOffset),
@@ -245,22 +245,22 @@ public struct CharacterExcel : IFlatbufferObject
       uint LocalizeEtcId = 0,
       FlatDataGlobal.Rarity rarity = FlatDataGlobal.Rarity.N,
       bool IsNPC = false,
-      FlatDataGlobal.TacticEntityType tacticentitytype = FlatDataGlobal.TacticEntityType.None,
+      FlatDataGlobal.TacticEntityType tacticEntityType = FlatDataGlobal.TacticEntityType.None,
       bool CanSurvive = false,
       bool IsDummy = false,
       int SubPartsCount = 0,
-      FlatDataGlobal.TacticRole tacticrole = FlatDataGlobal.TacticRole.None,
-      FlatDataGlobal.WeaponType weapontype = FlatDataGlobal.WeaponType.None,
-      FlatDataGlobal.TacticRange tacticrange = FlatDataGlobal.TacticRange.Back,
-      FlatDataGlobal.BulletType bullettype = FlatDataGlobal.BulletType.Normal,
-      FlatDataGlobal.ArmorType armortype = FlatDataGlobal.ArmorType.LightArmor,
-      FlatDataGlobal.AimIKType aimiktype = FlatDataGlobal.AimIKType.None,
+      FlatDataGlobal.TacticRole tacticRole = FlatDataGlobal.TacticRole.None,
+      FlatDataGlobal.WeaponType weaponType = FlatDataGlobal.WeaponType.None,
+      FlatDataGlobal.TacticRange tacticRange = FlatDataGlobal.TacticRange.Back,
+      FlatDataGlobal.BulletType bulletType = FlatDataGlobal.BulletType.Normal,
+      FlatDataGlobal.ArmorType armorType = FlatDataGlobal.ArmorType.LightArmor,
+      FlatDataGlobal.AimIKType aimIKType = FlatDataGlobal.AimIKType.None,
       FlatDataGlobal.School school = FlatDataGlobal.School.None,
       FlatDataGlobal.Club club = FlatDataGlobal.Club.None,
       int DefaultStarGrade = 0,
       int MaxStarGrade = 0,
-      FlatDataGlobal.StatLevelUpType statleveluptype = FlatDataGlobal.StatLevelUpType.Standard,
-      FlatDataGlobal.SquadType squadtype = FlatDataGlobal.SquadType.None,
+      FlatDataGlobal.StatLevelUpType statLevelUpType = FlatDataGlobal.StatLevelUpType.Standard,
+      FlatDataGlobal.SquadType squadType = FlatDataGlobal.SquadType.None,
       bool Jumpable = false,
       long PersonalityId = 0,
       long CharacterAIId = 0,
@@ -272,7 +272,7 @@ public struct CharacterExcel : IFlatbufferObject
       StringOffset SpineResourceNameOffset = default(StringOffset),
       StringOffset SpineResourceNameDioramaOffset = default(StringOffset),
       StringOffset SpineResourceNameDioramaForFormConversionOffset = default(StringOffset),
-      FlatDataGlobal.EntityMaterialType entitymaterialtype = FlatDataGlobal.EntityMaterialType.Wood,
+      FlatDataGlobal.EntityMaterialType entityMaterialType = FlatDataGlobal.EntityMaterialType.Wood,
       StringOffset ModelPrefabNameOffset = default(StringOffset),
       StringOffset CafeModelPrefabNameOffset = default(StringOffset),
       StringOffset TextureDirOffset = default(StringOffset),
@@ -348,7 +348,7 @@ public struct CharacterExcel : IFlatbufferObject
     CharacterExcel.AddTextureDir(builder, TextureDirOffset);
     CharacterExcel.AddCafeModelPrefabName(builder, CafeModelPrefabNameOffset);
     CharacterExcel.AddModelPrefabName(builder, ModelPrefabNameOffset);
-    CharacterExcel.AddEntitymaterialtype(builder, entitymaterialtype);
+    CharacterExcel.AddEntityMaterialType(builder, entityMaterialType);
     CharacterExcel.AddSpineResourceNameDioramaForFormConversion(builder, SpineResourceNameDioramaForFormConversionOffset);
     CharacterExcel.AddSpineResourceNameDiorama(builder, SpineResourceNameDioramaOffset);
     CharacterExcel.AddSpineResourceName(builder, SpineResourceNameOffset);
@@ -356,26 +356,26 @@ public struct CharacterExcel : IFlatbufferObject
     CharacterExcel.AddFavorLevelupType(builder, FavorLevelupType);
     CharacterExcel.AddSpawnTemplateId(builder, SpawnTemplateId);
     CharacterExcel.AddScenarioCharacter(builder, ScenarioCharacterOffset);
-    CharacterExcel.AddSquadtype(builder, squadtype);
-    CharacterExcel.AddStatleveluptype(builder, statleveluptype);
+    CharacterExcel.AddSquadType(builder, squadType);
+    CharacterExcel.AddStatLevelUpType(builder, statLevelUpType);
     CharacterExcel.AddMaxStarGrade(builder, MaxStarGrade);
     CharacterExcel.AddDefaultStarGrade(builder, DefaultStarGrade);
     CharacterExcel.AddClub(builder, club);
     CharacterExcel.AddSchool(builder, school);
-    CharacterExcel.AddAimiktype(builder, aimiktype);
-    CharacterExcel.AddArmortype(builder, armortype);
-    CharacterExcel.AddBullettype(builder, bullettype);
-    CharacterExcel.AddTacticrange(builder, tacticrange);
-    CharacterExcel.AddWeapontype(builder, weapontype);
-    CharacterExcel.AddTacticrole(builder, tacticrole);
+    CharacterExcel.AddAimIKType(builder, aimIKType);
+    CharacterExcel.AddArmorType(builder, armorType);
+    CharacterExcel.AddBulletType(builder, bulletType);
+    CharacterExcel.AddTacticRange(builder, tacticRange);
+    CharacterExcel.AddWeaponType(builder, weaponType);
+    CharacterExcel.AddTacticRole(builder, tacticRole);
     CharacterExcel.AddSubPartsCount(builder, SubPartsCount);
-    CharacterExcel.AddTacticentitytype(builder, tacticentitytype);
+    CharacterExcel.AddTacticEntityType(builder, tacticEntityType);
     CharacterExcel.AddRarity(builder, rarity);
     CharacterExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
     CharacterExcel.AddCollectionVisibleEndDate(builder, CollectionVisibleEndDateOffset);
     CharacterExcel.AddCollectionVisibleStartDate(builder, CollectionVisibleStartDateOffset);
     CharacterExcel.AddReleaseDate(builder, ReleaseDateOffset);
-    CharacterExcel.AddProductionstep(builder, productionstep);
+    CharacterExcel.AddProductionStep(builder, productionStep);
     CharacterExcel.AddDevName(builder, DevNameOffset);
     CharacterExcel.AddIsAirUnit(builder, IsAirUnit);
     CharacterExcel.AddCanBattleItemMove(builder, CanBattleItemMove);
@@ -397,7 +397,7 @@ public struct CharacterExcel : IFlatbufferObject
   public static void StartCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(78); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddDevName(FlatBufferBuilder builder, StringOffset DevNameOffset) { builder.AddOffset(1, DevNameOffset.Value, 0); }
-  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionstep) { builder.AddInt(2, (int)productionstep, 0); }
+  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionStep) { builder.AddInt(2, (int)productionStep, 0); }
   public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(3, CollectionVisible, false); }
   public static void AddReleaseDate(FlatBufferBuilder builder, StringOffset ReleaseDateOffset) { builder.AddOffset(4, ReleaseDateOffset.Value, 0); }
   public static void AddCollectionVisibleStartDate(FlatBufferBuilder builder, StringOffset CollectionVisibleStartDateOffset) { builder.AddOffset(5, CollectionVisibleStartDateOffset.Value, 0); }
@@ -406,22 +406,22 @@ public struct CharacterExcel : IFlatbufferObject
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(8, LocalizeEtcId, 0); }
   public static void AddRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity rarity) { builder.AddInt(9, (int)rarity, 0); }
   public static void AddIsNPC(FlatBufferBuilder builder, bool IsNPC) { builder.AddBool(10, IsNPC, false); }
-  public static void AddTacticentitytype(FlatBufferBuilder builder, FlatDataGlobal.TacticEntityType tacticentitytype) { builder.AddInt(11, (int)tacticentitytype, 0); }
+  public static void AddTacticEntityType(FlatBufferBuilder builder, FlatDataGlobal.TacticEntityType tacticEntityType) { builder.AddInt(11, (int)tacticEntityType, 0); }
   public static void AddCanSurvive(FlatBufferBuilder builder, bool CanSurvive) { builder.AddBool(12, CanSurvive, false); }
   public static void AddIsDummy(FlatBufferBuilder builder, bool IsDummy) { builder.AddBool(13, IsDummy, false); }
   public static void AddSubPartsCount(FlatBufferBuilder builder, int SubPartsCount) { builder.AddInt(14, SubPartsCount, 0); }
-  public static void AddTacticrole(FlatBufferBuilder builder, FlatDataGlobal.TacticRole tacticrole) { builder.AddInt(15, (int)tacticrole, 0); }
-  public static void AddWeapontype(FlatBufferBuilder builder, FlatDataGlobal.WeaponType weapontype) { builder.AddInt(16, (int)weapontype, 0); }
-  public static void AddTacticrange(FlatBufferBuilder builder, FlatDataGlobal.TacticRange tacticrange) { builder.AddInt(17, (int)tacticrange, 0); }
-  public static void AddBullettype(FlatBufferBuilder builder, FlatDataGlobal.BulletType bullettype) { builder.AddInt(18, (int)bullettype, 0); }
-  public static void AddArmortype(FlatBufferBuilder builder, FlatDataGlobal.ArmorType armortype) { builder.AddInt(19, (int)armortype, 0); }
-  public static void AddAimiktype(FlatBufferBuilder builder, FlatDataGlobal.AimIKType aimiktype) { builder.AddInt(20, (int)aimiktype, 0); }
+  public static void AddTacticRole(FlatBufferBuilder builder, FlatDataGlobal.TacticRole tacticRole) { builder.AddInt(15, (int)tacticRole, 0); }
+  public static void AddWeaponType(FlatBufferBuilder builder, FlatDataGlobal.WeaponType weaponType) { builder.AddInt(16, (int)weaponType, 0); }
+  public static void AddTacticRange(FlatBufferBuilder builder, FlatDataGlobal.TacticRange tacticRange) { builder.AddInt(17, (int)tacticRange, 0); }
+  public static void AddBulletType(FlatBufferBuilder builder, FlatDataGlobal.BulletType bulletType) { builder.AddInt(18, (int)bulletType, 0); }
+  public static void AddArmorType(FlatBufferBuilder builder, FlatDataGlobal.ArmorType armorType) { builder.AddInt(19, (int)armorType, 0); }
+  public static void AddAimIKType(FlatBufferBuilder builder, FlatDataGlobal.AimIKType aimIKType) { builder.AddInt(20, (int)aimIKType, 0); }
   public static void AddSchool(FlatBufferBuilder builder, FlatDataGlobal.School school) { builder.AddInt(21, (int)school, 0); }
   public static void AddClub(FlatBufferBuilder builder, FlatDataGlobal.Club club) { builder.AddInt(22, (int)club, 0); }
   public static void AddDefaultStarGrade(FlatBufferBuilder builder, int DefaultStarGrade) { builder.AddInt(23, DefaultStarGrade, 0); }
   public static void AddMaxStarGrade(FlatBufferBuilder builder, int MaxStarGrade) { builder.AddInt(24, MaxStarGrade, 0); }
-  public static void AddStatleveluptype(FlatBufferBuilder builder, FlatDataGlobal.StatLevelUpType statleveluptype) { builder.AddInt(25, (int)statleveluptype, 0); }
-  public static void AddSquadtype(FlatBufferBuilder builder, FlatDataGlobal.SquadType squadtype) { builder.AddInt(26, (int)squadtype, 0); }
+  public static void AddStatLevelUpType(FlatBufferBuilder builder, FlatDataGlobal.StatLevelUpType statLevelUpType) { builder.AddInt(25, (int)statLevelUpType, 0); }
+  public static void AddSquadType(FlatBufferBuilder builder, FlatDataGlobal.SquadType squadType) { builder.AddInt(26, (int)squadType, 0); }
   public static void AddJumpable(FlatBufferBuilder builder, bool Jumpable) { builder.AddBool(27, Jumpable, false); }
   public static void AddPersonalityId(FlatBufferBuilder builder, long PersonalityId) { builder.AddLong(28, PersonalityId, 0); }
   public static void AddCharacterAIId(FlatBufferBuilder builder, long CharacterAIId) { builder.AddLong(29, CharacterAIId, 0); }
@@ -438,7 +438,7 @@ public struct CharacterExcel : IFlatbufferObject
   public static void AddSpineResourceName(FlatBufferBuilder builder, StringOffset SpineResourceNameOffset) { builder.AddOffset(35, SpineResourceNameOffset.Value, 0); }
   public static void AddSpineResourceNameDiorama(FlatBufferBuilder builder, StringOffset SpineResourceNameDioramaOffset) { builder.AddOffset(36, SpineResourceNameDioramaOffset.Value, 0); }
   public static void AddSpineResourceNameDioramaForFormConversion(FlatBufferBuilder builder, StringOffset SpineResourceNameDioramaForFormConversionOffset) { builder.AddOffset(37, SpineResourceNameDioramaForFormConversionOffset.Value, 0); }
-  public static void AddEntitymaterialtype(FlatBufferBuilder builder, FlatDataGlobal.EntityMaterialType entitymaterialtype) { builder.AddInt(38, (int)entitymaterialtype, 0); }
+  public static void AddEntityMaterialType(FlatBufferBuilder builder, FlatDataGlobal.EntityMaterialType entityMaterialType) { builder.AddInt(38, (int)entityMaterialType, 0); }
   public static void AddModelPrefabName(FlatBufferBuilder builder, StringOffset ModelPrefabNameOffset) { builder.AddOffset(39, ModelPrefabNameOffset.Value, 0); }
   public static void AddCafeModelPrefabName(FlatBufferBuilder builder, StringOffset CafeModelPrefabNameOffset) { builder.AddOffset(40, CafeModelPrefabNameOffset.Value, 0); }
   public static void AddTextureDir(FlatBufferBuilder builder, StringOffset TextureDirOffset) { builder.AddOffset(41, TextureDirOffset.Value, 0); }

@@ -19,7 +19,7 @@ public struct VoiceCommonExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public VoiceCommonExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public FlatDataGlobal.VoiceEvent Voiceevent { get { int o = __p.__offset(4); return o != 0 ? (FlatDataGlobal.VoiceEvent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.VoiceEvent.OnTSA; } }
+  public FlatDataGlobal.VoiceEvent VoiceEvent { get { int o = __p.__offset(4); return o != 0 ? (FlatDataGlobal.VoiceEvent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.VoiceEvent.OnTSA; } }
   public long Rate { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public uint VoiceHash(int j) { int o = __p.__offset(8); return o != 0 ? __p.bb.GetUint(__p.__vector(o) + j * 4) : (uint)0; }
   public int VoiceHashLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
@@ -31,18 +31,18 @@ public struct VoiceCommonExcel : IFlatbufferObject
   public uint[] GetVoiceHashArray() { return __p.__vector_as_array<uint>(8); }
 
   public static Offset<FlatDataGlobal.VoiceCommonExcel> CreateVoiceCommonExcel(FlatBufferBuilder builder,
-      FlatDataGlobal.VoiceEvent voiceevent = FlatDataGlobal.VoiceEvent.OnTSA,
+      FlatDataGlobal.VoiceEvent voiceEvent = FlatDataGlobal.VoiceEvent.OnTSA,
       long Rate = 0,
       VectorOffset VoiceHashOffset = default(VectorOffset)) {
     builder.StartTable(3);
     VoiceCommonExcel.AddRate(builder, Rate);
     VoiceCommonExcel.AddVoiceHash(builder, VoiceHashOffset);
-    VoiceCommonExcel.AddVoiceevent(builder, voiceevent);
+    VoiceCommonExcel.AddVoiceEvent(builder, voiceEvent);
     return VoiceCommonExcel.EndVoiceCommonExcel(builder);
   }
 
   public static void StartVoiceCommonExcel(FlatBufferBuilder builder) { builder.StartTable(3); }
-  public static void AddVoiceevent(FlatBufferBuilder builder, FlatDataGlobal.VoiceEvent voiceevent) { builder.AddInt(0, (int)voiceevent, 0); }
+  public static void AddVoiceEvent(FlatBufferBuilder builder, FlatDataGlobal.VoiceEvent voiceEvent) { builder.AddInt(0, (int)voiceEvent, 0); }
   public static void AddRate(FlatBufferBuilder builder, long Rate) { builder.AddLong(1, Rate, 0); }
   public static void AddVoiceHash(FlatBufferBuilder builder, VectorOffset VoiceHashOffset) { builder.AddOffset(2, VoiceHashOffset.Value, 0); }
   public static VectorOffset CreateVoiceHashVector(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddUint(data[i]); return builder.EndVector(); }

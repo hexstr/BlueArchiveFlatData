@@ -20,9 +20,9 @@ public struct FarmingDungeonLocationManageExcel : IFlatbufferObject
   public FarmingDungeonLocationManageExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long FarmingDungeonLocationId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ContentType Contenttype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ContentType.None; } }
-  public FlatDataGlobal.WeekDungeonType Weekdungeontype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.WeekDungeonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.WeekDungeonType.None; } }
-  public FlatDataGlobal.SchoolDungeonType Schooldungeontype { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.SchoolDungeonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.SchoolDungeonType.SchoolA; } }
+  public FlatDataGlobal.ContentType ContentType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ContentType.None; } }
+  public FlatDataGlobal.WeekDungeonType WeekDungeonType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.WeekDungeonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.WeekDungeonType.None; } }
+  public FlatDataGlobal.SchoolDungeonType SchoolDungeonType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.SchoolDungeonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.SchoolDungeonType.SchoolA; } }
   public long Order { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string OpenStartDateTime { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -50,9 +50,9 @@ public struct FarmingDungeonLocationManageExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.FarmingDungeonLocationManageExcel> CreateFarmingDungeonLocationManageExcel(FlatBufferBuilder builder,
       long FarmingDungeonLocationId = 0,
-      FlatDataGlobal.ContentType contenttype = FlatDataGlobal.ContentType.None,
-      FlatDataGlobal.WeekDungeonType weekdungeontype = FlatDataGlobal.WeekDungeonType.None,
-      FlatDataGlobal.SchoolDungeonType schooldungeontype = FlatDataGlobal.SchoolDungeonType.SchoolA,
+      FlatDataGlobal.ContentType contentType = FlatDataGlobal.ContentType.None,
+      FlatDataGlobal.WeekDungeonType weekDungeonType = FlatDataGlobal.WeekDungeonType.None,
+      FlatDataGlobal.SchoolDungeonType schoolDungeonType = FlatDataGlobal.SchoolDungeonType.SchoolA,
       long Order = 0,
       StringOffset OpenStartDateTimeOffset = default(StringOffset),
       StringOffset OpenEndDateTimeOffset = default(StringOffset),
@@ -67,17 +67,17 @@ public struct FarmingDungeonLocationManageExcel : IFlatbufferObject
     FarmingDungeonLocationManageExcel.AddLocationButtonImagePath(builder, LocationButtonImagePathOffset);
     FarmingDungeonLocationManageExcel.AddOpenEndDateTime(builder, OpenEndDateTimeOffset);
     FarmingDungeonLocationManageExcel.AddOpenStartDateTime(builder, OpenStartDateTimeOffset);
-    FarmingDungeonLocationManageExcel.AddSchooldungeontype(builder, schooldungeontype);
-    FarmingDungeonLocationManageExcel.AddWeekdungeontype(builder, weekdungeontype);
-    FarmingDungeonLocationManageExcel.AddContenttype(builder, contenttype);
+    FarmingDungeonLocationManageExcel.AddSchoolDungeonType(builder, schoolDungeonType);
+    FarmingDungeonLocationManageExcel.AddWeekDungeonType(builder, weekDungeonType);
+    FarmingDungeonLocationManageExcel.AddContentType(builder, contentType);
     return FarmingDungeonLocationManageExcel.EndFarmingDungeonLocationManageExcel(builder);
   }
 
   public static void StartFarmingDungeonLocationManageExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
   public static void AddFarmingDungeonLocationId(FlatBufferBuilder builder, long FarmingDungeonLocationId) { builder.AddLong(0, FarmingDungeonLocationId, 0); }
-  public static void AddContenttype(FlatBufferBuilder builder, FlatDataGlobal.ContentType contenttype) { builder.AddInt(1, (int)contenttype, 0); }
-  public static void AddWeekdungeontype(FlatBufferBuilder builder, FlatDataGlobal.WeekDungeonType weekdungeontype) { builder.AddInt(2, (int)weekdungeontype, 0); }
-  public static void AddSchooldungeontype(FlatBufferBuilder builder, FlatDataGlobal.SchoolDungeonType schooldungeontype) { builder.AddInt(3, (int)schooldungeontype, 0); }
+  public static void AddContentType(FlatBufferBuilder builder, FlatDataGlobal.ContentType contentType) { builder.AddInt(1, (int)contentType, 0); }
+  public static void AddWeekDungeonType(FlatBufferBuilder builder, FlatDataGlobal.WeekDungeonType weekDungeonType) { builder.AddInt(2, (int)weekDungeonType, 0); }
+  public static void AddSchoolDungeonType(FlatBufferBuilder builder, FlatDataGlobal.SchoolDungeonType schoolDungeonType) { builder.AddInt(3, (int)schoolDungeonType, 0); }
   public static void AddOrder(FlatBufferBuilder builder, long Order) { builder.AddLong(4, Order, 0); }
   public static void AddOpenStartDateTime(FlatBufferBuilder builder, StringOffset OpenStartDateTimeOffset) { builder.AddOffset(5, OpenStartDateTimeOffset.Value, 0); }
   public static void AddOpenEndDateTime(FlatBufferBuilder builder, StringOffset OpenEndDateTimeOffset) { builder.AddOffset(6, OpenEndDateTimeOffset.Value, 0); }

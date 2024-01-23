@@ -20,7 +20,7 @@ public struct ArenaRewardExcel : IFlatbufferObject
   public ArenaRewardExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long UniqueId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ArenaRewardType Arenarewardtype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.ArenaRewardType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ArenaRewardType.None; } }
+  public FlatDataGlobal.ArenaRewardType ArenaRewardType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.ArenaRewardType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ArenaRewardType.None; } }
   public long RankStart { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long RankEnd { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string RankIconPath { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
@@ -59,7 +59,7 @@ public struct ArenaRewardExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.ArenaRewardExcel> CreateArenaRewardExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
-      FlatDataGlobal.ArenaRewardType arenarewardtype = FlatDataGlobal.ArenaRewardType.None,
+      FlatDataGlobal.ArenaRewardType arenaRewardType = FlatDataGlobal.ArenaRewardType.None,
       long RankStart = 0,
       long RankEnd = 0,
       StringOffset RankIconPathOffset = default(StringOffset),
@@ -76,13 +76,13 @@ public struct ArenaRewardExcel : IFlatbufferObject
     ArenaRewardExcel.AddRewardParcelUniqueId(builder, RewardParcelUniqueIdOffset);
     ArenaRewardExcel.AddRewardParcelType(builder, RewardParcelTypeOffset);
     ArenaRewardExcel.AddRankIconPath(builder, RankIconPathOffset);
-    ArenaRewardExcel.AddArenarewardtype(builder, arenarewardtype);
+    ArenaRewardExcel.AddArenaRewardType(builder, arenaRewardType);
     return ArenaRewardExcel.EndArenaRewardExcel(builder);
   }
 
   public static void StartArenaRewardExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
-  public static void AddArenarewardtype(FlatBufferBuilder builder, FlatDataGlobal.ArenaRewardType arenarewardtype) { builder.AddInt(1, (int)arenarewardtype, 0); }
+  public static void AddArenaRewardType(FlatBufferBuilder builder, FlatDataGlobal.ArenaRewardType arenaRewardType) { builder.AddInt(1, (int)arenaRewardType, 0); }
   public static void AddRankStart(FlatBufferBuilder builder, long RankStart) { builder.AddLong(2, RankStart, 0); }
   public static void AddRankEnd(FlatBufferBuilder builder, long RankEnd) { builder.AddLong(3, RankEnd, 0); }
   public static void AddRankIconPath(FlatBufferBuilder builder, StringOffset RankIconPathOffset) { builder.AddOffset(4, RankIconPathOffset.Value, 0); }

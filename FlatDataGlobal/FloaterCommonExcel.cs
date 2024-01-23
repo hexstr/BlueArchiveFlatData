@@ -20,7 +20,7 @@ public struct FloaterCommonExcel : IFlatbufferObject
   public FloaterCommonExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.TacticEntityType Tacticentitytype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.TacticEntityType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticEntityType.None; } }
+  public FlatDataGlobal.TacticEntityType TacticEntityType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.TacticEntityType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticEntityType.None; } }
   public int FloaterOffsetPosX { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int FloaterOffsetPosY { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int FloaterRandomPosRangeX { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
@@ -28,7 +28,7 @@ public struct FloaterCommonExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.FloaterCommonExcel> CreateFloaterCommonExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataGlobal.TacticEntityType tacticentitytype = FlatDataGlobal.TacticEntityType.None,
+      FlatDataGlobal.TacticEntityType tacticEntityType = FlatDataGlobal.TacticEntityType.None,
       int FloaterOffsetPosX = 0,
       int FloaterOffsetPosY = 0,
       int FloaterRandomPosRangeX = 0,
@@ -39,13 +39,13 @@ public struct FloaterCommonExcel : IFlatbufferObject
     FloaterCommonExcel.AddFloaterRandomPosRangeX(builder, FloaterRandomPosRangeX);
     FloaterCommonExcel.AddFloaterOffsetPosY(builder, FloaterOffsetPosY);
     FloaterCommonExcel.AddFloaterOffsetPosX(builder, FloaterOffsetPosX);
-    FloaterCommonExcel.AddTacticentitytype(builder, tacticentitytype);
+    FloaterCommonExcel.AddTacticEntityType(builder, tacticEntityType);
     return FloaterCommonExcel.EndFloaterCommonExcel(builder);
   }
 
   public static void StartFloaterCommonExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddTacticentitytype(FlatBufferBuilder builder, FlatDataGlobal.TacticEntityType tacticentitytype) { builder.AddInt(1, (int)tacticentitytype, 0); }
+  public static void AddTacticEntityType(FlatBufferBuilder builder, FlatDataGlobal.TacticEntityType tacticEntityType) { builder.AddInt(1, (int)tacticEntityType, 0); }
   public static void AddFloaterOffsetPosX(FlatBufferBuilder builder, int FloaterOffsetPosX) { builder.AddInt(2, FloaterOffsetPosX, 0); }
   public static void AddFloaterOffsetPosY(FlatBufferBuilder builder, int FloaterOffsetPosY) { builder.AddInt(3, FloaterOffsetPosY, 0); }
   public static void AddFloaterRandomPosRangeX(FlatBufferBuilder builder, int FloaterRandomPosRangeX) { builder.AddInt(4, FloaterRandomPosRangeX, 0); }

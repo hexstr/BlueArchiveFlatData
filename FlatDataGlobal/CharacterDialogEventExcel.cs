@@ -23,13 +23,13 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
   public long OriginalCharacterId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long DisplayOrder { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long EventID { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ProductionStep Productionstep { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
-  public FlatDataGlobal.DialogCategory Dialogcategory { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.DialogCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCategory.Cafe; } }
-  public FlatDataGlobal.DialogCondition Dialogcondition { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.DialogCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCondition.Idle; } }
-  public FlatDataGlobal.DialogConditionDetail Dialogconditiondetail { get { int o = __p.__offset(18); return o != 0 ? (FlatDataGlobal.DialogConditionDetail)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogConditionDetail.None; } }
+  public FlatDataGlobal.ProductionStep ProductionStep { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
+  public FlatDataGlobal.DialogCategory DialogCategory { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.DialogCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCategory.Cafe; } }
+  public FlatDataGlobal.DialogCondition DialogCondition { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.DialogCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCondition.Idle; } }
+  public FlatDataGlobal.DialogConditionDetail DialogConditionDetail { get { int o = __p.__offset(18); return o != 0 ? (FlatDataGlobal.DialogConditionDetail)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogConditionDetail.None; } }
   public long DialogConditionDetailValue { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long GroupId { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.DialogType Dialogtype { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.DialogType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogType.Talk; } }
+  public FlatDataGlobal.DialogType DialogType { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.DialogType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogType.Talk; } }
   public string ActionName { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetActionNameBytes() { return __p.__vector_as_span<byte>(26, 1); }
@@ -91,7 +91,7 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
   public string VoiceClipsEn(int j) { int o = __p.__offset(50); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
   public int VoiceClipsEnLength { get { int o = __p.__offset(50); return o != 0 ? __p.__vector_len(o) : 0; } }
   public bool CollectionVisible { get { int o = __p.__offset(52); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.CVCollectionType Cvcollectiontype { get { int o = __p.__offset(54); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
+  public FlatDataGlobal.CVCollectionType CVCollectionType { get { int o = __p.__offset(54); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
   public long UnlockEventSeason { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ScenarioGroupId { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string LocalizeCVGroup { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
@@ -107,13 +107,13 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
       long OriginalCharacterId = 0,
       long DisplayOrder = 0,
       long EventID = 0,
-      FlatDataGlobal.ProductionStep productionstep = FlatDataGlobal.ProductionStep.ToDo,
-      FlatDataGlobal.DialogCategory dialogcategory = FlatDataGlobal.DialogCategory.Cafe,
-      FlatDataGlobal.DialogCondition dialogcondition = FlatDataGlobal.DialogCondition.Idle,
-      FlatDataGlobal.DialogConditionDetail dialogconditiondetail = FlatDataGlobal.DialogConditionDetail.None,
+      FlatDataGlobal.ProductionStep productionStep = FlatDataGlobal.ProductionStep.ToDo,
+      FlatDataGlobal.DialogCategory dialogCategory = FlatDataGlobal.DialogCategory.Cafe,
+      FlatDataGlobal.DialogCondition dialogCondition = FlatDataGlobal.DialogCondition.Idle,
+      FlatDataGlobal.DialogConditionDetail dialogConditionDetail = FlatDataGlobal.DialogConditionDetail.None,
       long DialogConditionDetailValue = 0,
       long GroupId = 0,
-      FlatDataGlobal.DialogType dialogtype = FlatDataGlobal.DialogType.Talk,
+      FlatDataGlobal.DialogType dialogType = FlatDataGlobal.DialogType.Talk,
       StringOffset ActionNameOffset = default(StringOffset),
       long Duration = 0,
       StringOffset AnimationNameOffset = default(StringOffset),
@@ -128,7 +128,7 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
       VectorOffset VoiceClipsTwOffset = default(VectorOffset),
       VectorOffset VoiceClipsEnOffset = default(VectorOffset),
       bool CollectionVisible = false,
-      FlatDataGlobal.CVCollectionType cvcollectiontype = FlatDataGlobal.CVCollectionType.CVNormal,
+      FlatDataGlobal.CVCollectionType cVCollectionType = FlatDataGlobal.CVCollectionType.CVNormal,
       long UnlockEventSeason = 0,
       long ScenarioGroupId = 0,
       StringOffset LocalizeCVGroupOffset = default(StringOffset)) {
@@ -143,7 +143,7 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
     CharacterDialogEventExcel.AddOriginalCharacterId(builder, OriginalCharacterId);
     CharacterDialogEventExcel.AddCharacterId(builder, CharacterId);
     CharacterDialogEventExcel.AddLocalizeCVGroup(builder, LocalizeCVGroupOffset);
-    CharacterDialogEventExcel.AddCvcollectiontype(builder, cvcollectiontype);
+    CharacterDialogEventExcel.AddCVCollectionType(builder, cVCollectionType);
     CharacterDialogEventExcel.AddVoiceClipsEn(builder, VoiceClipsEnOffset);
     CharacterDialogEventExcel.AddVoiceClipsTw(builder, VoiceClipsTwOffset);
     CharacterDialogEventExcel.AddVoiceClipsTh(builder, VoiceClipsThOffset);
@@ -156,11 +156,11 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
     CharacterDialogEventExcel.AddLocalizeKR(builder, LocalizeKROffset);
     CharacterDialogEventExcel.AddAnimationName(builder, AnimationNameOffset);
     CharacterDialogEventExcel.AddActionName(builder, ActionNameOffset);
-    CharacterDialogEventExcel.AddDialogtype(builder, dialogtype);
-    CharacterDialogEventExcel.AddDialogconditiondetail(builder, dialogconditiondetail);
-    CharacterDialogEventExcel.AddDialogcondition(builder, dialogcondition);
-    CharacterDialogEventExcel.AddDialogcategory(builder, dialogcategory);
-    CharacterDialogEventExcel.AddProductionstep(builder, productionstep);
+    CharacterDialogEventExcel.AddDialogType(builder, dialogType);
+    CharacterDialogEventExcel.AddDialogConditionDetail(builder, dialogConditionDetail);
+    CharacterDialogEventExcel.AddDialogCondition(builder, dialogCondition);
+    CharacterDialogEventExcel.AddDialogCategory(builder, dialogCategory);
+    CharacterDialogEventExcel.AddProductionStep(builder, productionStep);
     CharacterDialogEventExcel.AddCollectionVisible(builder, CollectionVisible);
     return CharacterDialogEventExcel.EndCharacterDialogEventExcel(builder);
   }
@@ -170,13 +170,13 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
   public static void AddOriginalCharacterId(FlatBufferBuilder builder, long OriginalCharacterId) { builder.AddLong(1, OriginalCharacterId, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(2, DisplayOrder, 0); }
   public static void AddEventID(FlatBufferBuilder builder, long EventID) { builder.AddLong(3, EventID, 0); }
-  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionstep) { builder.AddInt(4, (int)productionstep, 0); }
-  public static void AddDialogcategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory dialogcategory) { builder.AddInt(5, (int)dialogcategory, 0); }
-  public static void AddDialogcondition(FlatBufferBuilder builder, FlatDataGlobal.DialogCondition dialogcondition) { builder.AddInt(6, (int)dialogcondition, 0); }
-  public static void AddDialogconditiondetail(FlatBufferBuilder builder, FlatDataGlobal.DialogConditionDetail dialogconditiondetail) { builder.AddInt(7, (int)dialogconditiondetail, 0); }
+  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionStep) { builder.AddInt(4, (int)productionStep, 0); }
+  public static void AddDialogCategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory dialogCategory) { builder.AddInt(5, (int)dialogCategory, 0); }
+  public static void AddDialogCondition(FlatBufferBuilder builder, FlatDataGlobal.DialogCondition dialogCondition) { builder.AddInt(6, (int)dialogCondition, 0); }
+  public static void AddDialogConditionDetail(FlatBufferBuilder builder, FlatDataGlobal.DialogConditionDetail dialogConditionDetail) { builder.AddInt(7, (int)dialogConditionDetail, 0); }
   public static void AddDialogConditionDetailValue(FlatBufferBuilder builder, long DialogConditionDetailValue) { builder.AddLong(8, DialogConditionDetailValue, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(9, GroupId, 0); }
-  public static void AddDialogtype(FlatBufferBuilder builder, FlatDataGlobal.DialogType dialogtype) { builder.AddInt(10, (int)dialogtype, 0); }
+  public static void AddDialogType(FlatBufferBuilder builder, FlatDataGlobal.DialogType dialogType) { builder.AddInt(10, (int)dialogType, 0); }
   public static void AddActionName(FlatBufferBuilder builder, StringOffset ActionNameOffset) { builder.AddOffset(11, ActionNameOffset.Value, 0); }
   public static void AddDuration(FlatBufferBuilder builder, long Duration) { builder.AddLong(12, Duration, 0); }
   public static void AddAnimationName(FlatBufferBuilder builder, StringOffset AnimationNameOffset) { builder.AddOffset(13, AnimationNameOffset.Value, 0); }
@@ -216,7 +216,7 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
   public static VectorOffset CreateVoiceClipsEnVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartVoiceClipsEnVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(24, CollectionVisible, false); }
-  public static void AddCvcollectiontype(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cvcollectiontype) { builder.AddInt(25, (int)cvcollectiontype, 0); }
+  public static void AddCVCollectionType(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cVCollectionType) { builder.AddInt(25, (int)cVCollectionType, 0); }
   public static void AddUnlockEventSeason(FlatBufferBuilder builder, long UnlockEventSeason) { builder.AddLong(26, UnlockEventSeason, 0); }
   public static void AddScenarioGroupId(FlatBufferBuilder builder, long ScenarioGroupId) { builder.AddLong(27, ScenarioGroupId, 0); }
   public static void AddLocalizeCVGroup(FlatBufferBuilder builder, StringOffset LocalizeCVGroupOffset) { builder.AddOffset(28, LocalizeCVGroupOffset.Value, 0); }

@@ -27,7 +27,7 @@ public struct RecipeCraftExcel : IFlatbufferObject
   public ArraySegment<byte>? GetDevNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetDevNameArray() { return __p.__vector_as_array<byte>(6); }
-  public FlatDataGlobal.RecipeType Recipetype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RecipeType.None; } }
+  public FlatDataGlobal.RecipeType RecipeType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RecipeType.None; } }
   public long RecipeIngredientId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string RecipeIngredientDevName { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -74,7 +74,7 @@ public struct RecipeCraftExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.RecipeCraftExcel> CreateRecipeCraftExcel(FlatBufferBuilder builder,
       long Id = 0,
       StringOffset DevNameOffset = default(StringOffset),
-      FlatDataGlobal.RecipeType recipetype = FlatDataGlobal.RecipeType.None,
+      FlatDataGlobal.RecipeType recipeType = FlatDataGlobal.RecipeType.None,
       long RecipeIngredientId = 0,
       StringOffset RecipeIngredientDevNameOffset = default(StringOffset),
       VectorOffset ParcelTypeOffset = default(VectorOffset),
@@ -91,7 +91,7 @@ public struct RecipeCraftExcel : IFlatbufferObject
     RecipeCraftExcel.AddParcelId(builder, ParcelIdOffset);
     RecipeCraftExcel.AddParcelType(builder, ParcelTypeOffset);
     RecipeCraftExcel.AddRecipeIngredientDevName(builder, RecipeIngredientDevNameOffset);
-    RecipeCraftExcel.AddRecipetype(builder, recipetype);
+    RecipeCraftExcel.AddRecipeType(builder, recipeType);
     RecipeCraftExcel.AddDevName(builder, DevNameOffset);
     return RecipeCraftExcel.EndRecipeCraftExcel(builder);
   }
@@ -99,7 +99,7 @@ public struct RecipeCraftExcel : IFlatbufferObject
   public static void StartRecipeCraftExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddDevName(FlatBufferBuilder builder, StringOffset DevNameOffset) { builder.AddOffset(1, DevNameOffset.Value, 0); }
-  public static void AddRecipetype(FlatBufferBuilder builder, FlatDataGlobal.RecipeType recipetype) { builder.AddInt(2, (int)recipetype, 0); }
+  public static void AddRecipeType(FlatBufferBuilder builder, FlatDataGlobal.RecipeType recipeType) { builder.AddInt(2, (int)recipeType, 0); }
   public static void AddRecipeIngredientId(FlatBufferBuilder builder, long RecipeIngredientId) { builder.AddLong(3, RecipeIngredientId, 0); }
   public static void AddRecipeIngredientDevName(FlatBufferBuilder builder, StringOffset RecipeIngredientDevNameOffset) { builder.AddOffset(4, RecipeIngredientDevNameOffset.Value, 0); }
   public static void AddParcelType(FlatBufferBuilder builder, VectorOffset ParcelTypeOffset) { builder.AddOffset(5, ParcelTypeOffset.Value, 0); }

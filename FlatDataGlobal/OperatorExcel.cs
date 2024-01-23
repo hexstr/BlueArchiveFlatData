@@ -27,7 +27,7 @@ public struct OperatorExcel : IFlatbufferObject
   public ArraySegment<byte>? GetGroupIdBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetGroupIdArray() { return __p.__vector_as_array<byte>(6); }
-  public FlatDataGlobal.OperatorCondition Operatorcondition { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.OperatorCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.OperatorCondition.None; } }
+  public FlatDataGlobal.OperatorCondition OperatorCondition { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.OperatorCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.OperatorCondition.None; } }
   public int OutputSequence { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int RandomWeight { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int OutputDelay { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
@@ -62,7 +62,7 @@ public struct OperatorExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.OperatorExcel> CreateOperatorExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
       StringOffset GroupIdOffset = default(StringOffset),
-      FlatDataGlobal.OperatorCondition operatorcondition = FlatDataGlobal.OperatorCondition.None,
+      FlatDataGlobal.OperatorCondition operatorCondition = FlatDataGlobal.OperatorCondition.None,
       int OutputSequence = 0,
       int RandomWeight = 0,
       int OutputDelay = 0,
@@ -90,7 +90,7 @@ public struct OperatorExcel : IFlatbufferObject
     OperatorExcel.AddOutputDelay(builder, OutputDelay);
     OperatorExcel.AddRandomWeight(builder, RandomWeight);
     OperatorExcel.AddOutputSequence(builder, OutputSequence);
-    OperatorExcel.AddOperatorcondition(builder, operatorcondition);
+    OperatorExcel.AddOperatorCondition(builder, operatorCondition);
     OperatorExcel.AddGroupId(builder, GroupIdOffset);
     OperatorExcel.AddOperatorWaitQueue(builder, OperatorWaitQueue);
     return OperatorExcel.EndOperatorExcel(builder);
@@ -99,7 +99,7 @@ public struct OperatorExcel : IFlatbufferObject
   public static void StartOperatorExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, StringOffset GroupIdOffset) { builder.AddOffset(1, GroupIdOffset.Value, 0); }
-  public static void AddOperatorcondition(FlatBufferBuilder builder, FlatDataGlobal.OperatorCondition operatorcondition) { builder.AddInt(2, (int)operatorcondition, 0); }
+  public static void AddOperatorCondition(FlatBufferBuilder builder, FlatDataGlobal.OperatorCondition operatorCondition) { builder.AddInt(2, (int)operatorCondition, 0); }
   public static void AddOutputSequence(FlatBufferBuilder builder, int OutputSequence) { builder.AddInt(3, OutputSequence, 0); }
   public static void AddRandomWeight(FlatBufferBuilder builder, int RandomWeight) { builder.AddInt(4, RandomWeight, 0); }
   public static void AddOutputDelay(FlatBufferBuilder builder, int OutputDelay) { builder.AddInt(5, OutputDelay, 0); }

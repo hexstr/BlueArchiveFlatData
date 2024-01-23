@@ -48,7 +48,7 @@ public struct ShopExcel : IFlatbufferObject
   public byte[] GetSalePeriodToArray() { return __p.__vector_as_array<byte>(18); }
   public long PurchaseCooltimeMin { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PurchaseCountLimit { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.PurchaseCountResetType Purchasecountresettype { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.PurchaseCountResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.PurchaseCountResetType.None; } }
+  public FlatDataGlobal.PurchaseCountResetType PurchaseCountResetType { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.PurchaseCountResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.PurchaseCountResetType.None; } }
   public string BuyReportEventName { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetBuyReportEventNameBytes() { return __p.__vector_as_span<byte>(26, 1); }
@@ -71,7 +71,7 @@ public struct ShopExcel : IFlatbufferObject
       StringOffset SalePeriodToOffset = default(StringOffset),
       long PurchaseCooltimeMin = 0,
       long PurchaseCountLimit = 0,
-      FlatDataGlobal.PurchaseCountResetType purchasecountresettype = FlatDataGlobal.PurchaseCountResetType.None,
+      FlatDataGlobal.PurchaseCountResetType purchaseCountResetType = FlatDataGlobal.PurchaseCountResetType.None,
       StringOffset BuyReportEventNameOffset = default(StringOffset),
       bool RestrictBuyWhenInventoryFull = false,
       FlatDataGlobal.ProductDisplayTag DisplayTag = FlatDataGlobal.ProductDisplayTag.None,
@@ -84,7 +84,7 @@ public struct ShopExcel : IFlatbufferObject
     ShopExcel.AddShopUpdateGroupId(builder, ShopUpdateGroupId);
     ShopExcel.AddDisplayTag(builder, DisplayTag);
     ShopExcel.AddBuyReportEventName(builder, BuyReportEventNameOffset);
-    ShopExcel.AddPurchasecountresettype(builder, purchasecountresettype);
+    ShopExcel.AddPurchaseCountResetType(builder, purchaseCountResetType);
     ShopExcel.AddSalePeriodTo(builder, SalePeriodToOffset);
     ShopExcel.AddSalePeriodFrom(builder, SalePeriodFromOffset);
     ShopExcel.AddGoodsId(builder, GoodsIdOffset);
@@ -111,7 +111,7 @@ public struct ShopExcel : IFlatbufferObject
   public static void AddSalePeriodTo(FlatBufferBuilder builder, StringOffset SalePeriodToOffset) { builder.AddOffset(7, SalePeriodToOffset.Value, 0); }
   public static void AddPurchaseCooltimeMin(FlatBufferBuilder builder, long PurchaseCooltimeMin) { builder.AddLong(8, PurchaseCooltimeMin, 0); }
   public static void AddPurchaseCountLimit(FlatBufferBuilder builder, long PurchaseCountLimit) { builder.AddLong(9, PurchaseCountLimit, 0); }
-  public static void AddPurchasecountresettype(FlatBufferBuilder builder, FlatDataGlobal.PurchaseCountResetType purchasecountresettype) { builder.AddInt(10, (int)purchasecountresettype, 0); }
+  public static void AddPurchaseCountResetType(FlatBufferBuilder builder, FlatDataGlobal.PurchaseCountResetType purchaseCountResetType) { builder.AddInt(10, (int)purchaseCountResetType, 0); }
   public static void AddBuyReportEventName(FlatBufferBuilder builder, StringOffset BuyReportEventNameOffset) { builder.AddOffset(11, BuyReportEventNameOffset.Value, 0); }
   public static void AddRestrictBuyWhenInventoryFull(FlatBufferBuilder builder, bool RestrictBuyWhenInventoryFull) { builder.AddBool(12, RestrictBuyWhenInventoryFull, false); }
   public static void AddDisplayTag(FlatBufferBuilder builder, FlatDataGlobal.ProductDisplayTag DisplayTag) { builder.AddInt(13, (int)DisplayTag, 0); }

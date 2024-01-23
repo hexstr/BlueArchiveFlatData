@@ -21,9 +21,9 @@ public struct CharacterDialogExcel : IFlatbufferObject
 
   public long CharacterId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long DisplayOrder { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ProductionStep Productionstep { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
-  public FlatDataGlobal.DialogCategory Dialogcategory { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.DialogCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCategory.Cafe; } }
-  public FlatDataGlobal.DialogCondition Dialogcondition { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.DialogCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCondition.Idle; } }
+  public FlatDataGlobal.ProductionStep ProductionStep { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
+  public FlatDataGlobal.DialogCategory DialogCategory { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.DialogCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCategory.Cafe; } }
+  public FlatDataGlobal.DialogCondition DialogCondition { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.DialogCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogCondition.Idle; } }
   public FlatDataGlobal.Anniversary Anniversary { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.Anniversary)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Anniversary.None; } }
   public string StartDate { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -40,7 +40,7 @@ public struct CharacterDialogExcel : IFlatbufferObject
 #endif
   public byte[] GetEndDateArray() { return __p.__vector_as_array<byte>(18); }
   public long GroupId { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.DialogType Dialogtype { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.DialogType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogType.Talk; } }
+  public FlatDataGlobal.DialogType DialogType { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.DialogType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DialogType.Talk; } }
   public string ActionName { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetActionNameBytes() { return __p.__vector_as_span<byte>(24, 1); }
@@ -105,7 +105,7 @@ public struct CharacterDialogExcel : IFlatbufferObject
   public float PosX { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public float PosY { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public bool CollectionVisible { get { int o = __p.__offset(56); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.CVCollectionType Cvcollectiontype { get { int o = __p.__offset(58); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
+  public FlatDataGlobal.CVCollectionType CVCollectionType { get { int o = __p.__offset(58); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
   public long UnlockFavorRank { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string LocalizeCVGroup { get { int o = __p.__offset(62); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -119,14 +119,14 @@ public struct CharacterDialogExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.CharacterDialogExcel> CreateCharacterDialogExcel(FlatBufferBuilder builder,
       long CharacterId = 0,
       long DisplayOrder = 0,
-      FlatDataGlobal.ProductionStep productionstep = FlatDataGlobal.ProductionStep.ToDo,
-      FlatDataGlobal.DialogCategory dialogcategory = FlatDataGlobal.DialogCategory.Cafe,
-      FlatDataGlobal.DialogCondition dialogcondition = FlatDataGlobal.DialogCondition.Idle,
+      FlatDataGlobal.ProductionStep productionStep = FlatDataGlobal.ProductionStep.ToDo,
+      FlatDataGlobal.DialogCategory dialogCategory = FlatDataGlobal.DialogCategory.Cafe,
+      FlatDataGlobal.DialogCondition dialogCondition = FlatDataGlobal.DialogCondition.Idle,
       FlatDataGlobal.Anniversary anniversary = FlatDataGlobal.Anniversary.None,
       StringOffset StartDateOffset = default(StringOffset),
       StringOffset EndDateOffset = default(StringOffset),
       long GroupId = 0,
-      FlatDataGlobal.DialogType dialogtype = FlatDataGlobal.DialogType.Talk,
+      FlatDataGlobal.DialogType dialogType = FlatDataGlobal.DialogType.Talk,
       StringOffset ActionNameOffset = default(StringOffset),
       long Duration = 0,
       StringOffset AnimationNameOffset = default(StringOffset),
@@ -144,7 +144,7 @@ public struct CharacterDialogExcel : IFlatbufferObject
       float PosX = 0.0f,
       float PosY = 0.0f,
       bool CollectionVisible = false,
-      FlatDataGlobal.CVCollectionType cvcollectiontype = FlatDataGlobal.CVCollectionType.CVNormal,
+      FlatDataGlobal.CVCollectionType cVCollectionType = FlatDataGlobal.CVCollectionType.CVNormal,
       long UnlockFavorRank = 0,
       StringOffset LocalizeCVGroupOffset = default(StringOffset),
       bool TeenMode = false) {
@@ -155,7 +155,7 @@ public struct CharacterDialogExcel : IFlatbufferObject
     CharacterDialogExcel.AddDisplayOrder(builder, DisplayOrder);
     CharacterDialogExcel.AddCharacterId(builder, CharacterId);
     CharacterDialogExcel.AddLocalizeCVGroup(builder, LocalizeCVGroupOffset);
-    CharacterDialogExcel.AddCvcollectiontype(builder, cvcollectiontype);
+    CharacterDialogExcel.AddCVCollectionType(builder, cVCollectionType);
     CharacterDialogExcel.AddPosY(builder, PosY);
     CharacterDialogExcel.AddPosX(builder, PosX);
     CharacterDialogExcel.AddVoiceClipsEn(builder, VoiceClipsEnOffset);
@@ -170,13 +170,13 @@ public struct CharacterDialogExcel : IFlatbufferObject
     CharacterDialogExcel.AddLocalizeKR(builder, LocalizeKROffset);
     CharacterDialogExcel.AddAnimationName(builder, AnimationNameOffset);
     CharacterDialogExcel.AddActionName(builder, ActionNameOffset);
-    CharacterDialogExcel.AddDialogtype(builder, dialogtype);
+    CharacterDialogExcel.AddDialogType(builder, dialogType);
     CharacterDialogExcel.AddEndDate(builder, EndDateOffset);
     CharacterDialogExcel.AddStartDate(builder, StartDateOffset);
     CharacterDialogExcel.AddAnniversary(builder, anniversary);
-    CharacterDialogExcel.AddDialogcondition(builder, dialogcondition);
-    CharacterDialogExcel.AddDialogcategory(builder, dialogcategory);
-    CharacterDialogExcel.AddProductionstep(builder, productionstep);
+    CharacterDialogExcel.AddDialogCondition(builder, dialogCondition);
+    CharacterDialogExcel.AddDialogCategory(builder, dialogCategory);
+    CharacterDialogExcel.AddProductionStep(builder, productionStep);
     CharacterDialogExcel.AddTeenMode(builder, TeenMode);
     CharacterDialogExcel.AddCollectionVisible(builder, CollectionVisible);
     CharacterDialogExcel.AddApplyPosition(builder, ApplyPosition);
@@ -186,14 +186,14 @@ public struct CharacterDialogExcel : IFlatbufferObject
   public static void StartCharacterDialogExcel(FlatBufferBuilder builder) { builder.StartTable(31); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(1, DisplayOrder, 0); }
-  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionstep) { builder.AddInt(2, (int)productionstep, 0); }
-  public static void AddDialogcategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory dialogcategory) { builder.AddInt(3, (int)dialogcategory, 0); }
-  public static void AddDialogcondition(FlatBufferBuilder builder, FlatDataGlobal.DialogCondition dialogcondition) { builder.AddInt(4, (int)dialogcondition, 0); }
+  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionStep) { builder.AddInt(2, (int)productionStep, 0); }
+  public static void AddDialogCategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory dialogCategory) { builder.AddInt(3, (int)dialogCategory, 0); }
+  public static void AddDialogCondition(FlatBufferBuilder builder, FlatDataGlobal.DialogCondition dialogCondition) { builder.AddInt(4, (int)dialogCondition, 0); }
   public static void AddAnniversary(FlatBufferBuilder builder, FlatDataGlobal.Anniversary anniversary) { builder.AddInt(5, (int)anniversary, 0); }
   public static void AddStartDate(FlatBufferBuilder builder, StringOffset StartDateOffset) { builder.AddOffset(6, StartDateOffset.Value, 0); }
   public static void AddEndDate(FlatBufferBuilder builder, StringOffset EndDateOffset) { builder.AddOffset(7, EndDateOffset.Value, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(8, GroupId, 0); }
-  public static void AddDialogtype(FlatBufferBuilder builder, FlatDataGlobal.DialogType dialogtype) { builder.AddInt(9, (int)dialogtype, 0); }
+  public static void AddDialogType(FlatBufferBuilder builder, FlatDataGlobal.DialogType dialogType) { builder.AddInt(9, (int)dialogType, 0); }
   public static void AddActionName(FlatBufferBuilder builder, StringOffset ActionNameOffset) { builder.AddOffset(10, ActionNameOffset.Value, 0); }
   public static void AddDuration(FlatBufferBuilder builder, long Duration) { builder.AddLong(11, Duration, 0); }
   public static void AddAnimationName(FlatBufferBuilder builder, StringOffset AnimationNameOffset) { builder.AddOffset(12, AnimationNameOffset.Value, 0); }
@@ -236,7 +236,7 @@ public struct CharacterDialogExcel : IFlatbufferObject
   public static void AddPosX(FlatBufferBuilder builder, float PosX) { builder.AddFloat(24, PosX, 0.0f); }
   public static void AddPosY(FlatBufferBuilder builder, float PosY) { builder.AddFloat(25, PosY, 0.0f); }
   public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(26, CollectionVisible, false); }
-  public static void AddCvcollectiontype(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cvcollectiontype) { builder.AddInt(27, (int)cvcollectiontype, 0); }
+  public static void AddCVCollectionType(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cVCollectionType) { builder.AddInt(27, (int)cVCollectionType, 0); }
   public static void AddUnlockFavorRank(FlatBufferBuilder builder, long UnlockFavorRank) { builder.AddLong(28, UnlockFavorRank, 0); }
   public static void AddLocalizeCVGroup(FlatBufferBuilder builder, StringOffset LocalizeCVGroupOffset) { builder.AddOffset(29, LocalizeCVGroupOffset.Value, 0); }
   public static void AddTeenMode(FlatBufferBuilder builder, bool TeenMode) { builder.AddBool(30, TeenMode, false); }

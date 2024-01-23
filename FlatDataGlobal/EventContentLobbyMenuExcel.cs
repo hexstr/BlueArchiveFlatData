@@ -20,7 +20,7 @@ public struct EventContentLobbyMenuExcel : IFlatbufferObject
   public EventContentLobbyMenuExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.EventContentType Eventcontenttype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.EventContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentType.Stage; } }
+  public FlatDataGlobal.EventContentType EventContentType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.EventContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentType.Stage; } }
   public string IconSpriteName { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetIconSpriteNameBytes() { return __p.__vector_as_span<byte>(8, 1); }
@@ -48,7 +48,7 @@ public struct EventContentLobbyMenuExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.EventContentLobbyMenuExcel> CreateEventContentLobbyMenuExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
-      FlatDataGlobal.EventContentType eventcontenttype = FlatDataGlobal.EventContentType.Stage,
+      FlatDataGlobal.EventContentType eventContentType = FlatDataGlobal.EventContentType.Stage,
       StringOffset IconSpriteNameOffset = default(StringOffset),
       StringOffset ButtonTextOffset = default(StringOffset),
       int DisplayOrder = 0,
@@ -63,13 +63,13 @@ public struct EventContentLobbyMenuExcel : IFlatbufferObject
     EventContentLobbyMenuExcel.AddDisplayOrder(builder, DisplayOrder);
     EventContentLobbyMenuExcel.AddButtonText(builder, ButtonTextOffset);
     EventContentLobbyMenuExcel.AddIconSpriteName(builder, IconSpriteNameOffset);
-    EventContentLobbyMenuExcel.AddEventcontenttype(builder, eventcontenttype);
+    EventContentLobbyMenuExcel.AddEventContentType(builder, eventContentType);
     return EventContentLobbyMenuExcel.EndEventContentLobbyMenuExcel(builder);
   }
 
   public static void StartEventContentLobbyMenuExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
-  public static void AddEventcontenttype(FlatBufferBuilder builder, FlatDataGlobal.EventContentType eventcontenttype) { builder.AddInt(1, (int)eventcontenttype, 0); }
+  public static void AddEventContentType(FlatBufferBuilder builder, FlatDataGlobal.EventContentType eventContentType) { builder.AddInt(1, (int)eventContentType, 0); }
   public static void AddIconSpriteName(FlatBufferBuilder builder, StringOffset IconSpriteNameOffset) { builder.AddOffset(2, IconSpriteNameOffset.Value, 0); }
   public static void AddButtonText(FlatBufferBuilder builder, StringOffset ButtonTextOffset) { builder.AddOffset(3, ButtonTextOffset.Value, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, int DisplayOrder) { builder.AddInt(4, DisplayOrder, 0); }

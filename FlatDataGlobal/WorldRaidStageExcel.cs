@@ -47,7 +47,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
 #endif
   public long[] GetBossCharacterIdArray() { return __p.__vector_as_array<long>(18); }
   public long AssistCharacterLimitCount { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.WorldRaidDifficulty Worldraiddifficulty { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.WorldRaidDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.WorldRaidDifficulty.None; } }
+  public FlatDataGlobal.WorldRaidDifficulty WorldRaidDifficulty { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.WorldRaidDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.WorldRaidDifficulty.None; } }
   public bool DifficultyOpenCondition { get { int o = __p.__offset(24); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long RaidEnterAmount { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ReEnterAmount { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -125,7 +125,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
       long RaidCharacterId = 0,
       VectorOffset BossCharacterIdOffset = default(VectorOffset),
       long AssistCharacterLimitCount = 0,
-      FlatDataGlobal.WorldRaidDifficulty worldraiddifficulty = FlatDataGlobal.WorldRaidDifficulty.None,
+      FlatDataGlobal.WorldRaidDifficulty worldRaidDifficulty = FlatDataGlobal.WorldRaidDifficulty.None,
       bool DifficultyOpenCondition = false,
       long RaidEnterAmount = 0,
       long ReEnterAmount = 0,
@@ -176,7 +176,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
     WorldRaidStageExcel.AddBattleReadyTimelinePhaseEnd(builder, BattleReadyTimelinePhaseEndOffset);
     WorldRaidStageExcel.AddBattleReadyTimelinePhaseStart(builder, BattleReadyTimelinePhaseStartOffset);
     WorldRaidStageExcel.AddBattleReadyTimelinePath(builder, BattleReadyTimelinePathOffset);
-    WorldRaidStageExcel.AddWorldraiddifficulty(builder, worldraiddifficulty);
+    WorldRaidStageExcel.AddWorldRaidDifficulty(builder, worldRaidDifficulty);
     WorldRaidStageExcel.AddBossCharacterId(builder, BossCharacterIdOffset);
     WorldRaidStageExcel.AddBGPath(builder, BGPathOffset);
     WorldRaidStageExcel.AddPortraitPath(builder, PortraitPathOffset);
@@ -205,7 +205,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
   public static VectorOffset CreateBossCharacterIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartBossCharacterIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
   public static void AddAssistCharacterLimitCount(FlatBufferBuilder builder, long AssistCharacterLimitCount) { builder.AddLong(8, AssistCharacterLimitCount, 0); }
-  public static void AddWorldraiddifficulty(FlatBufferBuilder builder, FlatDataGlobal.WorldRaidDifficulty worldraiddifficulty) { builder.AddInt(9, (int)worldraiddifficulty, 0); }
+  public static void AddWorldRaidDifficulty(FlatBufferBuilder builder, FlatDataGlobal.WorldRaidDifficulty worldRaidDifficulty) { builder.AddInt(9, (int)worldRaidDifficulty, 0); }
   public static void AddDifficultyOpenCondition(FlatBufferBuilder builder, bool DifficultyOpenCondition) { builder.AddBool(10, DifficultyOpenCondition, false); }
   public static void AddRaidEnterAmount(FlatBufferBuilder builder, long RaidEnterAmount) { builder.AddLong(11, RaidEnterAmount, 0); }
   public static void AddReEnterAmount(FlatBufferBuilder builder, long ReEnterAmount) { builder.AddLong(12, ReEnterAmount, 0); }

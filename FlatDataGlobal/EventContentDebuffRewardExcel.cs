@@ -21,26 +21,26 @@ public struct EventContentDebuffRewardExcel : IFlatbufferObject
 
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long EventStageId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.EventContentItemType Eventcontentitemtype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.EventContentItemType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentItemType.EventPoint; } }
+  public FlatDataGlobal.EventContentItemType EventContentItemType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.EventContentItemType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentItemType.EventPoint; } }
   public long RewardPercentage { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.EventContentDebuffRewardExcel> CreateEventContentDebuffRewardExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
       long EventStageId = 0,
-      FlatDataGlobal.EventContentItemType eventcontentitemtype = FlatDataGlobal.EventContentItemType.EventPoint,
+      FlatDataGlobal.EventContentItemType eventContentItemType = FlatDataGlobal.EventContentItemType.EventPoint,
       long RewardPercentage = 0) {
     builder.StartTable(4);
     EventContentDebuffRewardExcel.AddRewardPercentage(builder, RewardPercentage);
     EventContentDebuffRewardExcel.AddEventStageId(builder, EventStageId);
     EventContentDebuffRewardExcel.AddEventContentId(builder, EventContentId);
-    EventContentDebuffRewardExcel.AddEventcontentitemtype(builder, eventcontentitemtype);
+    EventContentDebuffRewardExcel.AddEventContentItemType(builder, eventContentItemType);
     return EventContentDebuffRewardExcel.EndEventContentDebuffRewardExcel(builder);
   }
 
   public static void StartEventContentDebuffRewardExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddEventStageId(FlatBufferBuilder builder, long EventStageId) { builder.AddLong(1, EventStageId, 0); }
-  public static void AddEventcontentitemtype(FlatBufferBuilder builder, FlatDataGlobal.EventContentItemType eventcontentitemtype) { builder.AddInt(2, (int)eventcontentitemtype, 0); }
+  public static void AddEventContentItemType(FlatBufferBuilder builder, FlatDataGlobal.EventContentItemType eventContentItemType) { builder.AddInt(2, (int)eventContentItemType, 0); }
   public static void AddRewardPercentage(FlatBufferBuilder builder, long RewardPercentage) { builder.AddLong(3, RewardPercentage, 0); }
   public static Offset<FlatDataGlobal.EventContentDebuffRewardExcel> EndEventContentDebuffRewardExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();

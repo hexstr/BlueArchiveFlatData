@@ -19,23 +19,23 @@ public struct DefaultParcelExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public DefaultParcelExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public FlatDataGlobal.ParcelType Parceltype { get { int o = __p.__offset(4); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public FlatDataGlobal.ParcelType ParcelType { get { int o = __p.__offset(4); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
   public long ParcelId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ParcelAmount { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.DefaultParcelExcel> CreateDefaultParcelExcel(FlatBufferBuilder builder,
-      FlatDataGlobal.ParcelType parceltype = FlatDataGlobal.ParcelType.None,
+      FlatDataGlobal.ParcelType parcelType = FlatDataGlobal.ParcelType.None,
       long ParcelId = 0,
       long ParcelAmount = 0) {
     builder.StartTable(3);
     DefaultParcelExcel.AddParcelAmount(builder, ParcelAmount);
     DefaultParcelExcel.AddParcelId(builder, ParcelId);
-    DefaultParcelExcel.AddParceltype(builder, parceltype);
+    DefaultParcelExcel.AddParcelType(builder, parcelType);
     return DefaultParcelExcel.EndDefaultParcelExcel(builder);
   }
 
   public static void StartDefaultParcelExcel(FlatBufferBuilder builder) { builder.StartTable(3); }
-  public static void AddParceltype(FlatBufferBuilder builder, FlatDataGlobal.ParcelType parceltype) { builder.AddInt(0, (int)parceltype, 0); }
+  public static void AddParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType parcelType) { builder.AddInt(0, (int)parcelType, 0); }
   public static void AddParcelId(FlatBufferBuilder builder, long ParcelId) { builder.AddLong(1, ParcelId, 0); }
   public static void AddParcelAmount(FlatBufferBuilder builder, long ParcelAmount) { builder.AddLong(2, ParcelAmount, 0); }
   public static Offset<FlatDataGlobal.DefaultParcelExcel> EndDefaultParcelExcel(FlatBufferBuilder builder) {

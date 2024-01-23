@@ -71,7 +71,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
   public long RecruitSellectionShopId { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PurchaseCooltimeMin { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PurchaseCountLimit { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.PurchaseCountResetType Purchasecountresettype { get { int o = __p.__offset(42); return o != 0 ? (FlatDataGlobal.PurchaseCountResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.PurchaseCountResetType.None; } }
+  public FlatDataGlobal.PurchaseCountResetType PurchaseCountResetType { get { int o = __p.__offset(42); return o != 0 ? (FlatDataGlobal.PurchaseCountResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.PurchaseCountResetType.None; } }
   public bool IsNewbie { get { int o = __p.__offset(44); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool IsSelectRecruit { get { int o = __p.__offset(46); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long DirectPayInvisibleTokenId { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -113,7 +113,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
       long RecruitSellectionShopId = 0,
       long PurchaseCooltimeMin = 0,
       long PurchaseCountLimit = 0,
-      FlatDataGlobal.PurchaseCountResetType purchasecountresettype = FlatDataGlobal.PurchaseCountResetType.None,
+      FlatDataGlobal.PurchaseCountResetType purchaseCountResetType = FlatDataGlobal.PurchaseCountResetType.None,
       bool IsNewbie = false,
       bool IsSelectRecruit = false,
       long DirectPayInvisibleTokenId = 0,
@@ -138,7 +138,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
     ShopRecruitExcel.AddId(builder, Id);
     ShopRecruitExcel.AddProbabilityUrlLive(builder, ProbabilityUrlLiveOffset);
     ShopRecruitExcel.AddProbabilityUrlDev(builder, ProbabilityUrlDevOffset);
-    ShopRecruitExcel.AddPurchasecountresettype(builder, purchasecountresettype);
+    ShopRecruitExcel.AddPurchaseCountResetType(builder, purchaseCountResetType);
     ShopRecruitExcel.AddSalePeriodTo(builder, SalePeriodToOffset);
     ShopRecruitExcel.AddSalePeriodFrom(builder, SalePeriodFromOffset);
     ShopRecruitExcel.AddInfoCharacterId(builder, InfoCharacterIdOffset);
@@ -189,7 +189,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
   public static void AddRecruitSellectionShopId(FlatBufferBuilder builder, long RecruitSellectionShopId) { builder.AddLong(16, RecruitSellectionShopId, 0); }
   public static void AddPurchaseCooltimeMin(FlatBufferBuilder builder, long PurchaseCooltimeMin) { builder.AddLong(17, PurchaseCooltimeMin, 0); }
   public static void AddPurchaseCountLimit(FlatBufferBuilder builder, long PurchaseCountLimit) { builder.AddLong(18, PurchaseCountLimit, 0); }
-  public static void AddPurchasecountresettype(FlatBufferBuilder builder, FlatDataGlobal.PurchaseCountResetType purchasecountresettype) { builder.AddInt(19, (int)purchasecountresettype, 0); }
+  public static void AddPurchaseCountResetType(FlatBufferBuilder builder, FlatDataGlobal.PurchaseCountResetType purchaseCountResetType) { builder.AddInt(19, (int)purchaseCountResetType, 0); }
   public static void AddIsNewbie(FlatBufferBuilder builder, bool IsNewbie) { builder.AddBool(20, IsNewbie, false); }
   public static void AddIsSelectRecruit(FlatBufferBuilder builder, bool IsSelectRecruit) { builder.AddBool(21, IsSelectRecruit, false); }
   public static void AddDirectPayInvisibleTokenId(FlatBufferBuilder builder, long DirectPayInvisibleTokenId) { builder.AddLong(22, DirectPayInvisibleTokenId, 0); }

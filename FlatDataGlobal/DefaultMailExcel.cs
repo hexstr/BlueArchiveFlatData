@@ -21,7 +21,7 @@ public struct DefaultMailExcel : IFlatbufferObject
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public uint LocalizeCodeId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public FlatDataGlobal.MailType Mailtype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.MailType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MailType.System; } }
+  public FlatDataGlobal.MailType MailType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.MailType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MailType.System; } }
   public string MailSendPeriodFrom { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetMailSendPeriodFromBytes() { return __p.__vector_as_span<byte>(10, 1); }
@@ -64,7 +64,7 @@ public struct DefaultMailExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.DefaultMailExcel> CreateDefaultMailExcel(FlatBufferBuilder builder,
       long Id = 0,
       uint LocalizeCodeId = 0,
-      FlatDataGlobal.MailType mailtype = FlatDataGlobal.MailType.System,
+      FlatDataGlobal.MailType mailType = FlatDataGlobal.MailType.System,
       StringOffset MailSendPeriodFromOffset = default(StringOffset),
       StringOffset MailSendPeriodToOffset = default(StringOffset),
       VectorOffset RewardParcelTypeOffset = default(VectorOffset),
@@ -77,7 +77,7 @@ public struct DefaultMailExcel : IFlatbufferObject
     DefaultMailExcel.AddRewardParcelType(builder, RewardParcelTypeOffset);
     DefaultMailExcel.AddMailSendPeriodTo(builder, MailSendPeriodToOffset);
     DefaultMailExcel.AddMailSendPeriodFrom(builder, MailSendPeriodFromOffset);
-    DefaultMailExcel.AddMailtype(builder, mailtype);
+    DefaultMailExcel.AddMailType(builder, mailType);
     DefaultMailExcel.AddLocalizeCodeId(builder, LocalizeCodeId);
     return DefaultMailExcel.EndDefaultMailExcel(builder);
   }
@@ -85,7 +85,7 @@ public struct DefaultMailExcel : IFlatbufferObject
   public static void StartDefaultMailExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddLocalizeCodeId(FlatBufferBuilder builder, uint LocalizeCodeId) { builder.AddUint(1, LocalizeCodeId, 0); }
-  public static void AddMailtype(FlatBufferBuilder builder, FlatDataGlobal.MailType mailtype) { builder.AddInt(2, (int)mailtype, 0); }
+  public static void AddMailType(FlatBufferBuilder builder, FlatDataGlobal.MailType mailType) { builder.AddInt(2, (int)mailType, 0); }
   public static void AddMailSendPeriodFrom(FlatBufferBuilder builder, StringOffset MailSendPeriodFromOffset) { builder.AddOffset(3, MailSendPeriodFromOffset.Value, 0); }
   public static void AddMailSendPeriodTo(FlatBufferBuilder builder, StringOffset MailSendPeriodToOffset) { builder.AddOffset(4, MailSendPeriodToOffset.Value, 0); }
   public static void AddRewardParcelType(FlatBufferBuilder builder, VectorOffset RewardParcelTypeOffset) { builder.AddOffset(5, RewardParcelTypeOffset.Value, 0); }

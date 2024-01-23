@@ -34,7 +34,7 @@ public struct ProductMonthlyExcel : IFlatbufferObject
   public ArraySegment<byte>? GetTeenProductIdBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
   public byte[] GetTeenProductIdArray() { return __p.__vector_as_array<byte>(8); }
-  public FlatDataGlobal.StoreType Storetype { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.StoreType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StoreType.None; } }
+  public FlatDataGlobal.StoreType StoreType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.StoreType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StoreType.None; } }
   public long Price { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string PriceReference { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -43,7 +43,7 @@ public struct ProductMonthlyExcel : IFlatbufferObject
   public ArraySegment<byte>? GetPriceReferenceBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
   public byte[] GetPriceReferenceArray() { return __p.__vector_as_array<byte>(14); }
-  public FlatDataGlobal.ProductTagType Producttagtype { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.ProductTagType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductTagType.Monthly; } }
+  public FlatDataGlobal.ProductTagType ProductTagType { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.ProductTagType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductTagType.Monthly; } }
   public long MonthlyDays { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.ParcelType ParcelType(int j) { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
   public int ParcelTypeLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
@@ -99,10 +99,10 @@ public struct ProductMonthlyExcel : IFlatbufferObject
       long Id = 0,
       StringOffset ProductIdOffset = default(StringOffset),
       StringOffset TeenProductIdOffset = default(StringOffset),
-      FlatDataGlobal.StoreType storetype = FlatDataGlobal.StoreType.None,
+      FlatDataGlobal.StoreType storeType = FlatDataGlobal.StoreType.None,
       long Price = 0,
       StringOffset PriceReferenceOffset = default(StringOffset),
-      FlatDataGlobal.ProductTagType producttagtype = FlatDataGlobal.ProductTagType.Monthly,
+      FlatDataGlobal.ProductTagType productTagType = FlatDataGlobal.ProductTagType.Monthly,
       long MonthlyDays = 0,
       VectorOffset ParcelTypeOffset = default(VectorOffset),
       VectorOffset ParcelIdOffset = default(VectorOffset),
@@ -122,9 +122,9 @@ public struct ProductMonthlyExcel : IFlatbufferObject
     ProductMonthlyExcel.AddParcelAmount(builder, ParcelAmountOffset);
     ProductMonthlyExcel.AddParcelId(builder, ParcelIdOffset);
     ProductMonthlyExcel.AddParcelType(builder, ParcelTypeOffset);
-    ProductMonthlyExcel.AddProducttagtype(builder, producttagtype);
+    ProductMonthlyExcel.AddProductTagType(builder, productTagType);
     ProductMonthlyExcel.AddPriceReference(builder, PriceReferenceOffset);
-    ProductMonthlyExcel.AddStoretype(builder, storetype);
+    ProductMonthlyExcel.AddStoreType(builder, storeType);
     ProductMonthlyExcel.AddTeenProductId(builder, TeenProductIdOffset);
     ProductMonthlyExcel.AddProductId(builder, ProductIdOffset);
     return ProductMonthlyExcel.EndProductMonthlyExcel(builder);
@@ -134,10 +134,10 @@ public struct ProductMonthlyExcel : IFlatbufferObject
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddProductId(FlatBufferBuilder builder, StringOffset ProductIdOffset) { builder.AddOffset(1, ProductIdOffset.Value, 0); }
   public static void AddTeenProductId(FlatBufferBuilder builder, StringOffset TeenProductIdOffset) { builder.AddOffset(2, TeenProductIdOffset.Value, 0); }
-  public static void AddStoretype(FlatBufferBuilder builder, FlatDataGlobal.StoreType storetype) { builder.AddInt(3, (int)storetype, 0); }
+  public static void AddStoreType(FlatBufferBuilder builder, FlatDataGlobal.StoreType storeType) { builder.AddInt(3, (int)storeType, 0); }
   public static void AddPrice(FlatBufferBuilder builder, long Price) { builder.AddLong(4, Price, 0); }
   public static void AddPriceReference(FlatBufferBuilder builder, StringOffset PriceReferenceOffset) { builder.AddOffset(5, PriceReferenceOffset.Value, 0); }
-  public static void AddProducttagtype(FlatBufferBuilder builder, FlatDataGlobal.ProductTagType producttagtype) { builder.AddInt(6, (int)producttagtype, 0); }
+  public static void AddProductTagType(FlatBufferBuilder builder, FlatDataGlobal.ProductTagType productTagType) { builder.AddInt(6, (int)productTagType, 0); }
   public static void AddMonthlyDays(FlatBufferBuilder builder, long MonthlyDays) { builder.AddLong(7, MonthlyDays, 0); }
   public static void AddParcelType(FlatBufferBuilder builder, VectorOffset ParcelTypeOffset) { builder.AddOffset(8, ParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateParcelTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }

@@ -39,8 +39,8 @@ public struct CurrencyExcel : IFlatbufferObject
   public FlatDataGlobal.Rarity Rarity { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Rarity.N; } }
   public int AutoChargeMsc { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int AutoChargeAmount { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.CurrencyOverChargeType Currencyoverchargetype { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.CurrencyOverChargeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CurrencyOverChargeType.CanNotCharge; } }
-  public FlatDataGlobal.CurrencyAdditionalChargeType Currencyadditionalchargetype { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.CurrencyAdditionalChargeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CurrencyAdditionalChargeType.EnableAutoChargeOverLimit; } }
+  public FlatDataGlobal.CurrencyOverChargeType CurrencyOverChargeType { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.CurrencyOverChargeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CurrencyOverChargeType.CanNotCharge; } }
+  public FlatDataGlobal.CurrencyAdditionalChargeType CurrencyAdditionalChargeType { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.CurrencyAdditionalChargeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CurrencyAdditionalChargeType.EnableAutoChargeOverLimit; } }
   public long ChargeLimit { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long OverChargeLimit { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string SpriteName { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
@@ -50,7 +50,7 @@ public struct CurrencyExcel : IFlatbufferObject
   public ArraySegment<byte>? GetSpriteNameBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
   public byte[] GetSpriteNameArray() { return __p.__vector_as_array<byte>(28); }
-  public FlatDataGlobal.DailyRefillType Dailyrefilltype { get { int o = __p.__offset(30); return o != 0 ? (FlatDataGlobal.DailyRefillType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DailyRefillType.None; } }
+  public FlatDataGlobal.DailyRefillType DailyRefillType { get { int o = __p.__offset(30); return o != 0 ? (FlatDataGlobal.DailyRefillType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.DailyRefillType.None; } }
   public long DailyRefillAmount { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long DailyRefillTime(int j) { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
   public int DailyRefillTimeLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
@@ -70,12 +70,12 @@ public struct CurrencyExcel : IFlatbufferObject
       FlatDataGlobal.Rarity rarity = FlatDataGlobal.Rarity.N,
       int AutoChargeMsc = 0,
       int AutoChargeAmount = 0,
-      FlatDataGlobal.CurrencyOverChargeType currencyoverchargetype = FlatDataGlobal.CurrencyOverChargeType.CanNotCharge,
-      FlatDataGlobal.CurrencyAdditionalChargeType currencyadditionalchargetype = FlatDataGlobal.CurrencyAdditionalChargeType.EnableAutoChargeOverLimit,
+      FlatDataGlobal.CurrencyOverChargeType currencyOverChargeType = FlatDataGlobal.CurrencyOverChargeType.CanNotCharge,
+      FlatDataGlobal.CurrencyAdditionalChargeType currencyAdditionalChargeType = FlatDataGlobal.CurrencyAdditionalChargeType.EnableAutoChargeOverLimit,
       long ChargeLimit = 0,
       long OverChargeLimit = 0,
       StringOffset SpriteNameOffset = default(StringOffset),
-      FlatDataGlobal.DailyRefillType dailyrefilltype = FlatDataGlobal.DailyRefillType.None,
+      FlatDataGlobal.DailyRefillType dailyRefillType = FlatDataGlobal.DailyRefillType.None,
       long DailyRefillAmount = 0,
       VectorOffset DailyRefillTimeOffset = default(VectorOffset)) {
     builder.StartTable(16);
@@ -84,10 +84,10 @@ public struct CurrencyExcel : IFlatbufferObject
     CurrencyExcel.AddChargeLimit(builder, ChargeLimit);
     CurrencyExcel.AddID(builder, ID);
     CurrencyExcel.AddDailyRefillTime(builder, DailyRefillTimeOffset);
-    CurrencyExcel.AddDailyrefilltype(builder, dailyrefilltype);
+    CurrencyExcel.AddDailyRefillType(builder, dailyRefillType);
     CurrencyExcel.AddSpriteName(builder, SpriteNameOffset);
-    CurrencyExcel.AddCurrencyadditionalchargetype(builder, currencyadditionalchargetype);
-    CurrencyExcel.AddCurrencyoverchargetype(builder, currencyoverchargetype);
+    CurrencyExcel.AddCurrencyAdditionalChargeType(builder, currencyAdditionalChargeType);
+    CurrencyExcel.AddCurrencyOverChargeType(builder, currencyOverChargeType);
     CurrencyExcel.AddAutoChargeAmount(builder, AutoChargeAmount);
     CurrencyExcel.AddAutoChargeMsc(builder, AutoChargeMsc);
     CurrencyExcel.AddRarity(builder, rarity);
@@ -107,12 +107,12 @@ public struct CurrencyExcel : IFlatbufferObject
   public static void AddRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity rarity) { builder.AddInt(5, (int)rarity, 0); }
   public static void AddAutoChargeMsc(FlatBufferBuilder builder, int AutoChargeMsc) { builder.AddInt(6, AutoChargeMsc, 0); }
   public static void AddAutoChargeAmount(FlatBufferBuilder builder, int AutoChargeAmount) { builder.AddInt(7, AutoChargeAmount, 0); }
-  public static void AddCurrencyoverchargetype(FlatBufferBuilder builder, FlatDataGlobal.CurrencyOverChargeType currencyoverchargetype) { builder.AddInt(8, (int)currencyoverchargetype, 0); }
-  public static void AddCurrencyadditionalchargetype(FlatBufferBuilder builder, FlatDataGlobal.CurrencyAdditionalChargeType currencyadditionalchargetype) { builder.AddInt(9, (int)currencyadditionalchargetype, 0); }
+  public static void AddCurrencyOverChargeType(FlatBufferBuilder builder, FlatDataGlobal.CurrencyOverChargeType currencyOverChargeType) { builder.AddInt(8, (int)currencyOverChargeType, 0); }
+  public static void AddCurrencyAdditionalChargeType(FlatBufferBuilder builder, FlatDataGlobal.CurrencyAdditionalChargeType currencyAdditionalChargeType) { builder.AddInt(9, (int)currencyAdditionalChargeType, 0); }
   public static void AddChargeLimit(FlatBufferBuilder builder, long ChargeLimit) { builder.AddLong(10, ChargeLimit, 0); }
   public static void AddOverChargeLimit(FlatBufferBuilder builder, long OverChargeLimit) { builder.AddLong(11, OverChargeLimit, 0); }
   public static void AddSpriteName(FlatBufferBuilder builder, StringOffset SpriteNameOffset) { builder.AddOffset(12, SpriteNameOffset.Value, 0); }
-  public static void AddDailyrefilltype(FlatBufferBuilder builder, FlatDataGlobal.DailyRefillType dailyrefilltype) { builder.AddInt(13, (int)dailyrefilltype, 0); }
+  public static void AddDailyRefillType(FlatBufferBuilder builder, FlatDataGlobal.DailyRefillType dailyRefillType) { builder.AddInt(13, (int)dailyRefillType, 0); }
   public static void AddDailyRefillAmount(FlatBufferBuilder builder, long DailyRefillAmount) { builder.AddLong(14, DailyRefillAmount, 0); }
   public static void AddDailyRefillTime(FlatBufferBuilder builder, VectorOffset DailyRefillTimeOffset) { builder.AddOffset(15, DailyRefillTimeOffset.Value, 0); }
   public static VectorOffset CreateDailyRefillTimeVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }

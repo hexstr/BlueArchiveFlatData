@@ -83,7 +83,7 @@ public struct EliminateRaidStageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetEnterTimeLineBytes() { return __p.__vector_as_arraysegment(44); }
 #endif
   public byte[] GetEnterTimeLineArray() { return __p.__vector_as_array<byte>(44); }
-  public FlatDataGlobal.TacticEnvironment Tacticenvironment { get { int o = __p.__offset(46); return o != 0 ? (FlatDataGlobal.TacticEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticEnvironment.None; } }
+  public FlatDataGlobal.TacticEnvironment TacticEnvironment { get { int o = __p.__offset(46); return o != 0 ? (FlatDataGlobal.TacticEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TacticEnvironment.None; } }
   public int SeasonDamageRatio { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long DefaultClearScore { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long MaximumScore { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -160,7 +160,7 @@ public struct EliminateRaidStageExcel : IFlatbufferObject
       long GroundId = 0,
       StringOffset GroundDevNameOffset = default(StringOffset),
       StringOffset EnterTimeLineOffset = default(StringOffset),
-      FlatDataGlobal.TacticEnvironment tacticenvironment = FlatDataGlobal.TacticEnvironment.None,
+      FlatDataGlobal.TacticEnvironment tacticEnvironment = FlatDataGlobal.TacticEnvironment.None,
       int SeasonDamageRatio = 0,
       long DefaultClearScore = 0,
       long MaximumScore = 0,
@@ -207,7 +207,7 @@ public struct EliminateRaidStageExcel : IFlatbufferObject
     EliminateRaidStageExcel.AddBattleReadyTimelinePath(builder, BattleReadyTimelinePathOffset);
     EliminateRaidStageExcel.AddRaidRewardDevName(builder, RaidRewardDevNameOffset);
     EliminateRaidStageExcel.AddSeasonDamageRatio(builder, SeasonDamageRatio);
-    EliminateRaidStageExcel.AddTacticenvironment(builder, tacticenvironment);
+    EliminateRaidStageExcel.AddTacticEnvironment(builder, tacticEnvironment);
     EliminateRaidStageExcel.AddEnterTimeLine(builder, EnterTimeLineOffset);
     EliminateRaidStageExcel.AddGroundDevName(builder, GroundDevNameOffset);
     EliminateRaidStageExcel.AddRaidRoomLifeTime(builder, RaidRoomLifeTime);
@@ -254,7 +254,7 @@ public struct EliminateRaidStageExcel : IFlatbufferObject
   public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(18, GroundId, 0); }
   public static void AddGroundDevName(FlatBufferBuilder builder, StringOffset GroundDevNameOffset) { builder.AddOffset(19, GroundDevNameOffset.Value, 0); }
   public static void AddEnterTimeLine(FlatBufferBuilder builder, StringOffset EnterTimeLineOffset) { builder.AddOffset(20, EnterTimeLineOffset.Value, 0); }
-  public static void AddTacticenvironment(FlatBufferBuilder builder, FlatDataGlobal.TacticEnvironment tacticenvironment) { builder.AddInt(21, (int)tacticenvironment, 0); }
+  public static void AddTacticEnvironment(FlatBufferBuilder builder, FlatDataGlobal.TacticEnvironment tacticEnvironment) { builder.AddInt(21, (int)tacticEnvironment, 0); }
   public static void AddSeasonDamageRatio(FlatBufferBuilder builder, int SeasonDamageRatio) { builder.AddInt(22, SeasonDamageRatio, 0); }
   public static void AddDefaultClearScore(FlatBufferBuilder builder, long DefaultClearScore) { builder.AddLong(23, DefaultClearScore, 0); }
   public static void AddMaximumScore(FlatBufferBuilder builder, long MaximumScore) { builder.AddLong(24, MaximumScore, 0); }

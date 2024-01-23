@@ -29,7 +29,7 @@ public struct VoiceRoomExcel : IFlatbufferObject
   public byte[] GetVoiceCategoryArray() { return __p.__vector_as_array<byte>(6); }
   public long DisplayOrder { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public bool CollectionVisible { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.CVCollectionType Cvcollectiontype { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
+  public FlatDataGlobal.CVCollectionType CVCollectionType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
   public long UnlockFavorRank { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string LocalizeCVGroup { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -79,7 +79,7 @@ public struct VoiceRoomExcel : IFlatbufferObject
       StringOffset VoiceCategoryOffset = default(StringOffset),
       long DisplayOrder = 0,
       bool CollectionVisible = false,
-      FlatDataGlobal.CVCollectionType cvcollectiontype = FlatDataGlobal.CVCollectionType.CVNormal,
+      FlatDataGlobal.CVCollectionType cVCollectionType = FlatDataGlobal.CVCollectionType.CVNormal,
       long UnlockFavorRank = 0,
       StringOffset LocalizeCVGroupOffset = default(StringOffset),
       StringOffset AudioClipJpOffset = default(StringOffset),
@@ -96,7 +96,7 @@ public struct VoiceRoomExcel : IFlatbufferObject
     VoiceRoomExcel.AddAudioClipKr(builder, AudioClipKrOffset);
     VoiceRoomExcel.AddAudioClipJp(builder, AudioClipJpOffset);
     VoiceRoomExcel.AddLocalizeCVGroup(builder, LocalizeCVGroupOffset);
-    VoiceRoomExcel.AddCvcollectiontype(builder, cvcollectiontype);
+    VoiceRoomExcel.AddCVCollectionType(builder, cVCollectionType);
     VoiceRoomExcel.AddVoiceCategory(builder, VoiceCategoryOffset);
     VoiceRoomExcel.AddNameHash(builder, NameHash);
     VoiceRoomExcel.AddCollectionVisible(builder, CollectionVisible);
@@ -108,7 +108,7 @@ public struct VoiceRoomExcel : IFlatbufferObject
   public static void AddVoiceCategory(FlatBufferBuilder builder, StringOffset VoiceCategoryOffset) { builder.AddOffset(1, VoiceCategoryOffset.Value, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(2, DisplayOrder, 0); }
   public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(3, CollectionVisible, false); }
-  public static void AddCvcollectiontype(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cvcollectiontype) { builder.AddInt(4, (int)cvcollectiontype, 0); }
+  public static void AddCVCollectionType(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cVCollectionType) { builder.AddInt(4, (int)cVCollectionType, 0); }
   public static void AddUnlockFavorRank(FlatBufferBuilder builder, long UnlockFavorRank) { builder.AddLong(5, UnlockFavorRank, 0); }
   public static void AddLocalizeCVGroup(FlatBufferBuilder builder, StringOffset LocalizeCVGroupOffset) { builder.AddOffset(6, LocalizeCVGroupOffset.Value, 0); }
   public static void AddAudioClipJp(FlatBufferBuilder builder, StringOffset AudioClipJpOffset) { builder.AddOffset(7, AudioClipJpOffset.Value, 0); }

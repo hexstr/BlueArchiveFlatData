@@ -21,7 +21,7 @@ public struct ContentsScenarioExcel : IFlatbufferObject
 
   public uint Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public uint LocalizeId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public FlatDataGlobal.ScenarioContentType Scenariocontenttype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ScenarioContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ScenarioContentType.Prologue; } }
+  public FlatDataGlobal.ScenarioContentType ScenarioContentType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ScenarioContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ScenarioContentType.Prologue; } }
   public long ScenarioGroupId(int j) { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
   public int ScenarioGroupIdLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -34,11 +34,11 @@ public struct ContentsScenarioExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.ContentsScenarioExcel> CreateContentsScenarioExcel(FlatBufferBuilder builder,
       uint Id = 0,
       uint LocalizeId = 0,
-      FlatDataGlobal.ScenarioContentType scenariocontenttype = FlatDataGlobal.ScenarioContentType.Prologue,
+      FlatDataGlobal.ScenarioContentType scenarioContentType = FlatDataGlobal.ScenarioContentType.Prologue,
       VectorOffset ScenarioGroupIdOffset = default(VectorOffset)) {
     builder.StartTable(4);
     ContentsScenarioExcel.AddScenarioGroupId(builder, ScenarioGroupIdOffset);
-    ContentsScenarioExcel.AddScenariocontenttype(builder, scenariocontenttype);
+    ContentsScenarioExcel.AddScenarioContentType(builder, scenarioContentType);
     ContentsScenarioExcel.AddLocalizeId(builder, LocalizeId);
     ContentsScenarioExcel.AddId(builder, Id);
     return ContentsScenarioExcel.EndContentsScenarioExcel(builder);
@@ -47,7 +47,7 @@ public struct ContentsScenarioExcel : IFlatbufferObject
   public static void StartContentsScenarioExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
   public static void AddId(FlatBufferBuilder builder, uint Id) { builder.AddUint(0, Id, 0); }
   public static void AddLocalizeId(FlatBufferBuilder builder, uint LocalizeId) { builder.AddUint(1, LocalizeId, 0); }
-  public static void AddScenariocontenttype(FlatBufferBuilder builder, FlatDataGlobal.ScenarioContentType scenariocontenttype) { builder.AddInt(2, (int)scenariocontenttype, 0); }
+  public static void AddScenarioContentType(FlatBufferBuilder builder, FlatDataGlobal.ScenarioContentType scenarioContentType) { builder.AddInt(2, (int)scenarioContentType, 0); }
   public static void AddScenarioGroupId(FlatBufferBuilder builder, VectorOffset ScenarioGroupIdOffset) { builder.AddOffset(3, ScenarioGroupIdOffset.Value, 0); }
   public static VectorOffset CreateScenarioGroupIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateScenarioGroupIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }

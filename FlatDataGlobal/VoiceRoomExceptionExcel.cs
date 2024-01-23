@@ -20,7 +20,7 @@ public struct VoiceRoomExceptionExcel : IFlatbufferObject
   public VoiceRoomExceptionExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public FlatDataGlobal.CVExceptionTarget ExceptionTarget { get { int o = __p.__offset(4); return o != 0 ? (FlatDataGlobal.CVExceptionTarget)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVExceptionTarget.CharacterId; } }
-  public FlatDataGlobal.SquadType Squadtype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.SquadType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.SquadType.None; } }
+  public FlatDataGlobal.SquadType SquadType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.SquadType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.SquadType.None; } }
   public long CharacterId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.CVPrintType LinkedCharacterVoicePrintType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.CVPrintType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVPrintType.CharacterOverwrite; } }
   public string LinkedCharacterName { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
@@ -41,7 +41,7 @@ public struct VoiceRoomExceptionExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.VoiceRoomExceptionExcel> CreateVoiceRoomExceptionExcel(FlatBufferBuilder builder,
       FlatDataGlobal.CVExceptionTarget ExceptionTarget = FlatDataGlobal.CVExceptionTarget.CharacterId,
-      FlatDataGlobal.SquadType squadtype = FlatDataGlobal.SquadType.None,
+      FlatDataGlobal.SquadType squadType = FlatDataGlobal.SquadType.None,
       long CharacterId = 0,
       FlatDataGlobal.CVPrintType LinkedCharacterVoicePrintType = FlatDataGlobal.CVPrintType.CharacterOverwrite,
       StringOffset LinkedCharacterNameOffset = default(StringOffset),
@@ -51,14 +51,14 @@ public struct VoiceRoomExceptionExcel : IFlatbufferObject
     VoiceRoomExceptionExcel.AddBlackListNameHash(builder, BlackListNameHashOffset);
     VoiceRoomExceptionExcel.AddLinkedCharacterName(builder, LinkedCharacterNameOffset);
     VoiceRoomExceptionExcel.AddLinkedCharacterVoicePrintType(builder, LinkedCharacterVoicePrintType);
-    VoiceRoomExceptionExcel.AddSquadtype(builder, squadtype);
+    VoiceRoomExceptionExcel.AddSquadType(builder, squadType);
     VoiceRoomExceptionExcel.AddExceptionTarget(builder, ExceptionTarget);
     return VoiceRoomExceptionExcel.EndVoiceRoomExceptionExcel(builder);
   }
 
   public static void StartVoiceRoomExceptionExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
   public static void AddExceptionTarget(FlatBufferBuilder builder, FlatDataGlobal.CVExceptionTarget ExceptionTarget) { builder.AddInt(0, (int)ExceptionTarget, 0); }
-  public static void AddSquadtype(FlatBufferBuilder builder, FlatDataGlobal.SquadType squadtype) { builder.AddInt(1, (int)squadtype, 0); }
+  public static void AddSquadType(FlatBufferBuilder builder, FlatDataGlobal.SquadType squadType) { builder.AddInt(1, (int)squadType, 0); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(2, CharacterId, 0); }
   public static void AddLinkedCharacterVoicePrintType(FlatBufferBuilder builder, FlatDataGlobal.CVPrintType LinkedCharacterVoicePrintType) { builder.AddInt(3, (int)LinkedCharacterVoicePrintType, 0); }
   public static void AddLinkedCharacterName(FlatBufferBuilder builder, StringOffset LinkedCharacterNameOffset) { builder.AddOffset(4, LinkedCharacterNameOffset.Value, 0); }

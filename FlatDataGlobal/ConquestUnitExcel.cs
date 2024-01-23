@@ -83,7 +83,7 @@ public struct ConquestUnitExcel : IFlatbufferObject
   public long EnterScenarioGroupId { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ClearScenarioGroupId { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ConquestRewardId { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.StageTopography Stagetopography { get { int o = __p.__offset(56); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
+  public FlatDataGlobal.StageTopography StageTopography { get { int o = __p.__offset(56); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
   public int RecommandLevel { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long TacticRewardExp { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long FixedEchelonId { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -115,7 +115,7 @@ public struct ConquestUnitExcel : IFlatbufferObject
       long EnterScenarioGroupId = 0,
       long ClearScenarioGroupId = 0,
       long ConquestRewardId = 0,
-      FlatDataGlobal.StageTopography stagetopography = FlatDataGlobal.StageTopography.Street,
+      FlatDataGlobal.StageTopography stageTopography = FlatDataGlobal.StageTopography.Street,
       int RecommandLevel = 0,
       long TacticRewardExp = 0,
       long FixedEchelonId = 0) {
@@ -134,7 +134,7 @@ public struct ConquestUnitExcel : IFlatbufferObject
     ConquestUnitExcel.AddUnitGroup(builder, UnitGroup);
     ConquestUnitExcel.AddId(builder, Id);
     ConquestUnitExcel.AddRecommandLevel(builder, RecommandLevel);
-    ConquestUnitExcel.AddStagetopography(builder, stagetopography);
+    ConquestUnitExcel.AddStageTopography(builder, stageTopography);
     ConquestUnitExcel.AddManageEchelonStageEnterCostAmount(builder, ManageEchelonStageEnterCostAmount);
     ConquestUnitExcel.AddManageEchelonStageEnterCostType(builder, ManageEchelonStageEnterCostType);
     ConquestUnitExcel.AddStageEnterCostAmount(builder, StageEnterCostAmount);
@@ -190,7 +190,7 @@ public struct ConquestUnitExcel : IFlatbufferObject
   public static void AddEnterScenarioGroupId(FlatBufferBuilder builder, long EnterScenarioGroupId) { builder.AddLong(23, EnterScenarioGroupId, 0); }
   public static void AddClearScenarioGroupId(FlatBufferBuilder builder, long ClearScenarioGroupId) { builder.AddLong(24, ClearScenarioGroupId, 0); }
   public static void AddConquestRewardId(FlatBufferBuilder builder, long ConquestRewardId) { builder.AddLong(25, ConquestRewardId, 0); }
-  public static void AddStagetopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stagetopography) { builder.AddInt(26, (int)stagetopography, 0); }
+  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stageTopography) { builder.AddInt(26, (int)stageTopography, 0); }
   public static void AddRecommandLevel(FlatBufferBuilder builder, int RecommandLevel) { builder.AddInt(27, RecommandLevel, 0); }
   public static void AddTacticRewardExp(FlatBufferBuilder builder, long TacticRewardExp) { builder.AddLong(28, TacticRewardExp, 0); }
   public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(29, FixedEchelonId, 0); }

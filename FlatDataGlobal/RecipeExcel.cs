@@ -20,7 +20,7 @@ public struct RecipeExcel : IFlatbufferObject
   public RecipeExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.RecipeType Recipetype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RecipeType.None; } }
+  public FlatDataGlobal.RecipeType RecipeType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RecipeType.None; } }
   public long RecipeIngredientId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long RecipeSelectionGroupId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.ParcelType ParcelType(int j) { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
@@ -58,7 +58,7 @@ public struct RecipeExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.RecipeExcel> CreateRecipeExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataGlobal.RecipeType recipetype = FlatDataGlobal.RecipeType.None,
+      FlatDataGlobal.RecipeType recipeType = FlatDataGlobal.RecipeType.None,
       long RecipeIngredientId = 0,
       long RecipeSelectionGroupId = 0,
       VectorOffset ParcelTypeOffset = default(VectorOffset),
@@ -73,13 +73,13 @@ public struct RecipeExcel : IFlatbufferObject
     RecipeExcel.AddResultAmountMin(builder, ResultAmountMinOffset);
     RecipeExcel.AddParcelId(builder, ParcelIdOffset);
     RecipeExcel.AddParcelType(builder, ParcelTypeOffset);
-    RecipeExcel.AddRecipetype(builder, recipetype);
+    RecipeExcel.AddRecipeType(builder, recipeType);
     return RecipeExcel.EndRecipeExcel(builder);
   }
 
   public static void StartRecipeExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddRecipetype(FlatBufferBuilder builder, FlatDataGlobal.RecipeType recipetype) { builder.AddInt(1, (int)recipetype, 0); }
+  public static void AddRecipeType(FlatBufferBuilder builder, FlatDataGlobal.RecipeType recipeType) { builder.AddInt(1, (int)recipeType, 0); }
   public static void AddRecipeIngredientId(FlatBufferBuilder builder, long RecipeIngredientId) { builder.AddLong(2, RecipeIngredientId, 0); }
   public static void AddRecipeSelectionGroupId(FlatBufferBuilder builder, long RecipeSelectionGroupId) { builder.AddLong(3, RecipeSelectionGroupId, 0); }
   public static void AddParcelType(FlatBufferBuilder builder, VectorOffset ParcelTypeOffset) { builder.AddOffset(4, ParcelTypeOffset.Value, 0); }

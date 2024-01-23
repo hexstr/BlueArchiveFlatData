@@ -21,7 +21,7 @@ public struct RecipeSelectionGroupExcel : IFlatbufferObject
 
   public long RecipeSelectionGroupId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long RecipeSelectionGroupComponentId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ParcelType Parceltype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public FlatDataGlobal.ParcelType ParcelType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
   public long ParcelId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ResultAmountMin { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ResultAmountMax { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -29,7 +29,7 @@ public struct RecipeSelectionGroupExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.RecipeSelectionGroupExcel> CreateRecipeSelectionGroupExcel(FlatBufferBuilder builder,
       long RecipeSelectionGroupId = 0,
       long RecipeSelectionGroupComponentId = 0,
-      FlatDataGlobal.ParcelType parceltype = FlatDataGlobal.ParcelType.None,
+      FlatDataGlobal.ParcelType parcelType = FlatDataGlobal.ParcelType.None,
       long ParcelId = 0,
       long ResultAmountMin = 0,
       long ResultAmountMax = 0) {
@@ -39,14 +39,14 @@ public struct RecipeSelectionGroupExcel : IFlatbufferObject
     RecipeSelectionGroupExcel.AddParcelId(builder, ParcelId);
     RecipeSelectionGroupExcel.AddRecipeSelectionGroupComponentId(builder, RecipeSelectionGroupComponentId);
     RecipeSelectionGroupExcel.AddRecipeSelectionGroupId(builder, RecipeSelectionGroupId);
-    RecipeSelectionGroupExcel.AddParceltype(builder, parceltype);
+    RecipeSelectionGroupExcel.AddParcelType(builder, parcelType);
     return RecipeSelectionGroupExcel.EndRecipeSelectionGroupExcel(builder);
   }
 
   public static void StartRecipeSelectionGroupExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
   public static void AddRecipeSelectionGroupId(FlatBufferBuilder builder, long RecipeSelectionGroupId) { builder.AddLong(0, RecipeSelectionGroupId, 0); }
   public static void AddRecipeSelectionGroupComponentId(FlatBufferBuilder builder, long RecipeSelectionGroupComponentId) { builder.AddLong(1, RecipeSelectionGroupComponentId, 0); }
-  public static void AddParceltype(FlatBufferBuilder builder, FlatDataGlobal.ParcelType parceltype) { builder.AddInt(2, (int)parceltype, 0); }
+  public static void AddParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType parcelType) { builder.AddInt(2, (int)parcelType, 0); }
   public static void AddParcelId(FlatBufferBuilder builder, long ParcelId) { builder.AddLong(3, ParcelId, 0); }
   public static void AddResultAmountMin(FlatBufferBuilder builder, long ResultAmountMin) { builder.AddLong(4, ResultAmountMin, 0); }
   public static void AddResultAmountMax(FlatBufferBuilder builder, long ResultAmountMax) { builder.AddLong(5, ResultAmountMax, 0); }

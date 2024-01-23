@@ -23,7 +23,7 @@ public struct MiniGameTBGThemaRewardExcel : IFlatbufferObject
   public int ThemaRound { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int ThemaUniqueId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public bool IsLoop { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.MiniGameTBGThemaRewardType Minigametbgthemarewardtype { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.MiniGameTBGThemaRewardType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MiniGameTBGThemaRewardType.TreasureReward; } }
+  public FlatDataGlobal.MiniGameTBGThemaRewardType MiniGameTBGThemaRewardType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.MiniGameTBGThemaRewardType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MiniGameTBGThemaRewardType.TreasureReward; } }
   public FlatDataGlobal.ParcelType RewardParcelType(int j) { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
   public int RewardParcelTypeLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -54,7 +54,7 @@ public struct MiniGameTBGThemaRewardExcel : IFlatbufferObject
       int ThemaRound = 0,
       int ThemaUniqueId = 0,
       bool IsLoop = false,
-      FlatDataGlobal.MiniGameTBGThemaRewardType minigametbgthemarewardtype = FlatDataGlobal.MiniGameTBGThemaRewardType.TreasureReward,
+      FlatDataGlobal.MiniGameTBGThemaRewardType miniGameTBGThemaRewardType = FlatDataGlobal.MiniGameTBGThemaRewardType.TreasureReward,
       VectorOffset RewardParcelTypeOffset = default(VectorOffset),
       VectorOffset RewardParcelIdOffset = default(VectorOffset),
       VectorOffset RewardParcelAmountOffset = default(VectorOffset)) {
@@ -63,7 +63,7 @@ public struct MiniGameTBGThemaRewardExcel : IFlatbufferObject
     MiniGameTBGThemaRewardExcel.AddRewardParcelAmount(builder, RewardParcelAmountOffset);
     MiniGameTBGThemaRewardExcel.AddRewardParcelId(builder, RewardParcelIdOffset);
     MiniGameTBGThemaRewardExcel.AddRewardParcelType(builder, RewardParcelTypeOffset);
-    MiniGameTBGThemaRewardExcel.AddMinigametbgthemarewardtype(builder, minigametbgthemarewardtype);
+    MiniGameTBGThemaRewardExcel.AddMiniGameTBGThemaRewardType(builder, miniGameTBGThemaRewardType);
     MiniGameTBGThemaRewardExcel.AddThemaUniqueId(builder, ThemaUniqueId);
     MiniGameTBGThemaRewardExcel.AddThemaRound(builder, ThemaRound);
     MiniGameTBGThemaRewardExcel.AddIsLoop(builder, IsLoop);
@@ -75,7 +75,7 @@ public struct MiniGameTBGThemaRewardExcel : IFlatbufferObject
   public static void AddThemaRound(FlatBufferBuilder builder, int ThemaRound) { builder.AddInt(1, ThemaRound, 0); }
   public static void AddThemaUniqueId(FlatBufferBuilder builder, int ThemaUniqueId) { builder.AddInt(2, ThemaUniqueId, 0); }
   public static void AddIsLoop(FlatBufferBuilder builder, bool IsLoop) { builder.AddBool(3, IsLoop, false); }
-  public static void AddMinigametbgthemarewardtype(FlatBufferBuilder builder, FlatDataGlobal.MiniGameTBGThemaRewardType minigametbgthemarewardtype) { builder.AddInt(4, (int)minigametbgthemarewardtype, 0); }
+  public static void AddMiniGameTBGThemaRewardType(FlatBufferBuilder builder, FlatDataGlobal.MiniGameTBGThemaRewardType miniGameTBGThemaRewardType) { builder.AddInt(4, (int)miniGameTBGThemaRewardType, 0); }
   public static void AddRewardParcelType(FlatBufferBuilder builder, VectorOffset RewardParcelTypeOffset) { builder.AddOffset(5, RewardParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateRewardParcelTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }

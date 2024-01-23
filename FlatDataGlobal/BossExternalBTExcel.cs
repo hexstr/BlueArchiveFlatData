@@ -21,8 +21,8 @@ public struct BossExternalBTExcel : IFlatbufferObject
 
   public long ExternalBTId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long AIPhase { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ExternalBTNodeType Externalbtnodetype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ExternalBTNodeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ExternalBTNodeType.Sequence; } }
-  public FlatDataGlobal.ExternalBTTrigger Externalbttrigger { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.ExternalBTTrigger)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ExternalBTTrigger.None; } }
+  public FlatDataGlobal.ExternalBTNodeType ExternalBTNodeType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ExternalBTNodeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ExternalBTNodeType.Sequence; } }
+  public FlatDataGlobal.ExternalBTTrigger ExternalBTTrigger { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.ExternalBTTrigger)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ExternalBTTrigger.None; } }
   public string TriggerArgument { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetTriggerArgumentBytes() { return __p.__vector_as_span<byte>(12, 1); }
@@ -31,7 +31,7 @@ public struct BossExternalBTExcel : IFlatbufferObject
 #endif
   public byte[] GetTriggerArgumentArray() { return __p.__vector_as_array<byte>(12); }
   public long BehaviorRate { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ExternalBehavior Externalbehavior { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.ExternalBehavior)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ExternalBehavior.UseNextExSkill; } }
+  public FlatDataGlobal.ExternalBehavior ExternalBehavior { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.ExternalBehavior)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ExternalBehavior.UseNextExSkill; } }
   public string BehaviorArgument { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetBehaviorArgumentBytes() { return __p.__vector_as_span<byte>(18, 1); }
@@ -43,32 +43,32 @@ public struct BossExternalBTExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.BossExternalBTExcel> CreateBossExternalBTExcel(FlatBufferBuilder builder,
       long ExternalBTId = 0,
       long AIPhase = 0,
-      FlatDataGlobal.ExternalBTNodeType externalbtnodetype = FlatDataGlobal.ExternalBTNodeType.Sequence,
-      FlatDataGlobal.ExternalBTTrigger externalbttrigger = FlatDataGlobal.ExternalBTTrigger.None,
+      FlatDataGlobal.ExternalBTNodeType externalBTNodeType = FlatDataGlobal.ExternalBTNodeType.Sequence,
+      FlatDataGlobal.ExternalBTTrigger externalBTTrigger = FlatDataGlobal.ExternalBTTrigger.None,
       StringOffset TriggerArgumentOffset = default(StringOffset),
       long BehaviorRate = 0,
-      FlatDataGlobal.ExternalBehavior externalbehavior = FlatDataGlobal.ExternalBehavior.UseNextExSkill,
+      FlatDataGlobal.ExternalBehavior externalBehavior = FlatDataGlobal.ExternalBehavior.UseNextExSkill,
       StringOffset BehaviorArgumentOffset = default(StringOffset)) {
     builder.StartTable(8);
     BossExternalBTExcel.AddBehaviorRate(builder, BehaviorRate);
     BossExternalBTExcel.AddAIPhase(builder, AIPhase);
     BossExternalBTExcel.AddExternalBTId(builder, ExternalBTId);
     BossExternalBTExcel.AddBehaviorArgument(builder, BehaviorArgumentOffset);
-    BossExternalBTExcel.AddExternalbehavior(builder, externalbehavior);
+    BossExternalBTExcel.AddExternalBehavior(builder, externalBehavior);
     BossExternalBTExcel.AddTriggerArgument(builder, TriggerArgumentOffset);
-    BossExternalBTExcel.AddExternalbttrigger(builder, externalbttrigger);
-    BossExternalBTExcel.AddExternalbtnodetype(builder, externalbtnodetype);
+    BossExternalBTExcel.AddExternalBTTrigger(builder, externalBTTrigger);
+    BossExternalBTExcel.AddExternalBTNodeType(builder, externalBTNodeType);
     return BossExternalBTExcel.EndBossExternalBTExcel(builder);
   }
 
   public static void StartBossExternalBTExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddExternalBTId(FlatBufferBuilder builder, long ExternalBTId) { builder.AddLong(0, ExternalBTId, 0); }
   public static void AddAIPhase(FlatBufferBuilder builder, long AIPhase) { builder.AddLong(1, AIPhase, 0); }
-  public static void AddExternalbtnodetype(FlatBufferBuilder builder, FlatDataGlobal.ExternalBTNodeType externalbtnodetype) { builder.AddInt(2, (int)externalbtnodetype, 0); }
-  public static void AddExternalbttrigger(FlatBufferBuilder builder, FlatDataGlobal.ExternalBTTrigger externalbttrigger) { builder.AddInt(3, (int)externalbttrigger, 0); }
+  public static void AddExternalBTNodeType(FlatBufferBuilder builder, FlatDataGlobal.ExternalBTNodeType externalBTNodeType) { builder.AddInt(2, (int)externalBTNodeType, 0); }
+  public static void AddExternalBTTrigger(FlatBufferBuilder builder, FlatDataGlobal.ExternalBTTrigger externalBTTrigger) { builder.AddInt(3, (int)externalBTTrigger, 0); }
   public static void AddTriggerArgument(FlatBufferBuilder builder, StringOffset TriggerArgumentOffset) { builder.AddOffset(4, TriggerArgumentOffset.Value, 0); }
   public static void AddBehaviorRate(FlatBufferBuilder builder, long BehaviorRate) { builder.AddLong(5, BehaviorRate, 0); }
-  public static void AddExternalbehavior(FlatBufferBuilder builder, FlatDataGlobal.ExternalBehavior externalbehavior) { builder.AddInt(6, (int)externalbehavior, 0); }
+  public static void AddExternalBehavior(FlatBufferBuilder builder, FlatDataGlobal.ExternalBehavior externalBehavior) { builder.AddInt(6, (int)externalBehavior, 0); }
   public static void AddBehaviorArgument(FlatBufferBuilder builder, StringOffset BehaviorArgumentOffset) { builder.AddOffset(7, BehaviorArgumentOffset.Value, 0); }
   public static Offset<FlatDataGlobal.BossExternalBTExcel> EndBossExternalBTExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();

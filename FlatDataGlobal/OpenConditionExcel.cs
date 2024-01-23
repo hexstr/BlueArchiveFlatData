@@ -37,7 +37,7 @@ public struct OpenConditionExcel : IFlatbufferObject
   public long AccountLevel { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ScenarioModeId { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long CampaignStageId { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.MultipleConditionCheckType Multipleconditionchecktype { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.MultipleConditionCheckType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MultipleConditionCheckType.And; } }
+  public FlatDataGlobal.MultipleConditionCheckType MultipleConditionCheckType { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.MultipleConditionCheckType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MultipleConditionCheckType.And; } }
   public FlatDataGlobal.WeekDay OpenDayOfWeek { get { int o = __p.__offset(26); return o != 0 ? (FlatDataGlobal.WeekDay)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.WeekDay.Sunday; } }
   public long OpenHour { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.WeekDay CloseDayOfWeek { get { int o = __p.__offset(30); return o != 0 ? (FlatDataGlobal.WeekDay)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.WeekDay.Sunday; } }
@@ -63,7 +63,7 @@ public struct OpenConditionExcel : IFlatbufferObject
       long AccountLevel = 0,
       long ScenarioModeId = 0,
       long CampaignStageId = 0,
-      FlatDataGlobal.MultipleConditionCheckType multipleconditionchecktype = FlatDataGlobal.MultipleConditionCheckType.And,
+      FlatDataGlobal.MultipleConditionCheckType multipleConditionCheckType = FlatDataGlobal.MultipleConditionCheckType.And,
       FlatDataGlobal.WeekDay OpenDayOfWeek = FlatDataGlobal.WeekDay.Sunday,
       long OpenHour = 0,
       FlatDataGlobal.WeekDay CloseDayOfWeek = FlatDataGlobal.WeekDay.Sunday,
@@ -82,7 +82,7 @@ public struct OpenConditionExcel : IFlatbufferObject
     OpenConditionExcel.AddContentsOpenShortcutUI(builder, ContentsOpenShortcutUIOffset);
     OpenConditionExcel.AddCloseDayOfWeek(builder, CloseDayOfWeek);
     OpenConditionExcel.AddOpenDayOfWeek(builder, OpenDayOfWeek);
-    OpenConditionExcel.AddMultipleconditionchecktype(builder, multipleconditionchecktype);
+    OpenConditionExcel.AddMultipleConditionCheckType(builder, multipleConditionCheckType);
     OpenConditionExcel.AddScene(builder, SceneOffset);
     OpenConditionExcel.AddShortcutParam(builder, ShortcutParam);
     OpenConditionExcel.AddShortcutUIName(builder, ShortcutUINameOffset);
@@ -114,7 +114,7 @@ public struct OpenConditionExcel : IFlatbufferObject
   public static void AddAccountLevel(FlatBufferBuilder builder, long AccountLevel) { builder.AddLong(7, AccountLevel, 0); }
   public static void AddScenarioModeId(FlatBufferBuilder builder, long ScenarioModeId) { builder.AddLong(8, ScenarioModeId, 0); }
   public static void AddCampaignStageId(FlatBufferBuilder builder, long CampaignStageId) { builder.AddLong(9, CampaignStageId, 0); }
-  public static void AddMultipleconditionchecktype(FlatBufferBuilder builder, FlatDataGlobal.MultipleConditionCheckType multipleconditionchecktype) { builder.AddInt(10, (int)multipleconditionchecktype, 0); }
+  public static void AddMultipleConditionCheckType(FlatBufferBuilder builder, FlatDataGlobal.MultipleConditionCheckType multipleConditionCheckType) { builder.AddInt(10, (int)multipleConditionCheckType, 0); }
   public static void AddOpenDayOfWeek(FlatBufferBuilder builder, FlatDataGlobal.WeekDay OpenDayOfWeek) { builder.AddInt(11, (int)OpenDayOfWeek, 0); }
   public static void AddOpenHour(FlatBufferBuilder builder, long OpenHour) { builder.AddLong(12, OpenHour, 0); }
   public static void AddCloseDayOfWeek(FlatBufferBuilder builder, FlatDataGlobal.WeekDay CloseDayOfWeek) { builder.AddInt(13, (int)CloseDayOfWeek, 0); }

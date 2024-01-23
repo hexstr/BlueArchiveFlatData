@@ -75,7 +75,7 @@ public struct CampaignStageExcel : IFlatbufferObject
   public byte[] GetStrategyMapBGArray() { return __p.__vector_as_array<byte>(34); }
   public long CampaignStageRewardId { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int MaxTurn { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.StageTopography Stagetopography { get { int o = __p.__offset(40); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
+  public FlatDataGlobal.StageTopography StageTopography { get { int o = __p.__offset(40); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
   public int RecommandLevel { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public string BgmId { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -84,9 +84,9 @@ public struct CampaignStageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetBgmIdBytes() { return __p.__vector_as_arraysegment(44); }
 #endif
   public byte[] GetBgmIdArray() { return __p.__vector_as_array<byte>(44); }
-  public FlatDataGlobal.StrategyEnvironment Strategyenvironment { get { int o = __p.__offset(46); return o != 0 ? (FlatDataGlobal.StrategyEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StrategyEnvironment.None; } }
+  public FlatDataGlobal.StrategyEnvironment StrategyEnvironment { get { int o = __p.__offset(46); return o != 0 ? (FlatDataGlobal.StrategyEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StrategyEnvironment.None; } }
   public long GroundId { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ContentType Contenttype { get { int o = __p.__offset(50); return o != 0 ? (FlatDataGlobal.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ContentType.None; } }
+  public FlatDataGlobal.ContentType ContentType { get { int o = __p.__offset(50); return o != 0 ? (FlatDataGlobal.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ContentType.None; } }
   public long BGMId { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string FirstClearReportEventName { get { int o = __p.__offset(54); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -131,12 +131,12 @@ public struct CampaignStageExcel : IFlatbufferObject
       StringOffset StrategyMapBGOffset = default(StringOffset),
       long CampaignStageRewardId = 0,
       int MaxTurn = 0,
-      FlatDataGlobal.StageTopography stagetopography = FlatDataGlobal.StageTopography.Street,
+      FlatDataGlobal.StageTopography stageTopography = FlatDataGlobal.StageTopography.Street,
       int RecommandLevel = 0,
       StringOffset BgmIdOffset = default(StringOffset),
-      FlatDataGlobal.StrategyEnvironment strategyenvironment = FlatDataGlobal.StrategyEnvironment.None,
+      FlatDataGlobal.StrategyEnvironment strategyEnvironment = FlatDataGlobal.StrategyEnvironment.None,
       long GroundId = 0,
-      FlatDataGlobal.ContentType contenttype = FlatDataGlobal.ContentType.None,
+      FlatDataGlobal.ContentType contentType = FlatDataGlobal.ContentType.None,
       long BGMId = 0,
       StringOffset FirstClearReportEventNameOffset = default(StringOffset),
       StringOffset FirstClearFunnelMessageOffset = default(StringOffset),
@@ -158,11 +158,11 @@ public struct CampaignStageExcel : IFlatbufferObject
     CampaignStageExcel.AddFirstClearEventMessage(builder, FirstClearEventMessageOffset);
     CampaignStageExcel.AddFirstClearFunnelMessage(builder, FirstClearFunnelMessageOffset);
     CampaignStageExcel.AddFirstClearReportEventName(builder, FirstClearReportEventNameOffset);
-    CampaignStageExcel.AddContenttype(builder, contenttype);
-    CampaignStageExcel.AddStrategyenvironment(builder, strategyenvironment);
+    CampaignStageExcel.AddContentType(builder, contentType);
+    CampaignStageExcel.AddStrategyEnvironment(builder, strategyEnvironment);
     CampaignStageExcel.AddBgmId(builder, BgmIdOffset);
     CampaignStageExcel.AddRecommandLevel(builder, RecommandLevel);
-    CampaignStageExcel.AddStagetopography(builder, stagetopography);
+    CampaignStageExcel.AddStageTopography(builder, stageTopography);
     CampaignStageExcel.AddMaxTurn(builder, MaxTurn);
     CampaignStageExcel.AddStrategyMapBG(builder, StrategyMapBGOffset);
     CampaignStageExcel.AddStrategyMap(builder, StrategyMapOffset);
@@ -206,12 +206,12 @@ public struct CampaignStageExcel : IFlatbufferObject
   public static void AddStrategyMapBG(FlatBufferBuilder builder, StringOffset StrategyMapBGOffset) { builder.AddOffset(15, StrategyMapBGOffset.Value, 0); }
   public static void AddCampaignStageRewardId(FlatBufferBuilder builder, long CampaignStageRewardId) { builder.AddLong(16, CampaignStageRewardId, 0); }
   public static void AddMaxTurn(FlatBufferBuilder builder, int MaxTurn) { builder.AddInt(17, MaxTurn, 0); }
-  public static void AddStagetopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stagetopography) { builder.AddInt(18, (int)stagetopography, 0); }
+  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stageTopography) { builder.AddInt(18, (int)stageTopography, 0); }
   public static void AddRecommandLevel(FlatBufferBuilder builder, int RecommandLevel) { builder.AddInt(19, RecommandLevel, 0); }
   public static void AddBgmId(FlatBufferBuilder builder, StringOffset BgmIdOffset) { builder.AddOffset(20, BgmIdOffset.Value, 0); }
-  public static void AddStrategyenvironment(FlatBufferBuilder builder, FlatDataGlobal.StrategyEnvironment strategyenvironment) { builder.AddInt(21, (int)strategyenvironment, 0); }
+  public static void AddStrategyEnvironment(FlatBufferBuilder builder, FlatDataGlobal.StrategyEnvironment strategyEnvironment) { builder.AddInt(21, (int)strategyEnvironment, 0); }
   public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(22, GroundId, 0); }
-  public static void AddContenttype(FlatBufferBuilder builder, FlatDataGlobal.ContentType contenttype) { builder.AddInt(23, (int)contenttype, 0); }
+  public static void AddContentType(FlatBufferBuilder builder, FlatDataGlobal.ContentType contentType) { builder.AddInt(23, (int)contentType, 0); }
   public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(24, BGMId, 0); }
   public static void AddFirstClearReportEventName(FlatBufferBuilder builder, StringOffset FirstClearReportEventNameOffset) { builder.AddOffset(25, FirstClearReportEventNameOffset.Value, 0); }
   public static void AddFirstClearFunnelMessage(FlatBufferBuilder builder, StringOffset FirstClearFunnelMessageOffset) { builder.AddOffset(26, FirstClearFunnelMessageOffset.Value, 0); }
