@@ -19,7 +19,7 @@ public struct CharacterSkillListExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public CharacterSkillListExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public long CharacterId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CharacterSkillListGroupId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int MinimumGradeCharacterWeapon { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int MinimumTierCharacterGear { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public bool IsFormConversion { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
@@ -62,9 +62,11 @@ public struct CharacterSkillListExcel : IFlatbufferObject
   public int LeaderSkillGroupIdLength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
   public string ExtraPassiveSkillGroupId(int j) { int o = __p.__offset(34); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
   public int ExtraPassiveSkillGroupIdLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string HiddenPassiveSkillGroupId(int j) { int o = __p.__offset(36); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int HiddenPassiveSkillGroupIdLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
 
   public static Offset<FlatDataGlobal.CharacterSkillListExcel> CreateCharacterSkillListExcel(FlatBufferBuilder builder,
-      long CharacterId = 0,
+      long CharacterSkillListGroupId = 0,
       int MinimumGradeCharacterWeapon = 0,
       int MinimumTierCharacterGear = 0,
       bool IsFormConversion = false,
@@ -79,9 +81,11 @@ public struct CharacterSkillListExcel : IFlatbufferObject
       VectorOffset PublicSkillTimeLineIndexOffset = default(VectorOffset),
       VectorOffset PassiveSkillGroupIdOffset = default(VectorOffset),
       VectorOffset LeaderSkillGroupIdOffset = default(VectorOffset),
-      VectorOffset ExtraPassiveSkillGroupIdOffset = default(VectorOffset)) {
-    builder.StartTable(16);
-    CharacterSkillListExcel.AddCharacterId(builder, CharacterId);
+      VectorOffset ExtraPassiveSkillGroupIdOffset = default(VectorOffset),
+      VectorOffset HiddenPassiveSkillGroupIdOffset = default(VectorOffset)) {
+    builder.StartTable(17);
+    CharacterSkillListExcel.AddCharacterSkillListGroupId(builder, CharacterSkillListGroupId);
+    CharacterSkillListExcel.AddHiddenPassiveSkillGroupId(builder, HiddenPassiveSkillGroupIdOffset);
     CharacterSkillListExcel.AddExtraPassiveSkillGroupId(builder, ExtraPassiveSkillGroupIdOffset);
     CharacterSkillListExcel.AddLeaderSkillGroupId(builder, LeaderSkillGroupIdOffset);
     CharacterSkillListExcel.AddPassiveSkillGroupId(builder, PassiveSkillGroupIdOffset);
@@ -100,8 +104,8 @@ public struct CharacterSkillListExcel : IFlatbufferObject
     return CharacterSkillListExcel.EndCharacterSkillListExcel(builder);
   }
 
-  public static void StartCharacterSkillListExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
-  public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
+  public static void StartCharacterSkillListExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
+  public static void AddCharacterSkillListGroupId(FlatBufferBuilder builder, long CharacterSkillListGroupId) { builder.AddLong(0, CharacterSkillListGroupId, 0); }
   public static void AddMinimumGradeCharacterWeapon(FlatBufferBuilder builder, int MinimumGradeCharacterWeapon) { builder.AddInt(1, MinimumGradeCharacterWeapon, 0); }
   public static void AddMinimumTierCharacterGear(FlatBufferBuilder builder, int MinimumTierCharacterGear) { builder.AddInt(2, MinimumTierCharacterGear, 0); }
   public static void AddIsFormConversion(FlatBufferBuilder builder, bool IsFormConversion) { builder.AddBool(3, IsFormConversion, false); }
@@ -162,6 +166,12 @@ public struct CharacterSkillListExcel : IFlatbufferObject
   public static VectorOffset CreateExtraPassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateExtraPassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartExtraPassiveSkillGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddHiddenPassiveSkillGroupId(FlatBufferBuilder builder, VectorOffset HiddenPassiveSkillGroupIdOffset) { builder.AddOffset(16, HiddenPassiveSkillGroupIdOffset.Value, 0); }
+  public static VectorOffset CreateHiddenPassiveSkillGroupIdVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateHiddenPassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateHiddenPassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateHiddenPassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartHiddenPassiveSkillGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static Offset<FlatDataGlobal.CharacterSkillListExcel> EndCharacterSkillListExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterSkillListExcel>(o);

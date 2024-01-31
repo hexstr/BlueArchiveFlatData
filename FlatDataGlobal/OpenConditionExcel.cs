@@ -42,15 +42,17 @@ public struct OpenConditionExcel : IFlatbufferObject
   public long OpenHour { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.WeekDay CloseDayOfWeek { get { int o = __p.__offset(30); return o != 0 ? (FlatDataGlobal.WeekDay)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.WeekDay.Sunday; } }
   public long CloseHour { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CafeRank { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool ContentsOpenShow { get { int o = __p.__offset(36); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string ContentsOpenShortcutUI { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long OpenedCafeId { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CafeIdforCafeRank { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CafeRank { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool ContentsOpenShow { get { int o = __p.__offset(40); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string ContentsOpenShortcutUI { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetContentsOpenShortcutUIBytes() { return __p.__vector_as_span<byte>(38, 1); }
+  public Span<byte> GetContentsOpenShortcutUIBytes() { return __p.__vector_as_span<byte>(42, 1); }
 #else
-  public ArraySegment<byte>? GetContentsOpenShortcutUIBytes() { return __p.__vector_as_arraysegment(38); }
+  public ArraySegment<byte>? GetContentsOpenShortcutUIBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public byte[] GetContentsOpenShortcutUIArray() { return __p.__vector_as_array<byte>(38); }
+  public byte[] GetContentsOpenShortcutUIArray() { return __p.__vector_as_array<byte>(42); }
 
   public static Offset<FlatDataGlobal.OpenConditionExcel> CreateOpenConditionExcel(FlatBufferBuilder builder,
       FlatDataGlobal.OpenConditionContent OpenConditionContentType = FlatDataGlobal.OpenConditionContent.Shop,
@@ -68,11 +70,15 @@ public struct OpenConditionExcel : IFlatbufferObject
       long OpenHour = 0,
       FlatDataGlobal.WeekDay CloseDayOfWeek = FlatDataGlobal.WeekDay.Sunday,
       long CloseHour = 0,
+      long OpenedCafeId = 0,
+      long CafeIdforCafeRank = 0,
       long CafeRank = 0,
       bool ContentsOpenShow = false,
       StringOffset ContentsOpenShortcutUIOffset = default(StringOffset)) {
-    builder.StartTable(18);
+    builder.StartTable(20);
     OpenConditionExcel.AddCafeRank(builder, CafeRank);
+    OpenConditionExcel.AddCafeIdforCafeRank(builder, CafeIdforCafeRank);
+    OpenConditionExcel.AddOpenedCafeId(builder, OpenedCafeId);
     OpenConditionExcel.AddCloseHour(builder, CloseHour);
     OpenConditionExcel.AddOpenHour(builder, OpenHour);
     OpenConditionExcel.AddCampaignStageId(builder, CampaignStageId);
@@ -93,7 +99,7 @@ public struct OpenConditionExcel : IFlatbufferObject
     return OpenConditionExcel.EndOpenConditionExcel(builder);
   }
 
-  public static void StartOpenConditionExcel(FlatBufferBuilder builder) { builder.StartTable(18); }
+  public static void StartOpenConditionExcel(FlatBufferBuilder builder) { builder.StartTable(20); }
   public static void AddOpenConditionContentType(FlatBufferBuilder builder, FlatDataGlobal.OpenConditionContent OpenConditionContentType) { builder.AddInt(0, (int)OpenConditionContentType, 0); }
   public static void AddLockUI(FlatBufferBuilder builder, VectorOffset LockUIOffset) { builder.AddOffset(1, LockUIOffset.Value, 0); }
   public static VectorOffset CreateLockUIVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
@@ -119,9 +125,11 @@ public struct OpenConditionExcel : IFlatbufferObject
   public static void AddOpenHour(FlatBufferBuilder builder, long OpenHour) { builder.AddLong(12, OpenHour, 0); }
   public static void AddCloseDayOfWeek(FlatBufferBuilder builder, FlatDataGlobal.WeekDay CloseDayOfWeek) { builder.AddInt(13, (int)CloseDayOfWeek, 0); }
   public static void AddCloseHour(FlatBufferBuilder builder, long CloseHour) { builder.AddLong(14, CloseHour, 0); }
-  public static void AddCafeRank(FlatBufferBuilder builder, long CafeRank) { builder.AddLong(15, CafeRank, 0); }
-  public static void AddContentsOpenShow(FlatBufferBuilder builder, bool ContentsOpenShow) { builder.AddBool(16, ContentsOpenShow, false); }
-  public static void AddContentsOpenShortcutUI(FlatBufferBuilder builder, StringOffset ContentsOpenShortcutUIOffset) { builder.AddOffset(17, ContentsOpenShortcutUIOffset.Value, 0); }
+  public static void AddOpenedCafeId(FlatBufferBuilder builder, long OpenedCafeId) { builder.AddLong(15, OpenedCafeId, 0); }
+  public static void AddCafeIdforCafeRank(FlatBufferBuilder builder, long CafeIdforCafeRank) { builder.AddLong(16, CafeIdforCafeRank, 0); }
+  public static void AddCafeRank(FlatBufferBuilder builder, long CafeRank) { builder.AddLong(17, CafeRank, 0); }
+  public static void AddContentsOpenShow(FlatBufferBuilder builder, bool ContentsOpenShow) { builder.AddBool(18, ContentsOpenShow, false); }
+  public static void AddContentsOpenShortcutUI(FlatBufferBuilder builder, StringOffset ContentsOpenShortcutUIOffset) { builder.AddOffset(19, ContentsOpenShortcutUIOffset.Value, 0); }
   public static Offset<FlatDataGlobal.OpenConditionExcel> EndOpenConditionExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.OpenConditionExcel>(o);

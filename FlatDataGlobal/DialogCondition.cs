@@ -27,6 +27,7 @@ public enum DialogCondition : int
   Luck5 = 17,
   StoryOpen = 18,
   CollectionOpen = 19,
+  BoxGachaFinish = 20,
 };
 
 

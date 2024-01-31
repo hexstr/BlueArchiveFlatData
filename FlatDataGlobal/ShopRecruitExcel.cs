@@ -92,6 +92,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
   public ArraySegment<byte>? GetProbabilityUrlLiveBytes() { return __p.__vector_as_arraysegment(58); }
 #endif
   public byte[] GetProbabilityUrlLiveArray() { return __p.__vector_as_array<byte>(58); }
+  public FlatDataGlobal.ProductCategory ProductCategory { get { int o = __p.__offset(60); return o != 0 ? (FlatDataGlobal.ProductCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductCategory.None; } }
 
   public static Offset<FlatDataGlobal.ShopRecruitExcel> CreateShopRecruitExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -121,8 +122,9 @@ public struct ShopRecruitExcel : IFlatbufferObject
       long DirectPayAppleShopCashId = 0,
       long DirectPayOneStoreShopCashId = 0,
       StringOffset ProbabilityUrlDevOffset = default(StringOffset),
-      StringOffset ProbabilityUrlLiveOffset = default(StringOffset)) {
-    builder.StartTable(28);
+      StringOffset ProbabilityUrlLiveOffset = default(StringOffset),
+      FlatDataGlobal.ProductCategory productCategory = FlatDataGlobal.ProductCategory.None) {
+    builder.StartTable(29);
     ShopRecruitExcel.AddDirectPayOneStoreShopCashId(builder, DirectPayOneStoreShopCashId);
     ShopRecruitExcel.AddDirectPayAppleShopCashId(builder, DirectPayAppleShopCashId);
     ShopRecruitExcel.AddDirectPayAndroidShopCashId(builder, DirectPayAndroidShopCashId);
@@ -136,6 +138,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
     ShopRecruitExcel.AddTenGachaGoodsId(builder, TenGachaGoodsId);
     ShopRecruitExcel.AddOneGachaGoodsId(builder, OneGachaGoodsId);
     ShopRecruitExcel.AddId(builder, Id);
+    ShopRecruitExcel.AddProductCategory(builder, productCategory);
     ShopRecruitExcel.AddProbabilityUrlLive(builder, ProbabilityUrlLiveOffset);
     ShopRecruitExcel.AddProbabilityUrlDev(builder, ProbabilityUrlDevOffset);
     ShopRecruitExcel.AddPurchaseCountResetType(builder, purchaseCountResetType);
@@ -154,7 +157,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
     return ShopRecruitExcel.EndShopRecruitExcel(builder);
   }
 
-  public static void StartShopRecruitExcel(FlatBufferBuilder builder) { builder.StartTable(28); }
+  public static void StartShopRecruitExcel(FlatBufferBuilder builder) { builder.StartTable(29); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddCategoryType(FlatBufferBuilder builder, FlatDataGlobal.ShopCategoryType CategoryType) { builder.AddInt(1, (int)CategoryType, 0); }
   public static void AddIsLegacy(FlatBufferBuilder builder, bool IsLegacy) { builder.AddBool(2, IsLegacy, false); }
@@ -198,6 +201,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
   public static void AddDirectPayOneStoreShopCashId(FlatBufferBuilder builder, long DirectPayOneStoreShopCashId) { builder.AddLong(25, DirectPayOneStoreShopCashId, 0); }
   public static void AddProbabilityUrlDev(FlatBufferBuilder builder, StringOffset ProbabilityUrlDevOffset) { builder.AddOffset(26, ProbabilityUrlDevOffset.Value, 0); }
   public static void AddProbabilityUrlLive(FlatBufferBuilder builder, StringOffset ProbabilityUrlLiveOffset) { builder.AddOffset(27, ProbabilityUrlLiveOffset.Value, 0); }
+  public static void AddProductCategory(FlatBufferBuilder builder, FlatDataGlobal.ProductCategory productCategory) { builder.AddInt(28, (int)productCategory, 0); }
   public static Offset<FlatDataGlobal.ShopRecruitExcel> EndShopRecruitExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ShopRecruitExcel>(o);

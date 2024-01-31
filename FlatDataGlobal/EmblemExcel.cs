@@ -20,100 +20,164 @@ public struct EmblemExcel : IFlatbufferObject
   public EmblemExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public uint LoczlizeEtcId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public FlatDataGlobal.EmblemCategory Category { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.EmblemCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EmblemCategory.None; } }
-  public FlatDataGlobal.Rarity Rarity { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Rarity.N; } }
-  public string IconPath { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataGlobal.EmblemCategory Category { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.EmblemCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EmblemCategory.None; } }
+  public FlatDataGlobal.Rarity Rarity { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Rarity.N; } }
+  public long DisplayOrder { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public uint LocalizeEtcId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public uint LocalizeCodeId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public long UseAtLocalizeId { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool EmblemTextVisible { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string IconPath { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIconPathBytes() { return __p.__vector_as_span<byte>(12, 1); }
+  public Span<byte> GetIconPathBytes() { return __p.__vector_as_span<byte>(20, 1); }
 #else
-  public ArraySegment<byte>? GetIconPathBytes() { return __p.__vector_as_arraysegment(12); }
+  public ArraySegment<byte>? GetIconPathBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public byte[] GetIconPathArray() { return __p.__vector_as_array<byte>(12); }
-  public string EmblemPath { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetIconPathArray() { return __p.__vector_as_array<byte>(20); }
+  public string EmblemIconPath { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEmblemPathBytes() { return __p.__vector_as_span<byte>(14, 1); }
+  public Span<byte> GetEmblemIconPathBytes() { return __p.__vector_as_span<byte>(22, 1); }
 #else
-  public ArraySegment<byte>? GetEmblemPathBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetEmblemIconPathBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetEmblemPathArray() { return __p.__vector_as_array<byte>(14); }
-  public uint EmblemTextLocalizeId { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public float EmblemTextOffsetX { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float EmblemTextOffsetY { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public FlatDataGlobal.EmblemDisplayType DisplayType { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.EmblemDisplayType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EmblemDisplayType.Always; } }
-  public string DisplayStartDate { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEmblemIconPathArray() { return __p.__vector_as_array<byte>(22); }
+  public string EmblemIconBGPath { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDisplayStartDateBytes() { return __p.__vector_as_span<byte>(24, 1); }
+  public Span<byte> GetEmblemIconBGPathBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetDisplayStartDateBytes() { return __p.__vector_as_arraysegment(24); }
+  public ArraySegment<byte>? GetEmblemIconBGPathBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetDisplayStartDateArray() { return __p.__vector_as_array<byte>(24); }
-  public string DisplayEndDate { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEmblemIconBGPathArray() { return __p.__vector_as_array<byte>(24); }
+  public string EmblemBGPathJp { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDisplayEndDateBytes() { return __p.__vector_as_span<byte>(26, 1); }
+  public Span<byte> GetEmblemBGPathJpBytes() { return __p.__vector_as_span<byte>(26, 1); }
 #else
-  public ArraySegment<byte>? GetDisplayEndDateBytes() { return __p.__vector_as_arraysegment(26); }
+  public ArraySegment<byte>? GetEmblemBGPathJpBytes() { return __p.__vector_as_arraysegment(26); }
 #endif
-  public byte[] GetDisplayEndDateArray() { return __p.__vector_as_array<byte>(26); }
-  public int DislpayFavorLevel { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.EmblemCheckPassType CheckPassType { get { int o = __p.__offset(30); return o != 0 ? (FlatDataGlobal.EmblemCheckPassType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EmblemCheckPassType.None; } }
-  public long CheckPassParameter { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CheckPassCount { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public byte[] GetEmblemBGPathJpArray() { return __p.__vector_as_array<byte>(26); }
+  public string EmblemBGPathKr { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEmblemBGPathKrBytes() { return __p.__vector_as_span<byte>(28, 1); }
+#else
+  public ArraySegment<byte>? GetEmblemBGPathKrBytes() { return __p.__vector_as_arraysegment(28); }
+#endif
+  public byte[] GetEmblemBGPathKrArray() { return __p.__vector_as_array<byte>(28); }
+  public string EmblemBGPathTh { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEmblemBGPathThBytes() { return __p.__vector_as_span<byte>(30, 1); }
+#else
+  public ArraySegment<byte>? GetEmblemBGPathThBytes() { return __p.__vector_as_arraysegment(30); }
+#endif
+  public byte[] GetEmblemBGPathThArray() { return __p.__vector_as_array<byte>(30); }
+  public string EmblemBGPathTw { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEmblemBGPathTwBytes() { return __p.__vector_as_span<byte>(32, 1); }
+#else
+  public ArraySegment<byte>? GetEmblemBGPathTwBytes() { return __p.__vector_as_arraysegment(32); }
+#endif
+  public byte[] GetEmblemBGPathTwArray() { return __p.__vector_as_array<byte>(32); }
+  public string EmblemBGPathEn { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEmblemBGPathEnBytes() { return __p.__vector_as_span<byte>(34, 1); }
+#else
+  public ArraySegment<byte>? GetEmblemBGPathEnBytes() { return __p.__vector_as_arraysegment(34); }
+#endif
+  public byte[] GetEmblemBGPathEnArray() { return __p.__vector_as_array<byte>(34); }
+  public FlatDataGlobal.EmblemDisplayType DisplayType { get { int o = __p.__offset(36); return o != 0 ? (FlatDataGlobal.EmblemDisplayType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EmblemDisplayType.Always; } }
+  public string DisplayStartDate { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetDisplayStartDateBytes() { return __p.__vector_as_span<byte>(38, 1); }
+#else
+  public ArraySegment<byte>? GetDisplayStartDateBytes() { return __p.__vector_as_arraysegment(38); }
+#endif
+  public byte[] GetDisplayStartDateArray() { return __p.__vector_as_array<byte>(38); }
+  public string DisplayEndDate { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetDisplayEndDateBytes() { return __p.__vector_as_span<byte>(40, 1); }
+#else
+  public ArraySegment<byte>? GetDisplayEndDateBytes() { return __p.__vector_as_arraysegment(40); }
+#endif
+  public byte[] GetDisplayEndDateArray() { return __p.__vector_as_array<byte>(40); }
+  public int DislpayFavorLevel { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.EmblemCheckPassType CheckPassType { get { int o = __p.__offset(44); return o != 0 ? (FlatDataGlobal.EmblemCheckPassType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EmblemCheckPassType.None; } }
+  public long EmblemParameter { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CheckPassCount { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.EmblemExcel> CreateEmblemExcel(FlatBufferBuilder builder,
       long Id = 0,
-      uint LoczlizeEtcId = 0,
       FlatDataGlobal.EmblemCategory Category = FlatDataGlobal.EmblemCategory.None,
       FlatDataGlobal.Rarity rarity = FlatDataGlobal.Rarity.N,
+      long DisplayOrder = 0,
+      uint LocalizeEtcId = 0,
+      uint LocalizeCodeId = 0,
+      long UseAtLocalizeId = 0,
+      bool EmblemTextVisible = false,
       StringOffset IconPathOffset = default(StringOffset),
-      StringOffset EmblemPathOffset = default(StringOffset),
-      uint EmblemTextLocalizeId = 0,
-      float EmblemTextOffsetX = 0.0f,
-      float EmblemTextOffsetY = 0.0f,
+      StringOffset EmblemIconPathOffset = default(StringOffset),
+      StringOffset EmblemIconBGPathOffset = default(StringOffset),
+      StringOffset EmblemBGPathJpOffset = default(StringOffset),
+      StringOffset EmblemBGPathKrOffset = default(StringOffset),
+      StringOffset EmblemBGPathThOffset = default(StringOffset),
+      StringOffset EmblemBGPathTwOffset = default(StringOffset),
+      StringOffset EmblemBGPathEnOffset = default(StringOffset),
       FlatDataGlobal.EmblemDisplayType DisplayType = FlatDataGlobal.EmblemDisplayType.Always,
       StringOffset DisplayStartDateOffset = default(StringOffset),
       StringOffset DisplayEndDateOffset = default(StringOffset),
       int DislpayFavorLevel = 0,
       FlatDataGlobal.EmblemCheckPassType CheckPassType = FlatDataGlobal.EmblemCheckPassType.None,
-      long CheckPassParameter = 0,
+      long EmblemParameter = 0,
       long CheckPassCount = 0) {
-    builder.StartTable(16);
+    builder.StartTable(23);
     EmblemExcel.AddCheckPassCount(builder, CheckPassCount);
-    EmblemExcel.AddCheckPassParameter(builder, CheckPassParameter);
+    EmblemExcel.AddEmblemParameter(builder, EmblemParameter);
+    EmblemExcel.AddUseAtLocalizeId(builder, UseAtLocalizeId);
+    EmblemExcel.AddDisplayOrder(builder, DisplayOrder);
     EmblemExcel.AddId(builder, Id);
     EmblemExcel.AddCheckPassType(builder, CheckPassType);
     EmblemExcel.AddDislpayFavorLevel(builder, DislpayFavorLevel);
     EmblemExcel.AddDisplayEndDate(builder, DisplayEndDateOffset);
     EmblemExcel.AddDisplayStartDate(builder, DisplayStartDateOffset);
     EmblemExcel.AddDisplayType(builder, DisplayType);
-    EmblemExcel.AddEmblemTextOffsetY(builder, EmblemTextOffsetY);
-    EmblemExcel.AddEmblemTextOffsetX(builder, EmblemTextOffsetX);
-    EmblemExcel.AddEmblemTextLocalizeId(builder, EmblemTextLocalizeId);
-    EmblemExcel.AddEmblemPath(builder, EmblemPathOffset);
+    EmblemExcel.AddEmblemBGPathEn(builder, EmblemBGPathEnOffset);
+    EmblemExcel.AddEmblemBGPathTw(builder, EmblemBGPathTwOffset);
+    EmblemExcel.AddEmblemBGPathTh(builder, EmblemBGPathThOffset);
+    EmblemExcel.AddEmblemBGPathKr(builder, EmblemBGPathKrOffset);
+    EmblemExcel.AddEmblemBGPathJp(builder, EmblemBGPathJpOffset);
+    EmblemExcel.AddEmblemIconBGPath(builder, EmblemIconBGPathOffset);
+    EmblemExcel.AddEmblemIconPath(builder, EmblemIconPathOffset);
     EmblemExcel.AddIconPath(builder, IconPathOffset);
+    EmblemExcel.AddLocalizeCodeId(builder, LocalizeCodeId);
+    EmblemExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
     EmblemExcel.AddRarity(builder, rarity);
     EmblemExcel.AddCategory(builder, Category);
-    EmblemExcel.AddLoczlizeEtcId(builder, LoczlizeEtcId);
+    EmblemExcel.AddEmblemTextVisible(builder, EmblemTextVisible);
     return EmblemExcel.EndEmblemExcel(builder);
   }
 
-  public static void StartEmblemExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
+  public static void StartEmblemExcel(FlatBufferBuilder builder) { builder.StartTable(23); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddLoczlizeEtcId(FlatBufferBuilder builder, uint LoczlizeEtcId) { builder.AddUint(1, LoczlizeEtcId, 0); }
-  public static void AddCategory(FlatBufferBuilder builder, FlatDataGlobal.EmblemCategory Category) { builder.AddInt(2, (int)Category, 0); }
-  public static void AddRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity rarity) { builder.AddInt(3, (int)rarity, 0); }
-  public static void AddIconPath(FlatBufferBuilder builder, StringOffset IconPathOffset) { builder.AddOffset(4, IconPathOffset.Value, 0); }
-  public static void AddEmblemPath(FlatBufferBuilder builder, StringOffset EmblemPathOffset) { builder.AddOffset(5, EmblemPathOffset.Value, 0); }
-  public static void AddEmblemTextLocalizeId(FlatBufferBuilder builder, uint EmblemTextLocalizeId) { builder.AddUint(6, EmblemTextLocalizeId, 0); }
-  public static void AddEmblemTextOffsetX(FlatBufferBuilder builder, float EmblemTextOffsetX) { builder.AddFloat(7, EmblemTextOffsetX, 0.0f); }
-  public static void AddEmblemTextOffsetY(FlatBufferBuilder builder, float EmblemTextOffsetY) { builder.AddFloat(8, EmblemTextOffsetY, 0.0f); }
-  public static void AddDisplayType(FlatBufferBuilder builder, FlatDataGlobal.EmblemDisplayType DisplayType) { builder.AddInt(9, (int)DisplayType, 0); }
-  public static void AddDisplayStartDate(FlatBufferBuilder builder, StringOffset DisplayStartDateOffset) { builder.AddOffset(10, DisplayStartDateOffset.Value, 0); }
-  public static void AddDisplayEndDate(FlatBufferBuilder builder, StringOffset DisplayEndDateOffset) { builder.AddOffset(11, DisplayEndDateOffset.Value, 0); }
-  public static void AddDislpayFavorLevel(FlatBufferBuilder builder, int DislpayFavorLevel) { builder.AddInt(12, DislpayFavorLevel, 0); }
-  public static void AddCheckPassType(FlatBufferBuilder builder, FlatDataGlobal.EmblemCheckPassType CheckPassType) { builder.AddInt(13, (int)CheckPassType, 0); }
-  public static void AddCheckPassParameter(FlatBufferBuilder builder, long CheckPassParameter) { builder.AddLong(14, CheckPassParameter, 0); }
-  public static void AddCheckPassCount(FlatBufferBuilder builder, long CheckPassCount) { builder.AddLong(15, CheckPassCount, 0); }
+  public static void AddCategory(FlatBufferBuilder builder, FlatDataGlobal.EmblemCategory Category) { builder.AddInt(1, (int)Category, 0); }
+  public static void AddRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity rarity) { builder.AddInt(2, (int)rarity, 0); }
+  public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(3, DisplayOrder, 0); }
+  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(4, LocalizeEtcId, 0); }
+  public static void AddLocalizeCodeId(FlatBufferBuilder builder, uint LocalizeCodeId) { builder.AddUint(5, LocalizeCodeId, 0); }
+  public static void AddUseAtLocalizeId(FlatBufferBuilder builder, long UseAtLocalizeId) { builder.AddLong(6, UseAtLocalizeId, 0); }
+  public static void AddEmblemTextVisible(FlatBufferBuilder builder, bool EmblemTextVisible) { builder.AddBool(7, EmblemTextVisible, false); }
+  public static void AddIconPath(FlatBufferBuilder builder, StringOffset IconPathOffset) { builder.AddOffset(8, IconPathOffset.Value, 0); }
+  public static void AddEmblemIconPath(FlatBufferBuilder builder, StringOffset EmblemIconPathOffset) { builder.AddOffset(9, EmblemIconPathOffset.Value, 0); }
+  public static void AddEmblemIconBGPath(FlatBufferBuilder builder, StringOffset EmblemIconBGPathOffset) { builder.AddOffset(10, EmblemIconBGPathOffset.Value, 0); }
+  public static void AddEmblemBGPathJp(FlatBufferBuilder builder, StringOffset EmblemBGPathJpOffset) { builder.AddOffset(11, EmblemBGPathJpOffset.Value, 0); }
+  public static void AddEmblemBGPathKr(FlatBufferBuilder builder, StringOffset EmblemBGPathKrOffset) { builder.AddOffset(12, EmblemBGPathKrOffset.Value, 0); }
+  public static void AddEmblemBGPathTh(FlatBufferBuilder builder, StringOffset EmblemBGPathThOffset) { builder.AddOffset(13, EmblemBGPathThOffset.Value, 0); }
+  public static void AddEmblemBGPathTw(FlatBufferBuilder builder, StringOffset EmblemBGPathTwOffset) { builder.AddOffset(14, EmblemBGPathTwOffset.Value, 0); }
+  public static void AddEmblemBGPathEn(FlatBufferBuilder builder, StringOffset EmblemBGPathEnOffset) { builder.AddOffset(15, EmblemBGPathEnOffset.Value, 0); }
+  public static void AddDisplayType(FlatBufferBuilder builder, FlatDataGlobal.EmblemDisplayType DisplayType) { builder.AddInt(16, (int)DisplayType, 0); }
+  public static void AddDisplayStartDate(FlatBufferBuilder builder, StringOffset DisplayStartDateOffset) { builder.AddOffset(17, DisplayStartDateOffset.Value, 0); }
+  public static void AddDisplayEndDate(FlatBufferBuilder builder, StringOffset DisplayEndDateOffset) { builder.AddOffset(18, DisplayEndDateOffset.Value, 0); }
+  public static void AddDislpayFavorLevel(FlatBufferBuilder builder, int DislpayFavorLevel) { builder.AddInt(19, DislpayFavorLevel, 0); }
+  public static void AddCheckPassType(FlatBufferBuilder builder, FlatDataGlobal.EmblemCheckPassType CheckPassType) { builder.AddInt(20, (int)CheckPassType, 0); }
+  public static void AddEmblemParameter(FlatBufferBuilder builder, long EmblemParameter) { builder.AddLong(21, EmblemParameter, 0); }
+  public static void AddCheckPassCount(FlatBufferBuilder builder, long CheckPassCount) { builder.AddLong(22, CheckPassCount, 0); }
   public static Offset<FlatDataGlobal.EmblemExcel> EndEmblemExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EmblemExcel>(o);

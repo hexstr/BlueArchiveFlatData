@@ -22,119 +22,151 @@ public struct MinigameTBGEncounterExcel : IFlatbufferObject
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long UniqueId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public bool AllThema { get { int o = __p.__offset(8); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public int ThemaIndex(int j) { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int ThemaIndexLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int ThemaIndex { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.TBGThemaType ThemaType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.TBGThemaType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TBGThemaType.None; } }
+  public FlatDataGlobal.TBGObjectType ObjectType { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.TBGObjectType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TBGObjectType.None; } }
+  public string EnemyImagePath { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetThemaIndexBytes() { return __p.__vector_as_span<int>(10, 4); }
+  public Span<byte> GetEnemyImagePathBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetThemaIndexBytes() { return __p.__vector_as_arraysegment(10); }
+  public ArraySegment<byte>? GetEnemyImagePathBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public int[] GetThemaIndexArray() { return __p.__vector_as_array<int>(10); }
-  public FlatDataGlobal.TBGObjectType ObjectType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.TBGObjectType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TBGObjectType.None; } }
-  public string EnemyImagePath { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEnemyImagePathArray() { return __p.__vector_as_array<byte>(16); }
+  public string EnemyPrefabName { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEnemyImagePathBytes() { return __p.__vector_as_span<byte>(14, 1); }
+  public Span<byte> GetEnemyPrefabNameBytes() { return __p.__vector_as_span<byte>(18, 1); }
 #else
-  public ArraySegment<byte>? GetEnemyImagePathBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetEnemyPrefabNameBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public byte[] GetEnemyImagePathArray() { return __p.__vector_as_array<byte>(14); }
-  public string EnemyNameLocalize { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEnemyPrefabNameArray() { return __p.__vector_as_array<byte>(18); }
+  public string EnemyNameLocalize { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEnemyNameLocalizeBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<byte> GetEnemyNameLocalizeBytes() { return __p.__vector_as_span<byte>(20, 1); }
 #else
-  public ArraySegment<byte>? GetEnemyNameLocalizeBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetEnemyNameLocalizeBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public byte[] GetEnemyNameLocalizeArray() { return __p.__vector_as_array<byte>(16); }
-  public long OptionGroupId { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string EncounterTitleLocalize { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEnemyNameLocalizeArray() { return __p.__vector_as_array<byte>(20); }
+  public long OptionGroupId { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool RewardHide { get { int o = __p.__offset(24); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string EncounterTitleLocalize { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEncounterTitleLocalizeBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetEncounterTitleLocalizeBytes() { return __p.__vector_as_span<byte>(26, 1); }
 #else
-  public ArraySegment<byte>? GetEncounterTitleLocalizeBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetEncounterTitleLocalizeBytes() { return __p.__vector_as_arraysegment(26); }
 #endif
-  public byte[] GetEncounterTitleLocalizeArray() { return __p.__vector_as_array<byte>(20); }
-  public string StoryImagePath { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEncounterTitleLocalizeArray() { return __p.__vector_as_array<byte>(26); }
+  public string StoryImagePath { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetStoryImagePathBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetStoryImagePathBytes() { return __p.__vector_as_span<byte>(28, 1); }
 #else
-  public ArraySegment<byte>? GetStoryImagePathBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetStoryImagePathBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
-  public byte[] GetStoryImagePathArray() { return __p.__vector_as_array<byte>(22); }
-  public string BeforeStoryLocalize { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetStoryImagePathArray() { return __p.__vector_as_array<byte>(28); }
+  public string BeforeStoryLocalize { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBeforeStoryLocalizeBytes() { return __p.__vector_as_span<byte>(24, 1); }
+  public Span<byte> GetBeforeStoryLocalizeBytes() { return __p.__vector_as_span<byte>(30, 1); }
 #else
-  public ArraySegment<byte>? GetBeforeStoryLocalizeBytes() { return __p.__vector_as_arraysegment(24); }
+  public ArraySegment<byte>? GetBeforeStoryLocalizeBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
-  public byte[] GetBeforeStoryLocalizeArray() { return __p.__vector_as_array<byte>(24); }
-  public string BeforeStoryOption1Localize { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetBeforeStoryLocalizeArray() { return __p.__vector_as_array<byte>(30); }
+  public string BeforeStoryOption1Localize { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBeforeStoryOption1LocalizeBytes() { return __p.__vector_as_span<byte>(26, 1); }
+  public Span<byte> GetBeforeStoryOption1LocalizeBytes() { return __p.__vector_as_span<byte>(32, 1); }
 #else
-  public ArraySegment<byte>? GetBeforeStoryOption1LocalizeBytes() { return __p.__vector_as_arraysegment(26); }
+  public ArraySegment<byte>? GetBeforeStoryOption1LocalizeBytes() { return __p.__vector_as_arraysegment(32); }
 #endif
-  public byte[] GetBeforeStoryOption1LocalizeArray() { return __p.__vector_as_array<byte>(26); }
-  public string BeforeStoryOption2Localize { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetBeforeStoryOption1LocalizeArray() { return __p.__vector_as_array<byte>(32); }
+  public string BeforeStoryOption2Localize { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBeforeStoryOption2LocalizeBytes() { return __p.__vector_as_span<byte>(28, 1); }
+  public Span<byte> GetBeforeStoryOption2LocalizeBytes() { return __p.__vector_as_span<byte>(34, 1); }
 #else
-  public ArraySegment<byte>? GetBeforeStoryOption2LocalizeBytes() { return __p.__vector_as_arraysegment(28); }
+  public ArraySegment<byte>? GetBeforeStoryOption2LocalizeBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
-  public byte[] GetBeforeStoryOption2LocalizeArray() { return __p.__vector_as_array<byte>(28); }
-  public string BeforeStoryOption3Localize { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetBeforeStoryOption2LocalizeArray() { return __p.__vector_as_array<byte>(34); }
+  public string BeforeStoryOption3Localize { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBeforeStoryOption3LocalizeBytes() { return __p.__vector_as_span<byte>(30, 1); }
+  public Span<byte> GetBeforeStoryOption3LocalizeBytes() { return __p.__vector_as_span<byte>(36, 1); }
 #else
-  public ArraySegment<byte>? GetBeforeStoryOption3LocalizeBytes() { return __p.__vector_as_arraysegment(30); }
+  public ArraySegment<byte>? GetBeforeStoryOption3LocalizeBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public byte[] GetBeforeStoryOption3LocalizeArray() { return __p.__vector_as_array<byte>(30); }
-  public string ClearStoryLocalize { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetBeforeStoryOption3LocalizeArray() { return __p.__vector_as_array<byte>(36); }
+  public string AllyAttackLocalize { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetClearStoryLocalizeBytes() { return __p.__vector_as_span<byte>(32, 1); }
+  public Span<byte> GetAllyAttackLocalizeBytes() { return __p.__vector_as_span<byte>(38, 1); }
 #else
-  public ArraySegment<byte>? GetClearStoryLocalizeBytes() { return __p.__vector_as_arraysegment(32); }
+  public ArraySegment<byte>? GetAllyAttackLocalizeBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public byte[] GetClearStoryLocalizeArray() { return __p.__vector_as_array<byte>(32); }
-  public string DefeatStoryLocalize { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetAllyAttackLocalizeArray() { return __p.__vector_as_array<byte>(38); }
+  public string EnemyAttackLocalize { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDefeatStoryLocalizeBytes() { return __p.__vector_as_span<byte>(34, 1); }
+  public Span<byte> GetEnemyAttackLocalizeBytes() { return __p.__vector_as_span<byte>(40, 1); }
 #else
-  public ArraySegment<byte>? GetDefeatStoryLocalizeBytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetEnemyAttackLocalizeBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
-  public byte[] GetDefeatStoryLocalizeArray() { return __p.__vector_as_array<byte>(34); }
-  public string RunawayStoryLocalize { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEnemyAttackLocalizeArray() { return __p.__vector_as_array<byte>(40); }
+  public string AttackDefenceLocalize { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetRunawayStoryLocalizeBytes() { return __p.__vector_as_span<byte>(36, 1); }
+  public Span<byte> GetAttackDefenceLocalizeBytes() { return __p.__vector_as_span<byte>(42, 1); }
 #else
-  public ArraySegment<byte>? GetRunawayStoryLocalizeBytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetAttackDefenceLocalizeBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public byte[] GetRunawayStoryLocalizeArray() { return __p.__vector_as_array<byte>(36); }
+  public byte[] GetAttackDefenceLocalizeArray() { return __p.__vector_as_array<byte>(42); }
+  public string ClearStoryLocalize { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetClearStoryLocalizeBytes() { return __p.__vector_as_span<byte>(44, 1); }
+#else
+  public ArraySegment<byte>? GetClearStoryLocalizeBytes() { return __p.__vector_as_arraysegment(44); }
+#endif
+  public byte[] GetClearStoryLocalizeArray() { return __p.__vector_as_array<byte>(44); }
+  public string DefeatStoryLocalize { get { int o = __p.__offset(46); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetDefeatStoryLocalizeBytes() { return __p.__vector_as_span<byte>(46, 1); }
+#else
+  public ArraySegment<byte>? GetDefeatStoryLocalizeBytes() { return __p.__vector_as_arraysegment(46); }
+#endif
+  public byte[] GetDefeatStoryLocalizeArray() { return __p.__vector_as_array<byte>(46); }
+  public string RunawayStoryLocalize { get { int o = __p.__offset(48); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetRunawayStoryLocalizeBytes() { return __p.__vector_as_span<byte>(48, 1); }
+#else
+  public ArraySegment<byte>? GetRunawayStoryLocalizeBytes() { return __p.__vector_as_arraysegment(48); }
+#endif
+  public byte[] GetRunawayStoryLocalizeArray() { return __p.__vector_as_array<byte>(48); }
 
   public static Offset<FlatDataGlobal.MinigameTBGEncounterExcel> CreateMinigameTBGEncounterExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
       long UniqueId = 0,
       bool AllThema = false,
-      VectorOffset ThemaIndexOffset = default(VectorOffset),
+      int ThemaIndex = 0,
+      FlatDataGlobal.TBGThemaType ThemaType = FlatDataGlobal.TBGThemaType.None,
       FlatDataGlobal.TBGObjectType ObjectType = FlatDataGlobal.TBGObjectType.None,
       StringOffset EnemyImagePathOffset = default(StringOffset),
+      StringOffset EnemyPrefabNameOffset = default(StringOffset),
       StringOffset EnemyNameLocalizeOffset = default(StringOffset),
       long OptionGroupId = 0,
+      bool RewardHide = false,
       StringOffset EncounterTitleLocalizeOffset = default(StringOffset),
       StringOffset StoryImagePathOffset = default(StringOffset),
       StringOffset BeforeStoryLocalizeOffset = default(StringOffset),
       StringOffset BeforeStoryOption1LocalizeOffset = default(StringOffset),
       StringOffset BeforeStoryOption2LocalizeOffset = default(StringOffset),
       StringOffset BeforeStoryOption3LocalizeOffset = default(StringOffset),
+      StringOffset AllyAttackLocalizeOffset = default(StringOffset),
+      StringOffset EnemyAttackLocalizeOffset = default(StringOffset),
+      StringOffset AttackDefenceLocalizeOffset = default(StringOffset),
       StringOffset ClearStoryLocalizeOffset = default(StringOffset),
       StringOffset DefeatStoryLocalizeOffset = default(StringOffset),
       StringOffset RunawayStoryLocalizeOffset = default(StringOffset)) {
-    builder.StartTable(17);
+    builder.StartTable(23);
     MinigameTBGEncounterExcel.AddOptionGroupId(builder, OptionGroupId);
     MinigameTBGEncounterExcel.AddUniqueId(builder, UniqueId);
     MinigameTBGEncounterExcel.AddEventContentId(builder, EventContentId);
     MinigameTBGEncounterExcel.AddRunawayStoryLocalize(builder, RunawayStoryLocalizeOffset);
     MinigameTBGEncounterExcel.AddDefeatStoryLocalize(builder, DefeatStoryLocalizeOffset);
     MinigameTBGEncounterExcel.AddClearStoryLocalize(builder, ClearStoryLocalizeOffset);
+    MinigameTBGEncounterExcel.AddAttackDefenceLocalize(builder, AttackDefenceLocalizeOffset);
+    MinigameTBGEncounterExcel.AddEnemyAttackLocalize(builder, EnemyAttackLocalizeOffset);
+    MinigameTBGEncounterExcel.AddAllyAttackLocalize(builder, AllyAttackLocalizeOffset);
     MinigameTBGEncounterExcel.AddBeforeStoryOption3Localize(builder, BeforeStoryOption3LocalizeOffset);
     MinigameTBGEncounterExcel.AddBeforeStoryOption2Localize(builder, BeforeStoryOption2LocalizeOffset);
     MinigameTBGEncounterExcel.AddBeforeStoryOption1Localize(builder, BeforeStoryOption1LocalizeOffset);
@@ -142,36 +174,40 @@ public struct MinigameTBGEncounterExcel : IFlatbufferObject
     MinigameTBGEncounterExcel.AddStoryImagePath(builder, StoryImagePathOffset);
     MinigameTBGEncounterExcel.AddEncounterTitleLocalize(builder, EncounterTitleLocalizeOffset);
     MinigameTBGEncounterExcel.AddEnemyNameLocalize(builder, EnemyNameLocalizeOffset);
+    MinigameTBGEncounterExcel.AddEnemyPrefabName(builder, EnemyPrefabNameOffset);
     MinigameTBGEncounterExcel.AddEnemyImagePath(builder, EnemyImagePathOffset);
     MinigameTBGEncounterExcel.AddObjectType(builder, ObjectType);
-    MinigameTBGEncounterExcel.AddThemaIndex(builder, ThemaIndexOffset);
+    MinigameTBGEncounterExcel.AddThemaType(builder, ThemaType);
+    MinigameTBGEncounterExcel.AddThemaIndex(builder, ThemaIndex);
+    MinigameTBGEncounterExcel.AddRewardHide(builder, RewardHide);
     MinigameTBGEncounterExcel.AddAllThema(builder, AllThema);
     return MinigameTBGEncounterExcel.EndMinigameTBGEncounterExcel(builder);
   }
 
-  public static void StartMinigameTBGEncounterExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
+  public static void StartMinigameTBGEncounterExcel(FlatBufferBuilder builder) { builder.StartTable(23); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(1, UniqueId, 0); }
   public static void AddAllThema(FlatBufferBuilder builder, bool AllThema) { builder.AddBool(2, AllThema, false); }
-  public static void AddThemaIndex(FlatBufferBuilder builder, VectorOffset ThemaIndexOffset) { builder.AddOffset(3, ThemaIndexOffset.Value, 0); }
-  public static VectorOffset CreateThemaIndexVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateThemaIndexVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateThemaIndexVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateThemaIndexVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartThemaIndexVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddObjectType(FlatBufferBuilder builder, FlatDataGlobal.TBGObjectType ObjectType) { builder.AddInt(4, (int)ObjectType, 0); }
-  public static void AddEnemyImagePath(FlatBufferBuilder builder, StringOffset EnemyImagePathOffset) { builder.AddOffset(5, EnemyImagePathOffset.Value, 0); }
-  public static void AddEnemyNameLocalize(FlatBufferBuilder builder, StringOffset EnemyNameLocalizeOffset) { builder.AddOffset(6, EnemyNameLocalizeOffset.Value, 0); }
-  public static void AddOptionGroupId(FlatBufferBuilder builder, long OptionGroupId) { builder.AddLong(7, OptionGroupId, 0); }
-  public static void AddEncounterTitleLocalize(FlatBufferBuilder builder, StringOffset EncounterTitleLocalizeOffset) { builder.AddOffset(8, EncounterTitleLocalizeOffset.Value, 0); }
-  public static void AddStoryImagePath(FlatBufferBuilder builder, StringOffset StoryImagePathOffset) { builder.AddOffset(9, StoryImagePathOffset.Value, 0); }
-  public static void AddBeforeStoryLocalize(FlatBufferBuilder builder, StringOffset BeforeStoryLocalizeOffset) { builder.AddOffset(10, BeforeStoryLocalizeOffset.Value, 0); }
-  public static void AddBeforeStoryOption1Localize(FlatBufferBuilder builder, StringOffset BeforeStoryOption1LocalizeOffset) { builder.AddOffset(11, BeforeStoryOption1LocalizeOffset.Value, 0); }
-  public static void AddBeforeStoryOption2Localize(FlatBufferBuilder builder, StringOffset BeforeStoryOption2LocalizeOffset) { builder.AddOffset(12, BeforeStoryOption2LocalizeOffset.Value, 0); }
-  public static void AddBeforeStoryOption3Localize(FlatBufferBuilder builder, StringOffset BeforeStoryOption3LocalizeOffset) { builder.AddOffset(13, BeforeStoryOption3LocalizeOffset.Value, 0); }
-  public static void AddClearStoryLocalize(FlatBufferBuilder builder, StringOffset ClearStoryLocalizeOffset) { builder.AddOffset(14, ClearStoryLocalizeOffset.Value, 0); }
-  public static void AddDefeatStoryLocalize(FlatBufferBuilder builder, StringOffset DefeatStoryLocalizeOffset) { builder.AddOffset(15, DefeatStoryLocalizeOffset.Value, 0); }
-  public static void AddRunawayStoryLocalize(FlatBufferBuilder builder, StringOffset RunawayStoryLocalizeOffset) { builder.AddOffset(16, RunawayStoryLocalizeOffset.Value, 0); }
+  public static void AddThemaIndex(FlatBufferBuilder builder, int ThemaIndex) { builder.AddInt(3, ThemaIndex, 0); }
+  public static void AddThemaType(FlatBufferBuilder builder, FlatDataGlobal.TBGThemaType ThemaType) { builder.AddInt(4, (int)ThemaType, 0); }
+  public static void AddObjectType(FlatBufferBuilder builder, FlatDataGlobal.TBGObjectType ObjectType) { builder.AddInt(5, (int)ObjectType, 0); }
+  public static void AddEnemyImagePath(FlatBufferBuilder builder, StringOffset EnemyImagePathOffset) { builder.AddOffset(6, EnemyImagePathOffset.Value, 0); }
+  public static void AddEnemyPrefabName(FlatBufferBuilder builder, StringOffset EnemyPrefabNameOffset) { builder.AddOffset(7, EnemyPrefabNameOffset.Value, 0); }
+  public static void AddEnemyNameLocalize(FlatBufferBuilder builder, StringOffset EnemyNameLocalizeOffset) { builder.AddOffset(8, EnemyNameLocalizeOffset.Value, 0); }
+  public static void AddOptionGroupId(FlatBufferBuilder builder, long OptionGroupId) { builder.AddLong(9, OptionGroupId, 0); }
+  public static void AddRewardHide(FlatBufferBuilder builder, bool RewardHide) { builder.AddBool(10, RewardHide, false); }
+  public static void AddEncounterTitleLocalize(FlatBufferBuilder builder, StringOffset EncounterTitleLocalizeOffset) { builder.AddOffset(11, EncounterTitleLocalizeOffset.Value, 0); }
+  public static void AddStoryImagePath(FlatBufferBuilder builder, StringOffset StoryImagePathOffset) { builder.AddOffset(12, StoryImagePathOffset.Value, 0); }
+  public static void AddBeforeStoryLocalize(FlatBufferBuilder builder, StringOffset BeforeStoryLocalizeOffset) { builder.AddOffset(13, BeforeStoryLocalizeOffset.Value, 0); }
+  public static void AddBeforeStoryOption1Localize(FlatBufferBuilder builder, StringOffset BeforeStoryOption1LocalizeOffset) { builder.AddOffset(14, BeforeStoryOption1LocalizeOffset.Value, 0); }
+  public static void AddBeforeStoryOption2Localize(FlatBufferBuilder builder, StringOffset BeforeStoryOption2LocalizeOffset) { builder.AddOffset(15, BeforeStoryOption2LocalizeOffset.Value, 0); }
+  public static void AddBeforeStoryOption3Localize(FlatBufferBuilder builder, StringOffset BeforeStoryOption3LocalizeOffset) { builder.AddOffset(16, BeforeStoryOption3LocalizeOffset.Value, 0); }
+  public static void AddAllyAttackLocalize(FlatBufferBuilder builder, StringOffset AllyAttackLocalizeOffset) { builder.AddOffset(17, AllyAttackLocalizeOffset.Value, 0); }
+  public static void AddEnemyAttackLocalize(FlatBufferBuilder builder, StringOffset EnemyAttackLocalizeOffset) { builder.AddOffset(18, EnemyAttackLocalizeOffset.Value, 0); }
+  public static void AddAttackDefenceLocalize(FlatBufferBuilder builder, StringOffset AttackDefenceLocalizeOffset) { builder.AddOffset(19, AttackDefenceLocalizeOffset.Value, 0); }
+  public static void AddClearStoryLocalize(FlatBufferBuilder builder, StringOffset ClearStoryLocalizeOffset) { builder.AddOffset(20, ClearStoryLocalizeOffset.Value, 0); }
+  public static void AddDefeatStoryLocalize(FlatBufferBuilder builder, StringOffset DefeatStoryLocalizeOffset) { builder.AddOffset(21, DefeatStoryLocalizeOffset.Value, 0); }
+  public static void AddRunawayStoryLocalize(FlatBufferBuilder builder, StringOffset RunawayStoryLocalizeOffset) { builder.AddOffset(22, RunawayStoryLocalizeOffset.Value, 0); }
   public static Offset<FlatDataGlobal.MinigameTBGEncounterExcel> EndMinigameTBGEncounterExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.MinigameTBGEncounterExcel>(o);

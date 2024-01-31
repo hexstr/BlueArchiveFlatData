@@ -51,17 +51,19 @@ public struct EquipmentExcel : IFlatbufferObject
   public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
   public FlatDataGlobal.Tag[] GetTagsArray() { int o = __p.__offset(28); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Tag[] a = new FlatDataGlobal.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Tag)__p.bb.GetInt(p + i * 4); } return a; }
-  public long CraftQuality { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ShiftingCraftQuality { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ShopCategoryType ShopCategory(int j) { int o = __p.__offset(34); return o != 0 ? (FlatDataGlobal.ShopCategoryType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ShopCategoryType)0; }
-  public int ShopCategoryLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long CraftQualityTier0 { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CraftQualityTier1 { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CraftQualityTier2 { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ShiftingCraftQuality { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.ShopCategoryType ShopCategory(int j) { int o = __p.__offset(38); return o != 0 ? (FlatDataGlobal.ShopCategoryType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ShopCategoryType)0; }
+  public int ShopCategoryLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.ShopCategoryType> GetShopCategoryBytes() { return __p.__vector_as_span<FlatDataGlobal.ShopCategoryType>(34, 4); }
+  public Span<FlatDataGlobal.ShopCategoryType> GetShopCategoryBytes() { return __p.__vector_as_span<FlatDataGlobal.ShopCategoryType>(38, 4); }
 #else
-  public ArraySegment<byte>? GetShopCategoryBytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetShopCategoryBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public FlatDataGlobal.ShopCategoryType[] GetShopCategoryArray() { int o = __p.__offset(34); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ShopCategoryType[] a = new FlatDataGlobal.ShopCategoryType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ShopCategoryType)__p.bb.GetInt(p + i * 4); } return a; }
-  public long ShortcutTypeId { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.ShopCategoryType[] GetShopCategoryArray() { int o = __p.__offset(38); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ShopCategoryType[] a = new FlatDataGlobal.ShopCategoryType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ShopCategoryType)__p.bb.GetInt(p + i * 4); } return a; }
+  public long ShortcutTypeId { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.EquipmentExcel> CreateEquipmentExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -77,14 +79,18 @@ public struct EquipmentExcel : IFlatbufferObject
       StringOffset IconOffset = default(StringOffset),
       StringOffset ImageNameOffset = default(StringOffset),
       VectorOffset TagsOffset = default(VectorOffset),
-      long CraftQuality = 0,
+      long CraftQualityTier0 = 0,
+      long CraftQualityTier1 = 0,
+      long CraftQualityTier2 = 0,
       long ShiftingCraftQuality = 0,
       VectorOffset ShopCategoryOffset = default(VectorOffset),
       long ShortcutTypeId = 0) {
-    builder.StartTable(17);
+    builder.StartTable(19);
     EquipmentExcel.AddShortcutTypeId(builder, ShortcutTypeId);
     EquipmentExcel.AddShiftingCraftQuality(builder, ShiftingCraftQuality);
-    EquipmentExcel.AddCraftQuality(builder, CraftQuality);
+    EquipmentExcel.AddCraftQualityTier2(builder, CraftQualityTier2);
+    EquipmentExcel.AddCraftQualityTier1(builder, CraftQualityTier1);
+    EquipmentExcel.AddCraftQualityTier0(builder, CraftQualityTier0);
     EquipmentExcel.AddNextTierEquipment(builder, NextTierEquipment);
     EquipmentExcel.AddTierInit(builder, TierInit);
     EquipmentExcel.AddId(builder, Id);
@@ -102,7 +108,7 @@ public struct EquipmentExcel : IFlatbufferObject
     return EquipmentExcel.EndEquipmentExcel(builder);
   }
 
-  public static void StartEquipmentExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
+  public static void StartEquipmentExcel(FlatBufferBuilder builder) { builder.StartTable(19); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddEquipmentCategory(FlatBufferBuilder builder, FlatDataGlobal.EquipmentCategory equipmentCategory) { builder.AddInt(1, (int)equipmentCategory, 0); }
   public static void AddRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity rarity) { builder.AddInt(2, (int)rarity, 0); }
@@ -121,15 +127,17 @@ public struct EquipmentExcel : IFlatbufferObject
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartTagsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddCraftQuality(FlatBufferBuilder builder, long CraftQuality) { builder.AddLong(13, CraftQuality, 0); }
-  public static void AddShiftingCraftQuality(FlatBufferBuilder builder, long ShiftingCraftQuality) { builder.AddLong(14, ShiftingCraftQuality, 0); }
-  public static void AddShopCategory(FlatBufferBuilder builder, VectorOffset ShopCategoryOffset) { builder.AddOffset(15, ShopCategoryOffset.Value, 0); }
+  public static void AddCraftQualityTier0(FlatBufferBuilder builder, long CraftQualityTier0) { builder.AddLong(13, CraftQualityTier0, 0); }
+  public static void AddCraftQualityTier1(FlatBufferBuilder builder, long CraftQualityTier1) { builder.AddLong(14, CraftQualityTier1, 0); }
+  public static void AddCraftQualityTier2(FlatBufferBuilder builder, long CraftQualityTier2) { builder.AddLong(15, CraftQualityTier2, 0); }
+  public static void AddShiftingCraftQuality(FlatBufferBuilder builder, long ShiftingCraftQuality) { builder.AddLong(16, ShiftingCraftQuality, 0); }
+  public static void AddShopCategory(FlatBufferBuilder builder, VectorOffset ShopCategoryOffset) { builder.AddOffset(17, ShopCategoryOffset.Value, 0); }
   public static VectorOffset CreateShopCategoryVector(FlatBufferBuilder builder, FlatDataGlobal.ShopCategoryType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateShopCategoryVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ShopCategoryType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateShopCategoryVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ShopCategoryType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateShopCategoryVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ShopCategoryType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartShopCategoryVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddShortcutTypeId(FlatBufferBuilder builder, long ShortcutTypeId) { builder.AddLong(16, ShortcutTypeId, 0); }
+  public static void AddShortcutTypeId(FlatBufferBuilder builder, long ShortcutTypeId) { builder.AddLong(18, ShortcutTypeId, 0); }
   public static Offset<FlatDataGlobal.EquipmentExcel> EndEquipmentExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EquipmentExcel>(o);

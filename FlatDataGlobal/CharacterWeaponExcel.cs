@@ -67,26 +67,24 @@ public struct CharacterWeaponExcel : IFlatbufferObject
   public ArraySegment<byte>? GetMaxLevelBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
   public int[] GetMaxLevelArray() { return __p.__vector_as_array<int>(30); }
-  public string PreviousSkillGroupId(int j) { int o = __p.__offset(32); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int PreviousSkillGroupIdLength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string AfterSkillGroupId(int j) { int o = __p.__offset(34); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int AfterSkillGroupIdLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public FlatDataGlobal.EquipmentOptionType StatType(int j) { int o = __p.__offset(36); return o != 0 ? (FlatDataGlobal.EquipmentOptionType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.EquipmentOptionType)0; }
-  public int StatTypeLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string LearnSkillSlot(int j) { int o = __p.__offset(32); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int LearnSkillSlotLength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.EquipmentOptionType StatType(int j) { int o = __p.__offset(34); return o != 0 ? (FlatDataGlobal.EquipmentOptionType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.EquipmentOptionType)0; }
+  public int StatTypeLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.EquipmentOptionType> GetStatTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.EquipmentOptionType>(36, 4); }
+  public Span<FlatDataGlobal.EquipmentOptionType> GetStatTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.EquipmentOptionType>(34, 4); }
 #else
-  public ArraySegment<byte>? GetStatTypeBytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetStatTypeBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
-  public FlatDataGlobal.EquipmentOptionType[] GetStatTypeArray() { int o = __p.__offset(36); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.EquipmentOptionType[] a = new FlatDataGlobal.EquipmentOptionType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.EquipmentOptionType)__p.bb.GetInt(p + i * 4); } return a; }
-  public long StatValue(int j) { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int StatValueLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.EquipmentOptionType[] GetStatTypeArray() { int o = __p.__offset(34); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.EquipmentOptionType[] a = new FlatDataGlobal.EquipmentOptionType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.EquipmentOptionType)__p.bb.GetInt(p + i * 4); } return a; }
+  public long StatValue(int j) { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int StatValueLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetStatValueBytes() { return __p.__vector_as_span<long>(38, 8); }
+  public Span<long> GetStatValueBytes() { return __p.__vector_as_span<long>(36, 8); }
 #else
-  public ArraySegment<byte>? GetStatValueBytes() { return __p.__vector_as_arraysegment(38); }
+  public ArraySegment<byte>? GetStatValueBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public long[] GetStatValueArray() { return __p.__vector_as_array<long>(38); }
+  public long[] GetStatValueArray() { return __p.__vector_as_array<long>(36); }
 
   public static Offset<FlatDataGlobal.CharacterWeaponExcel> CreateCharacterWeaponExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -103,11 +101,10 @@ public struct CharacterWeaponExcel : IFlatbufferObject
       VectorOffset UnlockOffset = default(VectorOffset),
       VectorOffset RecipeIdOffset = default(VectorOffset),
       VectorOffset MaxLevelOffset = default(VectorOffset),
-      VectorOffset PreviousSkillGroupIdOffset = default(VectorOffset),
-      VectorOffset AfterSkillGroupIdOffset = default(VectorOffset),
+      VectorOffset LearnSkillSlotOffset = default(VectorOffset),
       VectorOffset StatTypeOffset = default(VectorOffset),
       VectorOffset StatValueOffset = default(VectorOffset)) {
-    builder.StartTable(18);
+    builder.StartTable(17);
     CharacterWeaponExcel.AddHealPower100(builder, HealPower100);
     CharacterWeaponExcel.AddHealPower(builder, HealPower);
     CharacterWeaponExcel.AddMaxHP100(builder, MaxHP100);
@@ -118,8 +115,7 @@ public struct CharacterWeaponExcel : IFlatbufferObject
     CharacterWeaponExcel.AddId(builder, Id);
     CharacterWeaponExcel.AddStatValue(builder, StatValueOffset);
     CharacterWeaponExcel.AddStatType(builder, StatTypeOffset);
-    CharacterWeaponExcel.AddAfterSkillGroupId(builder, AfterSkillGroupIdOffset);
-    CharacterWeaponExcel.AddPreviousSkillGroupId(builder, PreviousSkillGroupIdOffset);
+    CharacterWeaponExcel.AddLearnSkillSlot(builder, LearnSkillSlotOffset);
     CharacterWeaponExcel.AddMaxLevel(builder, MaxLevelOffset);
     CharacterWeaponExcel.AddRecipeId(builder, RecipeIdOffset);
     CharacterWeaponExcel.AddUnlock(builder, UnlockOffset);
@@ -129,7 +125,7 @@ public struct CharacterWeaponExcel : IFlatbufferObject
     return CharacterWeaponExcel.EndCharacterWeaponExcel(builder);
   }
 
-  public static void StartCharacterWeaponExcel(FlatBufferBuilder builder) { builder.StartTable(18); }
+  public static void StartCharacterWeaponExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddImagePath(FlatBufferBuilder builder, StringOffset ImagePathOffset) { builder.AddOffset(1, ImagePathOffset.Value, 0); }
   public static void AddSetRecipe(FlatBufferBuilder builder, long SetRecipe) { builder.AddLong(2, SetRecipe, 0); }
@@ -164,25 +160,19 @@ public struct CharacterWeaponExcel : IFlatbufferObject
   public static VectorOffset CreateMaxLevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMaxLevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartMaxLevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddPreviousSkillGroupId(FlatBufferBuilder builder, VectorOffset PreviousSkillGroupIdOffset) { builder.AddOffset(14, PreviousSkillGroupIdOffset.Value, 0); }
-  public static VectorOffset CreatePreviousSkillGroupIdVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreatePreviousSkillGroupIdVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreatePreviousSkillGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreatePreviousSkillGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartPreviousSkillGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddAfterSkillGroupId(FlatBufferBuilder builder, VectorOffset AfterSkillGroupIdOffset) { builder.AddOffset(15, AfterSkillGroupIdOffset.Value, 0); }
-  public static VectorOffset CreateAfterSkillGroupIdVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateAfterSkillGroupIdVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateAfterSkillGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateAfterSkillGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartAfterSkillGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddStatType(FlatBufferBuilder builder, VectorOffset StatTypeOffset) { builder.AddOffset(16, StatTypeOffset.Value, 0); }
+  public static void AddLearnSkillSlot(FlatBufferBuilder builder, VectorOffset LearnSkillSlotOffset) { builder.AddOffset(14, LearnSkillSlotOffset.Value, 0); }
+  public static VectorOffset CreateLearnSkillSlotVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateLearnSkillSlotVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateLearnSkillSlotVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateLearnSkillSlotVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartLearnSkillSlotVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddStatType(FlatBufferBuilder builder, VectorOffset StatTypeOffset) { builder.AddOffset(15, StatTypeOffset.Value, 0); }
   public static VectorOffset CreateStatTypeVector(FlatBufferBuilder builder, FlatDataGlobal.EquipmentOptionType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateStatTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.EquipmentOptionType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateStatTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.EquipmentOptionType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateStatTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.EquipmentOptionType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartStatTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddStatValue(FlatBufferBuilder builder, VectorOffset StatValueOffset) { builder.AddOffset(17, StatValueOffset.Value, 0); }
+  public static void AddStatValue(FlatBufferBuilder builder, VectorOffset StatValueOffset) { builder.AddOffset(16, StatValueOffset.Value, 0); }
   public static VectorOffset CreateStatValueVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateStatValueVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateStatValueVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }

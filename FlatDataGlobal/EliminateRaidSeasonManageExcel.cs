@@ -95,6 +95,13 @@ public struct EliminateRaidSeasonManageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetSeasonRewardIdBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
   public long[] GetSeasonRewardIdArray() { return __p.__vector_as_array<long>(30); }
+  public long LimitedRewardIdNormal { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LimitedRewardIdHard { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LimitedRewardIdVeryhard { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LimitedRewardIdHardcore { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LimitedRewardIdExtreme { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LimitedRewardIdInsane { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LimitedRewardIdTorment { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.EliminateRaidSeasonManageExcel> CreateEliminateRaidSeasonManageExcel(FlatBufferBuilder builder,
       long SeasonId = 0,
@@ -110,8 +117,22 @@ public struct EliminateRaidSeasonManageExcel : IFlatbufferObject
       long RankingRewardGroupId = 0,
       int MaxSeasonRewardGauage = 0,
       VectorOffset StackedSeasonRewardGaugeOffset = default(VectorOffset),
-      VectorOffset SeasonRewardIdOffset = default(VectorOffset)) {
-    builder.StartTable(14);
+      VectorOffset SeasonRewardIdOffset = default(VectorOffset),
+      long LimitedRewardIdNormal = 0,
+      long LimitedRewardIdHard = 0,
+      long LimitedRewardIdVeryhard = 0,
+      long LimitedRewardIdHardcore = 0,
+      long LimitedRewardIdExtreme = 0,
+      long LimitedRewardIdInsane = 0,
+      long LimitedRewardIdTorment = 0) {
+    builder.StartTable(21);
+    EliminateRaidSeasonManageExcel.AddLimitedRewardIdTorment(builder, LimitedRewardIdTorment);
+    EliminateRaidSeasonManageExcel.AddLimitedRewardIdInsane(builder, LimitedRewardIdInsane);
+    EliminateRaidSeasonManageExcel.AddLimitedRewardIdExtreme(builder, LimitedRewardIdExtreme);
+    EliminateRaidSeasonManageExcel.AddLimitedRewardIdHardcore(builder, LimitedRewardIdHardcore);
+    EliminateRaidSeasonManageExcel.AddLimitedRewardIdVeryhard(builder, LimitedRewardIdVeryhard);
+    EliminateRaidSeasonManageExcel.AddLimitedRewardIdHard(builder, LimitedRewardIdHard);
+    EliminateRaidSeasonManageExcel.AddLimitedRewardIdNormal(builder, LimitedRewardIdNormal);
     EliminateRaidSeasonManageExcel.AddRankingRewardGroupId(builder, RankingRewardGroupId);
     EliminateRaidSeasonManageExcel.AddSeasonDisplay(builder, SeasonDisplay);
     EliminateRaidSeasonManageExcel.AddSeasonId(builder, SeasonId);
@@ -129,7 +150,7 @@ public struct EliminateRaidSeasonManageExcel : IFlatbufferObject
     return EliminateRaidSeasonManageExcel.EndEliminateRaidSeasonManageExcel(builder);
   }
 
-  public static void StartEliminateRaidSeasonManageExcel(FlatBufferBuilder builder) { builder.StartTable(14); }
+  public static void StartEliminateRaidSeasonManageExcel(FlatBufferBuilder builder) { builder.StartTable(21); }
   public static void AddSeasonId(FlatBufferBuilder builder, long SeasonId) { builder.AddLong(0, SeasonId, 0); }
   public static void AddSeasonDisplay(FlatBufferBuilder builder, long SeasonDisplay) { builder.AddLong(1, SeasonDisplay, 0); }
   public static void AddSeasonStartData(FlatBufferBuilder builder, StringOffset SeasonStartDataOffset) { builder.AddOffset(2, SeasonStartDataOffset.Value, 0); }
@@ -154,6 +175,13 @@ public struct EliminateRaidSeasonManageExcel : IFlatbufferObject
   public static VectorOffset CreateSeasonRewardIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSeasonRewardIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartSeasonRewardIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddLimitedRewardIdNormal(FlatBufferBuilder builder, long LimitedRewardIdNormal) { builder.AddLong(14, LimitedRewardIdNormal, 0); }
+  public static void AddLimitedRewardIdHard(FlatBufferBuilder builder, long LimitedRewardIdHard) { builder.AddLong(15, LimitedRewardIdHard, 0); }
+  public static void AddLimitedRewardIdVeryhard(FlatBufferBuilder builder, long LimitedRewardIdVeryhard) { builder.AddLong(16, LimitedRewardIdVeryhard, 0); }
+  public static void AddLimitedRewardIdHardcore(FlatBufferBuilder builder, long LimitedRewardIdHardcore) { builder.AddLong(17, LimitedRewardIdHardcore, 0); }
+  public static void AddLimitedRewardIdExtreme(FlatBufferBuilder builder, long LimitedRewardIdExtreme) { builder.AddLong(18, LimitedRewardIdExtreme, 0); }
+  public static void AddLimitedRewardIdInsane(FlatBufferBuilder builder, long LimitedRewardIdInsane) { builder.AddLong(19, LimitedRewardIdInsane, 0); }
+  public static void AddLimitedRewardIdTorment(FlatBufferBuilder builder, long LimitedRewardIdTorment) { builder.AddLong(20, LimitedRewardIdTorment, 0); }
   public static Offset<FlatDataGlobal.EliminateRaidSeasonManageExcel> EndEliminateRaidSeasonManageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EliminateRaidSeasonManageExcel>(o);

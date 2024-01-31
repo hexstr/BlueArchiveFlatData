@@ -9,6 +9,7 @@ public enum MiniGameTBGThemaRewardType : int
 {
   TreasureReward = 0,
   EmptyTreasureReward = 1,
+  HiddenThemaTreasureReward = 2,
 };
 
 

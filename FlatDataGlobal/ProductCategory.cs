@@ -11,8 +11,8 @@ public enum ProductCategory : int
   Gem = 1,
   Monthly = 2,
   Package = 3,
-  GachaDirect = 4,
-  GachaDirect_DontUseGlobal = 5,
+  GachaDirect_DontUseGlobal = 4,
+  TimeLimit = 5,
 };
 
 

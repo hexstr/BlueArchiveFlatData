@@ -137,6 +137,9 @@ public enum MissionCompleteConditionType : int
   Reset_ClearSpecificCharacterShooting = 127,
   Reset_ClearSpecificSectionShooting = 128,
   Achieve_JoinEliminateRaidCount = 129,
+  Reset_TBGCompleteRoundCount = 130,
+  Reset_CompleteStage = 131,
+  Reset_TBGClearSpecificThema = 132,
 };
 
 

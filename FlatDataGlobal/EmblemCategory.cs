@@ -9,10 +9,12 @@ public enum EmblemCategory : int
 {
   None = 0,
   Default = 1,
-  GroupStroy = 2,
-  EventChallenge = 3,
-  MainStory = 4,
-  Favor = 5,
+  Mission = 2,
+  GroupStroy = 3,
+  Event = 4,
+  MainStory = 5,
+  Favor = 6,
+  Boss = 7,
 };
 
 

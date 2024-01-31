@@ -29,6 +29,8 @@ public enum ParcelType : int
   CharacterGear = 19,
   IdCardBackground = 20,
   Emblem = 21,
+  ParcelType01 = 22,
+  Costume = 23,
 };
 
 

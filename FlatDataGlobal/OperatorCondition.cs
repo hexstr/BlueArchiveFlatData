@@ -31,6 +31,10 @@ public enum OperatorCondition : int
   WorldRaidBossKill = 21,
   WorldRaidBossDamaged = 22,
   WorldRaidScenarioBattle = 23,
+  MinigameTBGThemaOpen = 24,
+  MinigameTBGThemaComeback = 25,
+  MinigameTBGAllyRevive = 26,
+  MinigameTBGItemUse = 27,
 };
 
 

@@ -15,6 +15,7 @@ public enum TBGItemType : int
   Guide = 5,
   DiceResultValue = 6,
   DefenceCritical = 7,
+  DiceResultConfirm = 8,
 };
 
 

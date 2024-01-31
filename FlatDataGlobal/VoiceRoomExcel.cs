@@ -31,48 +31,49 @@ public struct VoiceRoomExcel : IFlatbufferObject
   public bool CollectionVisible { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public FlatDataGlobal.CVCollectionType CVCollectionType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
   public long UnlockFavorRank { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string LocalizeCVGroup { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public bool UnlockEquipWeapon { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string LocalizeCVGroup { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeCVGroupBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<byte> GetLocalizeCVGroupBytes() { return __p.__vector_as_span<byte>(18, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeCVGroupBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetLocalizeCVGroupBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public byte[] GetLocalizeCVGroupArray() { return __p.__vector_as_array<byte>(16); }
-  public string AudioClipJp { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeCVGroupArray() { return __p.__vector_as_array<byte>(18); }
+  public string AudioClipJp { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAudioClipJpBytes() { return __p.__vector_as_span<byte>(18, 1); }
+  public Span<byte> GetAudioClipJpBytes() { return __p.__vector_as_span<byte>(20, 1); }
 #else
-  public ArraySegment<byte>? GetAudioClipJpBytes() { return __p.__vector_as_arraysegment(18); }
+  public ArraySegment<byte>? GetAudioClipJpBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public byte[] GetAudioClipJpArray() { return __p.__vector_as_array<byte>(18); }
-  public string AudioClipKr { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetAudioClipJpArray() { return __p.__vector_as_array<byte>(20); }
+  public string AudioClipKr { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAudioClipKrBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetAudioClipKrBytes() { return __p.__vector_as_span<byte>(22, 1); }
 #else
-  public ArraySegment<byte>? GetAudioClipKrBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetAudioClipKrBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetAudioClipKrArray() { return __p.__vector_as_array<byte>(20); }
-  public string AudioClipEn { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetAudioClipKrArray() { return __p.__vector_as_array<byte>(22); }
+  public string AudioClipEn { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAudioClipEnBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetAudioClipEnBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetAudioClipEnBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetAudioClipEnBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetAudioClipEnArray() { return __p.__vector_as_array<byte>(22); }
-  public string AudioClipTw { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetAudioClipEnArray() { return __p.__vector_as_array<byte>(24); }
+  public string AudioClipTw { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAudioClipTwBytes() { return __p.__vector_as_span<byte>(24, 1); }
+  public Span<byte> GetAudioClipTwBytes() { return __p.__vector_as_span<byte>(26, 1); }
 #else
-  public ArraySegment<byte>? GetAudioClipTwBytes() { return __p.__vector_as_arraysegment(24); }
+  public ArraySegment<byte>? GetAudioClipTwBytes() { return __p.__vector_as_arraysegment(26); }
 #endif
-  public byte[] GetAudioClipTwArray() { return __p.__vector_as_array<byte>(24); }
-  public string AudioClipTh { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetAudioClipTwArray() { return __p.__vector_as_array<byte>(26); }
+  public string AudioClipTh { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAudioClipThBytes() { return __p.__vector_as_span<byte>(26, 1); }
+  public Span<byte> GetAudioClipThBytes() { return __p.__vector_as_span<byte>(28, 1); }
 #else
-  public ArraySegment<byte>? GetAudioClipThBytes() { return __p.__vector_as_arraysegment(26); }
+  public ArraySegment<byte>? GetAudioClipThBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
-  public byte[] GetAudioClipThArray() { return __p.__vector_as_array<byte>(26); }
+  public byte[] GetAudioClipThArray() { return __p.__vector_as_array<byte>(28); }
 
   public static Offset<FlatDataGlobal.VoiceRoomExcel> CreateVoiceRoomExcel(FlatBufferBuilder builder,
       uint NameHash = 0,
@@ -81,13 +82,14 @@ public struct VoiceRoomExcel : IFlatbufferObject
       bool CollectionVisible = false,
       FlatDataGlobal.CVCollectionType cVCollectionType = FlatDataGlobal.CVCollectionType.CVNormal,
       long UnlockFavorRank = 0,
+      bool UnlockEquipWeapon = false,
       StringOffset LocalizeCVGroupOffset = default(StringOffset),
       StringOffset AudioClipJpOffset = default(StringOffset),
       StringOffset AudioClipKrOffset = default(StringOffset),
       StringOffset AudioClipEnOffset = default(StringOffset),
       StringOffset AudioClipTwOffset = default(StringOffset),
       StringOffset AudioClipThOffset = default(StringOffset)) {
-    builder.StartTable(12);
+    builder.StartTable(13);
     VoiceRoomExcel.AddUnlockFavorRank(builder, UnlockFavorRank);
     VoiceRoomExcel.AddDisplayOrder(builder, DisplayOrder);
     VoiceRoomExcel.AddAudioClipTh(builder, AudioClipThOffset);
@@ -99,23 +101,25 @@ public struct VoiceRoomExcel : IFlatbufferObject
     VoiceRoomExcel.AddCVCollectionType(builder, cVCollectionType);
     VoiceRoomExcel.AddVoiceCategory(builder, VoiceCategoryOffset);
     VoiceRoomExcel.AddNameHash(builder, NameHash);
+    VoiceRoomExcel.AddUnlockEquipWeapon(builder, UnlockEquipWeapon);
     VoiceRoomExcel.AddCollectionVisible(builder, CollectionVisible);
     return VoiceRoomExcel.EndVoiceRoomExcel(builder);
   }
 
-  public static void StartVoiceRoomExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
+  public static void StartVoiceRoomExcel(FlatBufferBuilder builder) { builder.StartTable(13); }
   public static void AddNameHash(FlatBufferBuilder builder, uint NameHash) { builder.AddUint(0, NameHash, 0); }
   public static void AddVoiceCategory(FlatBufferBuilder builder, StringOffset VoiceCategoryOffset) { builder.AddOffset(1, VoiceCategoryOffset.Value, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(2, DisplayOrder, 0); }
   public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(3, CollectionVisible, false); }
   public static void AddCVCollectionType(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cVCollectionType) { builder.AddInt(4, (int)cVCollectionType, 0); }
   public static void AddUnlockFavorRank(FlatBufferBuilder builder, long UnlockFavorRank) { builder.AddLong(5, UnlockFavorRank, 0); }
-  public static void AddLocalizeCVGroup(FlatBufferBuilder builder, StringOffset LocalizeCVGroupOffset) { builder.AddOffset(6, LocalizeCVGroupOffset.Value, 0); }
-  public static void AddAudioClipJp(FlatBufferBuilder builder, StringOffset AudioClipJpOffset) { builder.AddOffset(7, AudioClipJpOffset.Value, 0); }
-  public static void AddAudioClipKr(FlatBufferBuilder builder, StringOffset AudioClipKrOffset) { builder.AddOffset(8, AudioClipKrOffset.Value, 0); }
-  public static void AddAudioClipEn(FlatBufferBuilder builder, StringOffset AudioClipEnOffset) { builder.AddOffset(9, AudioClipEnOffset.Value, 0); }
-  public static void AddAudioClipTw(FlatBufferBuilder builder, StringOffset AudioClipTwOffset) { builder.AddOffset(10, AudioClipTwOffset.Value, 0); }
-  public static void AddAudioClipTh(FlatBufferBuilder builder, StringOffset AudioClipThOffset) { builder.AddOffset(11, AudioClipThOffset.Value, 0); }
+  public static void AddUnlockEquipWeapon(FlatBufferBuilder builder, bool UnlockEquipWeapon) { builder.AddBool(6, UnlockEquipWeapon, false); }
+  public static void AddLocalizeCVGroup(FlatBufferBuilder builder, StringOffset LocalizeCVGroupOffset) { builder.AddOffset(7, LocalizeCVGroupOffset.Value, 0); }
+  public static void AddAudioClipJp(FlatBufferBuilder builder, StringOffset AudioClipJpOffset) { builder.AddOffset(8, AudioClipJpOffset.Value, 0); }
+  public static void AddAudioClipKr(FlatBufferBuilder builder, StringOffset AudioClipKrOffset) { builder.AddOffset(9, AudioClipKrOffset.Value, 0); }
+  public static void AddAudioClipEn(FlatBufferBuilder builder, StringOffset AudioClipEnOffset) { builder.AddOffset(10, AudioClipEnOffset.Value, 0); }
+  public static void AddAudioClipTw(FlatBufferBuilder builder, StringOffset AudioClipTwOffset) { builder.AddOffset(11, AudioClipTwOffset.Value, 0); }
+  public static void AddAudioClipTh(FlatBufferBuilder builder, StringOffset AudioClipThOffset) { builder.AddOffset(12, AudioClipThOffset.Value, 0); }
   public static Offset<FlatDataGlobal.VoiceRoomExcel> EndVoiceRoomExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.VoiceRoomExcel>(o);

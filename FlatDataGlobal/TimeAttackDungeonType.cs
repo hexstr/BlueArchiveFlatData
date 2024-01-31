@@ -11,6 +11,7 @@ public enum TimeAttackDungeonType : int
   Defense = 1,
   Shooting = 2,
   Destruction = 3,
+  Escort = 4,
 };
 
 

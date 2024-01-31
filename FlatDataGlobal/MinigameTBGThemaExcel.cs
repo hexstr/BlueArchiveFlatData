@@ -61,14 +61,22 @@ public struct MinigameTBGThemaExcel : IFlatbufferObject
   public ArraySegment<byte>? GetThemaLoadingImageBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
   public byte[] GetThemaLoadingImageArray() { return __p.__vector_as_array<byte>(22); }
-  public long ThemaLeaderId { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string ThemaGoalLocalize { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string ThemaPlayerPrefab { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetThemaGoalLocalizeBytes() { return __p.__vector_as_span<byte>(26, 1); }
+  public Span<byte> GetThemaPlayerPrefabBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetThemaGoalLocalizeBytes() { return __p.__vector_as_arraysegment(26); }
+  public ArraySegment<byte>? GetThemaPlayerPrefabBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetThemaGoalLocalizeArray() { return __p.__vector_as_array<byte>(26); }
+  public byte[] GetThemaPlayerPrefabArray() { return __p.__vector_as_array<byte>(24); }
+  public long ThemaLeaderId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string ThemaGoalLocalize { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetThemaGoalLocalizeBytes() { return __p.__vector_as_span<byte>(28, 1); }
+#else
+  public ArraySegment<byte>? GetThemaGoalLocalizeBytes() { return __p.__vector_as_arraysegment(28); }
+#endif
+  public byte[] GetThemaGoalLocalizeArray() { return __p.__vector_as_array<byte>(28); }
+  public long InstantClearCostAmount { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.MinigameTBGThemaExcel> CreateMinigameTBGThemaExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
@@ -81,13 +89,17 @@ public struct MinigameTBGThemaExcel : IFlatbufferObject
       VectorOffset PortalConditionParameterOffset = default(VectorOffset),
       StringOffset ThemaNameLocalizeOffset = default(StringOffset),
       StringOffset ThemaLoadingImageOffset = default(StringOffset),
+      StringOffset ThemaPlayerPrefabOffset = default(StringOffset),
       long ThemaLeaderId = 0,
-      StringOffset ThemaGoalLocalizeOffset = default(StringOffset)) {
-    builder.StartTable(12);
+      StringOffset ThemaGoalLocalizeOffset = default(StringOffset),
+      long InstantClearCostAmount = 0) {
+    builder.StartTable(14);
+    MinigameTBGThemaExcel.AddInstantClearCostAmount(builder, InstantClearCostAmount);
     MinigameTBGThemaExcel.AddThemaLeaderId(builder, ThemaLeaderId);
     MinigameTBGThemaExcel.AddUniqueId(builder, UniqueId);
     MinigameTBGThemaExcel.AddEventContentId(builder, EventContentId);
     MinigameTBGThemaExcel.AddThemaGoalLocalize(builder, ThemaGoalLocalizeOffset);
+    MinigameTBGThemaExcel.AddThemaPlayerPrefab(builder, ThemaPlayerPrefabOffset);
     MinigameTBGThemaExcel.AddThemaLoadingImage(builder, ThemaLoadingImageOffset);
     MinigameTBGThemaExcel.AddThemaNameLocalize(builder, ThemaNameLocalizeOffset);
     MinigameTBGThemaExcel.AddPortalConditionParameter(builder, PortalConditionParameterOffset);
@@ -99,7 +111,7 @@ public struct MinigameTBGThemaExcel : IFlatbufferObject
     return MinigameTBGThemaExcel.EndMinigameTBGThemaExcel(builder);
   }
 
-  public static void StartMinigameTBGThemaExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
+  public static void StartMinigameTBGThemaExcel(FlatBufferBuilder builder) { builder.StartTable(14); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(1, UniqueId, 0); }
   public static void AddThemaIndex(FlatBufferBuilder builder, int ThemaIndex) { builder.AddInt(2, ThemaIndex, 0); }
@@ -120,8 +132,10 @@ public struct MinigameTBGThemaExcel : IFlatbufferObject
   public static void StartPortalConditionParameterVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddThemaNameLocalize(FlatBufferBuilder builder, StringOffset ThemaNameLocalizeOffset) { builder.AddOffset(8, ThemaNameLocalizeOffset.Value, 0); }
   public static void AddThemaLoadingImage(FlatBufferBuilder builder, StringOffset ThemaLoadingImageOffset) { builder.AddOffset(9, ThemaLoadingImageOffset.Value, 0); }
-  public static void AddThemaLeaderId(FlatBufferBuilder builder, long ThemaLeaderId) { builder.AddLong(10, ThemaLeaderId, 0); }
-  public static void AddThemaGoalLocalize(FlatBufferBuilder builder, StringOffset ThemaGoalLocalizeOffset) { builder.AddOffset(11, ThemaGoalLocalizeOffset.Value, 0); }
+  public static void AddThemaPlayerPrefab(FlatBufferBuilder builder, StringOffset ThemaPlayerPrefabOffset) { builder.AddOffset(10, ThemaPlayerPrefabOffset.Value, 0); }
+  public static void AddThemaLeaderId(FlatBufferBuilder builder, long ThemaLeaderId) { builder.AddLong(11, ThemaLeaderId, 0); }
+  public static void AddThemaGoalLocalize(FlatBufferBuilder builder, StringOffset ThemaGoalLocalizeOffset) { builder.AddOffset(12, ThemaGoalLocalizeOffset.Value, 0); }
+  public static void AddInstantClearCostAmount(FlatBufferBuilder builder, long InstantClearCostAmount) { builder.AddLong(13, InstantClearCostAmount, 0); }
   public static Offset<FlatDataGlobal.MinigameTBGThemaExcel> EndMinigameTBGThemaExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.MinigameTBGThemaExcel>(o);

@@ -29,6 +29,53 @@ public struct ConstMinigameTBGExcel : IFlatbufferObject
   public float CameraZoomMax { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public float CameraZoomMin { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public float CameraZoomDefault { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float ThemaLoadingProgressTime { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float MapAllyRotation { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public string AniAllyBattleAttack { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetAniAllyBattleAttackBytes() { return __p.__vector_as_span<byte>(28, 1); }
+#else
+  public ArraySegment<byte>? GetAniAllyBattleAttackBytes() { return __p.__vector_as_arraysegment(28); }
+#endif
+  public byte[] GetAniAllyBattleAttackArray() { return __p.__vector_as_array<byte>(28); }
+  public string EffectAllyBattleAttack { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEffectAllyBattleAttackBytes() { return __p.__vector_as_span<byte>(30, 1); }
+#else
+  public ArraySegment<byte>? GetEffectAllyBattleAttackBytes() { return __p.__vector_as_arraysegment(30); }
+#endif
+  public byte[] GetEffectAllyBattleAttackArray() { return __p.__vector_as_array<byte>(30); }
+  public string EffectAllyBattleDamage { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEffectAllyBattleDamageBytes() { return __p.__vector_as_span<byte>(32, 1); }
+#else
+  public ArraySegment<byte>? GetEffectAllyBattleDamageBytes() { return __p.__vector_as_arraysegment(32); }
+#endif
+  public byte[] GetEffectAllyBattleDamageArray() { return __p.__vector_as_array<byte>(32); }
+  public string AniEnemyBattleAttack { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetAniEnemyBattleAttackBytes() { return __p.__vector_as_span<byte>(34, 1); }
+#else
+  public ArraySegment<byte>? GetAniEnemyBattleAttackBytes() { return __p.__vector_as_arraysegment(34); }
+#endif
+  public byte[] GetAniEnemyBattleAttackArray() { return __p.__vector_as_array<byte>(34); }
+  public string EffectEnemyBattleAttack { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEffectEnemyBattleAttackBytes() { return __p.__vector_as_span<byte>(36, 1); }
+#else
+  public ArraySegment<byte>? GetEffectEnemyBattleAttackBytes() { return __p.__vector_as_arraysegment(36); }
+#endif
+  public byte[] GetEffectEnemyBattleAttackArray() { return __p.__vector_as_array<byte>(36); }
+  public string EffectEnemyBattleDamage { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEffectEnemyBattleDamageBytes() { return __p.__vector_as_span<byte>(38, 1); }
+#else
+  public ArraySegment<byte>? GetEffectEnemyBattleDamageBytes() { return __p.__vector_as_arraysegment(38); }
+#endif
+  public byte[] GetEffectEnemyBattleDamageArray() { return __p.__vector_as_array<byte>(38); }
+  public float EncounterAllyRotation { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float EncounterEnemyRotation { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public int EncounterRewardReceiveIndex { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.ConstMinigameTBGExcel> CreateConstMinigameTBGExcel(FlatBufferBuilder builder,
       float ConquestMapBoundaryOffsetLeft = 0.0f,
@@ -40,8 +87,30 @@ public struct ConstMinigameTBGExcel : IFlatbufferObject
       float CameraAngle = 0.0f,
       float CameraZoomMax = 0.0f,
       float CameraZoomMin = 0.0f,
-      float CameraZoomDefault = 0.0f) {
-    builder.StartTable(10);
+      float CameraZoomDefault = 0.0f,
+      float ThemaLoadingProgressTime = 0.0f,
+      float MapAllyRotation = 0.0f,
+      StringOffset AniAllyBattleAttackOffset = default(StringOffset),
+      StringOffset EffectAllyBattleAttackOffset = default(StringOffset),
+      StringOffset EffectAllyBattleDamageOffset = default(StringOffset),
+      StringOffset AniEnemyBattleAttackOffset = default(StringOffset),
+      StringOffset EffectEnemyBattleAttackOffset = default(StringOffset),
+      StringOffset EffectEnemyBattleDamageOffset = default(StringOffset),
+      float EncounterAllyRotation = 0.0f,
+      float EncounterEnemyRotation = 0.0f,
+      int EncounterRewardReceiveIndex = 0) {
+    builder.StartTable(21);
+    ConstMinigameTBGExcel.AddEncounterRewardReceiveIndex(builder, EncounterRewardReceiveIndex);
+    ConstMinigameTBGExcel.AddEncounterEnemyRotation(builder, EncounterEnemyRotation);
+    ConstMinigameTBGExcel.AddEncounterAllyRotation(builder, EncounterAllyRotation);
+    ConstMinigameTBGExcel.AddEffectEnemyBattleDamage(builder, EffectEnemyBattleDamageOffset);
+    ConstMinigameTBGExcel.AddEffectEnemyBattleAttack(builder, EffectEnemyBattleAttackOffset);
+    ConstMinigameTBGExcel.AddAniEnemyBattleAttack(builder, AniEnemyBattleAttackOffset);
+    ConstMinigameTBGExcel.AddEffectAllyBattleDamage(builder, EffectAllyBattleDamageOffset);
+    ConstMinigameTBGExcel.AddEffectAllyBattleAttack(builder, EffectAllyBattleAttackOffset);
+    ConstMinigameTBGExcel.AddAniAllyBattleAttack(builder, AniAllyBattleAttackOffset);
+    ConstMinigameTBGExcel.AddMapAllyRotation(builder, MapAllyRotation);
+    ConstMinigameTBGExcel.AddThemaLoadingProgressTime(builder, ThemaLoadingProgressTime);
     ConstMinigameTBGExcel.AddCameraZoomDefault(builder, CameraZoomDefault);
     ConstMinigameTBGExcel.AddCameraZoomMin(builder, CameraZoomMin);
     ConstMinigameTBGExcel.AddCameraZoomMax(builder, CameraZoomMax);
@@ -55,7 +124,7 @@ public struct ConstMinigameTBGExcel : IFlatbufferObject
     return ConstMinigameTBGExcel.EndConstMinigameTBGExcel(builder);
   }
 
-  public static void StartConstMinigameTBGExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
+  public static void StartConstMinigameTBGExcel(FlatBufferBuilder builder) { builder.StartTable(21); }
   public static void AddConquestMapBoundaryOffsetLeft(FlatBufferBuilder builder, float ConquestMapBoundaryOffsetLeft) { builder.AddFloat(0, ConquestMapBoundaryOffsetLeft, 0.0f); }
   public static void AddConquestMapBoundaryOffsetRight(FlatBufferBuilder builder, float ConquestMapBoundaryOffsetRight) { builder.AddFloat(1, ConquestMapBoundaryOffsetRight, 0.0f); }
   public static void AddConquestMapBoundaryOffsetTop(FlatBufferBuilder builder, float ConquestMapBoundaryOffsetTop) { builder.AddFloat(2, ConquestMapBoundaryOffsetTop, 0.0f); }
@@ -66,6 +135,17 @@ public struct ConstMinigameTBGExcel : IFlatbufferObject
   public static void AddCameraZoomMax(FlatBufferBuilder builder, float CameraZoomMax) { builder.AddFloat(7, CameraZoomMax, 0.0f); }
   public static void AddCameraZoomMin(FlatBufferBuilder builder, float CameraZoomMin) { builder.AddFloat(8, CameraZoomMin, 0.0f); }
   public static void AddCameraZoomDefault(FlatBufferBuilder builder, float CameraZoomDefault) { builder.AddFloat(9, CameraZoomDefault, 0.0f); }
+  public static void AddThemaLoadingProgressTime(FlatBufferBuilder builder, float ThemaLoadingProgressTime) { builder.AddFloat(10, ThemaLoadingProgressTime, 0.0f); }
+  public static void AddMapAllyRotation(FlatBufferBuilder builder, float MapAllyRotation) { builder.AddFloat(11, MapAllyRotation, 0.0f); }
+  public static void AddAniAllyBattleAttack(FlatBufferBuilder builder, StringOffset AniAllyBattleAttackOffset) { builder.AddOffset(12, AniAllyBattleAttackOffset.Value, 0); }
+  public static void AddEffectAllyBattleAttack(FlatBufferBuilder builder, StringOffset EffectAllyBattleAttackOffset) { builder.AddOffset(13, EffectAllyBattleAttackOffset.Value, 0); }
+  public static void AddEffectAllyBattleDamage(FlatBufferBuilder builder, StringOffset EffectAllyBattleDamageOffset) { builder.AddOffset(14, EffectAllyBattleDamageOffset.Value, 0); }
+  public static void AddAniEnemyBattleAttack(FlatBufferBuilder builder, StringOffset AniEnemyBattleAttackOffset) { builder.AddOffset(15, AniEnemyBattleAttackOffset.Value, 0); }
+  public static void AddEffectEnemyBattleAttack(FlatBufferBuilder builder, StringOffset EffectEnemyBattleAttackOffset) { builder.AddOffset(16, EffectEnemyBattleAttackOffset.Value, 0); }
+  public static void AddEffectEnemyBattleDamage(FlatBufferBuilder builder, StringOffset EffectEnemyBattleDamageOffset) { builder.AddOffset(17, EffectEnemyBattleDamageOffset.Value, 0); }
+  public static void AddEncounterAllyRotation(FlatBufferBuilder builder, float EncounterAllyRotation) { builder.AddFloat(18, EncounterAllyRotation, 0.0f); }
+  public static void AddEncounterEnemyRotation(FlatBufferBuilder builder, float EncounterEnemyRotation) { builder.AddFloat(19, EncounterEnemyRotation, 0.0f); }
+  public static void AddEncounterRewardReceiveIndex(FlatBufferBuilder builder, int EncounterRewardReceiveIndex) { builder.AddInt(20, EncounterRewardReceiveIndex, 0); }
   public static Offset<FlatDataGlobal.ConstMinigameTBGExcel> EndConstMinigameTBGExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstMinigameTBGExcel>(o);

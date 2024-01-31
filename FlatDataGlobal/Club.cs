@@ -53,6 +53,7 @@ public enum Club : int
   Genryumon = 43,
   BlackTortoisePromenade = 44,
   LaborParty = 45,
+  KnowledgeLiberationFront = 46,
 };
 
 

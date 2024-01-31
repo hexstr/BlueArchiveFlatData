@@ -36,21 +36,19 @@ public struct MinigameTBGEncounterOptionExcel : IFlatbufferObject
   public ArraySegment<byte>? GetOptionSuccessLocalizeBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
   public byte[] GetOptionSuccessLocalizeArray() { return __p.__vector_as_array<byte>(12); }
-  public FlatDataGlobal.TBGOptionSuccessType OptionSuccessType { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.TBGOptionSuccessType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TBGOptionSuccessType.None; } }
-  public long OptionSuccessParameter { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int OptionSuccessOrHigherDiceCount { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int OptionGreatSuccessOrHigherDiceCount { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string OptionFailLocalize { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long OptionSuccessRewardGroupId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int OptionSuccessOrHigherDiceCount { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int OptionGreatSuccessOrHigherDiceCount { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string OptionFailLocalize { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetOptionFailLocalizeBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetOptionFailLocalizeBytes() { return __p.__vector_as_span<byte>(20, 1); }
 #else
-  public ArraySegment<byte>? GetOptionFailLocalizeBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetOptionFailLocalizeBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public byte[] GetOptionFailLocalizeArray() { return __p.__vector_as_array<byte>(22); }
-  public int OptionFailLessDiceCount { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int RunawayOrHigherDiceCount { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long RewardId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool RewardHide { get { int o = __p.__offset(30); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public byte[] GetOptionFailLocalizeArray() { return __p.__vector_as_array<byte>(20); }
+  public int OptionFailLessDiceCount { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int RunawayOrHigherDiceCount { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool RewardHide { get { int o = __p.__offset(26); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.MinigameTBGEncounterOptionExcel> CreateMinigameTBGEncounterOptionExcel(FlatBufferBuilder builder,
       long OptionGroupId = 0,
@@ -58,18 +56,15 @@ public struct MinigameTBGEncounterOptionExcel : IFlatbufferObject
       int SlotIndex = 0,
       StringOffset OptionTitleLocalizeOffset = default(StringOffset),
       StringOffset OptionSuccessLocalizeOffset = default(StringOffset),
-      FlatDataGlobal.TBGOptionSuccessType OptionSuccessType = FlatDataGlobal.TBGOptionSuccessType.None,
-      long OptionSuccessParameter = 0,
+      long OptionSuccessRewardGroupId = 0,
       int OptionSuccessOrHigherDiceCount = 0,
       int OptionGreatSuccessOrHigherDiceCount = 0,
       StringOffset OptionFailLocalizeOffset = default(StringOffset),
       int OptionFailLessDiceCount = 0,
       int RunawayOrHigherDiceCount = 0,
-      long RewardId = 0,
       bool RewardHide = false) {
-    builder.StartTable(14);
-    MinigameTBGEncounterOptionExcel.AddRewardId(builder, RewardId);
-    MinigameTBGEncounterOptionExcel.AddOptionSuccessParameter(builder, OptionSuccessParameter);
+    builder.StartTable(12);
+    MinigameTBGEncounterOptionExcel.AddOptionSuccessRewardGroupId(builder, OptionSuccessRewardGroupId);
     MinigameTBGEncounterOptionExcel.AddUniqueId(builder, UniqueId);
     MinigameTBGEncounterOptionExcel.AddOptionGroupId(builder, OptionGroupId);
     MinigameTBGEncounterOptionExcel.AddRunawayOrHigherDiceCount(builder, RunawayOrHigherDiceCount);
@@ -77,7 +72,6 @@ public struct MinigameTBGEncounterOptionExcel : IFlatbufferObject
     MinigameTBGEncounterOptionExcel.AddOptionFailLocalize(builder, OptionFailLocalizeOffset);
     MinigameTBGEncounterOptionExcel.AddOptionGreatSuccessOrHigherDiceCount(builder, OptionGreatSuccessOrHigherDiceCount);
     MinigameTBGEncounterOptionExcel.AddOptionSuccessOrHigherDiceCount(builder, OptionSuccessOrHigherDiceCount);
-    MinigameTBGEncounterOptionExcel.AddOptionSuccessType(builder, OptionSuccessType);
     MinigameTBGEncounterOptionExcel.AddOptionSuccessLocalize(builder, OptionSuccessLocalizeOffset);
     MinigameTBGEncounterOptionExcel.AddOptionTitleLocalize(builder, OptionTitleLocalizeOffset);
     MinigameTBGEncounterOptionExcel.AddSlotIndex(builder, SlotIndex);
@@ -85,21 +79,19 @@ public struct MinigameTBGEncounterOptionExcel : IFlatbufferObject
     return MinigameTBGEncounterOptionExcel.EndMinigameTBGEncounterOptionExcel(builder);
   }
 
-  public static void StartMinigameTBGEncounterOptionExcel(FlatBufferBuilder builder) { builder.StartTable(14); }
+  public static void StartMinigameTBGEncounterOptionExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
   public static void AddOptionGroupId(FlatBufferBuilder builder, long OptionGroupId) { builder.AddLong(0, OptionGroupId, 0); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(1, UniqueId, 0); }
   public static void AddSlotIndex(FlatBufferBuilder builder, int SlotIndex) { builder.AddInt(2, SlotIndex, 0); }
   public static void AddOptionTitleLocalize(FlatBufferBuilder builder, StringOffset OptionTitleLocalizeOffset) { builder.AddOffset(3, OptionTitleLocalizeOffset.Value, 0); }
   public static void AddOptionSuccessLocalize(FlatBufferBuilder builder, StringOffset OptionSuccessLocalizeOffset) { builder.AddOffset(4, OptionSuccessLocalizeOffset.Value, 0); }
-  public static void AddOptionSuccessType(FlatBufferBuilder builder, FlatDataGlobal.TBGOptionSuccessType OptionSuccessType) { builder.AddInt(5, (int)OptionSuccessType, 0); }
-  public static void AddOptionSuccessParameter(FlatBufferBuilder builder, long OptionSuccessParameter) { builder.AddLong(6, OptionSuccessParameter, 0); }
-  public static void AddOptionSuccessOrHigherDiceCount(FlatBufferBuilder builder, int OptionSuccessOrHigherDiceCount) { builder.AddInt(7, OptionSuccessOrHigherDiceCount, 0); }
-  public static void AddOptionGreatSuccessOrHigherDiceCount(FlatBufferBuilder builder, int OptionGreatSuccessOrHigherDiceCount) { builder.AddInt(8, OptionGreatSuccessOrHigherDiceCount, 0); }
-  public static void AddOptionFailLocalize(FlatBufferBuilder builder, StringOffset OptionFailLocalizeOffset) { builder.AddOffset(9, OptionFailLocalizeOffset.Value, 0); }
-  public static void AddOptionFailLessDiceCount(FlatBufferBuilder builder, int OptionFailLessDiceCount) { builder.AddInt(10, OptionFailLessDiceCount, 0); }
-  public static void AddRunawayOrHigherDiceCount(FlatBufferBuilder builder, int RunawayOrHigherDiceCount) { builder.AddInt(11, RunawayOrHigherDiceCount, 0); }
-  public static void AddRewardId(FlatBufferBuilder builder, long RewardId) { builder.AddLong(12, RewardId, 0); }
-  public static void AddRewardHide(FlatBufferBuilder builder, bool RewardHide) { builder.AddBool(13, RewardHide, false); }
+  public static void AddOptionSuccessRewardGroupId(FlatBufferBuilder builder, long OptionSuccessRewardGroupId) { builder.AddLong(5, OptionSuccessRewardGroupId, 0); }
+  public static void AddOptionSuccessOrHigherDiceCount(FlatBufferBuilder builder, int OptionSuccessOrHigherDiceCount) { builder.AddInt(6, OptionSuccessOrHigherDiceCount, 0); }
+  public static void AddOptionGreatSuccessOrHigherDiceCount(FlatBufferBuilder builder, int OptionGreatSuccessOrHigherDiceCount) { builder.AddInt(7, OptionGreatSuccessOrHigherDiceCount, 0); }
+  public static void AddOptionFailLocalize(FlatBufferBuilder builder, StringOffset OptionFailLocalizeOffset) { builder.AddOffset(8, OptionFailLocalizeOffset.Value, 0); }
+  public static void AddOptionFailLessDiceCount(FlatBufferBuilder builder, int OptionFailLessDiceCount) { builder.AddInt(9, OptionFailLessDiceCount, 0); }
+  public static void AddRunawayOrHigherDiceCount(FlatBufferBuilder builder, int RunawayOrHigherDiceCount) { builder.AddInt(10, RunawayOrHigherDiceCount, 0); }
+  public static void AddRewardHide(FlatBufferBuilder builder, bool RewardHide) { builder.AddBool(11, RewardHide, false); }
   public static Offset<FlatDataGlobal.MinigameTBGEncounterOptionExcel> EndMinigameTBGEncounterOptionExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.MinigameTBGEncounterOptionExcel>(o);

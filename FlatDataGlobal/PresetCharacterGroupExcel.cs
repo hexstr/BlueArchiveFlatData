@@ -27,37 +27,35 @@ public struct PresetCharacterGroupExcel : IFlatbufferObject
   public ArraySegment<byte>? GetGetPresetTypeBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetGetPresetTypeArray() { return __p.__vector_as_array<byte>(6); }
-  public bool ArenaSimulatorFixed { get { int o = __p.__offset(8); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public int Level { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int Exp { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int FavorExp { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int FavorRank { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int StarGrade { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ExSkillLevel { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int PassiveSkillLevel { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ExtraPassiveSkillLevel { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int CommonSkillLevel { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int LeaderSkillLevel { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool EquipSlot01 { get { int o = __p.__offset(30); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public int EquipSlotTier01 { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int EquipSlotLevel01 { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool EquipSlot02 { get { int o = __p.__offset(36); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public int EquipSlotTier02 { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int EquipSlotLevel02 { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool EquipSlot03 { get { int o = __p.__offset(42); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public int EquipSlotTier03 { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int EquipSlotLevel03 { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool EquipCharacterWeapon { get { int o = __p.__offset(48); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public int EquipCharacterWeaponTier { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int EquipCharacterWeaponLevel { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool EquipCharacterGear { get { int o = __p.__offset(54); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public int EquipCharacterGearTier { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int EquipCharacterGearLevel { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int Level { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int Exp { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int FavorExp { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int FavorRank { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int StarGrade { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ExSkillLevel { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int PassiveSkillLevel { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ExtraPassiveSkillLevel { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CommonSkillLevel { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int LeaderSkillLevel { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool EquipSlot01 { get { int o = __p.__offset(28); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public int EquipSlotTier01 { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int EquipSlotLevel01 { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool EquipSlot02 { get { int o = __p.__offset(34); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public int EquipSlotTier02 { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int EquipSlotLevel02 { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool EquipSlot03 { get { int o = __p.__offset(40); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public int EquipSlotTier03 { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int EquipSlotLevel03 { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool EquipCharacterWeapon { get { int o = __p.__offset(46); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public int EquipCharacterWeaponTier { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int EquipCharacterWeaponLevel { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool EquipCharacterGear { get { int o = __p.__offset(52); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public int EquipCharacterGearTier { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int EquipCharacterGearLevel { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.PresetCharacterGroupExcel> CreatePresetCharacterGroupExcel(FlatBufferBuilder builder,
       long PresetCharacterGroupId = 0,
       StringOffset GetPresetTypeOffset = default(StringOffset),
-      bool ArenaSimulatorFixed = false,
       int Level = 0,
       int Exp = 0,
       int FavorExp = 0,
@@ -83,7 +81,7 @@ public struct PresetCharacterGroupExcel : IFlatbufferObject
       bool EquipCharacterGear = false,
       int EquipCharacterGearTier = 0,
       int EquipCharacterGearLevel = 0) {
-    builder.StartTable(28);
+    builder.StartTable(27);
     PresetCharacterGroupExcel.AddPresetCharacterGroupId(builder, PresetCharacterGroupId);
     PresetCharacterGroupExcel.AddEquipCharacterGearLevel(builder, EquipCharacterGearLevel);
     PresetCharacterGroupExcel.AddEquipCharacterGearTier(builder, EquipCharacterGearTier);
@@ -111,39 +109,37 @@ public struct PresetCharacterGroupExcel : IFlatbufferObject
     PresetCharacterGroupExcel.AddEquipSlot03(builder, EquipSlot03);
     PresetCharacterGroupExcel.AddEquipSlot02(builder, EquipSlot02);
     PresetCharacterGroupExcel.AddEquipSlot01(builder, EquipSlot01);
-    PresetCharacterGroupExcel.AddArenaSimulatorFixed(builder, ArenaSimulatorFixed);
     return PresetCharacterGroupExcel.EndPresetCharacterGroupExcel(builder);
   }
 
-  public static void StartPresetCharacterGroupExcel(FlatBufferBuilder builder) { builder.StartTable(28); }
+  public static void StartPresetCharacterGroupExcel(FlatBufferBuilder builder) { builder.StartTable(27); }
   public static void AddPresetCharacterGroupId(FlatBufferBuilder builder, long PresetCharacterGroupId) { builder.AddLong(0, PresetCharacterGroupId, 0); }
   public static void AddGetPresetType(FlatBufferBuilder builder, StringOffset GetPresetTypeOffset) { builder.AddOffset(1, GetPresetTypeOffset.Value, 0); }
-  public static void AddArenaSimulatorFixed(FlatBufferBuilder builder, bool ArenaSimulatorFixed) { builder.AddBool(2, ArenaSimulatorFixed, false); }
-  public static void AddLevel(FlatBufferBuilder builder, int Level) { builder.AddInt(3, Level, 0); }
-  public static void AddExp(FlatBufferBuilder builder, int Exp) { builder.AddInt(4, Exp, 0); }
-  public static void AddFavorExp(FlatBufferBuilder builder, int FavorExp) { builder.AddInt(5, FavorExp, 0); }
-  public static void AddFavorRank(FlatBufferBuilder builder, int FavorRank) { builder.AddInt(6, FavorRank, 0); }
-  public static void AddStarGrade(FlatBufferBuilder builder, int StarGrade) { builder.AddInt(7, StarGrade, 0); }
-  public static void AddExSkillLevel(FlatBufferBuilder builder, int ExSkillLevel) { builder.AddInt(8, ExSkillLevel, 0); }
-  public static void AddPassiveSkillLevel(FlatBufferBuilder builder, int PassiveSkillLevel) { builder.AddInt(9, PassiveSkillLevel, 0); }
-  public static void AddExtraPassiveSkillLevel(FlatBufferBuilder builder, int ExtraPassiveSkillLevel) { builder.AddInt(10, ExtraPassiveSkillLevel, 0); }
-  public static void AddCommonSkillLevel(FlatBufferBuilder builder, int CommonSkillLevel) { builder.AddInt(11, CommonSkillLevel, 0); }
-  public static void AddLeaderSkillLevel(FlatBufferBuilder builder, int LeaderSkillLevel) { builder.AddInt(12, LeaderSkillLevel, 0); }
-  public static void AddEquipSlot01(FlatBufferBuilder builder, bool EquipSlot01) { builder.AddBool(13, EquipSlot01, false); }
-  public static void AddEquipSlotTier01(FlatBufferBuilder builder, int EquipSlotTier01) { builder.AddInt(14, EquipSlotTier01, 0); }
-  public static void AddEquipSlotLevel01(FlatBufferBuilder builder, int EquipSlotLevel01) { builder.AddInt(15, EquipSlotLevel01, 0); }
-  public static void AddEquipSlot02(FlatBufferBuilder builder, bool EquipSlot02) { builder.AddBool(16, EquipSlot02, false); }
-  public static void AddEquipSlotTier02(FlatBufferBuilder builder, int EquipSlotTier02) { builder.AddInt(17, EquipSlotTier02, 0); }
-  public static void AddEquipSlotLevel02(FlatBufferBuilder builder, int EquipSlotLevel02) { builder.AddInt(18, EquipSlotLevel02, 0); }
-  public static void AddEquipSlot03(FlatBufferBuilder builder, bool EquipSlot03) { builder.AddBool(19, EquipSlot03, false); }
-  public static void AddEquipSlotTier03(FlatBufferBuilder builder, int EquipSlotTier03) { builder.AddInt(20, EquipSlotTier03, 0); }
-  public static void AddEquipSlotLevel03(FlatBufferBuilder builder, int EquipSlotLevel03) { builder.AddInt(21, EquipSlotLevel03, 0); }
-  public static void AddEquipCharacterWeapon(FlatBufferBuilder builder, bool EquipCharacterWeapon) { builder.AddBool(22, EquipCharacterWeapon, false); }
-  public static void AddEquipCharacterWeaponTier(FlatBufferBuilder builder, int EquipCharacterWeaponTier) { builder.AddInt(23, EquipCharacterWeaponTier, 0); }
-  public static void AddEquipCharacterWeaponLevel(FlatBufferBuilder builder, int EquipCharacterWeaponLevel) { builder.AddInt(24, EquipCharacterWeaponLevel, 0); }
-  public static void AddEquipCharacterGear(FlatBufferBuilder builder, bool EquipCharacterGear) { builder.AddBool(25, EquipCharacterGear, false); }
-  public static void AddEquipCharacterGearTier(FlatBufferBuilder builder, int EquipCharacterGearTier) { builder.AddInt(26, EquipCharacterGearTier, 0); }
-  public static void AddEquipCharacterGearLevel(FlatBufferBuilder builder, int EquipCharacterGearLevel) { builder.AddInt(27, EquipCharacterGearLevel, 0); }
+  public static void AddLevel(FlatBufferBuilder builder, int Level) { builder.AddInt(2, Level, 0); }
+  public static void AddExp(FlatBufferBuilder builder, int Exp) { builder.AddInt(3, Exp, 0); }
+  public static void AddFavorExp(FlatBufferBuilder builder, int FavorExp) { builder.AddInt(4, FavorExp, 0); }
+  public static void AddFavorRank(FlatBufferBuilder builder, int FavorRank) { builder.AddInt(5, FavorRank, 0); }
+  public static void AddStarGrade(FlatBufferBuilder builder, int StarGrade) { builder.AddInt(6, StarGrade, 0); }
+  public static void AddExSkillLevel(FlatBufferBuilder builder, int ExSkillLevel) { builder.AddInt(7, ExSkillLevel, 0); }
+  public static void AddPassiveSkillLevel(FlatBufferBuilder builder, int PassiveSkillLevel) { builder.AddInt(8, PassiveSkillLevel, 0); }
+  public static void AddExtraPassiveSkillLevel(FlatBufferBuilder builder, int ExtraPassiveSkillLevel) { builder.AddInt(9, ExtraPassiveSkillLevel, 0); }
+  public static void AddCommonSkillLevel(FlatBufferBuilder builder, int CommonSkillLevel) { builder.AddInt(10, CommonSkillLevel, 0); }
+  public static void AddLeaderSkillLevel(FlatBufferBuilder builder, int LeaderSkillLevel) { builder.AddInt(11, LeaderSkillLevel, 0); }
+  public static void AddEquipSlot01(FlatBufferBuilder builder, bool EquipSlot01) { builder.AddBool(12, EquipSlot01, false); }
+  public static void AddEquipSlotTier01(FlatBufferBuilder builder, int EquipSlotTier01) { builder.AddInt(13, EquipSlotTier01, 0); }
+  public static void AddEquipSlotLevel01(FlatBufferBuilder builder, int EquipSlotLevel01) { builder.AddInt(14, EquipSlotLevel01, 0); }
+  public static void AddEquipSlot02(FlatBufferBuilder builder, bool EquipSlot02) { builder.AddBool(15, EquipSlot02, false); }
+  public static void AddEquipSlotTier02(FlatBufferBuilder builder, int EquipSlotTier02) { builder.AddInt(16, EquipSlotTier02, 0); }
+  public static void AddEquipSlotLevel02(FlatBufferBuilder builder, int EquipSlotLevel02) { builder.AddInt(17, EquipSlotLevel02, 0); }
+  public static void AddEquipSlot03(FlatBufferBuilder builder, bool EquipSlot03) { builder.AddBool(18, EquipSlot03, false); }
+  public static void AddEquipSlotTier03(FlatBufferBuilder builder, int EquipSlotTier03) { builder.AddInt(19, EquipSlotTier03, 0); }
+  public static void AddEquipSlotLevel03(FlatBufferBuilder builder, int EquipSlotLevel03) { builder.AddInt(20, EquipSlotLevel03, 0); }
+  public static void AddEquipCharacterWeapon(FlatBufferBuilder builder, bool EquipCharacterWeapon) { builder.AddBool(21, EquipCharacterWeapon, false); }
+  public static void AddEquipCharacterWeaponTier(FlatBufferBuilder builder, int EquipCharacterWeaponTier) { builder.AddInt(22, EquipCharacterWeaponTier, 0); }
+  public static void AddEquipCharacterWeaponLevel(FlatBufferBuilder builder, int EquipCharacterWeaponLevel) { builder.AddInt(23, EquipCharacterWeaponLevel, 0); }
+  public static void AddEquipCharacterGear(FlatBufferBuilder builder, bool EquipCharacterGear) { builder.AddBool(24, EquipCharacterGear, false); }
+  public static void AddEquipCharacterGearTier(FlatBufferBuilder builder, int EquipCharacterGearTier) { builder.AddInt(25, EquipCharacterGearTier, 0); }
+  public static void AddEquipCharacterGearLevel(FlatBufferBuilder builder, int EquipCharacterGearLevel) { builder.AddInt(26, EquipCharacterGearLevel, 0); }
   public static Offset<FlatDataGlobal.PresetCharacterGroupExcel> EndPresetCharacterGroupExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.PresetCharacterGroupExcel>(o);

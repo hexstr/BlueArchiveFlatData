@@ -19,7 +19,7 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public CharacterDialogEventExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public long CharacterId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CostumeUniqueId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long OriginalCharacterId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long DisplayOrder { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long EventID { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -103,7 +103,7 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
   public byte[] GetLocalizeCVGroupArray() { return __p.__vector_as_array<byte>(60); }
 
   public static Offset<FlatDataGlobal.CharacterDialogEventExcel> CreateCharacterDialogEventExcel(FlatBufferBuilder builder,
-      long CharacterId = 0,
+      long CostumeUniqueId = 0,
       long OriginalCharacterId = 0,
       long DisplayOrder = 0,
       long EventID = 0,
@@ -141,7 +141,7 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
     CharacterDialogEventExcel.AddEventID(builder, EventID);
     CharacterDialogEventExcel.AddDisplayOrder(builder, DisplayOrder);
     CharacterDialogEventExcel.AddOriginalCharacterId(builder, OriginalCharacterId);
-    CharacterDialogEventExcel.AddCharacterId(builder, CharacterId);
+    CharacterDialogEventExcel.AddCostumeUniqueId(builder, CostumeUniqueId);
     CharacterDialogEventExcel.AddLocalizeCVGroup(builder, LocalizeCVGroupOffset);
     CharacterDialogEventExcel.AddCVCollectionType(builder, cVCollectionType);
     CharacterDialogEventExcel.AddVoiceClipsEn(builder, VoiceClipsEnOffset);
@@ -166,7 +166,7 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
   }
 
   public static void StartCharacterDialogEventExcel(FlatBufferBuilder builder) { builder.StartTable(29); }
-  public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
+  public static void AddCostumeUniqueId(FlatBufferBuilder builder, long CostumeUniqueId) { builder.AddLong(0, CostumeUniqueId, 0); }
   public static void AddOriginalCharacterId(FlatBufferBuilder builder, long OriginalCharacterId) { builder.AddLong(1, OriginalCharacterId, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(2, DisplayOrder, 0); }
   public static void AddEventID(FlatBufferBuilder builder, long EventID) { builder.AddLong(3, EventID, 0); }

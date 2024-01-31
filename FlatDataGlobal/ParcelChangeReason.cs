@@ -161,6 +161,17 @@ public enum ParcelChangeReason : int
   Item_AutoSynth = 151,
   ContentSweep_MultiSweep = 152,
   Emblem_Acquire = 153,
+  MiniGame_TBGMove = 154,
+  MiniGame_TBGEncounterInput = 155,
+  MiniGame_TBGResurrect = 156,
+  MiniGame_TBGSweep = 157,
+  Shop_BeforehandGacha = 158,
+  EliminateRaid_LimitedReward = 159,
+  Craft_AutoBeginProcess = 160,
+  Craft_CompleteProcessAll = 161,
+  Craft_RewardAll = 162,
+  ShiftingCraft_CompleteProcessAll = 163,
+  ShiftingCraft_RewardAll = 164,
 };
 
 
