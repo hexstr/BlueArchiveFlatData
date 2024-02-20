@@ -70,9 +70,11 @@ public enum StatType : int
   DamageRatio2Decrease = 60,
   DamagedRatio2Increase = 61,
   DamagedRatio2Decrease = 62,
-  Max = 63,
-  EnhanceSonicRate = 64,
-  EnhanceElasticArmorRate = 65,
+  EnhanceSonicRate = 63,
+  EnhanceElasticArmorRate = 64,
+  ExDamagedRatioIncrease = 65,
+  ExDamagedRatioDecrease = 66,
+  Max = 67,
 };
 
 

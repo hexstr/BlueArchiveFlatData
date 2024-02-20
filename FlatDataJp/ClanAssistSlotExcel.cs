@@ -20,7 +20,7 @@ public struct ClanAssistSlotExcel : IFlatbufferObject
   public ClanAssistSlotExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long SlotId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.EchelonType Echelontype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EchelonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EchelonType.None; } }
+  public FlatDataJp.EchelonType EchelonType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EchelonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EchelonType.None; } }
   public long SlotNumber { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long AssistTermRewardPeriodFromSec { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long AssistRewardLimit { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -29,7 +29,7 @@ public struct ClanAssistSlotExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.ClanAssistSlotExcel> CreateClanAssistSlotExcel(FlatBufferBuilder builder,
       long SlotId = 0,
-      FlatDataJp.EchelonType echelontype = FlatDataJp.EchelonType.None,
+      FlatDataJp.EchelonType echelonType = FlatDataJp.EchelonType.None,
       long SlotNumber = 0,
       long AssistTermRewardPeriodFromSec = 0,
       long AssistRewardLimit = 0,
@@ -42,13 +42,13 @@ public struct ClanAssistSlotExcel : IFlatbufferObject
     ClanAssistSlotExcel.AddAssistTermRewardPeriodFromSec(builder, AssistTermRewardPeriodFromSec);
     ClanAssistSlotExcel.AddSlotNumber(builder, SlotNumber);
     ClanAssistSlotExcel.AddSlotId(builder, SlotId);
-    ClanAssistSlotExcel.AddEchelontype(builder, echelontype);
+    ClanAssistSlotExcel.AddEchelonType(builder, echelonType);
     return ClanAssistSlotExcel.EndClanAssistSlotExcel(builder);
   }
 
   public static void StartClanAssistSlotExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddSlotId(FlatBufferBuilder builder, long SlotId) { builder.AddLong(0, SlotId, 0); }
-  public static void AddEchelontype(FlatBufferBuilder builder, FlatDataJp.EchelonType echelontype) { builder.AddInt(1, (int)echelontype, 0); }
+  public static void AddEchelonType(FlatBufferBuilder builder, FlatDataJp.EchelonType echelonType) { builder.AddInt(1, (int)echelonType, 0); }
   public static void AddSlotNumber(FlatBufferBuilder builder, long SlotNumber) { builder.AddLong(2, SlotNumber, 0); }
   public static void AddAssistTermRewardPeriodFromSec(FlatBufferBuilder builder, long AssistTermRewardPeriodFromSec) { builder.AddLong(3, AssistTermRewardPeriodFromSec, 0); }
   public static void AddAssistRewardLimit(FlatBufferBuilder builder, long AssistRewardLimit) { builder.AddLong(4, AssistRewardLimit, 0); }

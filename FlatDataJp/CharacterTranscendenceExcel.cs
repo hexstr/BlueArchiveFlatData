@@ -60,10 +60,10 @@ public struct CharacterTranscendenceExcel : IFlatbufferObject
   public ArraySegment<byte>? GetRecipeIdBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
   public long[] GetRecipeIdArray() { return __p.__vector_as_array<long>(14); }
-  public string SkillGroupIdA(int j) { int o = __p.__offset(16); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int SkillGroupIdALength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string SkillGroupIdB(int j) { int o = __p.__offset(18); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int SkillGroupIdBLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string SkillSlotA(int j) { int o = __p.__offset(16); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int SkillSlotALength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string SkillSlotB(int j) { int o = __p.__offset(18); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int SkillSlotBLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
   public int MaxlevelStar(int j) { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
   public int MaxlevelStarLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -80,14 +80,14 @@ public struct CharacterTranscendenceExcel : IFlatbufferObject
       VectorOffset StatBonusRateHPOffset = default(VectorOffset),
       VectorOffset StatBonusRateHealOffset = default(VectorOffset),
       VectorOffset RecipeIdOffset = default(VectorOffset),
-      VectorOffset SkillGroupIdAOffset = default(VectorOffset),
-      VectorOffset SkillGroupIdBOffset = default(VectorOffset),
+      VectorOffset SkillSlotAOffset = default(VectorOffset),
+      VectorOffset SkillSlotBOffset = default(VectorOffset),
       VectorOffset MaxlevelStarOffset = default(VectorOffset)) {
     builder.StartTable(9);
     CharacterTranscendenceExcel.AddCharacterId(builder, CharacterId);
     CharacterTranscendenceExcel.AddMaxlevelStar(builder, MaxlevelStarOffset);
-    CharacterTranscendenceExcel.AddSkillGroupIdB(builder, SkillGroupIdBOffset);
-    CharacterTranscendenceExcel.AddSkillGroupIdA(builder, SkillGroupIdAOffset);
+    CharacterTranscendenceExcel.AddSkillSlotB(builder, SkillSlotBOffset);
+    CharacterTranscendenceExcel.AddSkillSlotA(builder, SkillSlotAOffset);
     CharacterTranscendenceExcel.AddRecipeId(builder, RecipeIdOffset);
     CharacterTranscendenceExcel.AddStatBonusRateHeal(builder, StatBonusRateHealOffset);
     CharacterTranscendenceExcel.AddStatBonusRateHP(builder, StatBonusRateHPOffset);
@@ -128,18 +128,18 @@ public struct CharacterTranscendenceExcel : IFlatbufferObject
   public static VectorOffset CreateRecipeIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRecipeIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartRecipeIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddSkillGroupIdA(FlatBufferBuilder builder, VectorOffset SkillGroupIdAOffset) { builder.AddOffset(6, SkillGroupIdAOffset.Value, 0); }
-  public static VectorOffset CreateSkillGroupIdAVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateSkillGroupIdAVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSkillGroupIdAVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSkillGroupIdAVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartSkillGroupIdAVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSkillGroupIdB(FlatBufferBuilder builder, VectorOffset SkillGroupIdBOffset) { builder.AddOffset(7, SkillGroupIdBOffset.Value, 0); }
-  public static VectorOffset CreateSkillGroupIdBVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateSkillGroupIdBVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSkillGroupIdBVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSkillGroupIdBVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartSkillGroupIdBVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddSkillSlotA(FlatBufferBuilder builder, VectorOffset SkillSlotAOffset) { builder.AddOffset(6, SkillSlotAOffset.Value, 0); }
+  public static VectorOffset CreateSkillSlotAVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateSkillSlotAVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSkillSlotAVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSkillSlotAVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSkillSlotAVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddSkillSlotB(FlatBufferBuilder builder, VectorOffset SkillSlotBOffset) { builder.AddOffset(7, SkillSlotBOffset.Value, 0); }
+  public static VectorOffset CreateSkillSlotBVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateSkillSlotBVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSkillSlotBVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSkillSlotBVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSkillSlotBVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddMaxlevelStar(FlatBufferBuilder builder, VectorOffset MaxlevelStarOffset) { builder.AddOffset(8, MaxlevelStarOffset.Value, 0); }
   public static VectorOffset CreateMaxlevelStarVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateMaxlevelStarVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }

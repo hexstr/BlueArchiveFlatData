@@ -39,6 +39,9 @@ public enum ShopCategoryType : int
   AcademyTicket = 29,
   Special = 30,
   Care = 31,
+  BeforehandGacha = 32,
+  EliminateRaid = 33,
+  GlobalSpecialGacha = 34,
 };
 
 

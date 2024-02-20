@@ -37,7 +37,7 @@ public struct EchelonConstraintExcel : IFlatbufferObject
   public ArraySegment<byte>? GetPersonalityIdBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public long[] GetPersonalityIdArray() { return __p.__vector_as_array<long>(10); }
-  public FlatDataJp.WeaponType Weapontype { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.WeaponType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.WeaponType.None; } }
+  public FlatDataJp.WeaponType WeaponType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.WeaponType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.WeaponType.None; } }
   public FlatDataJp.School School { get { int o = __p.__offset(14); return o != 0 ? (FlatDataJp.School)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.School.None; } }
   public FlatDataJp.Club Club { get { int o = __p.__offset(16); return o != 0 ? (FlatDataJp.Club)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.Club.None; } }
   public FlatDataJp.TacticRole Role { get { int o = __p.__offset(18); return o != 0 ? (FlatDataJp.TacticRole)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticRole.None; } }
@@ -47,7 +47,7 @@ public struct EchelonConstraintExcel : IFlatbufferObject
       bool IsWhiteList = false,
       VectorOffset CharacterIdOffset = default(VectorOffset),
       VectorOffset PersonalityIdOffset = default(VectorOffset),
-      FlatDataJp.WeaponType weapontype = FlatDataJp.WeaponType.None,
+      FlatDataJp.WeaponType weaponType = FlatDataJp.WeaponType.None,
       FlatDataJp.School school = FlatDataJp.School.None,
       FlatDataJp.Club club = FlatDataJp.Club.None,
       FlatDataJp.TacticRole Role = FlatDataJp.TacticRole.None) {
@@ -56,7 +56,7 @@ public struct EchelonConstraintExcel : IFlatbufferObject
     EchelonConstraintExcel.AddRole(builder, Role);
     EchelonConstraintExcel.AddClub(builder, club);
     EchelonConstraintExcel.AddSchool(builder, school);
-    EchelonConstraintExcel.AddWeapontype(builder, weapontype);
+    EchelonConstraintExcel.AddWeaponType(builder, weaponType);
     EchelonConstraintExcel.AddPersonalityId(builder, PersonalityIdOffset);
     EchelonConstraintExcel.AddCharacterId(builder, CharacterIdOffset);
     EchelonConstraintExcel.AddIsWhiteList(builder, IsWhiteList);
@@ -78,7 +78,7 @@ public struct EchelonConstraintExcel : IFlatbufferObject
   public static VectorOffset CreatePersonalityIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreatePersonalityIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartPersonalityIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddWeapontype(FlatBufferBuilder builder, FlatDataJp.WeaponType weapontype) { builder.AddInt(4, (int)weapontype, 0); }
+  public static void AddWeaponType(FlatBufferBuilder builder, FlatDataJp.WeaponType weaponType) { builder.AddInt(4, (int)weaponType, 0); }
   public static void AddSchool(FlatBufferBuilder builder, FlatDataJp.School school) { builder.AddInt(5, (int)school, 0); }
   public static void AddClub(FlatBufferBuilder builder, FlatDataJp.Club club) { builder.AddInt(6, (int)club, 0); }
   public static void AddRole(FlatBufferBuilder builder, FlatDataJp.TacticRole Role) { builder.AddInt(7, (int)Role, 0); }

@@ -21,19 +21,23 @@ public struct CharacterStatsTransExcel : IFlatbufferObject
 
   public FlatDataJp.StatType TransSupportStats { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.StatType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatType.None; } }
   public int TransSupportStatsFactor { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.StatTransType StatTransType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.StatTransType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatTransType.SpecialTransStat; } }
 
   public static Offset<FlatDataJp.CharacterStatsTransExcel> CreateCharacterStatsTransExcel(FlatBufferBuilder builder,
       FlatDataJp.StatType TransSupportStats = FlatDataJp.StatType.None,
-      int TransSupportStatsFactor = 0) {
-    builder.StartTable(2);
+      int TransSupportStatsFactor = 0,
+      FlatDataJp.StatTransType statTransType = FlatDataJp.StatTransType.SpecialTransStat) {
+    builder.StartTable(3);
+    CharacterStatsTransExcel.AddStatTransType(builder, statTransType);
     CharacterStatsTransExcel.AddTransSupportStatsFactor(builder, TransSupportStatsFactor);
     CharacterStatsTransExcel.AddTransSupportStats(builder, TransSupportStats);
     return CharacterStatsTransExcel.EndCharacterStatsTransExcel(builder);
   }
 
-  public static void StartCharacterStatsTransExcel(FlatBufferBuilder builder) { builder.StartTable(2); }
+  public static void StartCharacterStatsTransExcel(FlatBufferBuilder builder) { builder.StartTable(3); }
   public static void AddTransSupportStats(FlatBufferBuilder builder, FlatDataJp.StatType TransSupportStats) { builder.AddInt(0, (int)TransSupportStats, 0); }
   public static void AddTransSupportStatsFactor(FlatBufferBuilder builder, int TransSupportStatsFactor) { builder.AddInt(1, TransSupportStatsFactor, 0); }
+  public static void AddStatTransType(FlatBufferBuilder builder, FlatDataJp.StatTransType statTransType) { builder.AddInt(2, (int)statTransType, 0); }
   public static Offset<FlatDataJp.CharacterStatsTransExcel> EndCharacterStatsTransExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.CharacterStatsTransExcel>(o);

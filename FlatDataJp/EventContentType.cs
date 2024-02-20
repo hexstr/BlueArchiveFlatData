@@ -32,6 +32,11 @@ public enum EventContentType : int
   MiniEvent = 22,
   MiniGameShooting = 23,
   MiniGameShootingMission = 24,
+  MiniGameTBG = 25,
+  TimeAttackDungeon = 26,
+  EliminateRaid = 27,
+  Treasure = 28,
+  Field = 29,
 };
 
 

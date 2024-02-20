@@ -35,24 +35,30 @@ public struct CampaignUnitExcel : IFlatbufferObject
   public ArraySegment<byte>? GetPrefabNameBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetPrefabNameArray() { return __p.__vector_as_array<byte>(10); }
-  public long EnterScenarioGroupId(int j) { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int EnterScenarioGroupIdLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string StrategyPrefabName { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetEnterScenarioGroupIdBytes() { return __p.__vector_as_span<long>(12, 8); }
+  public Span<byte> GetStrategyPrefabNameBytes() { return __p.__vector_as_span<byte>(12, 1); }
 #else
-  public ArraySegment<byte>? GetEnterScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(12); }
+  public ArraySegment<byte>? GetStrategyPrefabNameBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
-  public long[] GetEnterScenarioGroupIdArray() { return __p.__vector_as_array<long>(12); }
-  public long ClearScenarioGroupId(int j) { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int ClearScenarioGroupIdLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetStrategyPrefabNameArray() { return __p.__vector_as_array<byte>(12); }
+  public long EnterScenarioGroupId(int j) { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int EnterScenarioGroupIdLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetClearScenarioGroupIdBytes() { return __p.__vector_as_span<long>(14, 8); }
+  public Span<long> GetEnterScenarioGroupIdBytes() { return __p.__vector_as_span<long>(14, 8); }
 #else
-  public ArraySegment<byte>? GetClearScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetEnterScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
-  public long[] GetClearScenarioGroupIdArray() { return __p.__vector_as_array<long>(14); }
-  public long GroundId { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool IsBoss { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long[] GetEnterScenarioGroupIdArray() { return __p.__vector_as_array<long>(14); }
+  public long ClearScenarioGroupId(int j) { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ClearScenarioGroupIdLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<long> GetClearScenarioGroupIdBytes() { return __p.__vector_as_span<long>(16, 8); }
+#else
+  public ArraySegment<byte>? GetClearScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(16); }
+#endif
+  public long[] GetClearScenarioGroupIdArray() { return __p.__vector_as_array<long>(16); }
+  public long GroundId { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int MoveRange { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public FlatDataJp.StrategyAIType AIMoveType { get { int o = __p.__offset(22); return o != 0 ? (FlatDataJp.StrategyAIType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StrategyAIType.None; } }
   public FlatDataJp.HexaUnitGrade Grade { get { int o = __p.__offset(24); return o != 0 ? (FlatDataJp.HexaUnitGrade)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.HexaUnitGrade.Grade1; } }
@@ -65,10 +71,10 @@ public struct CampaignUnitExcel : IFlatbufferObject
       uint Key = 0,
       StringOffset NameOffset = default(StringOffset),
       StringOffset PrefabNameOffset = default(StringOffset),
+      StringOffset StrategyPrefabNameOffset = default(StringOffset),
       VectorOffset EnterScenarioGroupIdOffset = default(VectorOffset),
       VectorOffset ClearScenarioGroupIdOffset = default(VectorOffset),
       long GroundId = 0,
-      bool IsBoss = false,
       int MoveRange = 0,
       FlatDataJp.StrategyAIType AIMoveType = FlatDataJp.StrategyAIType.None,
       FlatDataJp.HexaUnitGrade Grade = FlatDataJp.HexaUnitGrade.Grade1,
@@ -85,11 +91,11 @@ public struct CampaignUnitExcel : IFlatbufferObject
     CampaignUnitExcel.AddMoveRange(builder, MoveRange);
     CampaignUnitExcel.AddClearScenarioGroupId(builder, ClearScenarioGroupIdOffset);
     CampaignUnitExcel.AddEnterScenarioGroupId(builder, EnterScenarioGroupIdOffset);
+    CampaignUnitExcel.AddStrategyPrefabName(builder, StrategyPrefabNameOffset);
     CampaignUnitExcel.AddPrefabName(builder, PrefabNameOffset);
     CampaignUnitExcel.AddName(builder, NameOffset);
     CampaignUnitExcel.AddKey(builder, Key);
     CampaignUnitExcel.AddIsTacticSkip(builder, IsTacticSkip);
-    CampaignUnitExcel.AddIsBoss(builder, IsBoss);
     return CampaignUnitExcel.EndCampaignUnitExcel(builder);
   }
 
@@ -98,20 +104,20 @@ public struct CampaignUnitExcel : IFlatbufferObject
   public static void AddKey(FlatBufferBuilder builder, uint Key) { builder.AddUint(1, Key, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(2, NameOffset.Value, 0); }
   public static void AddPrefabName(FlatBufferBuilder builder, StringOffset PrefabNameOffset) { builder.AddOffset(3, PrefabNameOffset.Value, 0); }
-  public static void AddEnterScenarioGroupId(FlatBufferBuilder builder, VectorOffset EnterScenarioGroupIdOffset) { builder.AddOffset(4, EnterScenarioGroupIdOffset.Value, 0); }
+  public static void AddStrategyPrefabName(FlatBufferBuilder builder, StringOffset StrategyPrefabNameOffset) { builder.AddOffset(4, StrategyPrefabNameOffset.Value, 0); }
+  public static void AddEnterScenarioGroupId(FlatBufferBuilder builder, VectorOffset EnterScenarioGroupIdOffset) { builder.AddOffset(5, EnterScenarioGroupIdOffset.Value, 0); }
   public static VectorOffset CreateEnterScenarioGroupIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateEnterScenarioGroupIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEnterScenarioGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEnterScenarioGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartEnterScenarioGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddClearScenarioGroupId(FlatBufferBuilder builder, VectorOffset ClearScenarioGroupIdOffset) { builder.AddOffset(5, ClearScenarioGroupIdOffset.Value, 0); }
+  public static void AddClearScenarioGroupId(FlatBufferBuilder builder, VectorOffset ClearScenarioGroupIdOffset) { builder.AddOffset(6, ClearScenarioGroupIdOffset.Value, 0); }
   public static VectorOffset CreateClearScenarioGroupIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateClearScenarioGroupIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateClearScenarioGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateClearScenarioGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartClearScenarioGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(6, GroundId, 0); }
-  public static void AddIsBoss(FlatBufferBuilder builder, bool IsBoss) { builder.AddBool(7, IsBoss, false); }
+  public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(7, GroundId, 0); }
   public static void AddMoveRange(FlatBufferBuilder builder, int MoveRange) { builder.AddInt(8, MoveRange, 0); }
   public static void AddAIMoveType(FlatBufferBuilder builder, FlatDataJp.StrategyAIType AIMoveType) { builder.AddInt(9, (int)AIMoveType, 0); }
   public static void AddGrade(FlatBufferBuilder builder, FlatDataJp.HexaUnitGrade Grade) { builder.AddInt(10, (int)Grade, 0); }

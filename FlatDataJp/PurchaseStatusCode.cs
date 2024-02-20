@@ -13,6 +13,7 @@ public enum PurchaseStatusCode : int
   End = 3,
   Error = 4,
   DuplicateOrder = 5,
+  Refund = 6,
 };
 
 

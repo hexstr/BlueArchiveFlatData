@@ -20,7 +20,7 @@ public struct ScenarioBGNameExcel : IFlatbufferObject
   public ScenarioBGNameExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public uint Name { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public FlatDataJp.ProductionStep Productionstep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
+  public FlatDataJp.ProductionStep ProductionStep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
   public string BGFileName { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetBGFileNameBytes() { return __p.__vector_as_span<byte>(8, 1); }
@@ -49,7 +49,7 @@ public struct ScenarioBGNameExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.ScenarioBGNameExcel> CreateScenarioBGNameExcel(FlatBufferBuilder builder,
       uint Name = 0,
-      FlatDataJp.ProductionStep productionstep = FlatDataJp.ProductionStep.ToDo,
+      FlatDataJp.ProductionStep productionStep = FlatDataJp.ProductionStep.ToDo,
       StringOffset BGFileNameOffset = default(StringOffset),
       FlatDataJp.ScenarioBGType BGType = FlatDataJp.ScenarioBGType.None,
       StringOffset AnimationRootOffset = default(StringOffset),
@@ -65,14 +65,14 @@ public struct ScenarioBGNameExcel : IFlatbufferObject
     ScenarioBGNameExcel.AddAnimationRoot(builder, AnimationRootOffset);
     ScenarioBGNameExcel.AddBGType(builder, BGType);
     ScenarioBGNameExcel.AddBGFileName(builder, BGFileNameOffset);
-    ScenarioBGNameExcel.AddProductionstep(builder, productionstep);
+    ScenarioBGNameExcel.AddProductionStep(builder, productionStep);
     ScenarioBGNameExcel.AddName(builder, Name);
     return ScenarioBGNameExcel.EndScenarioBGNameExcel(builder);
   }
 
   public static void StartScenarioBGNameExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
   public static void AddName(FlatBufferBuilder builder, uint Name) { builder.AddUint(0, Name, 0); }
-  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataJp.ProductionStep productionstep) { builder.AddInt(1, (int)productionstep, 0); }
+  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataJp.ProductionStep productionStep) { builder.AddInt(1, (int)productionStep, 0); }
   public static void AddBGFileName(FlatBufferBuilder builder, StringOffset BGFileNameOffset) { builder.AddOffset(2, BGFileNameOffset.Value, 0); }
   public static void AddBGType(FlatBufferBuilder builder, FlatDataJp.ScenarioBGType BGType) { builder.AddInt(3, (int)BGType, 0); }
   public static void AddAnimationRoot(FlatBufferBuilder builder, StringOffset AnimationRootOffset) { builder.AddOffset(4, AnimationRootOffset.Value, 0); }

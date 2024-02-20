@@ -39,6 +39,7 @@ public struct MinigameTBGObjectExcel : IFlatbufferObject
   public long ObjectCostId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int ObjectCostAmount { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public bool Disposable { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool ReEncounterCost { get { int o = __p.__offset(20); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataJp.MinigameTBGObjectExcel> CreateMinigameTBGObjectExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
@@ -48,8 +49,9 @@ public struct MinigameTBGObjectExcel : IFlatbufferObject
       FlatDataJp.ParcelType ObjectCostType = FlatDataJp.ParcelType.None,
       long ObjectCostId = 0,
       int ObjectCostAmount = 0,
-      bool Disposable = false) {
-    builder.StartTable(8);
+      bool Disposable = false,
+      bool ReEncounterCost = false) {
+    builder.StartTable(9);
     MinigameTBGObjectExcel.AddObjectCostId(builder, ObjectCostId);
     MinigameTBGObjectExcel.AddUniqueId(builder, UniqueId);
     MinigameTBGObjectExcel.AddObjectCostAmount(builder, ObjectCostAmount);
@@ -57,11 +59,12 @@ public struct MinigameTBGObjectExcel : IFlatbufferObject
     MinigameTBGObjectExcel.AddObjectType(builder, ObjectType);
     MinigameTBGObjectExcel.AddPrefabName(builder, PrefabNameOffset);
     MinigameTBGObjectExcel.AddKey(builder, KeyOffset);
+    MinigameTBGObjectExcel.AddReEncounterCost(builder, ReEncounterCost);
     MinigameTBGObjectExcel.AddDisposable(builder, Disposable);
     return MinigameTBGObjectExcel.EndMinigameTBGObjectExcel(builder);
   }
 
-  public static void StartMinigameTBGObjectExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
+  public static void StartMinigameTBGObjectExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
   public static void AddKey(FlatBufferBuilder builder, StringOffset KeyOffset) { builder.AddOffset(1, KeyOffset.Value, 0); }
   public static void AddPrefabName(FlatBufferBuilder builder, StringOffset PrefabNameOffset) { builder.AddOffset(2, PrefabNameOffset.Value, 0); }
@@ -70,6 +73,7 @@ public struct MinigameTBGObjectExcel : IFlatbufferObject
   public static void AddObjectCostId(FlatBufferBuilder builder, long ObjectCostId) { builder.AddLong(5, ObjectCostId, 0); }
   public static void AddObjectCostAmount(FlatBufferBuilder builder, int ObjectCostAmount) { builder.AddInt(6, ObjectCostAmount, 0); }
   public static void AddDisposable(FlatBufferBuilder builder, bool Disposable) { builder.AddBool(7, Disposable, false); }
+  public static void AddReEncounterCost(FlatBufferBuilder builder, bool ReEncounterCost) { builder.AddBool(8, ReEncounterCost, false); }
   public static Offset<FlatDataJp.MinigameTBGObjectExcel> EndMinigameTBGObjectExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.MinigameTBGObjectExcel>(o);

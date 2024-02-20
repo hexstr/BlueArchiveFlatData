@@ -20,7 +20,7 @@ public struct ContentsShortcutExcel : IFlatbufferObject
   public ContentsShortcutExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long UniqueId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ContentType Contenttype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ContentType.None; } }
+  public FlatDataJp.ContentType ContentType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ContentType.None; } }
   public long EventContentId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ScenarioModeVolume { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ScenarioModeChapter { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -54,7 +54,7 @@ public struct ContentsShortcutExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.ContentsShortcutExcel> CreateContentsShortcutExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
-      FlatDataJp.ContentType contenttype = FlatDataJp.ContentType.None,
+      FlatDataJp.ContentType contentType = FlatDataJp.ContentType.None,
       long EventContentId = 0,
       long ScenarioModeVolume = 0,
       long ScenarioModeChapter = 0,
@@ -79,13 +79,13 @@ public struct ContentsShortcutExcel : IFlatbufferObject
     ContentsShortcutExcel.AddConquestMapDifficulty(builder, ConquestMapDifficulty);
     ContentsShortcutExcel.AddShortcutCloseTime(builder, ShortcutCloseTimeOffset);
     ContentsShortcutExcel.AddShortcutOpenTime(builder, ShortcutOpenTimeOffset);
-    ContentsShortcutExcel.AddContenttype(builder, contenttype);
+    ContentsShortcutExcel.AddContentType(builder, contentType);
     return ContentsShortcutExcel.EndContentsShortcutExcel(builder);
   }
 
   public static void StartContentsShortcutExcel(FlatBufferBuilder builder) { builder.StartTable(13); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
-  public static void AddContenttype(FlatBufferBuilder builder, FlatDataJp.ContentType contenttype) { builder.AddInt(1, (int)contenttype, 0); }
+  public static void AddContentType(FlatBufferBuilder builder, FlatDataJp.ContentType contentType) { builder.AddInt(1, (int)contentType, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(2, EventContentId, 0); }
   public static void AddScenarioModeVolume(FlatBufferBuilder builder, long ScenarioModeVolume) { builder.AddLong(3, ScenarioModeVolume, 0); }
   public static void AddScenarioModeChapter(FlatBufferBuilder builder, long ScenarioModeChapter) { builder.AddLong(4, ScenarioModeChapter, 0); }

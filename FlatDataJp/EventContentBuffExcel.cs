@@ -21,7 +21,7 @@ public struct EventContentBuffExcel : IFlatbufferObject
 
   public long EventContentBuffId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public bool IsBuff { get { int o = __p.__offset(6); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataJp.Tag CharacterTag { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.Tag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.Tag.Furniture; } }
+  public FlatDataJp.Tag CharacterTag { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.Tag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.Tag.A; } }
   public FlatDataJp.EventContentBuffFindRule EnumType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.EventContentBuffFindRule)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventContentBuffFindRule.None; } }
   public string EnumTypeValue(int j) { int o = __p.__offset(12); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
   public int EnumTypeValueLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
@@ -57,7 +57,7 @@ public struct EventContentBuffExcel : IFlatbufferObject
   public static Offset<FlatDataJp.EventContentBuffExcel> CreateEventContentBuffExcel(FlatBufferBuilder builder,
       long EventContentBuffId = 0,
       bool IsBuff = false,
-      FlatDataJp.Tag CharacterTag = FlatDataJp.Tag.Furniture,
+      FlatDataJp.Tag CharacterTag = FlatDataJp.Tag.A,
       FlatDataJp.EventContentBuffFindRule EnumType = FlatDataJp.EventContentBuffFindRule.None,
       VectorOffset EnumTypeValueOffset = default(VectorOffset),
       StringOffset SkillGroupIdOffset = default(StringOffset),

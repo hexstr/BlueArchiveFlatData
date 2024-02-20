@@ -27,6 +27,7 @@ public enum ContentType : int
   WorldRaid = 17,
   EliminateRaid = 18,
   Chaser = 19,
+  FieldContentStage = 20,
 };
 
 

@@ -27,6 +27,10 @@ public enum EchelonType : int
   Conquest = 17,
   ConquestManage = 18,
   StoryStrategyStage = 19,
+  EliminateRaid01 = 20,
+  EliminateRaid02 = 21,
+  EliminateRaid03 = 22,
+  Field = 23,
 };
 
 

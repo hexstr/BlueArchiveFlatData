@@ -29,8 +29,14 @@ public struct ConquestProgressResourceExcel : IFlatbufferObject
   public ArraySegment<byte>? GetProgressResourceBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetProgressResourceArray() { return __p.__vector_as_array<byte>(10); }
-  public string Voice(int j) { int o = __p.__offset(12); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public uint VoiceId(int j) { int o = __p.__offset(12); return o != 0 ? __p.bb.GetUint(__p.__vector(o) + j * 4) : (uint)0; }
+  public int VoiceIdLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<uint> GetVoiceIdBytes() { return __p.__vector_as_span<uint>(12, 4); }
+#else
+  public ArraySegment<byte>? GetVoiceIdBytes() { return __p.__vector_as_arraysegment(12); }
+#endif
+  public uint[] GetVoiceIdArray() { return __p.__vector_as_array<uint>(12); }
   public string ProgressLocalizeCode { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetProgressLocalizeCodeBytes() { return __p.__vector_as_span<byte>(14, 1); }
@@ -44,13 +50,13 @@ public struct ConquestProgressResourceExcel : IFlatbufferObject
       long EventContentId = 0,
       FlatDataJp.ConquestProgressType Group = FlatDataJp.ConquestProgressType.None,
       StringOffset ProgressResourceOffset = default(StringOffset),
-      VectorOffset VoiceOffset = default(VectorOffset),
+      VectorOffset VoiceIdOffset = default(VectorOffset),
       StringOffset ProgressLocalizeCodeOffset = default(StringOffset)) {
     builder.StartTable(6);
     ConquestProgressResourceExcel.AddEventContentId(builder, EventContentId);
     ConquestProgressResourceExcel.AddId(builder, Id);
     ConquestProgressResourceExcel.AddProgressLocalizeCode(builder, ProgressLocalizeCodeOffset);
-    ConquestProgressResourceExcel.AddVoice(builder, VoiceOffset);
+    ConquestProgressResourceExcel.AddVoiceId(builder, VoiceIdOffset);
     ConquestProgressResourceExcel.AddProgressResource(builder, ProgressResourceOffset);
     ConquestProgressResourceExcel.AddGroup(builder, Group);
     return ConquestProgressResourceExcel.EndConquestProgressResourceExcel(builder);
@@ -61,12 +67,12 @@ public struct ConquestProgressResourceExcel : IFlatbufferObject
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(1, EventContentId, 0); }
   public static void AddGroup(FlatBufferBuilder builder, FlatDataJp.ConquestProgressType Group) { builder.AddInt(2, (int)Group, 0); }
   public static void AddProgressResource(FlatBufferBuilder builder, StringOffset ProgressResourceOffset) { builder.AddOffset(3, ProgressResourceOffset.Value, 0); }
-  public static void AddVoice(FlatBufferBuilder builder, VectorOffset VoiceOffset) { builder.AddOffset(4, VoiceOffset.Value, 0); }
-  public static VectorOffset CreateVoiceVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartVoiceVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddVoiceId(FlatBufferBuilder builder, VectorOffset VoiceIdOffset) { builder.AddOffset(4, VoiceIdOffset.Value, 0); }
+  public static VectorOffset CreateVoiceIdVector(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddUint(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, ArraySegment<uint> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<uint>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartVoiceIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddProgressLocalizeCode(FlatBufferBuilder builder, StringOffset ProgressLocalizeCodeOffset) { builder.AddOffset(5, ProgressLocalizeCodeOffset.Value, 0); }
   public static Offset<FlatDataJp.ConquestProgressResourceExcel> EndConquestProgressResourceExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();

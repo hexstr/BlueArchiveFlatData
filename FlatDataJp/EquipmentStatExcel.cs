@@ -20,7 +20,7 @@ public struct EquipmentStatExcel : IFlatbufferObject
   public EquipmentStatExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long EquipmentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.StatLevelUpType Statleveluptype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatLevelUpType.Standard; } }
+  public FlatDataJp.StatLevelUpType StatLevelUpType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatLevelUpType.Standard; } }
   public FlatDataJp.EquipmentOptionType StatType(int j) { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.EquipmentOptionType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.EquipmentOptionType)0; }
   public int StatTypeLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -49,7 +49,7 @@ public struct EquipmentStatExcel : IFlatbufferObject
   public long LevelUpFeedExp { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataJp.CurrencyTypes LevelUpFeedCostCurrency { get { int o = __p.__offset(18); return o != 0 ? (FlatDataJp.CurrencyTypes)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.CurrencyTypes.Invalid; } }
   public long LevelUpFeedCostAmount { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.EquipmentCategory Equipmentcategory { get { int o = __p.__offset(22); return o != 0 ? (FlatDataJp.EquipmentCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EquipmentCategory.Unable; } }
+  public FlatDataJp.EquipmentCategory EquipmentCategory { get { int o = __p.__offset(22); return o != 0 ? (FlatDataJp.EquipmentCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EquipmentCategory.Unable; } }
   public long LevelUpFeedAddExp { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int DefaultMaxLevel { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int TranscendenceMax { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
@@ -63,7 +63,7 @@ public struct EquipmentStatExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.EquipmentStatExcel> CreateEquipmentStatExcel(FlatBufferBuilder builder,
       long EquipmentId = 0,
-      FlatDataJp.StatLevelUpType statleveluptype = FlatDataJp.StatLevelUpType.Standard,
+      FlatDataJp.StatLevelUpType statLevelUpType = FlatDataJp.StatLevelUpType.Standard,
       VectorOffset StatTypeOffset = default(VectorOffset),
       VectorOffset MinStatOffset = default(VectorOffset),
       VectorOffset MaxStatOffset = default(VectorOffset),
@@ -71,7 +71,7 @@ public struct EquipmentStatExcel : IFlatbufferObject
       long LevelUpFeedExp = 0,
       FlatDataJp.CurrencyTypes LevelUpFeedCostCurrency = FlatDataJp.CurrencyTypes.Invalid,
       long LevelUpFeedCostAmount = 0,
-      FlatDataJp.EquipmentCategory equipmentcategory = FlatDataJp.EquipmentCategory.Unable,
+      FlatDataJp.EquipmentCategory equipmentCategory = FlatDataJp.EquipmentCategory.Unable,
       long LevelUpFeedAddExp = 0,
       int DefaultMaxLevel = 0,
       int TranscendenceMax = 0,
@@ -84,19 +84,19 @@ public struct EquipmentStatExcel : IFlatbufferObject
     EquipmentStatExcel.AddDamageFactorGroupId(builder, DamageFactorGroupIdOffset);
     EquipmentStatExcel.AddTranscendenceMax(builder, TranscendenceMax);
     EquipmentStatExcel.AddDefaultMaxLevel(builder, DefaultMaxLevel);
-    EquipmentStatExcel.AddEquipmentcategory(builder, equipmentcategory);
+    EquipmentStatExcel.AddEquipmentCategory(builder, equipmentCategory);
     EquipmentStatExcel.AddLevelUpFeedCostCurrency(builder, LevelUpFeedCostCurrency);
     EquipmentStatExcel.AddLevelUpInsertLimit(builder, LevelUpInsertLimit);
     EquipmentStatExcel.AddMaxStat(builder, MaxStatOffset);
     EquipmentStatExcel.AddMinStat(builder, MinStatOffset);
     EquipmentStatExcel.AddStatType(builder, StatTypeOffset);
-    EquipmentStatExcel.AddStatleveluptype(builder, statleveluptype);
+    EquipmentStatExcel.AddStatLevelUpType(builder, statLevelUpType);
     return EquipmentStatExcel.EndEquipmentStatExcel(builder);
   }
 
   public static void StartEquipmentStatExcel(FlatBufferBuilder builder) { builder.StartTable(14); }
   public static void AddEquipmentId(FlatBufferBuilder builder, long EquipmentId) { builder.AddLong(0, EquipmentId, 0); }
-  public static void AddStatleveluptype(FlatBufferBuilder builder, FlatDataJp.StatLevelUpType statleveluptype) { builder.AddInt(1, (int)statleveluptype, 0); }
+  public static void AddStatLevelUpType(FlatBufferBuilder builder, FlatDataJp.StatLevelUpType statLevelUpType) { builder.AddInt(1, (int)statLevelUpType, 0); }
   public static void AddStatType(FlatBufferBuilder builder, VectorOffset StatTypeOffset) { builder.AddOffset(2, StatTypeOffset.Value, 0); }
   public static VectorOffset CreateStatTypeVector(FlatBufferBuilder builder, FlatDataJp.EquipmentOptionType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateStatTypeVectorBlock(FlatBufferBuilder builder, FlatDataJp.EquipmentOptionType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
@@ -119,7 +119,7 @@ public struct EquipmentStatExcel : IFlatbufferObject
   public static void AddLevelUpFeedExp(FlatBufferBuilder builder, long LevelUpFeedExp) { builder.AddLong(6, LevelUpFeedExp, 0); }
   public static void AddLevelUpFeedCostCurrency(FlatBufferBuilder builder, FlatDataJp.CurrencyTypes LevelUpFeedCostCurrency) { builder.AddInt(7, (int)LevelUpFeedCostCurrency, 0); }
   public static void AddLevelUpFeedCostAmount(FlatBufferBuilder builder, long LevelUpFeedCostAmount) { builder.AddLong(8, LevelUpFeedCostAmount, 0); }
-  public static void AddEquipmentcategory(FlatBufferBuilder builder, FlatDataJp.EquipmentCategory equipmentcategory) { builder.AddInt(9, (int)equipmentcategory, 0); }
+  public static void AddEquipmentCategory(FlatBufferBuilder builder, FlatDataJp.EquipmentCategory equipmentCategory) { builder.AddInt(9, (int)equipmentCategory, 0); }
   public static void AddLevelUpFeedAddExp(FlatBufferBuilder builder, long LevelUpFeedAddExp) { builder.AddLong(10, LevelUpFeedAddExp, 0); }
   public static void AddDefaultMaxLevel(FlatBufferBuilder builder, int DefaultMaxLevel) { builder.AddInt(11, DefaultMaxLevel, 0); }
   public static void AddTranscendenceMax(FlatBufferBuilder builder, int TranscendenceMax) { builder.AddInt(12, TranscendenceMax, 0); }

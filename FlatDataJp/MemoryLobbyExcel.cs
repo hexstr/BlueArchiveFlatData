@@ -20,7 +20,7 @@ public struct MemoryLobbyExcel : IFlatbufferObject
   public MemoryLobbyExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ProductionStep Productionstep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
+  public FlatDataJp.ProductionStep ProductionStep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
   public uint LocalizeEtcId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public long CharacterId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string PrefabName { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
@@ -30,48 +30,50 @@ public struct MemoryLobbyExcel : IFlatbufferObject
   public ArraySegment<byte>? GetPrefabNameBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
   public byte[] GetPrefabNameArray() { return __p.__vector_as_array<byte>(12); }
-  public string SlotTextureName { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataJp.MemoryLobbyCategory MemoryLobbyCategory { get { int o = __p.__offset(14); return o != 0 ? (FlatDataJp.MemoryLobbyCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MemoryLobbyCategory.None; } }
+  public string SlotTextureName { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSlotTextureNameBytes() { return __p.__vector_as_span<byte>(14, 1); }
+  public Span<byte> GetSlotTextureNameBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetSlotTextureNameBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetSlotTextureNameBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetSlotTextureNameArray() { return __p.__vector_as_array<byte>(14); }
-  public string RewardTextureName { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSlotTextureNameArray() { return __p.__vector_as_array<byte>(16); }
+  public string RewardTextureName { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetRewardTextureNameBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<byte> GetRewardTextureNameBytes() { return __p.__vector_as_span<byte>(18, 1); }
 #else
-  public ArraySegment<byte>? GetRewardTextureNameBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetRewardTextureNameBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public byte[] GetRewardTextureNameArray() { return __p.__vector_as_array<byte>(16); }
-  public long BGMId { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string AudioClipJp { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetRewardTextureNameArray() { return __p.__vector_as_array<byte>(18); }
+  public long BGMId { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string AudioClipJp { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAudioClipJpBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetAudioClipJpBytes() { return __p.__vector_as_span<byte>(22, 1); }
 #else
-  public ArraySegment<byte>? GetAudioClipJpBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetAudioClipJpBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetAudioClipJpArray() { return __p.__vector_as_array<byte>(20); }
-  public string AudioClipKr { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetAudioClipJpArray() { return __p.__vector_as_array<byte>(22); }
+  public string AudioClipKr { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAudioClipKrBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetAudioClipKrBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetAudioClipKrBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetAudioClipKrBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetAudioClipKrArray() { return __p.__vector_as_array<byte>(22); }
+  public byte[] GetAudioClipKrArray() { return __p.__vector_as_array<byte>(24); }
 
   public static Offset<FlatDataJp.MemoryLobbyExcel> CreateMemoryLobbyExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataJp.ProductionStep productionstep = FlatDataJp.ProductionStep.ToDo,
+      FlatDataJp.ProductionStep productionStep = FlatDataJp.ProductionStep.ToDo,
       uint LocalizeEtcId = 0,
       long CharacterId = 0,
       StringOffset PrefabNameOffset = default(StringOffset),
+      FlatDataJp.MemoryLobbyCategory memoryLobbyCategory = FlatDataJp.MemoryLobbyCategory.None,
       StringOffset SlotTextureNameOffset = default(StringOffset),
       StringOffset RewardTextureNameOffset = default(StringOffset),
       long BGMId = 0,
       StringOffset AudioClipJpOffset = default(StringOffset),
       StringOffset AudioClipKrOffset = default(StringOffset)) {
-    builder.StartTable(10);
+    builder.StartTable(11);
     MemoryLobbyExcel.AddBGMId(builder, BGMId);
     MemoryLobbyExcel.AddCharacterId(builder, CharacterId);
     MemoryLobbyExcel.AddId(builder, Id);
@@ -79,23 +81,25 @@ public struct MemoryLobbyExcel : IFlatbufferObject
     MemoryLobbyExcel.AddAudioClipJp(builder, AudioClipJpOffset);
     MemoryLobbyExcel.AddRewardTextureName(builder, RewardTextureNameOffset);
     MemoryLobbyExcel.AddSlotTextureName(builder, SlotTextureNameOffset);
+    MemoryLobbyExcel.AddMemoryLobbyCategory(builder, memoryLobbyCategory);
     MemoryLobbyExcel.AddPrefabName(builder, PrefabNameOffset);
     MemoryLobbyExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
-    MemoryLobbyExcel.AddProductionstep(builder, productionstep);
+    MemoryLobbyExcel.AddProductionStep(builder, productionStep);
     return MemoryLobbyExcel.EndMemoryLobbyExcel(builder);
   }
 
-  public static void StartMemoryLobbyExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
+  public static void StartMemoryLobbyExcel(FlatBufferBuilder builder) { builder.StartTable(11); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataJp.ProductionStep productionstep) { builder.AddInt(1, (int)productionstep, 0); }
+  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataJp.ProductionStep productionStep) { builder.AddInt(1, (int)productionStep, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(2, LocalizeEtcId, 0); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(3, CharacterId, 0); }
   public static void AddPrefabName(FlatBufferBuilder builder, StringOffset PrefabNameOffset) { builder.AddOffset(4, PrefabNameOffset.Value, 0); }
-  public static void AddSlotTextureName(FlatBufferBuilder builder, StringOffset SlotTextureNameOffset) { builder.AddOffset(5, SlotTextureNameOffset.Value, 0); }
-  public static void AddRewardTextureName(FlatBufferBuilder builder, StringOffset RewardTextureNameOffset) { builder.AddOffset(6, RewardTextureNameOffset.Value, 0); }
-  public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(7, BGMId, 0); }
-  public static void AddAudioClipJp(FlatBufferBuilder builder, StringOffset AudioClipJpOffset) { builder.AddOffset(8, AudioClipJpOffset.Value, 0); }
-  public static void AddAudioClipKr(FlatBufferBuilder builder, StringOffset AudioClipKrOffset) { builder.AddOffset(9, AudioClipKrOffset.Value, 0); }
+  public static void AddMemoryLobbyCategory(FlatBufferBuilder builder, FlatDataJp.MemoryLobbyCategory memoryLobbyCategory) { builder.AddInt(5, (int)memoryLobbyCategory, 0); }
+  public static void AddSlotTextureName(FlatBufferBuilder builder, StringOffset SlotTextureNameOffset) { builder.AddOffset(6, SlotTextureNameOffset.Value, 0); }
+  public static void AddRewardTextureName(FlatBufferBuilder builder, StringOffset RewardTextureNameOffset) { builder.AddOffset(7, RewardTextureNameOffset.Value, 0); }
+  public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(8, BGMId, 0); }
+  public static void AddAudioClipJp(FlatBufferBuilder builder, StringOffset AudioClipJpOffset) { builder.AddOffset(9, AudioClipJpOffset.Value, 0); }
+  public static void AddAudioClipKr(FlatBufferBuilder builder, StringOffset AudioClipKrOffset) { builder.AddOffset(10, AudioClipKrOffset.Value, 0); }
   public static Offset<FlatDataJp.MemoryLobbyExcel> EndMemoryLobbyExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.MemoryLobbyExcel>(o);

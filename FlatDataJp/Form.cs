@@ -19,20 +19,20 @@ public struct Form : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public Form __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public FlatDataJp.MoveEnd? Moveend { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.MoveEnd?)(new FlatDataJp.MoveEnd()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public FlatDataJp.MoveEnd? MoveEnd { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.MoveEnd?)(new FlatDataJp.MoveEnd()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
   public FlatDataJp.Motion? PublicSkill { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.Motion?)(new FlatDataJp.Motion()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
 
   public static Offset<FlatDataJp.Form> CreateForm(FlatBufferBuilder builder,
-      Offset<FlatDataJp.MoveEnd> moveendOffset = default(Offset<FlatDataJp.MoveEnd>),
+      Offset<FlatDataJp.MoveEnd> moveEndOffset = default(Offset<FlatDataJp.MoveEnd>),
       Offset<FlatDataJp.Motion> PublicSkillOffset = default(Offset<FlatDataJp.Motion>)) {
     builder.StartTable(2);
     Form.AddPublicSkill(builder, PublicSkillOffset);
-    Form.AddMoveend(builder, moveendOffset);
+    Form.AddMoveEnd(builder, moveEndOffset);
     return Form.EndForm(builder);
   }
 
   public static void StartForm(FlatBufferBuilder builder) { builder.StartTable(2); }
-  public static void AddMoveend(FlatBufferBuilder builder, Offset<FlatDataJp.MoveEnd> moveendOffset) { builder.AddOffset(0, moveendOffset.Value, 0); }
+  public static void AddMoveEnd(FlatBufferBuilder builder, Offset<FlatDataJp.MoveEnd> moveEndOffset) { builder.AddOffset(0, moveEndOffset.Value, 0); }
   public static void AddPublicSkill(FlatBufferBuilder builder, Offset<FlatDataJp.Motion> PublicSkillOffset) { builder.AddOffset(1, PublicSkillOffset.Value, 0); }
   public static Offset<FlatDataJp.Form> EndForm(FlatBufferBuilder builder) {
     int o = builder.EndTable();

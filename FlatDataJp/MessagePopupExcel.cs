@@ -20,7 +20,7 @@ public struct MessagePopupExcel : IFlatbufferObject
   public MessagePopupExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public uint StringId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public FlatDataJp.MessagePopupLayout Messagepopuplayout { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.MessagePopupLayout)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MessagePopupLayout.TextOnly; } }
+  public FlatDataJp.MessagePopupLayout MessagePopupLayout { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.MessagePopupLayout)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MessagePopupLayout.TextOnly; } }
   public FlatDataJp.MessagePopupImagePositionType OrderType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.MessagePopupImagePositionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MessagePopupImagePositionType.ImageFirst; } }
   public string Image { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -30,83 +30,103 @@ public struct MessagePopupExcel : IFlatbufferObject
 #endif
   public byte[] GetImageArray() { return __p.__vector_as_array<byte>(10); }
   public uint TitleText { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public uint MessageText { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public bool DisplayXButton { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataJp.MessagePopupButtonType Button(int j) { int o = __p.__offset(18); return o != 0 ? (FlatDataJp.MessagePopupButtonType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.MessagePopupButtonType)0; }
-  public int ButtonLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public uint SubTitleText { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public uint MessageText { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public uint ConditionText(int j) { int o = __p.__offset(18); return o != 0 ? __p.bb.GetUint(__p.__vector(o) + j * 4) : (uint)0; }
+  public int ConditionTextLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataJp.MessagePopupButtonType> GetButtonBytes() { return __p.__vector_as_span<FlatDataJp.MessagePopupButtonType>(18, 4); }
+  public Span<uint> GetConditionTextBytes() { return __p.__vector_as_span<uint>(18, 4); }
 #else
-  public ArraySegment<byte>? GetButtonBytes() { return __p.__vector_as_arraysegment(18); }
+  public ArraySegment<byte>? GetConditionTextBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public FlatDataJp.MessagePopupButtonType[] GetButtonArray() { int o = __p.__offset(18); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.MessagePopupButtonType[] a = new FlatDataJp.MessagePopupButtonType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.MessagePopupButtonType)__p.bb.GetInt(p + i * 4); } return a; }
-  public uint ButtonText(int j) { int o = __p.__offset(20); return o != 0 ? __p.bb.GetUint(__p.__vector(o) + j * 4) : (uint)0; }
-  public int ButtonTextLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public uint[] GetConditionTextArray() { return __p.__vector_as_array<uint>(18); }
+  public bool DisplayXButton { get { int o = __p.__offset(20); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataJp.MessagePopupButtonType Button(int j) { int o = __p.__offset(22); return o != 0 ? (FlatDataJp.MessagePopupButtonType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.MessagePopupButtonType)0; }
+  public int ButtonLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<uint> GetButtonTextBytes() { return __p.__vector_as_span<uint>(20, 4); }
+  public Span<FlatDataJp.MessagePopupButtonType> GetButtonBytes() { return __p.__vector_as_span<FlatDataJp.MessagePopupButtonType>(22, 4); }
 #else
-  public ArraySegment<byte>? GetButtonTextBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetButtonBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public uint[] GetButtonTextArray() { return __p.__vector_as_array<uint>(20); }
-  public string ButtonCommand(int j) { int o = __p.__offset(22); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int ButtonCommandLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string ButtonParameter(int j) { int o = __p.__offset(24); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int ButtonParameterLength { get { int o = __p.__offset(24); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataJp.MessagePopupButtonType[] GetButtonArray() { int o = __p.__offset(22); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.MessagePopupButtonType[] a = new FlatDataJp.MessagePopupButtonType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.MessagePopupButtonType)__p.bb.GetInt(p + i * 4); } return a; }
+  public uint ButtonText(int j) { int o = __p.__offset(24); return o != 0 ? __p.bb.GetUint(__p.__vector(o) + j * 4) : (uint)0; }
+  public int ButtonTextLength { get { int o = __p.__offset(24); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<uint> GetButtonTextBytes() { return __p.__vector_as_span<uint>(24, 4); }
+#else
+  public ArraySegment<byte>? GetButtonTextBytes() { return __p.__vector_as_arraysegment(24); }
+#endif
+  public uint[] GetButtonTextArray() { return __p.__vector_as_array<uint>(24); }
+  public string ButtonCommand(int j) { int o = __p.__offset(26); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int ButtonCommandLength { get { int o = __p.__offset(26); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string ButtonParameter(int j) { int o = __p.__offset(28); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int ButtonParameterLength { get { int o = __p.__offset(28); return o != 0 ? __p.__vector_len(o) : 0; } }
 
   public static Offset<FlatDataJp.MessagePopupExcel> CreateMessagePopupExcel(FlatBufferBuilder builder,
       uint StringId = 0,
-      FlatDataJp.MessagePopupLayout messagepopuplayout = FlatDataJp.MessagePopupLayout.TextOnly,
+      FlatDataJp.MessagePopupLayout messagePopupLayout = FlatDataJp.MessagePopupLayout.TextOnly,
       FlatDataJp.MessagePopupImagePositionType OrderType = FlatDataJp.MessagePopupImagePositionType.ImageFirst,
       StringOffset ImageOffset = default(StringOffset),
       uint TitleText = 0,
+      uint SubTitleText = 0,
       uint MessageText = 0,
+      VectorOffset ConditionTextOffset = default(VectorOffset),
       bool DisplayXButton = false,
       VectorOffset ButtonOffset = default(VectorOffset),
       VectorOffset ButtonTextOffset = default(VectorOffset),
       VectorOffset ButtonCommandOffset = default(VectorOffset),
       VectorOffset ButtonParameterOffset = default(VectorOffset)) {
-    builder.StartTable(11);
+    builder.StartTable(13);
     MessagePopupExcel.AddButtonParameter(builder, ButtonParameterOffset);
     MessagePopupExcel.AddButtonCommand(builder, ButtonCommandOffset);
     MessagePopupExcel.AddButtonText(builder, ButtonTextOffset);
     MessagePopupExcel.AddButton(builder, ButtonOffset);
+    MessagePopupExcel.AddConditionText(builder, ConditionTextOffset);
     MessagePopupExcel.AddMessageText(builder, MessageText);
+    MessagePopupExcel.AddSubTitleText(builder, SubTitleText);
     MessagePopupExcel.AddTitleText(builder, TitleText);
     MessagePopupExcel.AddImage(builder, ImageOffset);
     MessagePopupExcel.AddOrderType(builder, OrderType);
-    MessagePopupExcel.AddMessagepopuplayout(builder, messagepopuplayout);
+    MessagePopupExcel.AddMessagePopupLayout(builder, messagePopupLayout);
     MessagePopupExcel.AddStringId(builder, StringId);
     MessagePopupExcel.AddDisplayXButton(builder, DisplayXButton);
     return MessagePopupExcel.EndMessagePopupExcel(builder);
   }
 
-  public static void StartMessagePopupExcel(FlatBufferBuilder builder) { builder.StartTable(11); }
+  public static void StartMessagePopupExcel(FlatBufferBuilder builder) { builder.StartTable(13); }
   public static void AddStringId(FlatBufferBuilder builder, uint StringId) { builder.AddUint(0, StringId, 0); }
-  public static void AddMessagepopuplayout(FlatBufferBuilder builder, FlatDataJp.MessagePopupLayout messagepopuplayout) { builder.AddInt(1, (int)messagepopuplayout, 0); }
+  public static void AddMessagePopupLayout(FlatBufferBuilder builder, FlatDataJp.MessagePopupLayout messagePopupLayout) { builder.AddInt(1, (int)messagePopupLayout, 0); }
   public static void AddOrderType(FlatBufferBuilder builder, FlatDataJp.MessagePopupImagePositionType OrderType) { builder.AddInt(2, (int)OrderType, 0); }
   public static void AddImage(FlatBufferBuilder builder, StringOffset ImageOffset) { builder.AddOffset(3, ImageOffset.Value, 0); }
   public static void AddTitleText(FlatBufferBuilder builder, uint TitleText) { builder.AddUint(4, TitleText, 0); }
-  public static void AddMessageText(FlatBufferBuilder builder, uint MessageText) { builder.AddUint(5, MessageText, 0); }
-  public static void AddDisplayXButton(FlatBufferBuilder builder, bool DisplayXButton) { builder.AddBool(6, DisplayXButton, false); }
-  public static void AddButton(FlatBufferBuilder builder, VectorOffset ButtonOffset) { builder.AddOffset(7, ButtonOffset.Value, 0); }
+  public static void AddSubTitleText(FlatBufferBuilder builder, uint SubTitleText) { builder.AddUint(5, SubTitleText, 0); }
+  public static void AddMessageText(FlatBufferBuilder builder, uint MessageText) { builder.AddUint(6, MessageText, 0); }
+  public static void AddConditionText(FlatBufferBuilder builder, VectorOffset ConditionTextOffset) { builder.AddOffset(7, ConditionTextOffset.Value, 0); }
+  public static VectorOffset CreateConditionTextVector(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddUint(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateConditionTextVectorBlock(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateConditionTextVectorBlock(FlatBufferBuilder builder, ArraySegment<uint> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateConditionTextVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<uint>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartConditionTextVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddDisplayXButton(FlatBufferBuilder builder, bool DisplayXButton) { builder.AddBool(8, DisplayXButton, false); }
+  public static void AddButton(FlatBufferBuilder builder, VectorOffset ButtonOffset) { builder.AddOffset(9, ButtonOffset.Value, 0); }
   public static VectorOffset CreateButtonVector(FlatBufferBuilder builder, FlatDataJp.MessagePopupButtonType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateButtonVectorBlock(FlatBufferBuilder builder, FlatDataJp.MessagePopupButtonType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateButtonVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.MessagePopupButtonType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateButtonVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.MessagePopupButtonType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartButtonVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddButtonText(FlatBufferBuilder builder, VectorOffset ButtonTextOffset) { builder.AddOffset(8, ButtonTextOffset.Value, 0); }
+  public static void AddButtonText(FlatBufferBuilder builder, VectorOffset ButtonTextOffset) { builder.AddOffset(10, ButtonTextOffset.Value, 0); }
   public static VectorOffset CreateButtonTextVector(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddUint(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateButtonTextVectorBlock(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateButtonTextVectorBlock(FlatBufferBuilder builder, ArraySegment<uint> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateButtonTextVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<uint>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartButtonTextVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddButtonCommand(FlatBufferBuilder builder, VectorOffset ButtonCommandOffset) { builder.AddOffset(9, ButtonCommandOffset.Value, 0); }
+  public static void AddButtonCommand(FlatBufferBuilder builder, VectorOffset ButtonCommandOffset) { builder.AddOffset(11, ButtonCommandOffset.Value, 0); }
   public static VectorOffset CreateButtonCommandVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateButtonCommandVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateButtonCommandVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateButtonCommandVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartButtonCommandVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddButtonParameter(FlatBufferBuilder builder, VectorOffset ButtonParameterOffset) { builder.AddOffset(10, ButtonParameterOffset.Value, 0); }
+  public static void AddButtonParameter(FlatBufferBuilder builder, VectorOffset ButtonParameterOffset) { builder.AddOffset(12, ButtonParameterOffset.Value, 0); }
   public static VectorOffset CreateButtonParameterVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateButtonParameterVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateButtonParameterVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }

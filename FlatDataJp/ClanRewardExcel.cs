@@ -19,15 +19,15 @@ public struct ClanRewardExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public ClanRewardExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public FlatDataJp.ClanRewardType Clanrewardtype { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.ClanRewardType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ClanRewardType.None; } }
-  public FlatDataJp.EchelonType Echelontype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EchelonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EchelonType.None; } }
+  public FlatDataJp.ClanRewardType ClanRewardType { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.ClanRewardType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ClanRewardType.None; } }
+  public FlatDataJp.EchelonType EchelonType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EchelonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EchelonType.None; } }
   public FlatDataJp.ParcelType RewardParcelType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
   public long RewardParcelId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long RewardParcelAmount { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataJp.ClanRewardExcel> CreateClanRewardExcel(FlatBufferBuilder builder,
-      FlatDataJp.ClanRewardType clanrewardtype = FlatDataJp.ClanRewardType.None,
-      FlatDataJp.EchelonType echelontype = FlatDataJp.EchelonType.None,
+      FlatDataJp.ClanRewardType clanRewardType = FlatDataJp.ClanRewardType.None,
+      FlatDataJp.EchelonType echelonType = FlatDataJp.EchelonType.None,
       FlatDataJp.ParcelType RewardParcelType = FlatDataJp.ParcelType.None,
       long RewardParcelId = 0,
       long RewardParcelAmount = 0) {
@@ -35,14 +35,14 @@ public struct ClanRewardExcel : IFlatbufferObject
     ClanRewardExcel.AddRewardParcelAmount(builder, RewardParcelAmount);
     ClanRewardExcel.AddRewardParcelId(builder, RewardParcelId);
     ClanRewardExcel.AddRewardParcelType(builder, RewardParcelType);
-    ClanRewardExcel.AddEchelontype(builder, echelontype);
-    ClanRewardExcel.AddClanrewardtype(builder, clanrewardtype);
+    ClanRewardExcel.AddEchelonType(builder, echelonType);
+    ClanRewardExcel.AddClanRewardType(builder, clanRewardType);
     return ClanRewardExcel.EndClanRewardExcel(builder);
   }
 
   public static void StartClanRewardExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
-  public static void AddClanrewardtype(FlatBufferBuilder builder, FlatDataJp.ClanRewardType clanrewardtype) { builder.AddInt(0, (int)clanrewardtype, 0); }
-  public static void AddEchelontype(FlatBufferBuilder builder, FlatDataJp.EchelonType echelontype) { builder.AddInt(1, (int)echelontype, 0); }
+  public static void AddClanRewardType(FlatBufferBuilder builder, FlatDataJp.ClanRewardType clanRewardType) { builder.AddInt(0, (int)clanRewardType, 0); }
+  public static void AddEchelonType(FlatBufferBuilder builder, FlatDataJp.EchelonType echelonType) { builder.AddInt(1, (int)echelonType, 0); }
   public static void AddRewardParcelType(FlatBufferBuilder builder, FlatDataJp.ParcelType RewardParcelType) { builder.AddInt(2, (int)RewardParcelType, 0); }
   public static void AddRewardParcelId(FlatBufferBuilder builder, long RewardParcelId) { builder.AddLong(3, RewardParcelId, 0); }
   public static void AddRewardParcelAmount(FlatBufferBuilder builder, long RewardParcelAmount) { builder.AddLong(4, RewardParcelAmount, 0); }

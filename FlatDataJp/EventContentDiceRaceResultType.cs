@@ -16,6 +16,13 @@ public enum EventContentDiceRaceResultType : int
   MoveForward = 6,
   LapFinish = 7,
   EventOccur = 8,
+  DiceResultFixed1 = 9,
+  DiceResultFixed2 = 10,
+  DiceResultFixed3 = 11,
+  DiceResultFixed4 = 12,
+  DiceResultFixed5 = 13,
+  DiceResultFixed6 = 14,
+  SpecialReward = 15,
 };
 
 

@@ -28,6 +28,7 @@ public enum RewardTag : int
   ConquestFootholdUpgrade3 = 18,
   ConquestErosionPenalty = 19,
   GemBonus = 20,
+  GemPaid = 21,
 };
 
 

@@ -21,7 +21,7 @@ public struct EventContentDiceRaceNodeExcel : IFlatbufferObject
 
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long NodeId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.EventContentDiceRaceNodeType Eventcontentdiceracenodetype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.EventContentDiceRaceNodeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventContentDiceRaceNodeType.StartNode; } }
+  public FlatDataJp.EventContentDiceRaceNodeType EventContentDiceRaceNodeType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.EventContentDiceRaceNodeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventContentDiceRaceNodeType.StartNode; } }
   public int MoveForwardTypeArg { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public FlatDataJp.ParcelType RewardParcelType(int j) { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.ParcelType)0; }
   public int RewardParcelTypeLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
@@ -51,7 +51,7 @@ public struct EventContentDiceRaceNodeExcel : IFlatbufferObject
   public static Offset<FlatDataJp.EventContentDiceRaceNodeExcel> CreateEventContentDiceRaceNodeExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
       long NodeId = 0,
-      FlatDataJp.EventContentDiceRaceNodeType eventcontentdiceracenodetype = FlatDataJp.EventContentDiceRaceNodeType.StartNode,
+      FlatDataJp.EventContentDiceRaceNodeType eventContentDiceRaceNodeType = FlatDataJp.EventContentDiceRaceNodeType.StartNode,
       int MoveForwardTypeArg = 0,
       VectorOffset RewardParcelTypeOffset = default(VectorOffset),
       VectorOffset RewardParcelIdOffset = default(VectorOffset),
@@ -63,14 +63,14 @@ public struct EventContentDiceRaceNodeExcel : IFlatbufferObject
     EventContentDiceRaceNodeExcel.AddRewardParcelId(builder, RewardParcelIdOffset);
     EventContentDiceRaceNodeExcel.AddRewardParcelType(builder, RewardParcelTypeOffset);
     EventContentDiceRaceNodeExcel.AddMoveForwardTypeArg(builder, MoveForwardTypeArg);
-    EventContentDiceRaceNodeExcel.AddEventcontentdiceracenodetype(builder, eventcontentdiceracenodetype);
+    EventContentDiceRaceNodeExcel.AddEventContentDiceRaceNodeType(builder, eventContentDiceRaceNodeType);
     return EventContentDiceRaceNodeExcel.EndEventContentDiceRaceNodeExcel(builder);
   }
 
   public static void StartEventContentDiceRaceNodeExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddNodeId(FlatBufferBuilder builder, long NodeId) { builder.AddLong(1, NodeId, 0); }
-  public static void AddEventcontentdiceracenodetype(FlatBufferBuilder builder, FlatDataJp.EventContentDiceRaceNodeType eventcontentdiceracenodetype) { builder.AddInt(2, (int)eventcontentdiceracenodetype, 0); }
+  public static void AddEventContentDiceRaceNodeType(FlatBufferBuilder builder, FlatDataJp.EventContentDiceRaceNodeType eventContentDiceRaceNodeType) { builder.AddInt(2, (int)eventContentDiceRaceNodeType, 0); }
   public static void AddMoveForwardTypeArg(FlatBufferBuilder builder, int MoveForwardTypeArg) { builder.AddInt(3, MoveForwardTypeArg, 0); }
   public static void AddRewardParcelType(FlatBufferBuilder builder, VectorOffset RewardParcelTypeOffset) { builder.AddOffset(4, RewardParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateRewardParcelTypeVector(FlatBufferBuilder builder, FlatDataJp.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }

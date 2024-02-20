@@ -19,6 +19,7 @@ public enum ShortcutContentType : int
   Craft = 9,
   SchoolDungeon = 10,
   Academy = 11,
+  Mission = 12,
 };
 
 

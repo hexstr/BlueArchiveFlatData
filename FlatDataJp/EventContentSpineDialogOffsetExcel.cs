@@ -20,8 +20,8 @@ public struct EventContentSpineDialogOffsetExcel : IFlatbufferObject
   public EventContentSpineDialogOffsetExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.EventContentType Eventcontenttype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EventContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventContentType.Stage; } }
-  public long CharacterId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataJp.EventContentType EventContentType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EventContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventContentType.Stage; } }
+  public long CostumeUniqueId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public float SpineOffsetX { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public float SpineOffsetY { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public float DialogOffsetX { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
@@ -29,27 +29,27 @@ public struct EventContentSpineDialogOffsetExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.EventContentSpineDialogOffsetExcel> CreateEventContentSpineDialogOffsetExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
-      FlatDataJp.EventContentType eventcontenttype = FlatDataJp.EventContentType.Stage,
-      long CharacterId = 0,
+      FlatDataJp.EventContentType eventContentType = FlatDataJp.EventContentType.Stage,
+      long CostumeUniqueId = 0,
       float SpineOffsetX = 0.0f,
       float SpineOffsetY = 0.0f,
       float DialogOffsetX = 0.0f,
       float DialogOffsetY = 0.0f) {
     builder.StartTable(7);
-    EventContentSpineDialogOffsetExcel.AddCharacterId(builder, CharacterId);
+    EventContentSpineDialogOffsetExcel.AddCostumeUniqueId(builder, CostumeUniqueId);
     EventContentSpineDialogOffsetExcel.AddEventContentId(builder, EventContentId);
     EventContentSpineDialogOffsetExcel.AddDialogOffsetY(builder, DialogOffsetY);
     EventContentSpineDialogOffsetExcel.AddDialogOffsetX(builder, DialogOffsetX);
     EventContentSpineDialogOffsetExcel.AddSpineOffsetY(builder, SpineOffsetY);
     EventContentSpineDialogOffsetExcel.AddSpineOffsetX(builder, SpineOffsetX);
-    EventContentSpineDialogOffsetExcel.AddEventcontenttype(builder, eventcontenttype);
+    EventContentSpineDialogOffsetExcel.AddEventContentType(builder, eventContentType);
     return EventContentSpineDialogOffsetExcel.EndEventContentSpineDialogOffsetExcel(builder);
   }
 
   public static void StartEventContentSpineDialogOffsetExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
-  public static void AddEventcontenttype(FlatBufferBuilder builder, FlatDataJp.EventContentType eventcontenttype) { builder.AddInt(1, (int)eventcontenttype, 0); }
-  public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(2, CharacterId, 0); }
+  public static void AddEventContentType(FlatBufferBuilder builder, FlatDataJp.EventContentType eventContentType) { builder.AddInt(1, (int)eventContentType, 0); }
+  public static void AddCostumeUniqueId(FlatBufferBuilder builder, long CostumeUniqueId) { builder.AddLong(2, CostumeUniqueId, 0); }
   public static void AddSpineOffsetX(FlatBufferBuilder builder, float SpineOffsetX) { builder.AddFloat(3, SpineOffsetX, 0.0f); }
   public static void AddSpineOffsetY(FlatBufferBuilder builder, float SpineOffsetY) { builder.AddFloat(4, SpineOffsetY, 0.0f); }
   public static void AddDialogOffsetX(FlatBufferBuilder builder, float DialogOffsetX) { builder.AddFloat(5, DialogOffsetX, 0.0f); }

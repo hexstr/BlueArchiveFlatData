@@ -19,61 +19,77 @@ public struct CafeRankExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public CafeRankExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public long Rank { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RecipeId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ComfortMax { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ActionPointProductionCoefficient { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ActionPointProductionCorrectionValue { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ActionPointStorageMax { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long GoldProductionCoefficient { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long GoldProductionCorrectionValue { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long GoldStorageMax { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long TagCountMax { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int CharacterVisitMin { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int CharacterVisitMax { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long CafeId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long Rank { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RecipeId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ComfortMax { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long TagCountMax { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int CharacterVisitMin { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CharacterVisitMax { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CafeVisitWeightBase { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CafeVisitWeightTagBonusStep(int j) { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int CafeVisitWeightTagBonusStepLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetCafeVisitWeightTagBonusStepBytes() { return __p.__vector_as_span<int>(20, 4); }
+#else
+  public ArraySegment<byte>? GetCafeVisitWeightTagBonusStepBytes() { return __p.__vector_as_arraysegment(20); }
+#endif
+  public int[] GetCafeVisitWeightTagBonusStepArray() { return __p.__vector_as_array<int>(20); }
+  public int CafeVisitWeightTagBonus(int j) { int o = __p.__offset(22); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int CafeVisitWeightTagBonusLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetCafeVisitWeightTagBonusBytes() { return __p.__vector_as_span<int>(22, 4); }
+#else
+  public ArraySegment<byte>? GetCafeVisitWeightTagBonusBytes() { return __p.__vector_as_arraysegment(22); }
+#endif
+  public int[] GetCafeVisitWeightTagBonusArray() { return __p.__vector_as_array<int>(22); }
 
   public static Offset<FlatDataJp.CafeRankExcel> CreateCafeRankExcel(FlatBufferBuilder builder,
+      long CafeId = 0,
       long Rank = 0,
       long RecipeId = 0,
       long ComfortMax = 0,
-      long ActionPointProductionCoefficient = 0,
-      long ActionPointProductionCorrectionValue = 0,
-      long ActionPointStorageMax = 0,
-      long GoldProductionCoefficient = 0,
-      long GoldProductionCorrectionValue = 0,
-      long GoldStorageMax = 0,
       long TagCountMax = 0,
       int CharacterVisitMin = 0,
-      int CharacterVisitMax = 0) {
-    builder.StartTable(12);
+      int CharacterVisitMax = 0,
+      int CafeVisitWeightBase = 0,
+      VectorOffset CafeVisitWeightTagBonusStepOffset = default(VectorOffset),
+      VectorOffset CafeVisitWeightTagBonusOffset = default(VectorOffset)) {
+    builder.StartTable(10);
     CafeRankExcel.AddTagCountMax(builder, TagCountMax);
-    CafeRankExcel.AddGoldStorageMax(builder, GoldStorageMax);
-    CafeRankExcel.AddGoldProductionCorrectionValue(builder, GoldProductionCorrectionValue);
-    CafeRankExcel.AddGoldProductionCoefficient(builder, GoldProductionCoefficient);
-    CafeRankExcel.AddActionPointStorageMax(builder, ActionPointStorageMax);
-    CafeRankExcel.AddActionPointProductionCorrectionValue(builder, ActionPointProductionCorrectionValue);
-    CafeRankExcel.AddActionPointProductionCoefficient(builder, ActionPointProductionCoefficient);
     CafeRankExcel.AddComfortMax(builder, ComfortMax);
     CafeRankExcel.AddRecipeId(builder, RecipeId);
     CafeRankExcel.AddRank(builder, Rank);
+    CafeRankExcel.AddCafeId(builder, CafeId);
+    CafeRankExcel.AddCafeVisitWeightTagBonus(builder, CafeVisitWeightTagBonusOffset);
+    CafeRankExcel.AddCafeVisitWeightTagBonusStep(builder, CafeVisitWeightTagBonusStepOffset);
+    CafeRankExcel.AddCafeVisitWeightBase(builder, CafeVisitWeightBase);
     CafeRankExcel.AddCharacterVisitMax(builder, CharacterVisitMax);
     CafeRankExcel.AddCharacterVisitMin(builder, CharacterVisitMin);
     return CafeRankExcel.EndCafeRankExcel(builder);
   }
 
-  public static void StartCafeRankExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
-  public static void AddRank(FlatBufferBuilder builder, long Rank) { builder.AddLong(0, Rank, 0); }
-  public static void AddRecipeId(FlatBufferBuilder builder, long RecipeId) { builder.AddLong(1, RecipeId, 0); }
-  public static void AddComfortMax(FlatBufferBuilder builder, long ComfortMax) { builder.AddLong(2, ComfortMax, 0); }
-  public static void AddActionPointProductionCoefficient(FlatBufferBuilder builder, long ActionPointProductionCoefficient) { builder.AddLong(3, ActionPointProductionCoefficient, 0); }
-  public static void AddActionPointProductionCorrectionValue(FlatBufferBuilder builder, long ActionPointProductionCorrectionValue) { builder.AddLong(4, ActionPointProductionCorrectionValue, 0); }
-  public static void AddActionPointStorageMax(FlatBufferBuilder builder, long ActionPointStorageMax) { builder.AddLong(5, ActionPointStorageMax, 0); }
-  public static void AddGoldProductionCoefficient(FlatBufferBuilder builder, long GoldProductionCoefficient) { builder.AddLong(6, GoldProductionCoefficient, 0); }
-  public static void AddGoldProductionCorrectionValue(FlatBufferBuilder builder, long GoldProductionCorrectionValue) { builder.AddLong(7, GoldProductionCorrectionValue, 0); }
-  public static void AddGoldStorageMax(FlatBufferBuilder builder, long GoldStorageMax) { builder.AddLong(8, GoldStorageMax, 0); }
-  public static void AddTagCountMax(FlatBufferBuilder builder, long TagCountMax) { builder.AddLong(9, TagCountMax, 0); }
-  public static void AddCharacterVisitMin(FlatBufferBuilder builder, int CharacterVisitMin) { builder.AddInt(10, CharacterVisitMin, 0); }
-  public static void AddCharacterVisitMax(FlatBufferBuilder builder, int CharacterVisitMax) { builder.AddInt(11, CharacterVisitMax, 0); }
+  public static void StartCafeRankExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
+  public static void AddCafeId(FlatBufferBuilder builder, long CafeId) { builder.AddLong(0, CafeId, 0); }
+  public static void AddRank(FlatBufferBuilder builder, long Rank) { builder.AddLong(1, Rank, 0); }
+  public static void AddRecipeId(FlatBufferBuilder builder, long RecipeId) { builder.AddLong(2, RecipeId, 0); }
+  public static void AddComfortMax(FlatBufferBuilder builder, long ComfortMax) { builder.AddLong(3, ComfortMax, 0); }
+  public static void AddTagCountMax(FlatBufferBuilder builder, long TagCountMax) { builder.AddLong(4, TagCountMax, 0); }
+  public static void AddCharacterVisitMin(FlatBufferBuilder builder, int CharacterVisitMin) { builder.AddInt(5, CharacterVisitMin, 0); }
+  public static void AddCharacterVisitMax(FlatBufferBuilder builder, int CharacterVisitMax) { builder.AddInt(6, CharacterVisitMax, 0); }
+  public static void AddCafeVisitWeightBase(FlatBufferBuilder builder, int CafeVisitWeightBase) { builder.AddInt(7, CafeVisitWeightBase, 0); }
+  public static void AddCafeVisitWeightTagBonusStep(FlatBufferBuilder builder, VectorOffset CafeVisitWeightTagBonusStepOffset) { builder.AddOffset(8, CafeVisitWeightTagBonusStepOffset.Value, 0); }
+  public static VectorOffset CreateCafeVisitWeightTagBonusStepVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateCafeVisitWeightTagBonusStepVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateCafeVisitWeightTagBonusStepVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateCafeVisitWeightTagBonusStepVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartCafeVisitWeightTagBonusStepVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddCafeVisitWeightTagBonus(FlatBufferBuilder builder, VectorOffset CafeVisitWeightTagBonusOffset) { builder.AddOffset(9, CafeVisitWeightTagBonusOffset.Value, 0); }
+  public static VectorOffset CreateCafeVisitWeightTagBonusVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateCafeVisitWeightTagBonusVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateCafeVisitWeightTagBonusVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateCafeVisitWeightTagBonusVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartCafeVisitWeightTagBonusVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static Offset<FlatDataJp.CafeRankExcel> EndCafeRankExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.CafeRankExcel>(o);

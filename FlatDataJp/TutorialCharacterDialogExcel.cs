@@ -41,45 +41,29 @@ public struct TutorialCharacterDialogExcel : IFlatbufferObject
   public ArraySegment<byte>? GetLocalizeJPBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetLocalizeJPArray() { return __p.__vector_as_array<byte>(10); }
-  public string SoundPathKR { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetSoundPathKRBytes() { return __p.__vector_as_span<byte>(12, 1); }
-#else
-  public ArraySegment<byte>? GetSoundPathKRBytes() { return __p.__vector_as_arraysegment(12); }
-#endif
-  public byte[] GetSoundPathKRArray() { return __p.__vector_as_array<byte>(12); }
-  public string SoundPathJP { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetSoundPathJPBytes() { return __p.__vector_as_span<byte>(14, 1); }
-#else
-  public ArraySegment<byte>? GetSoundPathJPBytes() { return __p.__vector_as_arraysegment(14); }
-#endif
-  public byte[] GetSoundPathJPArray() { return __p.__vector_as_array<byte>(14); }
+  public uint VoiceId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
 
   public static Offset<FlatDataJp.TutorialCharacterDialogExcel> CreateTutorialCharacterDialogExcel(FlatBufferBuilder builder,
       long TalkId = 0,
       StringOffset AnimationNameOffset = default(StringOffset),
       StringOffset LocalizeKROffset = default(StringOffset),
       StringOffset LocalizeJPOffset = default(StringOffset),
-      StringOffset SoundPathKROffset = default(StringOffset),
-      StringOffset SoundPathJPOffset = default(StringOffset)) {
-    builder.StartTable(6);
+      uint VoiceId = 0) {
+    builder.StartTable(5);
     TutorialCharacterDialogExcel.AddTalkId(builder, TalkId);
-    TutorialCharacterDialogExcel.AddSoundPathJP(builder, SoundPathJPOffset);
-    TutorialCharacterDialogExcel.AddSoundPathKR(builder, SoundPathKROffset);
+    TutorialCharacterDialogExcel.AddVoiceId(builder, VoiceId);
     TutorialCharacterDialogExcel.AddLocalizeJP(builder, LocalizeJPOffset);
     TutorialCharacterDialogExcel.AddLocalizeKR(builder, LocalizeKROffset);
     TutorialCharacterDialogExcel.AddAnimationName(builder, AnimationNameOffset);
     return TutorialCharacterDialogExcel.EndTutorialCharacterDialogExcel(builder);
   }
 
-  public static void StartTutorialCharacterDialogExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
+  public static void StartTutorialCharacterDialogExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddTalkId(FlatBufferBuilder builder, long TalkId) { builder.AddLong(0, TalkId, 0); }
   public static void AddAnimationName(FlatBufferBuilder builder, StringOffset AnimationNameOffset) { builder.AddOffset(1, AnimationNameOffset.Value, 0); }
   public static void AddLocalizeKR(FlatBufferBuilder builder, StringOffset LocalizeKROffset) { builder.AddOffset(2, LocalizeKROffset.Value, 0); }
   public static void AddLocalizeJP(FlatBufferBuilder builder, StringOffset LocalizeJPOffset) { builder.AddOffset(3, LocalizeJPOffset.Value, 0); }
-  public static void AddSoundPathKR(FlatBufferBuilder builder, StringOffset SoundPathKROffset) { builder.AddOffset(4, SoundPathKROffset.Value, 0); }
-  public static void AddSoundPathJP(FlatBufferBuilder builder, StringOffset SoundPathJPOffset) { builder.AddOffset(5, SoundPathJPOffset.Value, 0); }
+  public static void AddVoiceId(FlatBufferBuilder builder, uint VoiceId) { builder.AddUint(4, VoiceId, 0); }
   public static Offset<FlatDataJp.TutorialCharacterDialogExcel> EndTutorialCharacterDialogExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.TutorialCharacterDialogExcel>(o);

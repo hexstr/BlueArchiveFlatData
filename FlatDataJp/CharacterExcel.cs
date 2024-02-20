@@ -27,215 +27,111 @@ public struct CharacterExcel : IFlatbufferObject
   public ArraySegment<byte>? GetDevNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetDevNameArray() { return __p.__vector_as_array<byte>(6); }
-  public FlatDataJp.ProductionStep Productionstep { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
-  public bool CollectionVisible { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string ReleaseDate { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long CostumeGroupId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool IsPlayable { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataJp.ProductionStep ProductionStep { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
+  public bool CollectionVisible { get { int o = __p.__offset(14); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string ReleaseDate { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetReleaseDateBytes() { return __p.__vector_as_span<byte>(12, 1); }
+  public Span<byte> GetReleaseDateBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetReleaseDateBytes() { return __p.__vector_as_arraysegment(12); }
+  public ArraySegment<byte>? GetReleaseDateBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetReleaseDateArray() { return __p.__vector_as_array<byte>(12); }
-  public string CollectionVisibleStartDate { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetReleaseDateArray() { return __p.__vector_as_array<byte>(16); }
+  public string CollectionVisibleStartDate { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetCollectionVisibleStartDateBytes() { return __p.__vector_as_span<byte>(14, 1); }
+  public Span<byte> GetCollectionVisibleStartDateBytes() { return __p.__vector_as_span<byte>(18, 1); }
 #else
-  public ArraySegment<byte>? GetCollectionVisibleStartDateBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetCollectionVisibleStartDateBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public byte[] GetCollectionVisibleStartDateArray() { return __p.__vector_as_array<byte>(14); }
-  public string CollectionVisibleEndDate { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetCollectionVisibleStartDateArray() { return __p.__vector_as_array<byte>(18); }
+  public string CollectionVisibleEndDate { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetCollectionVisibleEndDateBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<byte> GetCollectionVisibleEndDateBytes() { return __p.__vector_as_span<byte>(20, 1); }
 #else
-  public ArraySegment<byte>? GetCollectionVisibleEndDateBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetCollectionVisibleEndDateBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public byte[] GetCollectionVisibleEndDateArray() { return __p.__vector_as_array<byte>(16); }
-  public bool IsPlayableCharacter { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public uint LocalizeEtcId { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public FlatDataJp.Rarity Rarity { get { int o = __p.__offset(22); return o != 0 ? (FlatDataJp.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.Rarity.N; } }
-  public bool IsNPC { get { int o = __p.__offset(24); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataJp.TacticEntityType Tacticentitytype { get { int o = __p.__offset(26); return o != 0 ? (FlatDataJp.TacticEntityType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticEntityType.None; } }
-  public bool CanSurvive { get { int o = __p.__offset(28); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool IsDummy { get { int o = __p.__offset(30); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public int SubPartsCount { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.TacticRole Tacticrole { get { int o = __p.__offset(34); return o != 0 ? (FlatDataJp.TacticRole)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticRole.None; } }
-  public FlatDataJp.WeaponType Weapontype { get { int o = __p.__offset(36); return o != 0 ? (FlatDataJp.WeaponType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.WeaponType.None; } }
-  public FlatDataJp.TacticRange Tacticrange { get { int o = __p.__offset(38); return o != 0 ? (FlatDataJp.TacticRange)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticRange.Back; } }
-  public FlatDataJp.BulletType Bullettype { get { int o = __p.__offset(40); return o != 0 ? (FlatDataJp.BulletType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.BulletType.Normal; } }
-  public FlatDataJp.ArmorType Armortype { get { int o = __p.__offset(42); return o != 0 ? (FlatDataJp.ArmorType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ArmorType.LightArmor; } }
-  public FlatDataJp.AimIKType Aimiktype { get { int o = __p.__offset(44); return o != 0 ? (FlatDataJp.AimIKType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.AimIKType.None; } }
-  public FlatDataJp.School School { get { int o = __p.__offset(46); return o != 0 ? (FlatDataJp.School)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.School.None; } }
-  public FlatDataJp.Club Club { get { int o = __p.__offset(48); return o != 0 ? (FlatDataJp.Club)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.Club.None; } }
-  public int DefaultStarGrade { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int MaxStarGrade { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.StatLevelUpType Statleveluptype { get { int o = __p.__offset(54); return o != 0 ? (FlatDataJp.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatLevelUpType.Standard; } }
-  public FlatDataJp.SquadType Squadtype { get { int o = __p.__offset(56); return o != 0 ? (FlatDataJp.SquadType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.SquadType.None; } }
-  public bool Jumpable { get { int o = __p.__offset(58); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long PersonalityId { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CharacterAIId { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string ScenarioCharacter { get { int o = __p.__offset(64); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetCollectionVisibleEndDateArray() { return __p.__vector_as_array<byte>(20); }
+  public bool IsPlayableCharacter { get { int o = __p.__offset(22); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public uint LocalizeEtcId { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public FlatDataJp.Rarity Rarity { get { int o = __p.__offset(26); return o != 0 ? (FlatDataJp.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.Rarity.N; } }
+  public bool IsNPC { get { int o = __p.__offset(28); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataJp.TacticEntityType TacticEntityType { get { int o = __p.__offset(30); return o != 0 ? (FlatDataJp.TacticEntityType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticEntityType.None; } }
+  public bool CanSurvive { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool IsDummy { get { int o = __p.__offset(34); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public int SubPartsCount { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.TacticRole TacticRole { get { int o = __p.__offset(38); return o != 0 ? (FlatDataJp.TacticRole)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticRole.None; } }
+  public FlatDataJp.WeaponType WeaponType { get { int o = __p.__offset(40); return o != 0 ? (FlatDataJp.WeaponType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.WeaponType.None; } }
+  public FlatDataJp.TacticRange TacticRange { get { int o = __p.__offset(42); return o != 0 ? (FlatDataJp.TacticRange)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticRange.Back; } }
+  public FlatDataJp.BulletType BulletType { get { int o = __p.__offset(44); return o != 0 ? (FlatDataJp.BulletType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.BulletType.Normal; } }
+  public FlatDataJp.ArmorType ArmorType { get { int o = __p.__offset(46); return o != 0 ? (FlatDataJp.ArmorType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ArmorType.LightArmor; } }
+  public FlatDataJp.AimIKType AimIKType { get { int o = __p.__offset(48); return o != 0 ? (FlatDataJp.AimIKType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.AimIKType.None; } }
+  public FlatDataJp.School School { get { int o = __p.__offset(50); return o != 0 ? (FlatDataJp.School)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.School.None; } }
+  public FlatDataJp.Club Club { get { int o = __p.__offset(52); return o != 0 ? (FlatDataJp.Club)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.Club.None; } }
+  public int DefaultStarGrade { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MaxStarGrade { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.StatLevelUpType StatLevelUpType { get { int o = __p.__offset(58); return o != 0 ? (FlatDataJp.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatLevelUpType.Standard; } }
+  public FlatDataJp.SquadType SquadType { get { int o = __p.__offset(60); return o != 0 ? (FlatDataJp.SquadType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.SquadType.None; } }
+  public bool Jumpable { get { int o = __p.__offset(62); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long PersonalityId { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CharacterAIId { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ExternalBTId { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string ScenarioCharacter { get { int o = __p.__offset(70); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetScenarioCharacterBytes() { return __p.__vector_as_span<byte>(64, 1); }
+  public Span<byte> GetScenarioCharacterBytes() { return __p.__vector_as_span<byte>(70, 1); }
 #else
-  public ArraySegment<byte>? GetScenarioCharacterBytes() { return __p.__vector_as_arraysegment(64); }
+  public ArraySegment<byte>? GetScenarioCharacterBytes() { return __p.__vector_as_arraysegment(70); }
 #endif
-  public byte[] GetScenarioCharacterArray() { return __p.__vector_as_array<byte>(64); }
-  public uint SpawnTemplateId { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public int FavorLevelupType { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.EquipmentCategory EquipmentSlot(int j) { int o = __p.__offset(70); return o != 0 ? (FlatDataJp.EquipmentCategory)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.EquipmentCategory)0; }
-  public int EquipmentSlotLength { get { int o = __p.__offset(70); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetScenarioCharacterArray() { return __p.__vector_as_array<byte>(70); }
+  public uint SpawnTemplateId { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public int FavorLevelupType { get { int o = __p.__offset(74); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.EquipmentCategory EquipmentSlot(int j) { int o = __p.__offset(76); return o != 0 ? (FlatDataJp.EquipmentCategory)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.EquipmentCategory)0; }
+  public int EquipmentSlotLength { get { int o = __p.__offset(76); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataJp.EquipmentCategory> GetEquipmentSlotBytes() { return __p.__vector_as_span<FlatDataJp.EquipmentCategory>(70, 4); }
+  public Span<FlatDataJp.EquipmentCategory> GetEquipmentSlotBytes() { return __p.__vector_as_span<FlatDataJp.EquipmentCategory>(76, 4); }
 #else
-  public ArraySegment<byte>? GetEquipmentSlotBytes() { return __p.__vector_as_arraysegment(70); }
+  public ArraySegment<byte>? GetEquipmentSlotBytes() { return __p.__vector_as_arraysegment(76); }
 #endif
-  public FlatDataJp.EquipmentCategory[] GetEquipmentSlotArray() { int o = __p.__offset(70); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.EquipmentCategory[] a = new FlatDataJp.EquipmentCategory[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.EquipmentCategory)__p.bb.GetInt(p + i * 4); } return a; }
-  public string SpineResourceName { get { int o = __p.__offset(72); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataJp.EquipmentCategory[] GetEquipmentSlotArray() { int o = __p.__offset(76); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.EquipmentCategory[] a = new FlatDataJp.EquipmentCategory[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.EquipmentCategory)__p.bb.GetInt(p + i * 4); } return a; }
+  public uint WeaponLocalizeId { get { int o = __p.__offset(78); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public bool DisplayEnemyInfo { get { int o = __p.__offset(80); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long BodyRadius { get { int o = __p.__offset(82); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RandomEffectRadius { get { int o = __p.__offset(84); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool HPBarHide { get { int o = __p.__offset(86); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public float HpBarHeight { get { int o = __p.__offset(88); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float HighlightFloaterHeight { get { int o = __p.__offset(90); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float EmojiOffsetX { get { int o = __p.__offset(92); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float EmojiOffsetY { get { int o = __p.__offset(94); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public int MoveStartFrame { get { int o = __p.__offset(96); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MoveEndFrame { get { int o = __p.__offset(98); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int JumpMotionFrame { get { int o = __p.__offset(100); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int AppearFrame { get { int o = __p.__offset(102); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool CanMove { get { int o = __p.__offset(104); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool CanFix { get { int o = __p.__offset(106); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool CanCrowdControl { get { int o = __p.__offset(108); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool CanBattleItemMove { get { int o = __p.__offset(110); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool IsAirUnit { get { int o = __p.__offset(112); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long AirUnitHeight { get { int o = __p.__offset(114); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataJp.Tag Tags(int j) { int o = __p.__offset(116); return o != 0 ? (FlatDataJp.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.Tag)0; }
+  public int TagsLength { get { int o = __p.__offset(116); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSpineResourceNameBytes() { return __p.__vector_as_span<byte>(72, 1); }
+  public Span<FlatDataJp.Tag> GetTagsBytes() { return __p.__vector_as_span<FlatDataJp.Tag>(116, 4); }
 #else
-  public ArraySegment<byte>? GetSpineResourceNameBytes() { return __p.__vector_as_arraysegment(72); }
+  public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(116); }
 #endif
-  public byte[] GetSpineResourceNameArray() { return __p.__vector_as_array<byte>(72); }
-  public string SpineResourceNameDiorama { get { int o = __p.__offset(74); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetSpineResourceNameDioramaBytes() { return __p.__vector_as_span<byte>(74, 1); }
-#else
-  public ArraySegment<byte>? GetSpineResourceNameDioramaBytes() { return __p.__vector_as_arraysegment(74); }
-#endif
-  public byte[] GetSpineResourceNameDioramaArray() { return __p.__vector_as_array<byte>(74); }
-  public string SpineResourceNameDioramaForFormConversion { get { int o = __p.__offset(76); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetSpineResourceNameDioramaForFormConversionBytes() { return __p.__vector_as_span<byte>(76, 1); }
-#else
-  public ArraySegment<byte>? GetSpineResourceNameDioramaForFormConversionBytes() { return __p.__vector_as_arraysegment(76); }
-#endif
-  public byte[] GetSpineResourceNameDioramaForFormConversionArray() { return __p.__vector_as_array<byte>(76); }
-  public FlatDataJp.EntityMaterialType Entitymaterialtype { get { int o = __p.__offset(78); return o != 0 ? (FlatDataJp.EntityMaterialType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EntityMaterialType.Wood; } }
-  public string ModelPrefabName { get { int o = __p.__offset(80); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetModelPrefabNameBytes() { return __p.__vector_as_span<byte>(80, 1); }
-#else
-  public ArraySegment<byte>? GetModelPrefabNameBytes() { return __p.__vector_as_arraysegment(80); }
-#endif
-  public byte[] GetModelPrefabNameArray() { return __p.__vector_as_array<byte>(80); }
-  public string CafeModelPrefabName { get { int o = __p.__offset(82); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetCafeModelPrefabNameBytes() { return __p.__vector_as_span<byte>(82, 1); }
-#else
-  public ArraySegment<byte>? GetCafeModelPrefabNameBytes() { return __p.__vector_as_arraysegment(82); }
-#endif
-  public byte[] GetCafeModelPrefabNameArray() { return __p.__vector_as_array<byte>(82); }
-  public string TextureDir { get { int o = __p.__offset(84); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetTextureDirBytes() { return __p.__vector_as_span<byte>(84, 1); }
-#else
-  public ArraySegment<byte>? GetTextureDirBytes() { return __p.__vector_as_arraysegment(84); }
-#endif
-  public byte[] GetTextureDirArray() { return __p.__vector_as_array<byte>(84); }
-  public string TextureEchelon { get { int o = __p.__offset(86); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetTextureEchelonBytes() { return __p.__vector_as_span<byte>(86, 1); }
-#else
-  public ArraySegment<byte>? GetTextureEchelonBytes() { return __p.__vector_as_arraysegment(86); }
-#endif
-  public byte[] GetTextureEchelonArray() { return __p.__vector_as_array<byte>(86); }
-  public string CollectionTexturePath { get { int o = __p.__offset(88); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetCollectionTexturePathBytes() { return __p.__vector_as_span<byte>(88, 1); }
-#else
-  public ArraySegment<byte>? GetCollectionTexturePathBytes() { return __p.__vector_as_arraysegment(88); }
-#endif
-  public byte[] GetCollectionTexturePathArray() { return __p.__vector_as_array<byte>(88); }
-  public string CollectionBGTexturePath { get { int o = __p.__offset(90); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetCollectionBGTexturePathBytes() { return __p.__vector_as_span<byte>(90, 1); }
-#else
-  public ArraySegment<byte>? GetCollectionBGTexturePathBytes() { return __p.__vector_as_arraysegment(90); }
-#endif
-  public byte[] GetCollectionBGTexturePathArray() { return __p.__vector_as_array<byte>(90); }
-  public bool UseObjectHPBAR { get { int o = __p.__offset(92); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string TextureBoss { get { int o = __p.__offset(94); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetTextureBossBytes() { return __p.__vector_as_span<byte>(94, 1); }
-#else
-  public ArraySegment<byte>? GetTextureBossBytes() { return __p.__vector_as_arraysegment(94); }
-#endif
-  public byte[] GetTextureBossArray() { return __p.__vector_as_array<byte>(94); }
-  public string TextureSkillCard(int j) { int o = __p.__offset(96); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int TextureSkillCardLength { get { int o = __p.__offset(96); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string TextureSkillCardForFormConversion { get { int o = __p.__offset(98); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetTextureSkillCardForFormConversionBytes() { return __p.__vector_as_span<byte>(98, 1); }
-#else
-  public ArraySegment<byte>? GetTextureSkillCardForFormConversionBytes() { return __p.__vector_as_arraysegment(98); }
-#endif
-  public byte[] GetTextureSkillCardForFormConversionArray() { return __p.__vector_as_array<byte>(98); }
-  public string WeaponImagePath { get { int o = __p.__offset(100); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetWeaponImagePathBytes() { return __p.__vector_as_span<byte>(100, 1); }
-#else
-  public ArraySegment<byte>? GetWeaponImagePathBytes() { return __p.__vector_as_arraysegment(100); }
-#endif
-  public byte[] GetWeaponImagePathArray() { return __p.__vector_as_array<byte>(100); }
-  public uint WeaponLocalizeId { get { int o = __p.__offset(102); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public bool DisplayEnemyInfo { get { int o = __p.__offset(104); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long BodyRadius { get { int o = __p.__offset(106); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RandomEffectRadius { get { int o = __p.__offset(108); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool HPBarHide { get { int o = __p.__offset(110); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public float HpBarHeight { get { int o = __p.__offset(112); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float HighlightFloaterHeight { get { int o = __p.__offset(114); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float EmojiOffsetX { get { int o = __p.__offset(116); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float EmojiOffsetY { get { int o = __p.__offset(118); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public int MoveStartFrame { get { int o = __p.__offset(120); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int MoveEndFrame { get { int o = __p.__offset(122); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int JumpMotionFrame { get { int o = __p.__offset(124); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int AppearFrame { get { int o = __p.__offset(126); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool CanMove { get { int o = __p.__offset(128); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool CanFix { get { int o = __p.__offset(130); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool CanCrowdControl { get { int o = __p.__offset(132); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool CanBattleItemMove { get { int o = __p.__offset(134); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool IsAirUnit { get { int o = __p.__offset(136); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long AirUnitHeight { get { int o = __p.__offset(138); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.Tag Tags(int j) { int o = __p.__offset(140); return o != 0 ? (FlatDataJp.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.Tag)0; }
-  public int TagsLength { get { int o = __p.__offset(140); return o != 0 ? __p.__vector_len(o) : 0; } }
-#if ENABLE_SPAN_T
-  public Span<FlatDataJp.Tag> GetTagsBytes() { return __p.__vector_as_span<FlatDataJp.Tag>(140, 4); }
-#else
-  public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(140); }
-#endif
-  public FlatDataJp.Tag[] GetTagsArray() { int o = __p.__offset(140); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.Tag[] a = new FlatDataJp.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.Tag)__p.bb.GetInt(p + i * 4); } return a; }
-  public long SecretStoneItemId { get { int o = __p.__offset(142); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int SecretStoneItemAmount { get { int o = __p.__offset(144); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long CharacterPieceItemId { get { int o = __p.__offset(146); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int CharacterPieceItemAmount { get { int o = __p.__offset(148); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long CombineRecipeId { get { int o = __p.__offset(150); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string InformationPacel { get { int o = __p.__offset(152); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetInformationPacelBytes() { return __p.__vector_as_span<byte>(152, 1); }
-#else
-  public ArraySegment<byte>? GetInformationPacelBytes() { return __p.__vector_as_arraysegment(152); }
-#endif
-  public byte[] GetInformationPacelArray() { return __p.__vector_as_array<byte>(152); }
-  public string AnimationSSR { get { int o = __p.__offset(154); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetAnimationSSRBytes() { return __p.__vector_as_span<byte>(154, 1); }
-#else
-  public ArraySegment<byte>? GetAnimationSSRBytes() { return __p.__vector_as_arraysegment(154); }
-#endif
-  public byte[] GetAnimationSSRArray() { return __p.__vector_as_array<byte>(154); }
-  public string EnterStrategyAnimationName { get { int o = __p.__offset(156); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_span<byte>(156, 1); }
-#else
-  public ArraySegment<byte>? GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_arraysegment(156); }
-#endif
-  public byte[] GetEnterStrategyAnimationNameArray() { return __p.__vector_as_array<byte>(156); }
+  public FlatDataJp.Tag[] GetTagsArray() { int o = __p.__offset(116); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.Tag[] a = new FlatDataJp.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.Tag)__p.bb.GetInt(p + i * 4); } return a; }
+  public long SecretStoneItemId { get { int o = __p.__offset(118); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int SecretStoneItemAmount { get { int o = __p.__offset(120); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long CharacterPieceItemId { get { int o = __p.__offset(122); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int CharacterPieceItemAmount { get { int o = __p.__offset(124); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long CombineRecipeId { get { int o = __p.__offset(126); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataJp.CharacterExcel> CreateCharacterExcel(FlatBufferBuilder builder,
       long Id = 0,
       StringOffset DevNameOffset = default(StringOffset),
-      FlatDataJp.ProductionStep productionstep = FlatDataJp.ProductionStep.ToDo,
+      long CostumeGroupId = 0,
+      bool IsPlayable = false,
+      FlatDataJp.ProductionStep productionStep = FlatDataJp.ProductionStep.ToDo,
       bool CollectionVisible = false,
       StringOffset ReleaseDateOffset = default(StringOffset),
       StringOffset CollectionVisibleStartDateOffset = default(StringOffset),
@@ -244,44 +140,30 @@ public struct CharacterExcel : IFlatbufferObject
       uint LocalizeEtcId = 0,
       FlatDataJp.Rarity rarity = FlatDataJp.Rarity.N,
       bool IsNPC = false,
-      FlatDataJp.TacticEntityType tacticentitytype = FlatDataJp.TacticEntityType.None,
+      FlatDataJp.TacticEntityType tacticEntityType = FlatDataJp.TacticEntityType.None,
       bool CanSurvive = false,
       bool IsDummy = false,
       int SubPartsCount = 0,
-      FlatDataJp.TacticRole tacticrole = FlatDataJp.TacticRole.None,
-      FlatDataJp.WeaponType weapontype = FlatDataJp.WeaponType.None,
-      FlatDataJp.TacticRange tacticrange = FlatDataJp.TacticRange.Back,
-      FlatDataJp.BulletType bullettype = FlatDataJp.BulletType.Normal,
-      FlatDataJp.ArmorType armortype = FlatDataJp.ArmorType.LightArmor,
-      FlatDataJp.AimIKType aimiktype = FlatDataJp.AimIKType.None,
+      FlatDataJp.TacticRole tacticRole = FlatDataJp.TacticRole.None,
+      FlatDataJp.WeaponType weaponType = FlatDataJp.WeaponType.None,
+      FlatDataJp.TacticRange tacticRange = FlatDataJp.TacticRange.Back,
+      FlatDataJp.BulletType bulletType = FlatDataJp.BulletType.Normal,
+      FlatDataJp.ArmorType armorType = FlatDataJp.ArmorType.LightArmor,
+      FlatDataJp.AimIKType aimIKType = FlatDataJp.AimIKType.None,
       FlatDataJp.School school = FlatDataJp.School.None,
       FlatDataJp.Club club = FlatDataJp.Club.None,
       int DefaultStarGrade = 0,
       int MaxStarGrade = 0,
-      FlatDataJp.StatLevelUpType statleveluptype = FlatDataJp.StatLevelUpType.Standard,
-      FlatDataJp.SquadType squadtype = FlatDataJp.SquadType.None,
+      FlatDataJp.StatLevelUpType statLevelUpType = FlatDataJp.StatLevelUpType.Standard,
+      FlatDataJp.SquadType squadType = FlatDataJp.SquadType.None,
       bool Jumpable = false,
       long PersonalityId = 0,
       long CharacterAIId = 0,
+      long ExternalBTId = 0,
       StringOffset ScenarioCharacterOffset = default(StringOffset),
       uint SpawnTemplateId = 0,
       int FavorLevelupType = 0,
       VectorOffset EquipmentSlotOffset = default(VectorOffset),
-      StringOffset SpineResourceNameOffset = default(StringOffset),
-      StringOffset SpineResourceNameDioramaOffset = default(StringOffset),
-      StringOffset SpineResourceNameDioramaForFormConversionOffset = default(StringOffset),
-      FlatDataJp.EntityMaterialType entitymaterialtype = FlatDataJp.EntityMaterialType.Wood,
-      StringOffset ModelPrefabNameOffset = default(StringOffset),
-      StringOffset CafeModelPrefabNameOffset = default(StringOffset),
-      StringOffset TextureDirOffset = default(StringOffset),
-      StringOffset TextureEchelonOffset = default(StringOffset),
-      StringOffset CollectionTexturePathOffset = default(StringOffset),
-      StringOffset CollectionBGTexturePathOffset = default(StringOffset),
-      bool UseObjectHPBAR = false,
-      StringOffset TextureBossOffset = default(StringOffset),
-      VectorOffset TextureSkillCardOffset = default(VectorOffset),
-      StringOffset TextureSkillCardForFormConversionOffset = default(StringOffset),
-      StringOffset WeaponImagePathOffset = default(StringOffset),
       uint WeaponLocalizeId = 0,
       bool DisplayEnemyInfo = false,
       long BodyRadius = 0,
@@ -306,23 +188,19 @@ public struct CharacterExcel : IFlatbufferObject
       int SecretStoneItemAmount = 0,
       long CharacterPieceItemId = 0,
       int CharacterPieceItemAmount = 0,
-      long CombineRecipeId = 0,
-      StringOffset InformationPacelOffset = default(StringOffset),
-      StringOffset AnimationSSROffset = default(StringOffset),
-      StringOffset EnterStrategyAnimationNameOffset = default(StringOffset)) {
-    builder.StartTable(77);
+      long CombineRecipeId = 0) {
+    builder.StartTable(62);
     CharacterExcel.AddCombineRecipeId(builder, CombineRecipeId);
     CharacterExcel.AddCharacterPieceItemId(builder, CharacterPieceItemId);
     CharacterExcel.AddSecretStoneItemId(builder, SecretStoneItemId);
     CharacterExcel.AddAirUnitHeight(builder, AirUnitHeight);
     CharacterExcel.AddRandomEffectRadius(builder, RandomEffectRadius);
     CharacterExcel.AddBodyRadius(builder, BodyRadius);
+    CharacterExcel.AddExternalBTId(builder, ExternalBTId);
     CharacterExcel.AddCharacterAIId(builder, CharacterAIId);
     CharacterExcel.AddPersonalityId(builder, PersonalityId);
+    CharacterExcel.AddCostumeGroupId(builder, CostumeGroupId);
     CharacterExcel.AddId(builder, Id);
-    CharacterExcel.AddEnterStrategyAnimationName(builder, EnterStrategyAnimationNameOffset);
-    CharacterExcel.AddAnimationSSR(builder, AnimationSSROffset);
-    CharacterExcel.AddInformationPacel(builder, InformationPacelOffset);
     CharacterExcel.AddCharacterPieceItemAmount(builder, CharacterPieceItemAmount);
     CharacterExcel.AddSecretStoneItemAmount(builder, SecretStoneItemAmount);
     CharacterExcel.AddTags(builder, TagsOffset);
@@ -335,44 +213,30 @@ public struct CharacterExcel : IFlatbufferObject
     CharacterExcel.AddHighlightFloaterHeight(builder, HighlightFloaterHeight);
     CharacterExcel.AddHpBarHeight(builder, HpBarHeight);
     CharacterExcel.AddWeaponLocalizeId(builder, WeaponLocalizeId);
-    CharacterExcel.AddWeaponImagePath(builder, WeaponImagePathOffset);
-    CharacterExcel.AddTextureSkillCardForFormConversion(builder, TextureSkillCardForFormConversionOffset);
-    CharacterExcel.AddTextureSkillCard(builder, TextureSkillCardOffset);
-    CharacterExcel.AddTextureBoss(builder, TextureBossOffset);
-    CharacterExcel.AddCollectionBGTexturePath(builder, CollectionBGTexturePathOffset);
-    CharacterExcel.AddCollectionTexturePath(builder, CollectionTexturePathOffset);
-    CharacterExcel.AddTextureEchelon(builder, TextureEchelonOffset);
-    CharacterExcel.AddTextureDir(builder, TextureDirOffset);
-    CharacterExcel.AddCafeModelPrefabName(builder, CafeModelPrefabNameOffset);
-    CharacterExcel.AddModelPrefabName(builder, ModelPrefabNameOffset);
-    CharacterExcel.AddEntitymaterialtype(builder, entitymaterialtype);
-    CharacterExcel.AddSpineResourceNameDioramaForFormConversion(builder, SpineResourceNameDioramaForFormConversionOffset);
-    CharacterExcel.AddSpineResourceNameDiorama(builder, SpineResourceNameDioramaOffset);
-    CharacterExcel.AddSpineResourceName(builder, SpineResourceNameOffset);
     CharacterExcel.AddEquipmentSlot(builder, EquipmentSlotOffset);
     CharacterExcel.AddFavorLevelupType(builder, FavorLevelupType);
     CharacterExcel.AddSpawnTemplateId(builder, SpawnTemplateId);
     CharacterExcel.AddScenarioCharacter(builder, ScenarioCharacterOffset);
-    CharacterExcel.AddSquadtype(builder, squadtype);
-    CharacterExcel.AddStatleveluptype(builder, statleveluptype);
+    CharacterExcel.AddSquadType(builder, squadType);
+    CharacterExcel.AddStatLevelUpType(builder, statLevelUpType);
     CharacterExcel.AddMaxStarGrade(builder, MaxStarGrade);
     CharacterExcel.AddDefaultStarGrade(builder, DefaultStarGrade);
     CharacterExcel.AddClub(builder, club);
     CharacterExcel.AddSchool(builder, school);
-    CharacterExcel.AddAimiktype(builder, aimiktype);
-    CharacterExcel.AddArmortype(builder, armortype);
-    CharacterExcel.AddBullettype(builder, bullettype);
-    CharacterExcel.AddTacticrange(builder, tacticrange);
-    CharacterExcel.AddWeapontype(builder, weapontype);
-    CharacterExcel.AddTacticrole(builder, tacticrole);
+    CharacterExcel.AddAimIKType(builder, aimIKType);
+    CharacterExcel.AddArmorType(builder, armorType);
+    CharacterExcel.AddBulletType(builder, bulletType);
+    CharacterExcel.AddTacticRange(builder, tacticRange);
+    CharacterExcel.AddWeaponType(builder, weaponType);
+    CharacterExcel.AddTacticRole(builder, tacticRole);
     CharacterExcel.AddSubPartsCount(builder, SubPartsCount);
-    CharacterExcel.AddTacticentitytype(builder, tacticentitytype);
+    CharacterExcel.AddTacticEntityType(builder, tacticEntityType);
     CharacterExcel.AddRarity(builder, rarity);
     CharacterExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
     CharacterExcel.AddCollectionVisibleEndDate(builder, CollectionVisibleEndDateOffset);
     CharacterExcel.AddCollectionVisibleStartDate(builder, CollectionVisibleStartDateOffset);
     CharacterExcel.AddReleaseDate(builder, ReleaseDateOffset);
-    CharacterExcel.AddProductionstep(builder, productionstep);
+    CharacterExcel.AddProductionStep(builder, productionStep);
     CharacterExcel.AddDevName(builder, DevNameOffset);
     CharacterExcel.AddIsAirUnit(builder, IsAirUnit);
     CharacterExcel.AddCanBattleItemMove(builder, CanBattleItemMove);
@@ -381,109 +245,89 @@ public struct CharacterExcel : IFlatbufferObject
     CharacterExcel.AddCanMove(builder, CanMove);
     CharacterExcel.AddHPBarHide(builder, HPBarHide);
     CharacterExcel.AddDisplayEnemyInfo(builder, DisplayEnemyInfo);
-    CharacterExcel.AddUseObjectHPBAR(builder, UseObjectHPBAR);
     CharacterExcel.AddJumpable(builder, Jumpable);
     CharacterExcel.AddIsDummy(builder, IsDummy);
     CharacterExcel.AddCanSurvive(builder, CanSurvive);
     CharacterExcel.AddIsNPC(builder, IsNPC);
     CharacterExcel.AddIsPlayableCharacter(builder, IsPlayableCharacter);
     CharacterExcel.AddCollectionVisible(builder, CollectionVisible);
+    CharacterExcel.AddIsPlayable(builder, IsPlayable);
     return CharacterExcel.EndCharacterExcel(builder);
   }
 
-  public static void StartCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(77); }
+  public static void StartCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(62); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddDevName(FlatBufferBuilder builder, StringOffset DevNameOffset) { builder.AddOffset(1, DevNameOffset.Value, 0); }
-  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataJp.ProductionStep productionstep) { builder.AddInt(2, (int)productionstep, 0); }
-  public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(3, CollectionVisible, false); }
-  public static void AddReleaseDate(FlatBufferBuilder builder, StringOffset ReleaseDateOffset) { builder.AddOffset(4, ReleaseDateOffset.Value, 0); }
-  public static void AddCollectionVisibleStartDate(FlatBufferBuilder builder, StringOffset CollectionVisibleStartDateOffset) { builder.AddOffset(5, CollectionVisibleStartDateOffset.Value, 0); }
-  public static void AddCollectionVisibleEndDate(FlatBufferBuilder builder, StringOffset CollectionVisibleEndDateOffset) { builder.AddOffset(6, CollectionVisibleEndDateOffset.Value, 0); }
-  public static void AddIsPlayableCharacter(FlatBufferBuilder builder, bool IsPlayableCharacter) { builder.AddBool(7, IsPlayableCharacter, false); }
-  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(8, LocalizeEtcId, 0); }
-  public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity rarity) { builder.AddInt(9, (int)rarity, 0); }
-  public static void AddIsNPC(FlatBufferBuilder builder, bool IsNPC) { builder.AddBool(10, IsNPC, false); }
-  public static void AddTacticentitytype(FlatBufferBuilder builder, FlatDataJp.TacticEntityType tacticentitytype) { builder.AddInt(11, (int)tacticentitytype, 0); }
-  public static void AddCanSurvive(FlatBufferBuilder builder, bool CanSurvive) { builder.AddBool(12, CanSurvive, false); }
-  public static void AddIsDummy(FlatBufferBuilder builder, bool IsDummy) { builder.AddBool(13, IsDummy, false); }
-  public static void AddSubPartsCount(FlatBufferBuilder builder, int SubPartsCount) { builder.AddInt(14, SubPartsCount, 0); }
-  public static void AddTacticrole(FlatBufferBuilder builder, FlatDataJp.TacticRole tacticrole) { builder.AddInt(15, (int)tacticrole, 0); }
-  public static void AddWeapontype(FlatBufferBuilder builder, FlatDataJp.WeaponType weapontype) { builder.AddInt(16, (int)weapontype, 0); }
-  public static void AddTacticrange(FlatBufferBuilder builder, FlatDataJp.TacticRange tacticrange) { builder.AddInt(17, (int)tacticrange, 0); }
-  public static void AddBullettype(FlatBufferBuilder builder, FlatDataJp.BulletType bullettype) { builder.AddInt(18, (int)bullettype, 0); }
-  public static void AddArmortype(FlatBufferBuilder builder, FlatDataJp.ArmorType armortype) { builder.AddInt(19, (int)armortype, 0); }
-  public static void AddAimiktype(FlatBufferBuilder builder, FlatDataJp.AimIKType aimiktype) { builder.AddInt(20, (int)aimiktype, 0); }
-  public static void AddSchool(FlatBufferBuilder builder, FlatDataJp.School school) { builder.AddInt(21, (int)school, 0); }
-  public static void AddClub(FlatBufferBuilder builder, FlatDataJp.Club club) { builder.AddInt(22, (int)club, 0); }
-  public static void AddDefaultStarGrade(FlatBufferBuilder builder, int DefaultStarGrade) { builder.AddInt(23, DefaultStarGrade, 0); }
-  public static void AddMaxStarGrade(FlatBufferBuilder builder, int MaxStarGrade) { builder.AddInt(24, MaxStarGrade, 0); }
-  public static void AddStatleveluptype(FlatBufferBuilder builder, FlatDataJp.StatLevelUpType statleveluptype) { builder.AddInt(25, (int)statleveluptype, 0); }
-  public static void AddSquadtype(FlatBufferBuilder builder, FlatDataJp.SquadType squadtype) { builder.AddInt(26, (int)squadtype, 0); }
-  public static void AddJumpable(FlatBufferBuilder builder, bool Jumpable) { builder.AddBool(27, Jumpable, false); }
-  public static void AddPersonalityId(FlatBufferBuilder builder, long PersonalityId) { builder.AddLong(28, PersonalityId, 0); }
-  public static void AddCharacterAIId(FlatBufferBuilder builder, long CharacterAIId) { builder.AddLong(29, CharacterAIId, 0); }
-  public static void AddScenarioCharacter(FlatBufferBuilder builder, StringOffset ScenarioCharacterOffset) { builder.AddOffset(30, ScenarioCharacterOffset.Value, 0); }
-  public static void AddSpawnTemplateId(FlatBufferBuilder builder, uint SpawnTemplateId) { builder.AddUint(31, SpawnTemplateId, 0); }
-  public static void AddFavorLevelupType(FlatBufferBuilder builder, int FavorLevelupType) { builder.AddInt(32, FavorLevelupType, 0); }
-  public static void AddEquipmentSlot(FlatBufferBuilder builder, VectorOffset EquipmentSlotOffset) { builder.AddOffset(33, EquipmentSlotOffset.Value, 0); }
+  public static void AddCostumeGroupId(FlatBufferBuilder builder, long CostumeGroupId) { builder.AddLong(2, CostumeGroupId, 0); }
+  public static void AddIsPlayable(FlatBufferBuilder builder, bool IsPlayable) { builder.AddBool(3, IsPlayable, false); }
+  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataJp.ProductionStep productionStep) { builder.AddInt(4, (int)productionStep, 0); }
+  public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(5, CollectionVisible, false); }
+  public static void AddReleaseDate(FlatBufferBuilder builder, StringOffset ReleaseDateOffset) { builder.AddOffset(6, ReleaseDateOffset.Value, 0); }
+  public static void AddCollectionVisibleStartDate(FlatBufferBuilder builder, StringOffset CollectionVisibleStartDateOffset) { builder.AddOffset(7, CollectionVisibleStartDateOffset.Value, 0); }
+  public static void AddCollectionVisibleEndDate(FlatBufferBuilder builder, StringOffset CollectionVisibleEndDateOffset) { builder.AddOffset(8, CollectionVisibleEndDateOffset.Value, 0); }
+  public static void AddIsPlayableCharacter(FlatBufferBuilder builder, bool IsPlayableCharacter) { builder.AddBool(9, IsPlayableCharacter, false); }
+  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(10, LocalizeEtcId, 0); }
+  public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity rarity) { builder.AddInt(11, (int)rarity, 0); }
+  public static void AddIsNPC(FlatBufferBuilder builder, bool IsNPC) { builder.AddBool(12, IsNPC, false); }
+  public static void AddTacticEntityType(FlatBufferBuilder builder, FlatDataJp.TacticEntityType tacticEntityType) { builder.AddInt(13, (int)tacticEntityType, 0); }
+  public static void AddCanSurvive(FlatBufferBuilder builder, bool CanSurvive) { builder.AddBool(14, CanSurvive, false); }
+  public static void AddIsDummy(FlatBufferBuilder builder, bool IsDummy) { builder.AddBool(15, IsDummy, false); }
+  public static void AddSubPartsCount(FlatBufferBuilder builder, int SubPartsCount) { builder.AddInt(16, SubPartsCount, 0); }
+  public static void AddTacticRole(FlatBufferBuilder builder, FlatDataJp.TacticRole tacticRole) { builder.AddInt(17, (int)tacticRole, 0); }
+  public static void AddWeaponType(FlatBufferBuilder builder, FlatDataJp.WeaponType weaponType) { builder.AddInt(18, (int)weaponType, 0); }
+  public static void AddTacticRange(FlatBufferBuilder builder, FlatDataJp.TacticRange tacticRange) { builder.AddInt(19, (int)tacticRange, 0); }
+  public static void AddBulletType(FlatBufferBuilder builder, FlatDataJp.BulletType bulletType) { builder.AddInt(20, (int)bulletType, 0); }
+  public static void AddArmorType(FlatBufferBuilder builder, FlatDataJp.ArmorType armorType) { builder.AddInt(21, (int)armorType, 0); }
+  public static void AddAimIKType(FlatBufferBuilder builder, FlatDataJp.AimIKType aimIKType) { builder.AddInt(22, (int)aimIKType, 0); }
+  public static void AddSchool(FlatBufferBuilder builder, FlatDataJp.School school) { builder.AddInt(23, (int)school, 0); }
+  public static void AddClub(FlatBufferBuilder builder, FlatDataJp.Club club) { builder.AddInt(24, (int)club, 0); }
+  public static void AddDefaultStarGrade(FlatBufferBuilder builder, int DefaultStarGrade) { builder.AddInt(25, DefaultStarGrade, 0); }
+  public static void AddMaxStarGrade(FlatBufferBuilder builder, int MaxStarGrade) { builder.AddInt(26, MaxStarGrade, 0); }
+  public static void AddStatLevelUpType(FlatBufferBuilder builder, FlatDataJp.StatLevelUpType statLevelUpType) { builder.AddInt(27, (int)statLevelUpType, 0); }
+  public static void AddSquadType(FlatBufferBuilder builder, FlatDataJp.SquadType squadType) { builder.AddInt(28, (int)squadType, 0); }
+  public static void AddJumpable(FlatBufferBuilder builder, bool Jumpable) { builder.AddBool(29, Jumpable, false); }
+  public static void AddPersonalityId(FlatBufferBuilder builder, long PersonalityId) { builder.AddLong(30, PersonalityId, 0); }
+  public static void AddCharacterAIId(FlatBufferBuilder builder, long CharacterAIId) { builder.AddLong(31, CharacterAIId, 0); }
+  public static void AddExternalBTId(FlatBufferBuilder builder, long ExternalBTId) { builder.AddLong(32, ExternalBTId, 0); }
+  public static void AddScenarioCharacter(FlatBufferBuilder builder, StringOffset ScenarioCharacterOffset) { builder.AddOffset(33, ScenarioCharacterOffset.Value, 0); }
+  public static void AddSpawnTemplateId(FlatBufferBuilder builder, uint SpawnTemplateId) { builder.AddUint(34, SpawnTemplateId, 0); }
+  public static void AddFavorLevelupType(FlatBufferBuilder builder, int FavorLevelupType) { builder.AddInt(35, FavorLevelupType, 0); }
+  public static void AddEquipmentSlot(FlatBufferBuilder builder, VectorOffset EquipmentSlotOffset) { builder.AddOffset(36, EquipmentSlotOffset.Value, 0); }
   public static VectorOffset CreateEquipmentSlotVector(FlatBufferBuilder builder, FlatDataJp.EquipmentCategory[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateEquipmentSlotVectorBlock(FlatBufferBuilder builder, FlatDataJp.EquipmentCategory[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEquipmentSlotVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.EquipmentCategory> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEquipmentSlotVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.EquipmentCategory>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartEquipmentSlotVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSpineResourceName(FlatBufferBuilder builder, StringOffset SpineResourceNameOffset) { builder.AddOffset(34, SpineResourceNameOffset.Value, 0); }
-  public static void AddSpineResourceNameDiorama(FlatBufferBuilder builder, StringOffset SpineResourceNameDioramaOffset) { builder.AddOffset(35, SpineResourceNameDioramaOffset.Value, 0); }
-  public static void AddSpineResourceNameDioramaForFormConversion(FlatBufferBuilder builder, StringOffset SpineResourceNameDioramaForFormConversionOffset) { builder.AddOffset(36, SpineResourceNameDioramaForFormConversionOffset.Value, 0); }
-  public static void AddEntitymaterialtype(FlatBufferBuilder builder, FlatDataJp.EntityMaterialType entitymaterialtype) { builder.AddInt(37, (int)entitymaterialtype, 0); }
-  public static void AddModelPrefabName(FlatBufferBuilder builder, StringOffset ModelPrefabNameOffset) { builder.AddOffset(38, ModelPrefabNameOffset.Value, 0); }
-  public static void AddCafeModelPrefabName(FlatBufferBuilder builder, StringOffset CafeModelPrefabNameOffset) { builder.AddOffset(39, CafeModelPrefabNameOffset.Value, 0); }
-  public static void AddTextureDir(FlatBufferBuilder builder, StringOffset TextureDirOffset) { builder.AddOffset(40, TextureDirOffset.Value, 0); }
-  public static void AddTextureEchelon(FlatBufferBuilder builder, StringOffset TextureEchelonOffset) { builder.AddOffset(41, TextureEchelonOffset.Value, 0); }
-  public static void AddCollectionTexturePath(FlatBufferBuilder builder, StringOffset CollectionTexturePathOffset) { builder.AddOffset(42, CollectionTexturePathOffset.Value, 0); }
-  public static void AddCollectionBGTexturePath(FlatBufferBuilder builder, StringOffset CollectionBGTexturePathOffset) { builder.AddOffset(43, CollectionBGTexturePathOffset.Value, 0); }
-  public static void AddUseObjectHPBAR(FlatBufferBuilder builder, bool UseObjectHPBAR) { builder.AddBool(44, UseObjectHPBAR, false); }
-  public static void AddTextureBoss(FlatBufferBuilder builder, StringOffset TextureBossOffset) { builder.AddOffset(45, TextureBossOffset.Value, 0); }
-  public static void AddTextureSkillCard(FlatBufferBuilder builder, VectorOffset TextureSkillCardOffset) { builder.AddOffset(46, TextureSkillCardOffset.Value, 0); }
-  public static VectorOffset CreateTextureSkillCardVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateTextureSkillCardVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateTextureSkillCardVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateTextureSkillCardVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartTextureSkillCardVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddTextureSkillCardForFormConversion(FlatBufferBuilder builder, StringOffset TextureSkillCardForFormConversionOffset) { builder.AddOffset(47, TextureSkillCardForFormConversionOffset.Value, 0); }
-  public static void AddWeaponImagePath(FlatBufferBuilder builder, StringOffset WeaponImagePathOffset) { builder.AddOffset(48, WeaponImagePathOffset.Value, 0); }
-  public static void AddWeaponLocalizeId(FlatBufferBuilder builder, uint WeaponLocalizeId) { builder.AddUint(49, WeaponLocalizeId, 0); }
-  public static void AddDisplayEnemyInfo(FlatBufferBuilder builder, bool DisplayEnemyInfo) { builder.AddBool(50, DisplayEnemyInfo, false); }
-  public static void AddBodyRadius(FlatBufferBuilder builder, long BodyRadius) { builder.AddLong(51, BodyRadius, 0); }
-  public static void AddRandomEffectRadius(FlatBufferBuilder builder, long RandomEffectRadius) { builder.AddLong(52, RandomEffectRadius, 0); }
-  public static void AddHPBarHide(FlatBufferBuilder builder, bool HPBarHide) { builder.AddBool(53, HPBarHide, false); }
-  public static void AddHpBarHeight(FlatBufferBuilder builder, float HpBarHeight) { builder.AddFloat(54, HpBarHeight, 0.0f); }
-  public static void AddHighlightFloaterHeight(FlatBufferBuilder builder, float HighlightFloaterHeight) { builder.AddFloat(55, HighlightFloaterHeight, 0.0f); }
-  public static void AddEmojiOffsetX(FlatBufferBuilder builder, float EmojiOffsetX) { builder.AddFloat(56, EmojiOffsetX, 0.0f); }
-  public static void AddEmojiOffsetY(FlatBufferBuilder builder, float EmojiOffsetY) { builder.AddFloat(57, EmojiOffsetY, 0.0f); }
-  public static void AddMoveStartFrame(FlatBufferBuilder builder, int MoveStartFrame) { builder.AddInt(58, MoveStartFrame, 0); }
-  public static void AddMoveEndFrame(FlatBufferBuilder builder, int MoveEndFrame) { builder.AddInt(59, MoveEndFrame, 0); }
-  public static void AddJumpMotionFrame(FlatBufferBuilder builder, int JumpMotionFrame) { builder.AddInt(60, JumpMotionFrame, 0); }
-  public static void AddAppearFrame(FlatBufferBuilder builder, int AppearFrame) { builder.AddInt(61, AppearFrame, 0); }
-  public static void AddCanMove(FlatBufferBuilder builder, bool CanMove) { builder.AddBool(62, CanMove, false); }
-  public static void AddCanFix(FlatBufferBuilder builder, bool CanFix) { builder.AddBool(63, CanFix, false); }
-  public static void AddCanCrowdControl(FlatBufferBuilder builder, bool CanCrowdControl) { builder.AddBool(64, CanCrowdControl, false); }
-  public static void AddCanBattleItemMove(FlatBufferBuilder builder, bool CanBattleItemMove) { builder.AddBool(65, CanBattleItemMove, false); }
-  public static void AddIsAirUnit(FlatBufferBuilder builder, bool IsAirUnit) { builder.AddBool(66, IsAirUnit, false); }
-  public static void AddAirUnitHeight(FlatBufferBuilder builder, long AirUnitHeight) { builder.AddLong(67, AirUnitHeight, 0); }
-  public static void AddTags(FlatBufferBuilder builder, VectorOffset TagsOffset) { builder.AddOffset(68, TagsOffset.Value, 0); }
+  public static void AddWeaponLocalizeId(FlatBufferBuilder builder, uint WeaponLocalizeId) { builder.AddUint(37, WeaponLocalizeId, 0); }
+  public static void AddDisplayEnemyInfo(FlatBufferBuilder builder, bool DisplayEnemyInfo) { builder.AddBool(38, DisplayEnemyInfo, false); }
+  public static void AddBodyRadius(FlatBufferBuilder builder, long BodyRadius) { builder.AddLong(39, BodyRadius, 0); }
+  public static void AddRandomEffectRadius(FlatBufferBuilder builder, long RandomEffectRadius) { builder.AddLong(40, RandomEffectRadius, 0); }
+  public static void AddHPBarHide(FlatBufferBuilder builder, bool HPBarHide) { builder.AddBool(41, HPBarHide, false); }
+  public static void AddHpBarHeight(FlatBufferBuilder builder, float HpBarHeight) { builder.AddFloat(42, HpBarHeight, 0.0f); }
+  public static void AddHighlightFloaterHeight(FlatBufferBuilder builder, float HighlightFloaterHeight) { builder.AddFloat(43, HighlightFloaterHeight, 0.0f); }
+  public static void AddEmojiOffsetX(FlatBufferBuilder builder, float EmojiOffsetX) { builder.AddFloat(44, EmojiOffsetX, 0.0f); }
+  public static void AddEmojiOffsetY(FlatBufferBuilder builder, float EmojiOffsetY) { builder.AddFloat(45, EmojiOffsetY, 0.0f); }
+  public static void AddMoveStartFrame(FlatBufferBuilder builder, int MoveStartFrame) { builder.AddInt(46, MoveStartFrame, 0); }
+  public static void AddMoveEndFrame(FlatBufferBuilder builder, int MoveEndFrame) { builder.AddInt(47, MoveEndFrame, 0); }
+  public static void AddJumpMotionFrame(FlatBufferBuilder builder, int JumpMotionFrame) { builder.AddInt(48, JumpMotionFrame, 0); }
+  public static void AddAppearFrame(FlatBufferBuilder builder, int AppearFrame) { builder.AddInt(49, AppearFrame, 0); }
+  public static void AddCanMove(FlatBufferBuilder builder, bool CanMove) { builder.AddBool(50, CanMove, false); }
+  public static void AddCanFix(FlatBufferBuilder builder, bool CanFix) { builder.AddBool(51, CanFix, false); }
+  public static void AddCanCrowdControl(FlatBufferBuilder builder, bool CanCrowdControl) { builder.AddBool(52, CanCrowdControl, false); }
+  public static void AddCanBattleItemMove(FlatBufferBuilder builder, bool CanBattleItemMove) { builder.AddBool(53, CanBattleItemMove, false); }
+  public static void AddIsAirUnit(FlatBufferBuilder builder, bool IsAirUnit) { builder.AddBool(54, IsAirUnit, false); }
+  public static void AddAirUnitHeight(FlatBufferBuilder builder, long AirUnitHeight) { builder.AddLong(55, AirUnitHeight, 0); }
+  public static void AddTags(FlatBufferBuilder builder, VectorOffset TagsOffset) { builder.AddOffset(56, TagsOffset.Value, 0); }
   public static VectorOffset CreateTagsVector(FlatBufferBuilder builder, FlatDataJp.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, FlatDataJp.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartTagsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSecretStoneItemId(FlatBufferBuilder builder, long SecretStoneItemId) { builder.AddLong(69, SecretStoneItemId, 0); }
-  public static void AddSecretStoneItemAmount(FlatBufferBuilder builder, int SecretStoneItemAmount) { builder.AddInt(70, SecretStoneItemAmount, 0); }
-  public static void AddCharacterPieceItemId(FlatBufferBuilder builder, long CharacterPieceItemId) { builder.AddLong(71, CharacterPieceItemId, 0); }
-  public static void AddCharacterPieceItemAmount(FlatBufferBuilder builder, int CharacterPieceItemAmount) { builder.AddInt(72, CharacterPieceItemAmount, 0); }
-  public static void AddCombineRecipeId(FlatBufferBuilder builder, long CombineRecipeId) { builder.AddLong(73, CombineRecipeId, 0); }
-  public static void AddInformationPacel(FlatBufferBuilder builder, StringOffset InformationPacelOffset) { builder.AddOffset(74, InformationPacelOffset.Value, 0); }
-  public static void AddAnimationSSR(FlatBufferBuilder builder, StringOffset AnimationSSROffset) { builder.AddOffset(75, AnimationSSROffset.Value, 0); }
-  public static void AddEnterStrategyAnimationName(FlatBufferBuilder builder, StringOffset EnterStrategyAnimationNameOffset) { builder.AddOffset(76, EnterStrategyAnimationNameOffset.Value, 0); }
+  public static void AddSecretStoneItemId(FlatBufferBuilder builder, long SecretStoneItemId) { builder.AddLong(57, SecretStoneItemId, 0); }
+  public static void AddSecretStoneItemAmount(FlatBufferBuilder builder, int SecretStoneItemAmount) { builder.AddInt(58, SecretStoneItemAmount, 0); }
+  public static void AddCharacterPieceItemId(FlatBufferBuilder builder, long CharacterPieceItemId) { builder.AddLong(59, CharacterPieceItemId, 0); }
+  public static void AddCharacterPieceItemAmount(FlatBufferBuilder builder, int CharacterPieceItemAmount) { builder.AddInt(60, CharacterPieceItemAmount, 0); }
+  public static void AddCombineRecipeId(FlatBufferBuilder builder, long CombineRecipeId) { builder.AddLong(61, CombineRecipeId, 0); }
   public static Offset<FlatDataJp.CharacterExcel> EndCharacterExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.CharacterExcel>(o);

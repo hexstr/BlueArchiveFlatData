@@ -20,7 +20,7 @@ public struct ScenarioModeRewardExcel : IFlatbufferObject
   public ScenarioModeRewardExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long ScenarioModeRewardId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.RewardTag Rewardtag { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.RewardTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.RewardTag.Default; } }
+  public FlatDataJp.RewardTag RewardTag { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.RewardTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.RewardTag.Default; } }
   public int RewardProb { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public FlatDataJp.ParcelType RewardParcelType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
   public long RewardParcelId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -29,7 +29,7 @@ public struct ScenarioModeRewardExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.ScenarioModeRewardExcel> CreateScenarioModeRewardExcel(FlatBufferBuilder builder,
       long ScenarioModeRewardId = 0,
-      FlatDataJp.RewardTag rewardtag = FlatDataJp.RewardTag.Default,
+      FlatDataJp.RewardTag rewardTag = FlatDataJp.RewardTag.Default,
       int RewardProb = 0,
       FlatDataJp.ParcelType RewardParcelType = FlatDataJp.ParcelType.None,
       long RewardParcelId = 0,
@@ -41,14 +41,14 @@ public struct ScenarioModeRewardExcel : IFlatbufferObject
     ScenarioModeRewardExcel.AddRewardParcelAmount(builder, RewardParcelAmount);
     ScenarioModeRewardExcel.AddRewardParcelType(builder, RewardParcelType);
     ScenarioModeRewardExcel.AddRewardProb(builder, RewardProb);
-    ScenarioModeRewardExcel.AddRewardtag(builder, rewardtag);
+    ScenarioModeRewardExcel.AddRewardTag(builder, rewardTag);
     ScenarioModeRewardExcel.AddIsDisplayed(builder, IsDisplayed);
     return ScenarioModeRewardExcel.EndScenarioModeRewardExcel(builder);
   }
 
   public static void StartScenarioModeRewardExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddScenarioModeRewardId(FlatBufferBuilder builder, long ScenarioModeRewardId) { builder.AddLong(0, ScenarioModeRewardId, 0); }
-  public static void AddRewardtag(FlatBufferBuilder builder, FlatDataJp.RewardTag rewardtag) { builder.AddInt(1, (int)rewardtag, 0); }
+  public static void AddRewardTag(FlatBufferBuilder builder, FlatDataJp.RewardTag rewardTag) { builder.AddInt(1, (int)rewardTag, 0); }
   public static void AddRewardProb(FlatBufferBuilder builder, int RewardProb) { builder.AddInt(2, RewardProb, 0); }
   public static void AddRewardParcelType(FlatBufferBuilder builder, FlatDataJp.ParcelType RewardParcelType) { builder.AddInt(3, (int)RewardParcelType, 0); }
   public static void AddRewardParcelId(FlatBufferBuilder builder, long RewardParcelId) { builder.AddLong(4, RewardParcelId, 0); }

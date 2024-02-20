@@ -47,6 +47,9 @@ public enum ContentLockType : int
   Main_L_1_2 = 37,
   Main_L_1_3 = 38,
   Main_L_1_4 = 39,
+  EliminateRaid = 40,
+  EliminateRaidSeasonReward = 41,
+  EliminateRaidRankingReward = 42,
 };
 
 

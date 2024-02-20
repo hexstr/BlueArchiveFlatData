@@ -20,7 +20,7 @@ public struct PickupDuplicateBonusExcel : IFlatbufferObject
   public PickupDuplicateBonusExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ShopCategoryType Shopcategorytype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ShopCategoryType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ShopCategoryType.General; } }
+  public FlatDataJp.ShopCategoryType ShopCategoryType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ShopCategoryType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ShopCategoryType.General; } }
   public long ShopId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PickupCharacterId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataJp.ParcelType RewardParcelType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
@@ -29,7 +29,7 @@ public struct PickupDuplicateBonusExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.PickupDuplicateBonusExcel> CreatePickupDuplicateBonusExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataJp.ShopCategoryType shopcategorytype = FlatDataJp.ShopCategoryType.General,
+      FlatDataJp.ShopCategoryType shopCategoryType = FlatDataJp.ShopCategoryType.General,
       long ShopId = 0,
       long PickupCharacterId = 0,
       FlatDataJp.ParcelType RewardParcelType = FlatDataJp.ParcelType.None,
@@ -42,13 +42,13 @@ public struct PickupDuplicateBonusExcel : IFlatbufferObject
     PickupDuplicateBonusExcel.AddShopId(builder, ShopId);
     PickupDuplicateBonusExcel.AddId(builder, Id);
     PickupDuplicateBonusExcel.AddRewardParcelType(builder, RewardParcelType);
-    PickupDuplicateBonusExcel.AddShopcategorytype(builder, shopcategorytype);
+    PickupDuplicateBonusExcel.AddShopCategoryType(builder, shopCategoryType);
     return PickupDuplicateBonusExcel.EndPickupDuplicateBonusExcel(builder);
   }
 
   public static void StartPickupDuplicateBonusExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddShopcategorytype(FlatBufferBuilder builder, FlatDataJp.ShopCategoryType shopcategorytype) { builder.AddInt(1, (int)shopcategorytype, 0); }
+  public static void AddShopCategoryType(FlatBufferBuilder builder, FlatDataJp.ShopCategoryType shopCategoryType) { builder.AddInt(1, (int)shopCategoryType, 0); }
   public static void AddShopId(FlatBufferBuilder builder, long ShopId) { builder.AddLong(2, ShopId, 0); }
   public static void AddPickupCharacterId(FlatBufferBuilder builder, long PickupCharacterId) { builder.AddLong(3, PickupCharacterId, 0); }
   public static void AddRewardParcelType(FlatBufferBuilder builder, FlatDataJp.ParcelType RewardParcelType) { builder.AddInt(4, (int)RewardParcelType, 0); }

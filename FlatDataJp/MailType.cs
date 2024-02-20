@@ -25,6 +25,11 @@ public enum MailType : int
   AttendanceImmediately = 15,
   WeeklyProductReward = 16,
   BiweeklyProductReward = 17,
+  CashShopBuy = 18,
+  MonthlyProductPackage = 19,
+  WebEventReward = 20,
+  CouponCompleteReward = 21,
+  BirthdayMail = 22,
 };
 
 

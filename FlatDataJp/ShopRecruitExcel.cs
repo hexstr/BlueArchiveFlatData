@@ -40,8 +40,14 @@ public struct ShopRecruitExcel : IFlatbufferObject
   public ArraySegment<byte>? GetGachaBannerPathBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
   public byte[] GetGachaBannerPathArray() { return __p.__vector_as_array<byte>(20); }
-  public string MovieBannerPath(int j) { int o = __p.__offset(22); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int MovieBannerPathLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long VideoId(int j) { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int VideoIdLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<long> GetVideoIdBytes() { return __p.__vector_as_span<long>(22, 8); }
+#else
+  public ArraySegment<byte>? GetVideoIdBytes() { return __p.__vector_as_arraysegment(22); }
+#endif
+  public long[] GetVideoIdArray() { return __p.__vector_as_array<long>(22); }
   public long LinkedRobbyBannerId { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long InfoCharacterId(int j) { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
   public int InfoCharacterIdLength { get { int o = __p.__offset(26); return o != 0 ? __p.__vector_len(o) : 0; } }
@@ -69,7 +75,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
   public long RecruitSellectionShopId { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PurchaseCooltimeMin { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PurchaseCountLimit { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.PurchaseCountResetType Purchasecountresettype { get { int o = __p.__offset(40); return o != 0 ? (FlatDataJp.PurchaseCountResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.PurchaseCountResetType.None; } }
+  public FlatDataJp.PurchaseCountResetType PurchaseCountResetType { get { int o = __p.__offset(40); return o != 0 ? (FlatDataJp.PurchaseCountResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.PurchaseCountResetType.None; } }
   public bool IsNewbie { get { int o = __p.__offset(42); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool IsSelectRecruit { get { int o = __p.__offset(44); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long DirectPayInvisibleTokenId { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -86,7 +92,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
       FlatDataJp.GachaDisplayTag DisplayTag = FlatDataJp.GachaDisplayTag.None,
       long DisplayOrder = 0,
       StringOffset GachaBannerPathOffset = default(StringOffset),
-      VectorOffset MovieBannerPathOffset = default(VectorOffset),
+      VectorOffset VideoIdOffset = default(VectorOffset),
       long LinkedRobbyBannerId = 0,
       VectorOffset InfoCharacterIdOffset = default(VectorOffset),
       StringOffset SalePeriodFromOffset = default(StringOffset),
@@ -95,7 +101,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
       long RecruitSellectionShopId = 0,
       long PurchaseCooltimeMin = 0,
       long PurchaseCountLimit = 0,
-      FlatDataJp.PurchaseCountResetType purchasecountresettype = FlatDataJp.PurchaseCountResetType.None,
+      FlatDataJp.PurchaseCountResetType purchaseCountResetType = FlatDataJp.PurchaseCountResetType.None,
       bool IsNewbie = false,
       bool IsSelectRecruit = false,
       long DirectPayInvisibleTokenId = 0,
@@ -114,11 +120,11 @@ public struct ShopRecruitExcel : IFlatbufferObject
     ShopRecruitExcel.AddTenGachaGoodsId(builder, TenGachaGoodsId);
     ShopRecruitExcel.AddOneGachaGoodsId(builder, OneGachaGoodsId);
     ShopRecruitExcel.AddId(builder, Id);
-    ShopRecruitExcel.AddPurchasecountresettype(builder, purchasecountresettype);
+    ShopRecruitExcel.AddPurchaseCountResetType(builder, purchaseCountResetType);
     ShopRecruitExcel.AddSalePeriodTo(builder, SalePeriodToOffset);
     ShopRecruitExcel.AddSalePeriodFrom(builder, SalePeriodFromOffset);
     ShopRecruitExcel.AddInfoCharacterId(builder, InfoCharacterIdOffset);
-    ShopRecruitExcel.AddMovieBannerPath(builder, MovieBannerPathOffset);
+    ShopRecruitExcel.AddVideoId(builder, VideoIdOffset);
     ShopRecruitExcel.AddGachaBannerPath(builder, GachaBannerPathOffset);
     ShopRecruitExcel.AddDisplayTag(builder, DisplayTag);
     ShopRecruitExcel.AddGoodsDevName(builder, GoodsDevNameOffset);
@@ -139,12 +145,12 @@ public struct ShopRecruitExcel : IFlatbufferObject
   public static void AddDisplayTag(FlatBufferBuilder builder, FlatDataJp.GachaDisplayTag DisplayTag) { builder.AddInt(6, (int)DisplayTag, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(7, DisplayOrder, 0); }
   public static void AddGachaBannerPath(FlatBufferBuilder builder, StringOffset GachaBannerPathOffset) { builder.AddOffset(8, GachaBannerPathOffset.Value, 0); }
-  public static void AddMovieBannerPath(FlatBufferBuilder builder, VectorOffset MovieBannerPathOffset) { builder.AddOffset(9, MovieBannerPathOffset.Value, 0); }
-  public static VectorOffset CreateMovieBannerPathVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateMovieBannerPathVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateMovieBannerPathVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateMovieBannerPathVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartMovieBannerPathVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddVideoId(FlatBufferBuilder builder, VectorOffset VideoIdOffset) { builder.AddOffset(9, VideoIdOffset.Value, 0); }
+  public static VectorOffset CreateVideoIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateVideoIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateVideoIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateVideoIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartVideoIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
   public static void AddLinkedRobbyBannerId(FlatBufferBuilder builder, long LinkedRobbyBannerId) { builder.AddLong(10, LinkedRobbyBannerId, 0); }
   public static void AddInfoCharacterId(FlatBufferBuilder builder, VectorOffset InfoCharacterIdOffset) { builder.AddOffset(11, InfoCharacterIdOffset.Value, 0); }
   public static VectorOffset CreateInfoCharacterIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
@@ -158,7 +164,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
   public static void AddRecruitSellectionShopId(FlatBufferBuilder builder, long RecruitSellectionShopId) { builder.AddLong(15, RecruitSellectionShopId, 0); }
   public static void AddPurchaseCooltimeMin(FlatBufferBuilder builder, long PurchaseCooltimeMin) { builder.AddLong(16, PurchaseCooltimeMin, 0); }
   public static void AddPurchaseCountLimit(FlatBufferBuilder builder, long PurchaseCountLimit) { builder.AddLong(17, PurchaseCountLimit, 0); }
-  public static void AddPurchasecountresettype(FlatBufferBuilder builder, FlatDataJp.PurchaseCountResetType purchasecountresettype) { builder.AddInt(18, (int)purchasecountresettype, 0); }
+  public static void AddPurchaseCountResetType(FlatBufferBuilder builder, FlatDataJp.PurchaseCountResetType purchaseCountResetType) { builder.AddInt(18, (int)purchaseCountResetType, 0); }
   public static void AddIsNewbie(FlatBufferBuilder builder, bool IsNewbie) { builder.AddBool(19, IsNewbie, false); }
   public static void AddIsSelectRecruit(FlatBufferBuilder builder, bool IsSelectRecruit) { builder.AddBool(20, IsSelectRecruit, false); }
   public static void AddDirectPayInvisibleTokenId(FlatBufferBuilder builder, long DirectPayInvisibleTokenId) { builder.AddLong(21, DirectPayInvisibleTokenId, 0); }

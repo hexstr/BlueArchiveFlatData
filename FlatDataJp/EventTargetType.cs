@@ -16,6 +16,7 @@ public enum EventTargetType : int
   TimeAttackDungeon = 6,
   AccountLevelExpIncrease = 7,
   Raid = 8,
+  EliminateRaid = 9,
 };
 
 

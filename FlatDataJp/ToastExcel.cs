@@ -20,14 +20,14 @@ public struct ToastExcel : IFlatbufferObject
   public ToastExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public uint Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public FlatDataJp.ToastType Toasttype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ToastType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ToastType.None; } }
+  public FlatDataJp.ToastType ToastType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ToastType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ToastType.None; } }
   public uint MissionId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public uint TextId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public long LifeTime { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataJp.ToastExcel> CreateToastExcel(FlatBufferBuilder builder,
       uint Id = 0,
-      FlatDataJp.ToastType toasttype = FlatDataJp.ToastType.None,
+      FlatDataJp.ToastType toastType = FlatDataJp.ToastType.None,
       uint MissionId = 0,
       uint TextId = 0,
       long LifeTime = 0) {
@@ -35,14 +35,14 @@ public struct ToastExcel : IFlatbufferObject
     ToastExcel.AddLifeTime(builder, LifeTime);
     ToastExcel.AddTextId(builder, TextId);
     ToastExcel.AddMissionId(builder, MissionId);
-    ToastExcel.AddToasttype(builder, toasttype);
+    ToastExcel.AddToastType(builder, toastType);
     ToastExcel.AddId(builder, Id);
     return ToastExcel.EndToastExcel(builder);
   }
 
   public static void StartToastExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddId(FlatBufferBuilder builder, uint Id) { builder.AddUint(0, Id, 0); }
-  public static void AddToasttype(FlatBufferBuilder builder, FlatDataJp.ToastType toasttype) { builder.AddInt(1, (int)toasttype, 0); }
+  public static void AddToastType(FlatBufferBuilder builder, FlatDataJp.ToastType toastType) { builder.AddInt(1, (int)toastType, 0); }
   public static void AddMissionId(FlatBufferBuilder builder, uint MissionId) { builder.AddUint(2, MissionId, 0); }
   public static void AddTextId(FlatBufferBuilder builder, uint TextId) { builder.AddUint(3, TextId, 0); }
   public static void AddLifeTime(FlatBufferBuilder builder, long LifeTime) { builder.AddLong(4, LifeTime, 0); }

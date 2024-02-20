@@ -19,61 +19,63 @@ public struct VoiceExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public VoiceExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public uint NameHash { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public bool OnlyOne { get { int o = __p.__offset(6); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public float VolumeJp { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float DelayJp { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public int Priority { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string AudioClipJp { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long UniqueId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public uint Id { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public FlatDataJp.Nation Nation(int j) { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.Nation)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.Nation)0; }
+  public int NationLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAudioClipJpBytes() { return __p.__vector_as_span<byte>(14, 1); }
+  public Span<FlatDataJp.Nation> GetNationBytes() { return __p.__vector_as_span<FlatDataJp.Nation>(8, 4); }
 #else
-  public ArraySegment<byte>? GetAudioClipJpBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetNationBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
-  public byte[] GetAudioClipJpArray() { return __p.__vector_as_array<byte>(14); }
-  public float VolumeKr { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float DelayKr { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public string AudioClipKr { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataJp.Nation[] GetNationArray() { int o = __p.__offset(8); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.Nation[] a = new FlatDataJp.Nation[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.Nation)__p.bb.GetInt(p + i * 4); } return a; }
+  public string Path(int j) { int o = __p.__offset(10); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int PathLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public float Volume(int j) { int o = __p.__offset(12); return o != 0 ? __p.bb.GetFloat(__p.__vector(o) + j * 4) : (float)0; }
+  public int VolumeLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAudioClipKrBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<float> GetVolumeBytes() { return __p.__vector_as_span<float>(12, 4); }
 #else
-  public ArraySegment<byte>? GetAudioClipKrBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetVolumeBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
-  public byte[] GetAudioClipKrArray() { return __p.__vector_as_array<byte>(20); }
+  public float[] GetVolumeArray() { return __p.__vector_as_array<float>(12); }
 
   public static Offset<FlatDataJp.VoiceExcel> CreateVoiceExcel(FlatBufferBuilder builder,
-      uint NameHash = 0,
-      bool OnlyOne = false,
-      float VolumeJp = 0.0f,
-      float DelayJp = 0.0f,
-      int Priority = 0,
-      StringOffset AudioClipJpOffset = default(StringOffset),
-      float VolumeKr = 0.0f,
-      float DelayKr = 0.0f,
-      StringOffset AudioClipKrOffset = default(StringOffset)) {
-    builder.StartTable(9);
-    VoiceExcel.AddAudioClipKr(builder, AudioClipKrOffset);
-    VoiceExcel.AddDelayKr(builder, DelayKr);
-    VoiceExcel.AddVolumeKr(builder, VolumeKr);
-    VoiceExcel.AddAudioClipJp(builder, AudioClipJpOffset);
-    VoiceExcel.AddPriority(builder, Priority);
-    VoiceExcel.AddDelayJp(builder, DelayJp);
-    VoiceExcel.AddVolumeJp(builder, VolumeJp);
-    VoiceExcel.AddNameHash(builder, NameHash);
-    VoiceExcel.AddOnlyOne(builder, OnlyOne);
+      long UniqueId = 0,
+      uint Id = 0,
+      VectorOffset NationOffset = default(VectorOffset),
+      VectorOffset PathOffset = default(VectorOffset),
+      VectorOffset VolumeOffset = default(VectorOffset)) {
+    builder.StartTable(5);
+    VoiceExcel.AddUniqueId(builder, UniqueId);
+    VoiceExcel.AddVolume(builder, VolumeOffset);
+    VoiceExcel.AddPath(builder, PathOffset);
+    VoiceExcel.AddNation(builder, NationOffset);
+    VoiceExcel.AddId(builder, Id);
     return VoiceExcel.EndVoiceExcel(builder);
   }
 
-  public static void StartVoiceExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
-  public static void AddNameHash(FlatBufferBuilder builder, uint NameHash) { builder.AddUint(0, NameHash, 0); }
-  public static void AddOnlyOne(FlatBufferBuilder builder, bool OnlyOne) { builder.AddBool(1, OnlyOne, false); }
-  public static void AddVolumeJp(FlatBufferBuilder builder, float VolumeJp) { builder.AddFloat(2, VolumeJp, 0.0f); }
-  public static void AddDelayJp(FlatBufferBuilder builder, float DelayJp) { builder.AddFloat(3, DelayJp, 0.0f); }
-  public static void AddPriority(FlatBufferBuilder builder, int Priority) { builder.AddInt(4, Priority, 0); }
-  public static void AddAudioClipJp(FlatBufferBuilder builder, StringOffset AudioClipJpOffset) { builder.AddOffset(5, AudioClipJpOffset.Value, 0); }
-  public static void AddVolumeKr(FlatBufferBuilder builder, float VolumeKr) { builder.AddFloat(6, VolumeKr, 0.0f); }
-  public static void AddDelayKr(FlatBufferBuilder builder, float DelayKr) { builder.AddFloat(7, DelayKr, 0.0f); }
-  public static void AddAudioClipKr(FlatBufferBuilder builder, StringOffset AudioClipKrOffset) { builder.AddOffset(8, AudioClipKrOffset.Value, 0); }
+  public static void StartVoiceExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
+  public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
+  public static void AddId(FlatBufferBuilder builder, uint Id) { builder.AddUint(1, Id, 0); }
+  public static void AddNation(FlatBufferBuilder builder, VectorOffset NationOffset) { builder.AddOffset(2, NationOffset.Value, 0); }
+  public static VectorOffset CreateNationVector(FlatBufferBuilder builder, FlatDataJp.Nation[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateNationVectorBlock(FlatBufferBuilder builder, FlatDataJp.Nation[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateNationVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.Nation> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateNationVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.Nation>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartNationVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddPath(FlatBufferBuilder builder, VectorOffset PathOffset) { builder.AddOffset(3, PathOffset.Value, 0); }
+  public static VectorOffset CreatePathVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreatePathVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePathVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePathVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartPathVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddVolume(FlatBufferBuilder builder, VectorOffset VolumeOffset) { builder.AddOffset(4, VolumeOffset.Value, 0); }
+  public static VectorOffset CreateVolumeVector(FlatBufferBuilder builder, float[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddFloat(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateVolumeVectorBlock(FlatBufferBuilder builder, float[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateVolumeVectorBlock(FlatBufferBuilder builder, ArraySegment<float> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateVolumeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<float>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartVolumeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static Offset<FlatDataJp.VoiceExcel> EndVoiceExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.VoiceExcel>(o);

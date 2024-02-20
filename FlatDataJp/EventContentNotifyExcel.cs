@@ -28,8 +28,8 @@ public struct EventContentNotifyExcel : IFlatbufferObject
   public ArraySegment<byte>? GetIconPathBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
   public byte[] GetIconPathArray() { return __p.__vector_as_array<byte>(8); }
-  public FlatDataJp.EventNotifyType Eventnotifytype { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.EventNotifyType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventNotifyType.RewardIncreaseEvent; } }
-  public FlatDataJp.EventTargetType Eventtargettype { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.EventTargetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventTargetType.WeekDungeon; } }
+  public FlatDataJp.EventNotifyType EventNotifyType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.EventNotifyType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventNotifyType.RewardIncreaseEvent; } }
+  public FlatDataJp.EventTargetType EventTargetType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.EventTargetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventTargetType.WeekDungeon; } }
   public FlatDataJp.EventTargetType ShortcutEventTargetType { get { int o = __p.__offset(14); return o != 0 ? (FlatDataJp.EventTargetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventTargetType.WeekDungeon; } }
   public bool IsShortcutEnable { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
@@ -37,14 +37,14 @@ public struct EventContentNotifyExcel : IFlatbufferObject
       int Id = 0,
       uint LocalizeEtcId = 0,
       StringOffset IconPathOffset = default(StringOffset),
-      FlatDataJp.EventNotifyType eventnotifytype = FlatDataJp.EventNotifyType.RewardIncreaseEvent,
-      FlatDataJp.EventTargetType eventtargettype = FlatDataJp.EventTargetType.WeekDungeon,
+      FlatDataJp.EventNotifyType eventNotifyType = FlatDataJp.EventNotifyType.RewardIncreaseEvent,
+      FlatDataJp.EventTargetType eventTargetType = FlatDataJp.EventTargetType.WeekDungeon,
       FlatDataJp.EventTargetType ShortcutEventTargetType = FlatDataJp.EventTargetType.WeekDungeon,
       bool IsShortcutEnable = false) {
     builder.StartTable(7);
     EventContentNotifyExcel.AddShortcutEventTargetType(builder, ShortcutEventTargetType);
-    EventContentNotifyExcel.AddEventtargettype(builder, eventtargettype);
-    EventContentNotifyExcel.AddEventnotifytype(builder, eventnotifytype);
+    EventContentNotifyExcel.AddEventTargetType(builder, eventTargetType);
+    EventContentNotifyExcel.AddEventNotifyType(builder, eventNotifyType);
     EventContentNotifyExcel.AddIconPath(builder, IconPathOffset);
     EventContentNotifyExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
     EventContentNotifyExcel.AddId(builder, Id);
@@ -56,8 +56,8 @@ public struct EventContentNotifyExcel : IFlatbufferObject
   public static void AddId(FlatBufferBuilder builder, int Id) { builder.AddInt(0, Id, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(1, LocalizeEtcId, 0); }
   public static void AddIconPath(FlatBufferBuilder builder, StringOffset IconPathOffset) { builder.AddOffset(2, IconPathOffset.Value, 0); }
-  public static void AddEventnotifytype(FlatBufferBuilder builder, FlatDataJp.EventNotifyType eventnotifytype) { builder.AddInt(3, (int)eventnotifytype, 0); }
-  public static void AddEventtargettype(FlatBufferBuilder builder, FlatDataJp.EventTargetType eventtargettype) { builder.AddInt(4, (int)eventtargettype, 0); }
+  public static void AddEventNotifyType(FlatBufferBuilder builder, FlatDataJp.EventNotifyType eventNotifyType) { builder.AddInt(3, (int)eventNotifyType, 0); }
+  public static void AddEventTargetType(FlatBufferBuilder builder, FlatDataJp.EventTargetType eventTargetType) { builder.AddInt(4, (int)eventTargetType, 0); }
   public static void AddShortcutEventTargetType(FlatBufferBuilder builder, FlatDataJp.EventTargetType ShortcutEventTargetType) { builder.AddInt(5, (int)ShortcutEventTargetType, 0); }
   public static void AddIsShortcutEnable(FlatBufferBuilder builder, bool IsShortcutEnable) { builder.AddBool(6, IsShortcutEnable, false); }
   public static Offset<FlatDataJp.EventContentNotifyExcel> EndEventContentNotifyExcel(FlatBufferBuilder builder) {

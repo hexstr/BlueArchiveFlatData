@@ -71,8 +71,14 @@ public struct MiniGameMissionExcel : IFlatbufferObject
   public ArraySegment<byte>? GetCompleteConditionParameterBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
   public long[] GetCompleteConditionParameterArray() { return __p.__vector_as_array<long>(40); }
-  public string CompleteConditionParameterName(int j) { int o = __p.__offset(42); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int CompleteConditionParameterNameLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataJp.Tag CompleteConditionParameterTag(int j) { int o = __p.__offset(42); return o != 0 ? (FlatDataJp.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.Tag)0; }
+  public int CompleteConditionParameterTagLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<FlatDataJp.Tag> GetCompleteConditionParameterTagBytes() { return __p.__vector_as_span<FlatDataJp.Tag>(42, 4); }
+#else
+  public ArraySegment<byte>? GetCompleteConditionParameterTagBytes() { return __p.__vector_as_arraysegment(42); }
+#endif
+  public FlatDataJp.Tag[] GetCompleteConditionParameterTagArray() { int o = __p.__offset(42); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.Tag[] a = new FlatDataJp.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.Tag)__p.bb.GetInt(p + i * 4); } return a; }
   public string RewardIcon { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetRewardIconBytes() { return __p.__vector_as_span<byte>(44, 1); }
@@ -125,7 +131,7 @@ public struct MiniGameMissionExcel : IFlatbufferObject
       bool IsCompleteExtensionTime = false,
       long CompleteConditionCount = 0,
       VectorOffset CompleteConditionParameterOffset = default(VectorOffset),
-      VectorOffset CompleteConditionParameterNameOffset = default(VectorOffset),
+      VectorOffset CompleteConditionParameterTagOffset = default(VectorOffset),
       StringOffset RewardIconOffset = default(StringOffset),
       VectorOffset MissionRewardParcelTypeOffset = default(VectorOffset),
       VectorOffset MissionRewardParcelIdOffset = default(VectorOffset),
@@ -141,7 +147,7 @@ public struct MiniGameMissionExcel : IFlatbufferObject
     MiniGameMissionExcel.AddMissionRewardParcelId(builder, MissionRewardParcelIdOffset);
     MiniGameMissionExcel.AddMissionRewardParcelType(builder, MissionRewardParcelTypeOffset);
     MiniGameMissionExcel.AddRewardIcon(builder, RewardIconOffset);
-    MiniGameMissionExcel.AddCompleteConditionParameterName(builder, CompleteConditionParameterNameOffset);
+    MiniGameMissionExcel.AddCompleteConditionParameterTag(builder, CompleteConditionParameterTagOffset);
     MiniGameMissionExcel.AddCompleteConditionParameter(builder, CompleteConditionParameterOffset);
     MiniGameMissionExcel.AddCompleteConditionType(builder, CompleteConditionType);
     MiniGameMissionExcel.AddShortcutUI(builder, ShortcutUIOffset);
@@ -193,12 +199,12 @@ public struct MiniGameMissionExcel : IFlatbufferObject
   public static VectorOffset CreateCompleteConditionParameterVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCompleteConditionParameterVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCompleteConditionParameterVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddCompleteConditionParameterName(FlatBufferBuilder builder, VectorOffset CompleteConditionParameterNameOffset) { builder.AddOffset(19, CompleteConditionParameterNameOffset.Value, 0); }
-  public static VectorOffset CreateCompleteConditionParameterNameVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateCompleteConditionParameterNameVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateCompleteConditionParameterNameVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateCompleteConditionParameterNameVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartCompleteConditionParameterNameVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddCompleteConditionParameterTag(FlatBufferBuilder builder, VectorOffset CompleteConditionParameterTagOffset) { builder.AddOffset(19, CompleteConditionParameterTagOffset.Value, 0); }
+  public static VectorOffset CreateCompleteConditionParameterTagVector(FlatBufferBuilder builder, FlatDataJp.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateCompleteConditionParameterTagVectorBlock(FlatBufferBuilder builder, FlatDataJp.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateCompleteConditionParameterTagVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateCompleteConditionParameterTagVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartCompleteConditionParameterTagVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddRewardIcon(FlatBufferBuilder builder, StringOffset RewardIconOffset) { builder.AddOffset(20, RewardIconOffset.Value, 0); }
   public static void AddMissionRewardParcelType(FlatBufferBuilder builder, VectorOffset MissionRewardParcelTypeOffset) { builder.AddOffset(21, MissionRewardParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateMissionRewardParcelTypeVector(FlatBufferBuilder builder, FlatDataJp.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }

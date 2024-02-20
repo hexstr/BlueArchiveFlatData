@@ -21,7 +21,7 @@ public struct ConquestObjectExcel : IFlatbufferObject
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long EventContentId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ConquestObjectType Conquestobjecttype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.ConquestObjectType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ConquestObjectType.None; } }
+  public FlatDataJp.ConquestObjectType ConquestObjectType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.ConquestObjectType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ConquestObjectType.None; } }
   public uint Key { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public string Name { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -47,7 +47,7 @@ public struct ConquestObjectExcel : IFlatbufferObject
   public static Offset<FlatDataJp.ConquestObjectExcel> CreateConquestObjectExcel(FlatBufferBuilder builder,
       long Id = 0,
       long EventContentId = 0,
-      FlatDataJp.ConquestObjectType conquestobjecttype = FlatDataJp.ConquestObjectType.None,
+      FlatDataJp.ConquestObjectType conquestObjectType = FlatDataJp.ConquestObjectType.None,
       uint Key = 0,
       StringOffset NameOffset = default(StringOffset),
       StringOffset PrefabNameOffset = default(StringOffset),
@@ -68,7 +68,7 @@ public struct ConquestObjectExcel : IFlatbufferObject
     ConquestObjectExcel.AddPrefabName(builder, PrefabNameOffset);
     ConquestObjectExcel.AddName(builder, NameOffset);
     ConquestObjectExcel.AddKey(builder, Key);
-    ConquestObjectExcel.AddConquestobjecttype(builder, conquestobjecttype);
+    ConquestObjectExcel.AddConquestObjectType(builder, conquestObjectType);
     ConquestObjectExcel.AddDisposable(builder, Disposable);
     return ConquestObjectExcel.EndConquestObjectExcel(builder);
   }
@@ -76,7 +76,7 @@ public struct ConquestObjectExcel : IFlatbufferObject
   public static void StartConquestObjectExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(1, EventContentId, 0); }
-  public static void AddConquestobjecttype(FlatBufferBuilder builder, FlatDataJp.ConquestObjectType conquestobjecttype) { builder.AddInt(2, (int)conquestobjecttype, 0); }
+  public static void AddConquestObjectType(FlatBufferBuilder builder, FlatDataJp.ConquestObjectType conquestObjectType) { builder.AddInt(2, (int)conquestObjectType, 0); }
   public static void AddKey(FlatBufferBuilder builder, uint Key) { builder.AddUint(3, Key, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(4, NameOffset.Value, 0); }
   public static void AddPrefabName(FlatBufferBuilder builder, StringOffset PrefabNameOffset) { builder.AddOffset(5, PrefabNameOffset.Value, 0); }

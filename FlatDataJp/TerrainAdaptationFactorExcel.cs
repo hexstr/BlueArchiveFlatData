@@ -20,7 +20,7 @@ public struct TerrainAdaptationFactorExcel : IFlatbufferObject
   public TerrainAdaptationFactorExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public FlatDataJp.StageTopography TerrainAdaptation { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageTopography.Street; } }
-  public FlatDataJp.TerrainAdaptationStat Terrainadaptationstat { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TerrainAdaptationStat.D; } }
+  public FlatDataJp.TerrainAdaptationStat TerrainAdaptationStat { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TerrainAdaptationStat.D; } }
   public long ShotFactor { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long BlockFactor { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long AccuracyFactor { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -29,7 +29,7 @@ public struct TerrainAdaptationFactorExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.TerrainAdaptationFactorExcel> CreateTerrainAdaptationFactorExcel(FlatBufferBuilder builder,
       FlatDataJp.StageTopography TerrainAdaptation = FlatDataJp.StageTopography.Street,
-      FlatDataJp.TerrainAdaptationStat terrainadaptationstat = FlatDataJp.TerrainAdaptationStat.D,
+      FlatDataJp.TerrainAdaptationStat terrainAdaptationStat = FlatDataJp.TerrainAdaptationStat.D,
       long ShotFactor = 0,
       long BlockFactor = 0,
       long AccuracyFactor = 0,
@@ -41,14 +41,14 @@ public struct TerrainAdaptationFactorExcel : IFlatbufferObject
     TerrainAdaptationFactorExcel.AddAccuracyFactor(builder, AccuracyFactor);
     TerrainAdaptationFactorExcel.AddBlockFactor(builder, BlockFactor);
     TerrainAdaptationFactorExcel.AddShotFactor(builder, ShotFactor);
-    TerrainAdaptationFactorExcel.AddTerrainadaptationstat(builder, terrainadaptationstat);
+    TerrainAdaptationFactorExcel.AddTerrainAdaptationStat(builder, terrainAdaptationStat);
     TerrainAdaptationFactorExcel.AddTerrainAdaptation(builder, TerrainAdaptation);
     return TerrainAdaptationFactorExcel.EndTerrainAdaptationFactorExcel(builder);
   }
 
   public static void StartTerrainAdaptationFactorExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddTerrainAdaptation(FlatBufferBuilder builder, FlatDataJp.StageTopography TerrainAdaptation) { builder.AddInt(0, (int)TerrainAdaptation, 0); }
-  public static void AddTerrainadaptationstat(FlatBufferBuilder builder, FlatDataJp.TerrainAdaptationStat terrainadaptationstat) { builder.AddInt(1, (int)terrainadaptationstat, 0); }
+  public static void AddTerrainAdaptationStat(FlatBufferBuilder builder, FlatDataJp.TerrainAdaptationStat terrainAdaptationStat) { builder.AddInt(1, (int)terrainAdaptationStat, 0); }
   public static void AddShotFactor(FlatBufferBuilder builder, long ShotFactor) { builder.AddLong(2, ShotFactor, 0); }
   public static void AddBlockFactor(FlatBufferBuilder builder, long BlockFactor) { builder.AddLong(3, BlockFactor, 0); }
   public static void AddAccuracyFactor(FlatBufferBuilder builder, long AccuracyFactor) { builder.AddLong(4, AccuracyFactor, 0); }

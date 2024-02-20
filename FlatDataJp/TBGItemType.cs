@@ -13,6 +13,9 @@ public enum TBGItemType : int
   HealExpansion = 3,
   Defence = 4,
   Guide = 5,
+  DiceResultValue = 6,
+  DefenceCritical = 7,
+  DiceResultConfirm = 8,
 };
 
 

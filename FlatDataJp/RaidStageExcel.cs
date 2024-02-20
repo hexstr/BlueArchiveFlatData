@@ -72,60 +72,51 @@ public struct RaidStageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetEnterTimeLineBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
   public byte[] GetEnterTimeLineArray() { return __p.__vector_as_array<byte>(34); }
-  public FlatDataJp.TacticEnvironment Tacticenvironment { get { int o = __p.__offset(36); return o != 0 ? (FlatDataJp.TacticEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticEnvironment.None; } }
-  public int SeasonDamageRatio { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long DefaultClearScore { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long MaximumScore { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long PerSecondMinusScore { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long HPPercentScore { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long MinimumAcquisitionScore { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long MaximumAcquisitionScore { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RaidRewardGroupId { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string RaidRewardDevName { get { int o = __p.__offset(54); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataJp.TacticEnvironment TacticEnvironment { get { int o = __p.__offset(36); return o != 0 ? (FlatDataJp.TacticEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticEnvironment.None; } }
+  public long DefaultClearScore { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long MaximumScore { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long PerSecondMinusScore { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long HPPercentScore { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long MinimumAcquisitionScore { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long MaximumAcquisitionScore { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RaidRewardGroupId { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string BattleReadyTimelinePath(int j) { int o = __p.__offset(52); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int BattleReadyTimelinePathLength { get { int o = __p.__offset(52); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int BattleReadyTimelinePhaseStart(int j) { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int BattleReadyTimelinePhaseStartLength { get { int o = __p.__offset(54); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetRaidRewardDevNameBytes() { return __p.__vector_as_span<byte>(54, 1); }
+  public Span<int> GetBattleReadyTimelinePhaseStartBytes() { return __p.__vector_as_span<int>(54, 4); }
 #else
-  public ArraySegment<byte>? GetRaidRewardDevNameBytes() { return __p.__vector_as_arraysegment(54); }
+  public ArraySegment<byte>? GetBattleReadyTimelinePhaseStartBytes() { return __p.__vector_as_arraysegment(54); }
 #endif
-  public byte[] GetRaidRewardDevNameArray() { return __p.__vector_as_array<byte>(54); }
-  public string BattleReadyTimelinePath(int j) { int o = __p.__offset(56); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int BattleReadyTimelinePathLength { get { int o = __p.__offset(56); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public int BattleReadyTimelinePhaseStart(int j) { int o = __p.__offset(58); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int BattleReadyTimelinePhaseStartLength { get { int o = __p.__offset(58); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetBattleReadyTimelinePhaseStartArray() { return __p.__vector_as_array<int>(54); }
+  public int BattleReadyTimelinePhaseEnd(int j) { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int BattleReadyTimelinePhaseEndLength { get { int o = __p.__offset(56); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetBattleReadyTimelinePhaseStartBytes() { return __p.__vector_as_span<int>(58, 4); }
+  public Span<int> GetBattleReadyTimelinePhaseEndBytes() { return __p.__vector_as_span<int>(56, 4); }
 #else
-  public ArraySegment<byte>? GetBattleReadyTimelinePhaseStartBytes() { return __p.__vector_as_arraysegment(58); }
+  public ArraySegment<byte>? GetBattleReadyTimelinePhaseEndBytes() { return __p.__vector_as_arraysegment(56); }
 #endif
-  public int[] GetBattleReadyTimelinePhaseStartArray() { return __p.__vector_as_array<int>(58); }
-  public int BattleReadyTimelinePhaseEnd(int j) { int o = __p.__offset(60); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int BattleReadyTimelinePhaseEndLength { get { int o = __p.__offset(60); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetBattleReadyTimelinePhaseEndArray() { return __p.__vector_as_array<int>(56); }
+  public string VictoryTimelinePath { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetBattleReadyTimelinePhaseEndBytes() { return __p.__vector_as_span<int>(60, 4); }
+  public Span<byte> GetVictoryTimelinePathBytes() { return __p.__vector_as_span<byte>(58, 1); }
 #else
-  public ArraySegment<byte>? GetBattleReadyTimelinePhaseEndBytes() { return __p.__vector_as_arraysegment(60); }
+  public ArraySegment<byte>? GetVictoryTimelinePathBytes() { return __p.__vector_as_arraysegment(58); }
 #endif
-  public int[] GetBattleReadyTimelinePhaseEndArray() { return __p.__vector_as_array<int>(60); }
-  public string VictoryTimelinePath { get { int o = __p.__offset(62); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetVictoryTimelinePathArray() { return __p.__vector_as_array<byte>(58); }
+  public string PhaseChangeTimelinePath { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryTimelinePathBytes() { return __p.__vector_as_span<byte>(62, 1); }
+  public Span<byte> GetPhaseChangeTimelinePathBytes() { return __p.__vector_as_span<byte>(60, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryTimelinePathBytes() { return __p.__vector_as_arraysegment(62); }
+  public ArraySegment<byte>? GetPhaseChangeTimelinePathBytes() { return __p.__vector_as_arraysegment(60); }
 #endif
-  public byte[] GetVictoryTimelinePathArray() { return __p.__vector_as_array<byte>(62); }
-  public string PhaseChangeTimelinePath { get { int o = __p.__offset(64); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetPhaseChangeTimelinePathBytes() { return __p.__vector_as_span<byte>(64, 1); }
-#else
-  public ArraySegment<byte>? GetPhaseChangeTimelinePathBytes() { return __p.__vector_as_arraysegment(64); }
-#endif
-  public byte[] GetPhaseChangeTimelinePathArray() { return __p.__vector_as_array<byte>(64); }
-  public long TimeLinePhase { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public uint EnterScenarioKey { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public uint ClearScenarioKey { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public int InitSupplyCount { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool ShowSkillCard { get { int o = __p.__offset(74); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public uint BossBGInfoKey { get { int o = __p.__offset(76); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public byte[] GetPhaseChangeTimelinePathArray() { return __p.__vector_as_array<byte>(60); }
+  public long TimeLinePhase { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public uint EnterScenarioKey { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public uint ClearScenarioKey { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public bool ShowSkillCard { get { int o = __p.__offset(68); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public uint BossBGInfoKey { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
 
   public static Offset<FlatDataJp.RaidStageExcel> CreateRaidStageExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -144,8 +135,7 @@ public struct RaidStageExcel : IFlatbufferObject
       long GroundId = 0,
       StringOffset GroundDevNameOffset = default(StringOffset),
       StringOffset EnterTimeLineOffset = default(StringOffset),
-      FlatDataJp.TacticEnvironment tacticenvironment = FlatDataJp.TacticEnvironment.None,
-      int SeasonDamageRatio = 0,
+      FlatDataJp.TacticEnvironment tacticEnvironment = FlatDataJp.TacticEnvironment.None,
       long DefaultClearScore = 0,
       long MaximumScore = 0,
       long PerSecondMinusScore = 0,
@@ -153,7 +143,6 @@ public struct RaidStageExcel : IFlatbufferObject
       long MinimumAcquisitionScore = 0,
       long MaximumAcquisitionScore = 0,
       long RaidRewardGroupId = 0,
-      StringOffset RaidRewardDevNameOffset = default(StringOffset),
       VectorOffset BattleReadyTimelinePathOffset = default(VectorOffset),
       VectorOffset BattleReadyTimelinePhaseStartOffset = default(VectorOffset),
       VectorOffset BattleReadyTimelinePhaseEndOffset = default(VectorOffset),
@@ -162,10 +151,9 @@ public struct RaidStageExcel : IFlatbufferObject
       long TimeLinePhase = 0,
       uint EnterScenarioKey = 0,
       uint ClearScenarioKey = 0,
-      int InitSupplyCount = 0,
       bool ShowSkillCard = false,
       uint BossBGInfoKey = 0) {
-    builder.StartTable(37);
+    builder.StartTable(34);
     RaidStageExcel.AddTimeLinePhase(builder, TimeLinePhase);
     RaidStageExcel.AddRaidRewardGroupId(builder, RaidRewardGroupId);
     RaidStageExcel.AddMaximumAcquisitionScore(builder, MaximumAcquisitionScore);
@@ -180,7 +168,6 @@ public struct RaidStageExcel : IFlatbufferObject
     RaidStageExcel.AddRaidCharacterId(builder, RaidCharacterId);
     RaidStageExcel.AddId(builder, Id);
     RaidStageExcel.AddBossBGInfoKey(builder, BossBGInfoKey);
-    RaidStageExcel.AddInitSupplyCount(builder, InitSupplyCount);
     RaidStageExcel.AddClearScenarioKey(builder, ClearScenarioKey);
     RaidStageExcel.AddEnterScenarioKey(builder, EnterScenarioKey);
     RaidStageExcel.AddPhaseChangeTimelinePath(builder, PhaseChangeTimelinePathOffset);
@@ -188,9 +175,7 @@ public struct RaidStageExcel : IFlatbufferObject
     RaidStageExcel.AddBattleReadyTimelinePhaseEnd(builder, BattleReadyTimelinePhaseEndOffset);
     RaidStageExcel.AddBattleReadyTimelinePhaseStart(builder, BattleReadyTimelinePhaseStartOffset);
     RaidStageExcel.AddBattleReadyTimelinePath(builder, BattleReadyTimelinePathOffset);
-    RaidStageExcel.AddRaidRewardDevName(builder, RaidRewardDevNameOffset);
-    RaidStageExcel.AddSeasonDamageRatio(builder, SeasonDamageRatio);
-    RaidStageExcel.AddTacticenvironment(builder, tacticenvironment);
+    RaidStageExcel.AddTacticEnvironment(builder, tacticEnvironment);
     RaidStageExcel.AddEnterTimeLine(builder, EnterTimeLineOffset);
     RaidStageExcel.AddGroundDevName(builder, GroundDevNameOffset);
     RaidStageExcel.AddRaidRoomLifeTime(builder, RaidRoomLifeTime);
@@ -206,7 +191,7 @@ public struct RaidStageExcel : IFlatbufferObject
     return RaidStageExcel.EndRaidStageExcel(builder);
   }
 
-  public static void StartRaidStageExcel(FlatBufferBuilder builder) { builder.StartTable(37); }
+  public static void StartRaidStageExcel(FlatBufferBuilder builder) { builder.StartTable(34); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddUseBossIndex(FlatBufferBuilder builder, bool UseBossIndex) { builder.AddBool(1, UseBossIndex, false); }
   public static void AddUseBossAIPhaseSync(FlatBufferBuilder builder, bool UseBossAIPhaseSync) { builder.AddBool(2, UseBossAIPhaseSync, false); }
@@ -228,42 +213,39 @@ public struct RaidStageExcel : IFlatbufferObject
   public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(13, GroundId, 0); }
   public static void AddGroundDevName(FlatBufferBuilder builder, StringOffset GroundDevNameOffset) { builder.AddOffset(14, GroundDevNameOffset.Value, 0); }
   public static void AddEnterTimeLine(FlatBufferBuilder builder, StringOffset EnterTimeLineOffset) { builder.AddOffset(15, EnterTimeLineOffset.Value, 0); }
-  public static void AddTacticenvironment(FlatBufferBuilder builder, FlatDataJp.TacticEnvironment tacticenvironment) { builder.AddInt(16, (int)tacticenvironment, 0); }
-  public static void AddSeasonDamageRatio(FlatBufferBuilder builder, int SeasonDamageRatio) { builder.AddInt(17, SeasonDamageRatio, 0); }
-  public static void AddDefaultClearScore(FlatBufferBuilder builder, long DefaultClearScore) { builder.AddLong(18, DefaultClearScore, 0); }
-  public static void AddMaximumScore(FlatBufferBuilder builder, long MaximumScore) { builder.AddLong(19, MaximumScore, 0); }
-  public static void AddPerSecondMinusScore(FlatBufferBuilder builder, long PerSecondMinusScore) { builder.AddLong(20, PerSecondMinusScore, 0); }
-  public static void AddHPPercentScore(FlatBufferBuilder builder, long HPPercentScore) { builder.AddLong(21, HPPercentScore, 0); }
-  public static void AddMinimumAcquisitionScore(FlatBufferBuilder builder, long MinimumAcquisitionScore) { builder.AddLong(22, MinimumAcquisitionScore, 0); }
-  public static void AddMaximumAcquisitionScore(FlatBufferBuilder builder, long MaximumAcquisitionScore) { builder.AddLong(23, MaximumAcquisitionScore, 0); }
-  public static void AddRaidRewardGroupId(FlatBufferBuilder builder, long RaidRewardGroupId) { builder.AddLong(24, RaidRewardGroupId, 0); }
-  public static void AddRaidRewardDevName(FlatBufferBuilder builder, StringOffset RaidRewardDevNameOffset) { builder.AddOffset(25, RaidRewardDevNameOffset.Value, 0); }
-  public static void AddBattleReadyTimelinePath(FlatBufferBuilder builder, VectorOffset BattleReadyTimelinePathOffset) { builder.AddOffset(26, BattleReadyTimelinePathOffset.Value, 0); }
+  public static void AddTacticEnvironment(FlatBufferBuilder builder, FlatDataJp.TacticEnvironment tacticEnvironment) { builder.AddInt(16, (int)tacticEnvironment, 0); }
+  public static void AddDefaultClearScore(FlatBufferBuilder builder, long DefaultClearScore) { builder.AddLong(17, DefaultClearScore, 0); }
+  public static void AddMaximumScore(FlatBufferBuilder builder, long MaximumScore) { builder.AddLong(18, MaximumScore, 0); }
+  public static void AddPerSecondMinusScore(FlatBufferBuilder builder, long PerSecondMinusScore) { builder.AddLong(19, PerSecondMinusScore, 0); }
+  public static void AddHPPercentScore(FlatBufferBuilder builder, long HPPercentScore) { builder.AddLong(20, HPPercentScore, 0); }
+  public static void AddMinimumAcquisitionScore(FlatBufferBuilder builder, long MinimumAcquisitionScore) { builder.AddLong(21, MinimumAcquisitionScore, 0); }
+  public static void AddMaximumAcquisitionScore(FlatBufferBuilder builder, long MaximumAcquisitionScore) { builder.AddLong(22, MaximumAcquisitionScore, 0); }
+  public static void AddRaidRewardGroupId(FlatBufferBuilder builder, long RaidRewardGroupId) { builder.AddLong(23, RaidRewardGroupId, 0); }
+  public static void AddBattleReadyTimelinePath(FlatBufferBuilder builder, VectorOffset BattleReadyTimelinePathOffset) { builder.AddOffset(24, BattleReadyTimelinePathOffset.Value, 0); }
   public static VectorOffset CreateBattleReadyTimelinePathVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateBattleReadyTimelinePathVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBattleReadyTimelinePathVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBattleReadyTimelinePathVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartBattleReadyTimelinePathVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddBattleReadyTimelinePhaseStart(FlatBufferBuilder builder, VectorOffset BattleReadyTimelinePhaseStartOffset) { builder.AddOffset(27, BattleReadyTimelinePhaseStartOffset.Value, 0); }
+  public static void AddBattleReadyTimelinePhaseStart(FlatBufferBuilder builder, VectorOffset BattleReadyTimelinePhaseStartOffset) { builder.AddOffset(25, BattleReadyTimelinePhaseStartOffset.Value, 0); }
   public static VectorOffset CreateBattleReadyTimelinePhaseStartVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateBattleReadyTimelinePhaseStartVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBattleReadyTimelinePhaseStartVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBattleReadyTimelinePhaseStartVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartBattleReadyTimelinePhaseStartVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddBattleReadyTimelinePhaseEnd(FlatBufferBuilder builder, VectorOffset BattleReadyTimelinePhaseEndOffset) { builder.AddOffset(28, BattleReadyTimelinePhaseEndOffset.Value, 0); }
+  public static void AddBattleReadyTimelinePhaseEnd(FlatBufferBuilder builder, VectorOffset BattleReadyTimelinePhaseEndOffset) { builder.AddOffset(26, BattleReadyTimelinePhaseEndOffset.Value, 0); }
   public static VectorOffset CreateBattleReadyTimelinePhaseEndVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateBattleReadyTimelinePhaseEndVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBattleReadyTimelinePhaseEndVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBattleReadyTimelinePhaseEndVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartBattleReadyTimelinePhaseEndVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVictoryTimelinePath(FlatBufferBuilder builder, StringOffset VictoryTimelinePathOffset) { builder.AddOffset(29, VictoryTimelinePathOffset.Value, 0); }
-  public static void AddPhaseChangeTimelinePath(FlatBufferBuilder builder, StringOffset PhaseChangeTimelinePathOffset) { builder.AddOffset(30, PhaseChangeTimelinePathOffset.Value, 0); }
-  public static void AddTimeLinePhase(FlatBufferBuilder builder, long TimeLinePhase) { builder.AddLong(31, TimeLinePhase, 0); }
-  public static void AddEnterScenarioKey(FlatBufferBuilder builder, uint EnterScenarioKey) { builder.AddUint(32, EnterScenarioKey, 0); }
-  public static void AddClearScenarioKey(FlatBufferBuilder builder, uint ClearScenarioKey) { builder.AddUint(33, ClearScenarioKey, 0); }
-  public static void AddInitSupplyCount(FlatBufferBuilder builder, int InitSupplyCount) { builder.AddInt(34, InitSupplyCount, 0); }
-  public static void AddShowSkillCard(FlatBufferBuilder builder, bool ShowSkillCard) { builder.AddBool(35, ShowSkillCard, false); }
-  public static void AddBossBGInfoKey(FlatBufferBuilder builder, uint BossBGInfoKey) { builder.AddUint(36, BossBGInfoKey, 0); }
+  public static void AddVictoryTimelinePath(FlatBufferBuilder builder, StringOffset VictoryTimelinePathOffset) { builder.AddOffset(27, VictoryTimelinePathOffset.Value, 0); }
+  public static void AddPhaseChangeTimelinePath(FlatBufferBuilder builder, StringOffset PhaseChangeTimelinePathOffset) { builder.AddOffset(28, PhaseChangeTimelinePathOffset.Value, 0); }
+  public static void AddTimeLinePhase(FlatBufferBuilder builder, long TimeLinePhase) { builder.AddLong(29, TimeLinePhase, 0); }
+  public static void AddEnterScenarioKey(FlatBufferBuilder builder, uint EnterScenarioKey) { builder.AddUint(30, EnterScenarioKey, 0); }
+  public static void AddClearScenarioKey(FlatBufferBuilder builder, uint ClearScenarioKey) { builder.AddUint(31, ClearScenarioKey, 0); }
+  public static void AddShowSkillCard(FlatBufferBuilder builder, bool ShowSkillCard) { builder.AddBool(32, ShowSkillCard, false); }
+  public static void AddBossBGInfoKey(FlatBufferBuilder builder, uint BossBGInfoKey) { builder.AddUint(33, BossBGInfoKey, 0); }
   public static Offset<FlatDataJp.RaidStageExcel> EndRaidStageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.RaidStageExcel>(o);

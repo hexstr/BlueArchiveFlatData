@@ -31,34 +31,35 @@ public struct ShopCashExcel : IFlatbufferObject
 #endif
   public byte[] GetIconPathArray() { return __p.__vector_as_array<byte>(12); }
   public long DisplayOrder { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ProductCategory CategoryType { get { int o = __p.__offset(16); return o != 0 ? (FlatDataJp.ProductCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductCategory.None; } }
-  public FlatDataJp.ProductDisplayTag DisplayTag { get { int o = __p.__offset(18); return o != 0 ? (FlatDataJp.ProductDisplayTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductDisplayTag.None; } }
-  public string SalePeriodFrom { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long RenewalDisplayOrder { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataJp.ProductCategory CategoryType { get { int o = __p.__offset(18); return o != 0 ? (FlatDataJp.ProductCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductCategory.None; } }
+  public FlatDataJp.ProductDisplayTag DisplayTag { get { int o = __p.__offset(20); return o != 0 ? (FlatDataJp.ProductDisplayTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductDisplayTag.None; } }
+  public string SalePeriodFrom { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSalePeriodFromBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetSalePeriodFromBytes() { return __p.__vector_as_span<byte>(22, 1); }
 #else
-  public ArraySegment<byte>? GetSalePeriodFromBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetSalePeriodFromBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetSalePeriodFromArray() { return __p.__vector_as_array<byte>(20); }
-  public string SalePeriodTo { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSalePeriodFromArray() { return __p.__vector_as_array<byte>(22); }
+  public string SalePeriodTo { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSalePeriodToBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetSalePeriodToBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetSalePeriodToBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetSalePeriodToBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetSalePeriodToArray() { return __p.__vector_as_array<byte>(22); }
-  public bool PeriodTag { get { int o = __p.__offset(24); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long AccountLevelLimit { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool AccountLevelHide { get { int o = __p.__offset(28); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long ClearMissionLimit { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool ClearMissionHide { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string PurchaseReportEventName { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSalePeriodToArray() { return __p.__vector_as_array<byte>(24); }
+  public bool PeriodTag { get { int o = __p.__offset(26); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long AccountLevelLimit { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool AccountLevelHide { get { int o = __p.__offset(30); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long ClearMissionLimit { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool ClearMissionHide { get { int o = __p.__offset(34); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string PurchaseReportEventName { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetPurchaseReportEventNameBytes() { return __p.__vector_as_span<byte>(34, 1); }
+  public Span<byte> GetPurchaseReportEventNameBytes() { return __p.__vector_as_span<byte>(36, 1); }
 #else
-  public ArraySegment<byte>? GetPurchaseReportEventNameBytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetPurchaseReportEventNameBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public byte[] GetPurchaseReportEventNameArray() { return __p.__vector_as_array<byte>(34); }
+  public byte[] GetPurchaseReportEventNameArray() { return __p.__vector_as_array<byte>(36); }
 
   public static Offset<FlatDataJp.ShopCashExcel> CreateShopCashExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -67,6 +68,7 @@ public struct ShopCashExcel : IFlatbufferObject
       uint LocalizeEtcId = 0,
       StringOffset IconPathOffset = default(StringOffset),
       long DisplayOrder = 0,
+      long RenewalDisplayOrder = 0,
       FlatDataJp.ProductCategory CategoryType = FlatDataJp.ProductCategory.None,
       FlatDataJp.ProductDisplayTag DisplayTag = FlatDataJp.ProductDisplayTag.None,
       StringOffset SalePeriodFromOffset = default(StringOffset),
@@ -77,9 +79,10 @@ public struct ShopCashExcel : IFlatbufferObject
       long ClearMissionLimit = 0,
       bool ClearMissionHide = false,
       StringOffset PurchaseReportEventNameOffset = default(StringOffset)) {
-    builder.StartTable(16);
+    builder.StartTable(17);
     ShopCashExcel.AddClearMissionLimit(builder, ClearMissionLimit);
     ShopCashExcel.AddAccountLevelLimit(builder, AccountLevelLimit);
+    ShopCashExcel.AddRenewalDisplayOrder(builder, RenewalDisplayOrder);
     ShopCashExcel.AddDisplayOrder(builder, DisplayOrder);
     ShopCashExcel.AddCashProductId(builder, CashProductId);
     ShopCashExcel.AddId(builder, Id);
@@ -97,23 +100,24 @@ public struct ShopCashExcel : IFlatbufferObject
     return ShopCashExcel.EndShopCashExcel(builder);
   }
 
-  public static void StartShopCashExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
+  public static void StartShopCashExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddCashProductId(FlatBufferBuilder builder, long CashProductId) { builder.AddLong(1, CashProductId, 0); }
   public static void AddPackageType(FlatBufferBuilder builder, FlatDataJp.PurchaseSourceType PackageType) { builder.AddInt(2, (int)PackageType, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(3, LocalizeEtcId, 0); }
   public static void AddIconPath(FlatBufferBuilder builder, StringOffset IconPathOffset) { builder.AddOffset(4, IconPathOffset.Value, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(5, DisplayOrder, 0); }
-  public static void AddCategoryType(FlatBufferBuilder builder, FlatDataJp.ProductCategory CategoryType) { builder.AddInt(6, (int)CategoryType, 0); }
-  public static void AddDisplayTag(FlatBufferBuilder builder, FlatDataJp.ProductDisplayTag DisplayTag) { builder.AddInt(7, (int)DisplayTag, 0); }
-  public static void AddSalePeriodFrom(FlatBufferBuilder builder, StringOffset SalePeriodFromOffset) { builder.AddOffset(8, SalePeriodFromOffset.Value, 0); }
-  public static void AddSalePeriodTo(FlatBufferBuilder builder, StringOffset SalePeriodToOffset) { builder.AddOffset(9, SalePeriodToOffset.Value, 0); }
-  public static void AddPeriodTag(FlatBufferBuilder builder, bool PeriodTag) { builder.AddBool(10, PeriodTag, false); }
-  public static void AddAccountLevelLimit(FlatBufferBuilder builder, long AccountLevelLimit) { builder.AddLong(11, AccountLevelLimit, 0); }
-  public static void AddAccountLevelHide(FlatBufferBuilder builder, bool AccountLevelHide) { builder.AddBool(12, AccountLevelHide, false); }
-  public static void AddClearMissionLimit(FlatBufferBuilder builder, long ClearMissionLimit) { builder.AddLong(13, ClearMissionLimit, 0); }
-  public static void AddClearMissionHide(FlatBufferBuilder builder, bool ClearMissionHide) { builder.AddBool(14, ClearMissionHide, false); }
-  public static void AddPurchaseReportEventName(FlatBufferBuilder builder, StringOffset PurchaseReportEventNameOffset) { builder.AddOffset(15, PurchaseReportEventNameOffset.Value, 0); }
+  public static void AddRenewalDisplayOrder(FlatBufferBuilder builder, long RenewalDisplayOrder) { builder.AddLong(6, RenewalDisplayOrder, 0); }
+  public static void AddCategoryType(FlatBufferBuilder builder, FlatDataJp.ProductCategory CategoryType) { builder.AddInt(7, (int)CategoryType, 0); }
+  public static void AddDisplayTag(FlatBufferBuilder builder, FlatDataJp.ProductDisplayTag DisplayTag) { builder.AddInt(8, (int)DisplayTag, 0); }
+  public static void AddSalePeriodFrom(FlatBufferBuilder builder, StringOffset SalePeriodFromOffset) { builder.AddOffset(9, SalePeriodFromOffset.Value, 0); }
+  public static void AddSalePeriodTo(FlatBufferBuilder builder, StringOffset SalePeriodToOffset) { builder.AddOffset(10, SalePeriodToOffset.Value, 0); }
+  public static void AddPeriodTag(FlatBufferBuilder builder, bool PeriodTag) { builder.AddBool(11, PeriodTag, false); }
+  public static void AddAccountLevelLimit(FlatBufferBuilder builder, long AccountLevelLimit) { builder.AddLong(12, AccountLevelLimit, 0); }
+  public static void AddAccountLevelHide(FlatBufferBuilder builder, bool AccountLevelHide) { builder.AddBool(13, AccountLevelHide, false); }
+  public static void AddClearMissionLimit(FlatBufferBuilder builder, long ClearMissionLimit) { builder.AddLong(14, ClearMissionLimit, 0); }
+  public static void AddClearMissionHide(FlatBufferBuilder builder, bool ClearMissionHide) { builder.AddBool(15, ClearMissionHide, false); }
+  public static void AddPurchaseReportEventName(FlatBufferBuilder builder, StringOffset PurchaseReportEventNameOffset) { builder.AddOffset(16, PurchaseReportEventNameOffset.Value, 0); }
   public static Offset<FlatDataJp.ShopCashExcel> EndShopCashExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.ShopCashExcel>(o);

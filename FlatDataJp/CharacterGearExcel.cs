@@ -21,66 +21,77 @@ public struct CharacterGearExcel : IFlatbufferObject
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long CharacterId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.StatLevelUpType Statleveluptype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatLevelUpType.Standard; } }
+  public FlatDataJp.StatLevelUpType StatLevelUpType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.StatLevelUpType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatLevelUpType.Standard; } }
   public long Tier { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long NextTierEquipment { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long RecipeId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long OpenFavorLevel { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long MaxLevel { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string PreviousSkillGroupId { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string LearnSkillSlot { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetPreviousSkillGroupIdBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetLearnSkillSlotBytes() { return __p.__vector_as_span<byte>(20, 1); }
 #else
-  public ArraySegment<byte>? GetPreviousSkillGroupIdBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetLearnSkillSlotBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public byte[] GetPreviousSkillGroupIdArray() { return __p.__vector_as_array<byte>(20); }
-  public string AfterSkillGroupId { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLearnSkillSlotArray() { return __p.__vector_as_array<byte>(20); }
+  public FlatDataJp.EquipmentOptionType StatType(int j) { int o = __p.__offset(22); return o != 0 ? (FlatDataJp.EquipmentOptionType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.EquipmentOptionType)0; }
+  public int StatTypeLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAfterSkillGroupIdBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<FlatDataJp.EquipmentOptionType> GetStatTypeBytes() { return __p.__vector_as_span<FlatDataJp.EquipmentOptionType>(22, 4); }
 #else
-  public ArraySegment<byte>? GetAfterSkillGroupIdBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetStatTypeBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetAfterSkillGroupIdArray() { return __p.__vector_as_array<byte>(22); }
-  public FlatDataJp.EquipmentOptionType StatType { get { int o = __p.__offset(24); return o != 0 ? (FlatDataJp.EquipmentOptionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EquipmentOptionType.None; } }
-  public long MinStatValue { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long MaxStatValue { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string Icon { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataJp.EquipmentOptionType[] GetStatTypeArray() { int o = __p.__offset(22); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.EquipmentOptionType[] a = new FlatDataJp.EquipmentOptionType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.EquipmentOptionType)__p.bb.GetInt(p + i * 4); } return a; }
+  public long MinStatValue(int j) { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int MinStatValueLength { get { int o = __p.__offset(24); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIconBytes() { return __p.__vector_as_span<byte>(30, 1); }
+  public Span<long> GetMinStatValueBytes() { return __p.__vector_as_span<long>(24, 8); }
 #else
-  public ArraySegment<byte>? GetIconBytes() { return __p.__vector_as_arraysegment(30); }
+  public ArraySegment<byte>? GetMinStatValueBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetIconArray() { return __p.__vector_as_array<byte>(30); }
-  public uint LocalizeEtcId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public FlatDataJp.Tag Tags(int j) { int o = __p.__offset(34); return o != 0 ? (FlatDataJp.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.Tag)0; }
-  public int TagsLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetMinStatValueArray() { return __p.__vector_as_array<long>(24); }
+  public long MaxStatValue(int j) { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int MaxStatValueLength { get { int o = __p.__offset(26); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataJp.Tag> GetTagsBytes() { return __p.__vector_as_span<FlatDataJp.Tag>(34, 4); }
+  public Span<long> GetMaxStatValueBytes() { return __p.__vector_as_span<long>(26, 8); }
 #else
-  public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetMaxStatValueBytes() { return __p.__vector_as_arraysegment(26); }
 #endif
-  public FlatDataJp.Tag[] GetTagsArray() { int o = __p.__offset(34); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.Tag[] a = new FlatDataJp.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.Tag)__p.bb.GetInt(p + i * 4); } return a; }
+  public long[] GetMaxStatValueArray() { return __p.__vector_as_array<long>(26); }
+  public string Icon { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetIconBytes() { return __p.__vector_as_span<byte>(28, 1); }
+#else
+  public ArraySegment<byte>? GetIconBytes() { return __p.__vector_as_arraysegment(28); }
+#endif
+  public byte[] GetIconArray() { return __p.__vector_as_array<byte>(28); }
+  public uint LocalizeEtcId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public FlatDataJp.Tag Tags(int j) { int o = __p.__offset(32); return o != 0 ? (FlatDataJp.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.Tag)0; }
+  public int TagsLength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<FlatDataJp.Tag> GetTagsBytes() { return __p.__vector_as_span<FlatDataJp.Tag>(32, 4); }
+#else
+  public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(32); }
+#endif
+  public FlatDataJp.Tag[] GetTagsArray() { int o = __p.__offset(32); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.Tag[] a = new FlatDataJp.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.Tag)__p.bb.GetInt(p + i * 4); } return a; }
 
   public static Offset<FlatDataJp.CharacterGearExcel> CreateCharacterGearExcel(FlatBufferBuilder builder,
       long Id = 0,
       long CharacterId = 0,
-      FlatDataJp.StatLevelUpType statleveluptype = FlatDataJp.StatLevelUpType.Standard,
+      FlatDataJp.StatLevelUpType statLevelUpType = FlatDataJp.StatLevelUpType.Standard,
       long Tier = 0,
       long NextTierEquipment = 0,
       long RecipeId = 0,
       long OpenFavorLevel = 0,
       long MaxLevel = 0,
-      StringOffset PreviousSkillGroupIdOffset = default(StringOffset),
-      StringOffset AfterSkillGroupIdOffset = default(StringOffset),
-      FlatDataJp.EquipmentOptionType StatType = FlatDataJp.EquipmentOptionType.None,
-      long MinStatValue = 0,
-      long MaxStatValue = 0,
+      StringOffset LearnSkillSlotOffset = default(StringOffset),
+      VectorOffset StatTypeOffset = default(VectorOffset),
+      VectorOffset MinStatValueOffset = default(VectorOffset),
+      VectorOffset MaxStatValueOffset = default(VectorOffset),
       StringOffset IconOffset = default(StringOffset),
       uint LocalizeEtcId = 0,
       VectorOffset TagsOffset = default(VectorOffset)) {
-    builder.StartTable(16);
-    CharacterGearExcel.AddMaxStatValue(builder, MaxStatValue);
-    CharacterGearExcel.AddMinStatValue(builder, MinStatValue);
+    builder.StartTable(15);
     CharacterGearExcel.AddMaxLevel(builder, MaxLevel);
     CharacterGearExcel.AddOpenFavorLevel(builder, OpenFavorLevel);
     CharacterGearExcel.AddRecipeId(builder, RecipeId);
@@ -91,30 +102,45 @@ public struct CharacterGearExcel : IFlatbufferObject
     CharacterGearExcel.AddTags(builder, TagsOffset);
     CharacterGearExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
     CharacterGearExcel.AddIcon(builder, IconOffset);
-    CharacterGearExcel.AddStatType(builder, StatType);
-    CharacterGearExcel.AddAfterSkillGroupId(builder, AfterSkillGroupIdOffset);
-    CharacterGearExcel.AddPreviousSkillGroupId(builder, PreviousSkillGroupIdOffset);
-    CharacterGearExcel.AddStatleveluptype(builder, statleveluptype);
+    CharacterGearExcel.AddMaxStatValue(builder, MaxStatValueOffset);
+    CharacterGearExcel.AddMinStatValue(builder, MinStatValueOffset);
+    CharacterGearExcel.AddStatType(builder, StatTypeOffset);
+    CharacterGearExcel.AddLearnSkillSlot(builder, LearnSkillSlotOffset);
+    CharacterGearExcel.AddStatLevelUpType(builder, statLevelUpType);
     return CharacterGearExcel.EndCharacterGearExcel(builder);
   }
 
-  public static void StartCharacterGearExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
+  public static void StartCharacterGearExcel(FlatBufferBuilder builder) { builder.StartTable(15); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(1, CharacterId, 0); }
-  public static void AddStatleveluptype(FlatBufferBuilder builder, FlatDataJp.StatLevelUpType statleveluptype) { builder.AddInt(2, (int)statleveluptype, 0); }
+  public static void AddStatLevelUpType(FlatBufferBuilder builder, FlatDataJp.StatLevelUpType statLevelUpType) { builder.AddInt(2, (int)statLevelUpType, 0); }
   public static void AddTier(FlatBufferBuilder builder, long Tier) { builder.AddLong(3, Tier, 0); }
   public static void AddNextTierEquipment(FlatBufferBuilder builder, long NextTierEquipment) { builder.AddLong(4, NextTierEquipment, 0); }
   public static void AddRecipeId(FlatBufferBuilder builder, long RecipeId) { builder.AddLong(5, RecipeId, 0); }
   public static void AddOpenFavorLevel(FlatBufferBuilder builder, long OpenFavorLevel) { builder.AddLong(6, OpenFavorLevel, 0); }
   public static void AddMaxLevel(FlatBufferBuilder builder, long MaxLevel) { builder.AddLong(7, MaxLevel, 0); }
-  public static void AddPreviousSkillGroupId(FlatBufferBuilder builder, StringOffset PreviousSkillGroupIdOffset) { builder.AddOffset(8, PreviousSkillGroupIdOffset.Value, 0); }
-  public static void AddAfterSkillGroupId(FlatBufferBuilder builder, StringOffset AfterSkillGroupIdOffset) { builder.AddOffset(9, AfterSkillGroupIdOffset.Value, 0); }
-  public static void AddStatType(FlatBufferBuilder builder, FlatDataJp.EquipmentOptionType StatType) { builder.AddInt(10, (int)StatType, 0); }
-  public static void AddMinStatValue(FlatBufferBuilder builder, long MinStatValue) { builder.AddLong(11, MinStatValue, 0); }
-  public static void AddMaxStatValue(FlatBufferBuilder builder, long MaxStatValue) { builder.AddLong(12, MaxStatValue, 0); }
-  public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(13, IconOffset.Value, 0); }
-  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(14, LocalizeEtcId, 0); }
-  public static void AddTags(FlatBufferBuilder builder, VectorOffset TagsOffset) { builder.AddOffset(15, TagsOffset.Value, 0); }
+  public static void AddLearnSkillSlot(FlatBufferBuilder builder, StringOffset LearnSkillSlotOffset) { builder.AddOffset(8, LearnSkillSlotOffset.Value, 0); }
+  public static void AddStatType(FlatBufferBuilder builder, VectorOffset StatTypeOffset) { builder.AddOffset(9, StatTypeOffset.Value, 0); }
+  public static VectorOffset CreateStatTypeVector(FlatBufferBuilder builder, FlatDataJp.EquipmentOptionType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateStatTypeVectorBlock(FlatBufferBuilder builder, FlatDataJp.EquipmentOptionType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStatTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.EquipmentOptionType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStatTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.EquipmentOptionType>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartStatTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddMinStatValue(FlatBufferBuilder builder, VectorOffset MinStatValueOffset) { builder.AddOffset(10, MinStatValueOffset.Value, 0); }
+  public static VectorOffset CreateMinStatValueVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateMinStatValueVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMinStatValueVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMinStatValueVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartMinStatValueVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddMaxStatValue(FlatBufferBuilder builder, VectorOffset MaxStatValueOffset) { builder.AddOffset(11, MaxStatValueOffset.Value, 0); }
+  public static VectorOffset CreateMaxStatValueVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateMaxStatValueVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMaxStatValueVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMaxStatValueVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartMaxStatValueVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(12, IconOffset.Value, 0); }
+  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(13, LocalizeEtcId, 0); }
+  public static void AddTags(FlatBufferBuilder builder, VectorOffset TagsOffset) { builder.AddOffset(14, TagsOffset.Value, 0); }
   public static VectorOffset CreateTagsVector(FlatBufferBuilder builder, FlatDataJp.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, FlatDataJp.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }

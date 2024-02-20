@@ -13,7 +13,7 @@ public enum AccountAchievementType : int
   TotalCharacterSkillLevelUpCount = 3,
   TotalClearCampaignStageCount = 4,
   TotalClearChaserDungeonCount = 5,
-  TotalClearWeekDungeonCount = 6,
+  TotalClearFindGiftAndBloodDungeonCount = 6,
   TotalEquipmentLevelUpCount = 7,
   TotalEquipmentTierUpCount = 8,
   MaxComfortPoint = 9,
@@ -28,6 +28,8 @@ public enum AccountAchievementType : int
   KillEnemyWithDecagrammatonSPOTagCount = 18,
   EventPoint = 19,
   ConquestCalculateReward = 20,
+  TotalJoinEliminateRaidCount = 21,
+  Cafe2MaxComfortPoint = 22,
 };
 
 

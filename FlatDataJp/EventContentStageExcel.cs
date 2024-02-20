@@ -28,7 +28,7 @@ public struct EventContentStageExcel : IFlatbufferObject
 #endif
   public byte[] GetNameArray() { return __p.__vector_as_array<byte>(6); }
   public long EventContentId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.StageDifficulty Stagedifficulty { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.StageDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageDifficulty.None; } }
+  public FlatDataJp.StageDifficulty StageDifficulty { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.StageDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageDifficulty.None; } }
   public string StageNumber { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetStageNumberBytes() { return __p.__vector_as_span<byte>(12, 1); }
@@ -41,73 +41,96 @@ public struct EventContentStageExcel : IFlatbufferObject
   public long OpenDate { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long OpenEventPoint { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long OpenConditionScenarioId { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long BattleDuration { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ParcelType StageEnterCostType { get { int o = __p.__offset(26); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
-  public long StageEnterCostId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int StageEnterCostAmount { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int StageEnterEchelonCount { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long StarConditionTacticRankSCount { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long StarConditionTurnCount { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnterScenarioGroupId(int j) { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int EnterScenarioGroupIdLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataJp.EventContentType OpenConditionContentType { get { int o = __p.__offset(24); return o != 0 ? (FlatDataJp.EventContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventContentType.Stage; } }
+  public long OpenConditionContentId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long BattleDuration { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataJp.ParcelType StageEnterCostType { get { int o = __p.__offset(30); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
+  public long StageEnterCostId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int StageEnterCostAmount { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int StageEnterEchelonCount { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long StarConditionTacticRankSCount { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long StarConditionTurnCount { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnterScenarioGroupId(int j) { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int EnterScenarioGroupIdLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetEnterScenarioGroupIdBytes() { return __p.__vector_as_span<long>(38, 8); }
+  public Span<long> GetEnterScenarioGroupIdBytes() { return __p.__vector_as_span<long>(42, 8); }
 #else
-  public ArraySegment<byte>? GetEnterScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(38); }
+  public ArraySegment<byte>? GetEnterScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public long[] GetEnterScenarioGroupIdArray() { return __p.__vector_as_array<long>(38); }
-  public long ClearScenarioGroupId(int j) { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int ClearScenarioGroupIdLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetEnterScenarioGroupIdArray() { return __p.__vector_as_array<long>(42); }
+  public long ClearScenarioGroupId(int j) { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ClearScenarioGroupIdLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetClearScenarioGroupIdBytes() { return __p.__vector_as_span<long>(40, 8); }
+  public Span<long> GetClearScenarioGroupIdBytes() { return __p.__vector_as_span<long>(44, 8); }
 #else
-  public ArraySegment<byte>? GetClearScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(40); }
+  public ArraySegment<byte>? GetClearScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(44); }
 #endif
-  public long[] GetClearScenarioGroupIdArray() { return __p.__vector_as_array<long>(40); }
-  public string StrategyMap { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long[] GetClearScenarioGroupIdArray() { return __p.__vector_as_array<long>(44); }
+  public string StrategyMap { get { int o = __p.__offset(46); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetStrategyMapBytes() { return __p.__vector_as_span<byte>(42, 1); }
+  public Span<byte> GetStrategyMapBytes() { return __p.__vector_as_span<byte>(46, 1); }
 #else
-  public ArraySegment<byte>? GetStrategyMapBytes() { return __p.__vector_as_arraysegment(42); }
+  public ArraySegment<byte>? GetStrategyMapBytes() { return __p.__vector_as_arraysegment(46); }
 #endif
-  public byte[] GetStrategyMapArray() { return __p.__vector_as_array<byte>(42); }
-  public string StrategyMapBG { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetStrategyMapArray() { return __p.__vector_as_array<byte>(46); }
+  public string StrategyMapBG { get { int o = __p.__offset(48); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetStrategyMapBGBytes() { return __p.__vector_as_span<byte>(44, 1); }
+  public Span<byte> GetStrategyMapBGBytes() { return __p.__vector_as_span<byte>(48, 1); }
 #else
-  public ArraySegment<byte>? GetStrategyMapBGBytes() { return __p.__vector_as_arraysegment(44); }
+  public ArraySegment<byte>? GetStrategyMapBGBytes() { return __p.__vector_as_arraysegment(48); }
 #endif
-  public byte[] GetStrategyMapBGArray() { return __p.__vector_as_array<byte>(44); }
-  public long EventContentStageRewardId { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int MaxTurn { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.StageTopography Stagetopography { get { int o = __p.__offset(50); return o != 0 ? (FlatDataJp.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageTopography.Street; } }
-  public int RecommandLevel { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string BgmId { get { int o = __p.__offset(54); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetStrategyMapBGArray() { return __p.__vector_as_array<byte>(48); }
+  public long EventContentStageRewardId { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int MaxTurn { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.StageTopography StageTopography { get { int o = __p.__offset(54); return o != 0 ? (FlatDataJp.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageTopography.Street; } }
+  public int RecommandLevel { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string BgmId { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBgmIdBytes() { return __p.__vector_as_span<byte>(54, 1); }
+  public Span<byte> GetBgmIdBytes() { return __p.__vector_as_span<byte>(58, 1); }
 #else
-  public ArraySegment<byte>? GetBgmIdBytes() { return __p.__vector_as_arraysegment(54); }
+  public ArraySegment<byte>? GetBgmIdBytes() { return __p.__vector_as_arraysegment(58); }
 #endif
-  public byte[] GetBgmIdArray() { return __p.__vector_as_array<byte>(54); }
-  public FlatDataJp.StrategyEnvironment Strategyenvironment { get { int o = __p.__offset(56); return o != 0 ? (FlatDataJp.StrategyEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StrategyEnvironment.None; } }
-  public long GroundID { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ContentType Contenttype { get { int o = __p.__offset(60); return o != 0 ? (FlatDataJp.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ContentType.None; } }
-  public long BGMId { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool InstantClear { get { int o = __p.__offset(64); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long BuffContentId { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool ChallengeDisplay { get { int o = __p.__offset(68); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public byte[] GetBgmIdArray() { return __p.__vector_as_array<byte>(58); }
+  public FlatDataJp.StrategyEnvironment StrategyEnvironment { get { int o = __p.__offset(60); return o != 0 ? (FlatDataJp.StrategyEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StrategyEnvironment.None; } }
+  public long GroundID { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataJp.ContentType ContentType { get { int o = __p.__offset(64); return o != 0 ? (FlatDataJp.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ContentType.None; } }
+  public long BGMId { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool InstantClear { get { int o = __p.__offset(68); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long BuffContentId { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FixedEchelonId { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool ChallengeDisplay { get { int o = __p.__offset(74); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataJp.StarGoalType StarGoal(int j) { int o = __p.__offset(76); return o != 0 ? (FlatDataJp.StarGoalType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.StarGoalType)0; }
+  public int StarGoalLength { get { int o = __p.__offset(76); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<FlatDataJp.StarGoalType> GetStarGoalBytes() { return __p.__vector_as_span<FlatDataJp.StarGoalType>(76, 4); }
+#else
+  public ArraySegment<byte>? GetStarGoalBytes() { return __p.__vector_as_arraysegment(76); }
+#endif
+  public FlatDataJp.StarGoalType[] GetStarGoalArray() { int o = __p.__offset(76); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.StarGoalType[] a = new FlatDataJp.StarGoalType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.StarGoalType)__p.bb.GetInt(p + i * 4); } return a; }
+  public int StarGoalAmount(int j) { int o = __p.__offset(78); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int StarGoalAmountLength { get { int o = __p.__offset(78); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetStarGoalAmountBytes() { return __p.__vector_as_span<int>(78, 4); }
+#else
+  public ArraySegment<byte>? GetStarGoalAmountBytes() { return __p.__vector_as_arraysegment(78); }
+#endif
+  public int[] GetStarGoalAmountArray() { return __p.__vector_as_array<int>(78); }
+  public bool IsDefeatBattle { get { int o = __p.__offset(80); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public uint StageHint { get { int o = __p.__offset(82); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
 
   public static Offset<FlatDataJp.EventContentStageExcel> CreateEventContentStageExcel(FlatBufferBuilder builder,
       long Id = 0,
       StringOffset NameOffset = default(StringOffset),
       long EventContentId = 0,
-      FlatDataJp.StageDifficulty stagedifficulty = FlatDataJp.StageDifficulty.None,
+      FlatDataJp.StageDifficulty stageDifficulty = FlatDataJp.StageDifficulty.None,
       StringOffset StageNumberOffset = default(StringOffset),
       int StageDisplay = 0,
       long PrevStageId = 0,
       long OpenDate = 0,
       long OpenEventPoint = 0,
       long OpenConditionScenarioId = 0,
+      FlatDataJp.EventContentType OpenConditionContentType = FlatDataJp.EventContentType.Stage,
+      long OpenConditionContentId = 0,
       long BattleDuration = 0,
       FlatDataJp.ParcelType StageEnterCostType = FlatDataJp.ParcelType.None,
       long StageEnterCostId = 0,
@@ -121,17 +144,23 @@ public struct EventContentStageExcel : IFlatbufferObject
       StringOffset StrategyMapBGOffset = default(StringOffset),
       long EventContentStageRewardId = 0,
       int MaxTurn = 0,
-      FlatDataJp.StageTopography stagetopography = FlatDataJp.StageTopography.Street,
+      FlatDataJp.StageTopography stageTopography = FlatDataJp.StageTopography.Street,
       int RecommandLevel = 0,
       StringOffset BgmIdOffset = default(StringOffset),
-      FlatDataJp.StrategyEnvironment strategyenvironment = FlatDataJp.StrategyEnvironment.None,
+      FlatDataJp.StrategyEnvironment strategyEnvironment = FlatDataJp.StrategyEnvironment.None,
       long GroundID = 0,
-      FlatDataJp.ContentType contenttype = FlatDataJp.ContentType.None,
+      FlatDataJp.ContentType contentType = FlatDataJp.ContentType.None,
       long BGMId = 0,
       bool InstantClear = false,
       long BuffContentId = 0,
-      bool ChallengeDisplay = false) {
-    builder.StartTable(33);
+      long FixedEchelonId = 0,
+      bool ChallengeDisplay = false,
+      VectorOffset StarGoalOffset = default(VectorOffset),
+      VectorOffset StarGoalAmountOffset = default(VectorOffset),
+      bool IsDefeatBattle = false,
+      uint StageHint = 0) {
+    builder.StartTable(40);
+    EventContentStageExcel.AddFixedEchelonId(builder, FixedEchelonId);
     EventContentStageExcel.AddBuffContentId(builder, BuffContentId);
     EventContentStageExcel.AddBGMId(builder, BGMId);
     EventContentStageExcel.AddGroundID(builder, GroundID);
@@ -140,17 +169,21 @@ public struct EventContentStageExcel : IFlatbufferObject
     EventContentStageExcel.AddStarConditionTacticRankSCount(builder, StarConditionTacticRankSCount);
     EventContentStageExcel.AddStageEnterCostId(builder, StageEnterCostId);
     EventContentStageExcel.AddBattleDuration(builder, BattleDuration);
+    EventContentStageExcel.AddOpenConditionContentId(builder, OpenConditionContentId);
     EventContentStageExcel.AddOpenConditionScenarioId(builder, OpenConditionScenarioId);
     EventContentStageExcel.AddOpenEventPoint(builder, OpenEventPoint);
     EventContentStageExcel.AddOpenDate(builder, OpenDate);
     EventContentStageExcel.AddPrevStageId(builder, PrevStageId);
     EventContentStageExcel.AddEventContentId(builder, EventContentId);
     EventContentStageExcel.AddId(builder, Id);
-    EventContentStageExcel.AddContenttype(builder, contenttype);
-    EventContentStageExcel.AddStrategyenvironment(builder, strategyenvironment);
+    EventContentStageExcel.AddStageHint(builder, StageHint);
+    EventContentStageExcel.AddStarGoalAmount(builder, StarGoalAmountOffset);
+    EventContentStageExcel.AddStarGoal(builder, StarGoalOffset);
+    EventContentStageExcel.AddContentType(builder, contentType);
+    EventContentStageExcel.AddStrategyEnvironment(builder, strategyEnvironment);
     EventContentStageExcel.AddBgmId(builder, BgmIdOffset);
     EventContentStageExcel.AddRecommandLevel(builder, RecommandLevel);
-    EventContentStageExcel.AddStagetopography(builder, stagetopography);
+    EventContentStageExcel.AddStageTopography(builder, stageTopography);
     EventContentStageExcel.AddMaxTurn(builder, MaxTurn);
     EventContentStageExcel.AddStrategyMapBG(builder, StrategyMapBGOffset);
     EventContentStageExcel.AddStrategyMap(builder, StrategyMapOffset);
@@ -159,59 +192,78 @@ public struct EventContentStageExcel : IFlatbufferObject
     EventContentStageExcel.AddStageEnterEchelonCount(builder, StageEnterEchelonCount);
     EventContentStageExcel.AddStageEnterCostAmount(builder, StageEnterCostAmount);
     EventContentStageExcel.AddStageEnterCostType(builder, StageEnterCostType);
+    EventContentStageExcel.AddOpenConditionContentType(builder, OpenConditionContentType);
     EventContentStageExcel.AddStageDisplay(builder, StageDisplay);
     EventContentStageExcel.AddStageNumber(builder, StageNumberOffset);
-    EventContentStageExcel.AddStagedifficulty(builder, stagedifficulty);
+    EventContentStageExcel.AddStageDifficulty(builder, stageDifficulty);
     EventContentStageExcel.AddName(builder, NameOffset);
+    EventContentStageExcel.AddIsDefeatBattle(builder, IsDefeatBattle);
     EventContentStageExcel.AddChallengeDisplay(builder, ChallengeDisplay);
     EventContentStageExcel.AddInstantClear(builder, InstantClear);
     return EventContentStageExcel.EndEventContentStageExcel(builder);
   }
 
-  public static void StartEventContentStageExcel(FlatBufferBuilder builder) { builder.StartTable(33); }
+  public static void StartEventContentStageExcel(FlatBufferBuilder builder) { builder.StartTable(40); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(1, NameOffset.Value, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(2, EventContentId, 0); }
-  public static void AddStagedifficulty(FlatBufferBuilder builder, FlatDataJp.StageDifficulty stagedifficulty) { builder.AddInt(3, (int)stagedifficulty, 0); }
+  public static void AddStageDifficulty(FlatBufferBuilder builder, FlatDataJp.StageDifficulty stageDifficulty) { builder.AddInt(3, (int)stageDifficulty, 0); }
   public static void AddStageNumber(FlatBufferBuilder builder, StringOffset StageNumberOffset) { builder.AddOffset(4, StageNumberOffset.Value, 0); }
   public static void AddStageDisplay(FlatBufferBuilder builder, int StageDisplay) { builder.AddInt(5, StageDisplay, 0); }
   public static void AddPrevStageId(FlatBufferBuilder builder, long PrevStageId) { builder.AddLong(6, PrevStageId, 0); }
   public static void AddOpenDate(FlatBufferBuilder builder, long OpenDate) { builder.AddLong(7, OpenDate, 0); }
   public static void AddOpenEventPoint(FlatBufferBuilder builder, long OpenEventPoint) { builder.AddLong(8, OpenEventPoint, 0); }
   public static void AddOpenConditionScenarioId(FlatBufferBuilder builder, long OpenConditionScenarioId) { builder.AddLong(9, OpenConditionScenarioId, 0); }
-  public static void AddBattleDuration(FlatBufferBuilder builder, long BattleDuration) { builder.AddLong(10, BattleDuration, 0); }
-  public static void AddStageEnterCostType(FlatBufferBuilder builder, FlatDataJp.ParcelType StageEnterCostType) { builder.AddInt(11, (int)StageEnterCostType, 0); }
-  public static void AddStageEnterCostId(FlatBufferBuilder builder, long StageEnterCostId) { builder.AddLong(12, StageEnterCostId, 0); }
-  public static void AddStageEnterCostAmount(FlatBufferBuilder builder, int StageEnterCostAmount) { builder.AddInt(13, StageEnterCostAmount, 0); }
-  public static void AddStageEnterEchelonCount(FlatBufferBuilder builder, int StageEnterEchelonCount) { builder.AddInt(14, StageEnterEchelonCount, 0); }
-  public static void AddStarConditionTacticRankSCount(FlatBufferBuilder builder, long StarConditionTacticRankSCount) { builder.AddLong(15, StarConditionTacticRankSCount, 0); }
-  public static void AddStarConditionTurnCount(FlatBufferBuilder builder, long StarConditionTurnCount) { builder.AddLong(16, StarConditionTurnCount, 0); }
-  public static void AddEnterScenarioGroupId(FlatBufferBuilder builder, VectorOffset EnterScenarioGroupIdOffset) { builder.AddOffset(17, EnterScenarioGroupIdOffset.Value, 0); }
+  public static void AddOpenConditionContentType(FlatBufferBuilder builder, FlatDataJp.EventContentType OpenConditionContentType) { builder.AddInt(10, (int)OpenConditionContentType, 0); }
+  public static void AddOpenConditionContentId(FlatBufferBuilder builder, long OpenConditionContentId) { builder.AddLong(11, OpenConditionContentId, 0); }
+  public static void AddBattleDuration(FlatBufferBuilder builder, long BattleDuration) { builder.AddLong(12, BattleDuration, 0); }
+  public static void AddStageEnterCostType(FlatBufferBuilder builder, FlatDataJp.ParcelType StageEnterCostType) { builder.AddInt(13, (int)StageEnterCostType, 0); }
+  public static void AddStageEnterCostId(FlatBufferBuilder builder, long StageEnterCostId) { builder.AddLong(14, StageEnterCostId, 0); }
+  public static void AddStageEnterCostAmount(FlatBufferBuilder builder, int StageEnterCostAmount) { builder.AddInt(15, StageEnterCostAmount, 0); }
+  public static void AddStageEnterEchelonCount(FlatBufferBuilder builder, int StageEnterEchelonCount) { builder.AddInt(16, StageEnterEchelonCount, 0); }
+  public static void AddStarConditionTacticRankSCount(FlatBufferBuilder builder, long StarConditionTacticRankSCount) { builder.AddLong(17, StarConditionTacticRankSCount, 0); }
+  public static void AddStarConditionTurnCount(FlatBufferBuilder builder, long StarConditionTurnCount) { builder.AddLong(18, StarConditionTurnCount, 0); }
+  public static void AddEnterScenarioGroupId(FlatBufferBuilder builder, VectorOffset EnterScenarioGroupIdOffset) { builder.AddOffset(19, EnterScenarioGroupIdOffset.Value, 0); }
   public static VectorOffset CreateEnterScenarioGroupIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateEnterScenarioGroupIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEnterScenarioGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEnterScenarioGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartEnterScenarioGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddClearScenarioGroupId(FlatBufferBuilder builder, VectorOffset ClearScenarioGroupIdOffset) { builder.AddOffset(18, ClearScenarioGroupIdOffset.Value, 0); }
+  public static void AddClearScenarioGroupId(FlatBufferBuilder builder, VectorOffset ClearScenarioGroupIdOffset) { builder.AddOffset(20, ClearScenarioGroupIdOffset.Value, 0); }
   public static VectorOffset CreateClearScenarioGroupIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateClearScenarioGroupIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateClearScenarioGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateClearScenarioGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartClearScenarioGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddStrategyMap(FlatBufferBuilder builder, StringOffset StrategyMapOffset) { builder.AddOffset(19, StrategyMapOffset.Value, 0); }
-  public static void AddStrategyMapBG(FlatBufferBuilder builder, StringOffset StrategyMapBGOffset) { builder.AddOffset(20, StrategyMapBGOffset.Value, 0); }
-  public static void AddEventContentStageRewardId(FlatBufferBuilder builder, long EventContentStageRewardId) { builder.AddLong(21, EventContentStageRewardId, 0); }
-  public static void AddMaxTurn(FlatBufferBuilder builder, int MaxTurn) { builder.AddInt(22, MaxTurn, 0); }
-  public static void AddStagetopography(FlatBufferBuilder builder, FlatDataJp.StageTopography stagetopography) { builder.AddInt(23, (int)stagetopography, 0); }
-  public static void AddRecommandLevel(FlatBufferBuilder builder, int RecommandLevel) { builder.AddInt(24, RecommandLevel, 0); }
-  public static void AddBgmId(FlatBufferBuilder builder, StringOffset BgmIdOffset) { builder.AddOffset(25, BgmIdOffset.Value, 0); }
-  public static void AddStrategyenvironment(FlatBufferBuilder builder, FlatDataJp.StrategyEnvironment strategyenvironment) { builder.AddInt(26, (int)strategyenvironment, 0); }
-  public static void AddGroundID(FlatBufferBuilder builder, long GroundID) { builder.AddLong(27, GroundID, 0); }
-  public static void AddContenttype(FlatBufferBuilder builder, FlatDataJp.ContentType contenttype) { builder.AddInt(28, (int)contenttype, 0); }
-  public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(29, BGMId, 0); }
-  public static void AddInstantClear(FlatBufferBuilder builder, bool InstantClear) { builder.AddBool(30, InstantClear, false); }
-  public static void AddBuffContentId(FlatBufferBuilder builder, long BuffContentId) { builder.AddLong(31, BuffContentId, 0); }
-  public static void AddChallengeDisplay(FlatBufferBuilder builder, bool ChallengeDisplay) { builder.AddBool(32, ChallengeDisplay, false); }
+  public static void AddStrategyMap(FlatBufferBuilder builder, StringOffset StrategyMapOffset) { builder.AddOffset(21, StrategyMapOffset.Value, 0); }
+  public static void AddStrategyMapBG(FlatBufferBuilder builder, StringOffset StrategyMapBGOffset) { builder.AddOffset(22, StrategyMapBGOffset.Value, 0); }
+  public static void AddEventContentStageRewardId(FlatBufferBuilder builder, long EventContentStageRewardId) { builder.AddLong(23, EventContentStageRewardId, 0); }
+  public static void AddMaxTurn(FlatBufferBuilder builder, int MaxTurn) { builder.AddInt(24, MaxTurn, 0); }
+  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataJp.StageTopography stageTopography) { builder.AddInt(25, (int)stageTopography, 0); }
+  public static void AddRecommandLevel(FlatBufferBuilder builder, int RecommandLevel) { builder.AddInt(26, RecommandLevel, 0); }
+  public static void AddBgmId(FlatBufferBuilder builder, StringOffset BgmIdOffset) { builder.AddOffset(27, BgmIdOffset.Value, 0); }
+  public static void AddStrategyEnvironment(FlatBufferBuilder builder, FlatDataJp.StrategyEnvironment strategyEnvironment) { builder.AddInt(28, (int)strategyEnvironment, 0); }
+  public static void AddGroundID(FlatBufferBuilder builder, long GroundID) { builder.AddLong(29, GroundID, 0); }
+  public static void AddContentType(FlatBufferBuilder builder, FlatDataJp.ContentType contentType) { builder.AddInt(30, (int)contentType, 0); }
+  public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(31, BGMId, 0); }
+  public static void AddInstantClear(FlatBufferBuilder builder, bool InstantClear) { builder.AddBool(32, InstantClear, false); }
+  public static void AddBuffContentId(FlatBufferBuilder builder, long BuffContentId) { builder.AddLong(33, BuffContentId, 0); }
+  public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(34, FixedEchelonId, 0); }
+  public static void AddChallengeDisplay(FlatBufferBuilder builder, bool ChallengeDisplay) { builder.AddBool(35, ChallengeDisplay, false); }
+  public static void AddStarGoal(FlatBufferBuilder builder, VectorOffset StarGoalOffset) { builder.AddOffset(36, StarGoalOffset.Value, 0); }
+  public static VectorOffset CreateStarGoalVector(FlatBufferBuilder builder, FlatDataJp.StarGoalType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalVectorBlock(FlatBufferBuilder builder, FlatDataJp.StarGoalType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.StarGoalType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.StarGoalType>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartStarGoalVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddStarGoalAmount(FlatBufferBuilder builder, VectorOffset StarGoalAmountOffset) { builder.AddOffset(37, StarGoalAmountOffset.Value, 0); }
+  public static VectorOffset CreateStarGoalAmountVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartStarGoalAmountVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddIsDefeatBattle(FlatBufferBuilder builder, bool IsDefeatBattle) { builder.AddBool(38, IsDefeatBattle, false); }
+  public static void AddStageHint(FlatBufferBuilder builder, uint StageHint) { builder.AddUint(39, StageHint, 0); }
   public static Offset<FlatDataJp.EventContentStageExcel> EndEventContentStageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.EventContentStageExcel>(o);

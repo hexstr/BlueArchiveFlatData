@@ -12,6 +12,7 @@ public enum ProductCategory : int
   Monthly = 2,
   Package = 3,
   GachaDirect = 4,
+  TimeLimit = 5,
 };
 
 

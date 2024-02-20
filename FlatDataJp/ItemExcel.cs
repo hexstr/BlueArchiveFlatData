@@ -22,9 +22,9 @@ public struct ItemExcel : IFlatbufferObject
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long GroupId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataJp.Rarity Rarity { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.Rarity.N; } }
-  public FlatDataJp.ProductionStep Productionstep { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
+  public FlatDataJp.ProductionStep ProductionStep { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductionStep.ToDo; } }
   public uint LocalizeEtcId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public FlatDataJp.ItemCategory Itemcategory { get { int o = __p.__offset(14); return o != 0 ? (FlatDataJp.ItemCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ItemCategory.Coin; } }
+  public FlatDataJp.ItemCategory ItemCategory { get { int o = __p.__offset(14); return o != 0 ? (FlatDataJp.ItemCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ItemCategory.Coin; } }
   public long Quality { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string Icon { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -46,7 +46,7 @@ public struct ItemExcel : IFlatbufferObject
   public FlatDataJp.ParcelType UsingResultParcelType { get { int o = __p.__offset(28); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
   public long UsingResultId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long UsingResultAmount { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.MailType Mailtype { get { int o = __p.__offset(34); return o != 0 ? (FlatDataJp.MailType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MailType.System; } }
+  public FlatDataJp.MailType MailType { get { int o = __p.__offset(34); return o != 0 ? (FlatDataJp.MailType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MailType.System; } }
   public FlatDataJp.ParcelType ExpiryChangeParcelType { get { int o = __p.__offset(36); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
   public long ExpiryChangeId { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ExpiryChangeAmount { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -60,35 +60,37 @@ public struct ItemExcel : IFlatbufferObject
   public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(46); }
 #endif
   public FlatDataJp.Tag[] GetTagsArray() { int o = __p.__offset(46); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.Tag[] a = new FlatDataJp.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.Tag)__p.bb.GetInt(p + i * 4); } return a; }
-  public long CraftQuality { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ShiftingCraftQuality { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int MaxGiftTags { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.ShopCategoryType ShopCategory(int j) { int o = __p.__offset(54); return o != 0 ? (FlatDataJp.ShopCategoryType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.ShopCategoryType)0; }
-  public int ShopCategoryLength { get { int o = __p.__offset(54); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long CraftQualityTier0 { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CraftQualityTier1 { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CraftQualityTier2 { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ShiftingCraftQuality { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int MaxGiftTags { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.ShopCategoryType ShopCategory(int j) { int o = __p.__offset(58); return o != 0 ? (FlatDataJp.ShopCategoryType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.ShopCategoryType)0; }
+  public int ShopCategoryLength { get { int o = __p.__offset(58); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataJp.ShopCategoryType> GetShopCategoryBytes() { return __p.__vector_as_span<FlatDataJp.ShopCategoryType>(54, 4); }
+  public Span<FlatDataJp.ShopCategoryType> GetShopCategoryBytes() { return __p.__vector_as_span<FlatDataJp.ShopCategoryType>(58, 4); }
 #else
-  public ArraySegment<byte>? GetShopCategoryBytes() { return __p.__vector_as_arraysegment(54); }
+  public ArraySegment<byte>? GetShopCategoryBytes() { return __p.__vector_as_arraysegment(58); }
 #endif
-  public FlatDataJp.ShopCategoryType[] GetShopCategoryArray() { int o = __p.__offset(54); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.ShopCategoryType[] a = new FlatDataJp.ShopCategoryType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.ShopCategoryType)__p.bb.GetInt(p + i * 4); } return a; }
-  public string ExpirationDateTime { get { int o = __p.__offset(56); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataJp.ShopCategoryType[] GetShopCategoryArray() { int o = __p.__offset(58); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.ShopCategoryType[] a = new FlatDataJp.ShopCategoryType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.ShopCategoryType)__p.bb.GetInt(p + i * 4); } return a; }
+  public string ExpirationDateTime { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetExpirationDateTimeBytes() { return __p.__vector_as_span<byte>(56, 1); }
+  public Span<byte> GetExpirationDateTimeBytes() { return __p.__vector_as_span<byte>(60, 1); }
 #else
-  public ArraySegment<byte>? GetExpirationDateTimeBytes() { return __p.__vector_as_arraysegment(56); }
+  public ArraySegment<byte>? GetExpirationDateTimeBytes() { return __p.__vector_as_arraysegment(60); }
 #endif
-  public byte[] GetExpirationDateTimeArray() { return __p.__vector_as_array<byte>(56); }
-  public int ExpirationNotifyDateIn { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long ShortcutTypeId { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.GachaTicketType GachaTicket { get { int o = __p.__offset(62); return o != 0 ? (FlatDataJp.GachaTicketType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.GachaTicketType.None; } }
+  public byte[] GetExpirationDateTimeArray() { return __p.__vector_as_array<byte>(60); }
+  public int ExpirationNotifyDateIn { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long ShortcutTypeId { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataJp.GachaTicketType GachaTicket { get { int o = __p.__offset(66); return o != 0 ? (FlatDataJp.GachaTicketType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.GachaTicketType.None; } }
 
   public static Offset<FlatDataJp.ItemExcel> CreateItemExcel(FlatBufferBuilder builder,
       long Id = 0,
       long GroupId = 0,
       FlatDataJp.Rarity rarity = FlatDataJp.Rarity.N,
-      FlatDataJp.ProductionStep productionstep = FlatDataJp.ProductionStep.ToDo,
+      FlatDataJp.ProductionStep productionStep = FlatDataJp.ProductionStep.ToDo,
       uint LocalizeEtcId = 0,
-      FlatDataJp.ItemCategory itemcategory = FlatDataJp.ItemCategory.Coin,
+      FlatDataJp.ItemCategory itemCategory = FlatDataJp.ItemCategory.Coin,
       long Quality = 0,
       StringOffset IconOffset = default(StringOffset),
       StringOffset SpriteNameOffset = default(StringOffset),
@@ -98,14 +100,16 @@ public struct ItemExcel : IFlatbufferObject
       FlatDataJp.ParcelType UsingResultParcelType = FlatDataJp.ParcelType.None,
       long UsingResultId = 0,
       long UsingResultAmount = 0,
-      FlatDataJp.MailType mailtype = FlatDataJp.MailType.System,
+      FlatDataJp.MailType mailType = FlatDataJp.MailType.System,
       FlatDataJp.ParcelType ExpiryChangeParcelType = FlatDataJp.ParcelType.None,
       long ExpiryChangeId = 0,
       long ExpiryChangeAmount = 0,
       bool CanTierUpgrade = false,
       long TierUpgradeRecipeCraftId = 0,
       VectorOffset TagsOffset = default(VectorOffset),
-      long CraftQuality = 0,
+      long CraftQualityTier0 = 0,
+      long CraftQualityTier1 = 0,
+      long CraftQualityTier2 = 0,
       long ShiftingCraftQuality = 0,
       int MaxGiftTags = 0,
       VectorOffset ShopCategoryOffset = default(VectorOffset),
@@ -113,10 +117,12 @@ public struct ItemExcel : IFlatbufferObject
       int ExpirationNotifyDateIn = 0,
       long ShortcutTypeId = 0,
       FlatDataJp.GachaTicketType GachaTicket = FlatDataJp.GachaTicketType.None) {
-    builder.StartTable(30);
+    builder.StartTable(32);
     ItemExcel.AddShortcutTypeId(builder, ShortcutTypeId);
     ItemExcel.AddShiftingCraftQuality(builder, ShiftingCraftQuality);
-    ItemExcel.AddCraftQuality(builder, CraftQuality);
+    ItemExcel.AddCraftQualityTier2(builder, CraftQualityTier2);
+    ItemExcel.AddCraftQualityTier1(builder, CraftQualityTier1);
+    ItemExcel.AddCraftQualityTier0(builder, CraftQualityTier0);
     ItemExcel.AddTierUpgradeRecipeCraftId(builder, TierUpgradeRecipeCraftId);
     ItemExcel.AddExpiryChangeAmount(builder, ExpiryChangeAmount);
     ItemExcel.AddExpiryChangeId(builder, ExpiryChangeId);
@@ -132,28 +138,28 @@ public struct ItemExcel : IFlatbufferObject
     ItemExcel.AddMaxGiftTags(builder, MaxGiftTags);
     ItemExcel.AddTags(builder, TagsOffset);
     ItemExcel.AddExpiryChangeParcelType(builder, ExpiryChangeParcelType);
-    ItemExcel.AddMailtype(builder, mailtype);
+    ItemExcel.AddMailType(builder, mailType);
     ItemExcel.AddUsingResultParcelType(builder, UsingResultParcelType);
     ItemExcel.AddStackableFunction(builder, StackableFunction);
     ItemExcel.AddStackableMax(builder, StackableMax);
     ItemExcel.AddSpriteName(builder, SpriteNameOffset);
     ItemExcel.AddIcon(builder, IconOffset);
-    ItemExcel.AddItemcategory(builder, itemcategory);
+    ItemExcel.AddItemCategory(builder, itemCategory);
     ItemExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
-    ItemExcel.AddProductionstep(builder, productionstep);
+    ItemExcel.AddProductionStep(builder, productionStep);
     ItemExcel.AddRarity(builder, rarity);
     ItemExcel.AddCanTierUpgrade(builder, CanTierUpgrade);
     ItemExcel.AddImmediateUse(builder, ImmediateUse);
     return ItemExcel.EndItemExcel(builder);
   }
 
-  public static void StartItemExcel(FlatBufferBuilder builder) { builder.StartTable(30); }
+  public static void StartItemExcel(FlatBufferBuilder builder) { builder.StartTable(32); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(1, GroupId, 0); }
   public static void AddRarity(FlatBufferBuilder builder, FlatDataJp.Rarity rarity) { builder.AddInt(2, (int)rarity, 0); }
-  public static void AddProductionstep(FlatBufferBuilder builder, FlatDataJp.ProductionStep productionstep) { builder.AddInt(3, (int)productionstep, 0); }
+  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataJp.ProductionStep productionStep) { builder.AddInt(3, (int)productionStep, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(4, LocalizeEtcId, 0); }
-  public static void AddItemcategory(FlatBufferBuilder builder, FlatDataJp.ItemCategory itemcategory) { builder.AddInt(5, (int)itemcategory, 0); }
+  public static void AddItemCategory(FlatBufferBuilder builder, FlatDataJp.ItemCategory itemCategory) { builder.AddInt(5, (int)itemCategory, 0); }
   public static void AddQuality(FlatBufferBuilder builder, long Quality) { builder.AddLong(6, Quality, 0); }
   public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(7, IconOffset.Value, 0); }
   public static void AddSpriteName(FlatBufferBuilder builder, StringOffset SpriteNameOffset) { builder.AddOffset(8, SpriteNameOffset.Value, 0); }
@@ -163,7 +169,7 @@ public struct ItemExcel : IFlatbufferObject
   public static void AddUsingResultParcelType(FlatBufferBuilder builder, FlatDataJp.ParcelType UsingResultParcelType) { builder.AddInt(12, (int)UsingResultParcelType, 0); }
   public static void AddUsingResultId(FlatBufferBuilder builder, long UsingResultId) { builder.AddLong(13, UsingResultId, 0); }
   public static void AddUsingResultAmount(FlatBufferBuilder builder, long UsingResultAmount) { builder.AddLong(14, UsingResultAmount, 0); }
-  public static void AddMailtype(FlatBufferBuilder builder, FlatDataJp.MailType mailtype) { builder.AddInt(15, (int)mailtype, 0); }
+  public static void AddMailType(FlatBufferBuilder builder, FlatDataJp.MailType mailType) { builder.AddInt(15, (int)mailType, 0); }
   public static void AddExpiryChangeParcelType(FlatBufferBuilder builder, FlatDataJp.ParcelType ExpiryChangeParcelType) { builder.AddInt(16, (int)ExpiryChangeParcelType, 0); }
   public static void AddExpiryChangeId(FlatBufferBuilder builder, long ExpiryChangeId) { builder.AddLong(17, ExpiryChangeId, 0); }
   public static void AddExpiryChangeAmount(FlatBufferBuilder builder, long ExpiryChangeAmount) { builder.AddLong(18, ExpiryChangeAmount, 0); }
@@ -175,19 +181,21 @@ public struct ItemExcel : IFlatbufferObject
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartTagsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddCraftQuality(FlatBufferBuilder builder, long CraftQuality) { builder.AddLong(22, CraftQuality, 0); }
-  public static void AddShiftingCraftQuality(FlatBufferBuilder builder, long ShiftingCraftQuality) { builder.AddLong(23, ShiftingCraftQuality, 0); }
-  public static void AddMaxGiftTags(FlatBufferBuilder builder, int MaxGiftTags) { builder.AddInt(24, MaxGiftTags, 0); }
-  public static void AddShopCategory(FlatBufferBuilder builder, VectorOffset ShopCategoryOffset) { builder.AddOffset(25, ShopCategoryOffset.Value, 0); }
+  public static void AddCraftQualityTier0(FlatBufferBuilder builder, long CraftQualityTier0) { builder.AddLong(22, CraftQualityTier0, 0); }
+  public static void AddCraftQualityTier1(FlatBufferBuilder builder, long CraftQualityTier1) { builder.AddLong(23, CraftQualityTier1, 0); }
+  public static void AddCraftQualityTier2(FlatBufferBuilder builder, long CraftQualityTier2) { builder.AddLong(24, CraftQualityTier2, 0); }
+  public static void AddShiftingCraftQuality(FlatBufferBuilder builder, long ShiftingCraftQuality) { builder.AddLong(25, ShiftingCraftQuality, 0); }
+  public static void AddMaxGiftTags(FlatBufferBuilder builder, int MaxGiftTags) { builder.AddInt(26, MaxGiftTags, 0); }
+  public static void AddShopCategory(FlatBufferBuilder builder, VectorOffset ShopCategoryOffset) { builder.AddOffset(27, ShopCategoryOffset.Value, 0); }
   public static VectorOffset CreateShopCategoryVector(FlatBufferBuilder builder, FlatDataJp.ShopCategoryType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateShopCategoryVectorBlock(FlatBufferBuilder builder, FlatDataJp.ShopCategoryType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateShopCategoryVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.ShopCategoryType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateShopCategoryVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.ShopCategoryType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartShopCategoryVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddExpirationDateTime(FlatBufferBuilder builder, StringOffset ExpirationDateTimeOffset) { builder.AddOffset(26, ExpirationDateTimeOffset.Value, 0); }
-  public static void AddExpirationNotifyDateIn(FlatBufferBuilder builder, int ExpirationNotifyDateIn) { builder.AddInt(27, ExpirationNotifyDateIn, 0); }
-  public static void AddShortcutTypeId(FlatBufferBuilder builder, long ShortcutTypeId) { builder.AddLong(28, ShortcutTypeId, 0); }
-  public static void AddGachaTicket(FlatBufferBuilder builder, FlatDataJp.GachaTicketType GachaTicket) { builder.AddInt(29, (int)GachaTicket, 0); }
+  public static void AddExpirationDateTime(FlatBufferBuilder builder, StringOffset ExpirationDateTimeOffset) { builder.AddOffset(28, ExpirationDateTimeOffset.Value, 0); }
+  public static void AddExpirationNotifyDateIn(FlatBufferBuilder builder, int ExpirationNotifyDateIn) { builder.AddInt(29, ExpirationNotifyDateIn, 0); }
+  public static void AddShortcutTypeId(FlatBufferBuilder builder, long ShortcutTypeId) { builder.AddLong(30, ShortcutTypeId, 0); }
+  public static void AddGachaTicket(FlatBufferBuilder builder, FlatDataJp.GachaTicketType GachaTicket) { builder.AddInt(31, (int)GachaTicket, 0); }
   public static Offset<FlatDataJp.ItemExcel> EndItemExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.ItemExcel>(o);

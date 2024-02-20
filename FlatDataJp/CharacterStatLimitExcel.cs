@@ -20,8 +20,8 @@ public struct CharacterStatLimitExcel : IFlatbufferObject
   public CharacterStatLimitExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.TacticEntityType Tacticentitytype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.TacticEntityType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticEntityType.None; } }
-  public FlatDataJp.StatType Stattype { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.StatType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatType.None; } }
+  public FlatDataJp.TacticEntityType TacticEntityType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.TacticEntityType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TacticEntityType.None; } }
+  public FlatDataJp.StatType StatType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.StatType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatType.None; } }
   public long StatMinValue { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long StatMaxValue { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long StatRatioMinValue { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -29,8 +29,8 @@ public struct CharacterStatLimitExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.CharacterStatLimitExcel> CreateCharacterStatLimitExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataJp.TacticEntityType tacticentitytype = FlatDataJp.TacticEntityType.None,
-      FlatDataJp.StatType stattype = FlatDataJp.StatType.None,
+      FlatDataJp.TacticEntityType tacticEntityType = FlatDataJp.TacticEntityType.None,
+      FlatDataJp.StatType statType = FlatDataJp.StatType.None,
       long StatMinValue = 0,
       long StatMaxValue = 0,
       long StatRatioMinValue = 0,
@@ -41,15 +41,15 @@ public struct CharacterStatLimitExcel : IFlatbufferObject
     CharacterStatLimitExcel.AddStatMaxValue(builder, StatMaxValue);
     CharacterStatLimitExcel.AddStatMinValue(builder, StatMinValue);
     CharacterStatLimitExcel.AddId(builder, Id);
-    CharacterStatLimitExcel.AddStattype(builder, stattype);
-    CharacterStatLimitExcel.AddTacticentitytype(builder, tacticentitytype);
+    CharacterStatLimitExcel.AddStatType(builder, statType);
+    CharacterStatLimitExcel.AddTacticEntityType(builder, tacticEntityType);
     return CharacterStatLimitExcel.EndCharacterStatLimitExcel(builder);
   }
 
   public static void StartCharacterStatLimitExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddTacticentitytype(FlatBufferBuilder builder, FlatDataJp.TacticEntityType tacticentitytype) { builder.AddInt(1, (int)tacticentitytype, 0); }
-  public static void AddStattype(FlatBufferBuilder builder, FlatDataJp.StatType stattype) { builder.AddInt(2, (int)stattype, 0); }
+  public static void AddTacticEntityType(FlatBufferBuilder builder, FlatDataJp.TacticEntityType tacticEntityType) { builder.AddInt(1, (int)tacticEntityType, 0); }
+  public static void AddStatType(FlatBufferBuilder builder, FlatDataJp.StatType statType) { builder.AddInt(2, (int)statType, 0); }
   public static void AddStatMinValue(FlatBufferBuilder builder, long StatMinValue) { builder.AddLong(3, StatMinValue, 0); }
   public static void AddStatMaxValue(FlatBufferBuilder builder, long StatMaxValue) { builder.AddLong(4, StatMaxValue, 0); }
   public static void AddStatRatioMinValue(FlatBufferBuilder builder, long StatRatioMinValue) { builder.AddLong(5, StatRatioMinValue, 0); }

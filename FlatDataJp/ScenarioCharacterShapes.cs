@@ -12,6 +12,7 @@ public enum ScenarioCharacterShapes : int
   BlackSilhouette = 2,
   Closeup = 3,
   Highlight = 4,
+  WhiteSilhouette = 5,
 };
 
 

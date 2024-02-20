@@ -28,7 +28,7 @@ public struct LimitedStageExcel : IFlatbufferObject
 #endif
   public byte[] GetNameArray() { return __p.__vector_as_array<byte>(6); }
   public long SeasonId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.StageDifficulty Stagedifficulty { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.StageDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageDifficulty.None; } }
+  public FlatDataJp.StageDifficulty StageDifficulty { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.StageDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageDifficulty.None; } }
   public string StageNumber { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetStageNumberBytes() { return __p.__vector_as_span<byte>(12, 1); }
@@ -79,7 +79,7 @@ public struct LimitedStageExcel : IFlatbufferObject
   public byte[] GetStrategyMapBGArray() { return __p.__vector_as_array<byte>(42); }
   public long StageRewardId { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int MaxTurn { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.StageTopography Stagetopography { get { int o = __p.__offset(48); return o != 0 ? (FlatDataJp.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageTopography.Street; } }
+  public FlatDataJp.StageTopography StageTopography { get { int o = __p.__offset(48); return o != 0 ? (FlatDataJp.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StageTopography.Street; } }
   public int RecommandLevel { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public string BgmId { get { int o = __p.__offset(52); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -88,9 +88,9 @@ public struct LimitedStageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetBgmIdBytes() { return __p.__vector_as_arraysegment(52); }
 #endif
   public byte[] GetBgmIdArray() { return __p.__vector_as_array<byte>(52); }
-  public FlatDataJp.StrategyEnvironment Strategyenvironment { get { int o = __p.__offset(54); return o != 0 ? (FlatDataJp.StrategyEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StrategyEnvironment.None; } }
+  public FlatDataJp.StrategyEnvironment StrategyEnvironment { get { int o = __p.__offset(54); return o != 0 ? (FlatDataJp.StrategyEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StrategyEnvironment.None; } }
   public long GroundID { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ContentType Contenttype { get { int o = __p.__offset(58); return o != 0 ? (FlatDataJp.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ContentType.None; } }
+  public FlatDataJp.ContentType ContentType { get { int o = __p.__offset(58); return o != 0 ? (FlatDataJp.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ContentType.None; } }
   public long BGMId { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public bool InstantClear { get { int o = __p.__offset(62); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long BuffContentId { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -100,7 +100,7 @@ public struct LimitedStageExcel : IFlatbufferObject
       long Id = 0,
       StringOffset NameOffset = default(StringOffset),
       long SeasonId = 0,
-      FlatDataJp.StageDifficulty stagedifficulty = FlatDataJp.StageDifficulty.None,
+      FlatDataJp.StageDifficulty stageDifficulty = FlatDataJp.StageDifficulty.None,
       StringOffset StageNumberOffset = default(StringOffset),
       int StageDisplay = 0,
       long PrevStageId = 0,
@@ -119,12 +119,12 @@ public struct LimitedStageExcel : IFlatbufferObject
       StringOffset StrategyMapBGOffset = default(StringOffset),
       long StageRewardId = 0,
       int MaxTurn = 0,
-      FlatDataJp.StageTopography stagetopography = FlatDataJp.StageTopography.Street,
+      FlatDataJp.StageTopography stageTopography = FlatDataJp.StageTopography.Street,
       int RecommandLevel = 0,
       StringOffset BgmIdOffset = default(StringOffset),
-      FlatDataJp.StrategyEnvironment strategyenvironment = FlatDataJp.StrategyEnvironment.None,
+      FlatDataJp.StrategyEnvironment strategyEnvironment = FlatDataJp.StrategyEnvironment.None,
       long GroundID = 0,
-      FlatDataJp.ContentType contenttype = FlatDataJp.ContentType.None,
+      FlatDataJp.ContentType contentType = FlatDataJp.ContentType.None,
       long BGMId = 0,
       bool InstantClear = false,
       long BuffContentId = 0,
@@ -143,11 +143,11 @@ public struct LimitedStageExcel : IFlatbufferObject
     LimitedStageExcel.AddPrevStageId(builder, PrevStageId);
     LimitedStageExcel.AddSeasonId(builder, SeasonId);
     LimitedStageExcel.AddId(builder, Id);
-    LimitedStageExcel.AddContenttype(builder, contenttype);
-    LimitedStageExcel.AddStrategyenvironment(builder, strategyenvironment);
+    LimitedStageExcel.AddContentType(builder, contentType);
+    LimitedStageExcel.AddStrategyEnvironment(builder, strategyEnvironment);
     LimitedStageExcel.AddBgmId(builder, BgmIdOffset);
     LimitedStageExcel.AddRecommandLevel(builder, RecommandLevel);
-    LimitedStageExcel.AddStagetopography(builder, stagetopography);
+    LimitedStageExcel.AddStageTopography(builder, stageTopography);
     LimitedStageExcel.AddMaxTurn(builder, MaxTurn);
     LimitedStageExcel.AddStrategyMapBG(builder, StrategyMapBGOffset);
     LimitedStageExcel.AddStrategyMap(builder, StrategyMapOffset);
@@ -158,7 +158,7 @@ public struct LimitedStageExcel : IFlatbufferObject
     LimitedStageExcel.AddStageEnterCostType(builder, StageEnterCostType);
     LimitedStageExcel.AddStageDisplay(builder, StageDisplay);
     LimitedStageExcel.AddStageNumber(builder, StageNumberOffset);
-    LimitedStageExcel.AddStagedifficulty(builder, stagedifficulty);
+    LimitedStageExcel.AddStageDifficulty(builder, stageDifficulty);
     LimitedStageExcel.AddName(builder, NameOffset);
     LimitedStageExcel.AddChallengeDisplay(builder, ChallengeDisplay);
     LimitedStageExcel.AddInstantClear(builder, InstantClear);
@@ -169,7 +169,7 @@ public struct LimitedStageExcel : IFlatbufferObject
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(1, NameOffset.Value, 0); }
   public static void AddSeasonId(FlatBufferBuilder builder, long SeasonId) { builder.AddLong(2, SeasonId, 0); }
-  public static void AddStagedifficulty(FlatBufferBuilder builder, FlatDataJp.StageDifficulty stagedifficulty) { builder.AddInt(3, (int)stagedifficulty, 0); }
+  public static void AddStageDifficulty(FlatBufferBuilder builder, FlatDataJp.StageDifficulty stageDifficulty) { builder.AddInt(3, (int)stageDifficulty, 0); }
   public static void AddStageNumber(FlatBufferBuilder builder, StringOffset StageNumberOffset) { builder.AddOffset(4, StageNumberOffset.Value, 0); }
   public static void AddStageDisplay(FlatBufferBuilder builder, int StageDisplay) { builder.AddInt(5, StageDisplay, 0); }
   public static void AddPrevStageId(FlatBufferBuilder builder, long PrevStageId) { builder.AddLong(6, PrevStageId, 0); }
@@ -198,12 +198,12 @@ public struct LimitedStageExcel : IFlatbufferObject
   public static void AddStrategyMapBG(FlatBufferBuilder builder, StringOffset StrategyMapBGOffset) { builder.AddOffset(19, StrategyMapBGOffset.Value, 0); }
   public static void AddStageRewardId(FlatBufferBuilder builder, long StageRewardId) { builder.AddLong(20, StageRewardId, 0); }
   public static void AddMaxTurn(FlatBufferBuilder builder, int MaxTurn) { builder.AddInt(21, MaxTurn, 0); }
-  public static void AddStagetopography(FlatBufferBuilder builder, FlatDataJp.StageTopography stagetopography) { builder.AddInt(22, (int)stagetopography, 0); }
+  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataJp.StageTopography stageTopography) { builder.AddInt(22, (int)stageTopography, 0); }
   public static void AddRecommandLevel(FlatBufferBuilder builder, int RecommandLevel) { builder.AddInt(23, RecommandLevel, 0); }
   public static void AddBgmId(FlatBufferBuilder builder, StringOffset BgmIdOffset) { builder.AddOffset(24, BgmIdOffset.Value, 0); }
-  public static void AddStrategyenvironment(FlatBufferBuilder builder, FlatDataJp.StrategyEnvironment strategyenvironment) { builder.AddInt(25, (int)strategyenvironment, 0); }
+  public static void AddStrategyEnvironment(FlatBufferBuilder builder, FlatDataJp.StrategyEnvironment strategyEnvironment) { builder.AddInt(25, (int)strategyEnvironment, 0); }
   public static void AddGroundID(FlatBufferBuilder builder, long GroundID) { builder.AddLong(26, GroundID, 0); }
-  public static void AddContenttype(FlatBufferBuilder builder, FlatDataJp.ContentType contenttype) { builder.AddInt(27, (int)contenttype, 0); }
+  public static void AddContentType(FlatBufferBuilder builder, FlatDataJp.ContentType contentType) { builder.AddInt(27, (int)contentType, 0); }
   public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(28, BGMId, 0); }
   public static void AddInstantClear(FlatBufferBuilder builder, bool InstantClear) { builder.AddBool(29, InstantClear, false); }
   public static void AddBuffContentId(FlatBufferBuilder builder, long BuffContentId) { builder.AddLong(30, BuffContentId, 0); }

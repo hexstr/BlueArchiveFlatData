@@ -21,63 +21,71 @@ public struct MinigameTBGItemExcel : IFlatbufferObject
 
   public long UniqueId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataJp.TBGItemType ItemType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.TBGItemType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TBGItemType.None; } }
-  public string ItemParameter { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataJp.TBGItemEffectType TBGItemEffectType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.TBGItemEffectType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.TBGItemEffectType.None; } }
+  public int ItemParameter { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string LocalizeETCId { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetItemParameterBytes() { return __p.__vector_as_span<byte>(8, 1); }
+  public Span<byte> GetLocalizeETCIdBytes() { return __p.__vector_as_span<byte>(12, 1); }
 #else
-  public ArraySegment<byte>? GetItemParameterBytes() { return __p.__vector_as_arraysegment(8); }
+  public ArraySegment<byte>? GetLocalizeETCIdBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
-  public byte[] GetItemParameterArray() { return __p.__vector_as_array<byte>(8); }
-  public string LocalizeETCId { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeETCIdArray() { return __p.__vector_as_array<byte>(12); }
+  public string Icon { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeETCIdBytes() { return __p.__vector_as_span<byte>(10, 1); }
+  public Span<byte> GetIconBytes() { return __p.__vector_as_span<byte>(14, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeETCIdBytes() { return __p.__vector_as_arraysegment(10); }
+  public ArraySegment<byte>? GetIconBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
-  public byte[] GetLocalizeETCIdArray() { return __p.__vector_as_array<byte>(10); }
-  public string Icon { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetIconArray() { return __p.__vector_as_array<byte>(14); }
+  public string BuffIcon { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIconBytes() { return __p.__vector_as_span<byte>(12, 1); }
+  public Span<byte> GetBuffIconBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetIconBytes() { return __p.__vector_as_arraysegment(12); }
+  public ArraySegment<byte>? GetBuffIconBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetIconArray() { return __p.__vector_as_array<byte>(12); }
-  public int EncounterCount { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string DiceEffectAniClip { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetBuffIconArray() { return __p.__vector_as_array<byte>(16); }
+  public int EncounterCount { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string DiceEffectAniClip { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDiceEffectAniClipBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<byte> GetDiceEffectAniClipBytes() { return __p.__vector_as_span<byte>(20, 1); }
 #else
-  public ArraySegment<byte>? GetDiceEffectAniClipBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetDiceEffectAniClipBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public byte[] GetDiceEffectAniClipArray() { return __p.__vector_as_array<byte>(16); }
+  public byte[] GetDiceEffectAniClipArray() { return __p.__vector_as_array<byte>(20); }
 
   public static Offset<FlatDataJp.MinigameTBGItemExcel> CreateMinigameTBGItemExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
       FlatDataJp.TBGItemType ItemType = FlatDataJp.TBGItemType.None,
-      StringOffset ItemParameterOffset = default(StringOffset),
+      FlatDataJp.TBGItemEffectType tBGItemEffectType = FlatDataJp.TBGItemEffectType.None,
+      int ItemParameter = 0,
       StringOffset LocalizeETCIdOffset = default(StringOffset),
       StringOffset IconOffset = default(StringOffset),
+      StringOffset BuffIconOffset = default(StringOffset),
       int EncounterCount = 0,
       StringOffset DiceEffectAniClipOffset = default(StringOffset)) {
-    builder.StartTable(7);
+    builder.StartTable(9);
     MinigameTBGItemExcel.AddUniqueId(builder, UniqueId);
     MinigameTBGItemExcel.AddDiceEffectAniClip(builder, DiceEffectAniClipOffset);
     MinigameTBGItemExcel.AddEncounterCount(builder, EncounterCount);
+    MinigameTBGItemExcel.AddBuffIcon(builder, BuffIconOffset);
     MinigameTBGItemExcel.AddIcon(builder, IconOffset);
     MinigameTBGItemExcel.AddLocalizeETCId(builder, LocalizeETCIdOffset);
-    MinigameTBGItemExcel.AddItemParameter(builder, ItemParameterOffset);
+    MinigameTBGItemExcel.AddItemParameter(builder, ItemParameter);
+    MinigameTBGItemExcel.AddTBGItemEffectType(builder, tBGItemEffectType);
     MinigameTBGItemExcel.AddItemType(builder, ItemType);
     return MinigameTBGItemExcel.EndMinigameTBGItemExcel(builder);
   }
 
-  public static void StartMinigameTBGItemExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
+  public static void StartMinigameTBGItemExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
   public static void AddItemType(FlatBufferBuilder builder, FlatDataJp.TBGItemType ItemType) { builder.AddInt(1, (int)ItemType, 0); }
-  public static void AddItemParameter(FlatBufferBuilder builder, StringOffset ItemParameterOffset) { builder.AddOffset(2, ItemParameterOffset.Value, 0); }
-  public static void AddLocalizeETCId(FlatBufferBuilder builder, StringOffset LocalizeETCIdOffset) { builder.AddOffset(3, LocalizeETCIdOffset.Value, 0); }
-  public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(4, IconOffset.Value, 0); }
-  public static void AddEncounterCount(FlatBufferBuilder builder, int EncounterCount) { builder.AddInt(5, EncounterCount, 0); }
-  public static void AddDiceEffectAniClip(FlatBufferBuilder builder, StringOffset DiceEffectAniClipOffset) { builder.AddOffset(6, DiceEffectAniClipOffset.Value, 0); }
+  public static void AddTBGItemEffectType(FlatBufferBuilder builder, FlatDataJp.TBGItemEffectType tBGItemEffectType) { builder.AddInt(2, (int)tBGItemEffectType, 0); }
+  public static void AddItemParameter(FlatBufferBuilder builder, int ItemParameter) { builder.AddInt(3, ItemParameter, 0); }
+  public static void AddLocalizeETCId(FlatBufferBuilder builder, StringOffset LocalizeETCIdOffset) { builder.AddOffset(4, LocalizeETCIdOffset.Value, 0); }
+  public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(5, IconOffset.Value, 0); }
+  public static void AddBuffIcon(FlatBufferBuilder builder, StringOffset BuffIconOffset) { builder.AddOffset(6, BuffIconOffset.Value, 0); }
+  public static void AddEncounterCount(FlatBufferBuilder builder, int EncounterCount) { builder.AddInt(7, EncounterCount, 0); }
+  public static void AddDiceEffectAniClip(FlatBufferBuilder builder, StringOffset DiceEffectAniClipOffset) { builder.AddOffset(8, DiceEffectAniClipOffset.Value, 0); }
   public static Offset<FlatDataJp.MinigameTBGItemExcel> EndMinigameTBGItemExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.MinigameTBGItemExcel>(o);

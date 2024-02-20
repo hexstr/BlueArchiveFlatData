@@ -20,7 +20,7 @@ public struct RecipeIngredientExcel : IFlatbufferObject
   public RecipeIngredientExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.RecipeType Recipetype { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.RecipeType.None; } }
+  public FlatDataJp.RecipeType RecipeType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.RecipeType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.RecipeType.None; } }
   public FlatDataJp.ParcelType CostParcelType(int j) { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.ParcelType)0; }
   public int CostParcelTypeLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -73,7 +73,7 @@ public struct RecipeIngredientExcel : IFlatbufferObject
 
   public static Offset<FlatDataJp.RecipeIngredientExcel> CreateRecipeIngredientExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataJp.RecipeType recipetype = FlatDataJp.RecipeType.None,
+      FlatDataJp.RecipeType recipeType = FlatDataJp.RecipeType.None,
       VectorOffset CostParcelTypeOffset = default(VectorOffset),
       VectorOffset CostIdOffset = default(VectorOffset),
       VectorOffset CostAmountOffset = default(VectorOffset),
@@ -90,13 +90,13 @@ public struct RecipeIngredientExcel : IFlatbufferObject
     RecipeIngredientExcel.AddCostAmount(builder, CostAmountOffset);
     RecipeIngredientExcel.AddCostId(builder, CostIdOffset);
     RecipeIngredientExcel.AddCostParcelType(builder, CostParcelTypeOffset);
-    RecipeIngredientExcel.AddRecipetype(builder, recipetype);
+    RecipeIngredientExcel.AddRecipeType(builder, recipeType);
     return RecipeIngredientExcel.EndRecipeIngredientExcel(builder);
   }
 
   public static void StartRecipeIngredientExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddRecipetype(FlatBufferBuilder builder, FlatDataJp.RecipeType recipetype) { builder.AddInt(1, (int)recipetype, 0); }
+  public static void AddRecipeType(FlatBufferBuilder builder, FlatDataJp.RecipeType recipeType) { builder.AddInt(1, (int)recipeType, 0); }
   public static void AddCostParcelType(FlatBufferBuilder builder, VectorOffset CostParcelTypeOffset) { builder.AddOffset(2, CostParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateCostParcelTypeVector(FlatBufferBuilder builder, FlatDataJp.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateCostParcelTypeVectorBlock(FlatBufferBuilder builder, FlatDataJp.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }

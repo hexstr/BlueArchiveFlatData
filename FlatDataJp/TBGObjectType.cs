@@ -14,6 +14,7 @@ public enum TBGObjectType : int
   Facility = 4,
   TreasureBox = 5,
   Start = 6,
+  Portal = 7,
 };
 
 

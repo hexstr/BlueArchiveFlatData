@@ -14,6 +14,8 @@ public enum EventCollectionUnlockType : int
   PurchaseSpecificItemCount = 4,
   SpecificEventLocationRank = 5,
   DiceRaceConsumeDiceCount = 6,
+  MinigameTBGThemaClear = 7,
+  MinigameEnter = 8,
 };
 
 

@@ -14,6 +14,7 @@ public enum TutorialFailureContentType : int
   TimeAttackDungeon = 4,
   WorldRaid = 5,
   Conquest = 6,
+  EliminateRaid = 7,
 };
 
 
