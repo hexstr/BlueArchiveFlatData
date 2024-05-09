@@ -68,6 +68,7 @@ public struct SkillExcel : IFlatbufferObject
   public byte[] GetIconNameArray() { return __p.__vector_as_array<byte>(48); }
   public bool IsShowInfo { get { int o = __p.__offset(50); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool IsShowSpeechbubble { get { int o = __p.__offset(52); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long AdditionalToolTipId { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.SkillExcel> CreateSkillExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -94,8 +95,10 @@ public struct SkillExcel : IFlatbufferObject
       long RequireLevelUpMaterial = 0,
       StringOffset IconNameOffset = default(StringOffset),
       bool IsShowInfo = false,
-      bool IsShowSpeechbubble = false) {
-    builder.StartTable(25);
+      bool IsShowSpeechbubble = false,
+      long AdditionalToolTipId = 0) {
+    builder.StartTable(26);
+    SkillExcel.AddAdditionalToolTipId(builder, AdditionalToolTipId);
     SkillExcel.AddRequireLevelUpMaterial(builder, RequireLevelUpMaterial);
     SkillExcel.AddId(builder, Id);
     SkillExcel.AddIconName(builder, IconNameOffset);
@@ -124,7 +127,7 @@ public struct SkillExcel : IFlatbufferObject
     return SkillExcel.EndSkillExcel(builder);
   }
 
-  public static void StartSkillExcel(FlatBufferBuilder builder) { builder.StartTable(25); }
+  public static void StartSkillExcel(FlatBufferBuilder builder) { builder.StartTable(26); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddLocalizeSkillId(FlatBufferBuilder builder, uint LocalizeSkillId) { builder.AddUint(1, LocalizeSkillId, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, StringOffset GroupIdOffset) { builder.AddOffset(2, GroupIdOffset.Value, 0); }
@@ -150,6 +153,7 @@ public struct SkillExcel : IFlatbufferObject
   public static void AddIconName(FlatBufferBuilder builder, StringOffset IconNameOffset) { builder.AddOffset(22, IconNameOffset.Value, 0); }
   public static void AddIsShowInfo(FlatBufferBuilder builder, bool IsShowInfo) { builder.AddBool(23, IsShowInfo, false); }
   public static void AddIsShowSpeechbubble(FlatBufferBuilder builder, bool IsShowSpeechbubble) { builder.AddBool(24, IsShowSpeechbubble, false); }
+  public static void AddAdditionalToolTipId(FlatBufferBuilder builder, long AdditionalToolTipId) { builder.AddLong(25, AdditionalToolTipId, 0); }
   public static Offset<FlatDataGlobal.SkillExcel> EndSkillExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.SkillExcel>(o);

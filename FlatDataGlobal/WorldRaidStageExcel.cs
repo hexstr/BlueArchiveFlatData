@@ -73,47 +73,40 @@ public struct WorldRaidStageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetBattleReadyTimelinePhaseEndBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
   public int[] GetBattleReadyTimelinePhaseEndArray() { return __p.__vector_as_array<int>(42); }
-  public string BeforeVictoryTimelinePath { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string VictoryTimelinePath { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBeforeVictoryTimelinePathBytes() { return __p.__vector_as_span<byte>(44, 1); }
+  public Span<byte> GetVictoryTimelinePathBytes() { return __p.__vector_as_span<byte>(44, 1); }
 #else
-  public ArraySegment<byte>? GetBeforeVictoryTimelinePathBytes() { return __p.__vector_as_arraysegment(44); }
+  public ArraySegment<byte>? GetVictoryTimelinePathBytes() { return __p.__vector_as_arraysegment(44); }
 #endif
-  public byte[] GetBeforeVictoryTimelinePathArray() { return __p.__vector_as_array<byte>(44); }
-  public string VictoryTimelinePath { get { int o = __p.__offset(46); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetVictoryTimelinePathArray() { return __p.__vector_as_array<byte>(44); }
+  public string PhaseChangeTimelinePath { get { int o = __p.__offset(46); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryTimelinePathBytes() { return __p.__vector_as_span<byte>(46, 1); }
+  public Span<byte> GetPhaseChangeTimelinePathBytes() { return __p.__vector_as_span<byte>(46, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryTimelinePathBytes() { return __p.__vector_as_arraysegment(46); }
+  public ArraySegment<byte>? GetPhaseChangeTimelinePathBytes() { return __p.__vector_as_arraysegment(46); }
 #endif
-  public byte[] GetVictoryTimelinePathArray() { return __p.__vector_as_array<byte>(46); }
-  public string PhaseChangeTimelinePath { get { int o = __p.__offset(48); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetPhaseChangeTimelinePathArray() { return __p.__vector_as_array<byte>(46); }
+  public long TimeLinePhase { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnterScenarioKey { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ClearScenarioKey { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool UseFixedEchelon { get { int o = __p.__offset(54); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long FixedEchelonId { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool IsRaidScenarioBattle { get { int o = __p.__offset(58); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool ShowSkillCard { get { int o = __p.__offset(60); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public uint BossBGInfoKey { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public long DamageToWorldBoss { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string AllyPassiveSkill(int j) { int o = __p.__offset(66); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int AllyPassiveSkillLength { get { int o = __p.__offset(66); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int AllyPassiveSkillLevel(int j) { int o = __p.__offset(68); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int AllyPassiveSkillLevelLength { get { int o = __p.__offset(68); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetPhaseChangeTimelinePathBytes() { return __p.__vector_as_span<byte>(48, 1); }
+  public Span<int> GetAllyPassiveSkillLevelBytes() { return __p.__vector_as_span<int>(68, 4); }
 #else
-  public ArraySegment<byte>? GetPhaseChangeTimelinePathBytes() { return __p.__vector_as_arraysegment(48); }
+  public ArraySegment<byte>? GetAllyPassiveSkillLevelBytes() { return __p.__vector_as_arraysegment(68); }
 #endif
-  public byte[] GetPhaseChangeTimelinePathArray() { return __p.__vector_as_array<byte>(48); }
-  public long TimeLinePhase { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnterScenarioKey { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ClearScenarioKey { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool UseFixedEchelon { get { int o = __p.__offset(56); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long FixedEchelonId { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool IsRaidScenarioBattle { get { int o = __p.__offset(60); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool ShowSkillCard { get { int o = __p.__offset(62); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public uint BossBGInfoKey { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public long DamageToWorldBoss { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string AllyPassiveSkill(int j) { int o = __p.__offset(68); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int AllyPassiveSkillLength { get { int o = __p.__offset(68); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public int AllyPassiveSkillLevel(int j) { int o = __p.__offset(70); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int AllyPassiveSkillLevelLength { get { int o = __p.__offset(70); return o != 0 ? __p.__vector_len(o) : 0; } }
-#if ENABLE_SPAN_T
-  public Span<int> GetAllyPassiveSkillLevelBytes() { return __p.__vector_as_span<int>(70, 4); }
-#else
-  public ArraySegment<byte>? GetAllyPassiveSkillLevelBytes() { return __p.__vector_as_arraysegment(70); }
-#endif
-  public int[] GetAllyPassiveSkillLevelArray() { return __p.__vector_as_array<int>(70); }
-  public bool SaveCurrentLocalBossHP { get { int o = __p.__offset(72); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public int[] GetAllyPassiveSkillLevelArray() { return __p.__vector_as_array<int>(68); }
+  public bool SaveCurrentLocalBossHP { get { int o = __p.__offset(70); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.WorldRaidStageExcel> CreateWorldRaidStageExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -136,7 +129,6 @@ public struct WorldRaidStageExcel : IFlatbufferObject
       VectorOffset BattleReadyTimelinePathOffset = default(VectorOffset),
       VectorOffset BattleReadyTimelinePhaseStartOffset = default(VectorOffset),
       VectorOffset BattleReadyTimelinePhaseEndOffset = default(VectorOffset),
-      StringOffset BeforeVictoryTimelinePathOffset = default(StringOffset),
       StringOffset VictoryTimelinePathOffset = default(StringOffset),
       StringOffset PhaseChangeTimelinePathOffset = default(StringOffset),
       long TimeLinePhase = 0,
@@ -151,7 +143,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
       VectorOffset AllyPassiveSkillOffset = default(VectorOffset),
       VectorOffset AllyPassiveSkillLevelOffset = default(VectorOffset),
       bool SaveCurrentLocalBossHP = false) {
-    builder.StartTable(35);
+    builder.StartTable(34);
     WorldRaidStageExcel.AddDamageToWorldBoss(builder, DamageToWorldBoss);
     WorldRaidStageExcel.AddFixedEchelonId(builder, FixedEchelonId);
     WorldRaidStageExcel.AddClearScenarioKey(builder, ClearScenarioKey);
@@ -172,7 +164,6 @@ public struct WorldRaidStageExcel : IFlatbufferObject
     WorldRaidStageExcel.AddBossBGInfoKey(builder, BossBGInfoKey);
     WorldRaidStageExcel.AddPhaseChangeTimelinePath(builder, PhaseChangeTimelinePathOffset);
     WorldRaidStageExcel.AddVictoryTimelinePath(builder, VictoryTimelinePathOffset);
-    WorldRaidStageExcel.AddBeforeVictoryTimelinePath(builder, BeforeVictoryTimelinePathOffset);
     WorldRaidStageExcel.AddBattleReadyTimelinePhaseEnd(builder, BattleReadyTimelinePhaseEndOffset);
     WorldRaidStageExcel.AddBattleReadyTimelinePhaseStart(builder, BattleReadyTimelinePhaseStartOffset);
     WorldRaidStageExcel.AddBattleReadyTimelinePath(builder, BattleReadyTimelinePathOffset);
@@ -190,7 +181,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
     return WorldRaidStageExcel.EndWorldRaidStageExcel(builder);
   }
 
-  public static void StartWorldRaidStageExcel(FlatBufferBuilder builder) { builder.StartTable(35); }
+  public static void StartWorldRaidStageExcel(FlatBufferBuilder builder) { builder.StartTable(34); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddUseBossIndex(FlatBufferBuilder builder, bool UseBossIndex) { builder.AddBool(1, UseBossIndex, false); }
   public static void AddUseBossAIPhaseSync(FlatBufferBuilder builder, bool UseBossAIPhaseSync) { builder.AddBool(2, UseBossAIPhaseSync, false); }
@@ -231,31 +222,30 @@ public struct WorldRaidStageExcel : IFlatbufferObject
   public static VectorOffset CreateBattleReadyTimelinePhaseEndVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBattleReadyTimelinePhaseEndVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartBattleReadyTimelinePhaseEndVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddBeforeVictoryTimelinePath(FlatBufferBuilder builder, StringOffset BeforeVictoryTimelinePathOffset) { builder.AddOffset(20, BeforeVictoryTimelinePathOffset.Value, 0); }
-  public static void AddVictoryTimelinePath(FlatBufferBuilder builder, StringOffset VictoryTimelinePathOffset) { builder.AddOffset(21, VictoryTimelinePathOffset.Value, 0); }
-  public static void AddPhaseChangeTimelinePath(FlatBufferBuilder builder, StringOffset PhaseChangeTimelinePathOffset) { builder.AddOffset(22, PhaseChangeTimelinePathOffset.Value, 0); }
-  public static void AddTimeLinePhase(FlatBufferBuilder builder, long TimeLinePhase) { builder.AddLong(23, TimeLinePhase, 0); }
-  public static void AddEnterScenarioKey(FlatBufferBuilder builder, long EnterScenarioKey) { builder.AddLong(24, EnterScenarioKey, 0); }
-  public static void AddClearScenarioKey(FlatBufferBuilder builder, long ClearScenarioKey) { builder.AddLong(25, ClearScenarioKey, 0); }
-  public static void AddUseFixedEchelon(FlatBufferBuilder builder, bool UseFixedEchelon) { builder.AddBool(26, UseFixedEchelon, false); }
-  public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(27, FixedEchelonId, 0); }
-  public static void AddIsRaidScenarioBattle(FlatBufferBuilder builder, bool IsRaidScenarioBattle) { builder.AddBool(28, IsRaidScenarioBattle, false); }
-  public static void AddShowSkillCard(FlatBufferBuilder builder, bool ShowSkillCard) { builder.AddBool(29, ShowSkillCard, false); }
-  public static void AddBossBGInfoKey(FlatBufferBuilder builder, uint BossBGInfoKey) { builder.AddUint(30, BossBGInfoKey, 0); }
-  public static void AddDamageToWorldBoss(FlatBufferBuilder builder, long DamageToWorldBoss) { builder.AddLong(31, DamageToWorldBoss, 0); }
-  public static void AddAllyPassiveSkill(FlatBufferBuilder builder, VectorOffset AllyPassiveSkillOffset) { builder.AddOffset(32, AllyPassiveSkillOffset.Value, 0); }
+  public static void AddVictoryTimelinePath(FlatBufferBuilder builder, StringOffset VictoryTimelinePathOffset) { builder.AddOffset(20, VictoryTimelinePathOffset.Value, 0); }
+  public static void AddPhaseChangeTimelinePath(FlatBufferBuilder builder, StringOffset PhaseChangeTimelinePathOffset) { builder.AddOffset(21, PhaseChangeTimelinePathOffset.Value, 0); }
+  public static void AddTimeLinePhase(FlatBufferBuilder builder, long TimeLinePhase) { builder.AddLong(22, TimeLinePhase, 0); }
+  public static void AddEnterScenarioKey(FlatBufferBuilder builder, long EnterScenarioKey) { builder.AddLong(23, EnterScenarioKey, 0); }
+  public static void AddClearScenarioKey(FlatBufferBuilder builder, long ClearScenarioKey) { builder.AddLong(24, ClearScenarioKey, 0); }
+  public static void AddUseFixedEchelon(FlatBufferBuilder builder, bool UseFixedEchelon) { builder.AddBool(25, UseFixedEchelon, false); }
+  public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(26, FixedEchelonId, 0); }
+  public static void AddIsRaidScenarioBattle(FlatBufferBuilder builder, bool IsRaidScenarioBattle) { builder.AddBool(27, IsRaidScenarioBattle, false); }
+  public static void AddShowSkillCard(FlatBufferBuilder builder, bool ShowSkillCard) { builder.AddBool(28, ShowSkillCard, false); }
+  public static void AddBossBGInfoKey(FlatBufferBuilder builder, uint BossBGInfoKey) { builder.AddUint(29, BossBGInfoKey, 0); }
+  public static void AddDamageToWorldBoss(FlatBufferBuilder builder, long DamageToWorldBoss) { builder.AddLong(30, DamageToWorldBoss, 0); }
+  public static void AddAllyPassiveSkill(FlatBufferBuilder builder, VectorOffset AllyPassiveSkillOffset) { builder.AddOffset(31, AllyPassiveSkillOffset.Value, 0); }
   public static VectorOffset CreateAllyPassiveSkillVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateAllyPassiveSkillVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateAllyPassiveSkillVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateAllyPassiveSkillVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartAllyPassiveSkillVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddAllyPassiveSkillLevel(FlatBufferBuilder builder, VectorOffset AllyPassiveSkillLevelOffset) { builder.AddOffset(33, AllyPassiveSkillLevelOffset.Value, 0); }
+  public static void AddAllyPassiveSkillLevel(FlatBufferBuilder builder, VectorOffset AllyPassiveSkillLevelOffset) { builder.AddOffset(32, AllyPassiveSkillLevelOffset.Value, 0); }
   public static VectorOffset CreateAllyPassiveSkillLevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateAllyPassiveSkillLevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateAllyPassiveSkillLevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateAllyPassiveSkillLevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartAllyPassiveSkillLevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSaveCurrentLocalBossHP(FlatBufferBuilder builder, bool SaveCurrentLocalBossHP) { builder.AddBool(34, SaveCurrentLocalBossHP, false); }
+  public static void AddSaveCurrentLocalBossHP(FlatBufferBuilder builder, bool SaveCurrentLocalBossHP) { builder.AddBool(33, SaveCurrentLocalBossHP, false); }
   public static Offset<FlatDataGlobal.WorldRaidStageExcel> EndWorldRaidStageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.WorldRaidStageExcel>(o);

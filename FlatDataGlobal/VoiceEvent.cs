@@ -28,6 +28,10 @@ public enum VoiceEvent : int
   MGS_CharacterSelect = 18,
   MGS_Attacking = 19,
   MGS_GeasGet = 20,
+  EXSkill = 21,
+  EXSkillLevel = 22,
+  EXSkill2 = 23,
+  EXSkillLevel2 = 24,
 };
 
 

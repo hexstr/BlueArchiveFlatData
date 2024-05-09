@@ -93,14 +93,8 @@ public struct CharacterExcel : IFlatbufferObject
   public ArraySegment<byte>? GetEquipmentSlotBytes() { return __p.__vector_as_arraysegment(76); }
 #endif
   public FlatDataGlobal.EquipmentCategory[] GetEquipmentSlotArray() { int o = __p.__offset(76); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.EquipmentCategory[] a = new FlatDataGlobal.EquipmentCategory[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.EquipmentCategory)__p.bb.GetInt(p + i * 4); } return a; }
-  public string WeaponImagePath { get { int o = __p.__offset(78); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetWeaponImagePathBytes() { return __p.__vector_as_span<byte>(78, 1); }
-#else
-  public ArraySegment<byte>? GetWeaponImagePathBytes() { return __p.__vector_as_arraysegment(78); }
-#endif
-  public byte[] GetWeaponImagePathArray() { return __p.__vector_as_array<byte>(78); }
-  public uint WeaponLocalizeId { get { int o = __p.__offset(80); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public uint WeaponLocalizeId { get { int o = __p.__offset(78); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public bool DisplayEnemyInfo { get { int o = __p.__offset(80); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long BodyRadius { get { int o = __p.__offset(82); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long RandomEffectRadius { get { int o = __p.__offset(84); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public bool HPBarHide { get { int o = __p.__offset(86); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
@@ -170,8 +164,8 @@ public struct CharacterExcel : IFlatbufferObject
       uint SpawnTemplateId = 0,
       int FavorLevelupType = 0,
       VectorOffset EquipmentSlotOffset = default(VectorOffset),
-      StringOffset WeaponImagePathOffset = default(StringOffset),
       uint WeaponLocalizeId = 0,
+      bool DisplayEnemyInfo = false,
       long BodyRadius = 0,
       long RandomEffectRadius = 0,
       bool HPBarHide = false,
@@ -219,7 +213,6 @@ public struct CharacterExcel : IFlatbufferObject
     CharacterExcel.AddHighlightFloaterHeight(builder, HighlightFloaterHeight);
     CharacterExcel.AddHpBarHeight(builder, HpBarHeight);
     CharacterExcel.AddWeaponLocalizeId(builder, WeaponLocalizeId);
-    CharacterExcel.AddWeaponImagePath(builder, WeaponImagePathOffset);
     CharacterExcel.AddEquipmentSlot(builder, EquipmentSlotOffset);
     CharacterExcel.AddFavorLevelupType(builder, FavorLevelupType);
     CharacterExcel.AddSpawnTemplateId(builder, SpawnTemplateId);
@@ -251,6 +244,7 @@ public struct CharacterExcel : IFlatbufferObject
     CharacterExcel.AddCanFix(builder, CanFix);
     CharacterExcel.AddCanMove(builder, CanMove);
     CharacterExcel.AddHPBarHide(builder, HPBarHide);
+    CharacterExcel.AddDisplayEnemyInfo(builder, DisplayEnemyInfo);
     CharacterExcel.AddJumpable(builder, Jumpable);
     CharacterExcel.AddIsDummy(builder, IsDummy);
     CharacterExcel.AddCanSurvive(builder, CanSurvive);
@@ -304,8 +298,8 @@ public struct CharacterExcel : IFlatbufferObject
   public static VectorOffset CreateEquipmentSlotVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.EquipmentCategory> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEquipmentSlotVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.EquipmentCategory>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartEquipmentSlotVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddWeaponImagePath(FlatBufferBuilder builder, StringOffset WeaponImagePathOffset) { builder.AddOffset(37, WeaponImagePathOffset.Value, 0); }
-  public static void AddWeaponLocalizeId(FlatBufferBuilder builder, uint WeaponLocalizeId) { builder.AddUint(38, WeaponLocalizeId, 0); }
+  public static void AddWeaponLocalizeId(FlatBufferBuilder builder, uint WeaponLocalizeId) { builder.AddUint(37, WeaponLocalizeId, 0); }
+  public static void AddDisplayEnemyInfo(FlatBufferBuilder builder, bool DisplayEnemyInfo) { builder.AddBool(38, DisplayEnemyInfo, false); }
   public static void AddBodyRadius(FlatBufferBuilder builder, long BodyRadius) { builder.AddLong(39, BodyRadius, 0); }
   public static void AddRandomEffectRadius(FlatBufferBuilder builder, long RandomEffectRadius) { builder.AddLong(40, RandomEffectRadius, 0); }
   public static void AddHPBarHide(FlatBufferBuilder builder, bool HPBarHide) { builder.AddBool(41, HPBarHide, false); }

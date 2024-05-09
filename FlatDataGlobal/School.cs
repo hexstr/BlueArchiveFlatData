@@ -21,6 +21,8 @@ public enum School : int
   SRT = 11,
   SCHALE = 12,
   ETC = 13,
+  Tokiwadai = 14,
+  Sakugawa = 15,
 };
 
 

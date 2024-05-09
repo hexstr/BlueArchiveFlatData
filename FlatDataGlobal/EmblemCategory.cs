@@ -10,7 +10,7 @@ public enum EmblemCategory : int
   None = 0,
   Default = 1,
   Mission = 2,
-  GroupStroy = 3,
+  GroupStory = 3,
   Event = 4,
   MainStory = 5,
   Favor = 6,

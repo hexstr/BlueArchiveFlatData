@@ -29,13 +29,16 @@ public struct TimeAttackDungeonExcel : IFlatbufferObject
   public ArraySegment<byte>? GetIconPathBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetIconPathArray() { return __p.__vector_as_array<byte>(10); }
+  public long InformationGroupID { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.TimeAttackDungeonExcel> CreateTimeAttackDungeonExcel(FlatBufferBuilder builder,
       long Id = 0,
       FlatDataGlobal.TimeAttackDungeonType timeAttackDungeonType = FlatDataGlobal.TimeAttackDungeonType.None,
       uint LocalizeEtcKey = 0,
-      StringOffset IconPathOffset = default(StringOffset)) {
-    builder.StartTable(4);
+      StringOffset IconPathOffset = default(StringOffset),
+      long InformationGroupID = 0) {
+    builder.StartTable(5);
+    TimeAttackDungeonExcel.AddInformationGroupID(builder, InformationGroupID);
     TimeAttackDungeonExcel.AddId(builder, Id);
     TimeAttackDungeonExcel.AddIconPath(builder, IconPathOffset);
     TimeAttackDungeonExcel.AddLocalizeEtcKey(builder, LocalizeEtcKey);
@@ -43,11 +46,12 @@ public struct TimeAttackDungeonExcel : IFlatbufferObject
     return TimeAttackDungeonExcel.EndTimeAttackDungeonExcel(builder);
   }
 
-  public static void StartTimeAttackDungeonExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
+  public static void StartTimeAttackDungeonExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddTimeAttackDungeonType(FlatBufferBuilder builder, FlatDataGlobal.TimeAttackDungeonType timeAttackDungeonType) { builder.AddInt(1, (int)timeAttackDungeonType, 0); }
   public static void AddLocalizeEtcKey(FlatBufferBuilder builder, uint LocalizeEtcKey) { builder.AddUint(2, LocalizeEtcKey, 0); }
   public static void AddIconPath(FlatBufferBuilder builder, StringOffset IconPathOffset) { builder.AddOffset(3, IconPathOffset.Value, 0); }
+  public static void AddInformationGroupID(FlatBufferBuilder builder, long InformationGroupID) { builder.AddLong(4, InformationGroupID, 0); }
   public static Offset<FlatDataGlobal.TimeAttackDungeonExcel> EndTimeAttackDungeonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.TimeAttackDungeonExcel>(o);

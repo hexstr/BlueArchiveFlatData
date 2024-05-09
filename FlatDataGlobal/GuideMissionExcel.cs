@@ -59,13 +59,14 @@ public struct GuideMissionExcel : IFlatbufferObject
   public ArraySegment<byte>? GetCompleteConditionParameterBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
   public long[] GetCompleteConditionParameterArray() { return __p.__vector_as_array<long>(28); }
-  public string CompleteConditionParameterName { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataGlobal.Tag CompleteConditionParameterTag(int j) { int o = __p.__offset(30); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Tag)0; }
+  public int CompleteConditionParameterTagLength { get { int o = __p.__offset(30); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetCompleteConditionParameterNameBytes() { return __p.__vector_as_span<byte>(30, 1); }
+  public Span<FlatDataGlobal.Tag> GetCompleteConditionParameterTagBytes() { return __p.__vector_as_span<FlatDataGlobal.Tag>(30, 4); }
 #else
-  public ArraySegment<byte>? GetCompleteConditionParameterNameBytes() { return __p.__vector_as_arraysegment(30); }
+  public ArraySegment<byte>? GetCompleteConditionParameterTagBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
-  public byte[] GetCompleteConditionParameterNameArray() { return __p.__vector_as_array<byte>(30); }
+  public FlatDataGlobal.Tag[] GetCompleteConditionParameterTagArray() { int o = __p.__offset(30); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Tag[] a = new FlatDataGlobal.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Tag)__p.bb.GetInt(p + i * 4); } return a; }
   public bool IsAutoClearForScenario { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public FlatDataGlobal.ParcelType MissionRewardParcelType(int j) { int o = __p.__offset(34); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
   public int MissionRewardParcelTypeLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
@@ -106,7 +107,7 @@ public struct GuideMissionExcel : IFlatbufferObject
       FlatDataGlobal.MissionCompleteConditionType CompleteConditionType = FlatDataGlobal.MissionCompleteConditionType.None,
       long CompleteConditionCount = 0,
       VectorOffset CompleteConditionParameterOffset = default(VectorOffset),
-      StringOffset CompleteConditionParameterNameOffset = default(StringOffset),
+      VectorOffset CompleteConditionParameterTagOffset = default(VectorOffset),
       bool IsAutoClearForScenario = false,
       VectorOffset MissionRewardParcelTypeOffset = default(VectorOffset),
       VectorOffset MissionRewardParcelIdOffset = default(VectorOffset),
@@ -119,7 +120,7 @@ public struct GuideMissionExcel : IFlatbufferObject
     GuideMissionExcel.AddMissionRewardAmount(builder, MissionRewardAmountOffset);
     GuideMissionExcel.AddMissionRewardParcelId(builder, MissionRewardParcelIdOffset);
     GuideMissionExcel.AddMissionRewardParcelType(builder, MissionRewardParcelTypeOffset);
-    GuideMissionExcel.AddCompleteConditionParameterName(builder, CompleteConditionParameterNameOffset);
+    GuideMissionExcel.AddCompleteConditionParameterTag(builder, CompleteConditionParameterTagOffset);
     GuideMissionExcel.AddCompleteConditionParameter(builder, CompleteConditionParameterOffset);
     GuideMissionExcel.AddCompleteConditionType(builder, CompleteConditionType);
     GuideMissionExcel.AddShortcutUI(builder, ShortcutUIOffset);
@@ -162,7 +163,12 @@ public struct GuideMissionExcel : IFlatbufferObject
   public static VectorOffset CreateCompleteConditionParameterVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCompleteConditionParameterVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCompleteConditionParameterVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddCompleteConditionParameterName(FlatBufferBuilder builder, StringOffset CompleteConditionParameterNameOffset) { builder.AddOffset(13, CompleteConditionParameterNameOffset.Value, 0); }
+  public static void AddCompleteConditionParameterTag(FlatBufferBuilder builder, VectorOffset CompleteConditionParameterTagOffset) { builder.AddOffset(13, CompleteConditionParameterTagOffset.Value, 0); }
+  public static VectorOffset CreateCompleteConditionParameterTagVector(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateCompleteConditionParameterTagVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateCompleteConditionParameterTagVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateCompleteConditionParameterTagVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartCompleteConditionParameterTagVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddIsAutoClearForScenario(FlatBufferBuilder builder, bool IsAutoClearForScenario) { builder.AddBool(14, IsAutoClearForScenario, false); }
   public static void AddMissionRewardParcelType(FlatBufferBuilder builder, VectorOffset MissionRewardParcelTypeOffset) { builder.AddOffset(15, MissionRewardParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateMissionRewardParcelTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }

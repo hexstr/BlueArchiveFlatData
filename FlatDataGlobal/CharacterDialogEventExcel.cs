@@ -80,27 +80,25 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
   public ArraySegment<byte>? GetLocalizeENBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
   public byte[] GetLocalizeENArray() { return __p.__vector_as_array<byte>(40); }
-  public string VoiceClipsKr(int j) { int o = __p.__offset(42); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsKrLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string VoiceClipsJp(int j) { int o = __p.__offset(44); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsJpLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string VoiceClipsTh(int j) { int o = __p.__offset(46); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsThLength { get { int o = __p.__offset(46); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string VoiceClipsTw(int j) { int o = __p.__offset(48); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsTwLength { get { int o = __p.__offset(48); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string VoiceClipsEn(int j) { int o = __p.__offset(50); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsEnLength { get { int o = __p.__offset(50); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public bool CollectionVisible { get { int o = __p.__offset(52); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.CVCollectionType CVCollectionType { get { int o = __p.__offset(54); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
-  public long UnlockEventSeason { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ScenarioGroupId { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string LocalizeCVGroup { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public uint VoiceId(int j) { int o = __p.__offset(42); return o != 0 ? __p.bb.GetUint(__p.__vector(o) + j * 4) : (uint)0; }
+  public int VoiceIdLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeCVGroupBytes() { return __p.__vector_as_span<byte>(60, 1); }
+  public Span<uint> GetVoiceIdBytes() { return __p.__vector_as_span<uint>(42, 4); }
 #else
-  public ArraySegment<byte>? GetLocalizeCVGroupBytes() { return __p.__vector_as_arraysegment(60); }
+  public ArraySegment<byte>? GetVoiceIdBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public byte[] GetLocalizeCVGroupArray() { return __p.__vector_as_array<byte>(60); }
+  public uint[] GetVoiceIdArray() { return __p.__vector_as_array<uint>(42); }
+  public bool CollectionVisible { get { int o = __p.__offset(44); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.CVCollectionType CVCollectionType { get { int o = __p.__offset(46); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
+  public long UnlockEventSeason { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ScenarioGroupId { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string LocalizeCVGroup { get { int o = __p.__offset(52); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetLocalizeCVGroupBytes() { return __p.__vector_as_span<byte>(52, 1); }
+#else
+  public ArraySegment<byte>? GetLocalizeCVGroupBytes() { return __p.__vector_as_arraysegment(52); }
+#endif
+  public byte[] GetLocalizeCVGroupArray() { return __p.__vector_as_array<byte>(52); }
 
   public static Offset<FlatDataGlobal.CharacterDialogEventExcel> CreateCharacterDialogEventExcel(FlatBufferBuilder builder,
       long CostumeUniqueId = 0,
@@ -122,17 +120,13 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
       StringOffset LocalizeTHOffset = default(StringOffset),
       StringOffset LocalizeTWOffset = default(StringOffset),
       StringOffset LocalizeENOffset = default(StringOffset),
-      VectorOffset VoiceClipsKrOffset = default(VectorOffset),
-      VectorOffset VoiceClipsJpOffset = default(VectorOffset),
-      VectorOffset VoiceClipsThOffset = default(VectorOffset),
-      VectorOffset VoiceClipsTwOffset = default(VectorOffset),
-      VectorOffset VoiceClipsEnOffset = default(VectorOffset),
+      VectorOffset VoiceIdOffset = default(VectorOffset),
       bool CollectionVisible = false,
       FlatDataGlobal.CVCollectionType cVCollectionType = FlatDataGlobal.CVCollectionType.CVNormal,
       long UnlockEventSeason = 0,
       long ScenarioGroupId = 0,
       StringOffset LocalizeCVGroupOffset = default(StringOffset)) {
-    builder.StartTable(29);
+    builder.StartTable(25);
     CharacterDialogEventExcel.AddScenarioGroupId(builder, ScenarioGroupId);
     CharacterDialogEventExcel.AddUnlockEventSeason(builder, UnlockEventSeason);
     CharacterDialogEventExcel.AddDuration(builder, Duration);
@@ -144,11 +138,7 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
     CharacterDialogEventExcel.AddCostumeUniqueId(builder, CostumeUniqueId);
     CharacterDialogEventExcel.AddLocalizeCVGroup(builder, LocalizeCVGroupOffset);
     CharacterDialogEventExcel.AddCVCollectionType(builder, cVCollectionType);
-    CharacterDialogEventExcel.AddVoiceClipsEn(builder, VoiceClipsEnOffset);
-    CharacterDialogEventExcel.AddVoiceClipsTw(builder, VoiceClipsTwOffset);
-    CharacterDialogEventExcel.AddVoiceClipsTh(builder, VoiceClipsThOffset);
-    CharacterDialogEventExcel.AddVoiceClipsJp(builder, VoiceClipsJpOffset);
-    CharacterDialogEventExcel.AddVoiceClipsKr(builder, VoiceClipsKrOffset);
+    CharacterDialogEventExcel.AddVoiceId(builder, VoiceIdOffset);
     CharacterDialogEventExcel.AddLocalizeEN(builder, LocalizeENOffset);
     CharacterDialogEventExcel.AddLocalizeTW(builder, LocalizeTWOffset);
     CharacterDialogEventExcel.AddLocalizeTH(builder, LocalizeTHOffset);
@@ -165,7 +155,7 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
     return CharacterDialogEventExcel.EndCharacterDialogEventExcel(builder);
   }
 
-  public static void StartCharacterDialogEventExcel(FlatBufferBuilder builder) { builder.StartTable(29); }
+  public static void StartCharacterDialogEventExcel(FlatBufferBuilder builder) { builder.StartTable(25); }
   public static void AddCostumeUniqueId(FlatBufferBuilder builder, long CostumeUniqueId) { builder.AddLong(0, CostumeUniqueId, 0); }
   public static void AddOriginalCharacterId(FlatBufferBuilder builder, long OriginalCharacterId) { builder.AddLong(1, OriginalCharacterId, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(2, DisplayOrder, 0); }
@@ -185,41 +175,17 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
   public static void AddLocalizeTH(FlatBufferBuilder builder, StringOffset LocalizeTHOffset) { builder.AddOffset(16, LocalizeTHOffset.Value, 0); }
   public static void AddLocalizeTW(FlatBufferBuilder builder, StringOffset LocalizeTWOffset) { builder.AddOffset(17, LocalizeTWOffset.Value, 0); }
   public static void AddLocalizeEN(FlatBufferBuilder builder, StringOffset LocalizeENOffset) { builder.AddOffset(18, LocalizeENOffset.Value, 0); }
-  public static void AddVoiceClipsKr(FlatBufferBuilder builder, VectorOffset VoiceClipsKrOffset) { builder.AddOffset(19, VoiceClipsKrOffset.Value, 0); }
-  public static VectorOffset CreateVoiceClipsKrVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsKrVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsKrVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsKrVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartVoiceClipsKrVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVoiceClipsJp(FlatBufferBuilder builder, VectorOffset VoiceClipsJpOffset) { builder.AddOffset(20, VoiceClipsJpOffset.Value, 0); }
-  public static VectorOffset CreateVoiceClipsJpVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsJpVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsJpVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsJpVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartVoiceClipsJpVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVoiceClipsTh(FlatBufferBuilder builder, VectorOffset VoiceClipsThOffset) { builder.AddOffset(21, VoiceClipsThOffset.Value, 0); }
-  public static VectorOffset CreateVoiceClipsThVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsThVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsThVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsThVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartVoiceClipsThVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVoiceClipsTw(FlatBufferBuilder builder, VectorOffset VoiceClipsTwOffset) { builder.AddOffset(22, VoiceClipsTwOffset.Value, 0); }
-  public static VectorOffset CreateVoiceClipsTwVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsTwVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsTwVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsTwVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartVoiceClipsTwVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVoiceClipsEn(FlatBufferBuilder builder, VectorOffset VoiceClipsEnOffset) { builder.AddOffset(23, VoiceClipsEnOffset.Value, 0); }
-  public static VectorOffset CreateVoiceClipsEnVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsEnVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsEnVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsEnVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartVoiceClipsEnVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(24, CollectionVisible, false); }
-  public static void AddCVCollectionType(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cVCollectionType) { builder.AddInt(25, (int)cVCollectionType, 0); }
-  public static void AddUnlockEventSeason(FlatBufferBuilder builder, long UnlockEventSeason) { builder.AddLong(26, UnlockEventSeason, 0); }
-  public static void AddScenarioGroupId(FlatBufferBuilder builder, long ScenarioGroupId) { builder.AddLong(27, ScenarioGroupId, 0); }
-  public static void AddLocalizeCVGroup(FlatBufferBuilder builder, StringOffset LocalizeCVGroupOffset) { builder.AddOffset(28, LocalizeCVGroupOffset.Value, 0); }
+  public static void AddVoiceId(FlatBufferBuilder builder, VectorOffset VoiceIdOffset) { builder.AddOffset(19, VoiceIdOffset.Value, 0); }
+  public static VectorOffset CreateVoiceIdVector(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddUint(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, ArraySegment<uint> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<uint>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartVoiceIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(20, CollectionVisible, false); }
+  public static void AddCVCollectionType(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cVCollectionType) { builder.AddInt(21, (int)cVCollectionType, 0); }
+  public static void AddUnlockEventSeason(FlatBufferBuilder builder, long UnlockEventSeason) { builder.AddLong(22, UnlockEventSeason, 0); }
+  public static void AddScenarioGroupId(FlatBufferBuilder builder, long ScenarioGroupId) { builder.AddLong(23, ScenarioGroupId, 0); }
+  public static void AddLocalizeCVGroup(FlatBufferBuilder builder, StringOffset LocalizeCVGroupOffset) { builder.AddOffset(24, LocalizeCVGroupOffset.Value, 0); }
   public static Offset<FlatDataGlobal.CharacterDialogEventExcel> EndCharacterDialogEventExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterDialogEventExcel>(o);

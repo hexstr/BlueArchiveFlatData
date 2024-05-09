@@ -237,8 +237,22 @@ public struct ConstCommonExcel : IFlatbufferObject
   public int BeforehandGachaGroupId { get { int o = __p.__offset(340); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int RenewalDisplayOrderDay { get { int o = __p.__offset(342); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long EmblemDefaultId { get { int o = __p.__offset(344); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string BirthdayMailStartDate { get { int o = __p.__offset(346); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetBirthdayMailStartDateBytes() { return __p.__vector_as_span<byte>(346, 1); }
+#else
+  public ArraySegment<byte>? GetBirthdayMailStartDateBytes() { return __p.__vector_as_arraysegment(346); }
+#endif
+  public byte[] GetBirthdayMailStartDateArray() { return __p.__vector_as_array<byte>(346); }
+  public int BirthdayMailRemainDate { get { int o = __p.__offset(348); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.ParcelType BirthdayMailParcelType { get { int o = __p.__offset(350); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public long BirthdayMailParcelId { get { int o = __p.__offset(352); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int BirthdayMailParcelAmount { get { int o = __p.__offset(354); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ClearDeckAverageDeckCount { get { int o = __p.__offset(356); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ClearDeckWorldRaidSaveConditionCoefficient { get { int o = __p.__offset(358); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ClearDeckShowCount { get { int o = __p.__offset(360); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
-  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(171); }
+  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(179); }
   public static void AddCampaignMainStageMaxRank(FlatBufferBuilder builder, int CampaignMainStageMaxRank) { builder.AddInt(0, CampaignMainStageMaxRank, 0); }
   public static void AddCampaignMainStageBestRecord(FlatBufferBuilder builder, int CampaignMainStageBestRecord) { builder.AddInt(1, CampaignMainStageBestRecord, 0); }
   public static void AddHardAdventurePlayCountRecoverDailyNumber(FlatBufferBuilder builder, int HardAdventurePlayCountRecoverDailyNumber) { builder.AddInt(2, HardAdventurePlayCountRecoverDailyNumber, 0); }
@@ -435,6 +449,14 @@ public struct ConstCommonExcel : IFlatbufferObject
   public static void AddBeforehandGachaGroupId(FlatBufferBuilder builder, int BeforehandGachaGroupId) { builder.AddInt(168, BeforehandGachaGroupId, 0); }
   public static void AddRenewalDisplayOrderDay(FlatBufferBuilder builder, int RenewalDisplayOrderDay) { builder.AddInt(169, RenewalDisplayOrderDay, 0); }
   public static void AddEmblemDefaultId(FlatBufferBuilder builder, long EmblemDefaultId) { builder.AddLong(170, EmblemDefaultId, 0); }
+  public static void AddBirthdayMailStartDate(FlatBufferBuilder builder, StringOffset BirthdayMailStartDateOffset) { builder.AddOffset(171, BirthdayMailStartDateOffset.Value, 0); }
+  public static void AddBirthdayMailRemainDate(FlatBufferBuilder builder, int BirthdayMailRemainDate) { builder.AddInt(172, BirthdayMailRemainDate, 0); }
+  public static void AddBirthdayMailParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType BirthdayMailParcelType) { builder.AddInt(173, (int)BirthdayMailParcelType, 0); }
+  public static void AddBirthdayMailParcelId(FlatBufferBuilder builder, long BirthdayMailParcelId) { builder.AddLong(174, BirthdayMailParcelId, 0); }
+  public static void AddBirthdayMailParcelAmount(FlatBufferBuilder builder, int BirthdayMailParcelAmount) { builder.AddInt(175, BirthdayMailParcelAmount, 0); }
+  public static void AddClearDeckAverageDeckCount(FlatBufferBuilder builder, int ClearDeckAverageDeckCount) { builder.AddInt(176, ClearDeckAverageDeckCount, 0); }
+  public static void AddClearDeckWorldRaidSaveConditionCoefficient(FlatBufferBuilder builder, int ClearDeckWorldRaidSaveConditionCoefficient) { builder.AddInt(177, ClearDeckWorldRaidSaveConditionCoefficient, 0); }
+  public static void AddClearDeckShowCount(FlatBufferBuilder builder, int ClearDeckShowCount) { builder.AddInt(178, ClearDeckShowCount, 0); }
   public static Offset<FlatDataGlobal.ConstCommonExcel> EndConstCommonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstCommonExcel>(o);

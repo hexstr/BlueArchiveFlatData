@@ -20,50 +20,122 @@ public struct BGMExcel : IFlatbufferObject
   public BGMExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ProductionStep ProductionStep { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.ProductionStep)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ProductionStep.ToDo; } }
-  public string Path { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataGlobal.Nation Nation(int j) { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.Nation)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Nation)0; }
+  public int NationLength { get { int o = __p.__offset(6); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetPathBytes() { return __p.__vector_as_span<byte>(8, 1); }
+  public Span<FlatDataGlobal.Nation> GetNationBytes() { return __p.__vector_as_span<FlatDataGlobal.Nation>(6, 4); }
 #else
-  public ArraySegment<byte>? GetPathBytes() { return __p.__vector_as_arraysegment(8); }
+  public ArraySegment<byte>? GetNationBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
-  public byte[] GetPathArray() { return __p.__vector_as_array<byte>(8); }
-  public float Volume { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float LoopStartTime { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float LoopEndTime { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float LoopTranstionTime { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float LoopOffsetTime { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public FlatDataGlobal.Nation[] GetNationArray() { int o = __p.__offset(6); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Nation[] a = new FlatDataGlobal.Nation[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Nation)__p.bb.GetInt(p + i * 4); } return a; }
+  public string Path(int j) { int o = __p.__offset(8); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int PathLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public float Volume(int j) { int o = __p.__offset(10); return o != 0 ? __p.bb.GetFloat(__p.__vector(o) + j * 4) : (float)0; }
+  public int VolumeLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<float> GetVolumeBytes() { return __p.__vector_as_span<float>(10, 4); }
+#else
+  public ArraySegment<byte>? GetVolumeBytes() { return __p.__vector_as_arraysegment(10); }
+#endif
+  public float[] GetVolumeArray() { return __p.__vector_as_array<float>(10); }
+  public float LoopStartTime(int j) { int o = __p.__offset(12); return o != 0 ? __p.bb.GetFloat(__p.__vector(o) + j * 4) : (float)0; }
+  public int LoopStartTimeLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<float> GetLoopStartTimeBytes() { return __p.__vector_as_span<float>(12, 4); }
+#else
+  public ArraySegment<byte>? GetLoopStartTimeBytes() { return __p.__vector_as_arraysegment(12); }
+#endif
+  public float[] GetLoopStartTimeArray() { return __p.__vector_as_array<float>(12); }
+  public float LoopEndTime(int j) { int o = __p.__offset(14); return o != 0 ? __p.bb.GetFloat(__p.__vector(o) + j * 4) : (float)0; }
+  public int LoopEndTimeLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<float> GetLoopEndTimeBytes() { return __p.__vector_as_span<float>(14, 4); }
+#else
+  public ArraySegment<byte>? GetLoopEndTimeBytes() { return __p.__vector_as_arraysegment(14); }
+#endif
+  public float[] GetLoopEndTimeArray() { return __p.__vector_as_array<float>(14); }
+  public float LoopTranstionTime(int j) { int o = __p.__offset(16); return o != 0 ? __p.bb.GetFloat(__p.__vector(o) + j * 4) : (float)0; }
+  public int LoopTranstionTimeLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<float> GetLoopTranstionTimeBytes() { return __p.__vector_as_span<float>(16, 4); }
+#else
+  public ArraySegment<byte>? GetLoopTranstionTimeBytes() { return __p.__vector_as_arraysegment(16); }
+#endif
+  public float[] GetLoopTranstionTimeArray() { return __p.__vector_as_array<float>(16); }
+  public float LoopOffsetTime(int j) { int o = __p.__offset(18); return o != 0 ? __p.bb.GetFloat(__p.__vector(o) + j * 4) : (float)0; }
+  public int LoopOffsetTimeLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<float> GetLoopOffsetTimeBytes() { return __p.__vector_as_span<float>(18, 4); }
+#else
+  public ArraySegment<byte>? GetLoopOffsetTimeBytes() { return __p.__vector_as_arraysegment(18); }
+#endif
+  public float[] GetLoopOffsetTimeArray() { return __p.__vector_as_array<float>(18); }
 
   public static Offset<FlatDataGlobal.BGMExcel> CreateBGMExcel(FlatBufferBuilder builder,
       long Id = 0,
-      FlatDataGlobal.ProductionStep productionStep = FlatDataGlobal.ProductionStep.ToDo,
-      StringOffset PathOffset = default(StringOffset),
-      float Volume = 0.0f,
-      float LoopStartTime = 0.0f,
-      float LoopEndTime = 0.0f,
-      float LoopTranstionTime = 0.0f,
-      float LoopOffsetTime = 0.0f) {
+      VectorOffset NationOffset = default(VectorOffset),
+      VectorOffset PathOffset = default(VectorOffset),
+      VectorOffset VolumeOffset = default(VectorOffset),
+      VectorOffset LoopStartTimeOffset = default(VectorOffset),
+      VectorOffset LoopEndTimeOffset = default(VectorOffset),
+      VectorOffset LoopTranstionTimeOffset = default(VectorOffset),
+      VectorOffset LoopOffsetTimeOffset = default(VectorOffset)) {
     builder.StartTable(8);
     BGMExcel.AddId(builder, Id);
-    BGMExcel.AddLoopOffsetTime(builder, LoopOffsetTime);
-    BGMExcel.AddLoopTranstionTime(builder, LoopTranstionTime);
-    BGMExcel.AddLoopEndTime(builder, LoopEndTime);
-    BGMExcel.AddLoopStartTime(builder, LoopStartTime);
-    BGMExcel.AddVolume(builder, Volume);
+    BGMExcel.AddLoopOffsetTime(builder, LoopOffsetTimeOffset);
+    BGMExcel.AddLoopTranstionTime(builder, LoopTranstionTimeOffset);
+    BGMExcel.AddLoopEndTime(builder, LoopEndTimeOffset);
+    BGMExcel.AddLoopStartTime(builder, LoopStartTimeOffset);
+    BGMExcel.AddVolume(builder, VolumeOffset);
     BGMExcel.AddPath(builder, PathOffset);
-    BGMExcel.AddProductionStep(builder, productionStep);
+    BGMExcel.AddNation(builder, NationOffset);
     return BGMExcel.EndBGMExcel(builder);
   }
 
   public static void StartBGMExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddProductionStep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionStep) { builder.AddInt(1, (int)productionStep, 0); }
-  public static void AddPath(FlatBufferBuilder builder, StringOffset PathOffset) { builder.AddOffset(2, PathOffset.Value, 0); }
-  public static void AddVolume(FlatBufferBuilder builder, float Volume) { builder.AddFloat(3, Volume, 0.0f); }
-  public static void AddLoopStartTime(FlatBufferBuilder builder, float LoopStartTime) { builder.AddFloat(4, LoopStartTime, 0.0f); }
-  public static void AddLoopEndTime(FlatBufferBuilder builder, float LoopEndTime) { builder.AddFloat(5, LoopEndTime, 0.0f); }
-  public static void AddLoopTranstionTime(FlatBufferBuilder builder, float LoopTranstionTime) { builder.AddFloat(6, LoopTranstionTime, 0.0f); }
-  public static void AddLoopOffsetTime(FlatBufferBuilder builder, float LoopOffsetTime) { builder.AddFloat(7, LoopOffsetTime, 0.0f); }
+  public static void AddNation(FlatBufferBuilder builder, VectorOffset NationOffset) { builder.AddOffset(1, NationOffset.Value, 0); }
+  public static VectorOffset CreateNationVector(FlatBufferBuilder builder, FlatDataGlobal.Nation[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateNationVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.Nation[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateNationVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.Nation> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateNationVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.Nation>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartNationVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddPath(FlatBufferBuilder builder, VectorOffset PathOffset) { builder.AddOffset(2, PathOffset.Value, 0); }
+  public static VectorOffset CreatePathVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreatePathVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePathVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreatePathVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartPathVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddVolume(FlatBufferBuilder builder, VectorOffset VolumeOffset) { builder.AddOffset(3, VolumeOffset.Value, 0); }
+  public static VectorOffset CreateVolumeVector(FlatBufferBuilder builder, float[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddFloat(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateVolumeVectorBlock(FlatBufferBuilder builder, float[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateVolumeVectorBlock(FlatBufferBuilder builder, ArraySegment<float> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateVolumeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<float>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartVolumeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddLoopStartTime(FlatBufferBuilder builder, VectorOffset LoopStartTimeOffset) { builder.AddOffset(4, LoopStartTimeOffset.Value, 0); }
+  public static VectorOffset CreateLoopStartTimeVector(FlatBufferBuilder builder, float[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddFloat(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateLoopStartTimeVectorBlock(FlatBufferBuilder builder, float[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateLoopStartTimeVectorBlock(FlatBufferBuilder builder, ArraySegment<float> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateLoopStartTimeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<float>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartLoopStartTimeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddLoopEndTime(FlatBufferBuilder builder, VectorOffset LoopEndTimeOffset) { builder.AddOffset(5, LoopEndTimeOffset.Value, 0); }
+  public static VectorOffset CreateLoopEndTimeVector(FlatBufferBuilder builder, float[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddFloat(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateLoopEndTimeVectorBlock(FlatBufferBuilder builder, float[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateLoopEndTimeVectorBlock(FlatBufferBuilder builder, ArraySegment<float> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateLoopEndTimeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<float>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartLoopEndTimeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddLoopTranstionTime(FlatBufferBuilder builder, VectorOffset LoopTranstionTimeOffset) { builder.AddOffset(6, LoopTranstionTimeOffset.Value, 0); }
+  public static VectorOffset CreateLoopTranstionTimeVector(FlatBufferBuilder builder, float[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddFloat(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateLoopTranstionTimeVectorBlock(FlatBufferBuilder builder, float[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateLoopTranstionTimeVectorBlock(FlatBufferBuilder builder, ArraySegment<float> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateLoopTranstionTimeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<float>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartLoopTranstionTimeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddLoopOffsetTime(FlatBufferBuilder builder, VectorOffset LoopOffsetTimeOffset) { builder.AddOffset(7, LoopOffsetTimeOffset.Value, 0); }
+  public static VectorOffset CreateLoopOffsetTimeVector(FlatBufferBuilder builder, float[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddFloat(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateLoopOffsetTimeVectorBlock(FlatBufferBuilder builder, float[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateLoopOffsetTimeVectorBlock(FlatBufferBuilder builder, ArraySegment<float> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateLoopOffsetTimeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<float>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartLoopOffsetTimeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static Offset<FlatDataGlobal.BGMExcel> EndBGMExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.BGMExcel>(o);

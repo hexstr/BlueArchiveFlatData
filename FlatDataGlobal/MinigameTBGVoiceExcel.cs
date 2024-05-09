@@ -22,23 +22,17 @@ public struct MinigameTBGVoiceExcel : IFlatbufferObject
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long UniqueId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.TBGVoiceCondition VoiceCondition { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.TBGVoiceCondition)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TBGVoiceCondition.None; } }
-  public string VoiceClip { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetVoiceClipBytes() { return __p.__vector_as_span<byte>(10, 1); }
-#else
-  public ArraySegment<byte>? GetVoiceClipBytes() { return __p.__vector_as_arraysegment(10); }
-#endif
-  public byte[] GetVoiceClipArray() { return __p.__vector_as_array<byte>(10); }
+  public uint VoiceId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
 
   public static Offset<FlatDataGlobal.MinigameTBGVoiceExcel> CreateMinigameTBGVoiceExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
       long UniqueId = 0,
       FlatDataGlobal.TBGVoiceCondition VoiceCondition = FlatDataGlobal.TBGVoiceCondition.None,
-      StringOffset VoiceClipOffset = default(StringOffset)) {
+      uint VoiceId = 0) {
     builder.StartTable(4);
     MinigameTBGVoiceExcel.AddUniqueId(builder, UniqueId);
     MinigameTBGVoiceExcel.AddEventContentId(builder, EventContentId);
-    MinigameTBGVoiceExcel.AddVoiceClip(builder, VoiceClipOffset);
+    MinigameTBGVoiceExcel.AddVoiceId(builder, VoiceId);
     MinigameTBGVoiceExcel.AddVoiceCondition(builder, VoiceCondition);
     return MinigameTBGVoiceExcel.EndMinigameTBGVoiceExcel(builder);
   }
@@ -47,7 +41,7 @@ public struct MinigameTBGVoiceExcel : IFlatbufferObject
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(1, UniqueId, 0); }
   public static void AddVoiceCondition(FlatBufferBuilder builder, FlatDataGlobal.TBGVoiceCondition VoiceCondition) { builder.AddInt(2, (int)VoiceCondition, 0); }
-  public static void AddVoiceClip(FlatBufferBuilder builder, StringOffset VoiceClipOffset) { builder.AddOffset(3, VoiceClipOffset.Value, 0); }
+  public static void AddVoiceId(FlatBufferBuilder builder, uint VoiceId) { builder.AddUint(3, VoiceId, 0); }
   public static Offset<FlatDataGlobal.MinigameTBGVoiceExcel> EndMinigameTBGVoiceExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.MinigameTBGVoiceExcel>(o);

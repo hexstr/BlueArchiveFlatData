@@ -31,7 +31,8 @@ public struct ObstacleStatExcel : IFlatbufferObject
   public long MaxHP100 { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long BlockRate { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long Dodge { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public float HighlightFloaterHeight { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public long CanNotStandRange { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public float HighlightFloaterHeight { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
 
   public static Offset<FlatDataGlobal.ObstacleStatExcel> CreateObstacleStatExcel(FlatBufferBuilder builder,
       uint StringID = 0,
@@ -40,8 +41,10 @@ public struct ObstacleStatExcel : IFlatbufferObject
       long MaxHP100 = 0,
       long BlockRate = 0,
       long Dodge = 0,
+      long CanNotStandRange = 0,
       float HighlightFloaterHeight = 0.0f) {
-    builder.StartTable(7);
+    builder.StartTable(8);
+    ObstacleStatExcel.AddCanNotStandRange(builder, CanNotStandRange);
     ObstacleStatExcel.AddDodge(builder, Dodge);
     ObstacleStatExcel.AddBlockRate(builder, BlockRate);
     ObstacleStatExcel.AddMaxHP100(builder, MaxHP100);
@@ -52,14 +55,15 @@ public struct ObstacleStatExcel : IFlatbufferObject
     return ObstacleStatExcel.EndObstacleStatExcel(builder);
   }
 
-  public static void StartObstacleStatExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
+  public static void StartObstacleStatExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddStringID(FlatBufferBuilder builder, uint StringID) { builder.AddUint(0, StringID, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(1, NameOffset.Value, 0); }
   public static void AddMaxHP1(FlatBufferBuilder builder, long MaxHP1) { builder.AddLong(2, MaxHP1, 0); }
   public static void AddMaxHP100(FlatBufferBuilder builder, long MaxHP100) { builder.AddLong(3, MaxHP100, 0); }
   public static void AddBlockRate(FlatBufferBuilder builder, long BlockRate) { builder.AddLong(4, BlockRate, 0); }
   public static void AddDodge(FlatBufferBuilder builder, long Dodge) { builder.AddLong(5, Dodge, 0); }
-  public static void AddHighlightFloaterHeight(FlatBufferBuilder builder, float HighlightFloaterHeight) { builder.AddFloat(6, HighlightFloaterHeight, 0.0f); }
+  public static void AddCanNotStandRange(FlatBufferBuilder builder, long CanNotStandRange) { builder.AddLong(6, CanNotStandRange, 0); }
+  public static void AddHighlightFloaterHeight(FlatBufferBuilder builder, float HighlightFloaterHeight) { builder.AddFloat(7, HighlightFloaterHeight, 0.0f); }
   public static Offset<FlatDataGlobal.ObstacleStatExcel> EndObstacleStatExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ObstacleStatExcel>(o);

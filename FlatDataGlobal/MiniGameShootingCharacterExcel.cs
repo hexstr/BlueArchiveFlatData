@@ -55,6 +55,7 @@ public struct MiniGameShootingCharacterExcel : IFlatbufferObject
   public bool IsBoss { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public float Scale { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public bool IgnoreObstacleCheck { get { int o = __p.__offset(36); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long CharacterVoiceGroupId { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.MiniGameShootingCharacterExcel> CreateMiniGameShootingCharacterExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
@@ -73,8 +74,10 @@ public struct MiniGameShootingCharacterExcel : IFlatbufferObject
       long ShotTime = 0,
       bool IsBoss = false,
       float Scale = 0.0f,
-      bool IgnoreObstacleCheck = false) {
-    builder.StartTable(17);
+      bool IgnoreObstacleCheck = false,
+      long CharacterVoiceGroupId = 0) {
+    builder.StartTable(18);
+    MiniGameShootingCharacterExcel.AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId);
     MiniGameShootingCharacterExcel.AddShotTime(builder, ShotTime);
     MiniGameShootingCharacterExcel.AddMoveSpeed(builder, MoveSpeed);
     MiniGameShootingCharacterExcel.AddAttackRange(builder, AttackRange);
@@ -95,7 +98,7 @@ public struct MiniGameShootingCharacterExcel : IFlatbufferObject
     return MiniGameShootingCharacterExcel.EndMiniGameShootingCharacterExcel(builder);
   }
 
-  public static void StartMiniGameShootingCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
+  public static void StartMiniGameShootingCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(18); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
   public static void AddSpineResourceName(FlatBufferBuilder builder, StringOffset SpineResourceNameOffset) { builder.AddOffset(1, SpineResourceNameOffset.Value, 0); }
   public static void AddBodyRadius(FlatBufferBuilder builder, float BodyRadius) { builder.AddFloat(2, BodyRadius, 0.0f); }
@@ -118,6 +121,7 @@ public struct MiniGameShootingCharacterExcel : IFlatbufferObject
   public static void AddIsBoss(FlatBufferBuilder builder, bool IsBoss) { builder.AddBool(14, IsBoss, false); }
   public static void AddScale(FlatBufferBuilder builder, float Scale) { builder.AddFloat(15, Scale, 0.0f); }
   public static void AddIgnoreObstacleCheck(FlatBufferBuilder builder, bool IgnoreObstacleCheck) { builder.AddBool(16, IgnoreObstacleCheck, false); }
+  public static void AddCharacterVoiceGroupId(FlatBufferBuilder builder, long CharacterVoiceGroupId) { builder.AddLong(17, CharacterVoiceGroupId, 0); }
   public static Offset<FlatDataGlobal.MiniGameShootingCharacterExcel> EndMiniGameShootingCharacterExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.MiniGameShootingCharacterExcel>(o);

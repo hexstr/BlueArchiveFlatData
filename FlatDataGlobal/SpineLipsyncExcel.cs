@@ -19,7 +19,7 @@ public struct SpineLipsyncExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public SpineLipsyncExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public uint ClipNameKey { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public uint VoiceId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public string AnimJson { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetAnimJsonBytes() { return __p.__vector_as_span<byte>(6, 1); }
@@ -29,16 +29,16 @@ public struct SpineLipsyncExcel : IFlatbufferObject
   public byte[] GetAnimJsonArray() { return __p.__vector_as_array<byte>(6); }
 
   public static Offset<FlatDataGlobal.SpineLipsyncExcel> CreateSpineLipsyncExcel(FlatBufferBuilder builder,
-      uint ClipNameKey = 0,
+      uint VoiceId = 0,
       StringOffset AnimJsonOffset = default(StringOffset)) {
     builder.StartTable(2);
     SpineLipsyncExcel.AddAnimJson(builder, AnimJsonOffset);
-    SpineLipsyncExcel.AddClipNameKey(builder, ClipNameKey);
+    SpineLipsyncExcel.AddVoiceId(builder, VoiceId);
     return SpineLipsyncExcel.EndSpineLipsyncExcel(builder);
   }
 
   public static void StartSpineLipsyncExcel(FlatBufferBuilder builder) { builder.StartTable(2); }
-  public static void AddClipNameKey(FlatBufferBuilder builder, uint ClipNameKey) { builder.AddUint(0, ClipNameKey, 0); }
+  public static void AddVoiceId(FlatBufferBuilder builder, uint VoiceId) { builder.AddUint(0, VoiceId, 0); }
   public static void AddAnimJson(FlatBufferBuilder builder, StringOffset AnimJsonOffset) { builder.AddOffset(1, AnimJsonOffset.Value, 0); }
   public static Offset<FlatDataGlobal.SpineLipsyncExcel> EndSpineLipsyncExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();

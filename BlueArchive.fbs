@@ -80,6 +80,10 @@ enum VoiceEvent: int {
 	MGS_CharacterSelect,
 	MGS_Attacking,
 	MGS_GeasGet,
+	EXSkill,
+	EXSkillLevel,
+	EXSkill2,
+	EXSkillLevel2,
 }
 enum UnitType: int {
 	None,
@@ -594,6 +598,9 @@ enum BattleCalculationStat: int {
 	FinalDamageRatio2,
 	FinalCriticalRate,
 }
+enum StatTransType: int {
+	SpecialTransStat,
+}
 enum StatLevelUpType: int {
 	Standard,
 	Premature,
@@ -671,9 +678,11 @@ enum StatType: int {
 	DamageRatio2Decrease,
 	DamagedRatio2Increase,
 	DamagedRatio2Decrease,
-	Max,
 	EnhanceSonicRate,
 	EnhanceElasticArmorRate,
+	ExDamagedRatioIncrease,
+	ExDamagedRatioDecrease,
+	Max,
 }
 enum ProductionStep: int {
 	ToDo,
@@ -932,8 +941,8 @@ enum OpenConditionContent: int {
 	Main_L_1_3,
 	Main_L_1_4,
 	EliminateRaid,
-	ContentType02,
-	ContentType0201,
+	Cafe_2,
+	Cafe_Invite_2,
 }
 enum ContentLockType: int {
 	None,
@@ -1062,6 +1071,7 @@ enum ShortcutContentType: int {
 	Craft,
 	SchoolDungeon,
 	Academy,
+	Mission,
 }
 enum JudgeGrade: int {
 	None,
@@ -1144,6 +1154,16 @@ enum EventContentDiceRaceNodeType: int {
 	MoveForwardNode,
 	SpecialRewardNode,
 }
+enum MeetupConditionType: int {
+	None,
+	EventContentStageClear,
+	ScenarioClear,
+}
+enum MeetupConditionPrintType: int {
+	None,
+	Lock,
+	Hide,
+}
 enum GuideMissionTabType: int {
 	None,
 	Daily,
@@ -1158,6 +1178,7 @@ enum EventContentReleaseType: int {
 	None,
 	Permanent,
 	MainStory,
+	PermanentSpecialOperate,
 }
 enum CraftSlotIndex: int {
 	Slot00,
@@ -1171,6 +1192,11 @@ enum CraftNodeTier: int {
 	Node02,
 	Node03,
 	Max,
+}
+enum SubEventType: int {
+	None,
+	SubEvent,
+	SubEventPermanent,
 }
 enum EquipmentCategory: int {
 	Unable,
@@ -1427,7 +1453,7 @@ enum EmblemCategory: int {
 	None,
 	Default,
 	Mission,
-	GroupStroy,
+	GroupStory,
 	Event,
 	MainStory,
 	Favor,
@@ -1443,6 +1469,11 @@ enum EmblemCheckPassType: int {
 	Default,
 	Favor,
 	Story,
+}
+enum StickerGetConditionType: int {
+	None,
+	StickerCheckPass,
+	GetStickerCondition,
 }
 enum Nation: int {
 	None,
@@ -1497,6 +1528,11 @@ enum MailType: int {
 	AttendanceImmediately,
 	WeeklyProductReward,
 	BiweeklyProductReward,
+	Temp_1,
+	Temp_2,
+	Temp_3,
+	CouponCompleteReward,
+	BirthdayMail,
 }
 enum AttendanceType: int {
 	Basic,
@@ -1614,6 +1650,7 @@ enum MissionResetType: int {
 	None,
 	Daily,
 	Weekly,
+	Limit,
 }
 enum MissionCompleteConditionType: int {
 	None,
@@ -1658,8 +1695,8 @@ enum MissionCompleteConditionType: int {
 	Reset_SpecificCharacterAtSpecificLevel,
 	Reset_SpecificCharacterAtSpecificTranscendence,
 	Reset_LobbyInteraction,
-	Achieve_ClearWeekDungeonCount,
-	Reset_ClearSpecificWeekDungeonCount,
+	Achieve_ClearFindGiftAndBloodDungeonCount,
+	Reset_ClearSpecificFindGiftAndBloodDungeonCount,
 	Achieve_JoinRaidCount,
 	Reset_JoinSpecificRaidCount,
 	Achieve_JoinArenaCount,
@@ -1702,7 +1739,7 @@ enum MissionCompleteConditionType: int {
 	Reset_ClearEventStageTimeLimitFromSecond,
 	Reset_ClearRaidTimeLimitFromSecond,
 	Reset_ClearBattleWithTagCount,
-	Reset_ClearWeekDungeonTimeLimitFromSecond,
+	Reset_ClearFindGiftAndBloodDungeonTimeLimitFromSecond,
 	Reset_CompleteScheduleWithTagCount,
 	Reset_ClearChaserDungeonTimeLimitFromSecond,
 	Reset_GetTotalScoreRhythm,
@@ -1749,6 +1786,18 @@ enum MissionCompleteConditionType: int {
 	Reset_TBGCompleteRoundCount,
 	Reset_CompleteStage,
 	Reset_TBGClearSpecificThema,
+	Reset_ClearGeneralChaserDungeonCount,
+	Reset_ClearGeneralFindGiftAndBloodDungeonCount,
+	Reset_ClearGeneralSchoolDungeonCount,
+	Reset_JoinArenaCount,
+	Reset_GetCafe2ndRank,
+	Achieve_GetComfort2ndPoint,
+	Reset_ClearSpecificTimeAttackDungeonCount,
+	Reset_GetScoreTimeAttackDungeon,
+	Reset_GetTotalScoreTimeAttackDungeon,
+	Reset_JoinRaidCount,
+	Reset_ClearTimeAttackDungeonCount,
+	Reset_JoinEliminateRaidCount,
 }
 enum AccountAchievementType: int {
 	TotalLoginCount,
@@ -1757,7 +1806,7 @@ enum AccountAchievementType: int {
 	TotalCharacterSkillLevelUpCount,
 	TotalClearCampaignStageCount,
 	TotalClearChaserDungeonCount,
-	TotalClearWeekDungeonCount,
+	TotalClearFindGiftAndBloodDungeonCount,
 	TotalEquipmentLevelUpCount,
 	TotalEquipmentTierUpCount,
 	MaxComfortPoint,
@@ -1773,11 +1822,95 @@ enum AccountAchievementType: int {
 	EventPoint,
 	ConquestCalculateReward,
 	TotalJoinEliminateRaidCount,
+	Cafe2MaxComfortPoint,
 }
 enum MissionToastDisplayConditionType: int {
 	Always,
 	Complete,
 	Never,
+}
+enum GetStickerConditionType: int {
+	None,
+	Reset_StikcerGetCondition_AccountLevel,
+	Reset_StickerGetCondition_ScenarioModeId,
+	Reset_StickerGetCondition_EnemyKillCount,
+	Reset_StickerGetCondition_GetItemCount,
+	Reset_StickerGetCondition_BuyItemCount,
+	Reset_StickerGetCondition_ScheduleRank,
+	Reset_StickerGetCondition_Change_LobbyCharacter,
+	Reset_StickerGetCondition_Cafe_Character_Visit_Count,
+	Reset_StickerGetCondition_Cafe_Chracter_Invite_Count,
+	Reset_StickerGetCondition_GetChracterCount,
+	Reset_StickerGetCondition_Cafe_Furniture_Interaction,
+	Reset_StickerGetCondition_GetFurniture,
+	Reset_StickerGetCondition_SetFurniture,
+	Reset_StickerGetCondition_GivePresentChracterCount,
+	Reset_StickerGetCondition_GivePresentCount,
+	Reset_StickerGetCondition_MomotalkStudentCount,
+	Reset_StickerGetCondition_CombatwithCharacterCount,
+	Reset_StickerGetCondition_GachaCharacterCount,
+	Reset_StickerGetCondition_TouchLobbyCharacter,
+	Reset_StickerGetCondition_UseCircleEmoticonCount,
+	Reset_StickerGetCondition_CraftCount,
+	Reset_StickerGetCondition_NormalStageClear,
+	Reset_StickerGetCondition_NormalStageClear3Star,
+	Reset_StickerGetCondition_HardStageClear,
+	Reset_StickerGetCondition_HardStageClear3Star,
+	Achieve_StikcerGetCondition_AccountLevel,
+	Achieve_StickerGetCondition_ClearStageId,
+	Achieve_StickerGetCondition_ScenarioModeId,
+	Achieve_StickerGetCondition_EnemyKillCount,
+	Achieve_StickerGetCondition_GetItemCount,
+	Achieve_StickerGetCondition_BuyItemCount,
+	Achieve_StickerGetCondition_ScheduleRank,
+	Achieve_StickerGetCondition_Change_LobbyCharacter,
+	Achieve_StickerGetCondition_Cafe_Character_Visit_Count,
+	Achieve_StickerGetCondition_Cafe_Chracter_Invite_Count,
+	Achieve_StickerGetCondition_GetChracterCount,
+	Achieve_StickerGetCondition_Cafe_Furniture_Interaction,
+	Achieve_StickerGetCondition_GetFurniture,
+	Achieve_StickerGetCondition_SetFurniture,
+	Achieve_StickerGetCondition_GivePresentChracterCount,
+	Achieve_StickerGetCondition_GivePresentCount,
+	Achieve_StickerGetCondition_MomotalkStudentCount,
+	Achieve_StickerGetCondition_CombatwithCharacterCount,
+	Achieve_StickerGetCondition_GachaCharacterCount,
+	Achieve_StickerGetCondition_TouchLobbyCharacter,
+	Achieve_StickerGetCondition_UseCircleEmoticonCount,
+	Achieve_StickerGetCondition_CraftCount,
+	Achieve_StickerGetCondition_NormalStageClear,
+	Achieve_StickerGetCondition_NormalStageClear3Star,
+	Achieve_StickerGetCondition_HardStageClear,
+	Achieve_StickerGetCondition_HardStageClear3Star,
+	Reset_StickerGetCondition_EnemyKillCountbyTag,
+	Reset_StickerGetCondition_GetItemCountbyTag,
+	Reset_StickerGetCondition_ClearCampaignOrEventStageCount,
+	Reset_StickerGetCondition_CompleteCampaignStageMinimumTurn,
+	Reset_StickerGetCondition_ClearCampaignStageDifficultyNormal,
+	Reset_StickerGetCondition_ClearCampaignStageDifficultyHard,
+	Reset_StickerGetCondition_EventClearCampaignStageCount,
+	Reset_StickerGetCondition_EventClearSpecificCampaignStageCount,
+	Reset_StickerGetCondition_EventCompleteCampaignStageMinimumTurn,
+	Reset_StickerGetCondition_EventClearCampaignStageDifficultyNormal,
+	Reset_StickerGetCondition_EventClearCampaignStageDifficultyHard,
+	Reset_StickerGetCondition_ClearSpecificCampaignStageCount,
+	Reset_StickerGetCondition_ClearCampaignStageTimeLimitFromSecond,
+	Reset_StickerGetCondition_ClearEventStageTimeLimitFromSecond,
+	Reset_StickerGetCondition_ClearStageRhythm,
+	Reset_StickerGetCondition_ClearSpecificStageShooting,
+	Reset_StickerGetCondition_CompleteStage,
+	Achieve_StickerGetCondition_ClearCampaignStageCount,
+	Achieve_StickerGetCondition_ClearChaserDungeonCount,
+	Reset_StickerGetCondition_ClearSpecificChaserDungeonCount,
+	Achieve_StickerGetCondition_ClearSchoolDungeonCount,
+	Reset_StickerGetCondition_ClearSpecificSchoolDungeonCount,
+	Reset_StickerGetCondition_ClearSpecificWeekDungeonCount,
+	Achieve_StickerGetCondition_ClearFindGiftAndBloodDungeonCount,
+}
+enum StickerCheckPassType: int {
+	None,
+	ClearScenarioModeId,
+	ClearCampaignStageId,
 }
 enum NexonBillingState: int {
 	ValiDateWait,
@@ -1817,7 +1950,7 @@ enum ParcelType: int {
 	CharacterGear,
 	IdCardBackground,
 	Emblem,
-	ParcelType01,
+	Sticker,
 	Costume,
 }
 enum Rarity: int {
@@ -2179,12 +2312,14 @@ enum DialogCategory: int {
 	UIEventArchive,
 	UIAttendanceEvent12,
 	UIAttendanceEvent13,
+	UIAttendanceEvent14,
 	GlobalAttendance01,
 	GlobalAttendance02,
 	GlobalAttendance03,
 	GlobalAttendance04,
 	GlobalAttendance05,
-	UIAttendanceEvent14,
+	UIAttendanceEvent15,
+	UILobbySpecial2,
 }
 enum DialogCondition: int {
 	Idle,
@@ -2239,6 +2374,15 @@ enum School: int {
 	SRT,
 	SCHALE,
 	ETC,
+	Tokiwadai,
+	Sakugawa,
+}
+enum EtcSchool: int {
+	None,
+	ETC,
+	Tokiwadai,
+	Sakugawa,
+	Max,
 }
 enum StoryCondition: int {
 	Open,
@@ -2263,6 +2407,26 @@ enum EmojiEvent: int {
 	TerrainAdaptionC,
 	TerrainAdaptionD,
 	TerrainAdaptionSS,
+	Dot,
+	Angry,
+	Bulb,
+	Exclaim,
+	Surprise,
+	Sad,
+	Sigh,
+	Steam,
+	Upset,
+	Respond,
+	Question,
+	Sweat,
+	Music,
+	Chat,
+	Twinkle,
+	Zzz,
+	Tear,
+	Heart,
+	Shy,
+	Think,
 }
 enum ScenarioModeTypes: int {
 	None,
@@ -2317,6 +2481,11 @@ enum ScenarioContentType: int {
 	EventContentReturnSeason,
 	MiniEvent,
 	EliminateRaid,
+}
+enum MemoryLobbyCategory: int {
+	None,
+	UILobbySpecial,
+	UILobbySpecial2,
 }
 enum PurchaseCountResetType: int {
 	None,
@@ -2513,6 +2682,7 @@ enum MessagePopupLayout: int {
 	TextOnly,
 	ImageBig,
 	ImageSmall,
+	UnlockCondition,
 }
 enum MessagePopupImagePositionType: int {
 	ImageFirst,
@@ -2582,3010 +2752,3010 @@ enum StrategyEnvironment: int {
 	MapFog,
 }
 enum Tag: int {
-	Furniture,
-	MovieMania,
-	Scientific,
-	Military,
-	Machine,
-	Gamer,
-	Cook,
-	Farmer,
-	Sociable,
-	Officer,
-	Eerie,
-	Intellectual,
-	Healthy,
-	Gourmet,
-	TreasureHunter,
-	CraftItem,
-	CDItem,
-	ExpItem,
-	SecretStone,
-	BookItem,
-	FavorItem,
-	MaterialItem,
-	Item,
-	CraftCommitment,
-	ExpendableItem,
-	Equipment,
-	EnemyLarge,
-	Decagram,
-	EnemySmall,
-	EnemyMedium,
-	EnemyXLarge,
-	Gehenna,
-	Millennium,
-	Valkyrie,
-	Hyakkiyako,
-	RedWinter,
-	Shanhaijing,
-	Abydos,
-	Trinity,
-	Hanger,
-	StudyRoom,
-	ClassRoom,
-	Library,
-	Lobby,
-	ShootingRange,
-	Office,
-	SchaleResidence,
-	SchaleOffice,
-	Restaurant,
-	Laboratory,
-	AVRoom,
-	ArcadeCenter,
-	Gym,
-	Garden,
-	Convenience,
-	Soldiery,
-	Lounge,
-	SchoolBuilding,
-	Club,
-	Campus,
-	SchoolYard,
-	Plaza,
-	StudentCouncilOffice,
-	ClosedBuilding,
-	Annex,
-	Pool,
-	AllySmall,
-	AllyMedium,
-	AllyLarge,
-	AllyXLarge,
-	Dessert,
-	Sports,
-	Bedding,
-	Curios,
-	Electronic,
-	Toy,
-	Reservation,
-	Household,
-	Horticulture,
-	Fashion,
-	Functional,
-	Delicious,
-	Freakish,
-	MomoFriends,
-	Music,
-	LoveStory,
-	Game,
-	Girlish,
-	Beauty,
-	Army,
-	Humanities,
-	Observational,
-	Jellyz,
-	Detective,
-	Roman,
-	CuriousFellow,
-	Mystery,
-	Doll,
-	Movie,
-	Art,
-	PureLiterature,
-	Food,
-	Smart,
-	BigMeal,
-	Simplicity,
-	Specialized,
-	Books,
-	Cosmetics,
-	Gift1,
-	Gift2,
-	F_Aru,
-	F_Eimi,
-	F_Haruna,
-	F_Hihumi,
-	F_Hina,
-	F_Hoshino,
-	F_Iori,
-	F_Maki,
-	F_Neru,
-	F_Izumi,
-	F_Shiroko,
-	F_Shun,
-	F_Sumire,
-	F_Tsurugi,
-	F_Akane,
-	F_Chise,
-	F_Akari,
-	F_Hasumi,
-	F_Nonomi,
-	F_Kayoko,
-	F_Mutsuki,
-	F_Zunko,
-	F_Serika,
-	F_Tsubaki,
-	F_Yuuka,
-	F_Haruka,
-	F_Asuna,
-	F_Kotori,
-	F_Suzumi,
-	F_Pina,
-	F_Aris,
-	F_Azusa,
-	F_Cherino,
-	TagName0004,
-	TagName0005,
-	F_Koharu,
-	F_Hanako,
-	F_Midori,
-	F_Momoi,
-	F_Hibiki,
-	F_Karin,
-	F_Saya,
-	F_Mashiro,
-	F_Airi,
-	F_Fuuka,
-	F_Hanae,
-	F_Hare,
-	F_Utaha,
-	F_Ayane,
-	F_Chinatsu,
-	F_Kotama,
-	F_Juri,
-	F_Serina,
-	F_Shimiko,
-	F_Yoshimi,
-	TagName0009,
-	F_Shizuko,
-	F_Izuna,
-	F_Nodoka,
-	F_Yuzu,
-	Shield,
-	Helmet,
-	RedHelmet,
-	Helicopter,
-	RangeAttack,
-	MeleeAttack,
-	Sweeper,
-	Blackmarket,
-	Yoheki,
-	Kaiserpmc,
-	Crusader,
-	Goliath,
-	Drone,
-	Piece,
-	ChampionHeavyArmor,
-	Sukeban,
-	Arius,
-	EnemyKotori,
-	EnemyYuuka,
-	KaiserpmcHeavyArmor,
-	BlackmarketHeavyArmor,
-	YohekiHeavyArmor,
-	SweeperBlack,
-	SweeperYellow,
-	GasMaskLightArmor,
-	GehennaFuuki,
-	ChampionAutomata,
-	YohekiAutomata,
-	Automata,
-	EnemyIori,
-	EnemyAkari,
-	NewAutomata,
-	NewAutomataBlack,
-	NewAutomataYellow,
-	Hat,
-	Gloves,
-	Shoes,
-	Bag,
-	Badge,
-	Hairpin,
-	Charm,
-	Watch,
-	Necklace,
-	Cafe,
-	GameCenter,
-	ChocolateCafe,
-	Main,
-	Support,
-	Explosion,
-	Pierce,
-	Mystic,
-	LightArmor,
-	HeavyArmor,
-	Unarmed,
-	Cover,
-	Uncover,
-	AR,
-	SR,
-	DSG,
-	SMG,
-	MG,
-	HG,
+	A,
+	a,
+	B,
+	b,
+	C,
+	c,
+	D,
+	d,
+	E,
+	e,
+	F,
+	f,
+	G,
+	g,
+	H,
+	h,
+	I,
+	i,
+	J,
+	j,
+	K,
+	k,
+	L,
+	l,
+	M,
+	m,
+	N,
+	n,
+	O,
+	o,
+	P,
+	p,
+	Q,
+	q,
+	R,
+	r,
+	S,
+	s,
+	T,
+	t,
+	U,
+	u,
+	V,
+	v,
+	W,
+	w,
+	X,
+	x,
+	Y,
+	y,
+	Z,
+	z,
+	aA,
+	aa,
+	aB,
+	ab,
+	aC,
+	ac,
+	aD,
+	ad,
+	aE,
+	ae,
+	aF,
+	af,
+	aG,
+	ag,
+	aH,
+	ah,
+	aI,
+	ai,
+	aJ,
+	aj,
+	aK,
+	ak,
+	aL,
+	al,
+	aM,
+	am,
+	aN,
+	an,
+	aO,
+	ao,
+	aP,
+	ap,
+	aQ,
+	aq,
+	aR,
+	ar,
+	aS,
+	as,
+	aT,
+	at,
+	aU,
+	au,
+	aV,
+	av,
+	aW,
+	aw,
+	aX,
+	ax,
+	aY,
+	ay,
+	aZ,
+	az,
+	BA,
+	Ba,
+	BB,
+	Bb,
+	BC,
+	Bc,
+	BD,
+	Bd,
+	BE,
+	Be,
+	BF,
+	Bf,
+	BG,
+	Bg,
+	BH,
+	Bh,
+	BI,
+	Bi,
+	BJ,
+	Bj,
+	BK,
+	Bk,
+	BL,
+	Bl,
+	BM,
+	Bm,
+	BN,
+	Bn,
+	BO,
+	Bo,
+	BP,
+	Bp,
+	BQ,
+	Bq,
+	BR,
+	Br,
+	BS,
+	Bs,
+	BT,
+	Bt,
+	BU,
+	Bu,
+	BV,
+	Bv,
+	BW,
+	Bw,
+	BX,
+	Bx,
+	BY,
+	By,
+	BZ,
+	Bz,
+	bA,
+	ba,
+	bB,
+	bb,
+	bC,
+	bc,
+	bD,
+	bd,
+	bE,
+	be,
+	bF,
+	bf,
+	bG,
+	bg,
+	bH,
+	bh,
+	bI,
+	bi,
+	bJ,
+	bj,
+	bK,
+	bk,
+	bL,
+	bl,
+	bM,
+	bm,
+	bN,
+	bn,
+	bO,
+	bo,
+	bP,
+	bp,
+	bQ,
+	bq,
+	bR,
+	br,
+	bS,
+	bs,
+	bT,
+	bt,
+	bU,
+	bu,
+	bV,
+	bv,
+	bW,
+	bw,
+	bX,
+	bx,
+	bY,
+	by,
+	bZ,
+	bz,
+	CA,
+	Ca,
+	CB,
+	Cb,
+	CC,
+	Cc,
+	CD,
+	Cd,
+	CE,
+	Ce,
+	CF,
+	Cf,
+	CG,
+	Cg,
+	CH,
+	Ch,
+	CI,
+	Ci,
+	CJ,
+	Cj,
+	CK,
+	Ck,
+	CL,
+	Cl,
+	CM,
+	Cm,
+	CN,
+	Cn,
+	CO,
+	Co,
+	CP,
+	Cp,
+	CQ,
+	Cq,
+	CR,
+	Cr,
+	CS,
+	Cs,
+	CT,
+	Ct,
+	CU,
+	Cu,
+	CV,
+	Cv,
+	CW,
+	Cw,
+	CX,
+	Cx,
+	CY,
+	Cy,
+	CZ,
+	Cz,
+	cA,
+	ca,
+	cB,
+	cb,
+	cC,
+	cc,
+	cD,
+	cd,
+	cE,
+	ce,
+	cF,
+	cf,
+	cG,
+	cg,
+	cH,
+	ch,
+	cI,
+	ci,
+	cJ,
+	cj,
+	cK,
+	ck,
+	cL,
+	cl,
+	cM,
+	cm,
+	cN,
+	cn,
+	cO,
+	co,
+	cP,
+	cp,
+	cQ,
+	cq,
+	cR,
+	cr,
+	cS,
+	cs,
+	cT,
+	ct,
+	cU,
+	cu,
+	cV,
+	cv,
+	cW,
+	cw,
+	cX,
+	cx,
+	cY,
+	cy,
+	cZ,
+	cz,
+	DA,
+	Da,
+	DB,
+	Db,
+	DC,
+	Dc,
+	DD,
+	Dd,
+	DE,
+	De,
+	DF,
+	Df,
+	DG,
+	Dg,
+	DH,
+	Dh,
+	DI,
+	Di,
+	DJ,
+	Dj,
+	DK,
+	Dk,
+	DL,
+	Dl,
+	DM,
+	Dm,
+	DN,
+	Dn,
+	DO,
+	Do,
+	DP,
+	Dp,
+	DQ,
+	Dq,
+	DR,
+	Dr,
+	DS,
+	Ds,
+	DT,
+	Dt,
+	DU,
+	Du,
+	DV,
+	Dv,
+	DW,
+	Dw,
+	DX,
+	Dx,
+	DY,
+	Dy,
+	DZ,
+	Dz,
+	dA,
+	da,
+	dB,
+	db,
+	dC,
+	dc,
+	dD,
+	dd,
+	dE,
+	de,
+	dF,
+	df,
+	dG,
+	dg,
+	dH,
+	dh,
+	dI,
+	di,
+	dJ,
+	dj,
+	dK,
+	dk,
+	dL,
+	dl,
+	dM,
+	dm,
+	dN,
+	dn,
+	dO,
+	do,
+	dP,
+	dp,
+	dQ,
+	dq,
+	dR,
+	dr,
+	dS,
+	ds,
+	dT,
+	dt,
+	dU,
+	du,
+	dV,
+	dv,
+	dW,
+	dw,
+	dX,
+	dx,
+	dY,
+	dy,
+	dZ,
+	dz,
+	EA,
+	Ea,
+	EB,
+	Eb,
+	EC,
+	Ec,
+	ED,
+	Ed,
+	EE,
+	Ee,
+	EF,
+	Ef,
+	EG,
+	Eg,
+	EH,
+	Eh,
+	EI,
+	Ei,
+	EJ,
+	Ej,
+	EK,
+	Ek,
+	EL,
+	El,
+	EM,
+	Em,
+	EN,
+	En,
+	EO,
+	Eo,
+	EP,
+	Ep,
+	EQ,
+	Eq,
+	ER,
+	Er,
+	ES,
+	Es,
+	ET,
+	Et,
+	EU,
+	Eu,
+	EV,
+	Ev,
+	EW,
+	Ew,
+	EX,
+	Ex,
+	EY,
+	Ey,
+	EZ,
+	Ez,
+	eA,
+	ea,
+	eB,
+	eb,
+	eC,
+	ec,
+	eD,
+	ed,
+	eE,
+	ee,
+	eF,
+	ef,
+	eG,
+	eg,
+	eH,
+	eh,
+	eI,
+	ei,
+	eJ,
+	ej,
+	eK,
+	ek,
+	eL,
+	el,
+	eM,
+	em,
+	eN,
+	en,
+	eO,
+	eo,
+	eP,
+	ep,
+	eQ,
+	eq,
+	eR,
+	er,
+	eS,
+	es,
+	eT,
+	et,
+	eU,
+	eu,
+	eV,
+	ev,
+	eW,
+	ew,
+	eX,
+	ex,
+	eY,
+	ey,
+	eZ,
+	ez,
+	FA,
+	Fa,
+	FB,
+	Fb,
+	FC,
+	Fc,
+	FD,
+	Fd,
+	FE,
+	Fe,
+	FF,
+	Ff,
+	FG,
+	Fg,
+	FH,
+	Fh,
+	FI,
+	Fi,
+	FJ,
+	Fj,
+	FK,
+	Fk,
+	FL,
+	Fl,
+	FM,
+	Fm,
+	FN,
+	Fn,
+	FO,
+	Fo,
+	FP,
+	Fp,
+	FQ,
+	Fq,
+	FR,
+	Fr,
+	FS,
+	Fs,
+	FT,
+	Ft,
+	FU,
+	Fu,
+	FV,
+	Fv,
+	FW,
+	Fw,
+	FX,
+	Fx,
+	FY,
+	Fy,
+	FZ,
+	Fz,
+	fA,
+	fa,
+	fB,
+	fb,
+	fC,
+	fc,
+	fD,
+	fd,
+	fE,
+	fe,
+	fF,
+	ff,
+	fG,
+	fg,
+	fH,
+	fh,
+	fI,
+	fi,
+	fJ,
+	fj,
+	fK,
+	fk,
+	fL,
+	fl,
+	fM,
+	fm,
+	fN,
+	fn,
+	fO,
+	fo,
+	fP,
+	fp,
+	fQ,
+	fq,
+	fR,
+	fr,
+	fS,
+	fs,
+	fT,
+	ft,
+	fU,
+	fu,
+	fV,
+	fv,
+	fW,
+	fw,
+	fX,
+	fx,
+	fY,
+	fy,
+	fZ,
+	fz,
+	GA,
+	Ga,
+	GB,
+	Gb,
+	GC,
+	Gc,
+	GD,
+	Gd,
+	GE,
+	Ge,
+	GF,
+	Gf,
+	GG,
+	Gg,
+	GH,
+	Gh,
+	GI,
+	Gi,
+	GJ,
+	Gj,
+	GK,
+	Gk,
 	GL,
-	SG,
+	Gl,
+	GM,
+	Gm,
+	GN,
+	Gn,
+	GO,
+	Go,
+	GP,
+	Gp,
+	GQ,
+	Gq,
+	GR,
+	Gr,
+	GS,
+	Gs,
+	GT,
+	Gt,
+	GU,
+	Gu,
+	GV,
+	Gv,
+	GW,
+	Gw,
+	GX,
+	Gx,
+	GY,
+	Gy,
+	GZ,
+	Gz,
+	gA,
+	ga,
+	gB,
+	gb,
+	gC,
+	gc,
+	gD,
+	gd,
+	gE,
+	ge,
+	gF,
+	gf,
+	gG,
+	gg,
+	gH,
+	gh,
+	gI,
+	gi,
+	gJ,
+	gj,
+	gK,
+	gk,
+	gL,
+	gl,
+	gM,
+	gm,
+	gN,
+	gn,
+	gO,
+	go,
+	gP,
+	gp,
+	gQ,
+	gq,
+	gR,
+	gr,
+	gS,
+	gs,
+	gT,
+	gt,
+	gU,
+	gu,
+	gV,
+	gv,
+	gW,
+	gw,
+	gX,
+	gx,
+	gY,
+	gy,
+	gZ,
+	gz,
+	HA,
+	Ha,
+	HB,
+	Hb,
+	HC,
+	Hc,
+	HD,
+	Hd,
+	HE,
+	He,
+	HF,
+	Hf,
+	HG,
+	Hg,
+	HH,
+	Hh,
+	HI,
+	Hi,
+	HJ,
+	Hj,
+	HK,
+	Hk,
+	HL,
+	Hl,
+	HM,
+	Hm,
+	HN,
+	Hn,
+	HO,
+	Ho,
+	HP,
+	Hp,
+	HQ,
+	Hq,
+	HR,
+	Hr,
+	HS,
+	Hs,
+	HT,
+	Ht,
+	HU,
+	Hu,
+	HV,
+	Hv,
+	HW,
+	Hw,
+	HX,
+	Hx,
+	HY,
+	Hy,
+	HZ,
+	Hz,
+	hA,
+	ha,
+	hB,
+	hb,
+	hC,
+	hc,
+	hD,
+	hd,
+	hE,
+	he,
+	hF,
+	hf,
+	hG,
+	hg,
+	hH,
+	hh,
+	hI,
+	hi,
+	hJ,
+	hj,
+	hK,
+	hk,
+	hL,
+	hl,
+	hM,
+	hm,
+	hN,
+	hn,
+	hO,
+	ho,
+	hP,
+	hp,
+	hQ,
+	hq,
+	hR,
+	hr,
+	hS,
+	hs,
+	hT,
+	ht,
+	hU,
+	hu,
+	hV,
+	hv,
+	hW,
+	hw,
+	hX,
+	hx,
+	hY,
+	hy,
+	hZ,
+	hz,
+	IA,
+	Ia,
+	IB,
+	Ib,
+	IC,
+	Ic,
+	ID,
+	Id,
+	IE,
+	Ie,
+	IF,
+	If,
+	IG,
+	Ig,
+	IH,
+	Ih,
+	II,
+	Ii,
+	IJ,
+	Ij,
+	IK,
+	Ik,
+	IL,
+	Il,
+	IM,
+	Im,
+	IN,
+	In,
+	IO,
+	Io,
+	IP,
+	Ip,
+	IQ,
+	Iq,
+	IR,
+	Ir,
+	IS,
+	Is,
+	IT,
+	It,
+	IU,
+	Iu,
+	IV,
+	Iv,
+	IW,
+	Iw,
+	IX,
+	Ix,
+	IY,
+	Iy,
+	IZ,
+	Iz,
+	iA,
+	ia,
+	iB,
+	ib,
+	iC,
+	ic,
+	iD,
+	id,
+	iE,
+	ie,
+	iF,
+	if,
+	iG,
+	ig,
+	iH,
+	ih,
+	iI,
+	ii,
+	iJ,
+	ij,
+	iK,
+	ik,
+	iL,
+	il,
+	iM,
+	im,
+	iN,
+	in,
+	iO,
+	io,
+	iP,
+	ip,
+	iQ,
+	iq,
+	iR,
+	ir,
+	iS,
+	is,
+	iT,
+	it,
+	iU,
+	iu,
+	iV,
+	iv,
+	iW,
+	iw,
+	iX,
+	ix,
+	iY,
+	iy,
+	iZ,
+	iz,
+	JA,
+	Ja,
+	JB,
+	Jb,
+	JC,
+	Jc,
+	JD,
+	Jd,
+	JE,
+	Je,
+	JF,
+	Jf,
+	JG,
+	Jg,
+	JH,
+	Jh,
+	JI,
+	Ji,
+	JJ,
+	Jj,
+	JK,
+	Jk,
+	JL,
+	Jl,
+	JM,
+	Jm,
+	JN,
+	Jn,
+	JO,
+	Jo,
+	JP,
+	Jp,
+	JQ,
+	Jq,
+	JR,
+	Jr,
+	JS,
+	Js,
+	JT,
+	Jt,
+	JU,
+	Ju,
+	JV,
+	Jv,
+	JW,
+	Jw,
+	JX,
+	Jx,
+	JY,
+	Jy,
+	JZ,
+	Jz,
+	jA,
+	ja,
+	jB,
+	jb,
+	jC,
+	jc,
+	jD,
+	jd,
+	jE,
+	je,
+	jF,
+	jf,
+	jG,
+	jg,
+	jH,
+	jh,
+	jI,
+	ji,
+	jJ,
+	jj,
+	jK,
+	jk,
+	jL,
+	jl,
+	jM,
+	jm,
+	jN,
+	jn,
+	jO,
+	jo,
+	jP,
+	jp,
+	jQ,
+	jq,
+	jR,
+	jr,
+	jS,
+	js,
+	jT,
+	jt,
+	jU,
+	ju,
+	jV,
+	jv,
+	jW,
+	jw,
+	jX,
+	jx,
+	jY,
+	jy,
+	jZ,
+	jz,
+	KA,
+	Ka,
+	KB,
+	Kb,
+	KC,
+	Kc,
+	KD,
+	Kd,
+	KE,
+	Ke,
+	KF,
+	Kf,
+	KG,
+	Kg,
+	KH,
+	Kh,
+	KI,
+	Ki,
+	KJ,
+	Kj,
+	KK,
+	Kk,
+	KL,
+	Kl,
+	KM,
+	Km,
+	KN,
+	Kn,
+	KO,
+	Ko,
+	KP,
+	Kp,
+	KQ,
+	Kq,
+	KR,
+	Kr,
+	KS,
+	Ks,
+	KT,
+	Kt,
+	KU,
+	Ku,
+	KV,
+	Kv,
+	KW,
+	Kw,
+	KX,
+	Kx,
+	KY,
+	Ky,
+	KZ,
+	Kz,
+	kA,
+	ka,
+	kB,
+	kb,
+	kC,
+	kc,
+	kD,
+	kd,
+	kE,
+	ke,
+	kF,
+	kf,
+	kG,
+	kg,
+	kH,
+	kh,
+	kI,
+	ki,
+	kJ,
+	kj,
+	kK,
+	kk,
+	kL,
+	kl,
+	kM,
+	km,
+	kN,
+	kn,
+	kO,
+	ko,
+	kP,
+	kp,
+	kQ,
+	kq,
+	kR,
+	kr,
+	kS,
+	ks,
+	kT,
+	kt,
+	kU,
+	ku,
+	kV,
+	kv,
+	kW,
+	kw,
+	kX,
+	kx,
+	kY,
+	ky,
+	kZ,
+	kz,
+	LA,
+	La,
+	LB,
+	Lb,
+	LC,
+	Lc,
+	LD,
+	Ld,
+	LE,
+	Le,
+	LF,
+	Lf,
+	LG,
+	Lg,
+	LH,
+	Lh,
+	LI,
+	Li,
+	LJ,
+	Lj,
+	LK,
+	Lk,
+	LL,
+	Ll,
+	LM,
+	Lm,
+	LN,
+	Ln,
+	LO,
+	Lo,
+	LP,
+	Lp,
+	LQ,
+	Lq,
+	LR,
+	Lr,
+	LS,
+	Ls,
+	LT,
+	Lt,
+	LU,
+	Lu,
+	LV,
+	Lv,
+	LW,
+	Lw,
+	LX,
+	Lx,
+	LY,
+	Ly,
+	LZ,
+	Lz,
+	lA,
+	la,
+	lB,
+	lb,
+	lC,
+	lc,
+	lD,
+	ld,
+	lE,
+	le,
+	lF,
+	lf,
+	lG,
+	lg,
+	lH,
+	lh,
+	lI,
+	li,
+	lJ,
+	lj,
+	lK,
+	lk,
+	lL,
+	ll,
+	lM,
+	lm,
+	lN,
+	ln,
+	lO,
+	lo,
+	lP,
+	lp,
+	lQ,
+	lq,
+	lR,
+	lr,
+	lS,
+	ls,
+	lT,
+	lt,
+	lU,
+	lu,
+	lV,
+	lv,
+	lW,
+	lw,
+	lX,
+	lx,
+	lY,
+	ly,
+	lZ,
+	lz,
+	MA,
+	Ma,
+	MB,
+	Mb,
+	MC,
+	Mc,
+	MD,
+	Md,
+	ME,
+	Me,
+	MF,
+	Mf,
+	MG,
+	Mg,
+	MH,
+	Mh,
+	MI,
+	Mi,
+	MJ,
+	Mj,
+	MK,
+	Mk,
+	ML,
+	Ml,
+	MM,
+	Mm,
+	MN,
+	Mn,
+	MO,
+	Mo,
+	MP,
+	Mp,
+	MQ,
+	Mq,
+	MR,
+	Mr,
+	MS,
+	Ms,
 	MT,
+	Mt,
+	MU,
+	Mu,
+	MV,
+	Mv,
+	MW,
+	Mw,
+	MX,
+	Mx,
+	MY,
+	My,
+	MZ,
+	Mz,
+	mA,
+	ma,
+	mB,
+	mb,
+	mC,
+	mc,
+	mD,
+	md,
+	mE,
+	me,
+	mF,
+	mf,
+	mG,
+	mg,
+	mH,
+	mh,
+	mI,
+	mi,
+	mJ,
+	mj,
+	mK,
+	mk,
+	mL,
+	ml,
+	mM,
+	mm,
+	mN,
+	mn,
+	mO,
+	mo,
+	mP,
+	mp,
+	mQ,
+	mq,
+	mR,
+	mr,
+	mS,
+	ms,
+	mT,
+	mt,
+	mU,
+	mu,
+	mV,
+	mv,
+	mW,
+	mw,
+	mX,
+	mx,
+	mY,
+	my,
+	mZ,
+	mz,
+	NA,
+	Na,
+	NB,
+	Nb,
+	NC,
+	Nc,
+	ND,
+	Nd,
+	NE,
+	Ne,
+	NF,
+	Nf,
+	NG,
+	Ng,
+	NH,
+	Nh,
+	NI,
+	Ni,
+	NJ,
+	Nj,
+	NK,
+	Nk,
+	NL,
+	Nl,
+	NM,
+	Nm,
+	NN,
+	Nn,
+	NO,
+	No,
+	NP,
+	Np,
+	NQ,
+	Nq,
+	NR,
+	Nr,
+	NS,
+	Ns,
+	NT,
+	Nt,
+	NU,
+	Nu,
+	NV,
+	Nv,
+	NW,
+	Nw,
+	NX,
+	Nx,
+	NY,
+	Ny,
+	NZ,
+	Nz,
+	nA,
+	na,
+	nB,
+	nb,
+	nC,
+	nc,
+	nD,
+	nd,
+	nE,
+	ne,
+	nF,
+	nf,
+	nG,
+	ng,
+	nH,
+	nh,
+	nI,
+	ni,
+	nJ,
+	nj,
+	nK,
+	nk,
+	nL,
+	nl,
+	nM,
+	nm,
+	nN,
+	nn,
+	nO,
+	no,
+	nP,
+	np,
+	nQ,
+	nq,
+	nR,
+	nr,
+	nS,
+	ns,
+	nT,
+	nt,
+	nU,
+	nu,
+	nV,
+	nv,
+	nW,
+	nw,
+	nX,
+	nx,
+	nY,
+	ny,
+	nZ,
+	nz,
+	OA,
+	Oa,
+	OB,
+	Ob,
+	OC,
+	Oc,
+	OD,
+	Od,
+	OE,
+	Oe,
+	OF,
+	Of,
+	OG,
+	Og,
+	OH,
+	Oh,
+	OI,
+	Oi,
+	OJ,
+	Oj,
+	OK,
+	Ok,
+	OL,
+	Ol,
+	OM,
+	Om,
+	ON,
+	On,
+	OO,
+	Oo,
+	OP,
+	Op,
+	OQ,
+	Oq,
+	OR,
+	Or,
+	OS,
+	Os,
+	OT,
+	Ot,
+	OU,
+	Ou,
+	OV,
+	Ov,
+	OW,
+	Ow,
+	OX,
+	Ox,
+	OY,
+	Oy,
+	OZ,
+	Oz,
+	oA,
+	oa,
+	oB,
+	ob,
+	oC,
+	oc,
+	oD,
+	od,
+	oE,
+	oe,
+	oF,
+	of,
+	oG,
+	og,
+	oH,
+	oh,
+	oI,
+	oi,
+	oJ,
+	oj,
+	oK,
+	ok,
+	oL,
+	ol,
+	oM,
+	om,
+	oN,
+	on,
+	oO,
+	oo,
+	oP,
+	op,
+	oQ,
+	oq,
+	oR,
+	or,
+	oS,
+	os,
+	oT,
+	ot,
+	oU,
+	ou,
+	oV,
+	ov,
+	oW,
+	ow,
+	oX,
+	ox,
+	oY,
+	oy,
+	oZ,
+	oz,
+	PA,
+	Pa,
+	PB,
+	Pb,
+	PC,
+	Pc,
+	PD,
+	Pd,
+	PE,
+	Pe,
+	PF,
+	Pf,
+	PG,
+	Pg,
+	PH,
+	Ph,
+	PI,
+	Pi,
+	PJ,
+	Pj,
+	PK,
+	Pk,
+	PL,
+	Pl,
+	PM,
+	Pm,
+	PN,
+	Pn,
+	PO,
+	Po,
+	PP,
+	Pp,
+	PQ,
+	Pq,
+	PR,
+	Pr,
+	PS,
+	Ps,
+	PT,
+	Pt,
+	PU,
+	Pu,
+	PV,
+	Pv,
+	PW,
+	Pw,
+	PX,
+	Px,
+	PY,
+	Py,
+	PZ,
+	Pz,
+	pA,
+	pa,
+	pB,
+	pb,
+	pC,
+	pc,
+	pD,
+	pd,
+	pE,
+	pe,
+	pF,
+	pf,
+	pG,
+	pg,
+	pH,
+	ph,
+	pI,
+	pi,
+	pJ,
+	pj,
+	pK,
+	pk,
+	pL,
+	pl,
+	pM,
+	pm,
+	pN,
+	pn,
+	pO,
+	po,
+	pP,
+	pp,
+	pQ,
+	pq,
+	pR,
+	pr,
+	pS,
+	ps,
+	pT,
+	pt,
+	pU,
+	pu,
+	pV,
+	pv,
+	pW,
+	pw,
+	pX,
+	px,
+	pY,
+	py,
+	pZ,
+	pz,
+	QA,
+	Qa,
+	QB,
+	Qb,
+	QC,
+	Qc,
+	QD,
+	Qd,
+	QE,
+	Qe,
+	QF,
+	Qf,
+	QG,
+	Qg,
+	QH,
+	Qh,
+	QI,
+	Qi,
+	QJ,
+	Qj,
+	QK,
+	Qk,
+	QL,
+	Ql,
+	QM,
+	Qm,
+	QN,
+	Qn,
+	QO,
+	Qo,
+	QP,
+	Qp,
+	QQ,
+	Qq,
+	QR,
+	Qr,
+	QS,
+	Qs,
+	QT,
+	Qt,
+	QU,
+	Qu,
+	QV,
+	Qv,
+	QW,
+	Qw,
+	QX,
+	Qx,
+	QY,
+	Qy,
+	QZ,
+	Qz,
+	qA,
+	qa,
+	qB,
+	qb,
+	qC,
+	qc,
+	qD,
+	qd,
+	qE,
+	qe,
+	qF,
+	qf,
+	qG,
+	qg,
+	qH,
+	qh,
+	qI,
+	qi,
+	qJ,
+	qj,
+	qK,
+	qk,
+	qL,
+	ql,
+	qM,
+	qm,
+	qN,
+	qn,
+	qO,
+	qo,
+	qP,
+	qp,
+	qQ,
+	qq,
+	qR,
+	qr,
+	qS,
+	qs,
+	qT,
+	qt,
+	qU,
+	qu,
+	qV,
+	qv,
+	qW,
+	qw,
+	qX,
+	qx,
+	qY,
+	qy,
+	qZ,
+	qz,
+	RA,
+	Ra,
+	RB,
+	Rb,
+	RC,
+	Rc,
+	RD,
+	Rd,
+	RE,
+	Re,
+	RF,
+	Rf,
 	RG,
-	Front,
-	Middle,
-	Back,
-	StreetBattle_Over_A,
-	OutdoorBattle_Over_A,
-	IndoorBattle_Over_A,
-	StreetBattle_Under_B,
-	OutdoorBattle_Under_B,
-	IndoorBattle_Under_B,
-	Kaitenranger,
-	Transport,
-	Itcenter,
-	Powerplant,
-	SukebanSwim_SMG,
-	SukebanSwim_MG,
-	SukebanSwim_SR,
-	SukebanSwim_Champion,
-	Token_S6,
-	Swimsuit,
-	WaterPlay,
-	F_Hihumi_Swimsuit,
-	F_Azusa_Swimsuit,
-	F_Tsurugi_Swimsuit,
-	F_Mashiro_Swimsuit,
-	F_Hina_swimsuit,
-	F_Iori_swimsuit,
-	F_Izumi_swimsuit,
-	F_Shiroko_RidingSuit,
-	Church,
-	Stronghold,
-	Gallery,
-	MusicRoom,
-	Emotional,
-	F_Shun_Kid,
-	F_Kirino_default,
-	F_Saya_Casual,
-	F_Neru_BunnyGirl,
-	F_Karin_BunnyGirl,
-	F_Asuna_BunnyGirl,
-	DecagrammatonSPO,
-	Justice,
-	F_Natsu,
-	F_Miku,
-	F_Ako,
-	F_Mari,
-	F_Chinatsu_Onsen,
-	F_Tomoe,
-	F_Cherino_Onsen,
-	F_Nodoka_Onsen,
-	F_Aru_Newyear,
-	F_Mutsuki_Newyear,
-	F_Serika_Newyear,
-	Boss,
-	F_Wakamo,
-	F_Sena,
-	F_Chihiro,
-	F_Fubuki,
-	F_Mimori,
-	SkillBookUltimatePieace,
-	MaterialItemN,
-	MaterialItemR,
-	MaterialItemSR,
-	MaterialItemSSR,
-	CDItemN,
-	CDItemR,
-	CDItemSR,
-	CDItemSSR,
-	BookItemN,
-	BookItemR,
-	BookItemSR,
-	BookItemSSR,
-	ShiftingCraftMaterial_Furniture,
-	TrophyBronzeGroup001,
-	TrophySilverGroup001,
-	TrophyGoldGroup001,
-	TrophyPlatinumGroup001,
-	ShiftingCraftCategory_CommonMaterial,
-	ShiftingCraftCategory_CDItem,
-	ShiftingCraftCategory_BookItem,
-	ShiftingCraftCategory_Furniture,
-	Token_S14,
-	F_Ui,
-	F_Hinata,
-	F_Marina,
-	SRT,
-	F_Miyako,
-	F_Miyu,
-	F_Saki,
-	Ninja,
-	F_Tsukuyo,
-	F_Michiru,
-	F_Kaede,
-	F_Iroha,
-	F_Misaki,
-	F_Atsuko,
-	F_Hiyori,
-	F_Wakamo_Swimsuit,
-	F_Nonomi_Swimsuit,
-	F_Ayane_Swimsuit,
-	CraftMaterial_SecretStone,
-	CraftMaterial_FurnitureN,
-	CraftMaterial_FurnitureR,
-	CraftMaterial_FurnitureSR,
-	CraftMaterial_FurnitureSSR,
-	ExpEquip,
-	WeaponExpEquip,
-	TheSeminar,
-	Fuuki,
-	Kohshinjo68,
-	GameDev,
-	Countermeasure,
-	CleanNClearing,
-	GourmetClub,
-	F_Hoshino_Swimsuit,
-	F_Izuna_Swimsuit,
-	F_Chise_Swimsuit,
-	F_Shizuko_Swimsuit,
-	F_Saori,
-	CraftMaterial_FavorItemSR,
-	CraftMaterial_FavorItemSSR,
-	ShiftingCraftCategory_FavorItem,
-	F_Akari2,
-	F_Aris2,
-	F_Asuna2,
-	F_Asuna_BunnyGirl2,
-	F_Atsuko2,
-	F_Ayane_Swimsuit2,
-	F_Azusa_Swimsuit2,
-	F_Cherino_Onsen2,
-	F_Chinatsu2,
-	F_Hare2,
-	F_Haruna2,
-	F_Hihumi2,
-	F_Hihumi_Swimsuit2,
-	F_Hina2,
-	F_Hina_swimsuit2,
-	F_Hinata2,
-	F_Hoshino2,
-	F_Hoshino_Swimsuit2,
-	F_Juri2,
-	F_Karin2,
-	F_Karin_BunnyGirl2,
-	F_Kirino_default2,
-	F_Kotori2,
-	F_Mashiro2,
-	F_Mashiro_Swimsuit2,
-	F_Midori2,
-	F_Misaki2,
-	F_Miyako2,
-	F_Miyu2,
-	F_Momoi2,
-	F_Neru_BunnyGirl2,
-	F_Pina2,
-	F_Saya_Casual2,
-	F_Sena2,
-	F_Serina2,
-	F_Suzumi2,
-	F_Tomoe2,
-	F_Tsubaki2,
-	F_Tsurugi2,
-	F_Tsurugi_Swimsuit2,
-	F_Ui2,
-	F_Utaha2,
-	F_Wakamo2,
-	F_Wakamo_Swimsuit2,
-	F_Yuuka2,
-	CraftMaterial_Furniture,
-	TrophyBronzeGroup002,
-	TrophySilverGroup002,
-	TrophyGoldGroup002,
-	TrophyPlatinumGroup002,
-	F_Kazusa,
-	F_Kokona,
-	F_Moe,
-	F_Kokona2,
-	AtsukoOriginal,
-	FromAriusSquad,
-	EventChallenge_ExplosionTarget,
-	F_Utaha_Cheerleader,
-	F_Hibiki_Cheerleader,
-	F_Akane_BunnyGirl,
-	F_Noa,
-	F_Utaha_Cheerleader2,
-	F_Hibiki_Cheerleader2,
-	F_Akane_BunnyGirl2,
-	F_Yuuka_Track,
-	F_Mari_Track,
-	F_Hasumi_Track,
-	F_Himari,
-	F_Mari_Track2,
-	F_Hasumi_Track2,
-	F_Himari2,
-	Veritas,
-	SPTF,
-	Engineer,
-	F_Shigure,
-	F_Serina_Holiday,
-	F_Hanae_Holiday,
-	F_Shigure2,
-	F_Serina_Holiday2,
-	F_Hanae_Holiday2,
-	Holiday,
-	Perorozilla_MiddleSize,
-	Perorozilla_SmallSize,
-	F_Haruna_Newyear,
-	F_Haruna_Newyear2,
-	F_Mine,
-	F_Mine2,
-	F_Junko_Newyear,
-	F_Junko_Newyear2,
-	F_Fuuka_Newyear,
-	F_Fuuka_Newyear2,
-	F_Megu,
-	F_Megu2,
-	F_Sakurako,
-	F_Sakurako2,
-	F_Kanna,
-	F_Kanna2,
-	F_Mika,
-	F_Mika2,
-	UnNamedGuardianMiddle,
-	F_Toki,
-	F_Toki2,
-	F_Koyuki,
-	F_Koyuki2,
-	F_Nagisa,
-	F_Nagisa2,
-	F_Kayoko_Newyear,
-	F_Kayoko_Newyear2,
-	F_Haruka_Newyear,
-	F_Haruka_Newyear2,
-	F_Kaho,
-	F_Kaho2,
-	DUArea,
-	F_Aris_Maid,
-	F_Aris_Maid2,
-	F_Yuzu_Maid,
-	F_Yuzu_Maid2,
-	F_Toki_BunnyGirl,
-	F_Toki_BunnyGirl2,
-	F_Reisa,
-	F_Reisa2,
-	Genryumon,
-	BlackTortoisePromenade,
-	LaborParty,
-	F_Rumi,
-	F_Rumi2,
-	F_Mina,
-	F_Mina2,
-	F_Minori,
-	F_Minori2,
-	ValkyrieCD,
-	ValkyrieBook,
-	F_Miyako_Swimsuit,
-	F_Miyako_Swimsuit2,
-	F_Saki_Swimsuit,
-	F_Saki_Swimsuit2,
-	F_Miyu_Swimsuit,
-	F_Miyu_Swimsuit2,
-	F_Shiroko_Swimsuit,
-	F_Shiroko_Swimsuit2,
-	EN0005_CenterPipe,
-	F_Koharu_Swimsuit,
-	F_Koharu_Swimsuit2,
-	F_Ui_Swimsuit,
-	F_Ui_Swimsuit2,
-	F_Hanako_Swimsuit,
-	F_Hanako_Swimsuit2,
-	F_Hinata_Swimsuit,
-	F_Hinata_Swimsuit2,
-	F_Mimori_Swimsuit,
-	F_Mimori_Swimsuit2,
-	Hostage,
-	HoverMissile,
-	HoverObject,
-	HoverGuidedDevice,
-	HoverStealthMissile,
-	Gift3,
-	HoverResort,
-	Raid_Normal,
-	Raid_Hard,
-	Raid_VeryHard,
-	Raid_HardCore,
-	Raid_Extreme,
-	Raid_Insane,
-	Raid_Torment,
-	KnowledgeLiberationFront,
-	SummerRemedialClass,
-	F_Momiji,
-	F_Momiji2,
-	F_Meru,
-	F_Meru2,
-	F_Kotori_Cheerleader,
-	F_Kotori_Cheerleader2,
-	F_Haruna_Track,
-	F_Haruna_Track2,
-	F_Ichika,
-	F_Ichika2,
-	F_Kasumi,
-	F_Kasumi2,
-	F_Shigure_Onsen,
-	F_Shigure_Onsen2,
-	Highlander,
-	SentryGun,
-	Token_S32,
-	Tier2Piece,
-	Tier3Piece,
-	Tier4Piece,
-	Tier5Piece,
-	TagName0543,
-	TagName0544,
-	TagName0545,
-	TagName0546,
-	TagName0547,
-	TagName0548,
-	TagName0549,
-	TagName0550,
-	TagName0551,
-	TagName0552,
-	TagName0553,
-	TagName0554,
-	TagName0555,
-	TagName0556,
-	TagName0557,
-	TagName0558,
-	TagName0559,
-	TagName0560,
-	TagName0561,
-	TagName0562,
-	TagName0563,
-	TagName0564,
-	TagName0565,
-	TagName0566,
-	TagName0567,
-	TagName0568,
-	TagName0569,
-	TagName0570,
-	TagName0571,
-	TagName0572,
-	TagName0573,
-	TagName0574,
-	TagName0575,
-	TagName0576,
-	TagName0577,
-	TagName0578,
-	TagName0579,
-	TagName0580,
-	TagName0581,
-	TagName0582,
-	TagName0583,
-	TagName0584,
-	TagName0585,
-	TagName0586,
-	TagName0587,
-	TagName0588,
-	TagName0589,
-	TagName0590,
-	TagName0591,
-	TagName0592,
-	TagName0593,
-	TagName0594,
-	TagName0595,
-	TagName0596,
-	TagName0597,
-	TagName0598,
-	TagName0599,
-	TagName0600,
-	TagName0601,
-	TagName0602,
-	TagName0603,
-	TagName0604,
-	TagName0605,
-	TagName0606,
-	TagName0607,
-	TagName0608,
-	TagName0609,
-	TagName0610,
-	TagName0611,
-	TagName0612,
-	TagName0613,
-	TagName0614,
-	TagName0615,
-	TagName0616,
-	TagName0617,
-	TagName0618,
-	TagName0619,
-	TagName0620,
-	TagName0621,
-	TagName0622,
-	TagName0623,
-	TagName0624,
-	TagName0625,
-	TagName0626,
-	TagName0627,
-	TagName0628,
-	TagName0629,
-	TagName0630,
-	TagName0631,
-	TagName0632,
-	TagName0633,
-	TagName0634,
-	TagName0635,
-	TagName0636,
-	TagName0637,
-	TagName0638,
-	TagName0639,
-	TagName0640,
-	TagName0641,
-	TagName0642,
-	TagName0643,
-	TagName0644,
-	TagName0645,
-	TagName0646,
-	TagName0647,
-	TagName0648,
-	TagName0649,
-	TagName0650,
-	TagName0651,
-	TagName0652,
-	TagName0653,
-	TagName0654,
-	TagName0655,
-	TagName0656,
-	TagName0657,
-	TagName0658,
-	TagName0659,
-	TagName0660,
-	TagName0661,
-	TagName0662,
-	TagName0663,
-	TagName0664,
-	TagName0665,
-	TagName0666,
-	TagName0667,
-	TagName0668,
-	TagName0669,
-	TagName0670,
-	TagName0671,
-	TagName0672,
-	TagName0673,
-	TagName0674,
-	TagName0675,
-	TagName0676,
-	TagName0677,
-	TagName0678,
-	TagName0679,
-	TagName0680,
-	TagName0681,
-	TagName0682,
-	TagName0683,
-	TagName0684,
-	TagName0685,
-	TagName0686,
-	TagName0687,
-	TagName0688,
-	TagName0689,
-	TagName0690,
-	TagName0691,
-	TagName0692,
-	TagName0693,
-	TagName0694,
-	TagName0695,
-	TagName0696,
-	TagName0697,
-	TagName0698,
-	TagName0699,
-	TagName0700,
-	TagName0701,
-	TagName0702,
-	TagName0703,
-	TagName0704,
-	TagName0705,
-	TagName0706,
-	TagName0707,
-	TagName0708,
-	TagName0709,
-	TagName0710,
-	TagName0711,
-	TagName0712,
-	TagName0713,
-	TagName0714,
-	TagName0715,
-	TagName0716,
-	TagName0717,
-	TagName0718,
-	TagName0719,
-	TagName0720,
-	TagName0721,
-	TagName0722,
-	TagName0723,
-	TagName0724,
-	TagName0725,
-	TagName0726,
-	TagName0727,
-	TagName0728,
-	TagName0729,
-	TagName0730,
-	TagName0731,
-	TagName0732,
-	TagName0733,
-	TagName0734,
-	TagName0735,
-	TagName0736,
-	TagName0737,
-	TagName0738,
-	TagName0739,
-	TagName0740,
-	TagName0741,
-	TagName0742,
-	TagName0743,
-	TagName0744,
-	TagName0745,
-	TagName0746,
-	TagName0747,
-	TagName0748,
-	TagName0749,
-	TagName0750,
-	TagName0751,
-	TagName0752,
-	TagName0753,
-	TagName0754,
-	TagName0755,
-	TagName0756,
-	TagName0757,
-	TagName0758,
-	TagName0759,
-	TagName0760,
-	TagName0761,
-	TagName0762,
-	TagName0763,
-	TagName0764,
-	TagName0765,
-	TagName0766,
-	TagName0767,
-	TagName0768,
-	TagName0769,
-	TagName0770,
-	TagName0771,
-	TagName0772,
-	TagName0773,
-	TagName0774,
-	TagName0775,
-	TagName0776,
-	TagName0777,
-	TagName0778,
-	TagName0779,
-	TagName0780,
-	TagName0781,
-	TagName0782,
-	TagName0783,
-	TagName0784,
-	TagName0785,
-	TagName0786,
-	TagName0787,
-	TagName0788,
-	TagName0789,
-	TagName0790,
-	TagName0791,
-	TagName0792,
-	TagName0793,
-	TagName0794,
-	TagName0795,
-	TagName0796,
-	TagName0797,
-	TagName0798,
-	TagName0799,
-	TagName0800,
-	TagName0801,
-	TagName0802,
-	TagName0803,
-	TagName0804,
-	TagName0805,
-	TagName0806,
-	TagName0807,
-	TagName0808,
-	TagName0809,
-	TagName0810,
-	TagName0811,
-	TagName0812,
-	TagName0813,
-	TagName0814,
-	TagName0815,
-	TagName0816,
-	TagName0817,
-	TagName0818,
-	TagName0819,
-	TagName0820,
-	TagName0821,
-	TagName0822,
-	TagName0823,
-	TagName0824,
-	TagName0825,
-	TagName0826,
-	TagName0827,
-	TagName0828,
-	TagName0829,
-	TagName0830,
-	TagName0831,
-	TagName0832,
-	TagName0833,
-	TagName0834,
-	TagName0835,
-	TagName0836,
-	TagName0837,
-	TagName0838,
-	TagName0839,
-	TagName0840,
-	TagName0841,
-	TagName0842,
-	TagName0843,
-	TagName0844,
-	TagName0845,
-	TagName0846,
-	TagName0847,
-	TagName0848,
-	TagName0849,
-	TagName0850,
-	TagName0851,
-	TagName0852,
-	TagName0853,
-	TagName0854,
-	TagName0855,
-	TagName0856,
-	TagName0857,
-	TagName0858,
-	TagName0859,
-	TagName0860,
-	TagName0861,
-	TagName0862,
-	TagName0863,
-	TagName0864,
-	TagName0865,
-	TagName0866,
-	TagName0867,
-	TagName0868,
-	TagName0869,
-	TagName0870,
-	TagName0871,
-	TagName0872,
-	TagName0873,
-	TagName0874,
-	TagName0875,
-	TagName0876,
-	TagName0877,
-	TagName0878,
-	TagName0879,
-	TagName0880,
-	TagName0881,
-	TagName0882,
-	TagName0883,
-	TagName0884,
-	TagName0885,
-	TagName0886,
-	TagName0887,
-	TagName0888,
-	TagName0889,
-	TagName0890,
-	TagName0891,
-	TagName0892,
-	TagName0893,
-	TagName0894,
-	TagName0895,
-	TagName0896,
-	TagName0897,
-	TagName0898,
-	TagName0899,
-	TagName0900,
-	TagName0901,
-	TagName0902,
-	TagName0903,
-	TagName0904,
-	TagName0905,
-	TagName0906,
-	TagName0907,
-	TagName0908,
-	TagName0909,
-	TagName0910,
-	TagName0911,
-	TagName0912,
-	TagName0913,
-	TagName0914,
-	TagName0915,
-	TagName0916,
-	TagName0917,
-	TagName0918,
-	TagName0919,
-	TagName0920,
-	TagName0921,
-	TagName0922,
-	TagName0923,
-	TagName0924,
-	TagName0925,
-	TagName0926,
-	TagName0927,
-	TagName0928,
-	TagName0929,
-	TagName0930,
-	TagName0931,
-	TagName0932,
-	TagName0933,
-	TagName0934,
-	TagName0935,
-	TagName0936,
-	TagName0937,
-	TagName0938,
-	TagName0939,
-	TagName0940,
-	TagName0941,
-	TagName0942,
-	TagName0943,
-	TagName0944,
-	TagName0945,
-	TagName0946,
-	TagName0947,
-	TagName0948,
-	TagName0949,
-	TagName0950,
-	TagName0951,
-	TagName0952,
-	TagName0953,
-	TagName0954,
-	TagName0955,
-	TagName0956,
-	TagName0957,
-	TagName0958,
-	TagName0959,
-	TagName0960,
-	TagName0961,
-	TagName0962,
-	TagName0963,
-	TagName0964,
-	TagName0965,
-	TagName0966,
-	TagName0967,
-	TagName0968,
-	TagName0969,
-	TagName0970,
-	TagName0971,
-	TagName0972,
-	TagName0973,
-	TagName0974,
-	TagName0975,
-	TagName0976,
-	TagName0977,
-	TagName0978,
-	TagName0979,
-	TagName0980,
-	TagName0981,
-	TagName0982,
-	TagName0983,
-	TagName0984,
-	TagName0985,
-	TagName0986,
-	TagName0987,
-	TagName0988,
-	TagName0989,
-	TagName0990,
-	TagName0991,
-	TagName0992,
-	TagName0993,
-	TagName0994,
-	TagName0995,
-	TagName0996,
-	TagName0997,
-	TagName0998,
-	TagName0999,
-	TagName1000,
-	TagName1001,
-	TagName1002,
-	TagName1003,
-	TagName1004,
-	TagName1005,
-	TagName1006,
-	TagName1007,
-	TagName1008,
-	TagName1009,
-	TagName1010,
-	TagName1011,
-	TagName1012,
-	TagName1013,
-	TagName1014,
-	TagName1015,
-	TagName1016,
-	TagName1017,
-	TagName1018,
-	TagName1019,
-	TagName1020,
-	TagName1021,
-	TagName1022,
-	TagName1023,
-	TagName1024,
-	TagName1025,
-	TagName1026,
-	TagName1027,
-	TagName1028,
-	TagName1029,
-	TagName1030,
-	TagName1031,
-	TagName1032,
-	TagName1033,
-	TagName1034,
-	TagName1035,
-	TagName1036,
-	TagName1037,
-	TagName1038,
-	TagName1039,
-	TagName1040,
-	TagName1041,
-	TagName1042,
-	TagName1043,
-	TagName1044,
-	TagName1045,
-	TagName1046,
-	TagName1047,
-	TagName1048,
-	TagName1049,
-	TagName1050,
-	TagName1051,
-	TagName1052,
-	TagName1053,
-	TagName1054,
-	TagName1055,
-	TagName1056,
-	TagName1057,
-	TagName1058,
-	TagName1059,
-	TagName1060,
-	TagName1061,
-	TagName1062,
-	TagName1063,
-	TagName1064,
-	TagName1065,
-	TagName1066,
-	TagName1067,
-	TagName1068,
-	TagName1069,
-	TagName1070,
-	TagName1071,
-	TagName1072,
-	TagName1073,
-	TagName1074,
-	TagName1075,
-	TagName1076,
-	TagName1077,
-	TagName1078,
-	TagName1079,
-	TagName1080,
-	TagName1081,
-	TagName1082,
-	TagName1083,
-	TagName1084,
-	TagName1085,
-	TagName1086,
-	TagName1087,
-	TagName1088,
-	TagName1089,
-	TagName1090,
-	TagName1091,
-	TagName1092,
-	TagName1093,
-	TagName1094,
-	TagName1095,
-	TagName1096,
-	TagName1097,
-	TagName1098,
-	TagName1099,
-	TagName1100,
-	TagName1101,
-	TagName1102,
-	TagName1103,
-	TagName1104,
-	TagName1105,
-	TagName1106,
-	TagName1107,
-	TagName1108,
-	TagName1109,
-	TagName1110,
-	TagName1111,
-	TagName1112,
-	TagName1113,
-	TagName1114,
-	TagName1115,
-	TagName1116,
-	TagName1117,
-	TagName1118,
-	TagName1119,
-	TagName1120,
-	TagName1121,
-	TagName1122,
-	TagName1123,
-	TagName1124,
-	TagName1125,
-	TagName1126,
-	TagName1127,
-	TagName1128,
-	TagName1129,
-	TagName1130,
-	TagName1131,
-	TagName1132,
-	TagName1133,
-	TagName1134,
-	TagName1135,
-	TagName1136,
-	TagName1137,
-	TagName1138,
-	TagName1139,
-	TagName1140,
-	TagName1141,
-	TagName1142,
-	TagName1143,
-	TagName1144,
-	TagName1145,
-	TagName1146,
-	TagName1147,
-	TagName1148,
-	TagName1149,
-	TagName1150,
-	TagName1151,
-	TagName1152,
-	TagName1153,
-	TagName1154,
-	TagName1155,
-	TagName1156,
-	TagName1157,
-	TagName1158,
-	TagName1159,
-	TagName1160,
-	TagName1161,
-	TagName1162,
-	TagName1163,
-	TagName1164,
-	TagName1165,
-	TagName1166,
-	TagName1167,
-	TagName1168,
-	TagName1169,
-	TagName1170,
-	TagName1171,
-	TagName1172,
-	TagName1173,
-	TagName1174,
-	TagName1175,
-	TagName1176,
-	TagName1177,
-	TagName1178,
-	TagName1179,
-	TagName1180,
-	TagName1181,
-	TagName1182,
-	TagName1183,
-	TagName1184,
-	TagName1185,
-	TagName1186,
-	TagName1187,
-	TagName1188,
-	TagName1189,
-	TagName1190,
-	TagName1191,
-	TagName1192,
-	TagName1193,
-	TagName1194,
-	TagName1195,
-	TagName1196,
-	TagName1197,
-	TagName1198,
-	TagName1199,
-	TagName1200,
-	TagName1201,
-	TagName1202,
-	TagName1203,
-	TagName1204,
-	TagName1205,
-	TagName1206,
-	TagName1207,
-	TagName1208,
-	TagName1209,
-	TagName1210,
-	TagName1211,
-	TagName1212,
-	TagName1213,
-	TagName1214,
-	TagName1215,
-	TagName1216,
-	TagName1217,
-	TagName1218,
-	TagName1219,
-	TagName1220,
-	TagName1221,
-	TagName1222,
-	TagName1223,
-	TagName1224,
-	TagName1225,
-	TagName1226,
-	TagName1227,
-	TagName1228,
-	TagName1229,
-	TagName1230,
-	TagName1231,
-	TagName1232,
-	TagName1233,
-	TagName1234,
-	TagName1235,
-	TagName1236,
-	TagName1237,
-	TagName1238,
-	TagName1239,
-	TagName1240,
-	TagName1241,
-	TagName1242,
-	TagName1243,
-	TagName1244,
-	TagName1245,
-	TagName1246,
-	TagName1247,
-	TagName1248,
-	TagName1249,
-	TagName1250,
-	TagName1251,
-	TagName1252,
-	TagName1253,
-	TagName1254,
-	TagName1255,
-	TagName1256,
-	TagName1257,
-	TagName1258,
-	TagName1259,
-	TagName1260,
-	TagName1261,
-	TagName1262,
-	TagName1263,
-	TagName1264,
-	TagName1265,
-	TagName1266,
-	TagName1267,
-	TagName1268,
-	TagName1269,
-	TagName1270,
-	TagName1271,
-	TagName1272,
-	TagName1273,
-	TagName1274,
-	TagName1275,
-	TagName1276,
-	TagName1277,
-	TagName1278,
-	TagName1279,
-	TagName1280,
-	TagName1281,
-	TagName1282,
-	TagName1283,
-	TagName1284,
-	TagName1285,
-	TagName1286,
-	TagName1287,
-	TagName1288,
-	TagName1289,
-	TagName1290,
-	TagName1291,
-	TagName1292,
-	TagName1293,
-	TagName1294,
-	TagName1295,
-	TagName1296,
-	TagName1297,
-	TagName1298,
-	TagName1299,
-	TagName1300,
-	TagName1301,
-	TagName1302,
-	TagName1303,
-	TagName1304,
-	TagName1305,
-	TagName1306,
-	TagName1307,
-	TagName1308,
-	TagName1309,
-	TagName1310,
-	TagName1311,
-	TagName1312,
-	TagName1313,
-	TagName1314,
-	TagName1315,
-	TagName1316,
-	TagName1317,
-	TagName1318,
-	TagName1319,
-	TagName1320,
-	TagName1321,
-	TagName1322,
-	TagName1323,
-	TagName1324,
-	TagName1325,
-	TagName1326,
-	TagName1327,
-	TagName1328,
-	TagName1329,
-	TagName1330,
-	TagName1331,
-	TagName1332,
-	TagName1333,
-	TagName1334,
-	TagName1335,
-	TagName1336,
-	TagName1337,
-	TagName1338,
-	TagName1339,
-	TagName1340,
-	TagName1341,
-	TagName1342,
-	TagName1343,
-	TagName1344,
-	TagName1345,
-	TagName1346,
-	TagName1347,
-	TagName1348,
-	TagName1349,
-	TagName1350,
-	TagName1351,
-	TagName1352,
-	TagName1353,
-	TagName1354,
-	TagName1355,
-	TagName1356,
-	TagName1357,
-	TagName1358,
-	TagName1359,
-	TagName1360,
-	TagName1361,
-	TagName1362,
-	TagName1363,
-	TagName1364,
-	TagName1365,
-	TagName1366,
-	TagName1367,
-	TagName1368,
-	TagName1369,
-	TagName1370,
-	TagName1371,
-	TagName1372,
-	TagName1373,
-	TagName1374,
-	TagName1375,
-	TagName1376,
-	TagName1377,
-	TagName1378,
-	TagName1379,
-	TagName1380,
-	TagName1381,
-	TagName1382,
-	TagName1383,
-	TagName1384,
-	TagName1385,
-	TagName1386,
-	TagName1387,
-	TagName1388,
-	TagName1389,
-	TagName1390,
-	TagName1391,
-	TagName1392,
-	TagName1393,
-	TagName1394,
-	TagName1395,
-	TagName1396,
-	TagName1397,
-	TagName1398,
-	TagName1399,
-	TagName1400,
-	TagName1401,
-	TagName1402,
-	TagName1403,
-	TagName1404,
-	TagName1405,
-	TagName1406,
-	TagName1407,
-	TagName1408,
-	TagName1409,
-	TagName1410,
-	TagName1411,
-	TagName1412,
-	TagName1413,
-	TagName1414,
-	TagName1415,
-	TagName1416,
-	TagName1417,
-	TagName1418,
-	TagName1419,
-	TagName1420,
-	TagName1421,
-	TagName1422,
-	TagName1423,
-	TagName1424,
-	TagName1425,
-	TagName1426,
-	TagName1427,
-	TagName1428,
-	TagName1429,
-	TagName1430,
-	TagName1431,
-	TagName1432,
-	TagName1433,
-	TagName1434,
-	TagName1435,
-	TagName1436,
-	TagName1437,
-	TagName1438,
-	TagName1439,
-	TagName1440,
-	TagName1441,
-	TagName1442,
-	TagName1443,
-	TagName1444,
-	TagName1445,
-	TagName1446,
-	TagName1447,
-	TagName1448,
-	TagName1449,
-	TagName1450,
-	TagName1451,
-	TagName1452,
-	TagName1453,
-	TagName1454,
-	TagName1455,
-	TagName1456,
-	TagName1457,
-	TagName1458,
-	TagName1459,
-	TagName1460,
-	TagName1461,
-	TagName1462,
-	TagName1463,
-	TagName1464,
-	TagName1465,
-	TagName1466,
-	TagName1467,
-	TagName1468,
-	TagName1469,
-	TagName1470,
-	TagName1471,
-	TagName1472,
-	TagName1473,
-	TagName1474,
-	TagName1475,
-	TagName1476,
-	TagName1477,
-	TagName1478,
-	TagName1479,
-	TagName1480,
-	TagName1481,
-	TagName1482,
-	TagName1483,
-	TagName1484,
-	TagName1485,
-	TagName1486,
-	TagName1487,
-	TagName1488,
-	TagName1489,
-	TagName1490,
-	TagName1491,
-	TagName1492,
-	TagName1493,
-	TagName1494,
-	TagName1495,
-	TagName1496,
-	TagName1497,
-	TagName1498,
-	TagName1499,
-	TagName1500,
-	TagName1501,
-	TagName1502,
-	TagName1503,
-	TagName1504,
-	TagName1505,
-	TagName1506,
-	TagName1507,
-	TagName1508,
-	TagName1509,
-	TagName1510,
-	TagName1511,
-	TagName1512,
-	TagName1513,
-	TagName1514,
-	TagName1515,
-	TagName1516,
-	TagName1517,
-	TagName1518,
-	TagName1519,
-	TagName1520,
-	TagName1521,
-	TagName1522,
-	TagName1523,
-	TagName1524,
-	TagName1525,
-	TagName1526,
-	TagName1527,
-	TagName1528,
-	TagName1529,
-	TagName1530,
-	TagName1531,
-	TagName1532,
-	TagName1533,
-	TagName1534,
-	TagName1535,
-	TagName1536,
-	TagName1537,
-	TagName1538,
-	TagName1539,
-	TagName1540,
-	TagName1541,
-	TagName1542,
-	TagName1543,
-	TagName1544,
-	TagName1545,
-	TagName1546,
-	TagName1547,
-	TagName1548,
-	TagName1549,
-	TagName1550,
-	TagName1551,
-	TagName1552,
-	TagName1553,
-	TagName1554,
-	TagName1555,
-	TagName1556,
-	TagName1557,
-	TagName1558,
-	TagName1559,
-	TagName1560,
-	TagName1561,
-	TagName1562,
-	TagName1563,
-	TagName1564,
-	TagName1565,
-	TagName1566,
-	TagName1567,
-	TagName1568,
-	TagName1569,
-	TagName1570,
-	TagName1571,
-	TagName1572,
-	TagName1573,
-	TagName1574,
-	TagName1575,
-	TagName1576,
-	TagName1577,
-	TagName1578,
-	TagName1579,
-	TagName1580,
-	TagName1581,
-	TagName1582,
-	TagName1583,
-	TagName1584,
-	TagName1585,
-	TagName1586,
-	TagName1587,
-	TagName1588,
-	TagName1589,
-	TagName1590,
-	TagName1591,
-	TagName1592,
-	TagName1593,
-	TagName1594,
-	TagName1595,
-	TagName1596,
-	TagName1597,
-	TagName1598,
-	TagName1599,
-	TagName1600,
-	TagName1601,
-	TagName1602,
-	TagName1603,
-	TagName1604,
-	TagName1605,
-	TagName1606,
-	TagName1607,
-	TagName1608,
-	TagName1609,
-	TagName1610,
-	TagName1611,
-	TagName1612,
-	TagName1613,
-	TagName1614,
-	TagName1615,
-	TagName1616,
-	TagName1617,
-	TagName1618,
-	TagName1619,
-	TagName1620,
-	TagName1621,
-	TagName1622,
-	TagName1623,
-	TagName1624,
-	TagName1625,
-	TagName1626,
-	TagName1627,
-	TagName1628,
-	TagName1629,
-	TagName1630,
-	TagName1631,
-	TagName1632,
-	TagName1633,
-	TagName1634,
-	TagName1635,
-	TagName1636,
-	TagName1637,
-	TagName1638,
-	TagName1639,
-	TagName1640,
-	TagName1641,
-	TagName1642,
-	TagName1643,
-	TagName1644,
-	TagName1645,
-	TagName1646,
-	TagName1647,
-	TagName1648,
-	TagName1649,
-	TagName1650,
-	TagName1651,
-	TagName1652,
-	TagName1653,
-	TagName1654,
-	TagName1655,
-	TagName1656,
-	TagName1657,
-	TagName1658,
-	TagName1659,
-	TagName1660,
-	TagName1661,
-	TagName1662,
-	TagName1663,
-	TagName1664,
-	TagName1665,
-	TagName1666,
-	TagName1667,
-	TagName1668,
-	TagName1669,
-	TagName1670,
-	TagName1671,
-	TagName1672,
-	TagName1673,
-	TagName1674,
-	TagName1675,
-	TagName1676,
-	TagName1677,
-	TagName1678,
-	TagName1679,
-	TagName1680,
-	TagName1681,
-	TagName1682,
-	TagName1683,
-	TagName1684,
-	TagName1685,
-	TagName1686,
-	TagName1687,
-	TagName1688,
-	TagName1689,
-	TagName1690,
-	TagName1691,
-	TagName1692,
-	TagName1693,
-	TagName1694,
-	TagName1695,
-	TagName1696,
-	TagName1697,
-	TagName1698,
-	TagName1699,
-	TagName1700,
-	TagName1701,
-	TagName1702,
-	TagName1703,
-	TagName1704,
-	TagName1705,
-	TagName1706,
-	TagName1707,
-	TagName1708,
-	TagName1709,
-	TagName1710,
-	TagName1711,
-	TagName1712,
-	TagName1713,
-	TagName1714,
-	TagName1715,
-	TagName1716,
-	TagName1717,
-	TagName1718,
-	TagName1719,
-	TagName1720,
-	TagName1721,
-	TagName1722,
-	TagName1723,
-	TagName1724,
-	TagName1725,
-	TagName1726,
-	TagName1727,
-	TagName1728,
-	TagName1729,
-	TagName1730,
-	TagName1731,
-	TagName1732,
-	TagName1733,
-	TagName1734,
-	TagName1735,
-	TagName1736,
-	TagName1737,
-	TagName1738,
-	TagName1739,
-	TagName1740,
-	TagName1741,
-	TagName1742,
-	TagName1743,
-	TagName1744,
-	TagName1745,
-	TagName1746,
-	TagName1747,
-	TagName1748,
-	TagName1749,
-	TagName1750,
-	TagName1751,
-	TagName1752,
-	TagName1753,
-	TagName1754,
-	TagName1755,
-	TagName1756,
-	TagName1757,
-	TagName1758,
-	TagName1759,
-	TagName1760,
-	TagName1761,
-	TagName1762,
-	TagName1763,
-	TagName1764,
-	TagName1765,
-	TagName1766,
-	TagName1767,
-	TagName1768,
-	TagName1769,
-	TagName1770,
-	TagName1771,
-	TagName1772,
-	TagName1773,
-	TagName1774,
-	TagName1775,
-	TagName1776,
-	TagName1777,
-	TagName1778,
-	TagName1779,
-	TagName1780,
-	TagName1781,
-	TagName1782,
-	TagName1783,
-	TagName1784,
-	TagName1785,
-	TagName1786,
-	TagName1787,
-	TagName1788,
-	TagName1789,
-	TagName1790,
-	TagName1791,
-	TagName1792,
-	TagName1793,
-	TagName1794,
-	TagName1795,
-	TagName1796,
-	TagName1797,
-	TagName1798,
-	TagName1799,
-	TagName1800,
-	TagName1801,
-	TagName1802,
-	TagName1803,
-	TagName1804,
-	TagName1805,
-	TagName1806,
-	TagName1807,
-	TagName1808,
-	TagName1809,
-	TagName1810,
-	TagName1811,
-	TagName1812,
-	TagName1813,
-	TagName1814,
-	TagName1815,
-	TagName1816,
-	TagName1817,
-	TagName1818,
-	TagName1819,
-	TagName1820,
-	TagName1821,
-	TagName1822,
-	TagName1823,
-	TagName1824,
-	TagName1825,
-	TagName1826,
-	TagName1827,
-	TagName1828,
-	TagName1829,
-	TagName1830,
-	TagName1831,
-	TagName1832,
-	TagName1833,
-	TagName1834,
-	TagName1835,
-	TagName1836,
-	TagName1837,
-	TagName1838,
-	TagName1839,
-	TagName1840,
-	TagName1841,
-	TagName1842,
-	TagName1843,
-	TagName1844,
-	TagName1845,
-	TagName1846,
-	TagName1847,
-	TagName1848,
-	TagName1849,
-	TagName1850,
-	TagName1851,
-	TagName1852,
-	TagName1853,
-	TagName1854,
-	TagName1855,
-	TagName1856,
-	TagName1857,
-	TagName1858,
-	TagName1859,
-	TagName1860,
-	TagName1861,
-	TagName1862,
-	TagName1863,
-	TagName1864,
-	TagName1865,
-	TagName1866,
-	TagName1867,
-	TagName1868,
-	TagName1869,
-	TagName1870,
-	TagName1871,
-	TagName1872,
-	TagName1873,
-	TagName1874,
-	TagName1875,
-	TagName1876,
-	TagName1877,
-	TagName1878,
-	TagName1879,
-	TagName1880,
-	TagName1881,
-	TagName1882,
-	TagName1883,
-	TagName1884,
-	TagName1885,
-	TagName1886,
-	TagName1887,
-	TagName1888,
-	TagName1889,
-	TagName1890,
-	TagName1891,
-	TagName1892,
-	TagName1893,
-	TagName1894,
-	TagName1895,
-	TagName1896,
-	TagName1897,
-	TagName1898,
-	TagName1899,
-	TagName1900,
-	TagName1901,
-	TagName1902,
-	TagName1903,
-	TagName1904,
-	TagName1905,
-	TagName1906,
-	TagName1907,
-	TagName1908,
-	TagName1909,
-	TagName1910,
-	TagName1911,
-	TagName1912,
-	TagName1913,
-	TagName1914,
-	TagName1915,
-	TagName1916,
-	TagName1917,
-	TagName1918,
-	TagName1919,
-	TagName1920,
-	TagName1921,
-	TagName1922,
-	TagName1923,
-	TagName1924,
-	TagName1925,
-	TagName1926,
-	TagName1927,
-	TagName1928,
-	TagName1929,
-	TagName1930,
-	TagName1931,
-	TagName1932,
-	TagName1933,
-	TagName1934,
-	TagName1935,
-	TagName1936,
-	TagName1937,
-	TagName1938,
-	TagName1939,
-	TagName1940,
-	TagName1941,
-	TagName1942,
-	TagName1943,
-	TagName1944,
-	TagName1945,
-	TagName1946,
-	TagName1947,
-	TagName1948,
-	TagName1949,
-	TagName1950,
-	TagName1951,
-	TagName1952,
-	TagName1953,
-	TagName1954,
-	TagName1955,
-	TagName1956,
-	TagName1957,
-	TagName1958,
-	TagName1959,
-	TagName1960,
-	TagName1961,
-	TagName1962,
-	TagName1963,
-	TagName1964,
-	TagName1965,
-	TagName1966,
-	TagName1967,
-	TagName1968,
-	TagName1969,
-	TagName1970,
-	TagName1971,
-	TagName1972,
-	TagName1973,
-	TagName1974,
-	TagName1975,
-	TagName1976,
-	TagName1977,
-	TagName1978,
-	TagName1979,
-	TagName1980,
-	TagName1981,
-	TagName1982,
-	TagName1983,
-	TagName1984,
-	TagName1985,
-	TagName1986,
-	TagName1987,
-	TagName1988,
-	TagName1989,
-	TagName1990,
-	TagName1991,
-	TagName1992,
-	TagName1993,
-	TagName1994,
-	TagName1995,
-	TagName1996,
-	TagName1997,
-	TagName1998,
-	TagName1999,
-	TagName2000,
-	TagName2001,
-	TagName2002,
-	TagName2003,
-	TagName2004,
-	TagName2005,
-	TagName2006,
-	TagName2007,
-	TagName2008,
-	TagName2009,
-	TagName2010,
-	TagName2011,
-	TagName2012,
-	TagName2013,
-	TagName2014,
-	TagName2015,
-	TagName2016,
-	TagName2017,
-	TagName2018,
-	TagName2019,
-	TagName2020,
-	TagName2021,
-	TagName2022,
-	TagName2023,
-	TagName2024,
-	TagName2025,
-	TagName2026,
-	TagName2027,
-	TagName2028,
-	TagName2029,
-	TagName2030,
-	TagName2031,
-	TagName2032,
-	TagName2033,
-	TagName2034,
-	TagName2035,
-	TagName2036,
-	TagName2037,
-	TagName2038,
-	TagName2039,
-	TagName2040,
-	TagName2041,
-	TagName2042,
-	TagName2043,
-	TagName2044,
-	TagName2045,
-	TagName2046,
-	TagName2047,
-	TagName2048,
-	TagName2049,
-	TagName2050,
-	TagName2051,
-	TagName2052,
-	TagName2053,
-	TagName2054,
-	TagName2055,
-	TagName2056,
-	TagName2057,
-	TagName2058,
-	TagName2059,
-	TagName2060,
-	TagName2061,
-	TagName2062,
-	TagName2063,
-	TagName2064,
-	TagName2065,
-	TagName2066,
-	TagName2067,
-	TagName2068,
-	TagName2069,
-	TagName2070,
-	TagName2071,
-	TagName2072,
-	TagName2073,
-	TagName2074,
-	TagName2075,
-	TagName2076,
-	TagName2077,
-	TagName2078,
-	TagName2079,
-	TagName2080,
-	TagName2081,
-	TagName2082,
-	TagName2083,
-	TagName2084,
-	TagName2085,
-	TagName2086,
-	TagName2087,
-	TagName2088,
-	TagName2089,
-	TagName2090,
-	TagName2091,
-	TagName2092,
-	TagName2093,
-	TagName2094,
-	TagName2095,
-	TagName2096,
-	TagName2097,
-	TagName2098,
-	TagName2099,
-	TagName2100,
-	TagName2101,
-	TagName2102,
-	TagName2103,
-	TagName2104,
-	TagName2105,
-	TagName2106,
-	TagName2107,
-	TagName2108,
-	TagName2109,
-	TagName2110,
-	TagName2111,
-	TagName2112,
-	TagName2113,
-	TagName2114,
-	TagName2115,
-	TagName2116,
-	TagName2117,
-	TagName2118,
-	TagName2119,
-	TagName2120,
-	TagName2121,
-	TagName2122,
-	TagName2123,
-	TagName2124,
-	TagName2125,
-	TagName2126,
-	TagName2127,
-	TagName2128,
-	TagName2129,
-	TagName2130,
-	TagName2131,
-	TagName2132,
-	TagName2133,
-	TagName2134,
-	TagName2135,
-	TagName2136,
-	TagName2137,
-	TagName2138,
-	TagName2139,
-	TagName2140,
-	TagName2141,
-	TagName2142,
-	TagName2143,
-	TagName2144,
-	TagName2145,
-	TagName2146,
-	TagName2147,
-	TagName2148,
-	TagName2149,
-	TagName2150,
-	TagName2151,
-	TagName2152,
-	TagName2153,
-	TagName2154,
-	TagName2155,
-	TagName2156,
-	TagName2157,
-	TagName2158,
-	TagName2159,
-	TagName2160,
-	TagName2161,
-	TagName2162,
-	TagName2163,
-	TagName2164,
-	TagName2165,
-	TagName2166,
-	TagName2167,
-	TagName2168,
-	TagName2169,
-	TagName2170,
-	TagName2171,
-	TagName2172,
-	TagName2173,
-	TagName2174,
-	TagName2175,
-	TagName2176,
-	TagName2177,
-	TagName2178,
-	TagName2179,
-	TagName2180,
-	TagName2181,
-	TagName2182,
-	TagName2183,
-	TagName2184,
-	TagName2185,
-	TagName2186,
-	TagName2187,
-	TagName2188,
-	TagName2189,
-	TagName2190,
-	TagName2191,
-	TagName2192,
-	TagName2193,
-	TagName2194,
-	TagName2195,
-	TagName2196,
-	TagName2197,
-	TagName2198,
-	TagName2199,
-	TagName2200,
-	TagName2201,
-	TagName2202,
-	TagName2203,
-	TagName2204,
-	TagName2205,
-	TagName2206,
-	TagName2207,
-	TagName2208,
-	TagName2209,
-	TagName2210,
-	TagName2211,
-	TagName2212,
-	TagName2213,
-	TagName2214,
-	TagName2215,
-	TagName2216,
-	TagName2217,
-	TagName2218,
-	TagName2219,
-	TagName2220,
-	TagName2221,
-	TagName2222,
-	TagName2223,
-	TagName2224,
-	TagName2225,
-	TagName2226,
-	TagName2227,
-	TagName2228,
-	TagName2229,
-	TagName2230,
-	TagName2231,
-	TagName2232,
-	TagName2233,
-	TagName2234,
-	TagName2235,
-	TagName2236,
-	TagName2237,
-	TagName2238,
-	TagName2239,
-	TagName2240,
-	TagName2241,
-	TagName2242,
-	TagName2243,
-	TagName2244,
-	TagName2245,
-	TagName2246,
-	TagName2247,
-	TagName2248,
-	TagName2249,
-	TagName2250,
-	TagName2251,
-	TagName2252,
-	TagName2253,
-	TagName2254,
-	TagName2255,
-	TagName2256,
-	TagName2257,
-	TagName2258,
-	TagName2259,
-	TagName2260,
-	TagName2261,
-	TagName2262,
-	TagName2263,
-	TagName2264,
-	TagName2265,
-	TagName2266,
-	TagName2267,
-	TagName2268,
-	TagName2269,
-	TagName2270,
-	TagName2271,
-	TagName2272,
-	TagName2273,
-	TagName2274,
-	TagName2275,
-	TagName2276,
-	TagName2277,
-	TagName2278,
-	TagName2279,
-	TagName2280,
-	TagName2281,
-	TagName2282,
-	TagName2283,
-	TagName2284,
-	TagName2285,
-	TagName2286,
-	TagName2287,
-	TagName2288,
-	TagName2289,
-	TagName2290,
-	TagName2291,
-	TagName2292,
-	TagName2293,
-	TagName2294,
-	TagName2295,
-	TagName2296,
-	TagName2297,
-	TagName2298,
-	TagName2299,
-	TagName2300,
-	TagName2301,
-	TagName2302,
-	TagName2303,
-	TagName2304,
-	TagName2305,
-	TagName2306,
-	TagName2307,
-	TagName2308,
-	TagName2309,
-	TagName2310,
-	TagName2311,
-	TagName2312,
-	TagName2313,
-	TagName2314,
-	TagName2315,
-	TagName2316,
-	TagName2317,
-	TagName2318,
-	TagName2319,
-	TagName2320,
-	TagName2321,
-	TagName2322,
-	TagName2323,
-	TagName2324,
-	TagName2325,
-	TagName2326,
-	TagName2327,
-	TagName2328,
-	TagName2329,
-	TagName2330,
-	TagName2331,
-	TagName2332,
-	TagName2333,
-	TagName2334,
-	TagName2335,
-	TagName2336,
-	TagName2337,
-	TagName2338,
-	TagName2339,
-	TagName2340,
-	TagName2341,
-	TagName2342,
-	TagName2343,
-	TagName2344,
-	TagName2345,
-	TagName2346,
-	TagName2347,
-	TagName2348,
-	TagName2349,
-	TagName2350,
-	TagName2351,
-	TagName2352,
-	TagName2353,
-	TagName2354,
-	TagName2355,
-	TagName2356,
-	TagName2357,
-	TagName2358,
-	TagName2359,
-	TagName2360,
-	TagName2361,
-	TagName2362,
-	TagName2363,
-	TagName2364,
-	TagName2365,
-	TagName2366,
-	TagName2367,
-	TagName2368,
-	TagName2369,
-	TagName2370,
-	TagName2371,
-	TagName2372,
-	TagName2373,
-	TagName2374,
-	TagName2375,
-	TagName2376,
-	TagName2377,
-	TagName2378,
-	TagName2379,
-	TagName2380,
-	TagName2381,
-	TagName2382,
-	TagName2383,
-	TagName2384,
-	TagName2385,
-	TagName2386,
-	TagName2387,
-	TagName2388,
-	TagName2389,
-	TagName2390,
-	TagName2391,
-	TagName2392,
-	TagName2393,
-	TagName2394,
-	TagName2395,
-	TagName2396,
-	TagName2397,
-	TagName2398,
-	TagName2399,
-	TagName2400,
-	TagName2401,
-	TagName2402,
-	TagName2403,
-	TagName2404,
-	TagName2405,
-	TagName2406,
-	TagName2407,
-	TagName2408,
-	TagName2409,
-	TagName2410,
-	TagName2411,
-	TagName2412,
-	TagName2413,
-	TagName2414,
-	TagName2415,
-	TagName2416,
-	TagName2417,
-	TagName2418,
-	TagName2419,
-	TagName2420,
-	TagName2421,
-	TagName2422,
-	TagName2423,
-	TagName2424,
-	TagName2425,
-	TagName2426,
-	TagName2427,
-	TagName2428,
-	TagName2429,
-	TagName2430,
-	TagName2431,
-	TagName2432,
-	TagName2433,
-	TagName2434,
-	TagName2435,
-	TagName2436,
-	TagName2437,
-	TagName2438,
-	TagName2439,
-	TagName2440,
-	TagName2441,
-	TagName2442,
-	TagName2443,
-	TagName2444,
-	TagName2445,
-	TagName2446,
-	TagName2447,
-	TagName2448,
-	TagName2449,
-	TagName2450,
-	TagName2451,
-	TagName2452,
-	TagName2453,
-	TagName2454,
-	TagName2455,
-	TagName2456,
-	TagName2457,
-	TagName2458,
-	TagName2459,
-	TagName2460,
-	TagName2461,
-	TagName2462,
-	TagName2463,
-	TagName2464,
-	TagName2465,
-	TagName2466,
-	TagName2467,
-	TagName2468,
-	TagName2469,
-	TagName2470,
-	TagName2471,
-	TagName2472,
-	TagName2473,
-	TagName2474,
-	TagName2475,
-	TagName2476,
-	TagName2477,
-	TagName2478,
-	TagName2479,
-	TagName2480,
-	TagName2481,
-	TagName2482,
-	TagName2483,
-	TagName2484,
-	TagName2485,
-	TagName2486,
-	TagName2487,
-	TagName2488,
-	TagName2489,
-	TagName2490,
-	TagName2491,
-	TagName2492,
-	TagName2493,
-	TagName2494,
-	TagName2495,
-	TagName2496,
-	TagName2497,
-	TagName2498,
-	TagName2499,
-	TagName2500,
-	TagName2501,
-	TagName2502,
-	TagName2503,
-	TagName2504,
-	TagName2505,
-	TagName2506,
-	TagName2507,
-	TagName2508,
-	TagName2509,
-	TagName2510,
-	TagName2511,
-	TagName2512,
-	TagName2513,
-	TagName2514,
-	TagName2515,
-	TagName2516,
-	TagName2517,
-	TagName2518,
-	TagName2519,
-	TagName2520,
-	TagName2521,
-	TagName2522,
-	TagName2523,
-	TagName2524,
-	TagName2525,
-	TagName2526,
-	TagName2527,
-	TagName2528,
-	TagName2529,
-	TagName2530,
-	TagName2531,
-	TagName2532,
-	TagName2533,
-	TagName2534,
-	TagName2535,
-	TagName2536,
-	TagName2537,
-	TagName2538,
-	TagName2539,
-	TagName2540,
-	TagName2541,
-	TagName2542,
-	TagName2543,
-	TagName2544,
-	TagName2545,
-	TagName2546,
-	TagName2547,
-	TagName2548,
-	TagName2549,
-	TagName2550,
-	TagName2551,
-	TagName2552,
-	TagName2553,
-	TagName2554,
-	TagName2555,
-	TagName2556,
-	TagName2557,
-	TagName2558,
-	TagName2559,
-	TagName2560,
-	TagName2561,
-	TagName2562,
-	TagName2563,
-	TagName2564,
-	TagName2565,
-	TagName2566,
-	TagName2567,
-	TagName2568,
-	TagName2569,
-	TagName2570,
-	TagName2571,
-	TagName2572,
-	TagName2573,
-	TagName2574,
-	TagName2575,
-	TagName2576,
-	TagName2577,
-	TagName2578,
-	TagName2579,
-	TagName2580,
-	TagName2581,
-	TagName2582,
-	TagName2583,
-	TagName2584,
-	TagName2585,
-	TagName2586,
-	TagName2587,
-	TagName2588,
-	TagName2589,
-	TagName2590,
-	TagName2591,
-	TagName2592,
-	TagName2593,
-	TagName2594,
-	TagName2595,
-	TagName2596,
-	TagName2597,
-	TagName2598,
-	TagName2599,
-	TagName2600,
-	TagName2601,
-	TagName2602,
-	TagName2603,
-	TagName2604,
-	TagName2605,
-	TagName2606,
-	TagName2607,
-	TagName2608,
-	TagName2609,
-	TagName2610,
-	TagName2611,
-	TagName2612,
-	TagName2613,
-	TagName2614,
-	TagName2615,
-	TagName2616,
-	TagName2617,
-	TagName2618,
-	TagName2619,
-	TagName2620,
-	TagName2621,
-	TagName2622,
-	TagName2623,
-	TagName2624,
-	TagName2625,
-	TagName2626,
-	TagName2627,
-	TagName2628,
-	TagName2629,
-	TagName2630,
-	TagName2631,
-	TagName2632,
-	TagName2633,
-	TagName2634,
-	TagName2635,
-	TagName2636,
-	TagName2637,
-	TagName2638,
-	TagName2639,
-	TagName2640,
-	TagName2641,
-	TagName2642,
-	TagName2643,
-	TagName2644,
-	TagName2645,
-	TagName2646,
-	TagName2647,
-	TagName2648,
-	TagName2649,
-	TagName2650,
-	TagName2651,
-	TagName2652,
-	TagName2653,
-	TagName2654,
-	TagName2655,
-	TagName2656,
-	TagName2657,
-	TagName2658,
-	TagName2659,
-	TagName2660,
-	TagName2661,
-	TagName2662,
-	TagName2663,
-	TagName2664,
-	TagName2665,
-	TagName2666,
-	TagName2667,
-	TagName2668,
-	TagName2669,
-	TagName2670,
-	TagName2671,
-	TagName2672,
-	TagName2673,
-	TagName2674,
-	TagName2675,
-	TagName2676,
-	TagName2677,
-	TagName2678,
-	TagName2679,
-	TagName2680,
-	TagName2681,
-	TagName2682,
-	TagName2683,
-	TagName2684,
-	TagName2685,
-	TagName2686,
-	TagName2687,
-	TagName2688,
-	TagName2689,
-	TagName2690,
-	TagName2691,
-	TagName2692,
-	TagName2693,
-	TagName2694,
-	TagName2695,
-	TagName2696,
-	TagName2697,
-	TagName2698,
-	TagName2699,
-	TagName2700,
-	TagName2701,
-	TagName2702,
-	TagName2703,
-	TagName2704,
-	TagName2705,
-	TagName2706,
-	TagName2707,
-	TagName2708,
-	TagName2709,
-	TagName2710,
-	TagName2711,
-	TagName2712,
-	TagName2713,
-	TagName2714,
-	TagName2715,
-	TagName2716,
-	TagName2717,
-	TagName2718,
-	TagName2719,
-	TagName2720,
-	TagName2721,
-	TagName2722,
-	TagName2723,
-	TagName2724,
-	TagName2725,
-	TagName2726,
-	TagName2727,
-	TagName2728,
-	TagName2729,
-	TagName2730,
-	TagName2731,
-	TagName2732,
-	TagName2733,
-	TagName2734,
-	TagName2735,
-	TagName2736,
-	TagName2737,
-	TagName2738,
-	TagName2739,
-	TagName2740,
-	TagName2741,
-	TagName2742,
-	TagName2743,
-	TagName2744,
-	TagName2745,
-	TagName2746,
-	TagName2747,
-	TagName2748,
-	TagName2749,
-	TagName2750,
-	TagName2751,
-	TagName2752,
-	TagName2753,
-	TagName2754,
-	TagName2755,
-	TagName2756,
-	TagName2757,
-	TagName2758,
-	TagName2759,
-	TagName2760,
-	TagName2761,
-	TagName2762,
-	TagName2763,
-	TagName2764,
-	TagName2765,
-	TagName2766,
-	TagName2767,
-	TagName2768,
-	TagName2769,
-	TagName2770,
-	TagName2771,
-	TagName2772,
-	TagName2773,
-	TagName2774,
-	TagName2775,
-	TagName2776,
-	TagName2777,
-	TagName2778,
-	TagName2779,
-	TagName2780,
-	TagName2781,
-	TagName2782,
-	TagName2783,
-	TagName2784,
-	TagName2785,
-	TagName2786,
-	TagName2787,
-	TagName2788,
-	TagName2789,
-	TagName2790,
-	TagName2791,
-	TagName2792,
-	TagName2793,
-	TagName2794,
-	TagName2795,
-	TagName2796,
-	TagName2797,
-	TagName2798,
-	TagName2799,
-	TagName2800,
-	TagName2801,
-	TagName2802,
-	TagName2803,
-	TagName2804,
-	TagName2805,
-	TagName2806,
-	TagName2807,
-	TagName2808,
-	TagName2809,
-	TagName2810,
-	TagName2811,
-	TagName2812,
-	TagName2813,
-	TagName2814,
-	TagName2815,
-	TagName2816,
-	TagName2817,
-	TagName2818,
-	TagName2819,
-	TagName2820,
-	TagName2821,
-	TagName2822,
-	TagName2823,
-	TagName2824,
-	TagName2825,
-	TagName2826,
-	TagName2827,
-	TagName2828,
-	TagName2829,
-	TagName2830,
-	TagName2831,
-	TagName2832,
-	TagName2833,
-	TagName2834,
-	TagName2835,
-	TagName2836,
-	TagName2837,
-	TagName2838,
-	TagName2839,
-	TagName2840,
-	TagName2841,
-	TagName2842,
-	TagName2843,
-	TagName2844,
-	TagName2845,
-	TagName2846,
-	TagName2847,
-	TagName2848,
-	TagName2849,
-	TagName2850,
-	TagName2851,
-	TagName2852,
-	TagName2853,
-	TagName2854,
-	TagName2855,
-	TagName2856,
-	TagName2857,
-	TagName2858,
-	TagName2859,
-	TagName2860,
-	TagName2861,
-	TagName2862,
-	TagName2863,
-	TagName2864,
-	TagName2865,
-	TagName2866,
-	TagName2867,
-	TagName2868,
-	TagName2869,
-	TagName2870,
-	TagName2871,
-	TagName2872,
-	TagName2873,
-	TagName2874,
-	TagName2875,
-	TagName2876,
-	TagName2877,
-	TagName2878,
-	TagName2879,
-	TagName2880,
-	TagName2881,
-	TagName2882,
-	TagName2883,
-	TagName2884,
-	TagName2885,
-	TagName2886,
-	TagName2887,
-	TagName2888,
-	TagName2889,
-	TagName2890,
-	TagName2891,
-	TagName2892,
-	TagName2893,
-	TagName2894,
-	TagName2895,
-	TagName2896,
-	TagName2897,
-	TagName2898,
-	TagName2899,
-	TagName2900,
-	TagName2901,
-	TagName2902,
-	TagName2903,
-	TagName2904,
-	TagName2905,
-	TagName2906,
-	TagName2907,
-	TagName2908,
-	TagName2909,
-	TagName2910,
-	TagName2911,
-	TagName2912,
-	TagName2913,
-	TagName2914,
-	TagName2915,
-	TagName2916,
-	TagName2917,
-	TagName2918,
-	TagName2919,
-	TagName2920,
-	TagName2921,
-	TagName2922,
-	TagName2923,
-	TagName2924,
-	TagName2925,
-	TagName2926,
-	TagName2927,
-	TagName2928,
-	TagName2929,
-	TagName2930,
-	TagName2931,
-	TagName2932,
-	TagName2933,
-	TagName2934,
-	TagName2935,
-	TagName2936,
-	TagName2937,
-	TagName2938,
-	TagName2939,
-	TagName2940,
-	TagName2941,
-	TagName2942,
-	TagName2943,
-	TagName2944,
-	TagName2945,
-	TagName2946,
-	TagName2947,
-	TagName2948,
-	TagName2949,
-	TagName2950,
-	TagName2951,
-	TagName2952,
-	TagName2953,
-	TagName2954,
-	TagName2955,
-	TagName2956,
-	TagName2957,
-	TagName2958,
-	TagName2959,
-	TagName2960,
-	TagName2961,
-	TagName2962,
-	TagName2963,
-	TagName2964,
-	TagName2965,
-	TagName2966,
-	TagName2967,
-	TagName2968,
-	TagName2969,
-	TagName2970,
-	TagName2971,
-	TagName2972,
-	TagName2973,
-	TagName2974,
-	TagName2975,
-	TagName2976,
-	TagName2977,
-	TagName2978,
-	TagName2979,
-	TagName2980,
-	TagName2981,
-	TagName2982,
-	TagName2983,
-	TagName2984,
-	TagName2985,
-	TagName2986,
-	TagName2987,
-	TagName2988,
-	TagName2989,
-	TagName2990,
-	TagName2991,
-	TagName2992,
-	TagName2993,
-	TagName2994,
-	TagName2995,
-	TagName2996,
-	TagName2997,
-	TagName2998,
-	TagName2999,
-	TagName3000,
-	TagName3001,
+	Rg,
+	RH,
+	Rh,
+	RI,
+	Ri,
+	RJ,
+	Rj,
+	RK,
+	Rk,
+	RL,
+	Rl,
+	RM,
+	Rm,
+	RN,
+	Rn,
+	RO,
+	Ro,
+	RP,
+	Rp,
+	RQ,
+	Rq,
+	RR,
+	Rr,
+	RS,
+	Rs,
+	RT,
+	Rt,
+	RU,
+	Ru,
+	RV,
+	Rv,
+	RW,
+	Rw,
+	RX,
+	Rx,
+	RY,
+	Ry,
+	RZ,
+	Rz,
+	rA,
+	ra,
+	rB,
+	rb,
+	rC,
+	rc,
+	rD,
+	rd,
+	rE,
+	re,
+	rF,
+	rf,
+	rG,
+	rg,
+	rH,
+	rh,
+	rI,
+	ri,
+	rJ,
+	rj,
+	rK,
+	rk,
+	rL,
+	rl,
+	rM,
+	rm,
+	rN,
+	rn,
+	rO,
+	ro,
+	rP,
+	rp,
+	rQ,
+	rq,
+	rR,
+	rr,
+	rS,
+	rs,
+	rT,
+	rt,
+	rU,
+	ru,
+	rV,
+	rv,
+	rW,
+	rw,
+	rX,
+	rx,
+	rY,
+	ry,
+	rZ,
+	rz,
+	SA,
+	Sa,
+	SB,
+	Sb,
+	SC,
+	Sc,
+	SD,
+	Sd,
+	SE,
+	Se,
+	SF,
+	Sf,
+	SG,
+	Sg,
+	SH,
+	Sh,
+	SI,
+	Si,
+	SJ,
+	Sj,
+	SK,
+	Sk,
+	SL,
+	Sl,
+	SM,
+	Sm,
+	SN,
+	Sn,
+	SO,
+	So,
+	SP,
+	Sp,
+	SQ,
+	Sq,
+	SR,
+	Sr,
+	SS,
+	Ss,
+	ST,
+	St,
+	SU,
+	Su,
+	SV,
+	Sv,
+	SW,
+	Sw,
+	SX,
+	Sx,
+	SY,
+	Sy,
+	SZ,
+	Sz,
+	sA,
+	sa,
+	sB,
+	sb,
+	sC,
+	sc,
+	sD,
+	sd,
+	sE,
+	se,
+	sF,
+	sf,
+	sG,
+	sg,
+	sH,
+	sh,
+	sI,
+	si,
+	sJ,
+	sj,
+	sK,
+	sk,
+	sL,
+	sl,
+	sM,
+	sm,
+	sN,
+	sn,
+	sO,
+	so,
+	sP,
+	sp,
+	sQ,
+	sq,
+	sR,
+	sr,
+	sS,
+	ss,
+	sT,
+	st,
+	sU,
+	su,
+	sV,
+	sv,
+	sW,
+	sw,
+	sX,
+	sx,
+	sY,
+	sy,
+	sZ,
+	sz,
+	TA,
+	Ta,
+	TB,
+	Tb,
+	TC,
+	Tc,
+	TD,
+	Td,
+	TE,
+	Te,
+	TF,
+	Tf,
+	TG,
+	Tg,
+	TH,
+	Th,
+	TI,
+	Ti,
+	TJ,
+	Tj,
+	TK,
+	Tk,
+	TL,
+	Tl,
+	TM,
+	Tm,
+	TN,
+	Tn,
+	TO,
+	To,
+	TP,
+	Tp,
+	TQ,
+	Tq,
+	TR,
+	Tr,
+	TS,
+	Ts,
+	TT,
+	Tt,
+	TU,
+	Tu,
+	TV,
+	Tv,
+	TW,
+	Tw,
+	TX,
+	Tx,
+	TY,
+	Ty,
+	TZ,
+	Tz,
+	tA,
+	ta,
+	tB,
+	tb,
+	tC,
+	tc,
+	tD,
+	td,
+	tE,
+	te,
+	tF,
+	tf,
+	tG,
+	tg,
+	tH,
+	th,
+	tI,
+	ti,
+	tJ,
+	tj,
+	tK,
+	tk,
+	tL,
+	tl,
+	tM,
+	tm,
+	tN,
+	tn,
+	tO,
+	to,
+	tP,
+	tp,
+	tQ,
+	tq,
+	tR,
+	tr,
+	tS,
+	ts,
+	tT,
+	tt,
+	tU,
+	tu,
+	tV,
+	tv,
+	tW,
+	tw,
+	tX,
+	tx,
+	tY,
+	ty,
+	tZ,
+	tz,
+	UA,
+	Ua,
+	UB,
+	Ub,
+	UC,
+	Uc,
+	UD,
+	Ud,
+	UE,
+	Ue,
+	UF,
+	Uf,
+	UG,
+	Ug,
+	UH,
+	Uh,
+	UI,
+	Ui,
+	UJ,
+	Uj,
+	UK,
+	Uk,
+	UL,
+	Ul,
+	UM,
+	Um,
+	UN,
+	Un,
+	UO,
+	Uo,
+	UP,
+	Up,
+	UQ,
+	Uq,
+	UR,
+	Ur,
+	US,
+	Us,
+	UT,
+	Ut,
+	UU,
+	Uu,
+	UV,
+	Uv,
+	UW,
+	Uw,
+	UX,
+	Ux,
+	UY,
+	Uy,
+	UZ,
+	Uz,
+	uA,
+	ua,
+	uB,
+	ub,
+	uC,
+	uc,
+	uD,
+	ud,
+	uE,
+	ue,
+	uF,
+	uf,
+	uG,
+	ug,
+	uH,
+	uh,
+	uI,
+	ui,
+	uJ,
+	uj,
+	uK,
+	uk,
+	uL,
+	ul,
+	uM,
+	um,
+	uN,
+	un,
+	uO,
+	uo,
+	uP,
+	up,
+	uQ,
+	uq,
+	uR,
+	ur,
+	uS,
+	us,
+	uT,
+	ut,
+	uU,
+	uu,
+	uV,
+	uv,
+	uW,
+	uw,
+	uX,
+	ux,
+	uY,
+	uy,
+	uZ,
+	uz,
+	VA,
+	Va,
+	VB,
+	Vb,
+	VC,
+	Vc,
+	VD,
+	Vd,
+	VE,
+	Ve,
+	VF,
+	Vf,
+	VG,
+	Vg,
+	VH,
+	Vh,
+	VI,
+	Vi,
+	VJ,
+	Vj,
+	VK,
+	Vk,
+	VL,
+	Vl,
+	VM,
+	Vm,
+	VN,
+	Vn,
+	VO,
+	Vo,
+	VP,
+	Vp,
+	VQ,
+	Vq,
+	VR,
+	Vr,
+	VS,
+	Vs,
+	VT,
+	Vt,
+	VU,
+	Vu,
+	VV,
+	Vv,
+	VW,
+	Vw,
+	VX,
+	Vx,
+	VY,
+	Vy,
+	VZ,
+	Vz,
+	vA,
+	va,
+	vB,
+	vb,
+	vC,
+	vc,
+	vD,
+	vd,
+	vE,
+	ve,
+	vF,
+	vf,
+	vG,
+	vg,
+	vH,
+	vh,
+	vI,
+	vi,
+	vJ,
+	vj,
+	vK,
+	vk,
+	vL,
+	vl,
+	vM,
+	vm,
+	vN,
+	vn,
+	vO,
+	vo,
+	vP,
+	vp,
+	vQ,
+	vq,
+	vR,
+	vr,
+	vS,
+	vs,
+	vT,
+	vt,
+	vU,
+	vu,
+	vV,
+	vv,
+	vW,
+	vw,
+	vX,
+	vx,
+	vY,
+	vy,
+	vZ,
+	vz,
+	WA,
+	Wa,
+	WB,
+	Wb,
+	WC,
+	Wc,
+	WD,
+	Wd,
+	WE,
+	We,
+	WF,
+	Wf,
+	WG,
+	Wg,
+	WH,
+	Wh,
+	WI,
+	Wi,
+	WJ,
+	Wj,
+	WK,
+	Wk,
+	WL,
+	Wl,
+	WM,
+	Wm,
+	WN,
+	Wn,
+	WO,
+	Wo,
+	WP,
+	Wp,
+	WQ,
+	Wq,
+	WR,
+	Wr,
+	WS,
+	Ws,
+	WT,
+	Wt,
+	WU,
+	Wu,
+	WV,
+	Wv,
+	WW,
+	Ww,
+	WX,
+	Wx,
+	WY,
+	Wy,
+	WZ,
+	Wz,
+	wA,
+	wa,
+	wB,
+	wb,
+	wC,
+	wc,
+	wD,
+	wd,
+	wE,
+	we,
+	wF,
+	wf,
+	wG,
+	wg,
+	wH,
+	wh,
+	wI,
+	wi,
+	wJ,
+	wj,
+	wK,
+	wk,
+	wL,
+	wl,
+	wM,
+	wm,
+	wN,
+	wn,
+	wO,
+	wo,
+	wP,
+	wp,
+	wQ,
+	wq,
+	wR,
+	wr,
+	wS,
+	ws,
+	wT,
+	wt,
+	wU,
+	wu,
+	wV,
+	wv,
+	wW,
+	ww,
+	wX,
+	wx,
+	wY,
+	wy,
+	wZ,
+	wz,
+	XA,
+	Xa,
+	XB,
+	Xb,
+	XC,
+	Xc,
+	XD,
+	Xd,
+	XE,
+	Xe,
+	XF,
+	Xf,
+	XG,
+	Xg,
+	XH,
+	Xh,
+	XI,
+	Xi,
+	XJ,
+	Xj,
+	XK,
+	Xk,
+	XL,
+	Xl,
+	XM,
+	Xm,
+	XN,
+	Xn,
+	XO,
+	Xo,
+	XP,
+	Xp,
+	XQ,
+	Xq,
+	XR,
+	Xr,
+	XS,
+	Xs,
+	XT,
+	Xt,
+	XU,
+	Xu,
+	XV,
+	Xv,
+	XW,
+	Xw,
+	XX,
+	Xx,
+	XY,
+	Xy,
+	XZ,
+	Xz,
+	xA,
+	xa,
+	xB,
+	xb,
+	xC,
+	xc,
+	xD,
+	xd,
+	xE,
+	xe,
+	xF,
+	xf,
+	xG,
+	xg,
+	xH,
+	xh,
+	xI,
+	xi,
+	xJ,
+	xj,
+	xK,
+	xk,
+	xL,
+	xl,
+	xM,
+	xm,
+	xN,
+	xn,
+	xO,
+	xo,
+	xP,
+	xp,
+	xQ,
+	xq,
+	xR,
+	xr,
+	xS,
+	xs,
+	xT,
+	xt,
+	xU,
+	xu,
+	xV,
+	xv,
+	xW,
+	xw,
+	xX,
+	xx,
+	xY,
+	xy,
+	xZ,
+	xz,
+	YA,
+	Ya,
+	YB,
+	Yb,
+	YC,
+	Yc,
+	YD,
+	Yd,
+	YE,
+	Ye,
+	YF,
+	Yf,
+	YG,
+	Yg,
+	YH,
+	Yh,
+	YI,
+	Yi,
+	YJ,
+	Yj,
+	YK,
+	Yk,
+	YL,
+	Yl,
+	YM,
+	Ym,
+	YN,
+	Yn,
+	YO,
+	Yo,
+	YP,
+	Yp,
+	YQ,
+	Yq,
+	YR,
+	Yr,
+	YS,
+	Ys,
+	YT,
+	Yt,
+	YU,
+	Yu,
+	YV,
+	Yv,
+	YW,
+	Yw,
+	YX,
+	Yx,
+	YY,
+	Yy,
+	YZ,
+	Yz,
+	yA,
+	ya,
+	yB,
+	yb,
+	yC,
+	yc,
+	yD,
+	yd,
+	yE,
+	ye,
+	yF,
+	yf,
+	yG,
+	yg,
+	yH,
+	yh,
+	yI,
+	yi,
+	yJ,
+	yj,
+	yK,
+	yk,
+	yL,
+	yl,
+	yM,
+	ym,
+	yN,
+	yn,
+	yO,
+	yo,
+	yP,
+	yp,
+	yQ,
+	yq,
+	yR,
+	yr,
+	yS,
+	ys,
+	yT,
+	yt,
+	yU,
+	yu,
+	yV,
+	yv,
+	yW,
+	yw,
+	yX,
+	yx,
+	yY,
+	yy,
+	yZ,
+	yz,
+	ZA,
+	Za,
+	ZB,
+	Zb,
+	ZC,
+	Zc,
+	ZD,
+	Zd,
+	ZE,
+	Ze,
+	ZF,
+	Zf,
+	ZG,
+	Zg,
+	ZH,
+	Zh,
+	ZI,
+	Zi,
+	ZJ,
+	Zj,
+	ZK,
+	Zk,
+	ZL,
+	Zl,
+	ZM,
+	Zm,
+	ZN,
+	Zn,
+	ZO,
+	Zo,
+	ZP,
+	Zp,
+	ZQ,
+	Zq,
+	ZR,
+	Zr,
+	ZS,
+	Zs,
+	ZT,
+	Zt,
+	ZU,
+	Zu,
+	ZV,
+	Zv,
+	ZW,
+	Zw,
+	ZX,
+	Zx,
+	ZY,
+	Zy,
+	ZZ,
+	Zz,
+	zA,
+	za,
+	zB,
+	zb,
+	zC,
+	zc,
+	zD,
+	zd,
+	zE,
+	ze,
+	zF,
+	zf,
+	zG,
+	zg,
+	zH,
+	zh,
+	zI,
+	zi,
+	zJ,
+	zj,
+	zK,
+	zk,
+	zL,
+	zl,
+	zM,
+	zm,
+	zN,
+	zn,
+	zO,
+	zo,
+	zP,
+	zp,
+	zQ,
+	zq,
+	zR,
+	zr,
+	zS,
+	zs,
+	zT,
+	zt,
+	zU,
+	zu,
+	zV,
+	zv,
+	zW,
+	zw,
+	zX,
+	zx,
+	zY,
+	zy,
+	zZ,
+	zz,
+	aAA,
+	aAa,
+	aAB,
+	aAb,
+	aAC,
+	aAc,
+	aAD,
+	aAd,
+	aAE,
+	aAe,
+	aAF,
+	aAf,
+	aAG,
+	aAg,
+	aAH,
+	aAh,
+	aAI,
+	aAi,
+	aAJ,
+	aAj,
+	aAK,
+	aAk,
+	aAL,
+	aAl,
+	aAM,
+	aAm,
+	aAN,
+	aAn,
+	aAO,
+	aAo,
+	aAP,
+	aAp,
+	aAQ,
+	aAq,
+	aAR,
+	aAr,
+	aAS,
+	aAs,
+	aAT,
+	aAt,
+	aAU,
+	aAu,
+	aAV,
+	aAv,
+	aAW,
+	aAw,
+	aAX,
+	aAx,
+	aAY,
+	aAy,
+	aAZ,
+	aAz,
+	aaA,
+	aaa,
+	aaB,
+	aab,
+	aaC,
+	aac,
+	aaD,
+	aad,
+	aaE,
+	aae,
+	aaF,
+	aaf,
+	aaG,
+	aag,
+	aaH,
+	aah,
+	aaI,
+	aai,
+	aaJ,
+	aaj,
+	aaK,
+	aak,
+	aaL,
+	aal,
+	aaM,
+	aam,
+	aaN,
+	aan,
+	aaO,
+	aao,
+	aaP,
+	aap,
+	aaQ,
+	aaq,
+	aaR,
+	aar,
+	aaS,
+	aas,
+	aaT,
+	aat,
+	aaU,
+	aau,
+	aaV,
+	aav,
+	aaW,
+	aaw,
+	aaX,
+	aax,
+	aaY,
+	aay,
+	aaZ,
+	aaz,
+	aBA,
+	aBa,
+	aBB,
+	aBb,
+	aBC,
+	aBc,
+	aBD,
+	aBd,
+	aBE,
+	aBe,
+	aBF,
+	aBf,
+	aBG,
+	aBg,
+	aBH,
+	aBh,
+	aBI,
+	aBi,
+	aBJ,
+	aBj,
+	aBK,
+	aBk,
+	aBL,
+	aBl,
+	aBM,
+	aBm,
+	aBN,
+	aBn,
+	aBO,
+	aBo,
+	aBP,
+	aBp,
+	aBQ,
+	aBq,
+	aBR,
+	aBr,
+	aBS,
+	aBs,
+	aBT,
+	aBt,
+	aBU,
+	aBu,
+	aBV,
+	aBv,
+	aBW,
+	aBw,
+	aBX,
+	aBx,
+	aBY,
+	aBy,
+	aBZ,
+	aBz,
+	abA,
+	aba,
+	abB,
+	abb,
+	abC,
+	abc,
+	abD,
+	abd,
+	abE,
+	abe,
+	abF,
+	abf,
+	abG,
+	abg,
+	abH,
+	abh,
+	abI,
+	abi,
+	abJ,
+	abj,
+	abK,
+	abk,
+	abL,
+	abl,
+	abM,
+	abm,
+	abN,
+	abn,
+	abO,
+	abo,
+	abP,
+	abp,
+	abQ,
+	abq,
+	abR,
+	abr,
+	abS,
+	abs,
+	abT,
+	abt,
+	abU,
+	abu,
+	abV,
+	abv,
+	abW,
+	abw,
+	abX,
+	abx,
+	abY,
+	aby,
+	abZ,
+	abz,
+	aCA,
+	aCa,
+	aCB,
+	aCb,
+	aCC,
+	aCc,
+	aCD,
+	aCd,
+	aCE,
+	aCe,
+	aCF,
+	aCf,
+	aCG,
+	aCg,
+	aCH,
+	aCh,
+	aCI,
+	aCi,
+	aCJ,
+	aCj,
+	aCK,
+	aCk,
+	aCL,
+	aCl,
+	aCM,
+	aCm,
+	aCN,
+	aCn,
+	aCO,
+	aCo,
+	aCP,
+	aCp,
+	aCQ,
+	aCq,
+	aCR,
+	aCr,
+	aCS,
+	aCs,
+	aCT,
+	aCt,
+	aCU,
+	aCu,
+	aCV,
+	aCv,
+	aCW,
+	aCw,
+	aCX,
+	aCx,
+	aCY,
+	aCy,
+	aCZ,
+	aCz,
+	acA,
+	aca,
+	acB,
+	acb,
+	acC,
+	acc,
+	acD,
+	acd,
+	acE,
+	ace,
+	acF,
+	acf,
+	acG,
+	acg,
+	acH,
+	ach,
+	acI,
+	aci,
+	acJ,
+	acj,
+	acK,
+	ack,
+	acL,
+	acl,
+	acM,
+	acm,
+	acN,
+	acn,
+	acO,
+	aco,
+	acP,
+	acp,
+	acQ,
+	acq,
+	acR,
+	acr,
+	acS,
+	acs,
+	acT,
+	act,
 }
 enum Club: int {
 	None,
@@ -5635,6 +5805,7 @@ enum Club: int {
 	BlackTortoisePromenade,
 	LaborParty,
 	KnowledgeLiberationFront,
+	Hyakkayouran,
 }
 table GroundVector3 {
 	X: float;
@@ -5923,17 +6094,6 @@ table ArenaLevelSectionExcel {
 	UserCount: long;
 }
 
-table ArenaLevelSection_StageExcelTable {
-	DataList: [ArenaLevelSection_StageExcel];
-}
-
-table ArenaLevelSection_StageExcel {
-	ArenaSeasonId: long;
-	StartLevel: long;
-	LastLevel: long;
-	UserCount: long;
-}
-
 table ArenaMapExcelTable {
 	DataList: [ArenaMapExcel];
 }
@@ -6082,13 +6242,13 @@ table BGMExcelTable {
 
 table BGMExcel {
 	Id: long;
-	productionStep: ProductionStep;
-	Path: string;
-	Volume: float;
-	LoopStartTime: float;
-	LoopEndTime: float;
-	LoopTranstionTime: float;
-	LoopOffsetTime: float;
+	Nation: [Nation];
+	Path: [string];
+	Volume: [float];
+	LoopStartTime: [float];
+	LoopEndTime: [float];
+	LoopTranstionTime: [float];
+	LoopOffsetTime: [float];
 }
 
 table BGMRaidExcelTable {
@@ -6230,15 +6390,12 @@ table CafeRankExcel {
 	Rank: long;
 	RecipeId: long;
 	ComfortMax: long;
-	ActionPointProductionCoefficient: long;
-	ActionPointProductionCorrectionValue: long;
-	ActionPointStorageMax: long;
-	GoldProductionCoefficient: long;
-	GoldProductionCorrectionValue: long;
-	GoldStorageMax: long;
 	TagCountMax: long;
 	CharacterVisitMin: int;
 	CharacterVisitMax: int;
+	CafeVisitWeightBase: int;
+	CafeVisitWeightTagBonusStep: [int];
+	CafeVisitWeightTagBonus: [int];
 }
 
 table CameraExcelTable {
@@ -6378,7 +6535,6 @@ table CampaignUnitExcel {
 	EnterScenarioGroupId: [long];
 	ClearScenarioGroupId: [long];
 	GroundId: long;
-	IsBoss: bool;
 	MoveRange: int;
 	AIMoveType: StrategyAIType;
 	Grade: HexaUnitGrade;
@@ -6408,6 +6564,7 @@ table CharacterAIExcel {
 	Id: long;
 	engageType: EngageType;
 	Positioning: PositioningType;
+	CheckCanUseAutoSkill: bool;
 	DistanceReduceRatioObstaclePath: long;
 	DistanceReduceObstaclePath: long;
 	DistanceReduceRatioFormationPath: long;
@@ -6464,11 +6621,7 @@ table CharacterDialogEventExcel {
 	LocalizeTH: string;
 	LocalizeTW: string;
 	LocalizeEN: string;
-	VoiceClipsKr: [string];
-	VoiceClipsJp: [string];
-	VoiceClipsTh: [string];
-	VoiceClipsTw: [string];
-	VoiceClipsEn: [string];
+	VoiceId: [uint];
 	CollectionVisible: bool;
 	cVCollectionType: CVCollectionType;
 	UnlockEventSeason: long;
@@ -6500,17 +6653,14 @@ table CharacterDialogExcel {
 	LocalizeTH: string;
 	LocalizeTW: string;
 	LocalizeEN: string;
-	VoiceClipsKr: [string];
-	VoiceClipsJp: [string];
-	VoiceClipsTh: [string];
-	VoiceClipsTw: [string];
-	VoiceClipsEn: [string];
+	VoiceId: [uint];
 	ApplyPosition: bool;
 	PosX: float;
 	PosY: float;
 	CollectionVisible: bool;
 	cVCollectionType: CVCollectionType;
 	UnlockFavorRank: long;
+	UnlockEquipWeapon: bool;
 	LocalizeCVGroup: string;
 	TeenMode: bool;
 }
@@ -6557,8 +6707,8 @@ table CharacterExcel {
 	SpawnTemplateId: uint;
 	FavorLevelupType: int;
 	EquipmentSlot: [EquipmentCategory];
-	WeaponImagePath: string;
 	WeaponLocalizeId: uint;
+	DisplayEnemyInfo: bool;
 	BodyRadius: long;
 	RandomEffectRadius: long;
 	HPBarHide: bool;
@@ -6659,7 +6809,7 @@ table CharacterSkillListExcel {
 	CharacterSkillListGroupId: long;
 	MinimumGradeCharacterWeapon: int;
 	MinimumTierCharacterGear: int;
-	IsFormConversion: bool;
+	FormIndex: int;
 	IsRootMotion: bool;
 	IsMoveLeftRight: bool;
 	UseRandomAnimation: bool;
@@ -6740,6 +6890,8 @@ table CharacterStatExcel {
 	DamageRatio2Decrease: long;
 	DamagedRatio2Increase: long;
 	DamagedRatio2Decrease: long;
+	ExDamagedRatioIncrease: long;
+	ExDamagedRatioDecrease: long;
 	StreetBattleAdaptation: TerrainAdaptationStat;
 	OutdoorBattleAdaptation: TerrainAdaptationStat;
 	IndoorBattleAdaptation: TerrainAdaptationStat;
@@ -6777,6 +6929,7 @@ table CharacterStatsTransExcelTable {
 table CharacterStatsTransExcel {
 	TransSupportStats: StatType;
 	TransSupportStatsFactor: int;
+	statTransType: StatTransType;
 }
 
 table CharacterTranscendenceExcelTable {
@@ -6793,6 +6946,27 @@ table CharacterTranscendenceExcel {
 	SkillSlotA: [string];
 	SkillSlotB: [string];
 	MaxlevelStar: [int];
+}
+
+table CharacterVoiceExcelTable {
+	DataList: [CharacterVoiceExcel];
+}
+
+table CharacterVoiceExcel {
+	CharacterVoiceUniqueId: long;
+	CharacterVoiceGroupId: long;
+	VoiceHash: uint;
+	OnlyOne: bool;
+	Priority: int;
+	DisplayOrder: long;
+	CollectionVisible: bool;
+	cVCollectionType: CVCollectionType;
+	UnlockFavorRank: long;
+	LocalizeCVGroup: string;
+	Nation: [Nation];
+	Volume: [float];
+	Delay: [float];
+	Path: [string];
 }
 
 table CharacterWeaponExcelTable {
@@ -6892,6 +7066,15 @@ table ClanRewardExcel {
 	RewardParcelAmount: long;
 }
 
+table ClearDeckRuleExcelTable {
+	DataList: [ClearDeckRuleExcel];
+}
+
+table ClearDeckRuleExcel {
+	contentType: ContentType;
+	SizeLimit: long;
+}
+
 table CombatEmojiExcelTable {
 	DataList: [CombatEmojiExcel];
 }
@@ -6904,6 +7087,7 @@ table CombatEmojiExcel {
 	EmojiReversal: bool;
 	EmojiTurnOn: bool;
 	ShowEmojiDelay: int;
+	ShowDefaultBG: bool;
 }
 
 table ConquestCalculateExcelTable {
@@ -7091,11 +7275,7 @@ table ConquestProgressResourceExcel {
 	EventContentId: long;
 	Group: ConquestProgressType;
 	ProgressResource: string;
-	VoiceKr: [string];
-	VoiceJp: [string];
-	VoiceEn: [string];
-	VoiceTw: [string];
-	VoiceTh: [string];
+	VoiceId: [uint];
 	ProgressLocalizeCode: string;
 }
 
@@ -7537,6 +7717,14 @@ table ConstCommonExcel {
 	BeforehandGachaGroupId: int;
 	RenewalDisplayOrderDay: int;
 	EmblemDefaultId: long;
+	BirthdayMailStartDate: string;
+	BirthdayMailRemainDate: int;
+	BirthdayMailParcelType: ParcelType;
+	BirthdayMailParcelId: long;
+	BirthdayMailParcelAmount: int;
+	ClearDeckAverageDeckCount: int;
+	ClearDeckWorldRaidSaveConditionCoefficient: int;
+	ClearDeckShowCount: int;
 }
 
 table ConstConquestExcelTable {
@@ -7563,6 +7751,9 @@ table ConstEventCommonExcel {
 	SubEventInstantClear: bool;
 	CardShopProbWeightCount: long;
 	CardShopProbWeightRarity: Rarity;
+	MeetupScenarioReplayResource: string;
+	MeetupScenarioReplayTitleLocalize: string;
+	SpecialOperactionCollectionGroupId: long;
 }
 
 table ConstMiniGameShootingExcelTable {
@@ -7732,18 +7923,17 @@ table CostumeExcel {
 	EchelonModelPrefabName: string;
 	StrategyModelPrefabName: string;
 	TextureDir: string;
-	TextureEchelon: string;
 	CollectionTexturePath: string;
 	CollectionBGTexturePath: string;
 	UseObjectHPBAR: bool;
 	TextureBoss: string;
 	TextureSkillCard: [string];
 	TextureSkillCardForFormConversion: string;
-	DisplayEnemyInfo: bool;
 	InformationPacel: string;
 	AnimationSSR: string;
 	EnterStrategyAnimationName: string;
 	AnimationValidator: bool;
+	CharacterVoiceGroupId: long;
 }
 
 table CouponStuffExcelTable {
@@ -7756,21 +7946,6 @@ table CouponStuffExcel {
 	ParcelId: long;
 	LimitAmount: int;
 	CouponStuffNameLocalizeKey: string;
-}
-
-table CumulativeTimeRewardExcelTable {
-	DataList: [CumulativeTimeRewardExcel];
-}
-
-table CumulativeTimeRewardExcel {
-	Id: long;
-	Description: string;
-	StartDate: string;
-	EndDate: string;
-	TimeCondition: [long];
-	RewardParcelType: [ParcelType];
-	RewardId: [long];
-	RewardAmount: [int];
 }
 
 table CurrencyExcelTable {
@@ -7864,6 +8039,20 @@ table DefaultParcelExcel {
 	ParcelAmount: long;
 }
 
+table DuplicateBonusExcelTable {
+	DataList: [DuplicateBonusExcel];
+}
+
+table DuplicateBonusExcel {
+	Id: long;
+	itemCategory: ItemCategory;
+	ItemId: long;
+	CharacterId: long;
+	RewardParcelType: ParcelType;
+	RewardParcelId: long;
+	RewardParcelAmount: long;
+}
+
 table EchelonConstraintExcelTable {
 	DataList: [EchelonConstraintExcel];
 }
@@ -7951,7 +8140,6 @@ table EliminateRaidStageExcel {
 	RaidCharacterId: long;
 	BossCharacterId: [long];
 	difficulty: Difficulty;
-	DifficultyOpenCondition: bool;
 	IsOpen: bool;
 	MaxPlayerCount: long;
 	RaidRoomLifeTime: int;
@@ -7960,7 +8148,6 @@ table EliminateRaidStageExcel {
 	GroundDevName: string;
 	EnterTimeLine: string;
 	tacticEnvironment: TacticEnvironment;
-	SeasonDamageRatio: int;
 	DefaultClearScore: long;
 	MaximumScore: long;
 	PerSecondMinusScore: long;
@@ -7968,7 +8155,6 @@ table EliminateRaidStageExcel {
 	MinimumAcquisitionScore: long;
 	MaximumAcquisitionScore: long;
 	RaidRewardGroupId: long;
-	RaidRewardDevName: string;
 	BattleReadyTimelinePath: [string];
 	BattleReadyTimelinePhaseStart: [int];
 	BattleReadyTimelinePhaseEnd: [int];
@@ -7977,7 +8163,6 @@ table EliminateRaidStageExcel {
 	TimeLinePhase: long;
 	EnterScenarioKey: uint;
 	ClearScenarioKey: uint;
-	InitSupplyCount: int;
 	ShowSkillCard: bool;
 	BossBGInfoKey: uint;
 }
@@ -8282,7 +8467,8 @@ table EventContentCollectionExcel {
 	EventContentId: long;
 	GroupId: long;
 	UnlockConditionType: EventCollectionUnlockType;
-	UnlockConditionParameter: long;
+	UnlockConditionParameter: [long];
+	multipleConditionCheckType: MultipleConditionCheckType;
 	UnlockConditionCount: long;
 	IsObject: bool;
 	IsHorizon: bool;
@@ -8323,7 +8509,7 @@ table EventContentDiceRaceEffectExcel {
 	eventContentDiceRaceResultType: EventContentDiceRaceResultType;
 	IsDiceResult: bool;
 	AniClip: string;
-	VoiceClips: [string];
+	VoiceId: [uint];
 }
 
 table EventContentDiceRaceExcelTable {
@@ -8476,11 +8662,7 @@ table EventContentLocationRewardExcel {
 	OrderInGroup: long;
 	Id: long;
 	ProgressTexture: string;
-	VoiceClipsKr: [string];
-	VoiceClipsJp: [string];
-	VoiceClipsEn: [string];
-	VoiceClipsTw: [string];
-	VoiceClipsTh: [string];
+	VoiceId: [uint];
 	LocalizeEtcId: uint;
 	LocationRank: long;
 	FavorExp: long;
@@ -8507,7 +8689,9 @@ table EventContentMeetupExcel {
 	EventContentId: long;
 	CharacterId: long;
 	ConditionScenarioGroupId: long;
-	ActiveConditionEventContentStageId: [long];
+	ConditionType: MeetupConditionType;
+	ConditionParameter: [long];
+	ConditionPrintType: MeetupConditionPrintType;
 }
 
 table EventContentMiniEventShortCutExcelTable {
@@ -8555,7 +8739,7 @@ table EventContentMissionExcel {
 	IsCompleteExtensionTime: bool;
 	CompleteConditionCount: long;
 	CompleteConditionParameter: [long];
-	CompleteConditionParameterName: [string];
+	CompleteConditionParameterTag: [Tag];
 	RewardIcon: string;
 	CompleteConditionMissionId: [long];
 	CompleteConditionMissionCount: long;
@@ -8637,6 +8821,7 @@ table EventContentSeasonExcel {
 	contentLockType: ContentLockType;
 	EventDisplay: bool;
 	IconOrder: int;
+	subEventType: SubEventType;
 	SubEvent: bool;
 	EventItemId: long;
 	MainEventId: long;
@@ -9012,7 +9197,8 @@ table FurnitureExcel {
 	CraftQualityTier2: long;
 	ShiftingCraftQuality: long;
 	furnitureFunctionType: FurnitureFunctionType;
-	FunctionParameter: [string];
+	FurnitureFunctionParameter: long;
+	VideoId: long;
 	EventCollectionId: long;
 	FurnitureBubbleOffsetX: long;
 	FurnitureBubbleOffsetY: long;
@@ -9209,7 +9395,12 @@ table GroundExcel {
 	ImmuneHitBeforeTimeOutEnd: bool;
 	UIBattleHideFromScratch: bool;
 	BattleReadyTimelinePath: string;
+	BeforeVictoryTimelinePath: string;
 	HideNPCWhenBattleEnd: bool;
+	AllyPassiveSkillId: [string];
+	AllyPassiveSkillLevel: [int];
+	EnemyPassiveSkillId: [string];
+	EnemyPassiveSkillLevel: [int];
 }
 
 table GroundGridFlat {
@@ -9267,7 +9458,7 @@ table GuideMissionExcel {
 	CompleteConditionType: MissionCompleteConditionType;
 	CompleteConditionCount: long;
 	CompleteConditionParameter: [long];
-	CompleteConditionParameterName: string;
+	CompleteConditionParameterTag: [Tag];
 	IsAutoClearForScenario: bool;
 	MissionRewardParcelType: [ParcelType];
 	MissionRewardParcelId: [long];
@@ -9494,20 +9685,6 @@ table LimitedStageSeasonExcel {
 	TypeCCount: long;
 }
 
-table LoadingImageExcelTable {
-	DataList: [LoadingImageExcel];
-}
-
-table LoadingImageExcel {
-	ID: long;
-	ImagePathKr: string;
-	ImagePathJp: string;
-	DisplayWeight: int;
-	ImagePathTh: string;
-	ImagePathTw: string;
-	ImagePathEn: string;
-}
-
 table LocalizeCharProfileExcelTable {
 	DataList: [LocalizeCharProfileExcel];
 }
@@ -9607,39 +9784,12 @@ table LocalizeCharProfileExcel {
 	CharacterSSRNewEn: string;
 }
 
-table LocalizeCodeExcelTable {
-	DataList: [LocalizeCodeExcel];
-}
-
-table LocalizeCodeExcel {
-	Key: uint;
-	Kr: string;
-	Jp: string;
-	Th: string;
-	Tw: string;
-	En: string;
-}
-
 table LocalizeCodeInBuildExcelTable {
 	DataList: [LocalizeCodeInBuildExcel];
 }
 
 table LocalizeCodeInBuildExcel {
 	Key: uint;
-	Kr: string;
-	Jp: string;
-	Th: string;
-	Tw: string;
-	En: string;
-}
-
-table LocalizeErrorExcelTable {
-	DataList: [LocalizeErrorExcel];
-}
-
-table LocalizeErrorExcel {
-	Key: uint;
-	ErrorLevel: WebAPIErrorLevel;
 	Kr: string;
 	Jp: string;
 	Th: string;
@@ -9693,81 +9843,6 @@ table LocalizeGachaShopExcel {
 	GachaDescriptionEn: string;
 }
 
-table LocalizeInformationExcelTable {
-	DataList: [LocalizeInformationExcel];
-}
-
-table LocalizeInformationExcel {
-	Key: uint;
-	Kr: string;
-	Jp: string;
-	Th: string;
-	Tw: string;
-	En: string;
-}
-
-table LocalizeOperatorExcelTable {
-	DataList: [LocalizeOperatorExcel];
-}
-
-table LocalizeOperatorExcel {
-	Key: uint;
-	Kr: string;
-	Jp: string;
-	Th: string;
-	Tw: string;
-	En: string;
-}
-
-table LocalizePrefabExcelTable {
-	DataList: [LocalizePrefabExcel];
-}
-
-table LocalizePrefabExcel {
-	Key: uint;
-	Kr: string;
-	Jp: string;
-	Th: string;
-	Tw: string;
-	En: string;
-}
-
-table LocalizeScenarioExcelTable {
-	DataList: [LocalizeScenarioExcel];
-}
-
-table LocalizeScenarioExcel {
-	Key: uint;
-	Kr: string;
-	Jp: string;
-	Th: string;
-	Tw: string;
-	En: string;
-}
-
-table LocalizeSkillExcelTable {
-	DataList: [LocalizeSkillExcel];
-}
-
-table LocalizeSkillExcel {
-	Key: uint;
-	NameKr: string;
-	DescriptionKr: string;
-	SkillInvokeLocalizeKr: string;
-	NameJp: string;
-	DescriptionJp: string;
-	SkillInvokeLocalizeJp: string;
-	NameTh: string;
-	DescriptionTh: string;
-	SkillInvokeLocalizeTh: string;
-	NameTw: string;
-	DescriptionTw: string;
-	SkillInvokeLocalizeTw: string;
-	NameEn: string;
-	DescriptionEn: string;
-	SkillInvokeLocalizeEn: string;
-}
-
 table LogicEffectCommonVisualExcelTable {
 	DataList: [LogicEffectCommonVisualExcel];
 }
@@ -9798,6 +9873,7 @@ table MemoryLobbyExcel {
 	LocalizeEtcId: uint;
 	CharacterId: long;
 	PrefabName: string;
+	memoryLobbyCategory: MemoryLobbyCategory;
 	SlotTextureName: string;
 	RewardTextureName: string;
 	BGMId: long;
@@ -9833,7 +9909,9 @@ table MessagePopupExcel {
 	OrderType: MessagePopupImagePositionType;
 	Image: string;
 	TitleText: uint;
+	SubTitleText: uint;
 	MessageText: uint;
+	ConditionText: [uint];
 	DisplayXButton: bool;
 	Button: [MessagePopupButtonType];
 	ButtonText: [uint];
@@ -9883,7 +9961,7 @@ table MiniGameMissionExcel {
 	IsCompleteExtensionTime: bool;
 	CompleteConditionCount: long;
 	CompleteConditionParameter: [long];
-	CompleteConditionParameterName: [string];
+	CompleteConditionParameterTag: [Tag];
 	RewardIcon: string;
 	MissionRewardParcelType: [ParcelType];
 	MissionRewardParcelId: [long];
@@ -9969,6 +10047,7 @@ table MiniGameShootingCharacterExcel {
 	IsBoss: bool;
 	Scale: float;
 	IgnoreObstacleCheck: bool;
+	CharacterVoiceGroupId: long;
 }
 
 table MiniGameShootingGeasExcelTable {
@@ -10205,7 +10284,7 @@ table MinigameTBGVoiceExcel {
 	EventContentId: long;
 	UniqueId: long;
 	VoiceCondition: TBGVoiceCondition;
-	VoiceClip: string;
+	VoiceId: uint;
 }
 
 table MissionExcelTable {
@@ -10225,6 +10304,7 @@ table MissionExcel {
 	EndDate: string;
 	EndDay: long;
 	StartableEndDate: string;
+	DateAutoRefer: ContentType;
 	DisplayOrder: long;
 	PreMissionId: [long];
 	AccountType: AccountState;
@@ -10235,7 +10315,7 @@ table MissionExcel {
 	CompleteConditionType: MissionCompleteConditionType;
 	CompleteConditionCount: long;
 	CompleteConditionParameter: [long];
-	CompleteConditionParameterName: [string];
+	CompleteConditionParameterTag: [Tag];
 	RewardIcon: string;
 	MissionRewardParcelType: [ParcelType];
 	MissionRewardParcelId: [long];
@@ -10298,6 +10378,7 @@ table ObstacleStatExcel {
 	MaxHP100: long;
 	BlockRate: long;
 	Dodge: long;
+	CanNotStandRange: long;
 	HighlightFloaterHeight: float;
 }
 
@@ -10343,11 +10424,7 @@ table OperatorExcel {
 	OperatorOutputPriority: int;
 	PortraitPath: string;
 	TextLocalizeKey: string;
-	VoiceClipsKr: [string];
-	VoiceClipsJp: [string];
-	VoiceClipsTh: [string];
-	VoiceClipsTw: [string];
-	VoiceClipsEn: [string];
+	VoiceId: [uint];
 	OperatorWaitQueue: bool;
 }
 
@@ -10434,41 +10511,6 @@ table PresetCharacterGroupSettingExcel {
 	PresetType: [string];
 }
 
-table PresetCharactersExcelTable {
-	DataList: [PresetCharactersExcel];
-}
-
-table PresetCharactersExcel {
-	CharacterId: long;
-	PresetGroupId: long;
-	ArenaSimulatorFixed: bool;
-	Level: int;
-	Exp: int;
-	FavorExp: int;
-	FavorRank: int;
-	StarGrade: int;
-	ExSkillLevel: int;
-	PassiveSkillLevel: int;
-	ExtraPassiveSkillLevel: int;
-	CommonSkillLevel: int;
-	LeaderSkillLevel: int;
-	EquipSlot01: bool;
-	EquipSlotTier01: int;
-	EquipSlotLevel01: int;
-	EquipSlot02: bool;
-	EquipSlotTier02: int;
-	EquipSlotLevel02: int;
-	EquipSlot03: bool;
-	EquipSlotTier03: int;
-	EquipSlotLevel03: int;
-	EquipCharacterWeapon: bool;
-	EquipCharacterWeaponTier: int;
-	EquipCharacterWeaponLevel: int;
-	EquipCharacterGear: bool;
-	EquipCharacterGearTier: int;
-	EquipCharacterGearLevel: int;
-}
-
 table PresetParcelsExcelTable {
 	DataList: [PresetParcelsExcel];
 }
@@ -10518,6 +10560,22 @@ table ProductMonthlyExcel {
 	DailyParcelType: [ParcelType];
 	DailyParcelId: [long];
 	DailyParcelAmount: [long];
+}
+
+table PropVector3 {
+	X: float;
+	Y: float;
+	Z: float;
+}
+
+table PropMotion {
+	Name: string;
+	Positions: [PropVector3];
+	Rotations: [PropVector3];
+}
+
+table PropRootMotionFlat {
+	RootMotions: [PropMotion];
 }
 
 table ProtocolSettingExcelTable {
@@ -10598,7 +10656,6 @@ table RaidStageExcel {
 	GroundDevName: string;
 	EnterTimeLine: string;
 	tacticEnvironment: TacticEnvironment;
-	SeasonDamageRatio: int;
 	DefaultClearScore: long;
 	MaximumScore: long;
 	PerSecondMinusScore: long;
@@ -10606,7 +10663,6 @@ table RaidStageExcel {
 	MinimumAcquisitionScore: long;
 	MaximumAcquisitionScore: long;
 	RaidRewardGroupId: long;
-	RaidRewardDevName: string;
 	BattleReadyTimelinePath: [string];
 	BattleReadyTimelinePhaseStart: [int];
 	BattleReadyTimelinePhaseEnd: [int];
@@ -10615,7 +10671,6 @@ table RaidStageExcel {
 	TimeLinePhase: long;
 	EnterScenarioKey: uint;
 	ClearScenarioKey: uint;
-	InitSupplyCount: int;
 	ShowSkillCard: bool;
 	BossBGInfoKey: uint;
 }
@@ -10746,101 +10801,20 @@ table RootMotionFlat {
 	MoveRight: Motion;
 }
 
-table ScenarioBGEffectExcelTable {
-	DataList: [ScenarioBGEffectExcel];
+table ScenarioExcelTable {
+	DataList: [ScenarioExcel];
 }
 
-table ScenarioBGEffectExcel {
-	Name: uint;
-	Effect: string;
-	Scroll: ScenarioBGScroll;
-	ScrollTime: long;
-	ScrollFrom: long;
-	ScrollTo: long;
-}
-
-table ScenarioBGNameExcelTable {
-	DataList: [ScenarioBGNameExcel];
-}
-
-table ScenarioBGNameExcel {
-	Name: uint;
-	productionStep: ProductionStep;
-	BGFileName: string;
-	BGType: ScenarioBGType;
-	AnimationRoot: string;
-	AnimationName: string;
-	SpineScale: float;
-	SpineLocalPosX: int;
-	SpineLocalPosY: int;
-}
-
-table ScenarioBGName_GlobalExcelTable {
-	DataList: [ScenarioBGName_GlobalExcel];
-}
-
-table ScenarioBGName_GlobalExcel {
-	GroupName: uint;
-	NameKr: uint;
-	NameTw: uint;
-	NameAsia: uint;
-	NameNa: uint;
-	NameGlobal: uint;
-	NameTeen: uint;
-}
-
-table ScenarioCharacterEmotionExcelTable {
-	DataList: [ScenarioCharacterEmotionExcel];
-}
-
-table ScenarioCharacterEmotionExcel {
-	EmoticonName: string;
-	Name: uint;
-}
-
-table ScenarioCharacterNameExcelTable {
-	DataList: [ScenarioCharacterNameExcel];
-}
-
-table ScenarioCharacterNameExcel {
-	CharacterName: uint;
-	productionStep: ProductionStep;
-	NameKR: string;
-	NicknameKR: string;
-	NameJP: string;
-	NicknameJP: string;
-	NameTH: string;
-	NicknameTH: string;
-	NameTW: string;
-	NicknameTW: string;
-	NameEN: string;
-	NicknameEN: string;
-	Shape: ScenarioCharacterShapes;
-	SpinePrefabName: string;
-	SmallPortrait: string;
-}
-
-table ScenarioCharacterSituationSetExcelTable {
-	DataList: [ScenarioCharacterSituationSetExcel];
-}
-
-table ScenarioCharacterSituationSetExcel {
-	Name: uint;
-	Face: string;
-	Behavior: string;
-	Action: string;
-	Shape: string;
-	Effect: uint;
-	Emotion: uint;
-}
-
-table ScenarioEffectExcelTable {
-	DataList: [ScenarioEffectExcel];
-}
-
-table ScenarioEffectExcel {
-	EffectName: string;
-	Name: uint;
+table ScenarioExcel {
+	None: [ScenarioBGType];
+	Idle: [ScenarioCharacterAction];
+	Cafe: DialogCategory;
+	Talk: DialogType;
+	Open: StoryCondition;
+	EnterConver: EmojiEvent;
+	Center: ScenarioZoomAnchors;
+	Instant: ScenarioZoomType;
+	Prologue: ScenarioContentType;
 }
 
 table ScenarioModeExcelTable {
@@ -10858,6 +10832,8 @@ table ScenarioModeExcel {
 	Open: bool;
 	ScenarioOpenDate: string;
 	ScenarioCloseDate: string;
+	IsContinue: bool;
+	EpisodeContinueModeId: long;
 	FrontScenarioGroupId: [long];
 	StrategyId: long;
 	GroundId: long;
@@ -10922,510 +10898,12 @@ table ScenarioResourceInfoExcelTable {
 table ScenarioResourceInfoExcel {
 	Id: long;
 	ScenarioModeId: long;
-	VideoName: string;
-	BgmId: string;
+	VideoId: long;
+	BgmId: long;
 	AudioName: string;
 	SpinePath: string;
 	Ratio: int;
 	LobbyAniPath: string;
-}
-
-table ScenarioScriptContentExcelTable {
-	DataList: [ScenarioScriptContentExcel];
-}
-
-table ScenarioScriptContentExcel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptEvent1ExcelTable {
-	DataList: [ScenarioScriptEvent1Excel];
-}
-
-table ScenarioScriptEvent1Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptEvent2ExcelTable {
-	DataList: [ScenarioScriptEvent2Excel];
-}
-
-table ScenarioScriptEvent2Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptEvent3ExcelTable {
-	DataList: [ScenarioScriptEvent3Excel];
-}
-
-table ScenarioScriptEvent3Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptEvent4ExcelTable {
-	DataList: [ScenarioScriptEvent4Excel];
-}
-
-table ScenarioScriptEvent4Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptEvent5ExcelTable {
-	DataList: [ScenarioScriptEvent5Excel];
-}
-
-table ScenarioScriptEvent5Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptFavor1ExcelTable {
-	DataList: [ScenarioScriptFavor1Excel];
-}
-
-table ScenarioScriptFavor1Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptFavor2ExcelTable {
-	DataList: [ScenarioScriptFavor2Excel];
-}
-
-table ScenarioScriptFavor2Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptFavor3ExcelTable {
-	DataList: [ScenarioScriptFavor3Excel];
-}
-
-table ScenarioScriptFavor3Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptFavor4ExcelTable {
-	DataList: [ScenarioScriptFavor4Excel];
-}
-
-table ScenarioScriptFavor4Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptFavor5ExcelTable {
-	DataList: [ScenarioScriptFavor5Excel];
-}
-
-table ScenarioScriptFavor5Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptGroup1ExcelTable {
-	DataList: [ScenarioScriptGroup1Excel];
-}
-
-table ScenarioScriptGroup1Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptGroup2ExcelTable {
-	DataList: [ScenarioScriptGroup2Excel];
-}
-
-table ScenarioScriptGroup2Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptGroup3ExcelTable {
-	DataList: [ScenarioScriptGroup3Excel];
-}
-
-table ScenarioScriptGroup3Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptGroup4ExcelTable {
-	DataList: [ScenarioScriptGroup4Excel];
-}
-
-table ScenarioScriptGroup4Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptGroup5ExcelTable {
-	DataList: [ScenarioScriptGroup5Excel];
-}
-
-table ScenarioScriptGroup5Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptMain1ExcelTable {
-	DataList: [ScenarioScriptMain1Excel];
-}
-
-table ScenarioScriptMain1Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptMain2ExcelTable {
-	DataList: [ScenarioScriptMain2Excel];
-}
-
-table ScenarioScriptMain2Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptMain3ExcelTable {
-	DataList: [ScenarioScriptMain3Excel];
-}
-
-table ScenarioScriptMain3Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptMain4ExcelTable {
-	DataList: [ScenarioScriptMain4Excel];
-}
-
-table ScenarioScriptMain4Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptMain5ExcelTable {
-	DataList: [ScenarioScriptMain5Excel];
-}
-
-table ScenarioScriptMain5Excel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioScriptTestExcelTable {
-	DataList: [ScenarioScriptTestExcel];
-}
-
-table ScenarioScriptTestExcel {
-	GroupId: long;
-	SelectionGroup: long;
-	BGMId: long;
-	Sound: string;
-	Transition: uint;
-	BGName: uint;
-	BGEffect: uint;
-	PopupFileName: string;
-	ScriptKr: string;
-	TextJp: string;
-	TextTh: string;
-	TextTw: string;
-	TextEn: string;
-	VoiceJp: string;
-	TeenMode: bool;
-}
-
-table ScenarioTransitionExcelTable {
-	DataList: [ScenarioTransitionExcel];
-}
-
-table ScenarioTransitionExcel {
-	Name: uint;
-	TransitionOut: string;
-	TransitionOutDuration: long;
-	TransitionOutResource: string;
-	TransitionIn: string;
-	TransitionInDuration: long;
-	TransitionInResource: string;
 }
 
 table SchoolDungeonRewardExcelTable {
@@ -11501,7 +10979,6 @@ table ShopCashExcelTable {
 table ShopCashExcel {
 	Id: long;
 	CashProductId: long;
-	PackageType: PurchaseSourceType;
 	LocalizeEtcId: uint;
 	IconPath: string;
 	DisplayOrder: long;
@@ -11639,8 +11116,7 @@ table ShopRecruitExcel {
 	DisplayTag: GachaDisplayTag;
 	DisplayOrder: long;
 	GachaBannerPath: string;
-	MovieBannerPath: [string];
-	MovieBannerPathTeen: [string];
+	VideoId: [long];
 	LinkedRobbyBannerId: long;
 	InfoCharacterId: [long];
 	SalePeriodFrom: string;
@@ -11658,7 +11134,6 @@ table ShopRecruitExcel {
 	DirectPayOneStoreShopCashId: long;
 	ProbabilityUrlDev: string;
 	ProbabilityUrlLive: string;
-	productCategory: ProductCategory;
 }
 
 table ShopRefreshExcelTable {
@@ -11718,6 +11193,7 @@ table SkillExcel {
 	IconName: string;
 	IsShowInfo: bool;
 	IsShowSpeechbubble: bool;
+	AdditionalToolTipId: long;
 }
 
 table SoundUIExcelTable {
@@ -11748,8 +11224,17 @@ table SpineLipsyncExcelTable {
 }
 
 table SpineLipsyncExcel {
-	ClipNameKey: uint;
+	VoiceId: uint;
 	AnimJson: string;
+}
+
+table StageFileRefreshSettingExcelTable {
+	DataList: [StageFileRefreshSettingExcel];
+}
+
+table StageFileRefreshSettingExcel {
+	GroundId: long;
+	ForceSave: bool;
 }
 
 table StatLevelInterpolationExcelTable {
@@ -11759,6 +11244,45 @@ table StatLevelInterpolationExcelTable {
 table StatLevelInterpolationExcel {
 	Level: long;
 	StatTypeIndex: [long];
+}
+
+table StickerGroupExcelTable {
+	DataList: [StickerGroupExcel];
+}
+
+table StickerGroupExcel {
+	Id: long;
+	Layout: string;
+	UniqueLayoutPath: string;
+	StickerGroupIconpath: string;
+	PageCompleteSlot: long;
+	PageCompleteRewardParcelType: ParcelType;
+	PageCompleteRewardParcelId: long;
+	PageCompleteRewardAmount: int;
+	LocalizeTitle: uint;
+	LocalizeDescription: uint;
+	StickerGroupCoverpath: string;
+}
+
+table StickerPageContentExcelTable {
+	DataList: [StickerPageContentExcel];
+}
+
+table StickerPageContentExcel {
+	Id: long;
+	StickerGroupId: long;
+	StickerPageId: long;
+	StickerSlot: long;
+	stickerGetConditionType: StickerGetConditionType;
+	stickerCheckPassType: StickerCheckPassType;
+	getStickerConditionType: GetStickerConditionType;
+	StickerGetConditionCount: long;
+	StickerGetConditionParameter: [long];
+	StickerGetConditionParameterTag: [Tag];
+	PackedStickerIconLocalizeEtcId: uint;
+	PackedStickerIconPath: string;
+	IconPath: string;
+	StickerDetailPath: string;
 }
 
 table StoryStrategyExcelTable {
@@ -11962,6 +11486,7 @@ table TimeAttackDungeonExcel {
 	timeAttackDungeonType: TimeAttackDungeonType;
 	LocalizeEtcKey: uint;
 	IconPath: string;
+	InformationGroupID: long;
 }
 
 table TimeAttackDungeonGeasExcelTable {
@@ -12065,11 +11590,7 @@ table TutorialCharacterDialogExcel {
 	LocalizeTH: string;
 	LocalizeTW: string;
 	LocalizeEN: string;
-	SoundPathKR: string;
-	SoundPathJP: string;
-	SoundPathTH: string;
-	SoundPathTW: string;
-	SoundPathEN: string;
+	VoiceId: uint;
 }
 
 table TutorialExcelTable {
@@ -12101,6 +11622,35 @@ table TutorialFailureImageExcel {
 	ImagePathEn: string;
 }
 
+table VideoExcelTable {
+	DataList: [VideoExcel];
+}
+
+table VideoExcel {
+	Id: long;
+	Nation: [Nation];
+	VideoPath: [string];
+	VideoTeenPath: [string];
+	SoundPath: [string];
+	SoundVolume: [float];
+}
+
+table Video_GlobalExcelTable {
+	DataList: [Video_GlobalExcel];
+}
+
+table Video_GlobalExcel {
+	VideoId: long;
+	VideoPathKr: string;
+	VideoTeenPathKr: string;
+	VideoPathTh: string;
+	VideoTeenPathTh: string;
+	VideoPathTw: string;
+	VideoTeenPathTw: string;
+	VideoPathEn: string;
+	VideoTeenPathEn: string;
+}
+
 table VoiceCommonExcelTable {
 	DataList: [VoiceCommonExcel];
 }
@@ -12116,24 +11666,11 @@ table VoiceExcelTable {
 }
 
 table VoiceExcel {
-	NameHash: uint;
-	OnlyOne: bool;
-	VolumeJp: float;
-	DelayJp: float;
-	Priority: int;
-	AudioClipJp: string;
-	VolumeKr: float;
-	DelayKr: float;
-	AudioClipKr: string;
-	VolumeTh: float;
-	DelayTh: float;
-	AudioClipTh: string;
-	VolumeTw: float;
-	DelayTw: float;
-	AudioClipTw: string;
-	VolumeEn: float;
-	DelayEn: float;
-	AudioClipEn: string;
+	UniqueId: long;
+	Id: uint;
+	Nation: [Nation];
+	Path: [string];
+	Volume: [float];
 }
 
 table VoiceLogicEffectExcelTable {
@@ -12148,37 +11685,14 @@ table VoiceLogicEffectExcel {
 	VoiceId: uint;
 }
 
-table VoiceRoomExcelTable {
-	DataList: [VoiceRoomExcel];
-}
-
-table VoiceRoomExcel {
-	NameHash: uint;
-	VoiceCategory: string;
-	DisplayOrder: long;
-	CollectionVisible: bool;
-	cVCollectionType: CVCollectionType;
-	UnlockFavorRank: long;
-	UnlockEquipWeapon: bool;
-	LocalizeCVGroup: string;
-	AudioClipJp: string;
-	AudioClipKr: string;
-	AudioClipEn: string;
-	AudioClipTw: string;
-	AudioClipTh: string;
-}
-
 table VoiceRoomExceptionExcelTable {
 	DataList: [VoiceRoomExceptionExcel];
 }
 
 table VoiceRoomExceptionExcel {
-	ExceptionTarget: CVExceptionTarget;
-	squadType: SquadType;
-	CharacterId: long;
+	CostumeUniqueId: long;
 	LinkedCharacterVoicePrintType: CVPrintType;
-	LinkedCharacterName: string;
-	BlackListNameHash: [uint];
+	LinkedCostumeUniqueId: long;
 }
 
 table VoiceSkillUseExcelTable {
@@ -12188,6 +11702,18 @@ table VoiceSkillUseExcelTable {
 table VoiceSkillUseExcel {
 	Name: string;
 	VoiceHash: [uint];
+}
+
+table VoiceSpineExcelTable {
+	DataList: [VoiceSpineExcel];
+}
+
+table VoiceSpineExcel {
+	UniqueId: long;
+	Id: uint;
+	Nation: [Nation];
+	Path: [string];
+	SoundVolume: [float];
 }
 
 table WebEventSeasonExcelTable {
@@ -12387,7 +11913,6 @@ table WorldRaidStageExcel {
 	BattleReadyTimelinePath: [string];
 	BattleReadyTimelinePhaseStart: [int];
 	BattleReadyTimelinePhaseEnd: [int];
-	BeforeVictoryTimelinePath: string;
 	VictoryTimelinePath: string;
 	PhaseChangeTimelinePath: string;
 	TimeLinePhase: long;
@@ -12416,5 +11941,156 @@ table WorldRaidStageRewardExcel {
 	ClearStageRewardParcelUniqueID: long;
 	ClearStageRewardParcelUniqueName: string;
 	ClearStageRewardAmount: long;
+}
+
+table LoadingImageExcel {
+	ID: long;
+	ImagePathKr: string;
+	ImagePathJp: string;
+	DisplayWeight: int;
+	ImagePathTh: string;
+	ImagePathTw: string;
+	ImagePathEn: string;
+}
+
+table LocalizeErrorExcel {
+	Key: uint;
+	ErrorLevel: WebAPIErrorLevel;
+	Kr: string;
+	Jp: string;
+	Th: string;
+	Tw: string;
+	En: string;
+}
+
+table LocalizeExcel {
+	Key: uint;
+	Kr: string;
+	Jp: string;
+	Th: string;
+	Tw: string;
+	En: string;
+}
+
+table LocalizeSkillExcel {
+	Key: uint;
+	NameKr: string;
+	DescriptionKr: string;
+	SkillInvokeLocalizeKr: string;
+	NameJp: string;
+	DescriptionJp: string;
+	SkillInvokeLocalizeJp: string;
+	NameTh: string;
+	DescriptionTh: string;
+	SkillInvokeLocalizeTh: string;
+	NameTw: string;
+	DescriptionTw: string;
+	SkillInvokeLocalizeTw: string;
+	NameEn: string;
+	DescriptionEn: string;
+	SkillInvokeLocalizeEn: string;
+}
+
+table ScenarioBGEffectExcel {
+	Name: uint;
+	Effect: string;
+	Scroll: ScenarioBGScroll;
+	ScrollTime: long;
+	ScrollFrom: long;
+	ScrollTo: long;
+}
+
+table ScenarioBGNameExcel {
+	Name: uint;
+	productionStep: ProductionStep;
+	BGFileName: string;
+	BGType: ScenarioBGType;
+	AnimationRoot: string;
+	AnimationName: string;
+	SpineScale: float;
+	SpineLocalPosX: int;
+	SpineLocalPosY: int;
+}
+
+table ScenarioBGName_GlobalExcel {
+	GroupName: uint;
+	NameKr: uint;
+	NameTw: uint;
+	NameAsia: uint;
+	NameNa: uint;
+	NameGlobal: uint;
+	NameTeen: uint;
+}
+
+table ScenarioCharacterEmotionExcel {
+	EmoticonName: string;
+	Name: uint;
+}
+
+table ScenarioCharacterNameExcel {
+	CharacterName: uint;
+	productionStep: ProductionStep;
+	NameKR: string;
+	NicknameKR: string;
+	NameJP: string;
+	NicknameJP: string;
+	NameTH: string;
+	NicknameTH: string;
+	NameTW: string;
+	NicknameTW: string;
+	NameEN: string;
+	NicknameEN: string;
+	Shape: ScenarioCharacterShapes;
+	SpinePrefabName: string;
+	SmallPortrait: string;
+}
+
+table ScenarioCharacterSituationSetExcel {
+	Name: uint;
+	Face: string;
+	Behavior: string;
+	Action: string;
+	Shape: string;
+	Effect: uint;
+	Emotion: uint;
+}
+
+table ScenarioEffectExcel {
+	EffectName: string;
+	Name: uint;
+}
+
+table ScenarioScriptExcel {
+	GroupId: long;
+	SelectionGroup: long;
+	BGMId: long;
+	Sound: string;
+	Transition: uint;
+	BGName: uint;
+	BGEffect: uint;
+	PopupFileName: string;
+	ScriptKr: string;
+	TextJp: string;
+	TextTh: string;
+	TextTw: string;
+	TextEn: string;
+	VoiceId: uint;
+	TeenMode: bool;
+}
+
+table ScenarioTransitionExcel {
+	Name: uint;
+	TransitionOut: string;
+	TransitionOutDuration: long;
+	TransitionOutResource: string;
+	TransitionIn: string;
+	TransitionInDuration: long;
+	TransitionInResource: string;
+}
+
+table SkillAdditionalTooltipExcel {
+	GroupId: long;
+	AdditionalSkillGroupId: string;
+	ShowSkillSlot: string;
 }
 

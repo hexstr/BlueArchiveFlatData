@@ -23,46 +23,55 @@ public struct EventContentCollectionExcel : IFlatbufferObject
   public long EventContentId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long GroupId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.EventCollectionUnlockType UnlockConditionType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.EventCollectionUnlockType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventCollectionUnlockType.None; } }
-  public long UnlockConditionParameter { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long UnlockConditionCount { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool IsObject { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool IsHorizon { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string EmblemResource { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long UnlockConditionParameter(int j) { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int UnlockConditionParameterLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEmblemResourceBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<long> GetUnlockConditionParameterBytes() { return __p.__vector_as_span<long>(12, 8); }
 #else
-  public ArraySegment<byte>? GetEmblemResourceBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetUnlockConditionParameterBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
-  public byte[] GetEmblemResourceArray() { return __p.__vector_as_array<byte>(20); }
-  public string ThumbResource { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long[] GetUnlockConditionParameterArray() { return __p.__vector_as_array<long>(12); }
+  public FlatDataGlobal.MultipleConditionCheckType MultipleConditionCheckType { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.MultipleConditionCheckType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MultipleConditionCheckType.And; } }
+  public long UnlockConditionCount { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool IsObject { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool IsHorizon { get { int o = __p.__offset(20); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string EmblemResource { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetThumbResourceBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetEmblemResourceBytes() { return __p.__vector_as_span<byte>(22, 1); }
 #else
-  public ArraySegment<byte>? GetThumbResourceBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetEmblemResourceBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetThumbResourceArray() { return __p.__vector_as_array<byte>(22); }
-  public string FullResource { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEmblemResourceArray() { return __p.__vector_as_array<byte>(22); }
+  public string ThumbResource { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetFullResourceBytes() { return __p.__vector_as_span<byte>(24, 1); }
+  public Span<byte> GetThumbResourceBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetFullResourceBytes() { return __p.__vector_as_arraysegment(24); }
+  public ArraySegment<byte>? GetThumbResourceBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetFullResourceArray() { return __p.__vector_as_array<byte>(24); }
-  public uint LocalizeEtcId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public string SubNameLocalizeCodeId { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetThumbResourceArray() { return __p.__vector_as_array<byte>(24); }
+  public string FullResource { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSubNameLocalizeCodeIdBytes() { return __p.__vector_as_span<byte>(28, 1); }
+  public Span<byte> GetFullResourceBytes() { return __p.__vector_as_span<byte>(26, 1); }
 #else
-  public ArraySegment<byte>? GetSubNameLocalizeCodeIdBytes() { return __p.__vector_as_arraysegment(28); }
+  public ArraySegment<byte>? GetFullResourceBytes() { return __p.__vector_as_arraysegment(26); }
 #endif
-  public byte[] GetSubNameLocalizeCodeIdArray() { return __p.__vector_as_array<byte>(28); }
+  public byte[] GetFullResourceArray() { return __p.__vector_as_array<byte>(26); }
+  public uint LocalizeEtcId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public string SubNameLocalizeCodeId { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetSubNameLocalizeCodeIdBytes() { return __p.__vector_as_span<byte>(30, 1); }
+#else
+  public ArraySegment<byte>? GetSubNameLocalizeCodeIdBytes() { return __p.__vector_as_arraysegment(30); }
+#endif
+  public byte[] GetSubNameLocalizeCodeIdArray() { return __p.__vector_as_array<byte>(30); }
 
   public static Offset<FlatDataGlobal.EventContentCollectionExcel> CreateEventContentCollectionExcel(FlatBufferBuilder builder,
       long Id = 0,
       long EventContentId = 0,
       long GroupId = 0,
       FlatDataGlobal.EventCollectionUnlockType UnlockConditionType = FlatDataGlobal.EventCollectionUnlockType.None,
-      long UnlockConditionParameter = 0,
+      VectorOffset UnlockConditionParameterOffset = default(VectorOffset),
+      FlatDataGlobal.MultipleConditionCheckType multipleConditionCheckType = FlatDataGlobal.MultipleConditionCheckType.And,
       long UnlockConditionCount = 0,
       bool IsObject = false,
       bool IsHorizon = false,
@@ -71,9 +80,8 @@ public struct EventContentCollectionExcel : IFlatbufferObject
       StringOffset FullResourceOffset = default(StringOffset),
       uint LocalizeEtcId = 0,
       StringOffset SubNameLocalizeCodeIdOffset = default(StringOffset)) {
-    builder.StartTable(13);
+    builder.StartTable(14);
     EventContentCollectionExcel.AddUnlockConditionCount(builder, UnlockConditionCount);
-    EventContentCollectionExcel.AddUnlockConditionParameter(builder, UnlockConditionParameter);
     EventContentCollectionExcel.AddGroupId(builder, GroupId);
     EventContentCollectionExcel.AddEventContentId(builder, EventContentId);
     EventContentCollectionExcel.AddId(builder, Id);
@@ -82,26 +90,34 @@ public struct EventContentCollectionExcel : IFlatbufferObject
     EventContentCollectionExcel.AddFullResource(builder, FullResourceOffset);
     EventContentCollectionExcel.AddThumbResource(builder, ThumbResourceOffset);
     EventContentCollectionExcel.AddEmblemResource(builder, EmblemResourceOffset);
+    EventContentCollectionExcel.AddMultipleConditionCheckType(builder, multipleConditionCheckType);
+    EventContentCollectionExcel.AddUnlockConditionParameter(builder, UnlockConditionParameterOffset);
     EventContentCollectionExcel.AddUnlockConditionType(builder, UnlockConditionType);
     EventContentCollectionExcel.AddIsHorizon(builder, IsHorizon);
     EventContentCollectionExcel.AddIsObject(builder, IsObject);
     return EventContentCollectionExcel.EndEventContentCollectionExcel(builder);
   }
 
-  public static void StartEventContentCollectionExcel(FlatBufferBuilder builder) { builder.StartTable(13); }
+  public static void StartEventContentCollectionExcel(FlatBufferBuilder builder) { builder.StartTable(14); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(1, EventContentId, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(2, GroupId, 0); }
   public static void AddUnlockConditionType(FlatBufferBuilder builder, FlatDataGlobal.EventCollectionUnlockType UnlockConditionType) { builder.AddInt(3, (int)UnlockConditionType, 0); }
-  public static void AddUnlockConditionParameter(FlatBufferBuilder builder, long UnlockConditionParameter) { builder.AddLong(4, UnlockConditionParameter, 0); }
-  public static void AddUnlockConditionCount(FlatBufferBuilder builder, long UnlockConditionCount) { builder.AddLong(5, UnlockConditionCount, 0); }
-  public static void AddIsObject(FlatBufferBuilder builder, bool IsObject) { builder.AddBool(6, IsObject, false); }
-  public static void AddIsHorizon(FlatBufferBuilder builder, bool IsHorizon) { builder.AddBool(7, IsHorizon, false); }
-  public static void AddEmblemResource(FlatBufferBuilder builder, StringOffset EmblemResourceOffset) { builder.AddOffset(8, EmblemResourceOffset.Value, 0); }
-  public static void AddThumbResource(FlatBufferBuilder builder, StringOffset ThumbResourceOffset) { builder.AddOffset(9, ThumbResourceOffset.Value, 0); }
-  public static void AddFullResource(FlatBufferBuilder builder, StringOffset FullResourceOffset) { builder.AddOffset(10, FullResourceOffset.Value, 0); }
-  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(11, LocalizeEtcId, 0); }
-  public static void AddSubNameLocalizeCodeId(FlatBufferBuilder builder, StringOffset SubNameLocalizeCodeIdOffset) { builder.AddOffset(12, SubNameLocalizeCodeIdOffset.Value, 0); }
+  public static void AddUnlockConditionParameter(FlatBufferBuilder builder, VectorOffset UnlockConditionParameterOffset) { builder.AddOffset(4, UnlockConditionParameterOffset.Value, 0); }
+  public static VectorOffset CreateUnlockConditionParameterVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateUnlockConditionParameterVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateUnlockConditionParameterVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateUnlockConditionParameterVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartUnlockConditionParameterVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddMultipleConditionCheckType(FlatBufferBuilder builder, FlatDataGlobal.MultipleConditionCheckType multipleConditionCheckType) { builder.AddInt(5, (int)multipleConditionCheckType, 0); }
+  public static void AddUnlockConditionCount(FlatBufferBuilder builder, long UnlockConditionCount) { builder.AddLong(6, UnlockConditionCount, 0); }
+  public static void AddIsObject(FlatBufferBuilder builder, bool IsObject) { builder.AddBool(7, IsObject, false); }
+  public static void AddIsHorizon(FlatBufferBuilder builder, bool IsHorizon) { builder.AddBool(8, IsHorizon, false); }
+  public static void AddEmblemResource(FlatBufferBuilder builder, StringOffset EmblemResourceOffset) { builder.AddOffset(9, EmblemResourceOffset.Value, 0); }
+  public static void AddThumbResource(FlatBufferBuilder builder, StringOffset ThumbResourceOffset) { builder.AddOffset(10, ThumbResourceOffset.Value, 0); }
+  public static void AddFullResource(FlatBufferBuilder builder, StringOffset FullResourceOffset) { builder.AddOffset(11, FullResourceOffset.Value, 0); }
+  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(12, LocalizeEtcId, 0); }
+  public static void AddSubNameLocalizeCodeId(FlatBufferBuilder builder, StringOffset SubNameLocalizeCodeIdOffset) { builder.AddOffset(13, SubNameLocalizeCodeIdOffset.Value, 0); }
   public static Offset<FlatDataGlobal.EventContentCollectionExcel> EndEventContentCollectionExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentCollectionExcel>(o);

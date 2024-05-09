@@ -22,7 +22,7 @@ public struct CharacterSkillListExcel : IFlatbufferObject
   public long CharacterSkillListGroupId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int MinimumGradeCharacterWeapon { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int MinimumTierCharacterGear { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool IsFormConversion { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public int FormIndex { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public bool IsRootMotion { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool IsMoveLeftRight { get { int o = __p.__offset(14); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool UseRandomAnimation { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
@@ -69,7 +69,7 @@ public struct CharacterSkillListExcel : IFlatbufferObject
       long CharacterSkillListGroupId = 0,
       int MinimumGradeCharacterWeapon = 0,
       int MinimumTierCharacterGear = 0,
-      bool IsFormConversion = false,
+      int FormIndex = 0,
       bool IsRootMotion = false,
       bool IsMoveLeftRight = false,
       bool UseRandomAnimation = false,
@@ -95,12 +95,12 @@ public struct CharacterSkillListExcel : IFlatbufferObject
     CharacterSkillListExcel.AddExSkillGroupId(builder, ExSkillGroupIdOffset);
     CharacterSkillListExcel.AddNormalSkillTimeLineIndex(builder, NormalSkillTimeLineIndexOffset);
     CharacterSkillListExcel.AddNormalSkillGroupId(builder, NormalSkillGroupIdOffset);
+    CharacterSkillListExcel.AddFormIndex(builder, FormIndex);
     CharacterSkillListExcel.AddMinimumTierCharacterGear(builder, MinimumTierCharacterGear);
     CharacterSkillListExcel.AddMinimumGradeCharacterWeapon(builder, MinimumGradeCharacterWeapon);
     CharacterSkillListExcel.AddUseRandomAnimation(builder, UseRandomAnimation);
     CharacterSkillListExcel.AddIsMoveLeftRight(builder, IsMoveLeftRight);
     CharacterSkillListExcel.AddIsRootMotion(builder, IsRootMotion);
-    CharacterSkillListExcel.AddIsFormConversion(builder, IsFormConversion);
     return CharacterSkillListExcel.EndCharacterSkillListExcel(builder);
   }
 
@@ -108,7 +108,7 @@ public struct CharacterSkillListExcel : IFlatbufferObject
   public static void AddCharacterSkillListGroupId(FlatBufferBuilder builder, long CharacterSkillListGroupId) { builder.AddLong(0, CharacterSkillListGroupId, 0); }
   public static void AddMinimumGradeCharacterWeapon(FlatBufferBuilder builder, int MinimumGradeCharacterWeapon) { builder.AddInt(1, MinimumGradeCharacterWeapon, 0); }
   public static void AddMinimumTierCharacterGear(FlatBufferBuilder builder, int MinimumTierCharacterGear) { builder.AddInt(2, MinimumTierCharacterGear, 0); }
-  public static void AddIsFormConversion(FlatBufferBuilder builder, bool IsFormConversion) { builder.AddBool(3, IsFormConversion, false); }
+  public static void AddFormIndex(FlatBufferBuilder builder, int FormIndex) { builder.AddInt(3, FormIndex, 0); }
   public static void AddIsRootMotion(FlatBufferBuilder builder, bool IsRootMotion) { builder.AddBool(4, IsRootMotion, false); }
   public static void AddIsMoveLeftRight(FlatBufferBuilder builder, bool IsMoveLeftRight) { builder.AddBool(5, IsMoveLeftRight, false); }
   public static void AddUseRandomAnimation(FlatBufferBuilder builder, bool UseRandomAnimation) { builder.AddBool(6, UseRandomAnimation, false); }

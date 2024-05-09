@@ -21,19 +21,23 @@ public struct CharacterStatsTransExcel : IFlatbufferObject
 
   public FlatDataGlobal.StatType TransSupportStats { get { int o = __p.__offset(4); return o != 0 ? (FlatDataGlobal.StatType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatType.None; } }
   public int TransSupportStatsFactor { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.StatTransType StatTransType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.StatTransType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatTransType.SpecialTransStat; } }
 
   public static Offset<FlatDataGlobal.CharacterStatsTransExcel> CreateCharacterStatsTransExcel(FlatBufferBuilder builder,
       FlatDataGlobal.StatType TransSupportStats = FlatDataGlobal.StatType.None,
-      int TransSupportStatsFactor = 0) {
-    builder.StartTable(2);
+      int TransSupportStatsFactor = 0,
+      FlatDataGlobal.StatTransType statTransType = FlatDataGlobal.StatTransType.SpecialTransStat) {
+    builder.StartTable(3);
+    CharacterStatsTransExcel.AddStatTransType(builder, statTransType);
     CharacterStatsTransExcel.AddTransSupportStatsFactor(builder, TransSupportStatsFactor);
     CharacterStatsTransExcel.AddTransSupportStats(builder, TransSupportStats);
     return CharacterStatsTransExcel.EndCharacterStatsTransExcel(builder);
   }
 
-  public static void StartCharacterStatsTransExcel(FlatBufferBuilder builder) { builder.StartTable(2); }
+  public static void StartCharacterStatsTransExcel(FlatBufferBuilder builder) { builder.StartTable(3); }
   public static void AddTransSupportStats(FlatBufferBuilder builder, FlatDataGlobal.StatType TransSupportStats) { builder.AddInt(0, (int)TransSupportStats, 0); }
   public static void AddTransSupportStatsFactor(FlatBufferBuilder builder, int TransSupportStatsFactor) { builder.AddInt(1, TransSupportStatsFactor, 0); }
+  public static void AddStatTransType(FlatBufferBuilder builder, FlatDataGlobal.StatTransType statTransType) { builder.AddInt(2, (int)statTransType, 0); }
   public static Offset<FlatDataGlobal.CharacterStatsTransExcel> EndCharacterStatsTransExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterStatsTransExcel>(o);

@@ -21,20 +21,8 @@ public struct ScenarioResourceInfoExcel : IFlatbufferObject
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ScenarioModeId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string VideoName { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetVideoNameBytes() { return __p.__vector_as_span<byte>(8, 1); }
-#else
-  public ArraySegment<byte>? GetVideoNameBytes() { return __p.__vector_as_arraysegment(8); }
-#endif
-  public byte[] GetVideoNameArray() { return __p.__vector_as_array<byte>(8); }
-  public string BgmId { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetBgmIdBytes() { return __p.__vector_as_span<byte>(10, 1); }
-#else
-  public ArraySegment<byte>? GetBgmIdBytes() { return __p.__vector_as_arraysegment(10); }
-#endif
-  public byte[] GetBgmIdArray() { return __p.__vector_as_array<byte>(10); }
+  public long VideoId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long BgmId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string AudioName { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
   public Span<byte> GetAudioNameBytes() { return __p.__vector_as_span<byte>(12, 1); }
@@ -61,29 +49,29 @@ public struct ScenarioResourceInfoExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.ScenarioResourceInfoExcel> CreateScenarioResourceInfoExcel(FlatBufferBuilder builder,
       long Id = 0,
       long ScenarioModeId = 0,
-      StringOffset VideoNameOffset = default(StringOffset),
-      StringOffset BgmIdOffset = default(StringOffset),
+      long VideoId = 0,
+      long BgmId = 0,
       StringOffset AudioNameOffset = default(StringOffset),
       StringOffset SpinePathOffset = default(StringOffset),
       int Ratio = 0,
       StringOffset LobbyAniPathOffset = default(StringOffset)) {
     builder.StartTable(8);
+    ScenarioResourceInfoExcel.AddBgmId(builder, BgmId);
+    ScenarioResourceInfoExcel.AddVideoId(builder, VideoId);
     ScenarioResourceInfoExcel.AddScenarioModeId(builder, ScenarioModeId);
     ScenarioResourceInfoExcel.AddId(builder, Id);
     ScenarioResourceInfoExcel.AddLobbyAniPath(builder, LobbyAniPathOffset);
     ScenarioResourceInfoExcel.AddRatio(builder, Ratio);
     ScenarioResourceInfoExcel.AddSpinePath(builder, SpinePathOffset);
     ScenarioResourceInfoExcel.AddAudioName(builder, AudioNameOffset);
-    ScenarioResourceInfoExcel.AddBgmId(builder, BgmIdOffset);
-    ScenarioResourceInfoExcel.AddVideoName(builder, VideoNameOffset);
     return ScenarioResourceInfoExcel.EndScenarioResourceInfoExcel(builder);
   }
 
   public static void StartScenarioResourceInfoExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddScenarioModeId(FlatBufferBuilder builder, long ScenarioModeId) { builder.AddLong(1, ScenarioModeId, 0); }
-  public static void AddVideoName(FlatBufferBuilder builder, StringOffset VideoNameOffset) { builder.AddOffset(2, VideoNameOffset.Value, 0); }
-  public static void AddBgmId(FlatBufferBuilder builder, StringOffset BgmIdOffset) { builder.AddOffset(3, BgmIdOffset.Value, 0); }
+  public static void AddVideoId(FlatBufferBuilder builder, long VideoId) { builder.AddLong(2, VideoId, 0); }
+  public static void AddBgmId(FlatBufferBuilder builder, long BgmId) { builder.AddLong(3, BgmId, 0); }
   public static void AddAudioName(FlatBufferBuilder builder, StringOffset AudioNameOffset) { builder.AddOffset(4, AudioNameOffset.Value, 0); }
   public static void AddSpinePath(FlatBufferBuilder builder, StringOffset SpinePathOffset) { builder.AddOffset(5, SpinePathOffset.Value, 0); }
   public static void AddRatio(FlatBufferBuilder builder, int Ratio) { builder.AddInt(6, Ratio, 0); }

@@ -34,123 +34,124 @@ public struct EventContentSeasonExcel : IFlatbufferObject
   public FlatDataGlobal.ContentLockType ContentLockType { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.ContentLockType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ContentLockType.None; } }
   public bool EventDisplay { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public int IconOrder { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool SubEvent { get { int o = __p.__offset(22); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long EventItemId { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long MainEventId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EventChangeOpenCondition { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string BeforehandExposedTime { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataGlobal.SubEventType SubEventType { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.SubEventType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.SubEventType.None; } }
+  public bool SubEvent { get { int o = __p.__offset(24); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long EventItemId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long MainEventId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EventChangeOpenCondition { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string BeforehandExposedTime { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBeforehandExposedTimeBytes() { return __p.__vector_as_span<byte>(30, 1); }
+  public Span<byte> GetBeforehandExposedTimeBytes() { return __p.__vector_as_span<byte>(32, 1); }
 #else
-  public ArraySegment<byte>? GetBeforehandExposedTimeBytes() { return __p.__vector_as_arraysegment(30); }
+  public ArraySegment<byte>? GetBeforehandExposedTimeBytes() { return __p.__vector_as_arraysegment(32); }
 #endif
-  public byte[] GetBeforehandExposedTimeArray() { return __p.__vector_as_array<byte>(30); }
-  public string EventContentOpenTime { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetBeforehandExposedTimeArray() { return __p.__vector_as_array<byte>(32); }
+  public string EventContentOpenTime { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEventContentOpenTimeBytes() { return __p.__vector_as_span<byte>(32, 1); }
+  public Span<byte> GetEventContentOpenTimeBytes() { return __p.__vector_as_span<byte>(34, 1); }
 #else
-  public ArraySegment<byte>? GetEventContentOpenTimeBytes() { return __p.__vector_as_arraysegment(32); }
+  public ArraySegment<byte>? GetEventContentOpenTimeBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
-  public byte[] GetEventContentOpenTimeArray() { return __p.__vector_as_array<byte>(32); }
-  public string EventContentCloseTime { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEventContentOpenTimeArray() { return __p.__vector_as_array<byte>(34); }
+  public string EventContentCloseTime { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEventContentCloseTimeBytes() { return __p.__vector_as_span<byte>(34, 1); }
+  public Span<byte> GetEventContentCloseTimeBytes() { return __p.__vector_as_span<byte>(36, 1); }
 #else
-  public ArraySegment<byte>? GetEventContentCloseTimeBytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetEventContentCloseTimeBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public byte[] GetEventContentCloseTimeArray() { return __p.__vector_as_array<byte>(34); }
-  public string ExtensionTime { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEventContentCloseTimeArray() { return __p.__vector_as_array<byte>(36); }
+  public string ExtensionTime { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetExtensionTimeBytes() { return __p.__vector_as_span<byte>(36, 1); }
+  public Span<byte> GetExtensionTimeBytes() { return __p.__vector_as_span<byte>(38, 1); }
 #else
-  public ArraySegment<byte>? GetExtensionTimeBytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetExtensionTimeBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public byte[] GetExtensionTimeArray() { return __p.__vector_as_array<byte>(36); }
-  public string MainIconParcelPath { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetExtensionTimeArray() { return __p.__vector_as_array<byte>(38); }
+  public string MainIconParcelPath { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMainIconParcelPathBytes() { return __p.__vector_as_span<byte>(38, 1); }
+  public Span<byte> GetMainIconParcelPathBytes() { return __p.__vector_as_span<byte>(40, 1); }
 #else
-  public ArraySegment<byte>? GetMainIconParcelPathBytes() { return __p.__vector_as_arraysegment(38); }
+  public ArraySegment<byte>? GetMainIconParcelPathBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
-  public byte[] GetMainIconParcelPathArray() { return __p.__vector_as_array<byte>(38); }
-  public string SubIconParcelPath { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetMainIconParcelPathArray() { return __p.__vector_as_array<byte>(40); }
+  public string SubIconParcelPath { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSubIconParcelPathBytes() { return __p.__vector_as_span<byte>(40, 1); }
+  public Span<byte> GetSubIconParcelPathBytes() { return __p.__vector_as_span<byte>(42, 1); }
 #else
-  public ArraySegment<byte>? GetSubIconParcelPathBytes() { return __p.__vector_as_arraysegment(40); }
+  public ArraySegment<byte>? GetSubIconParcelPathBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public byte[] GetSubIconParcelPathArray() { return __p.__vector_as_array<byte>(40); }
-  public string BeforehandBgImagePath { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSubIconParcelPathArray() { return __p.__vector_as_array<byte>(42); }
+  public string BeforehandBgImagePath { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBeforehandBgImagePathBytes() { return __p.__vector_as_span<byte>(42, 1); }
+  public Span<byte> GetBeforehandBgImagePathBytes() { return __p.__vector_as_span<byte>(44, 1); }
 #else
-  public ArraySegment<byte>? GetBeforehandBgImagePathBytes() { return __p.__vector_as_arraysegment(42); }
+  public ArraySegment<byte>? GetBeforehandBgImagePathBytes() { return __p.__vector_as_arraysegment(44); }
 #endif
-  public byte[] GetBeforehandBgImagePathArray() { return __p.__vector_as_array<byte>(42); }
-  public long MinigamePrologScenarioGroupId { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long BeforehandScenarioGroupId(int j) { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int BeforehandScenarioGroupIdLength { get { int o = __p.__offset(46); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetBeforehandBgImagePathArray() { return __p.__vector_as_array<byte>(44); }
+  public long MinigamePrologScenarioGroupId { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long BeforehandScenarioGroupId(int j) { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int BeforehandScenarioGroupIdLength { get { int o = __p.__offset(48); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetBeforehandScenarioGroupIdBytes() { return __p.__vector_as_span<long>(46, 8); }
+  public Span<long> GetBeforehandScenarioGroupIdBytes() { return __p.__vector_as_span<long>(48, 8); }
 #else
-  public ArraySegment<byte>? GetBeforehandScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(46); }
+  public ArraySegment<byte>? GetBeforehandScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(48); }
 #endif
-  public long[] GetBeforehandScenarioGroupIdArray() { return __p.__vector_as_array<long>(46); }
-  public string MainBannerImagePath { get { int o = __p.__offset(48); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long[] GetBeforehandScenarioGroupIdArray() { return __p.__vector_as_array<long>(48); }
+  public string MainBannerImagePath { get { int o = __p.__offset(50); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMainBannerImagePathBytes() { return __p.__vector_as_span<byte>(48, 1); }
+  public Span<byte> GetMainBannerImagePathBytes() { return __p.__vector_as_span<byte>(50, 1); }
 #else
-  public ArraySegment<byte>? GetMainBannerImagePathBytes() { return __p.__vector_as_arraysegment(48); }
+  public ArraySegment<byte>? GetMainBannerImagePathBytes() { return __p.__vector_as_arraysegment(50); }
 #endif
-  public byte[] GetMainBannerImagePathArray() { return __p.__vector_as_array<byte>(48); }
-  public string MainBgImagePath { get { int o = __p.__offset(50); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetMainBannerImagePathArray() { return __p.__vector_as_array<byte>(50); }
+  public string MainBgImagePath { get { int o = __p.__offset(52); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMainBgImagePathBytes() { return __p.__vector_as_span<byte>(50, 1); }
+  public Span<byte> GetMainBgImagePathBytes() { return __p.__vector_as_span<byte>(52, 1); }
 #else
-  public ArraySegment<byte>? GetMainBgImagePathBytes() { return __p.__vector_as_arraysegment(50); }
+  public ArraySegment<byte>? GetMainBgImagePathBytes() { return __p.__vector_as_arraysegment(52); }
 #endif
-  public byte[] GetMainBgImagePathArray() { return __p.__vector_as_array<byte>(50); }
-  public long ShiftTriggerStageId { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string ShiftMainBgImagePath { get { int o = __p.__offset(54); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetMainBgImagePathArray() { return __p.__vector_as_array<byte>(52); }
+  public long ShiftTriggerStageId { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string ShiftMainBgImagePath { get { int o = __p.__offset(56); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetShiftMainBgImagePathBytes() { return __p.__vector_as_span<byte>(54, 1); }
+  public Span<byte> GetShiftMainBgImagePathBytes() { return __p.__vector_as_span<byte>(56, 1); }
 #else
-  public ArraySegment<byte>? GetShiftMainBgImagePathBytes() { return __p.__vector_as_arraysegment(54); }
+  public ArraySegment<byte>? GetShiftMainBgImagePathBytes() { return __p.__vector_as_arraysegment(56); }
 #endif
-  public byte[] GetShiftMainBgImagePathArray() { return __p.__vector_as_array<byte>(54); }
-  public string MinigameLobbyPrefabName { get { int o = __p.__offset(56); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetShiftMainBgImagePathArray() { return __p.__vector_as_array<byte>(56); }
+  public string MinigameLobbyPrefabName { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMinigameLobbyPrefabNameBytes() { return __p.__vector_as_span<byte>(56, 1); }
+  public Span<byte> GetMinigameLobbyPrefabNameBytes() { return __p.__vector_as_span<byte>(58, 1); }
 #else
-  public ArraySegment<byte>? GetMinigameLobbyPrefabNameBytes() { return __p.__vector_as_arraysegment(56); }
+  public ArraySegment<byte>? GetMinigameLobbyPrefabNameBytes() { return __p.__vector_as_arraysegment(58); }
 #endif
-  public byte[] GetMinigameLobbyPrefabNameArray() { return __p.__vector_as_array<byte>(56); }
-  public string MinigameVictoryPrefabName { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetMinigameLobbyPrefabNameArray() { return __p.__vector_as_array<byte>(58); }
+  public string MinigameVictoryPrefabName { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMinigameVictoryPrefabNameBytes() { return __p.__vector_as_span<byte>(58, 1); }
+  public Span<byte> GetMinigameVictoryPrefabNameBytes() { return __p.__vector_as_span<byte>(60, 1); }
 #else
-  public ArraySegment<byte>? GetMinigameVictoryPrefabNameBytes() { return __p.__vector_as_arraysegment(58); }
+  public ArraySegment<byte>? GetMinigameVictoryPrefabNameBytes() { return __p.__vector_as_arraysegment(60); }
 #endif
-  public byte[] GetMinigameVictoryPrefabNameArray() { return __p.__vector_as_array<byte>(58); }
-  public string MinigameMissionBgPrefabName { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetMinigameVictoryPrefabNameArray() { return __p.__vector_as_array<byte>(60); }
+  public string MinigameMissionBgPrefabName { get { int o = __p.__offset(62); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMinigameMissionBgPrefabNameBytes() { return __p.__vector_as_span<byte>(60, 1); }
+  public Span<byte> GetMinigameMissionBgPrefabNameBytes() { return __p.__vector_as_span<byte>(62, 1); }
 #else
-  public ArraySegment<byte>? GetMinigameMissionBgPrefabNameBytes() { return __p.__vector_as_arraysegment(60); }
+  public ArraySegment<byte>? GetMinigameMissionBgPrefabNameBytes() { return __p.__vector_as_arraysegment(62); }
 #endif
-  public byte[] GetMinigameMissionBgPrefabNameArray() { return __p.__vector_as_array<byte>(60); }
-  public string CardBgImagePath { get { int o = __p.__offset(62); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetMinigameMissionBgPrefabNameArray() { return __p.__vector_as_array<byte>(62); }
+  public string CardBgImagePath { get { int o = __p.__offset(64); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetCardBgImagePathBytes() { return __p.__vector_as_span<byte>(62, 1); }
+  public Span<byte> GetCardBgImagePathBytes() { return __p.__vector_as_span<byte>(64, 1); }
 #else
-  public ArraySegment<byte>? GetCardBgImagePathBytes() { return __p.__vector_as_arraysegment(62); }
+  public ArraySegment<byte>? GetCardBgImagePathBytes() { return __p.__vector_as_arraysegment(64); }
 #endif
-  public byte[] GetCardBgImagePathArray() { return __p.__vector_as_array<byte>(62); }
-  public bool EventAssist { get { int o = __p.__offset(64); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.EventContentReleaseType EventContentReleaseType { get { int o = __p.__offset(66); return o != 0 ? (FlatDataGlobal.EventContentReleaseType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentReleaseType.None; } }
-  public long EventContentStageRewardIdPermanent { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.RewardTag RewardTagPermanent { get { int o = __p.__offset(70); return o != 0 ? (FlatDataGlobal.RewardTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RewardTag.Default; } }
-  public long MiniEventShortCutScenarioModeId { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public byte[] GetCardBgImagePathArray() { return __p.__vector_as_array<byte>(64); }
+  public bool EventAssist { get { int o = __p.__offset(66); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.EventContentReleaseType EventContentReleaseType { get { int o = __p.__offset(68); return o != 0 ? (FlatDataGlobal.EventContentReleaseType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentReleaseType.None; } }
+  public long EventContentStageRewardIdPermanent { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.RewardTag RewardTagPermanent { get { int o = __p.__offset(72); return o != 0 ? (FlatDataGlobal.RewardTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.RewardTag.Default; } }
+  public long MiniEventShortCutScenarioModeId { get { int o = __p.__offset(74); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.EventContentSeasonExcel> CreateEventContentSeasonExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
@@ -162,6 +163,7 @@ public struct EventContentSeasonExcel : IFlatbufferObject
       FlatDataGlobal.ContentLockType contentLockType = FlatDataGlobal.ContentLockType.None,
       bool EventDisplay = false,
       int IconOrder = 0,
+      FlatDataGlobal.SubEventType subEventType = FlatDataGlobal.SubEventType.None,
       bool SubEvent = false,
       long EventItemId = 0,
       long MainEventId = 0,
@@ -188,7 +190,7 @@ public struct EventContentSeasonExcel : IFlatbufferObject
       long EventContentStageRewardIdPermanent = 0,
       FlatDataGlobal.RewardTag RewardTagPermanent = FlatDataGlobal.RewardTag.Default,
       long MiniEventShortCutScenarioModeId = 0) {
-    builder.StartTable(35);
+    builder.StartTable(36);
     EventContentSeasonExcel.AddMiniEventShortCutScenarioModeId(builder, MiniEventShortCutScenarioModeId);
     EventContentSeasonExcel.AddEventContentStageRewardIdPermanent(builder, EventContentStageRewardIdPermanent);
     EventContentSeasonExcel.AddShiftTriggerStageId(builder, ShiftTriggerStageId);
@@ -215,6 +217,7 @@ public struct EventContentSeasonExcel : IFlatbufferObject
     EventContentSeasonExcel.AddEventContentCloseTime(builder, EventContentCloseTimeOffset);
     EventContentSeasonExcel.AddEventContentOpenTime(builder, EventContentOpenTimeOffset);
     EventContentSeasonExcel.AddBeforehandExposedTime(builder, BeforehandExposedTimeOffset);
+    EventContentSeasonExcel.AddSubEventType(builder, subEventType);
     EventContentSeasonExcel.AddIconOrder(builder, IconOrder);
     EventContentSeasonExcel.AddContentLockType(builder, contentLockType);
     EventContentSeasonExcel.AddOpenConditionContent(builder, openConditionContent);
@@ -227,7 +230,7 @@ public struct EventContentSeasonExcel : IFlatbufferObject
     return EventContentSeasonExcel.EndEventContentSeasonExcel(builder);
   }
 
-  public static void StartEventContentSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(35); }
+  public static void StartEventContentSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(36); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddOriginalEventContentId(FlatBufferBuilder builder, long OriginalEventContentId) { builder.AddLong(1, OriginalEventContentId, 0); }
   public static void AddIsReturn(FlatBufferBuilder builder, bool IsReturn) { builder.AddBool(2, IsReturn, false); }
@@ -237,37 +240,38 @@ public struct EventContentSeasonExcel : IFlatbufferObject
   public static void AddContentLockType(FlatBufferBuilder builder, FlatDataGlobal.ContentLockType contentLockType) { builder.AddInt(6, (int)contentLockType, 0); }
   public static void AddEventDisplay(FlatBufferBuilder builder, bool EventDisplay) { builder.AddBool(7, EventDisplay, false); }
   public static void AddIconOrder(FlatBufferBuilder builder, int IconOrder) { builder.AddInt(8, IconOrder, 0); }
-  public static void AddSubEvent(FlatBufferBuilder builder, bool SubEvent) { builder.AddBool(9, SubEvent, false); }
-  public static void AddEventItemId(FlatBufferBuilder builder, long EventItemId) { builder.AddLong(10, EventItemId, 0); }
-  public static void AddMainEventId(FlatBufferBuilder builder, long MainEventId) { builder.AddLong(11, MainEventId, 0); }
-  public static void AddEventChangeOpenCondition(FlatBufferBuilder builder, long EventChangeOpenCondition) { builder.AddLong(12, EventChangeOpenCondition, 0); }
-  public static void AddBeforehandExposedTime(FlatBufferBuilder builder, StringOffset BeforehandExposedTimeOffset) { builder.AddOffset(13, BeforehandExposedTimeOffset.Value, 0); }
-  public static void AddEventContentOpenTime(FlatBufferBuilder builder, StringOffset EventContentOpenTimeOffset) { builder.AddOffset(14, EventContentOpenTimeOffset.Value, 0); }
-  public static void AddEventContentCloseTime(FlatBufferBuilder builder, StringOffset EventContentCloseTimeOffset) { builder.AddOffset(15, EventContentCloseTimeOffset.Value, 0); }
-  public static void AddExtensionTime(FlatBufferBuilder builder, StringOffset ExtensionTimeOffset) { builder.AddOffset(16, ExtensionTimeOffset.Value, 0); }
-  public static void AddMainIconParcelPath(FlatBufferBuilder builder, StringOffset MainIconParcelPathOffset) { builder.AddOffset(17, MainIconParcelPathOffset.Value, 0); }
-  public static void AddSubIconParcelPath(FlatBufferBuilder builder, StringOffset SubIconParcelPathOffset) { builder.AddOffset(18, SubIconParcelPathOffset.Value, 0); }
-  public static void AddBeforehandBgImagePath(FlatBufferBuilder builder, StringOffset BeforehandBgImagePathOffset) { builder.AddOffset(19, BeforehandBgImagePathOffset.Value, 0); }
-  public static void AddMinigamePrologScenarioGroupId(FlatBufferBuilder builder, long MinigamePrologScenarioGroupId) { builder.AddLong(20, MinigamePrologScenarioGroupId, 0); }
-  public static void AddBeforehandScenarioGroupId(FlatBufferBuilder builder, VectorOffset BeforehandScenarioGroupIdOffset) { builder.AddOffset(21, BeforehandScenarioGroupIdOffset.Value, 0); }
+  public static void AddSubEventType(FlatBufferBuilder builder, FlatDataGlobal.SubEventType subEventType) { builder.AddInt(9, (int)subEventType, 0); }
+  public static void AddSubEvent(FlatBufferBuilder builder, bool SubEvent) { builder.AddBool(10, SubEvent, false); }
+  public static void AddEventItemId(FlatBufferBuilder builder, long EventItemId) { builder.AddLong(11, EventItemId, 0); }
+  public static void AddMainEventId(FlatBufferBuilder builder, long MainEventId) { builder.AddLong(12, MainEventId, 0); }
+  public static void AddEventChangeOpenCondition(FlatBufferBuilder builder, long EventChangeOpenCondition) { builder.AddLong(13, EventChangeOpenCondition, 0); }
+  public static void AddBeforehandExposedTime(FlatBufferBuilder builder, StringOffset BeforehandExposedTimeOffset) { builder.AddOffset(14, BeforehandExposedTimeOffset.Value, 0); }
+  public static void AddEventContentOpenTime(FlatBufferBuilder builder, StringOffset EventContentOpenTimeOffset) { builder.AddOffset(15, EventContentOpenTimeOffset.Value, 0); }
+  public static void AddEventContentCloseTime(FlatBufferBuilder builder, StringOffset EventContentCloseTimeOffset) { builder.AddOffset(16, EventContentCloseTimeOffset.Value, 0); }
+  public static void AddExtensionTime(FlatBufferBuilder builder, StringOffset ExtensionTimeOffset) { builder.AddOffset(17, ExtensionTimeOffset.Value, 0); }
+  public static void AddMainIconParcelPath(FlatBufferBuilder builder, StringOffset MainIconParcelPathOffset) { builder.AddOffset(18, MainIconParcelPathOffset.Value, 0); }
+  public static void AddSubIconParcelPath(FlatBufferBuilder builder, StringOffset SubIconParcelPathOffset) { builder.AddOffset(19, SubIconParcelPathOffset.Value, 0); }
+  public static void AddBeforehandBgImagePath(FlatBufferBuilder builder, StringOffset BeforehandBgImagePathOffset) { builder.AddOffset(20, BeforehandBgImagePathOffset.Value, 0); }
+  public static void AddMinigamePrologScenarioGroupId(FlatBufferBuilder builder, long MinigamePrologScenarioGroupId) { builder.AddLong(21, MinigamePrologScenarioGroupId, 0); }
+  public static void AddBeforehandScenarioGroupId(FlatBufferBuilder builder, VectorOffset BeforehandScenarioGroupIdOffset) { builder.AddOffset(22, BeforehandScenarioGroupIdOffset.Value, 0); }
   public static VectorOffset CreateBeforehandScenarioGroupIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateBeforehandScenarioGroupIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBeforehandScenarioGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBeforehandScenarioGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartBeforehandScenarioGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddMainBannerImagePath(FlatBufferBuilder builder, StringOffset MainBannerImagePathOffset) { builder.AddOffset(22, MainBannerImagePathOffset.Value, 0); }
-  public static void AddMainBgImagePath(FlatBufferBuilder builder, StringOffset MainBgImagePathOffset) { builder.AddOffset(23, MainBgImagePathOffset.Value, 0); }
-  public static void AddShiftTriggerStageId(FlatBufferBuilder builder, long ShiftTriggerStageId) { builder.AddLong(24, ShiftTriggerStageId, 0); }
-  public static void AddShiftMainBgImagePath(FlatBufferBuilder builder, StringOffset ShiftMainBgImagePathOffset) { builder.AddOffset(25, ShiftMainBgImagePathOffset.Value, 0); }
-  public static void AddMinigameLobbyPrefabName(FlatBufferBuilder builder, StringOffset MinigameLobbyPrefabNameOffset) { builder.AddOffset(26, MinigameLobbyPrefabNameOffset.Value, 0); }
-  public static void AddMinigameVictoryPrefabName(FlatBufferBuilder builder, StringOffset MinigameVictoryPrefabNameOffset) { builder.AddOffset(27, MinigameVictoryPrefabNameOffset.Value, 0); }
-  public static void AddMinigameMissionBgPrefabName(FlatBufferBuilder builder, StringOffset MinigameMissionBgPrefabNameOffset) { builder.AddOffset(28, MinigameMissionBgPrefabNameOffset.Value, 0); }
-  public static void AddCardBgImagePath(FlatBufferBuilder builder, StringOffset CardBgImagePathOffset) { builder.AddOffset(29, CardBgImagePathOffset.Value, 0); }
-  public static void AddEventAssist(FlatBufferBuilder builder, bool EventAssist) { builder.AddBool(30, EventAssist, false); }
-  public static void AddEventContentReleaseType(FlatBufferBuilder builder, FlatDataGlobal.EventContentReleaseType eventContentReleaseType) { builder.AddInt(31, (int)eventContentReleaseType, 0); }
-  public static void AddEventContentStageRewardIdPermanent(FlatBufferBuilder builder, long EventContentStageRewardIdPermanent) { builder.AddLong(32, EventContentStageRewardIdPermanent, 0); }
-  public static void AddRewardTagPermanent(FlatBufferBuilder builder, FlatDataGlobal.RewardTag RewardTagPermanent) { builder.AddInt(33, (int)RewardTagPermanent, 0); }
-  public static void AddMiniEventShortCutScenarioModeId(FlatBufferBuilder builder, long MiniEventShortCutScenarioModeId) { builder.AddLong(34, MiniEventShortCutScenarioModeId, 0); }
+  public static void AddMainBannerImagePath(FlatBufferBuilder builder, StringOffset MainBannerImagePathOffset) { builder.AddOffset(23, MainBannerImagePathOffset.Value, 0); }
+  public static void AddMainBgImagePath(FlatBufferBuilder builder, StringOffset MainBgImagePathOffset) { builder.AddOffset(24, MainBgImagePathOffset.Value, 0); }
+  public static void AddShiftTriggerStageId(FlatBufferBuilder builder, long ShiftTriggerStageId) { builder.AddLong(25, ShiftTriggerStageId, 0); }
+  public static void AddShiftMainBgImagePath(FlatBufferBuilder builder, StringOffset ShiftMainBgImagePathOffset) { builder.AddOffset(26, ShiftMainBgImagePathOffset.Value, 0); }
+  public static void AddMinigameLobbyPrefabName(FlatBufferBuilder builder, StringOffset MinigameLobbyPrefabNameOffset) { builder.AddOffset(27, MinigameLobbyPrefabNameOffset.Value, 0); }
+  public static void AddMinigameVictoryPrefabName(FlatBufferBuilder builder, StringOffset MinigameVictoryPrefabNameOffset) { builder.AddOffset(28, MinigameVictoryPrefabNameOffset.Value, 0); }
+  public static void AddMinigameMissionBgPrefabName(FlatBufferBuilder builder, StringOffset MinigameMissionBgPrefabNameOffset) { builder.AddOffset(29, MinigameMissionBgPrefabNameOffset.Value, 0); }
+  public static void AddCardBgImagePath(FlatBufferBuilder builder, StringOffset CardBgImagePathOffset) { builder.AddOffset(30, CardBgImagePathOffset.Value, 0); }
+  public static void AddEventAssist(FlatBufferBuilder builder, bool EventAssist) { builder.AddBool(31, EventAssist, false); }
+  public static void AddEventContentReleaseType(FlatBufferBuilder builder, FlatDataGlobal.EventContentReleaseType eventContentReleaseType) { builder.AddInt(32, (int)eventContentReleaseType, 0); }
+  public static void AddEventContentStageRewardIdPermanent(FlatBufferBuilder builder, long EventContentStageRewardIdPermanent) { builder.AddLong(33, EventContentStageRewardIdPermanent, 0); }
+  public static void AddRewardTagPermanent(FlatBufferBuilder builder, FlatDataGlobal.RewardTag RewardTagPermanent) { builder.AddInt(34, (int)RewardTagPermanent, 0); }
+  public static void AddMiniEventShortCutScenarioModeId(FlatBufferBuilder builder, long MiniEventShortCutScenarioModeId) { builder.AddLong(35, MiniEventShortCutScenarioModeId, 0); }
   public static Offset<FlatDataGlobal.EventContentSeasonExcel> EndEventContentSeasonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentSeasonExcel>(o);

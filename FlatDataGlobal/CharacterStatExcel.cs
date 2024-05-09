@@ -79,10 +79,12 @@ public struct CharacterStatExcel : IFlatbufferObject
   public long DamageRatio2Decrease { get { int o = __p.__offset(118); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long DamagedRatio2Increase { get { int o = __p.__offset(120); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long DamagedRatio2Decrease { get { int o = __p.__offset(122); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.TerrainAdaptationStat StreetBattleAdaptation { get { int o = __p.__offset(124); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
-  public FlatDataGlobal.TerrainAdaptationStat OutdoorBattleAdaptation { get { int o = __p.__offset(126); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
-  public FlatDataGlobal.TerrainAdaptationStat IndoorBattleAdaptation { get { int o = __p.__offset(128); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
-  public long RegenCost { get { int o = __p.__offset(130); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ExDamagedRatioIncrease { get { int o = __p.__offset(124); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ExDamagedRatioDecrease { get { int o = __p.__offset(126); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.TerrainAdaptationStat StreetBattleAdaptation { get { int o = __p.__offset(128); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
+  public FlatDataGlobal.TerrainAdaptationStat OutdoorBattleAdaptation { get { int o = __p.__offset(130); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
+  public FlatDataGlobal.TerrainAdaptationStat IndoorBattleAdaptation { get { int o = __p.__offset(132); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
+  public long RegenCost { get { int o = __p.__offset(134); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.CharacterStatExcel> CreateCharacterStatExcel(FlatBufferBuilder builder,
       long CharacterId = 0,
@@ -145,12 +147,16 @@ public struct CharacterStatExcel : IFlatbufferObject
       long DamageRatio2Decrease = 0,
       long DamagedRatio2Increase = 0,
       long DamagedRatio2Decrease = 0,
+      long ExDamagedRatioIncrease = 0,
+      long ExDamagedRatioDecrease = 0,
       FlatDataGlobal.TerrainAdaptationStat StreetBattleAdaptation = FlatDataGlobal.TerrainAdaptationStat.D,
       FlatDataGlobal.TerrainAdaptationStat OutdoorBattleAdaptation = FlatDataGlobal.TerrainAdaptationStat.D,
       FlatDataGlobal.TerrainAdaptationStat IndoorBattleAdaptation = FlatDataGlobal.TerrainAdaptationStat.D,
       long RegenCost = 0) {
-    builder.StartTable(64);
+    builder.StartTable(66);
     CharacterStatExcel.AddRegenCost(builder, RegenCost);
+    CharacterStatExcel.AddExDamagedRatioDecrease(builder, ExDamagedRatioDecrease);
+    CharacterStatExcel.AddExDamagedRatioIncrease(builder, ExDamagedRatioIncrease);
     CharacterStatExcel.AddDamagedRatio2Decrease(builder, DamagedRatio2Decrease);
     CharacterStatExcel.AddDamagedRatio2Increase(builder, DamagedRatio2Increase);
     CharacterStatExcel.AddDamageRatio2Decrease(builder, DamageRatio2Decrease);
@@ -217,7 +223,7 @@ public struct CharacterStatExcel : IFlatbufferObject
     return CharacterStatExcel.EndCharacterStatExcel(builder);
   }
 
-  public static void StartCharacterStatExcel(FlatBufferBuilder builder) { builder.StartTable(64); }
+  public static void StartCharacterStatExcel(FlatBufferBuilder builder) { builder.StartTable(66); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
   public static void AddStabilityRate(FlatBufferBuilder builder, long StabilityRate) { builder.AddLong(1, StabilityRate, 0); }
   public static void AddStabilityPoint(FlatBufferBuilder builder, long StabilityPoint) { builder.AddLong(2, StabilityPoint, 0); }
@@ -278,10 +284,12 @@ public struct CharacterStatExcel : IFlatbufferObject
   public static void AddDamageRatio2Decrease(FlatBufferBuilder builder, long DamageRatio2Decrease) { builder.AddLong(57, DamageRatio2Decrease, 0); }
   public static void AddDamagedRatio2Increase(FlatBufferBuilder builder, long DamagedRatio2Increase) { builder.AddLong(58, DamagedRatio2Increase, 0); }
   public static void AddDamagedRatio2Decrease(FlatBufferBuilder builder, long DamagedRatio2Decrease) { builder.AddLong(59, DamagedRatio2Decrease, 0); }
-  public static void AddStreetBattleAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat StreetBattleAdaptation) { builder.AddInt(60, (int)StreetBattleAdaptation, 0); }
-  public static void AddOutdoorBattleAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat OutdoorBattleAdaptation) { builder.AddInt(61, (int)OutdoorBattleAdaptation, 0); }
-  public static void AddIndoorBattleAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat IndoorBattleAdaptation) { builder.AddInt(62, (int)IndoorBattleAdaptation, 0); }
-  public static void AddRegenCost(FlatBufferBuilder builder, long RegenCost) { builder.AddLong(63, RegenCost, 0); }
+  public static void AddExDamagedRatioIncrease(FlatBufferBuilder builder, long ExDamagedRatioIncrease) { builder.AddLong(60, ExDamagedRatioIncrease, 0); }
+  public static void AddExDamagedRatioDecrease(FlatBufferBuilder builder, long ExDamagedRatioDecrease) { builder.AddLong(61, ExDamagedRatioDecrease, 0); }
+  public static void AddStreetBattleAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat StreetBattleAdaptation) { builder.AddInt(62, (int)StreetBattleAdaptation, 0); }
+  public static void AddOutdoorBattleAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat OutdoorBattleAdaptation) { builder.AddInt(63, (int)OutdoorBattleAdaptation, 0); }
+  public static void AddIndoorBattleAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat IndoorBattleAdaptation) { builder.AddInt(64, (int)IndoorBattleAdaptation, 0); }
+  public static void AddRegenCost(FlatBufferBuilder builder, long RegenCost) { builder.AddLong(65, RegenCost, 0); }
   public static Offset<FlatDataGlobal.CharacterStatExcel> EndCharacterStatExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterStatExcel>(o);

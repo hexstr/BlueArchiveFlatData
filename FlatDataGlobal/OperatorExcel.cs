@@ -47,17 +47,15 @@ public struct OperatorExcel : IFlatbufferObject
   public ArraySegment<byte>? GetTextLocalizeKeyBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
   public byte[] GetTextLocalizeKeyArray() { return __p.__vector_as_array<byte>(22); }
-  public string VoiceClipsKr(int j) { int o = __p.__offset(24); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsKrLength { get { int o = __p.__offset(24); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string VoiceClipsJp(int j) { int o = __p.__offset(26); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsJpLength { get { int o = __p.__offset(26); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string VoiceClipsTh(int j) { int o = __p.__offset(28); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsThLength { get { int o = __p.__offset(28); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string VoiceClipsTw(int j) { int o = __p.__offset(30); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsTwLength { get { int o = __p.__offset(30); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string VoiceClipsEn(int j) { int o = __p.__offset(32); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int VoiceClipsEnLength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public bool OperatorWaitQueue { get { int o = __p.__offset(34); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public uint VoiceId(int j) { int o = __p.__offset(24); return o != 0 ? __p.bb.GetUint(__p.__vector(o) + j * 4) : (uint)0; }
+  public int VoiceIdLength { get { int o = __p.__offset(24); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<uint> GetVoiceIdBytes() { return __p.__vector_as_span<uint>(24, 4); }
+#else
+  public ArraySegment<byte>? GetVoiceIdBytes() { return __p.__vector_as_arraysegment(24); }
+#endif
+  public uint[] GetVoiceIdArray() { return __p.__vector_as_array<uint>(24); }
+  public bool OperatorWaitQueue { get { int o = __p.__offset(26); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.OperatorExcel> CreateOperatorExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
@@ -70,19 +68,11 @@ public struct OperatorExcel : IFlatbufferObject
       int OperatorOutputPriority = 0,
       StringOffset PortraitPathOffset = default(StringOffset),
       StringOffset TextLocalizeKeyOffset = default(StringOffset),
-      VectorOffset VoiceClipsKrOffset = default(VectorOffset),
-      VectorOffset VoiceClipsJpOffset = default(VectorOffset),
-      VectorOffset VoiceClipsThOffset = default(VectorOffset),
-      VectorOffset VoiceClipsTwOffset = default(VectorOffset),
-      VectorOffset VoiceClipsEnOffset = default(VectorOffset),
+      VectorOffset VoiceIdOffset = default(VectorOffset),
       bool OperatorWaitQueue = false) {
-    builder.StartTable(16);
+    builder.StartTable(12);
     OperatorExcel.AddUniqueId(builder, UniqueId);
-    OperatorExcel.AddVoiceClipsEn(builder, VoiceClipsEnOffset);
-    OperatorExcel.AddVoiceClipsTw(builder, VoiceClipsTwOffset);
-    OperatorExcel.AddVoiceClipsTh(builder, VoiceClipsThOffset);
-    OperatorExcel.AddVoiceClipsJp(builder, VoiceClipsJpOffset);
-    OperatorExcel.AddVoiceClipsKr(builder, VoiceClipsKrOffset);
+    OperatorExcel.AddVoiceId(builder, VoiceIdOffset);
     OperatorExcel.AddTextLocalizeKey(builder, TextLocalizeKeyOffset);
     OperatorExcel.AddPortraitPath(builder, PortraitPathOffset);
     OperatorExcel.AddOperatorOutputPriority(builder, OperatorOutputPriority);
@@ -96,7 +86,7 @@ public struct OperatorExcel : IFlatbufferObject
     return OperatorExcel.EndOperatorExcel(builder);
   }
 
-  public static void StartOperatorExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
+  public static void StartOperatorExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, StringOffset GroupIdOffset) { builder.AddOffset(1, GroupIdOffset.Value, 0); }
   public static void AddOperatorCondition(FlatBufferBuilder builder, FlatDataGlobal.OperatorCondition operatorCondition) { builder.AddInt(2, (int)operatorCondition, 0); }
@@ -107,37 +97,13 @@ public struct OperatorExcel : IFlatbufferObject
   public static void AddOperatorOutputPriority(FlatBufferBuilder builder, int OperatorOutputPriority) { builder.AddInt(7, OperatorOutputPriority, 0); }
   public static void AddPortraitPath(FlatBufferBuilder builder, StringOffset PortraitPathOffset) { builder.AddOffset(8, PortraitPathOffset.Value, 0); }
   public static void AddTextLocalizeKey(FlatBufferBuilder builder, StringOffset TextLocalizeKeyOffset) { builder.AddOffset(9, TextLocalizeKeyOffset.Value, 0); }
-  public static void AddVoiceClipsKr(FlatBufferBuilder builder, VectorOffset VoiceClipsKrOffset) { builder.AddOffset(10, VoiceClipsKrOffset.Value, 0); }
-  public static VectorOffset CreateVoiceClipsKrVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsKrVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsKrVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsKrVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartVoiceClipsKrVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVoiceClipsJp(FlatBufferBuilder builder, VectorOffset VoiceClipsJpOffset) { builder.AddOffset(11, VoiceClipsJpOffset.Value, 0); }
-  public static VectorOffset CreateVoiceClipsJpVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsJpVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsJpVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsJpVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartVoiceClipsJpVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVoiceClipsTh(FlatBufferBuilder builder, VectorOffset VoiceClipsThOffset) { builder.AddOffset(12, VoiceClipsThOffset.Value, 0); }
-  public static VectorOffset CreateVoiceClipsThVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsThVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsThVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsThVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartVoiceClipsThVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVoiceClipsTw(FlatBufferBuilder builder, VectorOffset VoiceClipsTwOffset) { builder.AddOffset(13, VoiceClipsTwOffset.Value, 0); }
-  public static VectorOffset CreateVoiceClipsTwVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsTwVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsTwVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsTwVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartVoiceClipsTwVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddVoiceClipsEn(FlatBufferBuilder builder, VectorOffset VoiceClipsEnOffset) { builder.AddOffset(14, VoiceClipsEnOffset.Value, 0); }
-  public static VectorOffset CreateVoiceClipsEnVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsEnVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsEnVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateVoiceClipsEnVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartVoiceClipsEnVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddOperatorWaitQueue(FlatBufferBuilder builder, bool OperatorWaitQueue) { builder.AddBool(15, OperatorWaitQueue, false); }
+  public static void AddVoiceId(FlatBufferBuilder builder, VectorOffset VoiceIdOffset) { builder.AddOffset(10, VoiceIdOffset.Value, 0); }
+  public static VectorOffset CreateVoiceIdVector(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddUint(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, ArraySegment<uint> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<uint>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartVoiceIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddOperatorWaitQueue(FlatBufferBuilder builder, bool OperatorWaitQueue) { builder.AddBool(11, OperatorWaitQueue, false); }
   public static Offset<FlatDataGlobal.OperatorExcel> EndOperatorExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.OperatorExcel>(o);

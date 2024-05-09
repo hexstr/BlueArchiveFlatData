@@ -19,12 +19,12 @@ public struct TagSettingExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public TagSettingExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public FlatDataGlobal.Tag Id { get { int o = __p.__offset(4); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Tag.Furniture; } }
+  public FlatDataGlobal.Tag Id { get { int o = __p.__offset(4); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Tag.A; } }
   public bool IsOpen { get { int o = __p.__offset(6); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public uint LocalizeEtcId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
 
   public static Offset<FlatDataGlobal.TagSettingExcel> CreateTagSettingExcel(FlatBufferBuilder builder,
-      FlatDataGlobal.Tag Id = FlatDataGlobal.Tag.Furniture,
+      FlatDataGlobal.Tag Id = FlatDataGlobal.Tag.A,
       bool IsOpen = false,
       uint LocalizeEtcId = 0) {
     builder.StartTable(3);
