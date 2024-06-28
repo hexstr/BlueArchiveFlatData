@@ -141,109 +141,97 @@ public struct ConstCommonExcel : IFlatbufferObject
   public int PassiveSkillLevelMax { get { int o = __p.__offset(174); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int ExtraPassiveSkillLevelMax { get { int o = __p.__offset(176); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int AccountCommentMaxLength { get { int o = __p.__offset(178); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long FormationCollider01OffsetX { get { int o = __p.__offset(180); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider01OffsetY { get { int o = __p.__offset(182); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider01OffsetZ { get { int o = __p.__offset(184); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider01SizeX { get { int o = __p.__offset(186); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider01SizeY { get { int o = __p.__offset(188); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider01SizeZ { get { int o = __p.__offset(190); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider02OffsetX { get { int o = __p.__offset(192); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider02OffsetY { get { int o = __p.__offset(194); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider02OffsetZ { get { int o = __p.__offset(196); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider02SizeX { get { int o = __p.__offset(198); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider02SizeY { get { int o = __p.__offset(200); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider02SizeZ { get { int o = __p.__offset(202); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider03OffsetX { get { int o = __p.__offset(204); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider03OffsetY { get { int o = __p.__offset(206); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider03OffsetZ { get { int o = __p.__offset(208); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider03SizeX { get { int o = __p.__offset(210); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider03SizeY { get { int o = __p.__offset(212); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FormationCollider03SizeZ { get { int o = __p.__offset(214); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool ShowFurnitureTag { get { int o = __p.__offset(216); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public int CafeSummonCoolTimeFromHour { get { int o = __p.__offset(218); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long LimitedStageDailyClearCount { get { int o = __p.__offset(220); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long LimitedStageEntryTimeLimit { get { int o = __p.__offset(222); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long LimitedStageEntryTimeBuffer { get { int o = __p.__offset(224); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long LimitedStagePointAmount { get { int o = __p.__offset(226); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long LimitedStagePointPerApMin { get { int o = __p.__offset(228); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long LimitedStagePointPerApMax { get { int o = __p.__offset(230); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int AccountLinkReward { get { int o = __p.__offset(232); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int MonthlyProductCheckDays { get { int o = __p.__offset(234); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int WeaponLvUpCoefficient { get { int o = __p.__offset(236); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShowRaidMyListCount { get { int o = __p.__offset(238); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int MaxLevelExpMasterCoinRatio { get { int o = __p.__offset(240); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.ParcelType RaidEnterCostType { get { int o = __p.__offset(242); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
-  public long RaidEnterCostId { get { int o = __p.__offset(244); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RaidTicketCost { get { int o = __p.__offset(246); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string TimeAttackDungeonScenarioId { get { int o = __p.__offset(248); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public int CafeSummonCoolTimeFromHour { get { int o = __p.__offset(180); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long LimitedStageDailyClearCount { get { int o = __p.__offset(182); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LimitedStageEntryTimeLimit { get { int o = __p.__offset(184); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LimitedStageEntryTimeBuffer { get { int o = __p.__offset(186); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LimitedStagePointAmount { get { int o = __p.__offset(188); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LimitedStagePointPerApMin { get { int o = __p.__offset(190); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LimitedStagePointPerApMax { get { int o = __p.__offset(192); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int AccountLinkReward { get { int o = __p.__offset(194); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MonthlyProductCheckDays { get { int o = __p.__offset(196); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int WeaponLvUpCoefficient { get { int o = __p.__offset(198); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShowRaidMyListCount { get { int o = __p.__offset(200); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MaxLevelExpMasterCoinRatio { get { int o = __p.__offset(202); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.ParcelType RaidEnterCostType { get { int o = __p.__offset(204); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
+  public long RaidEnterCostId { get { int o = __p.__offset(206); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RaidTicketCost { get { int o = __p.__offset(208); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string TimeAttackDungeonScenarioId { get { int o = __p.__offset(210); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTimeAttackDungeonScenarioIdBytes() { return __p.__vector_as_span<byte>(248, 1); }
+  public Span<byte> GetTimeAttackDungeonScenarioIdBytes() { return __p.__vector_as_span<byte>(210, 1); }
 #else
-  public ArraySegment<byte>? GetTimeAttackDungeonScenarioIdBytes() { return __p.__vector_as_arraysegment(248); }
+  public ArraySegment<byte>? GetTimeAttackDungeonScenarioIdBytes() { return __p.__vector_as_arraysegment(210); }
 #endif
-  public byte[] GetTimeAttackDungeonScenarioIdArray() { return __p.__vector_as_array<byte>(248); }
-  public int TimeAttackDungoenPlayCountPerTicket { get { int o = __p.__offset(250); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.ParcelType TimeAttackDungeonEnterCostType { get { int o = __p.__offset(252); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
-  public long TimeAttackDungeonEnterCostId { get { int o = __p.__offset(254); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long TimeAttackDungeonEnterCost { get { int o = __p.__offset(256); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ClanLeaderTransferLastLoginLimit { get { int o = __p.__offset(258); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int MonthlyProductRepurchasePopupLimit { get { int o = __p.__offset(260); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.Tag CommonFavorItemTags(int j) { int o = __p.__offset(262); return o != 0 ? (FlatDataJp.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.Tag)0; }
-  public int CommonFavorItemTagsLength { get { int o = __p.__offset(262); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetTimeAttackDungeonScenarioIdArray() { return __p.__vector_as_array<byte>(210); }
+  public int TimeAttackDungoenPlayCountPerTicket { get { int o = __p.__offset(212); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.ParcelType TimeAttackDungeonEnterCostType { get { int o = __p.__offset(214); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
+  public long TimeAttackDungeonEnterCostId { get { int o = __p.__offset(216); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long TimeAttackDungeonEnterCost { get { int o = __p.__offset(218); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ClanLeaderTransferLastLoginLimit { get { int o = __p.__offset(220); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int MonthlyProductRepurchasePopupLimit { get { int o = __p.__offset(222); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.Tag CommonFavorItemTags(int j) { int o = __p.__offset(224); return o != 0 ? (FlatDataJp.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.Tag)0; }
+  public int CommonFavorItemTagsLength { get { int o = __p.__offset(224); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataJp.Tag> GetCommonFavorItemTagsBytes() { return __p.__vector_as_span<FlatDataJp.Tag>(262, 4); }
+  public Span<FlatDataJp.Tag> GetCommonFavorItemTagsBytes() { return __p.__vector_as_span<FlatDataJp.Tag>(224, 4); }
 #else
-  public ArraySegment<byte>? GetCommonFavorItemTagsBytes() { return __p.__vector_as_arraysegment(262); }
+  public ArraySegment<byte>? GetCommonFavorItemTagsBytes() { return __p.__vector_as_arraysegment(224); }
 #endif
-  public FlatDataJp.Tag[] GetCommonFavorItemTagsArray() { int o = __p.__offset(262); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.Tag[] a = new FlatDataJp.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.Tag)__p.bb.GetInt(p + i * 4); } return a; }
-  public long MaxApMasterCoinPerWeek { get { int o = __p.__offset(264); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CraftOpenExpTier1 { get { int o = __p.__offset(266); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CraftOpenExpTier2 { get { int o = __p.__offset(268); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CraftOpenExpTier3 { get { int o = __p.__offset(270); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CharacterEquipmentGearSlot { get { int o = __p.__offset(272); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int BirthDayDDay { get { int o = __p.__offset(274); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int RecommendedFriendsLvDifferenceLimit { get { int o = __p.__offset(276); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int DDosDetectCount { get { int o = __p.__offset(278); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int DDosCheckIntervalInSeconds { get { int o = __p.__offset(280); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int MaxFriendsCount { get { int o = __p.__offset(282); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int MaxFriendsRequest { get { int o = __p.__offset(284); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int FriendsSearchRequestCount { get { int o = __p.__offset(286); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int FriendsMaxApplicant { get { int o = __p.__offset(288); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long IdCardDefaultCharacterId { get { int o = __p.__offset(290); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long IdCardDefaultBgId { get { int o = __p.__offset(292); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WorldRaidGemEnterCost { get { int o = __p.__offset(294); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WorldRaidGemEnterAmout { get { int o = __p.__offset(296); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FriendIdCardCommentMaxLength { get { int o = __p.__offset(298); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int FormationPresetNumberOfEchelonTab { get { int o = __p.__offset(300); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int FormationPresetNumberOfEchelon { get { int o = __p.__offset(302); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int FormationPresetRecentNumberOfEchelon { get { int o = __p.__offset(304); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int FormationPresetEchelonTabTextLength { get { int o = __p.__offset(306); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int FormationPresetEchelonSlotTextLength { get { int o = __p.__offset(308); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int CharProfileRowIntervalKr { get { int o = __p.__offset(310); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int CharProfileRowIntervalJp { get { int o = __p.__offset(312); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int CharProfilePopupRowIntervalKr { get { int o = __p.__offset(314); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int CharProfilePopupRowIntervalJp { get { int o = __p.__offset(316); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int BeforehandGachaCount { get { int o = __p.__offset(318); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int BeforehandGachaGroupId { get { int o = __p.__offset(320); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int RenewalDisplayOrderDay { get { int o = __p.__offset(322); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long EmblemDefaultId { get { int o = __p.__offset(324); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string BirthdayMailStartDate { get { int o = __p.__offset(326); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataJp.Tag[] GetCommonFavorItemTagsArray() { int o = __p.__offset(224); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.Tag[] a = new FlatDataJp.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.Tag)__p.bb.GetInt(p + i * 4); } return a; }
+  public long MaxApMasterCoinPerWeek { get { int o = __p.__offset(226); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CraftOpenExpTier1 { get { int o = __p.__offset(228); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CraftOpenExpTier2 { get { int o = __p.__offset(230); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CraftOpenExpTier3 { get { int o = __p.__offset(232); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CharacterEquipmentGearSlot { get { int o = __p.__offset(234); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int BirthDayDDay { get { int o = __p.__offset(236); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int RecommendedFriendsLvDifferenceLimit { get { int o = __p.__offset(238); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int DDosDetectCount { get { int o = __p.__offset(240); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int DDosCheckIntervalInSeconds { get { int o = __p.__offset(242); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MaxFriendsCount { get { int o = __p.__offset(244); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MaxFriendsRequest { get { int o = __p.__offset(246); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int FriendsSearchRequestCount { get { int o = __p.__offset(248); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int FriendsMaxApplicant { get { int o = __p.__offset(250); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long IdCardDefaultCharacterId { get { int o = __p.__offset(252); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long IdCardDefaultBgId { get { int o = __p.__offset(254); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WorldRaidGemEnterCost { get { int o = __p.__offset(256); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WorldRaidGemEnterAmout { get { int o = __p.__offset(258); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FriendIdCardCommentMaxLength { get { int o = __p.__offset(260); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int FormationPresetNumberOfEchelonTab { get { int o = __p.__offset(262); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int FormationPresetNumberOfEchelon { get { int o = __p.__offset(264); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int FormationPresetRecentNumberOfEchelon { get { int o = __p.__offset(266); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int FormationPresetEchelonTabTextLength { get { int o = __p.__offset(268); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int FormationPresetEchelonSlotTextLength { get { int o = __p.__offset(270); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CharProfileRowIntervalKr { get { int o = __p.__offset(272); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CharProfileRowIntervalJp { get { int o = __p.__offset(274); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CharProfilePopupRowIntervalKr { get { int o = __p.__offset(276); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CharProfilePopupRowIntervalJp { get { int o = __p.__offset(278); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int BeforehandGachaCount { get { int o = __p.__offset(280); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int BeforehandGachaGroupId { get { int o = __p.__offset(282); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int RenewalDisplayOrderDay { get { int o = __p.__offset(284); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long EmblemDefaultId { get { int o = __p.__offset(286); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string BirthdayMailStartDate { get { int o = __p.__offset(288); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBirthdayMailStartDateBytes() { return __p.__vector_as_span<byte>(326, 1); }
+  public Span<byte> GetBirthdayMailStartDateBytes() { return __p.__vector_as_span<byte>(288, 1); }
 #else
-  public ArraySegment<byte>? GetBirthdayMailStartDateBytes() { return __p.__vector_as_arraysegment(326); }
+  public ArraySegment<byte>? GetBirthdayMailStartDateBytes() { return __p.__vector_as_arraysegment(288); }
 #endif
-  public byte[] GetBirthdayMailStartDateArray() { return __p.__vector_as_array<byte>(326); }
-  public int BirthdayMailRemainDate { get { int o = __p.__offset(328); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.ParcelType BirthdayMailParcelType { get { int o = __p.__offset(330); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
-  public long BirthdayMailParcelId { get { int o = __p.__offset(332); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int BirthdayMailParcelAmount { get { int o = __p.__offset(334); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ClearDeckAverageDeckCount { get { int o = __p.__offset(336); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ClearDeckWorldRaidSaveConditionCoefficient { get { int o = __p.__offset(338); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ClearDeckShowCount { get { int o = __p.__offset(340); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int CharacterMaxLevel { get { int o = __p.__offset(342); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public byte[] GetBirthdayMailStartDateArray() { return __p.__vector_as_array<byte>(288); }
+  public int BirthdayMailRemainDate { get { int o = __p.__offset(290); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.ParcelType BirthdayMailParcelType { get { int o = __p.__offset(292); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ParcelType.None; } }
+  public long BirthdayMailParcelId { get { int o = __p.__offset(294); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int BirthdayMailParcelAmount { get { int o = __p.__offset(296); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ClearDeckAverageDeckCount { get { int o = __p.__offset(298); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ClearDeckWorldRaidSaveConditionCoefficient { get { int o = __p.__offset(300); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ClearDeckShowCount { get { int o = __p.__offset(302); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CharacterMaxLevel { get { int o = __p.__offset(304); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int PotentialBonusStatMaxLevelMaxHP { get { int o = __p.__offset(306); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int PotentialBonusStatMaxLevelAttackPower { get { int o = __p.__offset(308); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int PotentialBonusStatMaxLevelHealPower { get { int o = __p.__offset(310); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int PotentialOpenConditionCharacterLevel { get { int o = __p.__offset(312); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int AssistStrangerMinLevel { get { int o = __p.__offset(314); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int AssistStrangerMaxLevel { get { int o = __p.__offset(316); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MaxBlockedUserCount { get { int o = __p.__offset(318); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
-  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(170); }
+  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(158); }
   public static void AddCampaignMainStageMaxRank(FlatBufferBuilder builder, int CampaignMainStageMaxRank) { builder.AddInt(0, CampaignMainStageMaxRank, 0); }
   public static void AddCampaignMainStageBestRecord(FlatBufferBuilder builder, int CampaignMainStageBestRecord) { builder.AddInt(1, CampaignMainStageBestRecord, 0); }
   public static void AddHardAdventurePlayCountRecoverDailyNumber(FlatBufferBuilder builder, int HardAdventurePlayCountRecoverDailyNumber) { builder.AddInt(2, HardAdventurePlayCountRecoverDailyNumber, 0); }
@@ -352,93 +340,81 @@ public struct ConstCommonExcel : IFlatbufferObject
   public static void AddPassiveSkillLevelMax(FlatBufferBuilder builder, int PassiveSkillLevelMax) { builder.AddInt(85, PassiveSkillLevelMax, 0); }
   public static void AddExtraPassiveSkillLevelMax(FlatBufferBuilder builder, int ExtraPassiveSkillLevelMax) { builder.AddInt(86, ExtraPassiveSkillLevelMax, 0); }
   public static void AddAccountCommentMaxLength(FlatBufferBuilder builder, int AccountCommentMaxLength) { builder.AddInt(87, AccountCommentMaxLength, 0); }
-  public static void AddFormationCollider01OffsetX(FlatBufferBuilder builder, long FormationCollider01OffsetX) { builder.AddLong(88, FormationCollider01OffsetX, 0); }
-  public static void AddFormationCollider01OffsetY(FlatBufferBuilder builder, long FormationCollider01OffsetY) { builder.AddLong(89, FormationCollider01OffsetY, 0); }
-  public static void AddFormationCollider01OffsetZ(FlatBufferBuilder builder, long FormationCollider01OffsetZ) { builder.AddLong(90, FormationCollider01OffsetZ, 0); }
-  public static void AddFormationCollider01SizeX(FlatBufferBuilder builder, long FormationCollider01SizeX) { builder.AddLong(91, FormationCollider01SizeX, 0); }
-  public static void AddFormationCollider01SizeY(FlatBufferBuilder builder, long FormationCollider01SizeY) { builder.AddLong(92, FormationCollider01SizeY, 0); }
-  public static void AddFormationCollider01SizeZ(FlatBufferBuilder builder, long FormationCollider01SizeZ) { builder.AddLong(93, FormationCollider01SizeZ, 0); }
-  public static void AddFormationCollider02OffsetX(FlatBufferBuilder builder, long FormationCollider02OffsetX) { builder.AddLong(94, FormationCollider02OffsetX, 0); }
-  public static void AddFormationCollider02OffsetY(FlatBufferBuilder builder, long FormationCollider02OffsetY) { builder.AddLong(95, FormationCollider02OffsetY, 0); }
-  public static void AddFormationCollider02OffsetZ(FlatBufferBuilder builder, long FormationCollider02OffsetZ) { builder.AddLong(96, FormationCollider02OffsetZ, 0); }
-  public static void AddFormationCollider02SizeX(FlatBufferBuilder builder, long FormationCollider02SizeX) { builder.AddLong(97, FormationCollider02SizeX, 0); }
-  public static void AddFormationCollider02SizeY(FlatBufferBuilder builder, long FormationCollider02SizeY) { builder.AddLong(98, FormationCollider02SizeY, 0); }
-  public static void AddFormationCollider02SizeZ(FlatBufferBuilder builder, long FormationCollider02SizeZ) { builder.AddLong(99, FormationCollider02SizeZ, 0); }
-  public static void AddFormationCollider03OffsetX(FlatBufferBuilder builder, long FormationCollider03OffsetX) { builder.AddLong(100, FormationCollider03OffsetX, 0); }
-  public static void AddFormationCollider03OffsetY(FlatBufferBuilder builder, long FormationCollider03OffsetY) { builder.AddLong(101, FormationCollider03OffsetY, 0); }
-  public static void AddFormationCollider03OffsetZ(FlatBufferBuilder builder, long FormationCollider03OffsetZ) { builder.AddLong(102, FormationCollider03OffsetZ, 0); }
-  public static void AddFormationCollider03SizeX(FlatBufferBuilder builder, long FormationCollider03SizeX) { builder.AddLong(103, FormationCollider03SizeX, 0); }
-  public static void AddFormationCollider03SizeY(FlatBufferBuilder builder, long FormationCollider03SizeY) { builder.AddLong(104, FormationCollider03SizeY, 0); }
-  public static void AddFormationCollider03SizeZ(FlatBufferBuilder builder, long FormationCollider03SizeZ) { builder.AddLong(105, FormationCollider03SizeZ, 0); }
-  public static void AddShowFurnitureTag(FlatBufferBuilder builder, bool ShowFurnitureTag) { builder.AddBool(106, ShowFurnitureTag, false); }
-  public static void AddCafeSummonCoolTimeFromHour(FlatBufferBuilder builder, int CafeSummonCoolTimeFromHour) { builder.AddInt(107, CafeSummonCoolTimeFromHour, 0); }
-  public static void AddLimitedStageDailyClearCount(FlatBufferBuilder builder, long LimitedStageDailyClearCount) { builder.AddLong(108, LimitedStageDailyClearCount, 0); }
-  public static void AddLimitedStageEntryTimeLimit(FlatBufferBuilder builder, long LimitedStageEntryTimeLimit) { builder.AddLong(109, LimitedStageEntryTimeLimit, 0); }
-  public static void AddLimitedStageEntryTimeBuffer(FlatBufferBuilder builder, long LimitedStageEntryTimeBuffer) { builder.AddLong(110, LimitedStageEntryTimeBuffer, 0); }
-  public static void AddLimitedStagePointAmount(FlatBufferBuilder builder, long LimitedStagePointAmount) { builder.AddLong(111, LimitedStagePointAmount, 0); }
-  public static void AddLimitedStagePointPerApMin(FlatBufferBuilder builder, long LimitedStagePointPerApMin) { builder.AddLong(112, LimitedStagePointPerApMin, 0); }
-  public static void AddLimitedStagePointPerApMax(FlatBufferBuilder builder, long LimitedStagePointPerApMax) { builder.AddLong(113, LimitedStagePointPerApMax, 0); }
-  public static void AddAccountLinkReward(FlatBufferBuilder builder, int AccountLinkReward) { builder.AddInt(114, AccountLinkReward, 0); }
-  public static void AddMonthlyProductCheckDays(FlatBufferBuilder builder, int MonthlyProductCheckDays) { builder.AddInt(115, MonthlyProductCheckDays, 0); }
-  public static void AddWeaponLvUpCoefficient(FlatBufferBuilder builder, int WeaponLvUpCoefficient) { builder.AddInt(116, WeaponLvUpCoefficient, 0); }
-  public static void AddShowRaidMyListCount(FlatBufferBuilder builder, int ShowRaidMyListCount) { builder.AddInt(117, ShowRaidMyListCount, 0); }
-  public static void AddMaxLevelExpMasterCoinRatio(FlatBufferBuilder builder, int MaxLevelExpMasterCoinRatio) { builder.AddInt(118, MaxLevelExpMasterCoinRatio, 0); }
-  public static void AddRaidEnterCostType(FlatBufferBuilder builder, FlatDataJp.ParcelType RaidEnterCostType) { builder.AddInt(119, (int)RaidEnterCostType, 0); }
-  public static void AddRaidEnterCostId(FlatBufferBuilder builder, long RaidEnterCostId) { builder.AddLong(120, RaidEnterCostId, 0); }
-  public static void AddRaidTicketCost(FlatBufferBuilder builder, long RaidTicketCost) { builder.AddLong(121, RaidTicketCost, 0); }
-  public static void AddTimeAttackDungeonScenarioId(FlatBufferBuilder builder, StringOffset TimeAttackDungeonScenarioIdOffset) { builder.AddOffset(122, TimeAttackDungeonScenarioIdOffset.Value, 0); }
-  public static void AddTimeAttackDungoenPlayCountPerTicket(FlatBufferBuilder builder, int TimeAttackDungoenPlayCountPerTicket) { builder.AddInt(123, TimeAttackDungoenPlayCountPerTicket, 0); }
-  public static void AddTimeAttackDungeonEnterCostType(FlatBufferBuilder builder, FlatDataJp.ParcelType TimeAttackDungeonEnterCostType) { builder.AddInt(124, (int)TimeAttackDungeonEnterCostType, 0); }
-  public static void AddTimeAttackDungeonEnterCostId(FlatBufferBuilder builder, long TimeAttackDungeonEnterCostId) { builder.AddLong(125, TimeAttackDungeonEnterCostId, 0); }
-  public static void AddTimeAttackDungeonEnterCost(FlatBufferBuilder builder, long TimeAttackDungeonEnterCost) { builder.AddLong(126, TimeAttackDungeonEnterCost, 0); }
-  public static void AddClanLeaderTransferLastLoginLimit(FlatBufferBuilder builder, long ClanLeaderTransferLastLoginLimit) { builder.AddLong(127, ClanLeaderTransferLastLoginLimit, 0); }
-  public static void AddMonthlyProductRepurchasePopupLimit(FlatBufferBuilder builder, int MonthlyProductRepurchasePopupLimit) { builder.AddInt(128, MonthlyProductRepurchasePopupLimit, 0); }
-  public static void AddCommonFavorItemTags(FlatBufferBuilder builder, VectorOffset CommonFavorItemTagsOffset) { builder.AddOffset(129, CommonFavorItemTagsOffset.Value, 0); }
+  public static void AddCafeSummonCoolTimeFromHour(FlatBufferBuilder builder, int CafeSummonCoolTimeFromHour) { builder.AddInt(88, CafeSummonCoolTimeFromHour, 0); }
+  public static void AddLimitedStageDailyClearCount(FlatBufferBuilder builder, long LimitedStageDailyClearCount) { builder.AddLong(89, LimitedStageDailyClearCount, 0); }
+  public static void AddLimitedStageEntryTimeLimit(FlatBufferBuilder builder, long LimitedStageEntryTimeLimit) { builder.AddLong(90, LimitedStageEntryTimeLimit, 0); }
+  public static void AddLimitedStageEntryTimeBuffer(FlatBufferBuilder builder, long LimitedStageEntryTimeBuffer) { builder.AddLong(91, LimitedStageEntryTimeBuffer, 0); }
+  public static void AddLimitedStagePointAmount(FlatBufferBuilder builder, long LimitedStagePointAmount) { builder.AddLong(92, LimitedStagePointAmount, 0); }
+  public static void AddLimitedStagePointPerApMin(FlatBufferBuilder builder, long LimitedStagePointPerApMin) { builder.AddLong(93, LimitedStagePointPerApMin, 0); }
+  public static void AddLimitedStagePointPerApMax(FlatBufferBuilder builder, long LimitedStagePointPerApMax) { builder.AddLong(94, LimitedStagePointPerApMax, 0); }
+  public static void AddAccountLinkReward(FlatBufferBuilder builder, int AccountLinkReward) { builder.AddInt(95, AccountLinkReward, 0); }
+  public static void AddMonthlyProductCheckDays(FlatBufferBuilder builder, int MonthlyProductCheckDays) { builder.AddInt(96, MonthlyProductCheckDays, 0); }
+  public static void AddWeaponLvUpCoefficient(FlatBufferBuilder builder, int WeaponLvUpCoefficient) { builder.AddInt(97, WeaponLvUpCoefficient, 0); }
+  public static void AddShowRaidMyListCount(FlatBufferBuilder builder, int ShowRaidMyListCount) { builder.AddInt(98, ShowRaidMyListCount, 0); }
+  public static void AddMaxLevelExpMasterCoinRatio(FlatBufferBuilder builder, int MaxLevelExpMasterCoinRatio) { builder.AddInt(99, MaxLevelExpMasterCoinRatio, 0); }
+  public static void AddRaidEnterCostType(FlatBufferBuilder builder, FlatDataJp.ParcelType RaidEnterCostType) { builder.AddInt(100, (int)RaidEnterCostType, 0); }
+  public static void AddRaidEnterCostId(FlatBufferBuilder builder, long RaidEnterCostId) { builder.AddLong(101, RaidEnterCostId, 0); }
+  public static void AddRaidTicketCost(FlatBufferBuilder builder, long RaidTicketCost) { builder.AddLong(102, RaidTicketCost, 0); }
+  public static void AddTimeAttackDungeonScenarioId(FlatBufferBuilder builder, StringOffset TimeAttackDungeonScenarioIdOffset) { builder.AddOffset(103, TimeAttackDungeonScenarioIdOffset.Value, 0); }
+  public static void AddTimeAttackDungoenPlayCountPerTicket(FlatBufferBuilder builder, int TimeAttackDungoenPlayCountPerTicket) { builder.AddInt(104, TimeAttackDungoenPlayCountPerTicket, 0); }
+  public static void AddTimeAttackDungeonEnterCostType(FlatBufferBuilder builder, FlatDataJp.ParcelType TimeAttackDungeonEnterCostType) { builder.AddInt(105, (int)TimeAttackDungeonEnterCostType, 0); }
+  public static void AddTimeAttackDungeonEnterCostId(FlatBufferBuilder builder, long TimeAttackDungeonEnterCostId) { builder.AddLong(106, TimeAttackDungeonEnterCostId, 0); }
+  public static void AddTimeAttackDungeonEnterCost(FlatBufferBuilder builder, long TimeAttackDungeonEnterCost) { builder.AddLong(107, TimeAttackDungeonEnterCost, 0); }
+  public static void AddClanLeaderTransferLastLoginLimit(FlatBufferBuilder builder, long ClanLeaderTransferLastLoginLimit) { builder.AddLong(108, ClanLeaderTransferLastLoginLimit, 0); }
+  public static void AddMonthlyProductRepurchasePopupLimit(FlatBufferBuilder builder, int MonthlyProductRepurchasePopupLimit) { builder.AddInt(109, MonthlyProductRepurchasePopupLimit, 0); }
+  public static void AddCommonFavorItemTags(FlatBufferBuilder builder, VectorOffset CommonFavorItemTagsOffset) { builder.AddOffset(110, CommonFavorItemTagsOffset.Value, 0); }
   public static VectorOffset CreateCommonFavorItemTagsVector(FlatBufferBuilder builder, FlatDataJp.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateCommonFavorItemTagsVectorBlock(FlatBufferBuilder builder, FlatDataJp.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCommonFavorItemTagsVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCommonFavorItemTagsVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCommonFavorItemTagsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddMaxApMasterCoinPerWeek(FlatBufferBuilder builder, long MaxApMasterCoinPerWeek) { builder.AddLong(130, MaxApMasterCoinPerWeek, 0); }
-  public static void AddCraftOpenExpTier1(FlatBufferBuilder builder, long CraftOpenExpTier1) { builder.AddLong(131, CraftOpenExpTier1, 0); }
-  public static void AddCraftOpenExpTier2(FlatBufferBuilder builder, long CraftOpenExpTier2) { builder.AddLong(132, CraftOpenExpTier2, 0); }
-  public static void AddCraftOpenExpTier3(FlatBufferBuilder builder, long CraftOpenExpTier3) { builder.AddLong(133, CraftOpenExpTier3, 0); }
-  public static void AddCharacterEquipmentGearSlot(FlatBufferBuilder builder, long CharacterEquipmentGearSlot) { builder.AddLong(134, CharacterEquipmentGearSlot, 0); }
-  public static void AddBirthDayDDay(FlatBufferBuilder builder, int BirthDayDDay) { builder.AddInt(135, BirthDayDDay, 0); }
-  public static void AddRecommendedFriendsLvDifferenceLimit(FlatBufferBuilder builder, int RecommendedFriendsLvDifferenceLimit) { builder.AddInt(136, RecommendedFriendsLvDifferenceLimit, 0); }
-  public static void AddDDosDetectCount(FlatBufferBuilder builder, int DDosDetectCount) { builder.AddInt(137, DDosDetectCount, 0); }
-  public static void AddDDosCheckIntervalInSeconds(FlatBufferBuilder builder, int DDosCheckIntervalInSeconds) { builder.AddInt(138, DDosCheckIntervalInSeconds, 0); }
-  public static void AddMaxFriendsCount(FlatBufferBuilder builder, int MaxFriendsCount) { builder.AddInt(139, MaxFriendsCount, 0); }
-  public static void AddMaxFriendsRequest(FlatBufferBuilder builder, int MaxFriendsRequest) { builder.AddInt(140, MaxFriendsRequest, 0); }
-  public static void AddFriendsSearchRequestCount(FlatBufferBuilder builder, int FriendsSearchRequestCount) { builder.AddInt(141, FriendsSearchRequestCount, 0); }
-  public static void AddFriendsMaxApplicant(FlatBufferBuilder builder, int FriendsMaxApplicant) { builder.AddInt(142, FriendsMaxApplicant, 0); }
-  public static void AddIdCardDefaultCharacterId(FlatBufferBuilder builder, long IdCardDefaultCharacterId) { builder.AddLong(143, IdCardDefaultCharacterId, 0); }
-  public static void AddIdCardDefaultBgId(FlatBufferBuilder builder, long IdCardDefaultBgId) { builder.AddLong(144, IdCardDefaultBgId, 0); }
-  public static void AddWorldRaidGemEnterCost(FlatBufferBuilder builder, long WorldRaidGemEnterCost) { builder.AddLong(145, WorldRaidGemEnterCost, 0); }
-  public static void AddWorldRaidGemEnterAmout(FlatBufferBuilder builder, long WorldRaidGemEnterAmout) { builder.AddLong(146, WorldRaidGemEnterAmout, 0); }
-  public static void AddFriendIdCardCommentMaxLength(FlatBufferBuilder builder, long FriendIdCardCommentMaxLength) { builder.AddLong(147, FriendIdCardCommentMaxLength, 0); }
-  public static void AddFormationPresetNumberOfEchelonTab(FlatBufferBuilder builder, int FormationPresetNumberOfEchelonTab) { builder.AddInt(148, FormationPresetNumberOfEchelonTab, 0); }
-  public static void AddFormationPresetNumberOfEchelon(FlatBufferBuilder builder, int FormationPresetNumberOfEchelon) { builder.AddInt(149, FormationPresetNumberOfEchelon, 0); }
-  public static void AddFormationPresetRecentNumberOfEchelon(FlatBufferBuilder builder, int FormationPresetRecentNumberOfEchelon) { builder.AddInt(150, FormationPresetRecentNumberOfEchelon, 0); }
-  public static void AddFormationPresetEchelonTabTextLength(FlatBufferBuilder builder, int FormationPresetEchelonTabTextLength) { builder.AddInt(151, FormationPresetEchelonTabTextLength, 0); }
-  public static void AddFormationPresetEchelonSlotTextLength(FlatBufferBuilder builder, int FormationPresetEchelonSlotTextLength) { builder.AddInt(152, FormationPresetEchelonSlotTextLength, 0); }
-  public static void AddCharProfileRowIntervalKr(FlatBufferBuilder builder, int CharProfileRowIntervalKr) { builder.AddInt(153, CharProfileRowIntervalKr, 0); }
-  public static void AddCharProfileRowIntervalJp(FlatBufferBuilder builder, int CharProfileRowIntervalJp) { builder.AddInt(154, CharProfileRowIntervalJp, 0); }
-  public static void AddCharProfilePopupRowIntervalKr(FlatBufferBuilder builder, int CharProfilePopupRowIntervalKr) { builder.AddInt(155, CharProfilePopupRowIntervalKr, 0); }
-  public static void AddCharProfilePopupRowIntervalJp(FlatBufferBuilder builder, int CharProfilePopupRowIntervalJp) { builder.AddInt(156, CharProfilePopupRowIntervalJp, 0); }
-  public static void AddBeforehandGachaCount(FlatBufferBuilder builder, int BeforehandGachaCount) { builder.AddInt(157, BeforehandGachaCount, 0); }
-  public static void AddBeforehandGachaGroupId(FlatBufferBuilder builder, int BeforehandGachaGroupId) { builder.AddInt(158, BeforehandGachaGroupId, 0); }
-  public static void AddRenewalDisplayOrderDay(FlatBufferBuilder builder, int RenewalDisplayOrderDay) { builder.AddInt(159, RenewalDisplayOrderDay, 0); }
-  public static void AddEmblemDefaultId(FlatBufferBuilder builder, long EmblemDefaultId) { builder.AddLong(160, EmblemDefaultId, 0); }
-  public static void AddBirthdayMailStartDate(FlatBufferBuilder builder, StringOffset BirthdayMailStartDateOffset) { builder.AddOffset(161, BirthdayMailStartDateOffset.Value, 0); }
-  public static void AddBirthdayMailRemainDate(FlatBufferBuilder builder, int BirthdayMailRemainDate) { builder.AddInt(162, BirthdayMailRemainDate, 0); }
-  public static void AddBirthdayMailParcelType(FlatBufferBuilder builder, FlatDataJp.ParcelType BirthdayMailParcelType) { builder.AddInt(163, (int)BirthdayMailParcelType, 0); }
-  public static void AddBirthdayMailParcelId(FlatBufferBuilder builder, long BirthdayMailParcelId) { builder.AddLong(164, BirthdayMailParcelId, 0); }
-  public static void AddBirthdayMailParcelAmount(FlatBufferBuilder builder, int BirthdayMailParcelAmount) { builder.AddInt(165, BirthdayMailParcelAmount, 0); }
-  public static void AddClearDeckAverageDeckCount(FlatBufferBuilder builder, int ClearDeckAverageDeckCount) { builder.AddInt(166, ClearDeckAverageDeckCount, 0); }
-  public static void AddClearDeckWorldRaidSaveConditionCoefficient(FlatBufferBuilder builder, int ClearDeckWorldRaidSaveConditionCoefficient) { builder.AddInt(167, ClearDeckWorldRaidSaveConditionCoefficient, 0); }
-  public static void AddClearDeckShowCount(FlatBufferBuilder builder, int ClearDeckShowCount) { builder.AddInt(168, ClearDeckShowCount, 0); }
-  public static void AddCharacterMaxLevel(FlatBufferBuilder builder, int CharacterMaxLevel) { builder.AddInt(169, CharacterMaxLevel, 0); }
+  public static void AddMaxApMasterCoinPerWeek(FlatBufferBuilder builder, long MaxApMasterCoinPerWeek) { builder.AddLong(111, MaxApMasterCoinPerWeek, 0); }
+  public static void AddCraftOpenExpTier1(FlatBufferBuilder builder, long CraftOpenExpTier1) { builder.AddLong(112, CraftOpenExpTier1, 0); }
+  public static void AddCraftOpenExpTier2(FlatBufferBuilder builder, long CraftOpenExpTier2) { builder.AddLong(113, CraftOpenExpTier2, 0); }
+  public static void AddCraftOpenExpTier3(FlatBufferBuilder builder, long CraftOpenExpTier3) { builder.AddLong(114, CraftOpenExpTier3, 0); }
+  public static void AddCharacterEquipmentGearSlot(FlatBufferBuilder builder, long CharacterEquipmentGearSlot) { builder.AddLong(115, CharacterEquipmentGearSlot, 0); }
+  public static void AddBirthDayDDay(FlatBufferBuilder builder, int BirthDayDDay) { builder.AddInt(116, BirthDayDDay, 0); }
+  public static void AddRecommendedFriendsLvDifferenceLimit(FlatBufferBuilder builder, int RecommendedFriendsLvDifferenceLimit) { builder.AddInt(117, RecommendedFriendsLvDifferenceLimit, 0); }
+  public static void AddDDosDetectCount(FlatBufferBuilder builder, int DDosDetectCount) { builder.AddInt(118, DDosDetectCount, 0); }
+  public static void AddDDosCheckIntervalInSeconds(FlatBufferBuilder builder, int DDosCheckIntervalInSeconds) { builder.AddInt(119, DDosCheckIntervalInSeconds, 0); }
+  public static void AddMaxFriendsCount(FlatBufferBuilder builder, int MaxFriendsCount) { builder.AddInt(120, MaxFriendsCount, 0); }
+  public static void AddMaxFriendsRequest(FlatBufferBuilder builder, int MaxFriendsRequest) { builder.AddInt(121, MaxFriendsRequest, 0); }
+  public static void AddFriendsSearchRequestCount(FlatBufferBuilder builder, int FriendsSearchRequestCount) { builder.AddInt(122, FriendsSearchRequestCount, 0); }
+  public static void AddFriendsMaxApplicant(FlatBufferBuilder builder, int FriendsMaxApplicant) { builder.AddInt(123, FriendsMaxApplicant, 0); }
+  public static void AddIdCardDefaultCharacterId(FlatBufferBuilder builder, long IdCardDefaultCharacterId) { builder.AddLong(124, IdCardDefaultCharacterId, 0); }
+  public static void AddIdCardDefaultBgId(FlatBufferBuilder builder, long IdCardDefaultBgId) { builder.AddLong(125, IdCardDefaultBgId, 0); }
+  public static void AddWorldRaidGemEnterCost(FlatBufferBuilder builder, long WorldRaidGemEnterCost) { builder.AddLong(126, WorldRaidGemEnterCost, 0); }
+  public static void AddWorldRaidGemEnterAmout(FlatBufferBuilder builder, long WorldRaidGemEnterAmout) { builder.AddLong(127, WorldRaidGemEnterAmout, 0); }
+  public static void AddFriendIdCardCommentMaxLength(FlatBufferBuilder builder, long FriendIdCardCommentMaxLength) { builder.AddLong(128, FriendIdCardCommentMaxLength, 0); }
+  public static void AddFormationPresetNumberOfEchelonTab(FlatBufferBuilder builder, int FormationPresetNumberOfEchelonTab) { builder.AddInt(129, FormationPresetNumberOfEchelonTab, 0); }
+  public static void AddFormationPresetNumberOfEchelon(FlatBufferBuilder builder, int FormationPresetNumberOfEchelon) { builder.AddInt(130, FormationPresetNumberOfEchelon, 0); }
+  public static void AddFormationPresetRecentNumberOfEchelon(FlatBufferBuilder builder, int FormationPresetRecentNumberOfEchelon) { builder.AddInt(131, FormationPresetRecentNumberOfEchelon, 0); }
+  public static void AddFormationPresetEchelonTabTextLength(FlatBufferBuilder builder, int FormationPresetEchelonTabTextLength) { builder.AddInt(132, FormationPresetEchelonTabTextLength, 0); }
+  public static void AddFormationPresetEchelonSlotTextLength(FlatBufferBuilder builder, int FormationPresetEchelonSlotTextLength) { builder.AddInt(133, FormationPresetEchelonSlotTextLength, 0); }
+  public static void AddCharProfileRowIntervalKr(FlatBufferBuilder builder, int CharProfileRowIntervalKr) { builder.AddInt(134, CharProfileRowIntervalKr, 0); }
+  public static void AddCharProfileRowIntervalJp(FlatBufferBuilder builder, int CharProfileRowIntervalJp) { builder.AddInt(135, CharProfileRowIntervalJp, 0); }
+  public static void AddCharProfilePopupRowIntervalKr(FlatBufferBuilder builder, int CharProfilePopupRowIntervalKr) { builder.AddInt(136, CharProfilePopupRowIntervalKr, 0); }
+  public static void AddCharProfilePopupRowIntervalJp(FlatBufferBuilder builder, int CharProfilePopupRowIntervalJp) { builder.AddInt(137, CharProfilePopupRowIntervalJp, 0); }
+  public static void AddBeforehandGachaCount(FlatBufferBuilder builder, int BeforehandGachaCount) { builder.AddInt(138, BeforehandGachaCount, 0); }
+  public static void AddBeforehandGachaGroupId(FlatBufferBuilder builder, int BeforehandGachaGroupId) { builder.AddInt(139, BeforehandGachaGroupId, 0); }
+  public static void AddRenewalDisplayOrderDay(FlatBufferBuilder builder, int RenewalDisplayOrderDay) { builder.AddInt(140, RenewalDisplayOrderDay, 0); }
+  public static void AddEmblemDefaultId(FlatBufferBuilder builder, long EmblemDefaultId) { builder.AddLong(141, EmblemDefaultId, 0); }
+  public static void AddBirthdayMailStartDate(FlatBufferBuilder builder, StringOffset BirthdayMailStartDateOffset) { builder.AddOffset(142, BirthdayMailStartDateOffset.Value, 0); }
+  public static void AddBirthdayMailRemainDate(FlatBufferBuilder builder, int BirthdayMailRemainDate) { builder.AddInt(143, BirthdayMailRemainDate, 0); }
+  public static void AddBirthdayMailParcelType(FlatBufferBuilder builder, FlatDataJp.ParcelType BirthdayMailParcelType) { builder.AddInt(144, (int)BirthdayMailParcelType, 0); }
+  public static void AddBirthdayMailParcelId(FlatBufferBuilder builder, long BirthdayMailParcelId) { builder.AddLong(145, BirthdayMailParcelId, 0); }
+  public static void AddBirthdayMailParcelAmount(FlatBufferBuilder builder, int BirthdayMailParcelAmount) { builder.AddInt(146, BirthdayMailParcelAmount, 0); }
+  public static void AddClearDeckAverageDeckCount(FlatBufferBuilder builder, int ClearDeckAverageDeckCount) { builder.AddInt(147, ClearDeckAverageDeckCount, 0); }
+  public static void AddClearDeckWorldRaidSaveConditionCoefficient(FlatBufferBuilder builder, int ClearDeckWorldRaidSaveConditionCoefficient) { builder.AddInt(148, ClearDeckWorldRaidSaveConditionCoefficient, 0); }
+  public static void AddClearDeckShowCount(FlatBufferBuilder builder, int ClearDeckShowCount) { builder.AddInt(149, ClearDeckShowCount, 0); }
+  public static void AddCharacterMaxLevel(FlatBufferBuilder builder, int CharacterMaxLevel) { builder.AddInt(150, CharacterMaxLevel, 0); }
+  public static void AddPotentialBonusStatMaxLevelMaxHP(FlatBufferBuilder builder, int PotentialBonusStatMaxLevelMaxHP) { builder.AddInt(151, PotentialBonusStatMaxLevelMaxHP, 0); }
+  public static void AddPotentialBonusStatMaxLevelAttackPower(FlatBufferBuilder builder, int PotentialBonusStatMaxLevelAttackPower) { builder.AddInt(152, PotentialBonusStatMaxLevelAttackPower, 0); }
+  public static void AddPotentialBonusStatMaxLevelHealPower(FlatBufferBuilder builder, int PotentialBonusStatMaxLevelHealPower) { builder.AddInt(153, PotentialBonusStatMaxLevelHealPower, 0); }
+  public static void AddPotentialOpenConditionCharacterLevel(FlatBufferBuilder builder, int PotentialOpenConditionCharacterLevel) { builder.AddInt(154, PotentialOpenConditionCharacterLevel, 0); }
+  public static void AddAssistStrangerMinLevel(FlatBufferBuilder builder, int AssistStrangerMinLevel) { builder.AddInt(155, AssistStrangerMinLevel, 0); }
+  public static void AddAssistStrangerMaxLevel(FlatBufferBuilder builder, int AssistStrangerMaxLevel) { builder.AddInt(156, AssistStrangerMaxLevel, 0); }
+  public static void AddMaxBlockedUserCount(FlatBufferBuilder builder, int MaxBlockedUserCount) { builder.AddInt(157, MaxBlockedUserCount, 0); }
   public static Offset<FlatDataJp.ConstCommonExcel> EndConstCommonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.ConstCommonExcel>(o);

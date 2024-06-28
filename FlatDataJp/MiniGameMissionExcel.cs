@@ -30,13 +30,7 @@ public struct MiniGameMissionExcel : IFlatbufferObject
 #endif
   public byte[] GetGroupNameArray() { return __p.__vector_as_array<byte>(10); }
   public FlatDataJp.MissionCategory Category { get { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.MissionCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MissionCategory.Challenge; } }
-  public string Description { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span<byte>(14, 1); }
-#else
-  public ArraySegment<byte>? GetDescriptionBytes() { return __p.__vector_as_arraysegment(14); }
-#endif
-  public byte[] GetDescriptionArray() { return __p.__vector_as_array<byte>(14); }
+  public uint Description { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public FlatDataJp.MissionResetType ResetType { get { int o = __p.__offset(16); return o != 0 ? (FlatDataJp.MissionResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MissionResetType.None; } }
   public FlatDataJp.MissionToastDisplayConditionType ToastDisplayType { get { int o = __p.__offset(18); return o != 0 ? (FlatDataJp.MissionToastDisplayConditionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.MissionToastDisplayConditionType.Always; } }
   public string ToastImagePath { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
@@ -117,7 +111,7 @@ public struct MiniGameMissionExcel : IFlatbufferObject
       long GroupId = 0,
       StringOffset GroupNameOffset = default(StringOffset),
       FlatDataJp.MissionCategory Category = FlatDataJp.MissionCategory.Challenge,
-      StringOffset DescriptionOffset = default(StringOffset),
+      uint Description = 0,
       FlatDataJp.MissionResetType ResetType = FlatDataJp.MissionResetType.None,
       FlatDataJp.MissionToastDisplayConditionType ToastDisplayType = FlatDataJp.MissionToastDisplayConditionType.Always,
       StringOffset ToastImagePathOffset = default(StringOffset),
@@ -156,7 +150,7 @@ public struct MiniGameMissionExcel : IFlatbufferObject
     MiniGameMissionExcel.AddToastImagePath(builder, ToastImagePathOffset);
     MiniGameMissionExcel.AddToastDisplayType(builder, ToastDisplayType);
     MiniGameMissionExcel.AddResetType(builder, ResetType);
-    MiniGameMissionExcel.AddDescription(builder, DescriptionOffset);
+    MiniGameMissionExcel.AddDescription(builder, Description);
     MiniGameMissionExcel.AddCategory(builder, Category);
     MiniGameMissionExcel.AddGroupName(builder, GroupNameOffset);
     MiniGameMissionExcel.AddIsCompleteExtensionTime(builder, IsCompleteExtensionTime);
@@ -170,7 +164,7 @@ public struct MiniGameMissionExcel : IFlatbufferObject
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(2, GroupId, 0); }
   public static void AddGroupName(FlatBufferBuilder builder, StringOffset GroupNameOffset) { builder.AddOffset(3, GroupNameOffset.Value, 0); }
   public static void AddCategory(FlatBufferBuilder builder, FlatDataJp.MissionCategory Category) { builder.AddInt(4, (int)Category, 0); }
-  public static void AddDescription(FlatBufferBuilder builder, StringOffset DescriptionOffset) { builder.AddOffset(5, DescriptionOffset.Value, 0); }
+  public static void AddDescription(FlatBufferBuilder builder, uint Description) { builder.AddUint(5, Description, 0); }
   public static void AddResetType(FlatBufferBuilder builder, FlatDataJp.MissionResetType ResetType) { builder.AddInt(6, (int)ResetType, 0); }
   public static void AddToastDisplayType(FlatBufferBuilder builder, FlatDataJp.MissionToastDisplayConditionType ToastDisplayType) { builder.AddInt(7, (int)ToastDisplayType, 0); }
   public static void AddToastImagePath(FlatBufferBuilder builder, StringOffset ToastImagePathOffset) { builder.AddOffset(8, ToastImagePathOffset.Value, 0); }

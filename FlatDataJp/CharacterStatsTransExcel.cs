@@ -20,24 +20,28 @@ public struct CharacterStatsTransExcel : IFlatbufferObject
   public CharacterStatsTransExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public FlatDataJp.StatType TransSupportStats { get { int o = __p.__offset(4); return o != 0 ? (FlatDataJp.StatType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatType.None; } }
-  public int TransSupportStatsFactor { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataJp.StatTransType StatTransType { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.StatTransType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatTransType.SpecialTransStat; } }
+  public FlatDataJp.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EchelonExtensionType.Base; } }
+  public int TransSupportStatsFactor { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataJp.StatTransType StatTransType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.StatTransType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.StatTransType.SpecialTransStat; } }
 
   public static Offset<FlatDataJp.CharacterStatsTransExcel> CreateCharacterStatsTransExcel(FlatBufferBuilder builder,
       FlatDataJp.StatType TransSupportStats = FlatDataJp.StatType.None,
+      FlatDataJp.EchelonExtensionType echelonExtensionType = FlatDataJp.EchelonExtensionType.Base,
       int TransSupportStatsFactor = 0,
       FlatDataJp.StatTransType statTransType = FlatDataJp.StatTransType.SpecialTransStat) {
-    builder.StartTable(3);
+    builder.StartTable(4);
     CharacterStatsTransExcel.AddStatTransType(builder, statTransType);
     CharacterStatsTransExcel.AddTransSupportStatsFactor(builder, TransSupportStatsFactor);
+    CharacterStatsTransExcel.AddEchelonExtensionType(builder, echelonExtensionType);
     CharacterStatsTransExcel.AddTransSupportStats(builder, TransSupportStats);
     return CharacterStatsTransExcel.EndCharacterStatsTransExcel(builder);
   }
 
-  public static void StartCharacterStatsTransExcel(FlatBufferBuilder builder) { builder.StartTable(3); }
+  public static void StartCharacterStatsTransExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
   public static void AddTransSupportStats(FlatBufferBuilder builder, FlatDataJp.StatType TransSupportStats) { builder.AddInt(0, (int)TransSupportStats, 0); }
-  public static void AddTransSupportStatsFactor(FlatBufferBuilder builder, int TransSupportStatsFactor) { builder.AddInt(1, TransSupportStatsFactor, 0); }
-  public static void AddStatTransType(FlatBufferBuilder builder, FlatDataJp.StatTransType statTransType) { builder.AddInt(2, (int)statTransType, 0); }
+  public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataJp.EchelonExtensionType echelonExtensionType) { builder.AddInt(1, (int)echelonExtensionType, 0); }
+  public static void AddTransSupportStatsFactor(FlatBufferBuilder builder, int TransSupportStatsFactor) { builder.AddInt(2, TransSupportStatsFactor, 0); }
+  public static void AddStatTransType(FlatBufferBuilder builder, FlatDataJp.StatTransType statTransType) { builder.AddInt(3, (int)statTransType, 0); }
   public static Offset<FlatDataJp.CharacterStatsTransExcel> EndCharacterStatsTransExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.CharacterStatsTransExcel>(o);

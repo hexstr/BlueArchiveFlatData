@@ -20,86 +20,106 @@ public struct EventContentTreasureRewardExcel : IFlatbufferObject
   public EventContentTreasureRewardExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int CellUnderImageWidth { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int CellUnderImageHeight { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool HiddenImage { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataJp.ParcelType RewardParcelType(int j) { int o = __p.__offset(12); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.ParcelType)0; }
-  public int RewardParcelTypeLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string LocalizeCodeID { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataJp.ParcelType> GetRewardParcelTypeBytes() { return __p.__vector_as_span<FlatDataJp.ParcelType>(12, 4); }
+  public Span<byte> GetLocalizeCodeIDBytes() { return __p.__vector_as_span<byte>(6, 1); }
 #else
-  public ArraySegment<byte>? GetRewardParcelTypeBytes() { return __p.__vector_as_arraysegment(12); }
+  public ArraySegment<byte>? GetLocalizeCodeIDBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
-  public FlatDataJp.ParcelType[] GetRewardParcelTypeArray() { int o = __p.__offset(12); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.ParcelType[] a = new FlatDataJp.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
-  public long RewardParcelId(int j) { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int RewardParcelIdLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetLocalizeCodeIDArray() { return __p.__vector_as_array<byte>(6); }
+  public int CellUnderImageWidth { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CellUnderImageHeight { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool HiddenImage { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataJp.ParcelType RewardParcelType(int j) { int o = __p.__offset(14); return o != 0 ? (FlatDataJp.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataJp.ParcelType)0; }
+  public int RewardParcelTypeLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetRewardParcelIdBytes() { return __p.__vector_as_span<long>(14, 8); }
+  public Span<FlatDataJp.ParcelType> GetRewardParcelTypeBytes() { return __p.__vector_as_span<FlatDataJp.ParcelType>(14, 4); }
 #else
-  public ArraySegment<byte>? GetRewardParcelIdBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetRewardParcelTypeBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
-  public long[] GetRewardParcelIdArray() { return __p.__vector_as_array<long>(14); }
-  public long RewardParcelAmount(int j) { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int RewardParcelAmountLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataJp.ParcelType[] GetRewardParcelTypeArray() { int o = __p.__offset(14); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataJp.ParcelType[] a = new FlatDataJp.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataJp.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
+  public long RewardParcelId(int j) { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int RewardParcelIdLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetRewardParcelAmountBytes() { return __p.__vector_as_span<long>(16, 8); }
+  public Span<long> GetRewardParcelIdBytes() { return __p.__vector_as_span<long>(16, 8); }
 #else
-  public ArraySegment<byte>? GetRewardParcelAmountBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetRewardParcelIdBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public long[] GetRewardParcelAmountArray() { return __p.__vector_as_array<long>(16); }
-  public string CellUnderImagePath { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long[] GetRewardParcelIdArray() { return __p.__vector_as_array<long>(16); }
+  public long RewardParcelAmount(int j) { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int RewardParcelAmountLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetCellUnderImagePathBytes() { return __p.__vector_as_span<byte>(18, 1); }
+  public Span<long> GetRewardParcelAmountBytes() { return __p.__vector_as_span<long>(18, 8); }
 #else
-  public ArraySegment<byte>? GetCellUnderImagePathBytes() { return __p.__vector_as_arraysegment(18); }
+  public ArraySegment<byte>? GetRewardParcelAmountBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public byte[] GetCellUnderImagePathArray() { return __p.__vector_as_array<byte>(18); }
+  public long[] GetRewardParcelAmountArray() { return __p.__vector_as_array<long>(18); }
+  public string CellUnderImagePath { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetCellUnderImagePathBytes() { return __p.__vector_as_span<byte>(20, 1); }
+#else
+  public ArraySegment<byte>? GetCellUnderImagePathBytes() { return __p.__vector_as_arraysegment(20); }
+#endif
+  public byte[] GetCellUnderImagePathArray() { return __p.__vector_as_array<byte>(20); }
+  public string TreasureSmallImagePath { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetTreasureSmallImagePathBytes() { return __p.__vector_as_span<byte>(22, 1); }
+#else
+  public ArraySegment<byte>? GetTreasureSmallImagePathBytes() { return __p.__vector_as_arraysegment(22); }
+#endif
+  public byte[] GetTreasureSmallImagePathArray() { return __p.__vector_as_array<byte>(22); }
 
   public static Offset<FlatDataJp.EventContentTreasureRewardExcel> CreateEventContentTreasureRewardExcel(FlatBufferBuilder builder,
       long Id = 0,
+      StringOffset LocalizeCodeIDOffset = default(StringOffset),
       int CellUnderImageWidth = 0,
       int CellUnderImageHeight = 0,
       bool HiddenImage = false,
       VectorOffset RewardParcelTypeOffset = default(VectorOffset),
       VectorOffset RewardParcelIdOffset = default(VectorOffset),
       VectorOffset RewardParcelAmountOffset = default(VectorOffset),
-      StringOffset CellUnderImagePathOffset = default(StringOffset)) {
-    builder.StartTable(8);
+      StringOffset CellUnderImagePathOffset = default(StringOffset),
+      StringOffset TreasureSmallImagePathOffset = default(StringOffset)) {
+    builder.StartTable(10);
     EventContentTreasureRewardExcel.AddId(builder, Id);
+    EventContentTreasureRewardExcel.AddTreasureSmallImagePath(builder, TreasureSmallImagePathOffset);
     EventContentTreasureRewardExcel.AddCellUnderImagePath(builder, CellUnderImagePathOffset);
     EventContentTreasureRewardExcel.AddRewardParcelAmount(builder, RewardParcelAmountOffset);
     EventContentTreasureRewardExcel.AddRewardParcelId(builder, RewardParcelIdOffset);
     EventContentTreasureRewardExcel.AddRewardParcelType(builder, RewardParcelTypeOffset);
     EventContentTreasureRewardExcel.AddCellUnderImageHeight(builder, CellUnderImageHeight);
     EventContentTreasureRewardExcel.AddCellUnderImageWidth(builder, CellUnderImageWidth);
+    EventContentTreasureRewardExcel.AddLocalizeCodeID(builder, LocalizeCodeIDOffset);
     EventContentTreasureRewardExcel.AddHiddenImage(builder, HiddenImage);
     return EventContentTreasureRewardExcel.EndEventContentTreasureRewardExcel(builder);
   }
 
-  public static void StartEventContentTreasureRewardExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
+  public static void StartEventContentTreasureRewardExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
-  public static void AddCellUnderImageWidth(FlatBufferBuilder builder, int CellUnderImageWidth) { builder.AddInt(1, CellUnderImageWidth, 0); }
-  public static void AddCellUnderImageHeight(FlatBufferBuilder builder, int CellUnderImageHeight) { builder.AddInt(2, CellUnderImageHeight, 0); }
-  public static void AddHiddenImage(FlatBufferBuilder builder, bool HiddenImage) { builder.AddBool(3, HiddenImage, false); }
-  public static void AddRewardParcelType(FlatBufferBuilder builder, VectorOffset RewardParcelTypeOffset) { builder.AddOffset(4, RewardParcelTypeOffset.Value, 0); }
+  public static void AddLocalizeCodeID(FlatBufferBuilder builder, StringOffset LocalizeCodeIDOffset) { builder.AddOffset(1, LocalizeCodeIDOffset.Value, 0); }
+  public static void AddCellUnderImageWidth(FlatBufferBuilder builder, int CellUnderImageWidth) { builder.AddInt(2, CellUnderImageWidth, 0); }
+  public static void AddCellUnderImageHeight(FlatBufferBuilder builder, int CellUnderImageHeight) { builder.AddInt(3, CellUnderImageHeight, 0); }
+  public static void AddHiddenImage(FlatBufferBuilder builder, bool HiddenImage) { builder.AddBool(4, HiddenImage, false); }
+  public static void AddRewardParcelType(FlatBufferBuilder builder, VectorOffset RewardParcelTypeOffset) { builder.AddOffset(5, RewardParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateRewardParcelTypeVector(FlatBufferBuilder builder, FlatDataJp.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelTypeVectorBlock(FlatBufferBuilder builder, FlatDataJp.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataJp.ParcelType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataJp.ParcelType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartRewardParcelTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddRewardParcelId(FlatBufferBuilder builder, VectorOffset RewardParcelIdOffset) { builder.AddOffset(5, RewardParcelIdOffset.Value, 0); }
+  public static void AddRewardParcelId(FlatBufferBuilder builder, VectorOffset RewardParcelIdOffset) { builder.AddOffset(6, RewardParcelIdOffset.Value, 0); }
   public static VectorOffset CreateRewardParcelIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartRewardParcelIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddRewardParcelAmount(FlatBufferBuilder builder, VectorOffset RewardParcelAmountOffset) { builder.AddOffset(6, RewardParcelAmountOffset.Value, 0); }
+  public static void AddRewardParcelAmount(FlatBufferBuilder builder, VectorOffset RewardParcelAmountOffset) { builder.AddOffset(7, RewardParcelAmountOffset.Value, 0); }
   public static VectorOffset CreateRewardParcelAmountVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelAmountVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelAmountVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartRewardParcelAmountVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddCellUnderImagePath(FlatBufferBuilder builder, StringOffset CellUnderImagePathOffset) { builder.AddOffset(7, CellUnderImagePathOffset.Value, 0); }
+  public static void AddCellUnderImagePath(FlatBufferBuilder builder, StringOffset CellUnderImagePathOffset) { builder.AddOffset(8, CellUnderImagePathOffset.Value, 0); }
+  public static void AddTreasureSmallImagePath(FlatBufferBuilder builder, StringOffset TreasureSmallImagePathOffset) { builder.AddOffset(9, TreasureSmallImagePathOffset.Value, 0); }
   public static Offset<FlatDataJp.EventContentTreasureRewardExcel> EndEventContentTreasureRewardExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.EventContentTreasureRewardExcel>(o);

@@ -107,6 +107,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
 #endif
   public int[] GetAllyPassiveSkillLevelArray() { return __p.__vector_as_array<int>(68); }
   public bool SaveCurrentLocalBossHP { get { int o = __p.__offset(70); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataJp.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(72); return o != 0 ? (FlatDataJp.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EchelonExtensionType.Base; } }
 
   public static Offset<FlatDataJp.WorldRaidStageExcel> CreateWorldRaidStageExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -142,8 +143,9 @@ public struct WorldRaidStageExcel : IFlatbufferObject
       long DamageToWorldBoss = 0,
       VectorOffset AllyPassiveSkillOffset = default(VectorOffset),
       VectorOffset AllyPassiveSkillLevelOffset = default(VectorOffset),
-      bool SaveCurrentLocalBossHP = false) {
-    builder.StartTable(34);
+      bool SaveCurrentLocalBossHP = false,
+      FlatDataJp.EchelonExtensionType echelonExtensionType = FlatDataJp.EchelonExtensionType.Base) {
+    builder.StartTable(35);
     WorldRaidStageExcel.AddDamageToWorldBoss(builder, DamageToWorldBoss);
     WorldRaidStageExcel.AddFixedEchelonId(builder, FixedEchelonId);
     WorldRaidStageExcel.AddClearScenarioKey(builder, ClearScenarioKey);
@@ -159,6 +161,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
     WorldRaidStageExcel.AddRaidCharacterId(builder, RaidCharacterId);
     WorldRaidStageExcel.AddWorldRaidBossGroupId(builder, WorldRaidBossGroupId);
     WorldRaidStageExcel.AddId(builder, Id);
+    WorldRaidStageExcel.AddEchelonExtensionType(builder, echelonExtensionType);
     WorldRaidStageExcel.AddAllyPassiveSkillLevel(builder, AllyPassiveSkillLevelOffset);
     WorldRaidStageExcel.AddAllyPassiveSkill(builder, AllyPassiveSkillOffset);
     WorldRaidStageExcel.AddBossBGInfoKey(builder, BossBGInfoKey);
@@ -181,7 +184,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
     return WorldRaidStageExcel.EndWorldRaidStageExcel(builder);
   }
 
-  public static void StartWorldRaidStageExcel(FlatBufferBuilder builder) { builder.StartTable(34); }
+  public static void StartWorldRaidStageExcel(FlatBufferBuilder builder) { builder.StartTable(35); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddUseBossIndex(FlatBufferBuilder builder, bool UseBossIndex) { builder.AddBool(1, UseBossIndex, false); }
   public static void AddUseBossAIPhaseSync(FlatBufferBuilder builder, bool UseBossAIPhaseSync) { builder.AddBool(2, UseBossAIPhaseSync, false); }
@@ -246,6 +249,7 @@ public struct WorldRaidStageExcel : IFlatbufferObject
   public static VectorOffset CreateAllyPassiveSkillLevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartAllyPassiveSkillLevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddSaveCurrentLocalBossHP(FlatBufferBuilder builder, bool SaveCurrentLocalBossHP) { builder.AddBool(33, SaveCurrentLocalBossHP, false); }
+  public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataJp.EchelonExtensionType echelonExtensionType) { builder.AddInt(34, (int)echelonExtensionType, 0); }
   public static Offset<FlatDataJp.WorldRaidStageExcel> EndWorldRaidStageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.WorldRaidStageExcel>(o);

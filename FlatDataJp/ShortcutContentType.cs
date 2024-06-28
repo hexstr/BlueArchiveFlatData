@@ -20,6 +20,7 @@ public enum ShortcutContentType : int
   SchoolDungeon = 10,
   Academy = 11,
   Mission = 12,
+  MultiFloorRaid = 13,
 };
 
 

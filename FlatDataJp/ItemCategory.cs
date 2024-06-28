@@ -16,7 +16,6 @@ public enum ItemCategory : int
   Favor = 6,
   RecruitCoin = 7,
   InvisibleToken = 8,
-  MonthlyBonus = 9,
 };
 
 

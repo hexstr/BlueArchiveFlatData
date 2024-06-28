@@ -9,7 +9,6 @@ public enum ScenarioModeSubTypes : int
 {
   None = 0,
   Club = 1,
-  TSS = 2,
 };
 
 

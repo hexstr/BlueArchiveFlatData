@@ -120,39 +120,46 @@ public struct CostumeExcel : IFlatbufferObject
   public ArraySegment<byte>? GetCollectionBGTexturePathBytes() { return __p.__vector_as_arraysegment(46); }
 #endif
   public byte[] GetCollectionBGTexturePathArray() { return __p.__vector_as_array<byte>(46); }
-  public bool UseObjectHPBAR { get { int o = __p.__offset(48); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string TextureBoss { get { int o = __p.__offset(50); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string CombatStyleTexturePath { get { int o = __p.__offset(48); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTextureBossBytes() { return __p.__vector_as_span<byte>(50, 1); }
+  public Span<byte> GetCombatStyleTexturePathBytes() { return __p.__vector_as_span<byte>(48, 1); }
 #else
-  public ArraySegment<byte>? GetTextureBossBytes() { return __p.__vector_as_arraysegment(50); }
+  public ArraySegment<byte>? GetCombatStyleTexturePathBytes() { return __p.__vector_as_arraysegment(48); }
 #endif
-  public byte[] GetTextureBossArray() { return __p.__vector_as_array<byte>(50); }
-  public string TextureSkillCard(int j) { int o = __p.__offset(52); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int TextureSkillCardLength { get { int o = __p.__offset(52); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string InformationPacel { get { int o = __p.__offset(54); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetCombatStyleTexturePathArray() { return __p.__vector_as_array<byte>(48); }
+  public bool UseObjectHPBAR { get { int o = __p.__offset(50); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string TextureBoss { get { int o = __p.__offset(52); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetInformationPacelBytes() { return __p.__vector_as_span<byte>(54, 1); }
+  public Span<byte> GetTextureBossBytes() { return __p.__vector_as_span<byte>(52, 1); }
 #else
-  public ArraySegment<byte>? GetInformationPacelBytes() { return __p.__vector_as_arraysegment(54); }
+  public ArraySegment<byte>? GetTextureBossBytes() { return __p.__vector_as_arraysegment(52); }
 #endif
-  public byte[] GetInformationPacelArray() { return __p.__vector_as_array<byte>(54); }
-  public string AnimationSSR { get { int o = __p.__offset(56); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetTextureBossArray() { return __p.__vector_as_array<byte>(52); }
+  public string TextureSkillCard(int j) { int o = __p.__offset(54); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int TextureSkillCardLength { get { int o = __p.__offset(54); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string InformationPacel { get { int o = __p.__offset(56); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAnimationSSRBytes() { return __p.__vector_as_span<byte>(56, 1); }
+  public Span<byte> GetInformationPacelBytes() { return __p.__vector_as_span<byte>(56, 1); }
 #else
-  public ArraySegment<byte>? GetAnimationSSRBytes() { return __p.__vector_as_arraysegment(56); }
+  public ArraySegment<byte>? GetInformationPacelBytes() { return __p.__vector_as_arraysegment(56); }
 #endif
-  public byte[] GetAnimationSSRArray() { return __p.__vector_as_array<byte>(56); }
-  public string EnterStrategyAnimationName { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetInformationPacelArray() { return __p.__vector_as_array<byte>(56); }
+  public string AnimationSSR { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_span<byte>(58, 1); }
+  public Span<byte> GetAnimationSSRBytes() { return __p.__vector_as_span<byte>(58, 1); }
 #else
-  public ArraySegment<byte>? GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_arraysegment(58); }
+  public ArraySegment<byte>? GetAnimationSSRBytes() { return __p.__vector_as_arraysegment(58); }
 #endif
-  public byte[] GetEnterStrategyAnimationNameArray() { return __p.__vector_as_array<byte>(58); }
-  public bool AnimationValidator { get { int o = __p.__offset(60); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long CharacterVoiceGroupId { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public byte[] GetAnimationSSRArray() { return __p.__vector_as_array<byte>(58); }
+  public string EnterStrategyAnimationName { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_span<byte>(60, 1); }
+#else
+  public ArraySegment<byte>? GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_arraysegment(60); }
+#endif
+  public byte[] GetEnterStrategyAnimationNameArray() { return __p.__vector_as_array<byte>(60); }
+  public bool AnimationValidator { get { int o = __p.__offset(62); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long CharacterVoiceGroupId { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataJp.CostumeExcel> CreateCostumeExcel(FlatBufferBuilder builder,
       long CostumeGroupId = 0,
@@ -177,6 +184,7 @@ public struct CostumeExcel : IFlatbufferObject
       StringOffset TextureDirOffset = default(StringOffset),
       StringOffset CollectionTexturePathOffset = default(StringOffset),
       StringOffset CollectionBGTexturePathOffset = default(StringOffset),
+      StringOffset CombatStyleTexturePathOffset = default(StringOffset),
       bool UseObjectHPBAR = false,
       StringOffset TextureBossOffset = default(StringOffset),
       VectorOffset TextureSkillCardOffset = default(VectorOffset),
@@ -185,7 +193,7 @@ public struct CostumeExcel : IFlatbufferObject
       StringOffset EnterStrategyAnimationNameOffset = default(StringOffset),
       bool AnimationValidator = false,
       long CharacterVoiceGroupId = 0) {
-    builder.StartTable(30);
+    builder.StartTable(31);
     CostumeExcel.AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId);
     CostumeExcel.AddCharacterSkillListGroupId(builder, CharacterSkillListGroupId);
     CostumeExcel.AddCostumeUniqueId(builder, CostumeUniqueId);
@@ -195,6 +203,7 @@ public struct CostumeExcel : IFlatbufferObject
     CostumeExcel.AddInformationPacel(builder, InformationPacelOffset);
     CostumeExcel.AddTextureSkillCard(builder, TextureSkillCardOffset);
     CostumeExcel.AddTextureBoss(builder, TextureBossOffset);
+    CostumeExcel.AddCombatStyleTexturePath(builder, CombatStyleTexturePathOffset);
     CostumeExcel.AddCollectionBGTexturePath(builder, CollectionBGTexturePathOffset);
     CostumeExcel.AddCollectionTexturePath(builder, CollectionTexturePathOffset);
     CostumeExcel.AddTextureDir(builder, TextureDirOffset);
@@ -219,7 +228,7 @@ public struct CostumeExcel : IFlatbufferObject
     return CostumeExcel.EndCostumeExcel(builder);
   }
 
-  public static void StartCostumeExcel(FlatBufferBuilder builder) { builder.StartTable(30); }
+  public static void StartCostumeExcel(FlatBufferBuilder builder) { builder.StartTable(31); }
   public static void AddCostumeGroupId(FlatBufferBuilder builder, long CostumeGroupId) { builder.AddLong(0, CostumeGroupId, 0); }
   public static void AddCostumeUniqueId(FlatBufferBuilder builder, long CostumeUniqueId) { builder.AddLong(1, CostumeUniqueId, 0); }
   public static void AddDevName(FlatBufferBuilder builder, StringOffset DevNameOffset) { builder.AddOffset(2, DevNameOffset.Value, 0); }
@@ -247,19 +256,20 @@ public struct CostumeExcel : IFlatbufferObject
   public static void AddTextureDir(FlatBufferBuilder builder, StringOffset TextureDirOffset) { builder.AddOffset(19, TextureDirOffset.Value, 0); }
   public static void AddCollectionTexturePath(FlatBufferBuilder builder, StringOffset CollectionTexturePathOffset) { builder.AddOffset(20, CollectionTexturePathOffset.Value, 0); }
   public static void AddCollectionBGTexturePath(FlatBufferBuilder builder, StringOffset CollectionBGTexturePathOffset) { builder.AddOffset(21, CollectionBGTexturePathOffset.Value, 0); }
-  public static void AddUseObjectHPBAR(FlatBufferBuilder builder, bool UseObjectHPBAR) { builder.AddBool(22, UseObjectHPBAR, false); }
-  public static void AddTextureBoss(FlatBufferBuilder builder, StringOffset TextureBossOffset) { builder.AddOffset(23, TextureBossOffset.Value, 0); }
-  public static void AddTextureSkillCard(FlatBufferBuilder builder, VectorOffset TextureSkillCardOffset) { builder.AddOffset(24, TextureSkillCardOffset.Value, 0); }
+  public static void AddCombatStyleTexturePath(FlatBufferBuilder builder, StringOffset CombatStyleTexturePathOffset) { builder.AddOffset(22, CombatStyleTexturePathOffset.Value, 0); }
+  public static void AddUseObjectHPBAR(FlatBufferBuilder builder, bool UseObjectHPBAR) { builder.AddBool(23, UseObjectHPBAR, false); }
+  public static void AddTextureBoss(FlatBufferBuilder builder, StringOffset TextureBossOffset) { builder.AddOffset(24, TextureBossOffset.Value, 0); }
+  public static void AddTextureSkillCard(FlatBufferBuilder builder, VectorOffset TextureSkillCardOffset) { builder.AddOffset(25, TextureSkillCardOffset.Value, 0); }
   public static VectorOffset CreateTextureSkillCardVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateTextureSkillCardVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTextureSkillCardVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTextureSkillCardVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartTextureSkillCardVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddInformationPacel(FlatBufferBuilder builder, StringOffset InformationPacelOffset) { builder.AddOffset(25, InformationPacelOffset.Value, 0); }
-  public static void AddAnimationSSR(FlatBufferBuilder builder, StringOffset AnimationSSROffset) { builder.AddOffset(26, AnimationSSROffset.Value, 0); }
-  public static void AddEnterStrategyAnimationName(FlatBufferBuilder builder, StringOffset EnterStrategyAnimationNameOffset) { builder.AddOffset(27, EnterStrategyAnimationNameOffset.Value, 0); }
-  public static void AddAnimationValidator(FlatBufferBuilder builder, bool AnimationValidator) { builder.AddBool(28, AnimationValidator, false); }
-  public static void AddCharacterVoiceGroupId(FlatBufferBuilder builder, long CharacterVoiceGroupId) { builder.AddLong(29, CharacterVoiceGroupId, 0); }
+  public static void AddInformationPacel(FlatBufferBuilder builder, StringOffset InformationPacelOffset) { builder.AddOffset(26, InformationPacelOffset.Value, 0); }
+  public static void AddAnimationSSR(FlatBufferBuilder builder, StringOffset AnimationSSROffset) { builder.AddOffset(27, AnimationSSROffset.Value, 0); }
+  public static void AddEnterStrategyAnimationName(FlatBufferBuilder builder, StringOffset EnterStrategyAnimationNameOffset) { builder.AddOffset(28, EnterStrategyAnimationNameOffset.Value, 0); }
+  public static void AddAnimationValidator(FlatBufferBuilder builder, bool AnimationValidator) { builder.AddBool(29, AnimationValidator, false); }
+  public static void AddCharacterVoiceGroupId(FlatBufferBuilder builder, long CharacterVoiceGroupId) { builder.AddLong(30, CharacterVoiceGroupId, 0); }
   public static Offset<FlatDataJp.CostumeExcel> EndCostumeExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.CostumeExcel>(o);

@@ -23,25 +23,29 @@ public struct AccountLevelExcel : IFlatbufferObject
   public long Level { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long Exp { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long APAutoChargeMax { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool NeedReportEvent { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataJp.AccountLevelExcel> CreateAccountLevelExcel(FlatBufferBuilder builder,
       long Id = 0,
       long Level = 0,
       long Exp = 0,
-      long APAutoChargeMax = 0) {
-    builder.StartTable(4);
+      long APAutoChargeMax = 0,
+      bool NeedReportEvent = false) {
+    builder.StartTable(5);
     AccountLevelExcel.AddAPAutoChargeMax(builder, APAutoChargeMax);
     AccountLevelExcel.AddExp(builder, Exp);
     AccountLevelExcel.AddLevel(builder, Level);
     AccountLevelExcel.AddId(builder, Id);
+    AccountLevelExcel.AddNeedReportEvent(builder, NeedReportEvent);
     return AccountLevelExcel.EndAccountLevelExcel(builder);
   }
 
-  public static void StartAccountLevelExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
+  public static void StartAccountLevelExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddLevel(FlatBufferBuilder builder, long Level) { builder.AddLong(1, Level, 0); }
   public static void AddExp(FlatBufferBuilder builder, long Exp) { builder.AddLong(2, Exp, 0); }
   public static void AddAPAutoChargeMax(FlatBufferBuilder builder, long APAutoChargeMax) { builder.AddLong(3, APAutoChargeMax, 0); }
+  public static void AddNeedReportEvent(FlatBufferBuilder builder, bool NeedReportEvent) { builder.AddBool(4, NeedReportEvent, false); }
   public static Offset<FlatDataJp.AccountLevelExcel> EndAccountLevelExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.AccountLevelExcel>(o);

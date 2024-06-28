@@ -66,14 +66,17 @@ public enum DialogCategory : int
   UIAttendanceEvent12 = 56,
   UIAttendanceEvent13 = 57,
   UIAttendanceEvent14 = 58,
-  GlobalAttendance01 = 59,
-  GlobalAttendance02 = 60,
-  GlobalAttendance03 = 61,
-  GlobalAttendance04 = 62,
-  GlobalAttendance05 = 63,
+  Temp_1 = 59,
+  Temp_2 = 60,
+  Temp_3 = 61,
+  Temp_4 = 62,
+  Temp_5 = 63,
   UIAttendanceEvent15 = 64,
   UILobbySpecial2 = 65,
   UIAttendanceEvent16 = 66,
+  UIEventTreasure = 67,
+  UIMultiFloorRaid = 68,
+  UIEventMiniGameDreamMaker = 69,
 };
 
 

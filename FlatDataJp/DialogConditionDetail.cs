@@ -10,6 +10,7 @@ public enum DialogConditionDetail : int
   None = 0,
   Day = 1,
   Close = 2,
+  MiniGameDreamMakerDay = 3,
 };
 
 

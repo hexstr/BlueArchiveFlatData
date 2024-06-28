@@ -17,6 +17,8 @@ public enum EmblemCategory : int
   Boss = 7,
   Etc = 8,
   Etc_Anniversary = 9,
+  MultiFloorRaid = 10,
+  Potential = 11,
 };
 
 

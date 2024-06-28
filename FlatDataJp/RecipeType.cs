@@ -16,6 +16,7 @@ public enum RecipeType : int
   SelectionItem = 6,
   WeaponTranscendence = 7,
   SelectRecruit = 8,
+  CharacterPotential = 9,
 };
 
 

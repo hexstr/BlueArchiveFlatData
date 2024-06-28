@@ -94,6 +94,7 @@ public struct ConquestUnitExcel : IFlatbufferObject
   public int RecommandLevel { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long TacticRewardExp { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long FixedEchelonId { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataJp.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(66); return o != 0 ? (FlatDataJp.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EchelonExtensionType.Base; } }
 
   public static Offset<FlatDataJp.ConquestUnitExcel> CreateConquestUnitExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -126,8 +127,9 @@ public struct ConquestUnitExcel : IFlatbufferObject
       FlatDataJp.StageTopography stageTopography = FlatDataJp.StageTopography.Street,
       int RecommandLevel = 0,
       long TacticRewardExp = 0,
-      long FixedEchelonId = 0) {
-    builder.StartTable(31);
+      long FixedEchelonId = 0,
+      FlatDataJp.EchelonExtensionType echelonExtensionType = FlatDataJp.EchelonExtensionType.Base) {
+    builder.StartTable(32);
     ConquestUnitExcel.AddFixedEchelonId(builder, FixedEchelonId);
     ConquestUnitExcel.AddTacticRewardExp(builder, TacticRewardExp);
     ConquestUnitExcel.AddConquestRewardId(builder, ConquestRewardId);
@@ -141,6 +143,7 @@ public struct ConquestUnitExcel : IFlatbufferObject
     ConquestUnitExcel.AddPrevUnitGroup(builder, PrevUnitGroup);
     ConquestUnitExcel.AddUnitGroup(builder, UnitGroup);
     ConquestUnitExcel.AddId(builder, Id);
+    ConquestUnitExcel.AddEchelonExtensionType(builder, echelonExtensionType);
     ConquestUnitExcel.AddRecommandLevel(builder, RecommandLevel);
     ConquestUnitExcel.AddStageTopography(builder, stageTopography);
     ConquestUnitExcel.AddManageEchelonStageEnterCostAmount(builder, ManageEchelonStageEnterCostAmount);
@@ -162,7 +165,7 @@ public struct ConquestUnitExcel : IFlatbufferObject
     return ConquestUnitExcel.EndConquestUnitExcel(builder);
   }
 
-  public static void StartConquestUnitExcel(FlatBufferBuilder builder) { builder.StartTable(31); }
+  public static void StartConquestUnitExcel(FlatBufferBuilder builder) { builder.StartTable(32); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddKey(FlatBufferBuilder builder, uint Key) { builder.AddUint(1, Key, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(2, NameOffset.Value, 0); }
@@ -204,6 +207,7 @@ public struct ConquestUnitExcel : IFlatbufferObject
   public static void AddRecommandLevel(FlatBufferBuilder builder, int RecommandLevel) { builder.AddInt(28, RecommandLevel, 0); }
   public static void AddTacticRewardExp(FlatBufferBuilder builder, long TacticRewardExp) { builder.AddLong(29, TacticRewardExp, 0); }
   public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(30, FixedEchelonId, 0); }
+  public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataJp.EchelonExtensionType echelonExtensionType) { builder.AddInt(31, (int)echelonExtensionType, 0); }
   public static Offset<FlatDataJp.ConquestUnitExcel> EndConquestUnitExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.ConquestUnitExcel>(o);

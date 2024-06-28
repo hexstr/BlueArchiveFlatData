@@ -18,6 +18,9 @@ public enum Geas : int
   AttackSpeed = 8,
   Critical = 9,
   Heal = 10,
+  MoveSpeed = 11,
+  LifeSteal = 12,
+  Evasion = 13,
 };
 
 

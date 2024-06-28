@@ -23,32 +23,37 @@ public struct ShopRefreshExcel : IFlatbufferObject
   public uint LocalizeEtcId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public bool IsLegacy { get { int o = __p.__offset(8); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long GoodsId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long DisplayOrder { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.ShopCategoryType CategoryType { get { int o = __p.__offset(14); return o != 0 ? (FlatDataJp.ShopCategoryType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ShopCategoryType.General; } }
-  public int RefreshGroup { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int Prob { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string BuyReportEventName { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public bool IsBundle { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long VisibleAmount { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DisplayOrder { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataJp.ShopCategoryType CategoryType { get { int o = __p.__offset(18); return o != 0 ? (FlatDataJp.ShopCategoryType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ShopCategoryType.General; } }
+  public int RefreshGroup { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int Prob { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string BuyReportEventName { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBuyReportEventNameBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetBuyReportEventNameBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetBuyReportEventNameBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetBuyReportEventNameBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetBuyReportEventNameArray() { return __p.__vector_as_array<byte>(20); }
-  public FlatDataJp.ProductDisplayTag DisplayTag { get { int o = __p.__offset(22); return o != 0 ? (FlatDataJp.ProductDisplayTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductDisplayTag.None; } }
+  public byte[] GetBuyReportEventNameArray() { return __p.__vector_as_array<byte>(24); }
+  public FlatDataJp.ProductDisplayTag DisplayTag { get { int o = __p.__offset(26); return o != 0 ? (FlatDataJp.ProductDisplayTag)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ProductDisplayTag.None; } }
 
   public static Offset<FlatDataJp.ShopRefreshExcel> CreateShopRefreshExcel(FlatBufferBuilder builder,
       long Id = 0,
       uint LocalizeEtcId = 0,
       bool IsLegacy = false,
       long GoodsId = 0,
+      bool IsBundle = false,
+      long VisibleAmount = 0,
       long DisplayOrder = 0,
       FlatDataJp.ShopCategoryType CategoryType = FlatDataJp.ShopCategoryType.General,
       int RefreshGroup = 0,
       int Prob = 0,
       StringOffset BuyReportEventNameOffset = default(StringOffset),
       FlatDataJp.ProductDisplayTag DisplayTag = FlatDataJp.ProductDisplayTag.None) {
-    builder.StartTable(10);
+    builder.StartTable(12);
     ShopRefreshExcel.AddDisplayOrder(builder, DisplayOrder);
+    ShopRefreshExcel.AddVisibleAmount(builder, VisibleAmount);
     ShopRefreshExcel.AddGoodsId(builder, GoodsId);
     ShopRefreshExcel.AddId(builder, Id);
     ShopRefreshExcel.AddDisplayTag(builder, DisplayTag);
@@ -57,21 +62,24 @@ public struct ShopRefreshExcel : IFlatbufferObject
     ShopRefreshExcel.AddRefreshGroup(builder, RefreshGroup);
     ShopRefreshExcel.AddCategoryType(builder, CategoryType);
     ShopRefreshExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
+    ShopRefreshExcel.AddIsBundle(builder, IsBundle);
     ShopRefreshExcel.AddIsLegacy(builder, IsLegacy);
     return ShopRefreshExcel.EndShopRefreshExcel(builder);
   }
 
-  public static void StartShopRefreshExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
+  public static void StartShopRefreshExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(1, LocalizeEtcId, 0); }
   public static void AddIsLegacy(FlatBufferBuilder builder, bool IsLegacy) { builder.AddBool(2, IsLegacy, false); }
   public static void AddGoodsId(FlatBufferBuilder builder, long GoodsId) { builder.AddLong(3, GoodsId, 0); }
-  public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(4, DisplayOrder, 0); }
-  public static void AddCategoryType(FlatBufferBuilder builder, FlatDataJp.ShopCategoryType CategoryType) { builder.AddInt(5, (int)CategoryType, 0); }
-  public static void AddRefreshGroup(FlatBufferBuilder builder, int RefreshGroup) { builder.AddInt(6, RefreshGroup, 0); }
-  public static void AddProb(FlatBufferBuilder builder, int Prob) { builder.AddInt(7, Prob, 0); }
-  public static void AddBuyReportEventName(FlatBufferBuilder builder, StringOffset BuyReportEventNameOffset) { builder.AddOffset(8, BuyReportEventNameOffset.Value, 0); }
-  public static void AddDisplayTag(FlatBufferBuilder builder, FlatDataJp.ProductDisplayTag DisplayTag) { builder.AddInt(9, (int)DisplayTag, 0); }
+  public static void AddIsBundle(FlatBufferBuilder builder, bool IsBundle) { builder.AddBool(4, IsBundle, false); }
+  public static void AddVisibleAmount(FlatBufferBuilder builder, long VisibleAmount) { builder.AddLong(5, VisibleAmount, 0); }
+  public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(6, DisplayOrder, 0); }
+  public static void AddCategoryType(FlatBufferBuilder builder, FlatDataJp.ShopCategoryType CategoryType) { builder.AddInt(7, (int)CategoryType, 0); }
+  public static void AddRefreshGroup(FlatBufferBuilder builder, int RefreshGroup) { builder.AddInt(8, RefreshGroup, 0); }
+  public static void AddProb(FlatBufferBuilder builder, int Prob) { builder.AddInt(9, Prob, 0); }
+  public static void AddBuyReportEventName(FlatBufferBuilder builder, StringOffset BuyReportEventNameOffset) { builder.AddOffset(10, BuyReportEventNameOffset.Value, 0); }
+  public static void AddDisplayTag(FlatBufferBuilder builder, FlatDataJp.ProductDisplayTag DisplayTag) { builder.AddInt(11, (int)DisplayTag, 0); }
   public static Offset<FlatDataJp.ShopRefreshExcel> EndShopRefreshExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.ShopRefreshExcel>(o);

@@ -68,7 +68,7 @@ public struct SkillExcel : IFlatbufferObject
   public byte[] GetIconNameArray() { return __p.__vector_as_array<byte>(48); }
   public bool IsShowInfo { get { int o = __p.__offset(50); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool IsShowSpeechbubble { get { int o = __p.__offset(52); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public int OverridePublicSpeechDuration { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int PublicSpeechDuration { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long AdditionalToolTipId { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string TextureSkillCardForFormConversion { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -111,7 +111,7 @@ public struct SkillExcel : IFlatbufferObject
       StringOffset IconNameOffset = default(StringOffset),
       bool IsShowInfo = false,
       bool IsShowSpeechbubble = false,
-      int OverridePublicSpeechDuration = 0,
+      int PublicSpeechDuration = 0,
       long AdditionalToolTipId = 0,
       StringOffset TextureSkillCardForFormConversionOffset = default(StringOffset),
       StringOffset SkillCardLabelPathOffset = default(StringOffset)) {
@@ -121,7 +121,7 @@ public struct SkillExcel : IFlatbufferObject
     SkillExcel.AddId(builder, Id);
     SkillExcel.AddSkillCardLabelPath(builder, SkillCardLabelPathOffset);
     SkillExcel.AddTextureSkillCardForFormConversion(builder, TextureSkillCardForFormConversionOffset);
-    SkillExcel.AddOverridePublicSpeechDuration(builder, OverridePublicSpeechDuration);
+    SkillExcel.AddPublicSpeechDuration(builder, PublicSpeechDuration);
     SkillExcel.AddIconName(builder, IconNameOffset);
     SkillExcel.AddRequireCharacterLevel(builder, RequireCharacterLevel);
     SkillExcel.AddUseAtg(builder, UseAtg);
@@ -174,7 +174,7 @@ public struct SkillExcel : IFlatbufferObject
   public static void AddIconName(FlatBufferBuilder builder, StringOffset IconNameOffset) { builder.AddOffset(22, IconNameOffset.Value, 0); }
   public static void AddIsShowInfo(FlatBufferBuilder builder, bool IsShowInfo) { builder.AddBool(23, IsShowInfo, false); }
   public static void AddIsShowSpeechbubble(FlatBufferBuilder builder, bool IsShowSpeechbubble) { builder.AddBool(24, IsShowSpeechbubble, false); }
-  public static void AddOverridePublicSpeechDuration(FlatBufferBuilder builder, int OverridePublicSpeechDuration) { builder.AddInt(25, OverridePublicSpeechDuration, 0); }
+  public static void AddPublicSpeechDuration(FlatBufferBuilder builder, int PublicSpeechDuration) { builder.AddInt(25, PublicSpeechDuration, 0); }
   public static void AddAdditionalToolTipId(FlatBufferBuilder builder, long AdditionalToolTipId) { builder.AddLong(26, AdditionalToolTipId, 0); }
   public static void AddTextureSkillCardForFormConversion(FlatBufferBuilder builder, StringOffset TextureSkillCardForFormConversionOffset) { builder.AddOffset(27, TextureSkillCardForFormConversionOffset.Value, 0); }
   public static void AddSkillCardLabelPath(FlatBufferBuilder builder, StringOffset SkillCardLabelPathOffset) { builder.AddOffset(28, SkillCardLabelPathOffset.Value, 0); }

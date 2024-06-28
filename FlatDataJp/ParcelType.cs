@@ -30,7 +30,6 @@ public enum ParcelType : int
   Emblem = 20,
   Sticker = 21,
   Costume = 22,
-  ProductMonthly = 23,
 };
 
 

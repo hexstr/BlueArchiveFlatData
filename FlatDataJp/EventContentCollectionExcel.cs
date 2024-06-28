@@ -22,7 +22,7 @@ public struct EventContentCollectionExcel : IFlatbufferObject
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long EventContentId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long GroupId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataJp.EventCollectionUnlockType UnlockConditionType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.EventCollectionUnlockType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.EventCollectionUnlockType.None; } }
+  public FlatDataJp.CollectionUnlockType UnlockConditionType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataJp.CollectionUnlockType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.CollectionUnlockType.None; } }
   public long UnlockConditionParameter(int j) { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
   public int UnlockConditionParameterLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -69,7 +69,7 @@ public struct EventContentCollectionExcel : IFlatbufferObject
       long Id = 0,
       long EventContentId = 0,
       long GroupId = 0,
-      FlatDataJp.EventCollectionUnlockType UnlockConditionType = FlatDataJp.EventCollectionUnlockType.None,
+      FlatDataJp.CollectionUnlockType UnlockConditionType = FlatDataJp.CollectionUnlockType.None,
       VectorOffset UnlockConditionParameterOffset = default(VectorOffset),
       FlatDataJp.MultipleConditionCheckType multipleConditionCheckType = FlatDataJp.MultipleConditionCheckType.And,
       long UnlockConditionCount = 0,
@@ -102,7 +102,7 @@ public struct EventContentCollectionExcel : IFlatbufferObject
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(1, EventContentId, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(2, GroupId, 0); }
-  public static void AddUnlockConditionType(FlatBufferBuilder builder, FlatDataJp.EventCollectionUnlockType UnlockConditionType) { builder.AddInt(3, (int)UnlockConditionType, 0); }
+  public static void AddUnlockConditionType(FlatBufferBuilder builder, FlatDataJp.CollectionUnlockType UnlockConditionType) { builder.AddInt(3, (int)UnlockConditionType, 0); }
   public static void AddUnlockConditionParameter(FlatBufferBuilder builder, VectorOffset UnlockConditionParameterOffset) { builder.AddOffset(4, UnlockConditionParameterOffset.Value, 0); }
   public static VectorOffset CreateUnlockConditionParameterVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateUnlockConditionParameterVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }

@@ -26,22 +26,19 @@ public struct ProtocolSettingExcel : IFlatbufferObject
   public ArraySegment<byte>? GetProtocolBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetProtocolArray() { return __p.__vector_as_array<byte>(4); }
-  public FlatDataJp.ContentLockType ContentLockType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.ContentLockType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.ContentLockType.None; } }
-  public FlatDataJp.OpenConditionContent OpenConditionContent { get { int o = __p.__offset(8); return o != 0 ? (FlatDataJp.OpenConditionContent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.OpenConditionContent.Shop; } }
-  public bool Currency { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool Inventory { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool Mail { get { int o = __p.__offset(14); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataJp.OpenConditionContent OpenConditionContent { get { int o = __p.__offset(6); return o != 0 ? (FlatDataJp.OpenConditionContent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataJp.OpenConditionContent.Shop; } }
+  public bool Currency { get { int o = __p.__offset(8); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool Inventory { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool Mail { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataJp.ProtocolSettingExcel> CreateProtocolSettingExcel(FlatBufferBuilder builder,
       StringOffset ProtocolOffset = default(StringOffset),
-      FlatDataJp.ContentLockType contentLockType = FlatDataJp.ContentLockType.None,
       FlatDataJp.OpenConditionContent openConditionContent = FlatDataJp.OpenConditionContent.Shop,
       bool Currency = false,
       bool Inventory = false,
       bool Mail = false) {
-    builder.StartTable(6);
+    builder.StartTable(5);
     ProtocolSettingExcel.AddOpenConditionContent(builder, openConditionContent);
-    ProtocolSettingExcel.AddContentLockType(builder, contentLockType);
     ProtocolSettingExcel.AddProtocol(builder, ProtocolOffset);
     ProtocolSettingExcel.AddMail(builder, Mail);
     ProtocolSettingExcel.AddInventory(builder, Inventory);
@@ -49,13 +46,12 @@ public struct ProtocolSettingExcel : IFlatbufferObject
     return ProtocolSettingExcel.EndProtocolSettingExcel(builder);
   }
 
-  public static void StartProtocolSettingExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
+  public static void StartProtocolSettingExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddProtocol(FlatBufferBuilder builder, StringOffset ProtocolOffset) { builder.AddOffset(0, ProtocolOffset.Value, 0); }
-  public static void AddContentLockType(FlatBufferBuilder builder, FlatDataJp.ContentLockType contentLockType) { builder.AddInt(1, (int)contentLockType, 0); }
-  public static void AddOpenConditionContent(FlatBufferBuilder builder, FlatDataJp.OpenConditionContent openConditionContent) { builder.AddInt(2, (int)openConditionContent, 0); }
-  public static void AddCurrency(FlatBufferBuilder builder, bool Currency) { builder.AddBool(3, Currency, false); }
-  public static void AddInventory(FlatBufferBuilder builder, bool Inventory) { builder.AddBool(4, Inventory, false); }
-  public static void AddMail(FlatBufferBuilder builder, bool Mail) { builder.AddBool(5, Mail, false); }
+  public static void AddOpenConditionContent(FlatBufferBuilder builder, FlatDataJp.OpenConditionContent openConditionContent) { builder.AddInt(1, (int)openConditionContent, 0); }
+  public static void AddCurrency(FlatBufferBuilder builder, bool Currency) { builder.AddBool(2, Currency, false); }
+  public static void AddInventory(FlatBufferBuilder builder, bool Inventory) { builder.AddBool(3, Inventory, false); }
+  public static void AddMail(FlatBufferBuilder builder, bool Mail) { builder.AddBool(4, Mail, false); }
   public static Offset<FlatDataJp.ProtocolSettingExcel> EndProtocolSettingExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataJp.ProtocolSettingExcel>(o);

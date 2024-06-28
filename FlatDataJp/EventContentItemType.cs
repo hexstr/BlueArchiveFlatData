@@ -14,6 +14,7 @@ public enum EventContentItemType : int
   EventToken4 = 4,
   EventToken5 = 5,
   EventMeetUpTicket = 6,
+  EventEtcItem = 7,
 };
 
 
