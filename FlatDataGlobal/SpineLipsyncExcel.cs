@@ -27,19 +27,29 @@ public struct SpineLipsyncExcel : IFlatbufferObject
   public ArraySegment<byte>? GetAnimJsonBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetAnimJsonArray() { return __p.__vector_as_array<byte>(6); }
+  public string AnimJsonKr { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetAnimJsonKrBytes() { return __p.__vector_as_span<byte>(8, 1); }
+#else
+  public ArraySegment<byte>? GetAnimJsonKrBytes() { return __p.__vector_as_arraysegment(8); }
+#endif
+  public byte[] GetAnimJsonKrArray() { return __p.__vector_as_array<byte>(8); }
 
   public static Offset<FlatDataGlobal.SpineLipsyncExcel> CreateSpineLipsyncExcel(FlatBufferBuilder builder,
       uint VoiceId = 0,
-      StringOffset AnimJsonOffset = default(StringOffset)) {
-    builder.StartTable(2);
+      StringOffset AnimJsonOffset = default(StringOffset),
+      StringOffset AnimJsonKrOffset = default(StringOffset)) {
+    builder.StartTable(3);
+    SpineLipsyncExcel.AddAnimJsonKr(builder, AnimJsonKrOffset);
     SpineLipsyncExcel.AddAnimJson(builder, AnimJsonOffset);
     SpineLipsyncExcel.AddVoiceId(builder, VoiceId);
     return SpineLipsyncExcel.EndSpineLipsyncExcel(builder);
   }
 
-  public static void StartSpineLipsyncExcel(FlatBufferBuilder builder) { builder.StartTable(2); }
+  public static void StartSpineLipsyncExcel(FlatBufferBuilder builder) { builder.StartTable(3); }
   public static void AddVoiceId(FlatBufferBuilder builder, uint VoiceId) { builder.AddUint(0, VoiceId, 0); }
   public static void AddAnimJson(FlatBufferBuilder builder, StringOffset AnimJsonOffset) { builder.AddOffset(1, AnimJsonOffset.Value, 0); }
+  public static void AddAnimJsonKr(FlatBufferBuilder builder, StringOffset AnimJsonKrOffset) { builder.AddOffset(2, AnimJsonKrOffset.Value, 0); }
   public static Offset<FlatDataGlobal.SpineLipsyncExcel> EndSpineLipsyncExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.SpineLipsyncExcel>(o);

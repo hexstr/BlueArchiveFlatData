@@ -33,6 +33,7 @@ public enum MailType : int
   Temp_3 = 23,
   CouponCompleteReward = 24,
   BirthdayMail = 25,
+  FromCS = 26,
 };
 
 

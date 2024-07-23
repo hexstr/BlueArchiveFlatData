@@ -52,6 +52,12 @@ public struct PresetCharacterGroupExcel : IFlatbufferObject
   public bool EquipCharacterGear { get { int o = __p.__offset(52); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public int EquipCharacterGearTier { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int EquipCharacterGearLevel { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.StatType PotentialType01 { get { int o = __p.__offset(58); return o != 0 ? (FlatDataGlobal.StatType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatType.None; } }
+  public int PotentialLevel01 { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.StatType PotentialType02 { get { int o = __p.__offset(62); return o != 0 ? (FlatDataGlobal.StatType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatType.None; } }
+  public int PotentialLevel02 { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.StatType PotentialType03 { get { int o = __p.__offset(66); return o != 0 ? (FlatDataGlobal.StatType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StatType.None; } }
+  public int PotentialLevel03 { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.PresetCharacterGroupExcel> CreatePresetCharacterGroupExcel(FlatBufferBuilder builder,
       long PresetCharacterGroupId = 0,
@@ -80,9 +86,21 @@ public struct PresetCharacterGroupExcel : IFlatbufferObject
       int EquipCharacterWeaponLevel = 0,
       bool EquipCharacterGear = false,
       int EquipCharacterGearTier = 0,
-      int EquipCharacterGearLevel = 0) {
-    builder.StartTable(27);
+      int EquipCharacterGearLevel = 0,
+      FlatDataGlobal.StatType PotentialType01 = FlatDataGlobal.StatType.None,
+      int PotentialLevel01 = 0,
+      FlatDataGlobal.StatType PotentialType02 = FlatDataGlobal.StatType.None,
+      int PotentialLevel02 = 0,
+      FlatDataGlobal.StatType PotentialType03 = FlatDataGlobal.StatType.None,
+      int PotentialLevel03 = 0) {
+    builder.StartTable(33);
     PresetCharacterGroupExcel.AddPresetCharacterGroupId(builder, PresetCharacterGroupId);
+    PresetCharacterGroupExcel.AddPotentialLevel03(builder, PotentialLevel03);
+    PresetCharacterGroupExcel.AddPotentialType03(builder, PotentialType03);
+    PresetCharacterGroupExcel.AddPotentialLevel02(builder, PotentialLevel02);
+    PresetCharacterGroupExcel.AddPotentialType02(builder, PotentialType02);
+    PresetCharacterGroupExcel.AddPotentialLevel01(builder, PotentialLevel01);
+    PresetCharacterGroupExcel.AddPotentialType01(builder, PotentialType01);
     PresetCharacterGroupExcel.AddEquipCharacterGearLevel(builder, EquipCharacterGearLevel);
     PresetCharacterGroupExcel.AddEquipCharacterGearTier(builder, EquipCharacterGearTier);
     PresetCharacterGroupExcel.AddEquipCharacterWeaponLevel(builder, EquipCharacterWeaponLevel);
@@ -112,7 +130,7 @@ public struct PresetCharacterGroupExcel : IFlatbufferObject
     return PresetCharacterGroupExcel.EndPresetCharacterGroupExcel(builder);
   }
 
-  public static void StartPresetCharacterGroupExcel(FlatBufferBuilder builder) { builder.StartTable(27); }
+  public static void StartPresetCharacterGroupExcel(FlatBufferBuilder builder) { builder.StartTable(33); }
   public static void AddPresetCharacterGroupId(FlatBufferBuilder builder, long PresetCharacterGroupId) { builder.AddLong(0, PresetCharacterGroupId, 0); }
   public static void AddGetPresetType(FlatBufferBuilder builder, StringOffset GetPresetTypeOffset) { builder.AddOffset(1, GetPresetTypeOffset.Value, 0); }
   public static void AddLevel(FlatBufferBuilder builder, int Level) { builder.AddInt(2, Level, 0); }
@@ -140,6 +158,12 @@ public struct PresetCharacterGroupExcel : IFlatbufferObject
   public static void AddEquipCharacterGear(FlatBufferBuilder builder, bool EquipCharacterGear) { builder.AddBool(24, EquipCharacterGear, false); }
   public static void AddEquipCharacterGearTier(FlatBufferBuilder builder, int EquipCharacterGearTier) { builder.AddInt(25, EquipCharacterGearTier, 0); }
   public static void AddEquipCharacterGearLevel(FlatBufferBuilder builder, int EquipCharacterGearLevel) { builder.AddInt(26, EquipCharacterGearLevel, 0); }
+  public static void AddPotentialType01(FlatBufferBuilder builder, FlatDataGlobal.StatType PotentialType01) { builder.AddInt(27, (int)PotentialType01, 0); }
+  public static void AddPotentialLevel01(FlatBufferBuilder builder, int PotentialLevel01) { builder.AddInt(28, PotentialLevel01, 0); }
+  public static void AddPotentialType02(FlatBufferBuilder builder, FlatDataGlobal.StatType PotentialType02) { builder.AddInt(29, (int)PotentialType02, 0); }
+  public static void AddPotentialLevel02(FlatBufferBuilder builder, int PotentialLevel02) { builder.AddInt(30, PotentialLevel02, 0); }
+  public static void AddPotentialType03(FlatBufferBuilder builder, FlatDataGlobal.StatType PotentialType03) { builder.AddInt(31, (int)PotentialType03, 0); }
+  public static void AddPotentialLevel03(FlatBufferBuilder builder, int PotentialLevel03) { builder.AddInt(32, PotentialLevel03, 0); }
   public static Offset<FlatDataGlobal.PresetCharacterGroupExcel> EndPresetCharacterGroupExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.PresetCharacterGroupExcel>(o);

@@ -117,6 +117,7 @@ public struct RaidStageExcel : IFlatbufferObject
   public uint ClearScenarioKey { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public bool ShowSkillCard { get { int o = __p.__offset(68); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public uint BossBGInfoKey { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public FlatDataGlobal.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(72); return o != 0 ? (FlatDataGlobal.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EchelonExtensionType.Base; } }
 
   public static Offset<FlatDataGlobal.RaidStageExcel> CreateRaidStageExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -152,8 +153,9 @@ public struct RaidStageExcel : IFlatbufferObject
       uint EnterScenarioKey = 0,
       uint ClearScenarioKey = 0,
       bool ShowSkillCard = false,
-      uint BossBGInfoKey = 0) {
-    builder.StartTable(34);
+      uint BossBGInfoKey = 0,
+      FlatDataGlobal.EchelonExtensionType echelonExtensionType = FlatDataGlobal.EchelonExtensionType.Base) {
+    builder.StartTable(35);
     RaidStageExcel.AddTimeLinePhase(builder, TimeLinePhase);
     RaidStageExcel.AddRaidRewardGroupId(builder, RaidRewardGroupId);
     RaidStageExcel.AddMaximumAcquisitionScore(builder, MaximumAcquisitionScore);
@@ -167,6 +169,7 @@ public struct RaidStageExcel : IFlatbufferObject
     RaidStageExcel.AddMaxPlayerCount(builder, MaxPlayerCount);
     RaidStageExcel.AddRaidCharacterId(builder, RaidCharacterId);
     RaidStageExcel.AddId(builder, Id);
+    RaidStageExcel.AddEchelonExtensionType(builder, echelonExtensionType);
     RaidStageExcel.AddBossBGInfoKey(builder, BossBGInfoKey);
     RaidStageExcel.AddClearScenarioKey(builder, ClearScenarioKey);
     RaidStageExcel.AddEnterScenarioKey(builder, EnterScenarioKey);
@@ -191,7 +194,7 @@ public struct RaidStageExcel : IFlatbufferObject
     return RaidStageExcel.EndRaidStageExcel(builder);
   }
 
-  public static void StartRaidStageExcel(FlatBufferBuilder builder) { builder.StartTable(34); }
+  public static void StartRaidStageExcel(FlatBufferBuilder builder) { builder.StartTable(35); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddUseBossIndex(FlatBufferBuilder builder, bool UseBossIndex) { builder.AddBool(1, UseBossIndex, false); }
   public static void AddUseBossAIPhaseSync(FlatBufferBuilder builder, bool UseBossAIPhaseSync) { builder.AddBool(2, UseBossAIPhaseSync, false); }
@@ -246,6 +249,7 @@ public struct RaidStageExcel : IFlatbufferObject
   public static void AddClearScenarioKey(FlatBufferBuilder builder, uint ClearScenarioKey) { builder.AddUint(31, ClearScenarioKey, 0); }
   public static void AddShowSkillCard(FlatBufferBuilder builder, bool ShowSkillCard) { builder.AddBool(32, ShowSkillCard, false); }
   public static void AddBossBGInfoKey(FlatBufferBuilder builder, uint BossBGInfoKey) { builder.AddUint(33, BossBGInfoKey, 0); }
+  public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataGlobal.EchelonExtensionType echelonExtensionType) { builder.AddInt(34, (int)echelonExtensionType, 0); }
   public static Offset<FlatDataGlobal.RaidStageExcel> EndRaidStageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.RaidStageExcel>(o);

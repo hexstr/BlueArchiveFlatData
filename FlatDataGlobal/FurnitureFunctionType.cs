@@ -11,6 +11,7 @@ public enum FurnitureFunctionType : int
   EventCollection = 1,
   VideoPlay = 2,
   TrophyCollection = 3,
+  InteractionBGMPlay = 4,
 };
 
 

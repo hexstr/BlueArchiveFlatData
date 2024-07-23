@@ -46,14 +46,7 @@ public struct TacticalSupportSystemExcel : IFlatbufferObject
   public float InventoryOffsetX { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public float InventoryOffsetY { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public float InventoryOffsetZ { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public long InteractionChar(int j) { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int InteractionCharLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
-#if ENABLE_SPAN_T
-  public Span<long> GetInteractionCharBytes() { return __p.__vector_as_span<long>(34, 8); }
-#else
-  public ArraySegment<byte>? GetInteractionCharBytes() { return __p.__vector_as_arraysegment(34); }
-#endif
-  public long[] GetInteractionCharArray() { return __p.__vector_as_array<long>(34); }
+  public long InteractionChar { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long CharacterInteractionStartDelay { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string GetOnStartEffectPath { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -69,6 +62,32 @@ public struct TacticalSupportSystemExcel : IFlatbufferObject
   public ArraySegment<byte>? GetGetOnEndEffectPathBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
   public byte[] GetGetOnEndEffectPathArray() { return __p.__vector_as_array<byte>(40); }
+  public long SummonerCharacterId { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int InteractionFrame { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long TSAInteractionAddDuration { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string InteractionStudentExSkillGroupId { get { int o = __p.__offset(48); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetInteractionStudentExSkillGroupIdBytes() { return __p.__vector_as_span<byte>(48, 1); }
+#else
+  public ArraySegment<byte>? GetInteractionStudentExSkillGroupIdBytes() { return __p.__vector_as_arraysegment(48); }
+#endif
+  public byte[] GetInteractionStudentExSkillGroupIdArray() { return __p.__vector_as_array<byte>(48); }
+  public string InteractionSkillCardTexture { get { int o = __p.__offset(50); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetInteractionSkillCardTextureBytes() { return __p.__vector_as_span<byte>(50, 1); }
+#else
+  public ArraySegment<byte>? GetInteractionSkillCardTextureBytes() { return __p.__vector_as_arraysegment(50); }
+#endif
+  public byte[] GetInteractionSkillCardTextureArray() { return __p.__vector_as_array<byte>(50); }
+  public string InteractionSkillSpine { get { int o = __p.__offset(52); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetInteractionSkillSpineBytes() { return __p.__vector_as_span<byte>(52, 1); }
+#else
+  public ArraySegment<byte>? GetInteractionSkillSpineBytes() { return __p.__vector_as_arraysegment(52); }
+#endif
+  public byte[] GetInteractionSkillSpineArray() { return __p.__vector_as_array<byte>(52); }
+  public int RetreatFrame { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int DestroyFrame { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.TacticalSupportSystemExcel> CreateTacticalSupportSystemExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -86,21 +105,37 @@ public struct TacticalSupportSystemExcel : IFlatbufferObject
       float InventoryOffsetX = 0.0f,
       float InventoryOffsetY = 0.0f,
       float InventoryOffsetZ = 0.0f,
-      VectorOffset InteractionCharOffset = default(VectorOffset),
+      long InteractionChar = 0,
       long CharacterInteractionStartDelay = 0,
       StringOffset GetOnStartEffectPathOffset = default(StringOffset),
-      StringOffset GetOnEndEffectPathOffset = default(StringOffset)) {
-    builder.StartTable(19);
+      StringOffset GetOnEndEffectPathOffset = default(StringOffset),
+      long SummonerCharacterId = 0,
+      int InteractionFrame = 0,
+      long TSAInteractionAddDuration = 0,
+      StringOffset InteractionStudentExSkillGroupIdOffset = default(StringOffset),
+      StringOffset InteractionSkillCardTextureOffset = default(StringOffset),
+      StringOffset InteractionSkillSpineOffset = default(StringOffset),
+      int RetreatFrame = 0,
+      int DestroyFrame = 0) {
+    builder.StartTable(27);
+    TacticalSupportSystemExcel.AddTSAInteractionAddDuration(builder, TSAInteractionAddDuration);
+    TacticalSupportSystemExcel.AddSummonerCharacterId(builder, SummonerCharacterId);
     TacticalSupportSystemExcel.AddCharacterInteractionStartDelay(builder, CharacterInteractionStartDelay);
+    TacticalSupportSystemExcel.AddInteractionChar(builder, InteractionChar);
     TacticalSupportSystemExcel.AddCrashObstacleOBBHeight(builder, CrashObstacleOBBHeight);
     TacticalSupportSystemExcel.AddCrashObstacleOBBWidth(builder, CrashObstacleOBBWidth);
     TacticalSupportSystemExcel.AddObstacleCoverRange(builder, ObstacleCoverRange);
     TacticalSupportSystemExcel.AddDefaultPersonalityId(builder, DefaultPersonalityId);
     TacticalSupportSystemExcel.AddSummonedTime(builder, SummonedTime);
     TacticalSupportSystemExcel.AddId(builder, Id);
+    TacticalSupportSystemExcel.AddDestroyFrame(builder, DestroyFrame);
+    TacticalSupportSystemExcel.AddRetreatFrame(builder, RetreatFrame);
+    TacticalSupportSystemExcel.AddInteractionSkillSpine(builder, InteractionSkillSpineOffset);
+    TacticalSupportSystemExcel.AddInteractionSkillCardTexture(builder, InteractionSkillCardTextureOffset);
+    TacticalSupportSystemExcel.AddInteractionStudentExSkillGroupId(builder, InteractionStudentExSkillGroupIdOffset);
+    TacticalSupportSystemExcel.AddInteractionFrame(builder, InteractionFrame);
     TacticalSupportSystemExcel.AddGetOnEndEffectPath(builder, GetOnEndEffectPathOffset);
     TacticalSupportSystemExcel.AddGetOnStartEffectPath(builder, GetOnStartEffectPathOffset);
-    TacticalSupportSystemExcel.AddInteractionChar(builder, InteractionCharOffset);
     TacticalSupportSystemExcel.AddInventoryOffsetZ(builder, InventoryOffsetZ);
     TacticalSupportSystemExcel.AddInventoryOffsetY(builder, InventoryOffsetY);
     TacticalSupportSystemExcel.AddInventoryOffsetX(builder, InventoryOffsetX);
@@ -113,7 +148,7 @@ public struct TacticalSupportSystemExcel : IFlatbufferObject
     return TacticalSupportSystemExcel.EndTacticalSupportSystemExcel(builder);
   }
 
-  public static void StartTacticalSupportSystemExcel(FlatBufferBuilder builder) { builder.StartTable(19); }
+  public static void StartTacticalSupportSystemExcel(FlatBufferBuilder builder) { builder.StartTable(27); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddSummonedTime(FlatBufferBuilder builder, long SummonedTime) { builder.AddLong(1, SummonedTime, 0); }
   public static void AddDefaultPersonalityId(FlatBufferBuilder builder, long DefaultPersonalityId) { builder.AddLong(2, DefaultPersonalityId, 0); }
@@ -129,15 +164,18 @@ public struct TacticalSupportSystemExcel : IFlatbufferObject
   public static void AddInventoryOffsetX(FlatBufferBuilder builder, float InventoryOffsetX) { builder.AddFloat(12, InventoryOffsetX, 0.0f); }
   public static void AddInventoryOffsetY(FlatBufferBuilder builder, float InventoryOffsetY) { builder.AddFloat(13, InventoryOffsetY, 0.0f); }
   public static void AddInventoryOffsetZ(FlatBufferBuilder builder, float InventoryOffsetZ) { builder.AddFloat(14, InventoryOffsetZ, 0.0f); }
-  public static void AddInteractionChar(FlatBufferBuilder builder, VectorOffset InteractionCharOffset) { builder.AddOffset(15, InteractionCharOffset.Value, 0); }
-  public static VectorOffset CreateInteractionCharVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateInteractionCharVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateInteractionCharVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateInteractionCharVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartInteractionCharVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddInteractionChar(FlatBufferBuilder builder, long InteractionChar) { builder.AddLong(15, InteractionChar, 0); }
   public static void AddCharacterInteractionStartDelay(FlatBufferBuilder builder, long CharacterInteractionStartDelay) { builder.AddLong(16, CharacterInteractionStartDelay, 0); }
   public static void AddGetOnStartEffectPath(FlatBufferBuilder builder, StringOffset GetOnStartEffectPathOffset) { builder.AddOffset(17, GetOnStartEffectPathOffset.Value, 0); }
   public static void AddGetOnEndEffectPath(FlatBufferBuilder builder, StringOffset GetOnEndEffectPathOffset) { builder.AddOffset(18, GetOnEndEffectPathOffset.Value, 0); }
+  public static void AddSummonerCharacterId(FlatBufferBuilder builder, long SummonerCharacterId) { builder.AddLong(19, SummonerCharacterId, 0); }
+  public static void AddInteractionFrame(FlatBufferBuilder builder, int InteractionFrame) { builder.AddInt(20, InteractionFrame, 0); }
+  public static void AddTSAInteractionAddDuration(FlatBufferBuilder builder, long TSAInteractionAddDuration) { builder.AddLong(21, TSAInteractionAddDuration, 0); }
+  public static void AddInteractionStudentExSkillGroupId(FlatBufferBuilder builder, StringOffset InteractionStudentExSkillGroupIdOffset) { builder.AddOffset(22, InteractionStudentExSkillGroupIdOffset.Value, 0); }
+  public static void AddInteractionSkillCardTexture(FlatBufferBuilder builder, StringOffset InteractionSkillCardTextureOffset) { builder.AddOffset(23, InteractionSkillCardTextureOffset.Value, 0); }
+  public static void AddInteractionSkillSpine(FlatBufferBuilder builder, StringOffset InteractionSkillSpineOffset) { builder.AddOffset(24, InteractionSkillSpineOffset.Value, 0); }
+  public static void AddRetreatFrame(FlatBufferBuilder builder, int RetreatFrame) { builder.AddInt(25, RetreatFrame, 0); }
+  public static void AddDestroyFrame(FlatBufferBuilder builder, int DestroyFrame) { builder.AddInt(26, DestroyFrame, 0); }
   public static Offset<FlatDataGlobal.TacticalSupportSystemExcel> EndTacticalSupportSystemExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.TacticalSupportSystemExcel>(o);

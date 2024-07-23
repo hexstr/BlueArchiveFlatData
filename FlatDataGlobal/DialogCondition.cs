@@ -28,6 +28,9 @@ public enum DialogCondition : int
   StoryOpen = 18,
   CollectionOpen = 19,
   BoxGachaFinish = 20,
+  FindTreasure = 21,
+  GetTreasure = 22,
+  RoundRenewal = 23,
 };
 
 

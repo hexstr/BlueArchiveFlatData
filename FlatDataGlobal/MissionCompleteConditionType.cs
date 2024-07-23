@@ -152,6 +152,20 @@ public enum MissionCompleteConditionType : int
   Reset_JoinRaidCount = 142,
   Reset_ClearTimeAttackDungeonCount = 143,
   Reset_JoinEliminateRaidCount = 144,
+  Reset_FieldClearSpecificDate = 145,
+  Reset_FieldGetEvidenceCount = 146,
+  Reset_FieldMasteryLevel = 147,
+  Reset_TreasureCheckedCellCount = 148,
+  Reset_TreasureGetTreasureCount = 149,
+  Reset_TreasureRoundRefreshCount = 150,
+  Achieve_UseTicketCount = 151,
+  Reset_ClearMultiFloorRaidStage = 152,
+  Achieve_CharacterPotentialUpCount = 153,
+  Reset_CharacterPotentialUpCount = 154,
+  Reset_CharacterAtSpecificPotentialCount = 155,
+  Reset_PotentialAttackPowerAtSpecificLevel = 156,
+  Reset_PotentialMaxHPAtSpecificLevel = 157,
+  Reset_PotentialHealPowerAtSpecificLevel = 158,
 };
 
 

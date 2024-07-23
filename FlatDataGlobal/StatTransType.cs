@@ -8,6 +8,7 @@ namespace FlatDataGlobal
 public enum StatTransType : int
 {
   SpecialTransStat = 0,
+  TSATransStat = 1,
 };
 
 

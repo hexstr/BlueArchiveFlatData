@@ -251,8 +251,15 @@ public struct ConstCommonExcel : IFlatbufferObject
   public int ClearDeckAverageDeckCount { get { int o = __p.__offset(356); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int ClearDeckWorldRaidSaveConditionCoefficient { get { int o = __p.__offset(358); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int ClearDeckShowCount { get { int o = __p.__offset(360); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CharacterMaxLevel { get { int o = __p.__offset(362); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int PotentialBonusStatMaxLevelMaxHP { get { int o = __p.__offset(364); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int PotentialBonusStatMaxLevelAttackPower { get { int o = __p.__offset(366); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int PotentialBonusStatMaxLevelHealPower { get { int o = __p.__offset(368); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int PotentialOpenConditionCharacterLevel { get { int o = __p.__offset(370); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public float ClanChattingNoticeCautionDelay { get { int o = __p.__offset(372); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float CallNameWaitTimeGL { get { int o = __p.__offset(374); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
 
-  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(179); }
+  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(186); }
   public static void AddCampaignMainStageMaxRank(FlatBufferBuilder builder, int CampaignMainStageMaxRank) { builder.AddInt(0, CampaignMainStageMaxRank, 0); }
   public static void AddCampaignMainStageBestRecord(FlatBufferBuilder builder, int CampaignMainStageBestRecord) { builder.AddInt(1, CampaignMainStageBestRecord, 0); }
   public static void AddHardAdventurePlayCountRecoverDailyNumber(FlatBufferBuilder builder, int HardAdventurePlayCountRecoverDailyNumber) { builder.AddInt(2, HardAdventurePlayCountRecoverDailyNumber, 0); }
@@ -457,6 +464,13 @@ public struct ConstCommonExcel : IFlatbufferObject
   public static void AddClearDeckAverageDeckCount(FlatBufferBuilder builder, int ClearDeckAverageDeckCount) { builder.AddInt(176, ClearDeckAverageDeckCount, 0); }
   public static void AddClearDeckWorldRaidSaveConditionCoefficient(FlatBufferBuilder builder, int ClearDeckWorldRaidSaveConditionCoefficient) { builder.AddInt(177, ClearDeckWorldRaidSaveConditionCoefficient, 0); }
   public static void AddClearDeckShowCount(FlatBufferBuilder builder, int ClearDeckShowCount) { builder.AddInt(178, ClearDeckShowCount, 0); }
+  public static void AddCharacterMaxLevel(FlatBufferBuilder builder, int CharacterMaxLevel) { builder.AddInt(179, CharacterMaxLevel, 0); }
+  public static void AddPotentialBonusStatMaxLevelMaxHP(FlatBufferBuilder builder, int PotentialBonusStatMaxLevelMaxHP) { builder.AddInt(180, PotentialBonusStatMaxLevelMaxHP, 0); }
+  public static void AddPotentialBonusStatMaxLevelAttackPower(FlatBufferBuilder builder, int PotentialBonusStatMaxLevelAttackPower) { builder.AddInt(181, PotentialBonusStatMaxLevelAttackPower, 0); }
+  public static void AddPotentialBonusStatMaxLevelHealPower(FlatBufferBuilder builder, int PotentialBonusStatMaxLevelHealPower) { builder.AddInt(182, PotentialBonusStatMaxLevelHealPower, 0); }
+  public static void AddPotentialOpenConditionCharacterLevel(FlatBufferBuilder builder, int PotentialOpenConditionCharacterLevel) { builder.AddInt(183, PotentialOpenConditionCharacterLevel, 0); }
+  public static void AddClanChattingNoticeCautionDelay(FlatBufferBuilder builder, float ClanChattingNoticeCautionDelay) { builder.AddFloat(184, ClanChattingNoticeCautionDelay, 0.0f); }
+  public static void AddCallNameWaitTimeGL(FlatBufferBuilder builder, float CallNameWaitTimeGL) { builder.AddFloat(185, CallNameWaitTimeGL, 0.0f); }
   public static Offset<FlatDataGlobal.ConstCommonExcel> EndConstCommonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstCommonExcel>(o);

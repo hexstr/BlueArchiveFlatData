@@ -30,6 +30,9 @@ public enum AccountAchievementType : int
   ConquestCalculateReward = 20,
   TotalJoinEliminateRaidCount = 21,
   Cafe2MaxComfortPoint = 22,
+  TotalRaidTicketUseCount = 23,
+  TotalEliminateTicketUseCount = 24,
+  TotalCharacterPotentialUpCount = 25,
 };
 
 

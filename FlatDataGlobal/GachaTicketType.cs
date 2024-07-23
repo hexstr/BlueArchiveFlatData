@@ -16,6 +16,8 @@ public enum GachaTicketType : int
   StartDash = 6,
   SelectRecruit = 7,
   PackagePropertyThreeStar = 8,
+  Temp_1 = 9,
+  PackageAcademyThreeStar = 10,
 };
 
 

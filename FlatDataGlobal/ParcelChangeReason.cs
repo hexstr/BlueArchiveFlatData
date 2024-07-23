@@ -172,6 +172,18 @@ public enum ParcelChangeReason : int
   Craft_RewardAll = 162,
   ShiftingCraft_CompleteProcessAll = 163,
   ShiftingCraft_RewardAll = 164,
+  Temp_1 = 165,
+  Temp_2 = 166,
+  Temp_3 = 167,
+  Temp_4 = 168,
+  EventContent_Treasure = 169,
+  Field_EnterStage = 170,
+  Field_StageResult = 171,
+  Field_Interaction = 172,
+  Field_Quest = 173,
+  Character_PotentialGrowth = 174,
+  MultiFloorRaid_EndBattle = 175,
+  MultiFloorRaid_Reward = 176,
 };
 
 

@@ -111,6 +111,7 @@ public struct CampaignStageExcel : IFlatbufferObject
   public byte[] GetFirstClearEventMessageArray() { return __p.__vector_as_array<byte>(58); }
   public long TacticRewardExp { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long FixedEchelonId { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(64); return o != 0 ? (FlatDataGlobal.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EchelonExtensionType.Base; } }
 
   public static Offset<FlatDataGlobal.CampaignStageExcel> CreateCampaignStageExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -142,8 +143,9 @@ public struct CampaignStageExcel : IFlatbufferObject
       StringOffset FirstClearFunnelMessageOffset = default(StringOffset),
       StringOffset FirstClearEventMessageOffset = default(StringOffset),
       long TacticRewardExp = 0,
-      long FixedEchelonId = 0) {
-    builder.StartTable(30);
+      long FixedEchelonId = 0,
+      FlatDataGlobal.EchelonExtensionType echelonExtensionType = FlatDataGlobal.EchelonExtensionType.Base) {
+    builder.StartTable(31);
     CampaignStageExcel.AddFixedEchelonId(builder, FixedEchelonId);
     CampaignStageExcel.AddTacticRewardExp(builder, TacticRewardExp);
     CampaignStageExcel.AddBGMId(builder, BGMId);
@@ -155,6 +157,7 @@ public struct CampaignStageExcel : IFlatbufferObject
     CampaignStageExcel.AddBattleDuration(builder, BattleDuration);
     CampaignStageExcel.AddCleardScenarioId(builder, CleardScenarioId);
     CampaignStageExcel.AddId(builder, Id);
+    CampaignStageExcel.AddEchelonExtensionType(builder, echelonExtensionType);
     CampaignStageExcel.AddFirstClearEventMessage(builder, FirstClearEventMessageOffset);
     CampaignStageExcel.AddFirstClearFunnelMessage(builder, FirstClearFunnelMessageOffset);
     CampaignStageExcel.AddFirstClearReportEventName(builder, FirstClearReportEventNameOffset);
@@ -177,7 +180,7 @@ public struct CampaignStageExcel : IFlatbufferObject
     return CampaignStageExcel.EndCampaignStageExcel(builder);
   }
 
-  public static void StartCampaignStageExcel(FlatBufferBuilder builder) { builder.StartTable(30); }
+  public static void StartCampaignStageExcel(FlatBufferBuilder builder) { builder.StartTable(31); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddDeprecated(FlatBufferBuilder builder, bool Deprecated) { builder.AddBool(1, Deprecated, false); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(2, NameOffset.Value, 0); }
@@ -218,6 +221,7 @@ public struct CampaignStageExcel : IFlatbufferObject
   public static void AddFirstClearEventMessage(FlatBufferBuilder builder, StringOffset FirstClearEventMessageOffset) { builder.AddOffset(27, FirstClearEventMessageOffset.Value, 0); }
   public static void AddTacticRewardExp(FlatBufferBuilder builder, long TacticRewardExp) { builder.AddLong(28, TacticRewardExp, 0); }
   public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(29, FixedEchelonId, 0); }
+  public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataGlobal.EchelonExtensionType echelonExtensionType) { builder.AddInt(30, (int)echelonExtensionType, 0); }
   public static Offset<FlatDataGlobal.CampaignStageExcel> EndCampaignStageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CampaignStageExcel>(o);

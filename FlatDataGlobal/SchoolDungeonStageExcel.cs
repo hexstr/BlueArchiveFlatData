@@ -77,6 +77,7 @@ public struct SchoolDungeonStageExcel : IFlatbufferObject
   public long RecommandLevel { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long StageRewardId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PlayTimeLimitInSeconds { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(36); return o != 0 ? (FlatDataGlobal.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EchelonExtensionType.Base; } }
 
   public static Offset<FlatDataGlobal.SchoolDungeonStageExcel> CreateSchoolDungeonStageExcel(FlatBufferBuilder builder,
       long StageId = 0,
@@ -94,14 +95,16 @@ public struct SchoolDungeonStageExcel : IFlatbufferObject
       FlatDataGlobal.StageTopography stageTopography = FlatDataGlobal.StageTopography.Street,
       long RecommandLevel = 0,
       long StageRewardId = 0,
-      long PlayTimeLimitInSeconds = 0) {
-    builder.StartTable(16);
+      long PlayTimeLimitInSeconds = 0,
+      FlatDataGlobal.EchelonExtensionType echelonExtensionType = FlatDataGlobal.EchelonExtensionType.Base) {
+    builder.StartTable(17);
     SchoolDungeonStageExcel.AddPlayTimeLimitInSeconds(builder, PlayTimeLimitInSeconds);
     SchoolDungeonStageExcel.AddStageRewardId(builder, StageRewardId);
     SchoolDungeonStageExcel.AddRecommandLevel(builder, RecommandLevel);
     SchoolDungeonStageExcel.AddPrevStageId(builder, PrevStageId);
     SchoolDungeonStageExcel.AddBattleDuration(builder, BattleDuration);
     SchoolDungeonStageExcel.AddStageId(builder, StageId);
+    SchoolDungeonStageExcel.AddEchelonExtensionType(builder, echelonExtensionType);
     SchoolDungeonStageExcel.AddStageTopography(builder, stageTopography);
     SchoolDungeonStageExcel.AddStarGoalAmount(builder, StarGoalAmountOffset);
     SchoolDungeonStageExcel.AddStarGoal(builder, StarGoalOffset);
@@ -115,7 +118,7 @@ public struct SchoolDungeonStageExcel : IFlatbufferObject
     return SchoolDungeonStageExcel.EndSchoolDungeonStageExcel(builder);
   }
 
-  public static void StartSchoolDungeonStageExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
+  public static void StartSchoolDungeonStageExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
   public static void AddStageId(FlatBufferBuilder builder, long StageId) { builder.AddLong(0, StageId, 0); }
   public static void AddDungeonType(FlatBufferBuilder builder, FlatDataGlobal.SchoolDungeonType DungeonType) { builder.AddInt(1, (int)DungeonType, 0); }
   public static void AddDifficulty(FlatBufferBuilder builder, int Difficulty) { builder.AddInt(2, Difficulty, 0); }
@@ -162,6 +165,7 @@ public struct SchoolDungeonStageExcel : IFlatbufferObject
   public static void AddRecommandLevel(FlatBufferBuilder builder, long RecommandLevel) { builder.AddLong(13, RecommandLevel, 0); }
   public static void AddStageRewardId(FlatBufferBuilder builder, long StageRewardId) { builder.AddLong(14, StageRewardId, 0); }
   public static void AddPlayTimeLimitInSeconds(FlatBufferBuilder builder, long PlayTimeLimitInSeconds) { builder.AddLong(15, PlayTimeLimitInSeconds, 0); }
+  public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataGlobal.EchelonExtensionType echelonExtensionType) { builder.AddInt(16, (int)echelonExtensionType, 0); }
   public static Offset<FlatDataGlobal.SchoolDungeonStageExcel> EndSchoolDungeonStageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.SchoolDungeonStageExcel>(o);

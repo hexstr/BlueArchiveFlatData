@@ -68,13 +68,8 @@ public struct CostumeExcel : IFlatbufferObject
   public ArraySegment<byte>? GetSpineResourceNameDioramaBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
   public byte[] GetSpineResourceNameDioramaArray() { return __p.__vector_as_array<byte>(28); }
-  public string SpineResourceNameDioramaForFormConversion { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetSpineResourceNameDioramaForFormConversionBytes() { return __p.__vector_as_span<byte>(30, 1); }
-#else
-  public ArraySegment<byte>? GetSpineResourceNameDioramaForFormConversionBytes() { return __p.__vector_as_arraysegment(30); }
-#endif
-  public byte[] GetSpineResourceNameDioramaForFormConversionArray() { return __p.__vector_as_array<byte>(30); }
+  public string SpineResourceNameDioramaForFormConversion(int j) { int o = __p.__offset(30); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int SpineResourceNameDioramaForFormConversionLength { get { int o = __p.__offset(30); return o != 0 ? __p.__vector_len(o) : 0; } }
   public FlatDataGlobal.EntityMaterialType EntityMaterialType { get { int o = __p.__offset(32); return o != 0 ? (FlatDataGlobal.EntityMaterialType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EntityMaterialType.Wood; } }
   public string ModelPrefabName { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -135,36 +130,29 @@ public struct CostumeExcel : IFlatbufferObject
   public byte[] GetTextureBossArray() { return __p.__vector_as_array<byte>(50); }
   public string TextureSkillCard(int j) { int o = __p.__offset(52); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
   public int TextureSkillCardLength { get { int o = __p.__offset(52); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string TextureSkillCardForFormConversion { get { int o = __p.__offset(54); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string InformationPacel { get { int o = __p.__offset(54); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTextureSkillCardForFormConversionBytes() { return __p.__vector_as_span<byte>(54, 1); }
+  public Span<byte> GetInformationPacelBytes() { return __p.__vector_as_span<byte>(54, 1); }
 #else
-  public ArraySegment<byte>? GetTextureSkillCardForFormConversionBytes() { return __p.__vector_as_arraysegment(54); }
+  public ArraySegment<byte>? GetInformationPacelBytes() { return __p.__vector_as_arraysegment(54); }
 #endif
-  public byte[] GetTextureSkillCardForFormConversionArray() { return __p.__vector_as_array<byte>(54); }
-  public string InformationPacel { get { int o = __p.__offset(56); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetInformationPacelArray() { return __p.__vector_as_array<byte>(54); }
+  public string AnimationSSR { get { int o = __p.__offset(56); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetInformationPacelBytes() { return __p.__vector_as_span<byte>(56, 1); }
+  public Span<byte> GetAnimationSSRBytes() { return __p.__vector_as_span<byte>(56, 1); }
 #else
-  public ArraySegment<byte>? GetInformationPacelBytes() { return __p.__vector_as_arraysegment(56); }
+  public ArraySegment<byte>? GetAnimationSSRBytes() { return __p.__vector_as_arraysegment(56); }
 #endif
-  public byte[] GetInformationPacelArray() { return __p.__vector_as_array<byte>(56); }
-  public string AnimationSSR { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetAnimationSSRArray() { return __p.__vector_as_array<byte>(56); }
+  public string EnterStrategyAnimationName { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAnimationSSRBytes() { return __p.__vector_as_span<byte>(58, 1); }
+  public Span<byte> GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_span<byte>(58, 1); }
 #else
-  public ArraySegment<byte>? GetAnimationSSRBytes() { return __p.__vector_as_arraysegment(58); }
+  public ArraySegment<byte>? GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_arraysegment(58); }
 #endif
-  public byte[] GetAnimationSSRArray() { return __p.__vector_as_array<byte>(58); }
-  public string EnterStrategyAnimationName { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_span<byte>(60, 1); }
-#else
-  public ArraySegment<byte>? GetEnterStrategyAnimationNameBytes() { return __p.__vector_as_arraysegment(60); }
-#endif
-  public byte[] GetEnterStrategyAnimationNameArray() { return __p.__vector_as_array<byte>(60); }
-  public bool AnimationValidator { get { int o = __p.__offset(62); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long CharacterVoiceGroupId { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public byte[] GetEnterStrategyAnimationNameArray() { return __p.__vector_as_array<byte>(58); }
+  public bool AnimationValidator { get { int o = __p.__offset(60); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long CharacterVoiceGroupId { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.CostumeExcel> CreateCostumeExcel(FlatBufferBuilder builder,
       long CostumeGroupId = 0,
@@ -180,7 +168,7 @@ public struct CostumeExcel : IFlatbufferObject
       long CharacterSkillListGroupId = 0,
       StringOffset SpineResourceNameOffset = default(StringOffset),
       StringOffset SpineResourceNameDioramaOffset = default(StringOffset),
-      StringOffset SpineResourceNameDioramaForFormConversionOffset = default(StringOffset),
+      VectorOffset SpineResourceNameDioramaForFormConversionOffset = default(VectorOffset),
       FlatDataGlobal.EntityMaterialType entityMaterialType = FlatDataGlobal.EntityMaterialType.Wood,
       StringOffset ModelPrefabNameOffset = default(StringOffset),
       StringOffset CafeModelPrefabNameOffset = default(StringOffset),
@@ -192,13 +180,12 @@ public struct CostumeExcel : IFlatbufferObject
       bool UseObjectHPBAR = false,
       StringOffset TextureBossOffset = default(StringOffset),
       VectorOffset TextureSkillCardOffset = default(VectorOffset),
-      StringOffset TextureSkillCardForFormConversionOffset = default(StringOffset),
       StringOffset InformationPacelOffset = default(StringOffset),
       StringOffset AnimationSSROffset = default(StringOffset),
       StringOffset EnterStrategyAnimationNameOffset = default(StringOffset),
       bool AnimationValidator = false,
       long CharacterVoiceGroupId = 0) {
-    builder.StartTable(31);
+    builder.StartTable(30);
     CostumeExcel.AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId);
     CostumeExcel.AddCharacterSkillListGroupId(builder, CharacterSkillListGroupId);
     CostumeExcel.AddCostumeUniqueId(builder, CostumeUniqueId);
@@ -206,7 +193,6 @@ public struct CostumeExcel : IFlatbufferObject
     CostumeExcel.AddEnterStrategyAnimationName(builder, EnterStrategyAnimationNameOffset);
     CostumeExcel.AddAnimationSSR(builder, AnimationSSROffset);
     CostumeExcel.AddInformationPacel(builder, InformationPacelOffset);
-    CostumeExcel.AddTextureSkillCardForFormConversion(builder, TextureSkillCardForFormConversionOffset);
     CostumeExcel.AddTextureSkillCard(builder, TextureSkillCardOffset);
     CostumeExcel.AddTextureBoss(builder, TextureBossOffset);
     CostumeExcel.AddCollectionBGTexturePath(builder, CollectionBGTexturePathOffset);
@@ -233,7 +219,7 @@ public struct CostumeExcel : IFlatbufferObject
     return CostumeExcel.EndCostumeExcel(builder);
   }
 
-  public static void StartCostumeExcel(FlatBufferBuilder builder) { builder.StartTable(31); }
+  public static void StartCostumeExcel(FlatBufferBuilder builder) { builder.StartTable(30); }
   public static void AddCostumeGroupId(FlatBufferBuilder builder, long CostumeGroupId) { builder.AddLong(0, CostumeGroupId, 0); }
   public static void AddCostumeUniqueId(FlatBufferBuilder builder, long CostumeUniqueId) { builder.AddLong(1, CostumeUniqueId, 0); }
   public static void AddDevName(FlatBufferBuilder builder, StringOffset DevNameOffset) { builder.AddOffset(2, DevNameOffset.Value, 0); }
@@ -247,7 +233,12 @@ public struct CostumeExcel : IFlatbufferObject
   public static void AddCharacterSkillListGroupId(FlatBufferBuilder builder, long CharacterSkillListGroupId) { builder.AddLong(10, CharacterSkillListGroupId, 0); }
   public static void AddSpineResourceName(FlatBufferBuilder builder, StringOffset SpineResourceNameOffset) { builder.AddOffset(11, SpineResourceNameOffset.Value, 0); }
   public static void AddSpineResourceNameDiorama(FlatBufferBuilder builder, StringOffset SpineResourceNameDioramaOffset) { builder.AddOffset(12, SpineResourceNameDioramaOffset.Value, 0); }
-  public static void AddSpineResourceNameDioramaForFormConversion(FlatBufferBuilder builder, StringOffset SpineResourceNameDioramaForFormConversionOffset) { builder.AddOffset(13, SpineResourceNameDioramaForFormConversionOffset.Value, 0); }
+  public static void AddSpineResourceNameDioramaForFormConversion(FlatBufferBuilder builder, VectorOffset SpineResourceNameDioramaForFormConversionOffset) { builder.AddOffset(13, SpineResourceNameDioramaForFormConversionOffset.Value, 0); }
+  public static VectorOffset CreateSpineResourceNameDioramaForFormConversionVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateSpineResourceNameDioramaForFormConversionVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSpineResourceNameDioramaForFormConversionVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSpineResourceNameDioramaForFormConversionVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSpineResourceNameDioramaForFormConversionVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddEntityMaterialType(FlatBufferBuilder builder, FlatDataGlobal.EntityMaterialType entityMaterialType) { builder.AddInt(14, (int)entityMaterialType, 0); }
   public static void AddModelPrefabName(FlatBufferBuilder builder, StringOffset ModelPrefabNameOffset) { builder.AddOffset(15, ModelPrefabNameOffset.Value, 0); }
   public static void AddCafeModelPrefabName(FlatBufferBuilder builder, StringOffset CafeModelPrefabNameOffset) { builder.AddOffset(16, CafeModelPrefabNameOffset.Value, 0); }
@@ -264,12 +255,11 @@ public struct CostumeExcel : IFlatbufferObject
   public static VectorOffset CreateTextureSkillCardVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTextureSkillCardVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartTextureSkillCardVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddTextureSkillCardForFormConversion(FlatBufferBuilder builder, StringOffset TextureSkillCardForFormConversionOffset) { builder.AddOffset(25, TextureSkillCardForFormConversionOffset.Value, 0); }
-  public static void AddInformationPacel(FlatBufferBuilder builder, StringOffset InformationPacelOffset) { builder.AddOffset(26, InformationPacelOffset.Value, 0); }
-  public static void AddAnimationSSR(FlatBufferBuilder builder, StringOffset AnimationSSROffset) { builder.AddOffset(27, AnimationSSROffset.Value, 0); }
-  public static void AddEnterStrategyAnimationName(FlatBufferBuilder builder, StringOffset EnterStrategyAnimationNameOffset) { builder.AddOffset(28, EnterStrategyAnimationNameOffset.Value, 0); }
-  public static void AddAnimationValidator(FlatBufferBuilder builder, bool AnimationValidator) { builder.AddBool(29, AnimationValidator, false); }
-  public static void AddCharacterVoiceGroupId(FlatBufferBuilder builder, long CharacterVoiceGroupId) { builder.AddLong(30, CharacterVoiceGroupId, 0); }
+  public static void AddInformationPacel(FlatBufferBuilder builder, StringOffset InformationPacelOffset) { builder.AddOffset(25, InformationPacelOffset.Value, 0); }
+  public static void AddAnimationSSR(FlatBufferBuilder builder, StringOffset AnimationSSROffset) { builder.AddOffset(26, AnimationSSROffset.Value, 0); }
+  public static void AddEnterStrategyAnimationName(FlatBufferBuilder builder, StringOffset EnterStrategyAnimationNameOffset) { builder.AddOffset(27, EnterStrategyAnimationNameOffset.Value, 0); }
+  public static void AddAnimationValidator(FlatBufferBuilder builder, bool AnimationValidator) { builder.AddBool(28, AnimationValidator, false); }
+  public static void AddCharacterVoiceGroupId(FlatBufferBuilder builder, long CharacterVoiceGroupId) { builder.AddLong(29, CharacterVoiceGroupId, 0); }
   public static Offset<FlatDataGlobal.CostumeExcel> EndCostumeExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CostumeExcel>(o);

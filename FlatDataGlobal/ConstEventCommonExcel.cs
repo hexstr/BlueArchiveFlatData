@@ -40,6 +40,10 @@ public struct ConstEventCommonExcel : IFlatbufferObject
 #endif
   public byte[] GetMeetupScenarioReplayTitleLocalizeArray() { return __p.__vector_as_array<byte>(18); }
   public long SpecialOperactionCollectionGroupId { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int TreasureNormalVariationAmount { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int TreasureLoopVariationAmount { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int TreasureLimitVariationLoopCount { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int TreasureLimitVariationClearLoopCount { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.ConstEventCommonExcel> CreateConstEventCommonExcel(FlatBufferBuilder builder,
       int EventContentHardStageCount = 0,
@@ -50,12 +54,20 @@ public struct ConstEventCommonExcel : IFlatbufferObject
       FlatDataGlobal.Rarity CardShopProbWeightRarity = FlatDataGlobal.Rarity.N,
       StringOffset MeetupScenarioReplayResourceOffset = default(StringOffset),
       StringOffset MeetupScenarioReplayTitleLocalizeOffset = default(StringOffset),
-      long SpecialOperactionCollectionGroupId = 0) {
-    builder.StartTable(9);
+      long SpecialOperactionCollectionGroupId = 0,
+      int TreasureNormalVariationAmount = 0,
+      int TreasureLoopVariationAmount = 0,
+      int TreasureLimitVariationLoopCount = 0,
+      int TreasureLimitVariationClearLoopCount = 0) {
+    builder.StartTable(13);
     ConstEventCommonExcel.AddSpecialOperactionCollectionGroupId(builder, SpecialOperactionCollectionGroupId);
     ConstEventCommonExcel.AddCardShopProbWeightCount(builder, CardShopProbWeightCount);
     ConstEventCommonExcel.AddSubEventChangeLimitSeconds(builder, SubEventChangeLimitSeconds);
     ConstEventCommonExcel.AddEventStrategyPlayTimeLimitInSeconds(builder, EventStrategyPlayTimeLimitInSeconds);
+    ConstEventCommonExcel.AddTreasureLimitVariationClearLoopCount(builder, TreasureLimitVariationClearLoopCount);
+    ConstEventCommonExcel.AddTreasureLimitVariationLoopCount(builder, TreasureLimitVariationLoopCount);
+    ConstEventCommonExcel.AddTreasureLoopVariationAmount(builder, TreasureLoopVariationAmount);
+    ConstEventCommonExcel.AddTreasureNormalVariationAmount(builder, TreasureNormalVariationAmount);
     ConstEventCommonExcel.AddMeetupScenarioReplayTitleLocalize(builder, MeetupScenarioReplayTitleLocalizeOffset);
     ConstEventCommonExcel.AddMeetupScenarioReplayResource(builder, MeetupScenarioReplayResourceOffset);
     ConstEventCommonExcel.AddCardShopProbWeightRarity(builder, CardShopProbWeightRarity);
@@ -64,7 +76,7 @@ public struct ConstEventCommonExcel : IFlatbufferObject
     return ConstEventCommonExcel.EndConstEventCommonExcel(builder);
   }
 
-  public static void StartConstEventCommonExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
+  public static void StartConstEventCommonExcel(FlatBufferBuilder builder) { builder.StartTable(13); }
   public static void AddEventContentHardStageCount(FlatBufferBuilder builder, int EventContentHardStageCount) { builder.AddInt(0, EventContentHardStageCount, 0); }
   public static void AddEventStrategyPlayTimeLimitInSeconds(FlatBufferBuilder builder, long EventStrategyPlayTimeLimitInSeconds) { builder.AddLong(1, EventStrategyPlayTimeLimitInSeconds, 0); }
   public static void AddSubEventChangeLimitSeconds(FlatBufferBuilder builder, long SubEventChangeLimitSeconds) { builder.AddLong(2, SubEventChangeLimitSeconds, 0); }
@@ -74,6 +86,10 @@ public struct ConstEventCommonExcel : IFlatbufferObject
   public static void AddMeetupScenarioReplayResource(FlatBufferBuilder builder, StringOffset MeetupScenarioReplayResourceOffset) { builder.AddOffset(6, MeetupScenarioReplayResourceOffset.Value, 0); }
   public static void AddMeetupScenarioReplayTitleLocalize(FlatBufferBuilder builder, StringOffset MeetupScenarioReplayTitleLocalizeOffset) { builder.AddOffset(7, MeetupScenarioReplayTitleLocalizeOffset.Value, 0); }
   public static void AddSpecialOperactionCollectionGroupId(FlatBufferBuilder builder, long SpecialOperactionCollectionGroupId) { builder.AddLong(8, SpecialOperactionCollectionGroupId, 0); }
+  public static void AddTreasureNormalVariationAmount(FlatBufferBuilder builder, int TreasureNormalVariationAmount) { builder.AddInt(9, TreasureNormalVariationAmount, 0); }
+  public static void AddTreasureLoopVariationAmount(FlatBufferBuilder builder, int TreasureLoopVariationAmount) { builder.AddInt(10, TreasureLoopVariationAmount, 0); }
+  public static void AddTreasureLimitVariationLoopCount(FlatBufferBuilder builder, int TreasureLimitVariationLoopCount) { builder.AddInt(11, TreasureLimitVariationLoopCount, 0); }
+  public static void AddTreasureLimitVariationClearLoopCount(FlatBufferBuilder builder, int TreasureLimitVariationClearLoopCount) { builder.AddInt(12, TreasureLimitVariationClearLoopCount, 0); }
   public static Offset<FlatDataGlobal.ConstEventCommonExcel> EndConstEventCommonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstEventCommonExcel>(o);

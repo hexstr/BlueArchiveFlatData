@@ -142,6 +142,33 @@ public struct ConstCombatExcel : IFlatbufferObject
   public long RaidRankingJumpMinimumWaitingTime { get { int o = __p.__offset(172); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public float EffectTeleportDistance { get { int o = __p.__offset(174); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public long AuraExitThresholdMargin { get { int o = __p.__offset(176); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long TSAInteractionDamageFactor { get { int o = __p.__offset(178); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long VictoryInteractionRate { get { int o = __p.__offset(180); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string EchelonExtensionEngageTimelinePath { get { int o = __p.__offset(182); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEchelonExtensionEngageTimelinePathBytes() { return __p.__vector_as_span<byte>(182, 1); }
+#else
+  public ArraySegment<byte>? GetEchelonExtensionEngageTimelinePathBytes() { return __p.__vector_as_arraysegment(182); }
+#endif
+  public byte[] GetEchelonExtensionEngageTimelinePathArray() { return __p.__vector_as_array<byte>(182); }
+  public string EchelonExtensionEngageWithSupporterTimelinePath { get { int o = __p.__offset(184); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEchelonExtensionEngageWithSupporterTimelinePathBytes() { return __p.__vector_as_span<byte>(184, 1); }
+#else
+  public ArraySegment<byte>? GetEchelonExtensionEngageWithSupporterTimelinePathBytes() { return __p.__vector_as_arraysegment(184); }
+#endif
+  public byte[] GetEchelonExtensionEngageWithSupporterTimelinePathArray() { return __p.__vector_as_array<byte>(184); }
+  public string EchelonExtensionVictoryTimelinePath { get { int o = __p.__offset(186); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEchelonExtensionVictoryTimelinePathBytes() { return __p.__vector_as_span<byte>(186, 1); }
+#else
+  public ArraySegment<byte>? GetEchelonExtensionVictoryTimelinePathBytes() { return __p.__vector_as_arraysegment(186); }
+#endif
+  public byte[] GetEchelonExtensionVictoryTimelinePathArray() { return __p.__vector_as_array<byte>(186); }
+  public int EchelonExtensionEchelonMaxCommonCost { get { int o = __p.__offset(188); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int EchelonExtensionEchelonInitCommonCost { get { int o = __p.__offset(190); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long EchelonExtensionCostRegenRatio { get { int o = __p.__offset(192); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int CheckCheaterMaxUseCostMultiFloorRaid { get { int o = __p.__offset(194); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.ConstCombatExcel> CreateConstCombatExcel(FlatBufferBuilder builder,
       int SkillHandCount = 0,
@@ -230,8 +257,20 @@ public struct ConstCombatExcel : IFlatbufferObject
       long WorldRaidBossParcelReactionDelay = 0,
       long RaidRankingJumpMinimumWaitingTime = 0,
       float EffectTeleportDistance = 0.0f,
-      long AuraExitThresholdMargin = 0) {
-    builder.StartTable(87);
+      long AuraExitThresholdMargin = 0,
+      long TSAInteractionDamageFactor = 0,
+      long VictoryInteractionRate = 0,
+      StringOffset EchelonExtensionEngageTimelinePathOffset = default(StringOffset),
+      StringOffset EchelonExtensionEngageWithSupporterTimelinePathOffset = default(StringOffset),
+      StringOffset EchelonExtensionVictoryTimelinePathOffset = default(StringOffset),
+      int EchelonExtensionEchelonMaxCommonCost = 0,
+      int EchelonExtensionEchelonInitCommonCost = 0,
+      long EchelonExtensionCostRegenRatio = 0,
+      int CheckCheaterMaxUseCostMultiFloorRaid = 0) {
+    builder.StartTable(96);
+    ConstCombatExcel.AddEchelonExtensionCostRegenRatio(builder, EchelonExtensionCostRegenRatio);
+    ConstCombatExcel.AddVictoryInteractionRate(builder, VictoryInteractionRate);
+    ConstCombatExcel.AddTSAInteractionDamageFactor(builder, TSAInteractionDamageFactor);
     ConstCombatExcel.AddAuraExitThresholdMargin(builder, AuraExitThresholdMargin);
     ConstCombatExcel.AddRaidRankingJumpMinimumWaitingTime(builder, RaidRankingJumpMinimumWaitingTime);
     ConstCombatExcel.AddWorldRaidBossParcelReactionDelay(builder, WorldRaidBossParcelReactionDelay);
@@ -287,6 +326,12 @@ public struct ConstCombatExcel : IFlatbufferObject
     ConstCombatExcel.AddTimeLimitAlarm(builder, TimeLimitAlarm);
     ConstCombatExcel.AddMaxRaidBossSkillSlot(builder, MaxRaidBossSkillSlot);
     ConstCombatExcel.AddMaxRaidTicketCount(builder, MaxRaidTicketCount);
+    ConstCombatExcel.AddCheckCheaterMaxUseCostMultiFloorRaid(builder, CheckCheaterMaxUseCostMultiFloorRaid);
+    ConstCombatExcel.AddEchelonExtensionEchelonInitCommonCost(builder, EchelonExtensionEchelonInitCommonCost);
+    ConstCombatExcel.AddEchelonExtensionEchelonMaxCommonCost(builder, EchelonExtensionEchelonMaxCommonCost);
+    ConstCombatExcel.AddEchelonExtensionVictoryTimelinePath(builder, EchelonExtensionVictoryTimelinePathOffset);
+    ConstCombatExcel.AddEchelonExtensionEngageWithSupporterTimelinePath(builder, EchelonExtensionEngageWithSupporterTimelinePathOffset);
+    ConstCombatExcel.AddEchelonExtensionEngageTimelinePath(builder, EchelonExtensionEngageTimelinePathOffset);
     ConstCombatExcel.AddEffectTeleportDistance(builder, EffectTeleportDistance);
     ConstCombatExcel.AddArenaMinimumClearTime(builder, ArenaMinimumClearTime);
     ConstCombatExcel.AddCheckCheaterMaxUseCostArena(builder, CheckCheaterMaxUseCostArena);
@@ -322,7 +367,7 @@ public struct ConstCombatExcel : IFlatbufferObject
     return ConstCombatExcel.EndConstCombatExcel(builder);
   }
 
-  public static void StartConstCombatExcel(FlatBufferBuilder builder) { builder.StartTable(87); }
+  public static void StartConstCombatExcel(FlatBufferBuilder builder) { builder.StartTable(96); }
   public static void AddSkillHandCount(FlatBufferBuilder builder, int SkillHandCount) { builder.AddInt(0, SkillHandCount, 0); }
   public static void AddDyingTime(FlatBufferBuilder builder, int DyingTime) { builder.AddInt(1, DyingTime, 0); }
   public static void AddBuffIconBlinkTime(FlatBufferBuilder builder, int BuffIconBlinkTime) { builder.AddInt(2, BuffIconBlinkTime, 0); }
@@ -410,6 +455,15 @@ public struct ConstCombatExcel : IFlatbufferObject
   public static void AddRaidRankingJumpMinimumWaitingTime(FlatBufferBuilder builder, long RaidRankingJumpMinimumWaitingTime) { builder.AddLong(84, RaidRankingJumpMinimumWaitingTime, 0); }
   public static void AddEffectTeleportDistance(FlatBufferBuilder builder, float EffectTeleportDistance) { builder.AddFloat(85, EffectTeleportDistance, 0.0f); }
   public static void AddAuraExitThresholdMargin(FlatBufferBuilder builder, long AuraExitThresholdMargin) { builder.AddLong(86, AuraExitThresholdMargin, 0); }
+  public static void AddTSAInteractionDamageFactor(FlatBufferBuilder builder, long TSAInteractionDamageFactor) { builder.AddLong(87, TSAInteractionDamageFactor, 0); }
+  public static void AddVictoryInteractionRate(FlatBufferBuilder builder, long VictoryInteractionRate) { builder.AddLong(88, VictoryInteractionRate, 0); }
+  public static void AddEchelonExtensionEngageTimelinePath(FlatBufferBuilder builder, StringOffset EchelonExtensionEngageTimelinePathOffset) { builder.AddOffset(89, EchelonExtensionEngageTimelinePathOffset.Value, 0); }
+  public static void AddEchelonExtensionEngageWithSupporterTimelinePath(FlatBufferBuilder builder, StringOffset EchelonExtensionEngageWithSupporterTimelinePathOffset) { builder.AddOffset(90, EchelonExtensionEngageWithSupporterTimelinePathOffset.Value, 0); }
+  public static void AddEchelonExtensionVictoryTimelinePath(FlatBufferBuilder builder, StringOffset EchelonExtensionVictoryTimelinePathOffset) { builder.AddOffset(91, EchelonExtensionVictoryTimelinePathOffset.Value, 0); }
+  public static void AddEchelonExtensionEchelonMaxCommonCost(FlatBufferBuilder builder, int EchelonExtensionEchelonMaxCommonCost) { builder.AddInt(92, EchelonExtensionEchelonMaxCommonCost, 0); }
+  public static void AddEchelonExtensionEchelonInitCommonCost(FlatBufferBuilder builder, int EchelonExtensionEchelonInitCommonCost) { builder.AddInt(93, EchelonExtensionEchelonInitCommonCost, 0); }
+  public static void AddEchelonExtensionCostRegenRatio(FlatBufferBuilder builder, long EchelonExtensionCostRegenRatio) { builder.AddLong(94, EchelonExtensionCostRegenRatio, 0); }
+  public static void AddCheckCheaterMaxUseCostMultiFloorRaid(FlatBufferBuilder builder, int CheckCheaterMaxUseCostMultiFloorRaid) { builder.AddInt(95, CheckCheaterMaxUseCostMultiFloorRaid, 0); }
   public static Offset<FlatDataGlobal.ConstCombatExcel> EndConstCombatExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstCombatExcel>(o);

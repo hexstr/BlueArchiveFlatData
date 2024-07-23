@@ -50,71 +50,72 @@ public struct CharacterDialogExcel : IFlatbufferObject
 #endif
   public byte[] GetActionNameArray() { return __p.__vector_as_array<byte>(26); }
   public long Duration { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string AnimationName { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long DurationKr { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string AnimationName { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAnimationNameBytes() { return __p.__vector_as_span<byte>(30, 1); }
+  public Span<byte> GetAnimationNameBytes() { return __p.__vector_as_span<byte>(32, 1); }
 #else
-  public ArraySegment<byte>? GetAnimationNameBytes() { return __p.__vector_as_arraysegment(30); }
+  public ArraySegment<byte>? GetAnimationNameBytes() { return __p.__vector_as_arraysegment(32); }
 #endif
-  public byte[] GetAnimationNameArray() { return __p.__vector_as_array<byte>(30); }
-  public string LocalizeKR { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetAnimationNameArray() { return __p.__vector_as_array<byte>(32); }
+  public string LocalizeKR { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeKRBytes() { return __p.__vector_as_span<byte>(32, 1); }
+  public Span<byte> GetLocalizeKRBytes() { return __p.__vector_as_span<byte>(34, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeKRBytes() { return __p.__vector_as_arraysegment(32); }
+  public ArraySegment<byte>? GetLocalizeKRBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
-  public byte[] GetLocalizeKRArray() { return __p.__vector_as_array<byte>(32); }
-  public string LocalizeJP { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeKRArray() { return __p.__vector_as_array<byte>(34); }
+  public string LocalizeJP { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeJPBytes() { return __p.__vector_as_span<byte>(34, 1); }
+  public Span<byte> GetLocalizeJPBytes() { return __p.__vector_as_span<byte>(36, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeJPBytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetLocalizeJPBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public byte[] GetLocalizeJPArray() { return __p.__vector_as_array<byte>(34); }
-  public string LocalizeTH { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeJPArray() { return __p.__vector_as_array<byte>(36); }
+  public string LocalizeTH { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeTHBytes() { return __p.__vector_as_span<byte>(36, 1); }
+  public Span<byte> GetLocalizeTHBytes() { return __p.__vector_as_span<byte>(38, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeTHBytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetLocalizeTHBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public byte[] GetLocalizeTHArray() { return __p.__vector_as_array<byte>(36); }
-  public string LocalizeTW { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeTHArray() { return __p.__vector_as_array<byte>(38); }
+  public string LocalizeTW { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeTWBytes() { return __p.__vector_as_span<byte>(38, 1); }
+  public Span<byte> GetLocalizeTWBytes() { return __p.__vector_as_span<byte>(40, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeTWBytes() { return __p.__vector_as_arraysegment(38); }
+  public ArraySegment<byte>? GetLocalizeTWBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
-  public byte[] GetLocalizeTWArray() { return __p.__vector_as_array<byte>(38); }
-  public string LocalizeEN { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLocalizeTWArray() { return __p.__vector_as_array<byte>(40); }
+  public string LocalizeEN { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeENBytes() { return __p.__vector_as_span<byte>(40, 1); }
+  public Span<byte> GetLocalizeENBytes() { return __p.__vector_as_span<byte>(42, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeENBytes() { return __p.__vector_as_arraysegment(40); }
+  public ArraySegment<byte>? GetLocalizeENBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public byte[] GetLocalizeENArray() { return __p.__vector_as_array<byte>(40); }
-  public uint VoiceId(int j) { int o = __p.__offset(42); return o != 0 ? __p.bb.GetUint(__p.__vector(o) + j * 4) : (uint)0; }
-  public int VoiceIdLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetLocalizeENArray() { return __p.__vector_as_array<byte>(42); }
+  public uint VoiceId(int j) { int o = __p.__offset(44); return o != 0 ? __p.bb.GetUint(__p.__vector(o) + j * 4) : (uint)0; }
+  public int VoiceIdLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<uint> GetVoiceIdBytes() { return __p.__vector_as_span<uint>(42, 4); }
+  public Span<uint> GetVoiceIdBytes() { return __p.__vector_as_span<uint>(44, 4); }
 #else
-  public ArraySegment<byte>? GetVoiceIdBytes() { return __p.__vector_as_arraysegment(42); }
+  public ArraySegment<byte>? GetVoiceIdBytes() { return __p.__vector_as_arraysegment(44); }
 #endif
-  public uint[] GetVoiceIdArray() { return __p.__vector_as_array<uint>(42); }
-  public bool ApplyPosition { get { int o = __p.__offset(44); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public float PosX { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float PosY { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public bool CollectionVisible { get { int o = __p.__offset(50); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.CVCollectionType CVCollectionType { get { int o = __p.__offset(52); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
-  public long UnlockFavorRank { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool UnlockEquipWeapon { get { int o = __p.__offset(56); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string LocalizeCVGroup { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public uint[] GetVoiceIdArray() { return __p.__vector_as_array<uint>(44); }
+  public bool ApplyPosition { get { int o = __p.__offset(46); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public float PosX { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float PosY { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public bool CollectionVisible { get { int o = __p.__offset(52); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.CVCollectionType CVCollectionType { get { int o = __p.__offset(54); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
+  public long UnlockFavorRank { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool UnlockEquipWeapon { get { int o = __p.__offset(58); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string LocalizeCVGroup { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeCVGroupBytes() { return __p.__vector_as_span<byte>(58, 1); }
+  public Span<byte> GetLocalizeCVGroupBytes() { return __p.__vector_as_span<byte>(60, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeCVGroupBytes() { return __p.__vector_as_arraysegment(58); }
+  public ArraySegment<byte>? GetLocalizeCVGroupBytes() { return __p.__vector_as_arraysegment(60); }
 #endif
-  public byte[] GetLocalizeCVGroupArray() { return __p.__vector_as_array<byte>(58); }
-  public bool TeenMode { get { int o = __p.__offset(60); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public byte[] GetLocalizeCVGroupArray() { return __p.__vector_as_array<byte>(60); }
+  public bool TeenMode { get { int o = __p.__offset(62); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.CharacterDialogExcel> CreateCharacterDialogExcel(FlatBufferBuilder builder,
       long CharacterId = 0,
@@ -130,6 +131,7 @@ public struct CharacterDialogExcel : IFlatbufferObject
       FlatDataGlobal.DialogType dialogType = FlatDataGlobal.DialogType.Talk,
       StringOffset ActionNameOffset = default(StringOffset),
       long Duration = 0,
+      long DurationKr = 0,
       StringOffset AnimationNameOffset = default(StringOffset),
       StringOffset LocalizeKROffset = default(StringOffset),
       StringOffset LocalizeJPOffset = default(StringOffset),
@@ -146,8 +148,9 @@ public struct CharacterDialogExcel : IFlatbufferObject
       bool UnlockEquipWeapon = false,
       StringOffset LocalizeCVGroupOffset = default(StringOffset),
       bool TeenMode = false) {
-    builder.StartTable(29);
+    builder.StartTable(30);
     CharacterDialogExcel.AddUnlockFavorRank(builder, UnlockFavorRank);
+    CharacterDialogExcel.AddDurationKr(builder, DurationKr);
     CharacterDialogExcel.AddDuration(builder, Duration);
     CharacterDialogExcel.AddGroupId(builder, GroupId);
     CharacterDialogExcel.AddDisplayOrder(builder, DisplayOrder);
@@ -179,7 +182,7 @@ public struct CharacterDialogExcel : IFlatbufferObject
     return CharacterDialogExcel.EndCharacterDialogExcel(builder);
   }
 
-  public static void StartCharacterDialogExcel(FlatBufferBuilder builder) { builder.StartTable(29); }
+  public static void StartCharacterDialogExcel(FlatBufferBuilder builder) { builder.StartTable(30); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
   public static void AddCostumeUniqueId(FlatBufferBuilder builder, long CostumeUniqueId) { builder.AddLong(1, CostumeUniqueId, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(2, DisplayOrder, 0); }
@@ -193,27 +196,28 @@ public struct CharacterDialogExcel : IFlatbufferObject
   public static void AddDialogType(FlatBufferBuilder builder, FlatDataGlobal.DialogType dialogType) { builder.AddInt(10, (int)dialogType, 0); }
   public static void AddActionName(FlatBufferBuilder builder, StringOffset ActionNameOffset) { builder.AddOffset(11, ActionNameOffset.Value, 0); }
   public static void AddDuration(FlatBufferBuilder builder, long Duration) { builder.AddLong(12, Duration, 0); }
-  public static void AddAnimationName(FlatBufferBuilder builder, StringOffset AnimationNameOffset) { builder.AddOffset(13, AnimationNameOffset.Value, 0); }
-  public static void AddLocalizeKR(FlatBufferBuilder builder, StringOffset LocalizeKROffset) { builder.AddOffset(14, LocalizeKROffset.Value, 0); }
-  public static void AddLocalizeJP(FlatBufferBuilder builder, StringOffset LocalizeJPOffset) { builder.AddOffset(15, LocalizeJPOffset.Value, 0); }
-  public static void AddLocalizeTH(FlatBufferBuilder builder, StringOffset LocalizeTHOffset) { builder.AddOffset(16, LocalizeTHOffset.Value, 0); }
-  public static void AddLocalizeTW(FlatBufferBuilder builder, StringOffset LocalizeTWOffset) { builder.AddOffset(17, LocalizeTWOffset.Value, 0); }
-  public static void AddLocalizeEN(FlatBufferBuilder builder, StringOffset LocalizeENOffset) { builder.AddOffset(18, LocalizeENOffset.Value, 0); }
-  public static void AddVoiceId(FlatBufferBuilder builder, VectorOffset VoiceIdOffset) { builder.AddOffset(19, VoiceIdOffset.Value, 0); }
+  public static void AddDurationKr(FlatBufferBuilder builder, long DurationKr) { builder.AddLong(13, DurationKr, 0); }
+  public static void AddAnimationName(FlatBufferBuilder builder, StringOffset AnimationNameOffset) { builder.AddOffset(14, AnimationNameOffset.Value, 0); }
+  public static void AddLocalizeKR(FlatBufferBuilder builder, StringOffset LocalizeKROffset) { builder.AddOffset(15, LocalizeKROffset.Value, 0); }
+  public static void AddLocalizeJP(FlatBufferBuilder builder, StringOffset LocalizeJPOffset) { builder.AddOffset(16, LocalizeJPOffset.Value, 0); }
+  public static void AddLocalizeTH(FlatBufferBuilder builder, StringOffset LocalizeTHOffset) { builder.AddOffset(17, LocalizeTHOffset.Value, 0); }
+  public static void AddLocalizeTW(FlatBufferBuilder builder, StringOffset LocalizeTWOffset) { builder.AddOffset(18, LocalizeTWOffset.Value, 0); }
+  public static void AddLocalizeEN(FlatBufferBuilder builder, StringOffset LocalizeENOffset) { builder.AddOffset(19, LocalizeENOffset.Value, 0); }
+  public static void AddVoiceId(FlatBufferBuilder builder, VectorOffset VoiceIdOffset) { builder.AddOffset(20, VoiceIdOffset.Value, 0); }
   public static VectorOffset CreateVoiceIdVector(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddUint(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, uint[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, ArraySegment<uint> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<uint>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartVoiceIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddApplyPosition(FlatBufferBuilder builder, bool ApplyPosition) { builder.AddBool(20, ApplyPosition, false); }
-  public static void AddPosX(FlatBufferBuilder builder, float PosX) { builder.AddFloat(21, PosX, 0.0f); }
-  public static void AddPosY(FlatBufferBuilder builder, float PosY) { builder.AddFloat(22, PosY, 0.0f); }
-  public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(23, CollectionVisible, false); }
-  public static void AddCVCollectionType(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cVCollectionType) { builder.AddInt(24, (int)cVCollectionType, 0); }
-  public static void AddUnlockFavorRank(FlatBufferBuilder builder, long UnlockFavorRank) { builder.AddLong(25, UnlockFavorRank, 0); }
-  public static void AddUnlockEquipWeapon(FlatBufferBuilder builder, bool UnlockEquipWeapon) { builder.AddBool(26, UnlockEquipWeapon, false); }
-  public static void AddLocalizeCVGroup(FlatBufferBuilder builder, StringOffset LocalizeCVGroupOffset) { builder.AddOffset(27, LocalizeCVGroupOffset.Value, 0); }
-  public static void AddTeenMode(FlatBufferBuilder builder, bool TeenMode) { builder.AddBool(28, TeenMode, false); }
+  public static void AddApplyPosition(FlatBufferBuilder builder, bool ApplyPosition) { builder.AddBool(21, ApplyPosition, false); }
+  public static void AddPosX(FlatBufferBuilder builder, float PosX) { builder.AddFloat(22, PosX, 0.0f); }
+  public static void AddPosY(FlatBufferBuilder builder, float PosY) { builder.AddFloat(23, PosY, 0.0f); }
+  public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(24, CollectionVisible, false); }
+  public static void AddCVCollectionType(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cVCollectionType) { builder.AddInt(25, (int)cVCollectionType, 0); }
+  public static void AddUnlockFavorRank(FlatBufferBuilder builder, long UnlockFavorRank) { builder.AddLong(26, UnlockFavorRank, 0); }
+  public static void AddUnlockEquipWeapon(FlatBufferBuilder builder, bool UnlockEquipWeapon) { builder.AddBool(27, UnlockEquipWeapon, false); }
+  public static void AddLocalizeCVGroup(FlatBufferBuilder builder, StringOffset LocalizeCVGroupOffset) { builder.AddOffset(28, LocalizeCVGroupOffset.Value, 0); }
+  public static void AddTeenMode(FlatBufferBuilder builder, bool TeenMode) { builder.AddBool(29, TeenMode, false); }
   public static Offset<FlatDataGlobal.CharacterDialogExcel> EndCharacterDialogExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterDialogExcel>(o);

@@ -53,17 +53,16 @@ public struct StoryStrategyExcel : IFlatbufferObject
   public byte[] GetStrategyMapBGArray() { return __p.__vector_as_array<byte>(18); }
   public int MaxTurn { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public FlatDataGlobal.StageTopography StageTopography { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
-  public int RecommandLevel { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.StrategyEnvironment StrategyEnvironment { get { int o = __p.__offset(26); return o != 0 ? (FlatDataGlobal.StrategyEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StrategyEnvironment.None; } }
-  public FlatDataGlobal.ContentType ContentType { get { int o = __p.__offset(28); return o != 0 ? (FlatDataGlobal.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ContentType.None; } }
-  public long BGMId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string FirstClearReportEventName { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataGlobal.StrategyEnvironment StrategyEnvironment { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.StrategyEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StrategyEnvironment.None; } }
+  public FlatDataGlobal.ContentType ContentType { get { int o = __p.__offset(26); return o != 0 ? (FlatDataGlobal.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ContentType.None; } }
+  public long BGMId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string FirstClearReportEventName { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetFirstClearReportEventNameBytes() { return __p.__vector_as_span<byte>(32, 1); }
+  public Span<byte> GetFirstClearReportEventNameBytes() { return __p.__vector_as_span<byte>(30, 1); }
 #else
-  public ArraySegment<byte>? GetFirstClearReportEventNameBytes() { return __p.__vector_as_arraysegment(32); }
+  public ArraySegment<byte>? GetFirstClearReportEventNameBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
-  public byte[] GetFirstClearReportEventNameArray() { return __p.__vector_as_array<byte>(32); }
+  public byte[] GetFirstClearReportEventNameArray() { return __p.__vector_as_array<byte>(30); }
 
   public static Offset<FlatDataGlobal.StoryStrategyExcel> CreateStoryStrategyExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -76,12 +75,11 @@ public struct StoryStrategyExcel : IFlatbufferObject
       StringOffset StrategyMapBGOffset = default(StringOffset),
       int MaxTurn = 0,
       FlatDataGlobal.StageTopography stageTopography = FlatDataGlobal.StageTopography.Street,
-      int RecommandLevel = 0,
       FlatDataGlobal.StrategyEnvironment strategyEnvironment = FlatDataGlobal.StrategyEnvironment.None,
       FlatDataGlobal.ContentType contentType = FlatDataGlobal.ContentType.None,
       long BGMId = 0,
       StringOffset FirstClearReportEventNameOffset = default(StringOffset)) {
-    builder.StartTable(15);
+    builder.StartTable(14);
     StoryStrategyExcel.AddBGMId(builder, BGMId);
     StoryStrategyExcel.AddWhiteListId(builder, WhiteListId);
     StoryStrategyExcel.AddBattleDuration(builder, BattleDuration);
@@ -89,7 +87,6 @@ public struct StoryStrategyExcel : IFlatbufferObject
     StoryStrategyExcel.AddFirstClearReportEventName(builder, FirstClearReportEventNameOffset);
     StoryStrategyExcel.AddContentType(builder, contentType);
     StoryStrategyExcel.AddStrategyEnvironment(builder, strategyEnvironment);
-    StoryStrategyExcel.AddRecommandLevel(builder, RecommandLevel);
     StoryStrategyExcel.AddStageTopography(builder, stageTopography);
     StoryStrategyExcel.AddMaxTurn(builder, MaxTurn);
     StoryStrategyExcel.AddStrategyMapBG(builder, StrategyMapBGOffset);
@@ -100,7 +97,7 @@ public struct StoryStrategyExcel : IFlatbufferObject
     return StoryStrategyExcel.EndStoryStrategyExcel(builder);
   }
 
-  public static void StartStoryStrategyExcel(FlatBufferBuilder builder) { builder.StartTable(15); }
+  public static void StartStoryStrategyExcel(FlatBufferBuilder builder) { builder.StartTable(14); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(1, NameOffset.Value, 0); }
   public static void AddLocalize(FlatBufferBuilder builder, StringOffset LocalizeOffset) { builder.AddOffset(2, LocalizeOffset.Value, 0); }
@@ -111,11 +108,10 @@ public struct StoryStrategyExcel : IFlatbufferObject
   public static void AddStrategyMapBG(FlatBufferBuilder builder, StringOffset StrategyMapBGOffset) { builder.AddOffset(7, StrategyMapBGOffset.Value, 0); }
   public static void AddMaxTurn(FlatBufferBuilder builder, int MaxTurn) { builder.AddInt(8, MaxTurn, 0); }
   public static void AddStageTopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stageTopography) { builder.AddInt(9, (int)stageTopography, 0); }
-  public static void AddRecommandLevel(FlatBufferBuilder builder, int RecommandLevel) { builder.AddInt(10, RecommandLevel, 0); }
-  public static void AddStrategyEnvironment(FlatBufferBuilder builder, FlatDataGlobal.StrategyEnvironment strategyEnvironment) { builder.AddInt(11, (int)strategyEnvironment, 0); }
-  public static void AddContentType(FlatBufferBuilder builder, FlatDataGlobal.ContentType contentType) { builder.AddInt(12, (int)contentType, 0); }
-  public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(13, BGMId, 0); }
-  public static void AddFirstClearReportEventName(FlatBufferBuilder builder, StringOffset FirstClearReportEventNameOffset) { builder.AddOffset(14, FirstClearReportEventNameOffset.Value, 0); }
+  public static void AddStrategyEnvironment(FlatBufferBuilder builder, FlatDataGlobal.StrategyEnvironment strategyEnvironment) { builder.AddInt(10, (int)strategyEnvironment, 0); }
+  public static void AddContentType(FlatBufferBuilder builder, FlatDataGlobal.ContentType contentType) { builder.AddInt(11, (int)contentType, 0); }
+  public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(12, BGMId, 0); }
+  public static void AddFirstClearReportEventName(FlatBufferBuilder builder, StringOffset FirstClearReportEventNameOffset) { builder.AddOffset(13, FirstClearReportEventNameOffset.Value, 0); }
   public static Offset<FlatDataGlobal.StoryStrategyExcel> EndStoryStrategyExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.StoryStrategyExcel>(o);

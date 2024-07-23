@@ -23,6 +23,7 @@ public enum ScenarioContentType : int
   EventContentReturnSeason = 13,
   MiniEvent = 14,
   EliminateRaid = 15,
+  MultiFloorRaid = 16,
 };
 
 

@@ -43,6 +43,13 @@ public struct EventContentFortuneGachaModifyExcel : IFlatbufferObject
   public ArraySegment<byte>? GetShopBgImagePathBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
   public byte[] GetShopBgImagePathArray() { return __p.__vector_as_array<byte>(14); }
+  public string TitleLocalizeKey { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetTitleLocalizeKeyBytes() { return __p.__vector_as_span<byte>(16, 1); }
+#else
+  public ArraySegment<byte>? GetTitleLocalizeKeyBytes() { return __p.__vector_as_arraysegment(16); }
+#endif
+  public byte[] GetTitleLocalizeKeyArray() { return __p.__vector_as_array<byte>(16); }
 
   public static Offset<FlatDataGlobal.EventContentFortuneGachaModifyExcel> CreateEventContentFortuneGachaModifyExcel(FlatBufferBuilder builder,
       int EventContentId = 0,
@@ -50,8 +57,10 @@ public struct EventContentFortuneGachaModifyExcel : IFlatbufferObject
       int ProbModifyStartCount = 0,
       StringOffset UsePrefabNameOffset = default(StringOffset),
       StringOffset BucketImagePathOffset = default(StringOffset),
-      StringOffset ShopBgImagePathOffset = default(StringOffset)) {
-    builder.StartTable(6);
+      StringOffset ShopBgImagePathOffset = default(StringOffset),
+      StringOffset TitleLocalizeKeyOffset = default(StringOffset)) {
+    builder.StartTable(7);
+    EventContentFortuneGachaModifyExcel.AddTitleLocalizeKey(builder, TitleLocalizeKeyOffset);
     EventContentFortuneGachaModifyExcel.AddShopBgImagePath(builder, ShopBgImagePathOffset);
     EventContentFortuneGachaModifyExcel.AddBucketImagePath(builder, BucketImagePathOffset);
     EventContentFortuneGachaModifyExcel.AddUsePrefabName(builder, UsePrefabNameOffset);
@@ -61,13 +70,14 @@ public struct EventContentFortuneGachaModifyExcel : IFlatbufferObject
     return EventContentFortuneGachaModifyExcel.EndEventContentFortuneGachaModifyExcel(builder);
   }
 
-  public static void StartEventContentFortuneGachaModifyExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
+  public static void StartEventContentFortuneGachaModifyExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddEventContentId(FlatBufferBuilder builder, int EventContentId) { builder.AddInt(0, EventContentId, 0); }
   public static void AddTargetGrade(FlatBufferBuilder builder, int TargetGrade) { builder.AddInt(1, TargetGrade, 0); }
   public static void AddProbModifyStartCount(FlatBufferBuilder builder, int ProbModifyStartCount) { builder.AddInt(2, ProbModifyStartCount, 0); }
   public static void AddUsePrefabName(FlatBufferBuilder builder, StringOffset UsePrefabNameOffset) { builder.AddOffset(3, UsePrefabNameOffset.Value, 0); }
   public static void AddBucketImagePath(FlatBufferBuilder builder, StringOffset BucketImagePathOffset) { builder.AddOffset(4, BucketImagePathOffset.Value, 0); }
   public static void AddShopBgImagePath(FlatBufferBuilder builder, StringOffset ShopBgImagePathOffset) { builder.AddOffset(5, ShopBgImagePathOffset.Value, 0); }
+  public static void AddTitleLocalizeKey(FlatBufferBuilder builder, StringOffset TitleLocalizeKeyOffset) { builder.AddOffset(6, TitleLocalizeKeyOffset.Value, 0); }
   public static Offset<FlatDataGlobal.EventContentFortuneGachaModifyExcel> EndEventContentFortuneGachaModifyExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentFortuneGachaModifyExcel>(o);

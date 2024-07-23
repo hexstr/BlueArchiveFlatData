@@ -11,6 +11,7 @@ public enum EmblemCheckPassType : int
   Default = 1,
   Favor = 2,
   Story = 3,
+  Potential = 4,
 };
 
 

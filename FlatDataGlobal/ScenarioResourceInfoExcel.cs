@@ -45,6 +45,14 @@ public struct ScenarioResourceInfoExcel : IFlatbufferObject
   public ArraySegment<byte>? GetLobbyAniPathBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
   public byte[] GetLobbyAniPathArray() { return __p.__vector_as_array<byte>(18); }
+  public string MovieCGPath { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetMovieCGPathBytes() { return __p.__vector_as_span<byte>(20, 1); }
+#else
+  public ArraySegment<byte>? GetMovieCGPathBytes() { return __p.__vector_as_arraysegment(20); }
+#endif
+  public byte[] GetMovieCGPathArray() { return __p.__vector_as_array<byte>(20); }
+  public uint LocalizeId { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
 
   public static Offset<FlatDataGlobal.ScenarioResourceInfoExcel> CreateScenarioResourceInfoExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -54,12 +62,16 @@ public struct ScenarioResourceInfoExcel : IFlatbufferObject
       StringOffset AudioNameOffset = default(StringOffset),
       StringOffset SpinePathOffset = default(StringOffset),
       int Ratio = 0,
-      StringOffset LobbyAniPathOffset = default(StringOffset)) {
-    builder.StartTable(8);
+      StringOffset LobbyAniPathOffset = default(StringOffset),
+      StringOffset MovieCGPathOffset = default(StringOffset),
+      uint LocalizeId = 0) {
+    builder.StartTable(10);
     ScenarioResourceInfoExcel.AddBgmId(builder, BgmId);
     ScenarioResourceInfoExcel.AddVideoId(builder, VideoId);
     ScenarioResourceInfoExcel.AddScenarioModeId(builder, ScenarioModeId);
     ScenarioResourceInfoExcel.AddId(builder, Id);
+    ScenarioResourceInfoExcel.AddLocalizeId(builder, LocalizeId);
+    ScenarioResourceInfoExcel.AddMovieCGPath(builder, MovieCGPathOffset);
     ScenarioResourceInfoExcel.AddLobbyAniPath(builder, LobbyAniPathOffset);
     ScenarioResourceInfoExcel.AddRatio(builder, Ratio);
     ScenarioResourceInfoExcel.AddSpinePath(builder, SpinePathOffset);
@@ -67,7 +79,7 @@ public struct ScenarioResourceInfoExcel : IFlatbufferObject
     return ScenarioResourceInfoExcel.EndScenarioResourceInfoExcel(builder);
   }
 
-  public static void StartScenarioResourceInfoExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
+  public static void StartScenarioResourceInfoExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddScenarioModeId(FlatBufferBuilder builder, long ScenarioModeId) { builder.AddLong(1, ScenarioModeId, 0); }
   public static void AddVideoId(FlatBufferBuilder builder, long VideoId) { builder.AddLong(2, VideoId, 0); }
@@ -76,6 +88,8 @@ public struct ScenarioResourceInfoExcel : IFlatbufferObject
   public static void AddSpinePath(FlatBufferBuilder builder, StringOffset SpinePathOffset) { builder.AddOffset(5, SpinePathOffset.Value, 0); }
   public static void AddRatio(FlatBufferBuilder builder, int Ratio) { builder.AddInt(6, Ratio, 0); }
   public static void AddLobbyAniPath(FlatBufferBuilder builder, StringOffset LobbyAniPathOffset) { builder.AddOffset(7, LobbyAniPathOffset.Value, 0); }
+  public static void AddMovieCGPath(FlatBufferBuilder builder, StringOffset MovieCGPathOffset) { builder.AddOffset(8, MovieCGPathOffset.Value, 0); }
+  public static void AddLocalizeId(FlatBufferBuilder builder, uint LocalizeId) { builder.AddUint(9, LocalizeId, 0); }
   public static Offset<FlatDataGlobal.ScenarioResourceInfoExcel> EndScenarioResourceInfoExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ScenarioResourceInfoExcel>(o);

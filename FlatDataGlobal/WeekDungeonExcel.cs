@@ -79,6 +79,7 @@ public struct WeekDungeonExcel : IFlatbufferObject
   public ArraySegment<byte>? GetGroupBuffIDBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
   public long[] GetGroupBuffIDArray() { return __p.__vector_as_array<long>(38); }
+  public FlatDataGlobal.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(40); return o != 0 ? (FlatDataGlobal.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EchelonExtensionType.Base; } }
 
   public static Offset<FlatDataGlobal.WeekDungeonExcel> CreateWeekDungeonExcel(FlatBufferBuilder builder,
       long StageId = 0,
@@ -98,8 +99,9 @@ public struct WeekDungeonExcel : IFlatbufferObject
       long PlayTimeLimitInSeconds = 0,
       long BattleRewardExp = 0,
       long BattleRewardPlayerExp = 0,
-      VectorOffset GroupBuffIDOffset = default(VectorOffset)) {
-    builder.StartTable(18);
+      VectorOffset GroupBuffIDOffset = default(VectorOffset),
+      FlatDataGlobal.EchelonExtensionType echelonExtensionType = FlatDataGlobal.EchelonExtensionType.Base) {
+    builder.StartTable(19);
     WeekDungeonExcel.AddBattleRewardPlayerExp(builder, BattleRewardPlayerExp);
     WeekDungeonExcel.AddBattleRewardExp(builder, BattleRewardExp);
     WeekDungeonExcel.AddPlayTimeLimitInSeconds(builder, PlayTimeLimitInSeconds);
@@ -108,6 +110,7 @@ public struct WeekDungeonExcel : IFlatbufferObject
     WeekDungeonExcel.AddPrevStageId(builder, PrevStageId);
     WeekDungeonExcel.AddBattleDuration(builder, BattleDuration);
     WeekDungeonExcel.AddStageId(builder, StageId);
+    WeekDungeonExcel.AddEchelonExtensionType(builder, echelonExtensionType);
     WeekDungeonExcel.AddGroupBuffID(builder, GroupBuffIDOffset);
     WeekDungeonExcel.AddStageTopography(builder, stageTopography);
     WeekDungeonExcel.AddStarGoalAmount(builder, StarGoalAmountOffset);
@@ -121,7 +124,7 @@ public struct WeekDungeonExcel : IFlatbufferObject
     return WeekDungeonExcel.EndWeekDungeonExcel(builder);
   }
 
-  public static void StartWeekDungeonExcel(FlatBufferBuilder builder) { builder.StartTable(18); }
+  public static void StartWeekDungeonExcel(FlatBufferBuilder builder) { builder.StartTable(19); }
   public static void AddStageId(FlatBufferBuilder builder, long StageId) { builder.AddLong(0, StageId, 0); }
   public static void AddWeekDungeonType(FlatBufferBuilder builder, FlatDataGlobal.WeekDungeonType weekDungeonType) { builder.AddInt(1, (int)weekDungeonType, 0); }
   public static void AddDifficulty(FlatBufferBuilder builder, int Difficulty) { builder.AddInt(2, Difficulty, 0); }
@@ -170,6 +173,7 @@ public struct WeekDungeonExcel : IFlatbufferObject
   public static VectorOffset CreateGroupBuffIDVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateGroupBuffIDVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartGroupBuffIDVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataGlobal.EchelonExtensionType echelonExtensionType) { builder.AddInt(18, (int)echelonExtensionType, 0); }
   public static Offset<FlatDataGlobal.WeekDungeonExcel> EndWeekDungeonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.WeekDungeonExcel>(o);

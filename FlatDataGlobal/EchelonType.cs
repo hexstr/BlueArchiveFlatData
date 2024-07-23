@@ -30,6 +30,8 @@ public enum EchelonType : int
   EliminateRaid01 = 20,
   EliminateRaid02 = 21,
   EliminateRaid03 = 22,
+  Field = 23,
+  MultiFloorRaid = 24,
 };
 
 

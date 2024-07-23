@@ -62,14 +62,14 @@ public struct FixedEchelonSettingExcel : IFlatbufferObject
   public ArraySegment<byte>? GetMainNoneExSkillLevelBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
   public int[] GetMainNoneExSkillLevelArray() { return __p.__vector_as_array<int>(18); }
-  public long MainEquipment1ID(int j) { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int MainEquipment1IDLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int MainEquipment1Tier(int j) { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int MainEquipment1TierLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetMainEquipment1IDBytes() { return __p.__vector_as_span<long>(20, 8); }
+  public Span<int> GetMainEquipment1TierBytes() { return __p.__vector_as_span<int>(20, 4); }
 #else
-  public ArraySegment<byte>? GetMainEquipment1IDBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetMainEquipment1TierBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public long[] GetMainEquipment1IDArray() { return __p.__vector_as_array<long>(20); }
+  public int[] GetMainEquipment1TierArray() { return __p.__vector_as_array<int>(20); }
   public int MainEquipment1Level(int j) { int o = __p.__offset(22); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
   public int MainEquipment1LevelLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -78,14 +78,14 @@ public struct FixedEchelonSettingExcel : IFlatbufferObject
   public ArraySegment<byte>? GetMainEquipment1LevelBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
   public int[] GetMainEquipment1LevelArray() { return __p.__vector_as_array<int>(22); }
-  public long MainEquipment2ID(int j) { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int MainEquipment2IDLength { get { int o = __p.__offset(24); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int MainEquipment2Tier(int j) { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int MainEquipment2TierLength { get { int o = __p.__offset(24); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetMainEquipment2IDBytes() { return __p.__vector_as_span<long>(24, 8); }
+  public Span<int> GetMainEquipment2TierBytes() { return __p.__vector_as_span<int>(24, 4); }
 #else
-  public ArraySegment<byte>? GetMainEquipment2IDBytes() { return __p.__vector_as_arraysegment(24); }
+  public ArraySegment<byte>? GetMainEquipment2TierBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public long[] GetMainEquipment2IDArray() { return __p.__vector_as_array<long>(24); }
+  public int[] GetMainEquipment2TierArray() { return __p.__vector_as_array<int>(24); }
   public int MainEquipment2Level(int j) { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
   public int MainEquipment2LevelLength { get { int o = __p.__offset(26); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -94,14 +94,14 @@ public struct FixedEchelonSettingExcel : IFlatbufferObject
   public ArraySegment<byte>? GetMainEquipment2LevelBytes() { return __p.__vector_as_arraysegment(26); }
 #endif
   public int[] GetMainEquipment2LevelArray() { return __p.__vector_as_array<int>(26); }
-  public long MainEquipment3ID(int j) { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int MainEquipment3IDLength { get { int o = __p.__offset(28); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int MainEquipment3Tier(int j) { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int MainEquipment3TierLength { get { int o = __p.__offset(28); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetMainEquipment3IDBytes() { return __p.__vector_as_span<long>(28, 8); }
+  public Span<int> GetMainEquipment3TierBytes() { return __p.__vector_as_span<int>(28, 4); }
 #else
-  public ArraySegment<byte>? GetMainEquipment3IDBytes() { return __p.__vector_as_arraysegment(28); }
+  public ArraySegment<byte>? GetMainEquipment3TierBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
-  public long[] GetMainEquipment3IDArray() { return __p.__vector_as_array<long>(28); }
+  public int[] GetMainEquipment3TierArray() { return __p.__vector_as_array<int>(28); }
   public int MainEquipment3Level(int j) { int o = __p.__offset(30); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
   public int MainEquipment3LevelLength { get { int o = __p.__offset(30); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -110,94 +110,159 @@ public struct FixedEchelonSettingExcel : IFlatbufferObject
   public ArraySegment<byte>? GetMainEquipment3LevelBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
   public int[] GetMainEquipment3LevelArray() { return __p.__vector_as_array<int>(30); }
-  public long SupportCharacterID(int j) { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int SupportCharacterIDLength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int MainCharacterWeaponGrade(int j) { int o = __p.__offset(32); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int MainCharacterWeaponGradeLength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetSupportCharacterIDBytes() { return __p.__vector_as_span<long>(32, 8); }
+  public Span<int> GetMainCharacterWeaponGradeBytes() { return __p.__vector_as_span<int>(32, 4); }
 #else
-  public ArraySegment<byte>? GetSupportCharacterIDBytes() { return __p.__vector_as_arraysegment(32); }
+  public ArraySegment<byte>? GetMainCharacterWeaponGradeBytes() { return __p.__vector_as_arraysegment(32); }
 #endif
-  public long[] GetSupportCharacterIDArray() { return __p.__vector_as_array<long>(32); }
-  public int SupportLevel(int j) { int o = __p.__offset(34); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int SupportLevelLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetMainCharacterWeaponGradeArray() { return __p.__vector_as_array<int>(32); }
+  public int MainCharacterWeaponLevel(int j) { int o = __p.__offset(34); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int MainCharacterWeaponLevelLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetSupportLevelBytes() { return __p.__vector_as_span<int>(34, 4); }
+  public Span<int> GetMainCharacterWeaponLevelBytes() { return __p.__vector_as_span<int>(34, 4); }
 #else
-  public ArraySegment<byte>? GetSupportLevelBytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetMainCharacterWeaponLevelBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
-  public int[] GetSupportLevelArray() { return __p.__vector_as_array<int>(34); }
-  public int SupportGrade(int j) { int o = __p.__offset(36); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int SupportGradeLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetMainCharacterWeaponLevelArray() { return __p.__vector_as_array<int>(34); }
+  public int MainCharacterGearTier(int j) { int o = __p.__offset(36); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int MainCharacterGearTierLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetSupportGradeBytes() { return __p.__vector_as_span<int>(36, 4); }
+  public Span<int> GetMainCharacterGearTierBytes() { return __p.__vector_as_span<int>(36, 4); }
 #else
-  public ArraySegment<byte>? GetSupportGradeBytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetMainCharacterGearTierBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public int[] GetSupportGradeArray() { return __p.__vector_as_array<int>(36); }
-  public int SupportExSkillLevel(int j) { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int SupportExSkillLevelLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetMainCharacterGearTierArray() { return __p.__vector_as_array<int>(36); }
+  public int MainCharacterGearLevel(int j) { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int MainCharacterGearLevelLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetSupportExSkillLevelBytes() { return __p.__vector_as_span<int>(38, 4); }
+  public Span<int> GetMainCharacterGearLevelBytes() { return __p.__vector_as_span<int>(38, 4); }
 #else
-  public ArraySegment<byte>? GetSupportExSkillLevelBytes() { return __p.__vector_as_arraysegment(38); }
+  public ArraySegment<byte>? GetMainCharacterGearLevelBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public int[] GetSupportExSkillLevelArray() { return __p.__vector_as_array<int>(38); }
-  public int SupportNoneExSkillLevel(int j) { int o = __p.__offset(40); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int SupportNoneExSkillLevelLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetMainCharacterGearLevelArray() { return __p.__vector_as_array<int>(38); }
+  public long SupportCharacterID(int j) { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int SupportCharacterIDLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetSupportNoneExSkillLevelBytes() { return __p.__vector_as_span<int>(40, 4); }
+  public Span<long> GetSupportCharacterIDBytes() { return __p.__vector_as_span<long>(40, 8); }
 #else
-  public ArraySegment<byte>? GetSupportNoneExSkillLevelBytes() { return __p.__vector_as_arraysegment(40); }
+  public ArraySegment<byte>? GetSupportCharacterIDBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
-  public int[] GetSupportNoneExSkillLevelArray() { return __p.__vector_as_array<int>(40); }
-  public long SupportEquipment1ID(int j) { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int SupportEquipment1IDLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetSupportCharacterIDArray() { return __p.__vector_as_array<long>(40); }
+  public int SupportLevel(int j) { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportLevelLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetSupportEquipment1IDBytes() { return __p.__vector_as_span<long>(42, 8); }
+  public Span<int> GetSupportLevelBytes() { return __p.__vector_as_span<int>(42, 4); }
 #else
-  public ArraySegment<byte>? GetSupportEquipment1IDBytes() { return __p.__vector_as_arraysegment(42); }
+  public ArraySegment<byte>? GetSupportLevelBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public long[] GetSupportEquipment1IDArray() { return __p.__vector_as_array<long>(42); }
-  public int SupportEquipment1Level(int j) { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int SupportEquipment1LevelLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetSupportLevelArray() { return __p.__vector_as_array<int>(42); }
+  public int SupportGrade(int j) { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportGradeLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetSupportEquipment1LevelBytes() { return __p.__vector_as_span<int>(44, 4); }
+  public Span<int> GetSupportGradeBytes() { return __p.__vector_as_span<int>(44, 4); }
 #else
-  public ArraySegment<byte>? GetSupportEquipment1LevelBytes() { return __p.__vector_as_arraysegment(44); }
+  public ArraySegment<byte>? GetSupportGradeBytes() { return __p.__vector_as_arraysegment(44); }
 #endif
-  public int[] GetSupportEquipment1LevelArray() { return __p.__vector_as_array<int>(44); }
-  public long SupportEquipment2ID(int j) { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int SupportEquipment2IDLength { get { int o = __p.__offset(46); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetSupportGradeArray() { return __p.__vector_as_array<int>(44); }
+  public int SupportExSkillLevel(int j) { int o = __p.__offset(46); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportExSkillLevelLength { get { int o = __p.__offset(46); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetSupportEquipment2IDBytes() { return __p.__vector_as_span<long>(46, 8); }
+  public Span<int> GetSupportExSkillLevelBytes() { return __p.__vector_as_span<int>(46, 4); }
 #else
-  public ArraySegment<byte>? GetSupportEquipment2IDBytes() { return __p.__vector_as_arraysegment(46); }
+  public ArraySegment<byte>? GetSupportExSkillLevelBytes() { return __p.__vector_as_arraysegment(46); }
 #endif
-  public long[] GetSupportEquipment2IDArray() { return __p.__vector_as_array<long>(46); }
-  public int SupportEquipment2Level(int j) { int o = __p.__offset(48); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int SupportEquipment2LevelLength { get { int o = __p.__offset(48); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetSupportExSkillLevelArray() { return __p.__vector_as_array<int>(46); }
+  public int SupportNoneExSkillLevel(int j) { int o = __p.__offset(48); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportNoneExSkillLevelLength { get { int o = __p.__offset(48); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetSupportEquipment2LevelBytes() { return __p.__vector_as_span<int>(48, 4); }
+  public Span<int> GetSupportNoneExSkillLevelBytes() { return __p.__vector_as_span<int>(48, 4); }
 #else
-  public ArraySegment<byte>? GetSupportEquipment2LevelBytes() { return __p.__vector_as_arraysegment(48); }
+  public ArraySegment<byte>? GetSupportNoneExSkillLevelBytes() { return __p.__vector_as_arraysegment(48); }
 #endif
-  public int[] GetSupportEquipment2LevelArray() { return __p.__vector_as_array<int>(48); }
-  public long SupportEquipment3ID(int j) { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int SupportEquipment3IDLength { get { int o = __p.__offset(50); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetSupportNoneExSkillLevelArray() { return __p.__vector_as_array<int>(48); }
+  public int SupportEquipment1Tier(int j) { int o = __p.__offset(50); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportEquipment1TierLength { get { int o = __p.__offset(50); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetSupportEquipment3IDBytes() { return __p.__vector_as_span<long>(50, 8); }
+  public Span<int> GetSupportEquipment1TierBytes() { return __p.__vector_as_span<int>(50, 4); }
 #else
-  public ArraySegment<byte>? GetSupportEquipment3IDBytes() { return __p.__vector_as_arraysegment(50); }
+  public ArraySegment<byte>? GetSupportEquipment1TierBytes() { return __p.__vector_as_arraysegment(50); }
 #endif
-  public long[] GetSupportEquipment3IDArray() { return __p.__vector_as_array<long>(50); }
-  public int SupportEquipment3Level(int j) { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int SupportEquipment3LevelLength { get { int o = __p.__offset(52); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetSupportEquipment1TierArray() { return __p.__vector_as_array<int>(50); }
+  public int SupportEquipment1Level(int j) { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportEquipment1LevelLength { get { int o = __p.__offset(52); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetSupportEquipment3LevelBytes() { return __p.__vector_as_span<int>(52, 4); }
+  public Span<int> GetSupportEquipment1LevelBytes() { return __p.__vector_as_span<int>(52, 4); }
 #else
-  public ArraySegment<byte>? GetSupportEquipment3LevelBytes() { return __p.__vector_as_arraysegment(52); }
+  public ArraySegment<byte>? GetSupportEquipment1LevelBytes() { return __p.__vector_as_arraysegment(52); }
 #endif
-  public int[] GetSupportEquipment3LevelArray() { return __p.__vector_as_array<int>(52); }
+  public int[] GetSupportEquipment1LevelArray() { return __p.__vector_as_array<int>(52); }
+  public int SupportEquipment2Tier(int j) { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportEquipment2TierLength { get { int o = __p.__offset(54); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetSupportEquipment2TierBytes() { return __p.__vector_as_span<int>(54, 4); }
+#else
+  public ArraySegment<byte>? GetSupportEquipment2TierBytes() { return __p.__vector_as_arraysegment(54); }
+#endif
+  public int[] GetSupportEquipment2TierArray() { return __p.__vector_as_array<int>(54); }
+  public int SupportEquipment2Level(int j) { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportEquipment2LevelLength { get { int o = __p.__offset(56); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetSupportEquipment2LevelBytes() { return __p.__vector_as_span<int>(56, 4); }
+#else
+  public ArraySegment<byte>? GetSupportEquipment2LevelBytes() { return __p.__vector_as_arraysegment(56); }
+#endif
+  public int[] GetSupportEquipment2LevelArray() { return __p.__vector_as_array<int>(56); }
+  public int SupportEquipment3Tier(int j) { int o = __p.__offset(58); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportEquipment3TierLength { get { int o = __p.__offset(58); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetSupportEquipment3TierBytes() { return __p.__vector_as_span<int>(58, 4); }
+#else
+  public ArraySegment<byte>? GetSupportEquipment3TierBytes() { return __p.__vector_as_arraysegment(58); }
+#endif
+  public int[] GetSupportEquipment3TierArray() { return __p.__vector_as_array<int>(58); }
+  public int SupportEquipment3Level(int j) { int o = __p.__offset(60); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportEquipment3LevelLength { get { int o = __p.__offset(60); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetSupportEquipment3LevelBytes() { return __p.__vector_as_span<int>(60, 4); }
+#else
+  public ArraySegment<byte>? GetSupportEquipment3LevelBytes() { return __p.__vector_as_arraysegment(60); }
+#endif
+  public int[] GetSupportEquipment3LevelArray() { return __p.__vector_as_array<int>(60); }
+  public int SupportCharacterWeaponGrade(int j) { int o = __p.__offset(62); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportCharacterWeaponGradeLength { get { int o = __p.__offset(62); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetSupportCharacterWeaponGradeBytes() { return __p.__vector_as_span<int>(62, 4); }
+#else
+  public ArraySegment<byte>? GetSupportCharacterWeaponGradeBytes() { return __p.__vector_as_arraysegment(62); }
+#endif
+  public int[] GetSupportCharacterWeaponGradeArray() { return __p.__vector_as_array<int>(62); }
+  public int SupportCharacterWeaponLevel(int j) { int o = __p.__offset(64); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportCharacterWeaponLevelLength { get { int o = __p.__offset(64); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetSupportCharacterWeaponLevelBytes() { return __p.__vector_as_span<int>(64, 4); }
+#else
+  public ArraySegment<byte>? GetSupportCharacterWeaponLevelBytes() { return __p.__vector_as_arraysegment(64); }
+#endif
+  public int[] GetSupportCharacterWeaponLevelArray() { return __p.__vector_as_array<int>(64); }
+  public int SupportCharacterGearTier(int j) { int o = __p.__offset(66); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportCharacterGearTierLength { get { int o = __p.__offset(66); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetSupportCharacterGearTierBytes() { return __p.__vector_as_span<int>(66, 4); }
+#else
+  public ArraySegment<byte>? GetSupportCharacterGearTierBytes() { return __p.__vector_as_arraysegment(66); }
+#endif
+  public int[] GetSupportCharacterGearTierArray() { return __p.__vector_as_array<int>(66); }
+  public int SupportCharacterGearLevel(int j) { int o = __p.__offset(68); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int SupportCharacterGearLevelLength { get { int o = __p.__offset(68); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetSupportCharacterGearLevelBytes() { return __p.__vector_as_span<int>(68, 4); }
+#else
+  public ArraySegment<byte>? GetSupportCharacterGearLevelBytes() { return __p.__vector_as_arraysegment(68); }
+#endif
+  public int[] GetSupportCharacterGearLevelArray() { return __p.__vector_as_array<int>(68); }
+  public long InteractionTSCharacterId { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.FixedEchelonSettingExcel> CreateFixedEchelonSettingExcel(FlatBufferBuilder builder,
       long FixedEchelonID = 0,
@@ -208,42 +273,60 @@ public struct FixedEchelonSettingExcel : IFlatbufferObject
       VectorOffset MainGradeOffset = default(VectorOffset),
       VectorOffset MainExSkillLevelOffset = default(VectorOffset),
       VectorOffset MainNoneExSkillLevelOffset = default(VectorOffset),
-      VectorOffset MainEquipment1IDOffset = default(VectorOffset),
+      VectorOffset MainEquipment1TierOffset = default(VectorOffset),
       VectorOffset MainEquipment1LevelOffset = default(VectorOffset),
-      VectorOffset MainEquipment2IDOffset = default(VectorOffset),
+      VectorOffset MainEquipment2TierOffset = default(VectorOffset),
       VectorOffset MainEquipment2LevelOffset = default(VectorOffset),
-      VectorOffset MainEquipment3IDOffset = default(VectorOffset),
+      VectorOffset MainEquipment3TierOffset = default(VectorOffset),
       VectorOffset MainEquipment3LevelOffset = default(VectorOffset),
+      VectorOffset MainCharacterWeaponGradeOffset = default(VectorOffset),
+      VectorOffset MainCharacterWeaponLevelOffset = default(VectorOffset),
+      VectorOffset MainCharacterGearTierOffset = default(VectorOffset),
+      VectorOffset MainCharacterGearLevelOffset = default(VectorOffset),
       VectorOffset SupportCharacterIDOffset = default(VectorOffset),
       VectorOffset SupportLevelOffset = default(VectorOffset),
       VectorOffset SupportGradeOffset = default(VectorOffset),
       VectorOffset SupportExSkillLevelOffset = default(VectorOffset),
       VectorOffset SupportNoneExSkillLevelOffset = default(VectorOffset),
-      VectorOffset SupportEquipment1IDOffset = default(VectorOffset),
+      VectorOffset SupportEquipment1TierOffset = default(VectorOffset),
       VectorOffset SupportEquipment1LevelOffset = default(VectorOffset),
-      VectorOffset SupportEquipment2IDOffset = default(VectorOffset),
+      VectorOffset SupportEquipment2TierOffset = default(VectorOffset),
       VectorOffset SupportEquipment2LevelOffset = default(VectorOffset),
-      VectorOffset SupportEquipment3IDOffset = default(VectorOffset),
-      VectorOffset SupportEquipment3LevelOffset = default(VectorOffset)) {
-    builder.StartTable(25);
+      VectorOffset SupportEquipment3TierOffset = default(VectorOffset),
+      VectorOffset SupportEquipment3LevelOffset = default(VectorOffset),
+      VectorOffset SupportCharacterWeaponGradeOffset = default(VectorOffset),
+      VectorOffset SupportCharacterWeaponLevelOffset = default(VectorOffset),
+      VectorOffset SupportCharacterGearTierOffset = default(VectorOffset),
+      VectorOffset SupportCharacterGearLevelOffset = default(VectorOffset),
+      long InteractionTSCharacterId = 0) {
+    builder.StartTable(34);
+    FixedEchelonSettingExcel.AddInteractionTSCharacterId(builder, InteractionTSCharacterId);
     FixedEchelonSettingExcel.AddFixedEchelonID(builder, FixedEchelonID);
+    FixedEchelonSettingExcel.AddSupportCharacterGearLevel(builder, SupportCharacterGearLevelOffset);
+    FixedEchelonSettingExcel.AddSupportCharacterGearTier(builder, SupportCharacterGearTierOffset);
+    FixedEchelonSettingExcel.AddSupportCharacterWeaponLevel(builder, SupportCharacterWeaponLevelOffset);
+    FixedEchelonSettingExcel.AddSupportCharacterWeaponGrade(builder, SupportCharacterWeaponGradeOffset);
     FixedEchelonSettingExcel.AddSupportEquipment3Level(builder, SupportEquipment3LevelOffset);
-    FixedEchelonSettingExcel.AddSupportEquipment3ID(builder, SupportEquipment3IDOffset);
+    FixedEchelonSettingExcel.AddSupportEquipment3Tier(builder, SupportEquipment3TierOffset);
     FixedEchelonSettingExcel.AddSupportEquipment2Level(builder, SupportEquipment2LevelOffset);
-    FixedEchelonSettingExcel.AddSupportEquipment2ID(builder, SupportEquipment2IDOffset);
+    FixedEchelonSettingExcel.AddSupportEquipment2Tier(builder, SupportEquipment2TierOffset);
     FixedEchelonSettingExcel.AddSupportEquipment1Level(builder, SupportEquipment1LevelOffset);
-    FixedEchelonSettingExcel.AddSupportEquipment1ID(builder, SupportEquipment1IDOffset);
+    FixedEchelonSettingExcel.AddSupportEquipment1Tier(builder, SupportEquipment1TierOffset);
     FixedEchelonSettingExcel.AddSupportNoneExSkillLevel(builder, SupportNoneExSkillLevelOffset);
     FixedEchelonSettingExcel.AddSupportExSkillLevel(builder, SupportExSkillLevelOffset);
     FixedEchelonSettingExcel.AddSupportGrade(builder, SupportGradeOffset);
     FixedEchelonSettingExcel.AddSupportLevel(builder, SupportLevelOffset);
     FixedEchelonSettingExcel.AddSupportCharacterID(builder, SupportCharacterIDOffset);
+    FixedEchelonSettingExcel.AddMainCharacterGearLevel(builder, MainCharacterGearLevelOffset);
+    FixedEchelonSettingExcel.AddMainCharacterGearTier(builder, MainCharacterGearTierOffset);
+    FixedEchelonSettingExcel.AddMainCharacterWeaponLevel(builder, MainCharacterWeaponLevelOffset);
+    FixedEchelonSettingExcel.AddMainCharacterWeaponGrade(builder, MainCharacterWeaponGradeOffset);
     FixedEchelonSettingExcel.AddMainEquipment3Level(builder, MainEquipment3LevelOffset);
-    FixedEchelonSettingExcel.AddMainEquipment3ID(builder, MainEquipment3IDOffset);
+    FixedEchelonSettingExcel.AddMainEquipment3Tier(builder, MainEquipment3TierOffset);
     FixedEchelonSettingExcel.AddMainEquipment2Level(builder, MainEquipment2LevelOffset);
-    FixedEchelonSettingExcel.AddMainEquipment2ID(builder, MainEquipment2IDOffset);
+    FixedEchelonSettingExcel.AddMainEquipment2Tier(builder, MainEquipment2TierOffset);
     FixedEchelonSettingExcel.AddMainEquipment1Level(builder, MainEquipment1LevelOffset);
-    FixedEchelonSettingExcel.AddMainEquipment1ID(builder, MainEquipment1IDOffset);
+    FixedEchelonSettingExcel.AddMainEquipment1Tier(builder, MainEquipment1TierOffset);
     FixedEchelonSettingExcel.AddMainNoneExSkillLevel(builder, MainNoneExSkillLevelOffset);
     FixedEchelonSettingExcel.AddMainExSkillLevel(builder, MainExSkillLevelOffset);
     FixedEchelonSettingExcel.AddMainGrade(builder, MainGradeOffset);
@@ -254,7 +337,7 @@ public struct FixedEchelonSettingExcel : IFlatbufferObject
     return FixedEchelonSettingExcel.EndFixedEchelonSettingExcel(builder);
   }
 
-  public static void StartFixedEchelonSettingExcel(FlatBufferBuilder builder) { builder.StartTable(25); }
+  public static void StartFixedEchelonSettingExcel(FlatBufferBuilder builder) { builder.StartTable(34); }
   public static void AddFixedEchelonID(FlatBufferBuilder builder, long FixedEchelonID) { builder.AddLong(0, FixedEchelonID, 0); }
   public static void AddEchelonSceneSkip(FlatBufferBuilder builder, bool EchelonSceneSkip) { builder.AddBool(1, EchelonSceneSkip, false); }
   public static void AddMainLeaderSlot(FlatBufferBuilder builder, int MainLeaderSlot) { builder.AddInt(2, MainLeaderSlot, 0); }
@@ -288,108 +371,157 @@ public struct FixedEchelonSettingExcel : IFlatbufferObject
   public static VectorOffset CreateMainNoneExSkillLevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMainNoneExSkillLevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartMainNoneExSkillLevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddMainEquipment1ID(FlatBufferBuilder builder, VectorOffset MainEquipment1IDOffset) { builder.AddOffset(8, MainEquipment1IDOffset.Value, 0); }
-  public static VectorOffset CreateMainEquipment1IDVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateMainEquipment1IDVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateMainEquipment1IDVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateMainEquipment1IDVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartMainEquipment1IDVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddMainEquipment1Tier(FlatBufferBuilder builder, VectorOffset MainEquipment1TierOffset) { builder.AddOffset(8, MainEquipment1TierOffset.Value, 0); }
+  public static VectorOffset CreateMainEquipment1TierVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateMainEquipment1TierVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainEquipment1TierVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainEquipment1TierVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartMainEquipment1TierVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddMainEquipment1Level(FlatBufferBuilder builder, VectorOffset MainEquipment1LevelOffset) { builder.AddOffset(9, MainEquipment1LevelOffset.Value, 0); }
   public static VectorOffset CreateMainEquipment1LevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateMainEquipment1LevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMainEquipment1LevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMainEquipment1LevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartMainEquipment1LevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddMainEquipment2ID(FlatBufferBuilder builder, VectorOffset MainEquipment2IDOffset) { builder.AddOffset(10, MainEquipment2IDOffset.Value, 0); }
-  public static VectorOffset CreateMainEquipment2IDVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateMainEquipment2IDVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateMainEquipment2IDVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateMainEquipment2IDVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartMainEquipment2IDVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddMainEquipment2Tier(FlatBufferBuilder builder, VectorOffset MainEquipment2TierOffset) { builder.AddOffset(10, MainEquipment2TierOffset.Value, 0); }
+  public static VectorOffset CreateMainEquipment2TierVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateMainEquipment2TierVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainEquipment2TierVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainEquipment2TierVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartMainEquipment2TierVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddMainEquipment2Level(FlatBufferBuilder builder, VectorOffset MainEquipment2LevelOffset) { builder.AddOffset(11, MainEquipment2LevelOffset.Value, 0); }
   public static VectorOffset CreateMainEquipment2LevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateMainEquipment2LevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMainEquipment2LevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMainEquipment2LevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartMainEquipment2LevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddMainEquipment3ID(FlatBufferBuilder builder, VectorOffset MainEquipment3IDOffset) { builder.AddOffset(12, MainEquipment3IDOffset.Value, 0); }
-  public static VectorOffset CreateMainEquipment3IDVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateMainEquipment3IDVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateMainEquipment3IDVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateMainEquipment3IDVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartMainEquipment3IDVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddMainEquipment3Tier(FlatBufferBuilder builder, VectorOffset MainEquipment3TierOffset) { builder.AddOffset(12, MainEquipment3TierOffset.Value, 0); }
+  public static VectorOffset CreateMainEquipment3TierVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateMainEquipment3TierVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainEquipment3TierVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainEquipment3TierVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartMainEquipment3TierVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddMainEquipment3Level(FlatBufferBuilder builder, VectorOffset MainEquipment3LevelOffset) { builder.AddOffset(13, MainEquipment3LevelOffset.Value, 0); }
   public static VectorOffset CreateMainEquipment3LevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateMainEquipment3LevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMainEquipment3LevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMainEquipment3LevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartMainEquipment3LevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSupportCharacterID(FlatBufferBuilder builder, VectorOffset SupportCharacterIDOffset) { builder.AddOffset(14, SupportCharacterIDOffset.Value, 0); }
+  public static void AddMainCharacterWeaponGrade(FlatBufferBuilder builder, VectorOffset MainCharacterWeaponGradeOffset) { builder.AddOffset(14, MainCharacterWeaponGradeOffset.Value, 0); }
+  public static VectorOffset CreateMainCharacterWeaponGradeVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateMainCharacterWeaponGradeVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainCharacterWeaponGradeVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainCharacterWeaponGradeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartMainCharacterWeaponGradeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddMainCharacterWeaponLevel(FlatBufferBuilder builder, VectorOffset MainCharacterWeaponLevelOffset) { builder.AddOffset(15, MainCharacterWeaponLevelOffset.Value, 0); }
+  public static VectorOffset CreateMainCharacterWeaponLevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateMainCharacterWeaponLevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainCharacterWeaponLevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainCharacterWeaponLevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartMainCharacterWeaponLevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddMainCharacterGearTier(FlatBufferBuilder builder, VectorOffset MainCharacterGearTierOffset) { builder.AddOffset(16, MainCharacterGearTierOffset.Value, 0); }
+  public static VectorOffset CreateMainCharacterGearTierVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateMainCharacterGearTierVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainCharacterGearTierVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainCharacterGearTierVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartMainCharacterGearTierVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddMainCharacterGearLevel(FlatBufferBuilder builder, VectorOffset MainCharacterGearLevelOffset) { builder.AddOffset(17, MainCharacterGearLevelOffset.Value, 0); }
+  public static VectorOffset CreateMainCharacterGearLevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateMainCharacterGearLevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainCharacterGearLevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMainCharacterGearLevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartMainCharacterGearLevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddSupportCharacterID(FlatBufferBuilder builder, VectorOffset SupportCharacterIDOffset) { builder.AddOffset(18, SupportCharacterIDOffset.Value, 0); }
   public static VectorOffset CreateSupportCharacterIDVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateSupportCharacterIDVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportCharacterIDVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportCharacterIDVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartSupportCharacterIDVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddSupportLevel(FlatBufferBuilder builder, VectorOffset SupportLevelOffset) { builder.AddOffset(15, SupportLevelOffset.Value, 0); }
+  public static void AddSupportLevel(FlatBufferBuilder builder, VectorOffset SupportLevelOffset) { builder.AddOffset(19, SupportLevelOffset.Value, 0); }
   public static VectorOffset CreateSupportLevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateSupportLevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportLevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportLevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartSupportLevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSupportGrade(FlatBufferBuilder builder, VectorOffset SupportGradeOffset) { builder.AddOffset(16, SupportGradeOffset.Value, 0); }
+  public static void AddSupportGrade(FlatBufferBuilder builder, VectorOffset SupportGradeOffset) { builder.AddOffset(20, SupportGradeOffset.Value, 0); }
   public static VectorOffset CreateSupportGradeVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateSupportGradeVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportGradeVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportGradeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartSupportGradeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSupportExSkillLevel(FlatBufferBuilder builder, VectorOffset SupportExSkillLevelOffset) { builder.AddOffset(17, SupportExSkillLevelOffset.Value, 0); }
+  public static void AddSupportExSkillLevel(FlatBufferBuilder builder, VectorOffset SupportExSkillLevelOffset) { builder.AddOffset(21, SupportExSkillLevelOffset.Value, 0); }
   public static VectorOffset CreateSupportExSkillLevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateSupportExSkillLevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportExSkillLevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportExSkillLevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartSupportExSkillLevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSupportNoneExSkillLevel(FlatBufferBuilder builder, VectorOffset SupportNoneExSkillLevelOffset) { builder.AddOffset(18, SupportNoneExSkillLevelOffset.Value, 0); }
+  public static void AddSupportNoneExSkillLevel(FlatBufferBuilder builder, VectorOffset SupportNoneExSkillLevelOffset) { builder.AddOffset(22, SupportNoneExSkillLevelOffset.Value, 0); }
   public static VectorOffset CreateSupportNoneExSkillLevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateSupportNoneExSkillLevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportNoneExSkillLevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportNoneExSkillLevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartSupportNoneExSkillLevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSupportEquipment1ID(FlatBufferBuilder builder, VectorOffset SupportEquipment1IDOffset) { builder.AddOffset(19, SupportEquipment1IDOffset.Value, 0); }
-  public static VectorOffset CreateSupportEquipment1IDVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateSupportEquipment1IDVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSupportEquipment1IDVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSupportEquipment1IDVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartSupportEquipment1IDVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddSupportEquipment1Level(FlatBufferBuilder builder, VectorOffset SupportEquipment1LevelOffset) { builder.AddOffset(20, SupportEquipment1LevelOffset.Value, 0); }
+  public static void AddSupportEquipment1Tier(FlatBufferBuilder builder, VectorOffset SupportEquipment1TierOffset) { builder.AddOffset(23, SupportEquipment1TierOffset.Value, 0); }
+  public static VectorOffset CreateSupportEquipment1TierVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateSupportEquipment1TierVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportEquipment1TierVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportEquipment1TierVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSupportEquipment1TierVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddSupportEquipment1Level(FlatBufferBuilder builder, VectorOffset SupportEquipment1LevelOffset) { builder.AddOffset(24, SupportEquipment1LevelOffset.Value, 0); }
   public static VectorOffset CreateSupportEquipment1LevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateSupportEquipment1LevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportEquipment1LevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportEquipment1LevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartSupportEquipment1LevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSupportEquipment2ID(FlatBufferBuilder builder, VectorOffset SupportEquipment2IDOffset) { builder.AddOffset(21, SupportEquipment2IDOffset.Value, 0); }
-  public static VectorOffset CreateSupportEquipment2IDVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateSupportEquipment2IDVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSupportEquipment2IDVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSupportEquipment2IDVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartSupportEquipment2IDVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddSupportEquipment2Level(FlatBufferBuilder builder, VectorOffset SupportEquipment2LevelOffset) { builder.AddOffset(22, SupportEquipment2LevelOffset.Value, 0); }
+  public static void AddSupportEquipment2Tier(FlatBufferBuilder builder, VectorOffset SupportEquipment2TierOffset) { builder.AddOffset(25, SupportEquipment2TierOffset.Value, 0); }
+  public static VectorOffset CreateSupportEquipment2TierVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateSupportEquipment2TierVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportEquipment2TierVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportEquipment2TierVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSupportEquipment2TierVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddSupportEquipment2Level(FlatBufferBuilder builder, VectorOffset SupportEquipment2LevelOffset) { builder.AddOffset(26, SupportEquipment2LevelOffset.Value, 0); }
   public static VectorOffset CreateSupportEquipment2LevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateSupportEquipment2LevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportEquipment2LevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportEquipment2LevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartSupportEquipment2LevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSupportEquipment3ID(FlatBufferBuilder builder, VectorOffset SupportEquipment3IDOffset) { builder.AddOffset(23, SupportEquipment3IDOffset.Value, 0); }
-  public static VectorOffset CreateSupportEquipment3IDVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
-  public static VectorOffset CreateSupportEquipment3IDVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSupportEquipment3IDVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSupportEquipment3IDVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartSupportEquipment3IDVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddSupportEquipment3Level(FlatBufferBuilder builder, VectorOffset SupportEquipment3LevelOffset) { builder.AddOffset(24, SupportEquipment3LevelOffset.Value, 0); }
+  public static void AddSupportEquipment3Tier(FlatBufferBuilder builder, VectorOffset SupportEquipment3TierOffset) { builder.AddOffset(27, SupportEquipment3TierOffset.Value, 0); }
+  public static VectorOffset CreateSupportEquipment3TierVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateSupportEquipment3TierVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportEquipment3TierVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportEquipment3TierVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSupportEquipment3TierVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddSupportEquipment3Level(FlatBufferBuilder builder, VectorOffset SupportEquipment3LevelOffset) { builder.AddOffset(28, SupportEquipment3LevelOffset.Value, 0); }
   public static VectorOffset CreateSupportEquipment3LevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateSupportEquipment3LevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportEquipment3LevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSupportEquipment3LevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartSupportEquipment3LevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddSupportCharacterWeaponGrade(FlatBufferBuilder builder, VectorOffset SupportCharacterWeaponGradeOffset) { builder.AddOffset(29, SupportCharacterWeaponGradeOffset.Value, 0); }
+  public static VectorOffset CreateSupportCharacterWeaponGradeVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateSupportCharacterWeaponGradeVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportCharacterWeaponGradeVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportCharacterWeaponGradeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSupportCharacterWeaponGradeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddSupportCharacterWeaponLevel(FlatBufferBuilder builder, VectorOffset SupportCharacterWeaponLevelOffset) { builder.AddOffset(30, SupportCharacterWeaponLevelOffset.Value, 0); }
+  public static VectorOffset CreateSupportCharacterWeaponLevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateSupportCharacterWeaponLevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportCharacterWeaponLevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportCharacterWeaponLevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSupportCharacterWeaponLevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddSupportCharacterGearTier(FlatBufferBuilder builder, VectorOffset SupportCharacterGearTierOffset) { builder.AddOffset(31, SupportCharacterGearTierOffset.Value, 0); }
+  public static VectorOffset CreateSupportCharacterGearTierVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateSupportCharacterGearTierVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportCharacterGearTierVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportCharacterGearTierVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSupportCharacterGearTierVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddSupportCharacterGearLevel(FlatBufferBuilder builder, VectorOffset SupportCharacterGearLevelOffset) { builder.AddOffset(32, SupportCharacterGearLevelOffset.Value, 0); }
+  public static VectorOffset CreateSupportCharacterGearLevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateSupportCharacterGearLevelVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportCharacterGearLevelVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSupportCharacterGearLevelVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSupportCharacterGearLevelVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddInteractionTSCharacterId(FlatBufferBuilder builder, long InteractionTSCharacterId) { builder.AddLong(33, InteractionTSCharacterId, 0); }
   public static Offset<FlatDataGlobal.FixedEchelonSettingExcel> EndFixedEchelonSettingExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.FixedEchelonSettingExcel>(o);

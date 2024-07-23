@@ -26,44 +26,45 @@ public struct CharacterSkillListExcel : IFlatbufferObject
   public bool IsRootMotion { get { int o = __p.__offset(12); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool IsMoveLeftRight { get { int o = __p.__offset(14); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool UseRandomAnimation { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string NormalSkillGroupId(int j) { int o = __p.__offset(18); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int NormalSkillGroupIdLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public int NormalSkillTimeLineIndex(int j) { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int NormalSkillTimeLineIndexLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long TSAInteractionId { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string NormalSkillGroupId(int j) { int o = __p.__offset(20); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int NormalSkillGroupIdLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int NormalSkillTimeLineIndex(int j) { int o = __p.__offset(22); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int NormalSkillTimeLineIndexLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetNormalSkillTimeLineIndexBytes() { return __p.__vector_as_span<int>(20, 4); }
+  public Span<int> GetNormalSkillTimeLineIndexBytes() { return __p.__vector_as_span<int>(22, 4); }
 #else
-  public ArraySegment<byte>? GetNormalSkillTimeLineIndexBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetNormalSkillTimeLineIndexBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public int[] GetNormalSkillTimeLineIndexArray() { return __p.__vector_as_array<int>(20); }
-  public string ExSkillGroupId(int j) { int o = __p.__offset(22); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int ExSkillGroupIdLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public int ExSkillTimeLineIndex(int j) { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int ExSkillTimeLineIndexLength { get { int o = __p.__offset(24); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetNormalSkillTimeLineIndexArray() { return __p.__vector_as_array<int>(22); }
+  public string ExSkillGroupId(int j) { int o = __p.__offset(24); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int ExSkillGroupIdLength { get { int o = __p.__offset(24); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int ExSkillTimeLineIndex(int j) { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int ExSkillTimeLineIndexLength { get { int o = __p.__offset(26); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetExSkillTimeLineIndexBytes() { return __p.__vector_as_span<int>(24, 4); }
+  public Span<int> GetExSkillTimeLineIndexBytes() { return __p.__vector_as_span<int>(26, 4); }
 #else
-  public ArraySegment<byte>? GetExSkillTimeLineIndexBytes() { return __p.__vector_as_arraysegment(24); }
+  public ArraySegment<byte>? GetExSkillTimeLineIndexBytes() { return __p.__vector_as_arraysegment(26); }
 #endif
-  public int[] GetExSkillTimeLineIndexArray() { return __p.__vector_as_array<int>(24); }
-  public string PublicSkillGroupId(int j) { int o = __p.__offset(26); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int PublicSkillGroupIdLength { get { int o = __p.__offset(26); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public int PublicSkillTimeLineIndex(int j) { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int PublicSkillTimeLineIndexLength { get { int o = __p.__offset(28); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetExSkillTimeLineIndexArray() { return __p.__vector_as_array<int>(26); }
+  public string PublicSkillGroupId(int j) { int o = __p.__offset(28); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int PublicSkillGroupIdLength { get { int o = __p.__offset(28); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int PublicSkillTimeLineIndex(int j) { int o = __p.__offset(30); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int PublicSkillTimeLineIndexLength { get { int o = __p.__offset(30); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetPublicSkillTimeLineIndexBytes() { return __p.__vector_as_span<int>(28, 4); }
+  public Span<int> GetPublicSkillTimeLineIndexBytes() { return __p.__vector_as_span<int>(30, 4); }
 #else
-  public ArraySegment<byte>? GetPublicSkillTimeLineIndexBytes() { return __p.__vector_as_arraysegment(28); }
+  public ArraySegment<byte>? GetPublicSkillTimeLineIndexBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
-  public int[] GetPublicSkillTimeLineIndexArray() { return __p.__vector_as_array<int>(28); }
-  public string PassiveSkillGroupId(int j) { int o = __p.__offset(30); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int PassiveSkillGroupIdLength { get { int o = __p.__offset(30); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string LeaderSkillGroupId(int j) { int o = __p.__offset(32); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int LeaderSkillGroupIdLength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string ExtraPassiveSkillGroupId(int j) { int o = __p.__offset(34); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int ExtraPassiveSkillGroupIdLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string HiddenPassiveSkillGroupId(int j) { int o = __p.__offset(36); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int HiddenPassiveSkillGroupIdLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int[] GetPublicSkillTimeLineIndexArray() { return __p.__vector_as_array<int>(30); }
+  public string PassiveSkillGroupId(int j) { int o = __p.__offset(32); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int PassiveSkillGroupIdLength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string LeaderSkillGroupId(int j) { int o = __p.__offset(34); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int LeaderSkillGroupIdLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string ExtraPassiveSkillGroupId(int j) { int o = __p.__offset(36); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int ExtraPassiveSkillGroupIdLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string HiddenPassiveSkillGroupId(int j) { int o = __p.__offset(38); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int HiddenPassiveSkillGroupIdLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
 
   public static Offset<FlatDataGlobal.CharacterSkillListExcel> CreateCharacterSkillListExcel(FlatBufferBuilder builder,
       long CharacterSkillListGroupId = 0,
@@ -73,6 +74,7 @@ public struct CharacterSkillListExcel : IFlatbufferObject
       bool IsRootMotion = false,
       bool IsMoveLeftRight = false,
       bool UseRandomAnimation = false,
+      long TSAInteractionId = 0,
       VectorOffset NormalSkillGroupIdOffset = default(VectorOffset),
       VectorOffset NormalSkillTimeLineIndexOffset = default(VectorOffset),
       VectorOffset ExSkillGroupIdOffset = default(VectorOffset),
@@ -83,7 +85,8 @@ public struct CharacterSkillListExcel : IFlatbufferObject
       VectorOffset LeaderSkillGroupIdOffset = default(VectorOffset),
       VectorOffset ExtraPassiveSkillGroupIdOffset = default(VectorOffset),
       VectorOffset HiddenPassiveSkillGroupIdOffset = default(VectorOffset)) {
-    builder.StartTable(17);
+    builder.StartTable(18);
+    CharacterSkillListExcel.AddTSAInteractionId(builder, TSAInteractionId);
     CharacterSkillListExcel.AddCharacterSkillListGroupId(builder, CharacterSkillListGroupId);
     CharacterSkillListExcel.AddHiddenPassiveSkillGroupId(builder, HiddenPassiveSkillGroupIdOffset);
     CharacterSkillListExcel.AddExtraPassiveSkillGroupId(builder, ExtraPassiveSkillGroupIdOffset);
@@ -104,7 +107,7 @@ public struct CharacterSkillListExcel : IFlatbufferObject
     return CharacterSkillListExcel.EndCharacterSkillListExcel(builder);
   }
 
-  public static void StartCharacterSkillListExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
+  public static void StartCharacterSkillListExcel(FlatBufferBuilder builder) { builder.StartTable(18); }
   public static void AddCharacterSkillListGroupId(FlatBufferBuilder builder, long CharacterSkillListGroupId) { builder.AddLong(0, CharacterSkillListGroupId, 0); }
   public static void AddMinimumGradeCharacterWeapon(FlatBufferBuilder builder, int MinimumGradeCharacterWeapon) { builder.AddInt(1, MinimumGradeCharacterWeapon, 0); }
   public static void AddMinimumTierCharacterGear(FlatBufferBuilder builder, int MinimumTierCharacterGear) { builder.AddInt(2, MinimumTierCharacterGear, 0); }
@@ -112,61 +115,62 @@ public struct CharacterSkillListExcel : IFlatbufferObject
   public static void AddIsRootMotion(FlatBufferBuilder builder, bool IsRootMotion) { builder.AddBool(4, IsRootMotion, false); }
   public static void AddIsMoveLeftRight(FlatBufferBuilder builder, bool IsMoveLeftRight) { builder.AddBool(5, IsMoveLeftRight, false); }
   public static void AddUseRandomAnimation(FlatBufferBuilder builder, bool UseRandomAnimation) { builder.AddBool(6, UseRandomAnimation, false); }
-  public static void AddNormalSkillGroupId(FlatBufferBuilder builder, VectorOffset NormalSkillGroupIdOffset) { builder.AddOffset(7, NormalSkillGroupIdOffset.Value, 0); }
+  public static void AddTSAInteractionId(FlatBufferBuilder builder, long TSAInteractionId) { builder.AddLong(7, TSAInteractionId, 0); }
+  public static void AddNormalSkillGroupId(FlatBufferBuilder builder, VectorOffset NormalSkillGroupIdOffset) { builder.AddOffset(8, NormalSkillGroupIdOffset.Value, 0); }
   public static VectorOffset CreateNormalSkillGroupIdVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateNormalSkillGroupIdVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateNormalSkillGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateNormalSkillGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartNormalSkillGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddNormalSkillTimeLineIndex(FlatBufferBuilder builder, VectorOffset NormalSkillTimeLineIndexOffset) { builder.AddOffset(8, NormalSkillTimeLineIndexOffset.Value, 0); }
+  public static void AddNormalSkillTimeLineIndex(FlatBufferBuilder builder, VectorOffset NormalSkillTimeLineIndexOffset) { builder.AddOffset(9, NormalSkillTimeLineIndexOffset.Value, 0); }
   public static VectorOffset CreateNormalSkillTimeLineIndexVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateNormalSkillTimeLineIndexVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateNormalSkillTimeLineIndexVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateNormalSkillTimeLineIndexVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartNormalSkillTimeLineIndexVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddExSkillGroupId(FlatBufferBuilder builder, VectorOffset ExSkillGroupIdOffset) { builder.AddOffset(9, ExSkillGroupIdOffset.Value, 0); }
+  public static void AddExSkillGroupId(FlatBufferBuilder builder, VectorOffset ExSkillGroupIdOffset) { builder.AddOffset(10, ExSkillGroupIdOffset.Value, 0); }
   public static VectorOffset CreateExSkillGroupIdVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateExSkillGroupIdVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateExSkillGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateExSkillGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartExSkillGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddExSkillTimeLineIndex(FlatBufferBuilder builder, VectorOffset ExSkillTimeLineIndexOffset) { builder.AddOffset(10, ExSkillTimeLineIndexOffset.Value, 0); }
+  public static void AddExSkillTimeLineIndex(FlatBufferBuilder builder, VectorOffset ExSkillTimeLineIndexOffset) { builder.AddOffset(11, ExSkillTimeLineIndexOffset.Value, 0); }
   public static VectorOffset CreateExSkillTimeLineIndexVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateExSkillTimeLineIndexVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateExSkillTimeLineIndexVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateExSkillTimeLineIndexVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartExSkillTimeLineIndexVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddPublicSkillGroupId(FlatBufferBuilder builder, VectorOffset PublicSkillGroupIdOffset) { builder.AddOffset(11, PublicSkillGroupIdOffset.Value, 0); }
+  public static void AddPublicSkillGroupId(FlatBufferBuilder builder, VectorOffset PublicSkillGroupIdOffset) { builder.AddOffset(12, PublicSkillGroupIdOffset.Value, 0); }
   public static VectorOffset CreatePublicSkillGroupIdVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreatePublicSkillGroupIdVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreatePublicSkillGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreatePublicSkillGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartPublicSkillGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddPublicSkillTimeLineIndex(FlatBufferBuilder builder, VectorOffset PublicSkillTimeLineIndexOffset) { builder.AddOffset(12, PublicSkillTimeLineIndexOffset.Value, 0); }
+  public static void AddPublicSkillTimeLineIndex(FlatBufferBuilder builder, VectorOffset PublicSkillTimeLineIndexOffset) { builder.AddOffset(13, PublicSkillTimeLineIndexOffset.Value, 0); }
   public static VectorOffset CreatePublicSkillTimeLineIndexVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreatePublicSkillTimeLineIndexVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreatePublicSkillTimeLineIndexVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreatePublicSkillTimeLineIndexVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartPublicSkillTimeLineIndexVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddPassiveSkillGroupId(FlatBufferBuilder builder, VectorOffset PassiveSkillGroupIdOffset) { builder.AddOffset(13, PassiveSkillGroupIdOffset.Value, 0); }
+  public static void AddPassiveSkillGroupId(FlatBufferBuilder builder, VectorOffset PassiveSkillGroupIdOffset) { builder.AddOffset(14, PassiveSkillGroupIdOffset.Value, 0); }
   public static VectorOffset CreatePassiveSkillGroupIdVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreatePassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreatePassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreatePassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartPassiveSkillGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddLeaderSkillGroupId(FlatBufferBuilder builder, VectorOffset LeaderSkillGroupIdOffset) { builder.AddOffset(14, LeaderSkillGroupIdOffset.Value, 0); }
+  public static void AddLeaderSkillGroupId(FlatBufferBuilder builder, VectorOffset LeaderSkillGroupIdOffset) { builder.AddOffset(15, LeaderSkillGroupIdOffset.Value, 0); }
   public static VectorOffset CreateLeaderSkillGroupIdVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateLeaderSkillGroupIdVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateLeaderSkillGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateLeaderSkillGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartLeaderSkillGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddExtraPassiveSkillGroupId(FlatBufferBuilder builder, VectorOffset ExtraPassiveSkillGroupIdOffset) { builder.AddOffset(15, ExtraPassiveSkillGroupIdOffset.Value, 0); }
+  public static void AddExtraPassiveSkillGroupId(FlatBufferBuilder builder, VectorOffset ExtraPassiveSkillGroupIdOffset) { builder.AddOffset(16, ExtraPassiveSkillGroupIdOffset.Value, 0); }
   public static VectorOffset CreateExtraPassiveSkillGroupIdVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateExtraPassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateExtraPassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateExtraPassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartExtraPassiveSkillGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddHiddenPassiveSkillGroupId(FlatBufferBuilder builder, VectorOffset HiddenPassiveSkillGroupIdOffset) { builder.AddOffset(16, HiddenPassiveSkillGroupIdOffset.Value, 0); }
+  public static void AddHiddenPassiveSkillGroupId(FlatBufferBuilder builder, VectorOffset HiddenPassiveSkillGroupIdOffset) { builder.AddOffset(17, HiddenPassiveSkillGroupIdOffset.Value, 0); }
   public static VectorOffset CreateHiddenPassiveSkillGroupIdVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateHiddenPassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateHiddenPassiveSkillGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
