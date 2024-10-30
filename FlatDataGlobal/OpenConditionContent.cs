@@ -61,6 +61,9 @@ public enum OpenConditionContent : int
   Cafe_2 = 51,
   Cafe_Invite_2 = 52,
   MultiFloorRaid = 53,
+  StrategySkip = 54,
+  MinigameDreamMaker = 55,
+  Temp = 56,
 };
 
 

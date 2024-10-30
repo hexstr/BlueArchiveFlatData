@@ -77,21 +77,21 @@ public struct ScenarioModeExcel : IFlatbufferObject
   public long ClearedStageId { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.Club NeedClub { get { int o = __p.__offset(50); return o != 0 ? (FlatDataGlobal.Club)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Club.None; } }
   public int NeedClubStudentCount { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long NeedTSS { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EventContentId { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.EventContentType EventContentType { get { int o = __p.__offset(58); return o != 0 ? (FlatDataGlobal.EventContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentType.Stage; } }
-  public long EventContentCondition { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EventContentConditionGroup { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.StageDifficulty MapDifficulty { get { int o = __p.__offset(64); return o != 0 ? (FlatDataGlobal.StageDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageDifficulty.None; } }
-  public int StepIndex { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int RecommendLevel { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string EventIconParcelPath { get { int o = __p.__offset(70); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long EventContentId { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.EventContentType EventContentType { get { int o = __p.__offset(56); return o != 0 ? (FlatDataGlobal.EventContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentType.Stage; } }
+  public long EventContentCondition { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EventContentConditionGroup { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.StageDifficulty MapDifficulty { get { int o = __p.__offset(62); return o != 0 ? (FlatDataGlobal.StageDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageDifficulty.None; } }
+  public int StepIndex { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int RecommendLevel { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string EventIconParcelPath { get { int o = __p.__offset(68); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEventIconParcelPathBytes() { return __p.__vector_as_span<byte>(70, 1); }
+  public Span<byte> GetEventIconParcelPathBytes() { return __p.__vector_as_span<byte>(68, 1); }
 #else
-  public ArraySegment<byte>? GetEventIconParcelPathBytes() { return __p.__vector_as_arraysegment(70); }
+  public ArraySegment<byte>? GetEventIconParcelPathBytes() { return __p.__vector_as_arraysegment(68); }
 #endif
-  public byte[] GetEventIconParcelPathArray() { return __p.__vector_as_array<byte>(70); }
+  public byte[] GetEventIconParcelPathArray() { return __p.__vector_as_array<byte>(68); }
+  public uint EventBannerTitle { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public bool Lof { get { int o = __p.__offset(72); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public FlatDataGlobal.StageTopography StageTopography { get { int o = __p.__offset(74); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
   public long FixedEchelonId { get { int o = __p.__offset(76); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -103,6 +103,7 @@ public struct ScenarioModeExcel : IFlatbufferObject
 #endif
   public byte[] GetCompleteReportEventNameArray() { return __p.__vector_as_array<byte>(78); }
   public FlatDataGlobal.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(80); return o != 0 ? (FlatDataGlobal.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EchelonExtensionType.Base; } }
+  public long CollectionGroupId { get { int o = __p.__offset(82); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.ScenarioModeExcel> CreateScenarioModeExcel(FlatBufferBuilder builder,
       long ModeId = 0,
@@ -130,7 +131,6 @@ public struct ScenarioModeExcel : IFlatbufferObject
       long ClearedStageId = 0,
       FlatDataGlobal.Club NeedClub = FlatDataGlobal.Club.None,
       int NeedClubStudentCount = 0,
-      long NeedTSS = 0,
       long EventContentId = 0,
       FlatDataGlobal.EventContentType eventContentType = FlatDataGlobal.EventContentType.Stage,
       long EventContentCondition = 0,
@@ -139,17 +139,19 @@ public struct ScenarioModeExcel : IFlatbufferObject
       int StepIndex = 0,
       int RecommendLevel = 0,
       StringOffset EventIconParcelPathOffset = default(StringOffset),
+      uint EventBannerTitle = 0,
       bool Lof = false,
       FlatDataGlobal.StageTopography stageTopography = FlatDataGlobal.StageTopography.Street,
       long FixedEchelonId = 0,
       StringOffset CompleteReportEventNameOffset = default(StringOffset),
-      FlatDataGlobal.EchelonExtensionType echelonExtensionType = FlatDataGlobal.EchelonExtensionType.Base) {
-    builder.StartTable(39);
+      FlatDataGlobal.EchelonExtensionType echelonExtensionType = FlatDataGlobal.EchelonExtensionType.Base,
+      long CollectionGroupId = 0) {
+    builder.StartTable(40);
+    ScenarioModeExcel.AddCollectionGroupId(builder, CollectionGroupId);
     ScenarioModeExcel.AddFixedEchelonId(builder, FixedEchelonId);
     ScenarioModeExcel.AddEventContentConditionGroup(builder, EventContentConditionGroup);
     ScenarioModeExcel.AddEventContentCondition(builder, EventContentCondition);
     ScenarioModeExcel.AddEventContentId(builder, EventContentId);
-    ScenarioModeExcel.AddNeedTSS(builder, NeedTSS);
     ScenarioModeExcel.AddClearedStageId(builder, ClearedStageId);
     ScenarioModeExcel.AddAccountLevelLimit(builder, AccountLevelLimit);
     ScenarioModeExcel.AddScenarioModeRewardId(builder, ScenarioModeRewardId);
@@ -164,6 +166,7 @@ public struct ScenarioModeExcel : IFlatbufferObject
     ScenarioModeExcel.AddEchelonExtensionType(builder, echelonExtensionType);
     ScenarioModeExcel.AddCompleteReportEventName(builder, CompleteReportEventNameOffset);
     ScenarioModeExcel.AddStageTopography(builder, stageTopography);
+    ScenarioModeExcel.AddEventBannerTitle(builder, EventBannerTitle);
     ScenarioModeExcel.AddEventIconParcelPath(builder, EventIconParcelPathOffset);
     ScenarioModeExcel.AddRecommendLevel(builder, RecommendLevel);
     ScenarioModeExcel.AddStepIndex(builder, StepIndex);
@@ -187,7 +190,7 @@ public struct ScenarioModeExcel : IFlatbufferObject
     return ScenarioModeExcel.EndScenarioModeExcel(builder);
   }
 
-  public static void StartScenarioModeExcel(FlatBufferBuilder builder) { builder.StartTable(39); }
+  public static void StartScenarioModeExcel(FlatBufferBuilder builder) { builder.StartTable(40); }
   public static void AddModeId(FlatBufferBuilder builder, long ModeId) { builder.AddLong(0, ModeId, 0); }
   public static void AddModeType(FlatBufferBuilder builder, FlatDataGlobal.ScenarioModeTypes ModeType) { builder.AddInt(1, (int)ModeType, 0); }
   public static void AddSubType(FlatBufferBuilder builder, FlatDataGlobal.ScenarioModeSubTypes SubType) { builder.AddInt(2, (int)SubType, 0); }
@@ -228,20 +231,21 @@ public struct ScenarioModeExcel : IFlatbufferObject
   public static void AddClearedStageId(FlatBufferBuilder builder, long ClearedStageId) { builder.AddLong(22, ClearedStageId, 0); }
   public static void AddNeedClub(FlatBufferBuilder builder, FlatDataGlobal.Club NeedClub) { builder.AddInt(23, (int)NeedClub, 0); }
   public static void AddNeedClubStudentCount(FlatBufferBuilder builder, int NeedClubStudentCount) { builder.AddInt(24, NeedClubStudentCount, 0); }
-  public static void AddNeedTSS(FlatBufferBuilder builder, long NeedTSS) { builder.AddLong(25, NeedTSS, 0); }
-  public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(26, EventContentId, 0); }
-  public static void AddEventContentType(FlatBufferBuilder builder, FlatDataGlobal.EventContentType eventContentType) { builder.AddInt(27, (int)eventContentType, 0); }
-  public static void AddEventContentCondition(FlatBufferBuilder builder, long EventContentCondition) { builder.AddLong(28, EventContentCondition, 0); }
-  public static void AddEventContentConditionGroup(FlatBufferBuilder builder, long EventContentConditionGroup) { builder.AddLong(29, EventContentConditionGroup, 0); }
-  public static void AddMapDifficulty(FlatBufferBuilder builder, FlatDataGlobal.StageDifficulty MapDifficulty) { builder.AddInt(30, (int)MapDifficulty, 0); }
-  public static void AddStepIndex(FlatBufferBuilder builder, int StepIndex) { builder.AddInt(31, StepIndex, 0); }
-  public static void AddRecommendLevel(FlatBufferBuilder builder, int RecommendLevel) { builder.AddInt(32, RecommendLevel, 0); }
-  public static void AddEventIconParcelPath(FlatBufferBuilder builder, StringOffset EventIconParcelPathOffset) { builder.AddOffset(33, EventIconParcelPathOffset.Value, 0); }
+  public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(25, EventContentId, 0); }
+  public static void AddEventContentType(FlatBufferBuilder builder, FlatDataGlobal.EventContentType eventContentType) { builder.AddInt(26, (int)eventContentType, 0); }
+  public static void AddEventContentCondition(FlatBufferBuilder builder, long EventContentCondition) { builder.AddLong(27, EventContentCondition, 0); }
+  public static void AddEventContentConditionGroup(FlatBufferBuilder builder, long EventContentConditionGroup) { builder.AddLong(28, EventContentConditionGroup, 0); }
+  public static void AddMapDifficulty(FlatBufferBuilder builder, FlatDataGlobal.StageDifficulty MapDifficulty) { builder.AddInt(29, (int)MapDifficulty, 0); }
+  public static void AddStepIndex(FlatBufferBuilder builder, int StepIndex) { builder.AddInt(30, StepIndex, 0); }
+  public static void AddRecommendLevel(FlatBufferBuilder builder, int RecommendLevel) { builder.AddInt(31, RecommendLevel, 0); }
+  public static void AddEventIconParcelPath(FlatBufferBuilder builder, StringOffset EventIconParcelPathOffset) { builder.AddOffset(32, EventIconParcelPathOffset.Value, 0); }
+  public static void AddEventBannerTitle(FlatBufferBuilder builder, uint EventBannerTitle) { builder.AddUint(33, EventBannerTitle, 0); }
   public static void AddLof(FlatBufferBuilder builder, bool Lof) { builder.AddBool(34, Lof, false); }
   public static void AddStageTopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stageTopography) { builder.AddInt(35, (int)stageTopography, 0); }
   public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(36, FixedEchelonId, 0); }
   public static void AddCompleteReportEventName(FlatBufferBuilder builder, StringOffset CompleteReportEventNameOffset) { builder.AddOffset(37, CompleteReportEventNameOffset.Value, 0); }
   public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataGlobal.EchelonExtensionType echelonExtensionType) { builder.AddInt(38, (int)echelonExtensionType, 0); }
+  public static void AddCollectionGroupId(FlatBufferBuilder builder, long CollectionGroupId) { builder.AddLong(39, CollectionGroupId, 0); }
   public static Offset<FlatDataGlobal.ScenarioModeExcel> EndScenarioModeExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ScenarioModeExcel>(o);

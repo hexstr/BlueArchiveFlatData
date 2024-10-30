@@ -184,6 +184,13 @@ public enum ParcelChangeReason : int
   Character_PotentialGrowth = 174,
   MultiFloorRaid_EndBattle = 175,
   MultiFloorRaid_Reward = 176,
+  MiniGame_DreamSchedule = 177,
+  MiniGame_DreamDailyClosing = 178,
+  MiniGame_DreamEnding = 179,
+  Item_ExpireChange = 180,
+  Temp = 181,
+  Raid_FailCompensateReward = 182,
+  EliminateRaid_FailCompensateReward = 183,
 };
 
 

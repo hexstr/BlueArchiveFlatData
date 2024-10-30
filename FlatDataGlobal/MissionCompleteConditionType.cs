@@ -166,6 +166,16 @@ public enum MissionCompleteConditionType : int
   Reset_PotentialAttackPowerAtSpecificLevel = 156,
   Reset_PotentialMaxHPAtSpecificLevel = 157,
   Reset_PotentialHealPowerAtSpecificLevel = 158,
+  Reset_DreamGetSpecificParameter = 159,
+  Reset_DreamGetSpecificScheduleCount = 160,
+  Reset_DreamGetScheduleCount = 161,
+  Reset_DreamGetEndingCount = 162,
+  Reset_DreamGetSpecificEndingCount = 163,
+  Reset_DreamGetCollectionScenarioCount = 164,
+  Temp_1 = 165,
+  Temp_2 = 166,
+  Temp_3 = 167,
+  Temp_4 = 168,
 };
 
 

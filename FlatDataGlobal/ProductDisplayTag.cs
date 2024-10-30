@@ -11,6 +11,7 @@ public enum ProductDisplayTag : int
   New = 1,
   Hot = 2,
   Sale = 3,
+  Limited = 4,
 };
 
 

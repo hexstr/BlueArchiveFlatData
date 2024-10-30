@@ -32,15 +32,17 @@ public struct TacticDamageSimulatorSettingExcel : IFlatbufferObject
   public FlatDataGlobal.TerrainAdaptationStat OverrideOutdoorAdaptation { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
   public FlatDataGlobal.TerrainAdaptationStat OverrideIndoorAdaptation { get { int o = __p.__offset(26); return o != 0 ? (FlatDataGlobal.TerrainAdaptationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.TerrainAdaptationStat.D; } }
   public bool ApplyOverrideAdaptation { get { int o = __p.__offset(28); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long GroundId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FixedCharacter(int j) { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int FixedCharacterLength { get { int o = __p.__offset(32); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int OverrideFavorLevel { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool ApplyOverrideFavorLevel { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long GroundId { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FixedCharacter(int j) { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int FixedCharacterLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetFixedCharacterBytes() { return __p.__vector_as_span<long>(32, 8); }
+  public Span<long> GetFixedCharacterBytes() { return __p.__vector_as_span<long>(36, 8); }
 #else
-  public ArraySegment<byte>? GetFixedCharacterBytes() { return __p.__vector_as_arraysegment(32); }
+  public ArraySegment<byte>? GetFixedCharacterBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public long[] GetFixedCharacterArray() { return __p.__vector_as_array<long>(32); }
+  public long[] GetFixedCharacterArray() { return __p.__vector_as_array<long>(36); }
 
   public static Offset<FlatDataGlobal.TacticDamageSimulatorSettingExcel> CreateTacticDamageSimulatorSettingExcel(FlatBufferBuilder builder,
       int Order = 0,
@@ -56,28 +58,32 @@ public struct TacticDamageSimulatorSettingExcel : IFlatbufferObject
       FlatDataGlobal.TerrainAdaptationStat OverrideOutdoorAdaptation = FlatDataGlobal.TerrainAdaptationStat.D,
       FlatDataGlobal.TerrainAdaptationStat OverrideIndoorAdaptation = FlatDataGlobal.TerrainAdaptationStat.D,
       bool ApplyOverrideAdaptation = false,
+      int OverrideFavorLevel = 0,
+      bool ApplyOverrideFavorLevel = false,
       long GroundId = 0,
       VectorOffset FixedCharacterOffset = default(VectorOffset)) {
-    builder.StartTable(15);
+    builder.StartTable(17);
     TacticDamageSimulatorSettingExcel.AddGroundId(builder, GroundId);
     TacticDamageSimulatorSettingExcel.AddSpecialSquard(builder, SpecialSquard);
     TacticDamageSimulatorSettingExcel.AddStrikerSquard(builder, StrikerSquard);
     TacticDamageSimulatorSettingExcel.AddTestBattleTime(builder, TestBattleTime);
     TacticDamageSimulatorSettingExcel.AddTestPreset(builder, TestPreset);
     TacticDamageSimulatorSettingExcel.AddFixedCharacter(builder, FixedCharacterOffset);
+    TacticDamageSimulatorSettingExcel.AddOverrideFavorLevel(builder, OverrideFavorLevel);
     TacticDamageSimulatorSettingExcel.AddOverrideIndoorAdaptation(builder, OverrideIndoorAdaptation);
     TacticDamageSimulatorSettingExcel.AddOverrideOutdoorAdaptation(builder, OverrideOutdoorAdaptation);
     TacticDamageSimulatorSettingExcel.AddOverrideStreetAdaptation(builder, OverrideStreetAdaptation);
     TacticDamageSimulatorSettingExcel.AddReplaceCostRegenValue(builder, ReplaceCostRegenValue);
     TacticDamageSimulatorSettingExcel.AddRepeat(builder, Repeat);
     TacticDamageSimulatorSettingExcel.AddOrder(builder, Order);
+    TacticDamageSimulatorSettingExcel.AddApplyOverrideFavorLevel(builder, ApplyOverrideFavorLevel);
     TacticDamageSimulatorSettingExcel.AddApplyOverrideAdaptation(builder, ApplyOverrideAdaptation);
     TacticDamageSimulatorSettingExcel.AddUseAutoSkill(builder, UseAutoSkill);
     TacticDamageSimulatorSettingExcel.AddReplaceCharacterCostRegen(builder, ReplaceCharacterCostRegen);
     return TacticDamageSimulatorSettingExcel.EndTacticDamageSimulatorSettingExcel(builder);
   }
 
-  public static void StartTacticDamageSimulatorSettingExcel(FlatBufferBuilder builder) { builder.StartTable(15); }
+  public static void StartTacticDamageSimulatorSettingExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
   public static void AddOrder(FlatBufferBuilder builder, int Order) { builder.AddInt(0, Order, 0); }
   public static void AddRepeat(FlatBufferBuilder builder, int Repeat) { builder.AddInt(1, Repeat, 0); }
   public static void AddTestPreset(FlatBufferBuilder builder, long TestPreset) { builder.AddLong(2, TestPreset, 0); }
@@ -91,8 +97,10 @@ public struct TacticDamageSimulatorSettingExcel : IFlatbufferObject
   public static void AddOverrideOutdoorAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat OverrideOutdoorAdaptation) { builder.AddInt(10, (int)OverrideOutdoorAdaptation, 0); }
   public static void AddOverrideIndoorAdaptation(FlatBufferBuilder builder, FlatDataGlobal.TerrainAdaptationStat OverrideIndoorAdaptation) { builder.AddInt(11, (int)OverrideIndoorAdaptation, 0); }
   public static void AddApplyOverrideAdaptation(FlatBufferBuilder builder, bool ApplyOverrideAdaptation) { builder.AddBool(12, ApplyOverrideAdaptation, false); }
-  public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(13, GroundId, 0); }
-  public static void AddFixedCharacter(FlatBufferBuilder builder, VectorOffset FixedCharacterOffset) { builder.AddOffset(14, FixedCharacterOffset.Value, 0); }
+  public static void AddOverrideFavorLevel(FlatBufferBuilder builder, int OverrideFavorLevel) { builder.AddInt(13, OverrideFavorLevel, 0); }
+  public static void AddApplyOverrideFavorLevel(FlatBufferBuilder builder, bool ApplyOverrideFavorLevel) { builder.AddBool(14, ApplyOverrideFavorLevel, false); }
+  public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(15, GroundId, 0); }
+  public static void AddFixedCharacter(FlatBufferBuilder builder, VectorOffset FixedCharacterOffset) { builder.AddOffset(16, FixedCharacterOffset.Value, 0); }
   public static VectorOffset CreateFixedCharacterVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateFixedCharacterVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateFixedCharacterVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }

@@ -12,6 +12,7 @@ public enum StarGoalType : int
   Clear = 2,
   GetBoxes = 3,
   ClearTimeInSec = 4,
+  AllyBaseDamage = 5,
 };
 
 

@@ -29,6 +29,7 @@ public enum ContentType : int
   Chaser = 19,
   FieldContentStage = 20,
   MultiFloorRaid = 21,
+  Temp = 22,
 };
 
 

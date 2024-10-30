@@ -20,7 +20,14 @@ public struct MiniGameShootingStageExcel : IFlatbufferObject
   public MiniGameShootingStageExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long UniqueId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long BgmId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long BgmId(int j) { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int BgmIdLength { get { int o = __p.__offset(6); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<long> GetBgmIdBytes() { return __p.__vector_as_span<long>(6, 8); }
+#else
+  public ArraySegment<byte>? GetBgmIdBytes() { return __p.__vector_as_arraysegment(6); }
+#endif
+  public long[] GetBgmIdArray() { return __p.__vector_as_array<long>(6); }
   public long CostGoodsId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.Difficulty Difficulty { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.Difficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Difficulty.Normal; } }
   public string DesignLevel { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
@@ -51,7 +58,7 @@ public struct MiniGameShootingStageExcel : IFlatbufferObject
 
   public static Offset<FlatDataGlobal.MiniGameShootingStageExcel> CreateMiniGameShootingStageExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
-      long BgmId = 0,
+      VectorOffset BgmIdOffset = default(VectorOffset),
       long CostGoodsId = 0,
       FlatDataGlobal.Difficulty difficulty = FlatDataGlobal.Difficulty.Normal,
       StringOffset DesignLevelOffset = default(StringOffset),
@@ -66,19 +73,24 @@ public struct MiniGameShootingStageExcel : IFlatbufferObject
     MiniGameShootingStageExcel.AddDefaultBattleDuration(builder, DefaultBattleDuration);
     MiniGameShootingStageExcel.AddStartBattleDuration(builder, StartBattleDuration);
     MiniGameShootingStageExcel.AddCostGoodsId(builder, CostGoodsId);
-    MiniGameShootingStageExcel.AddBgmId(builder, BgmId);
     MiniGameShootingStageExcel.AddUniqueId(builder, UniqueId);
     MiniGameShootingStageExcel.AddCameraSizeRate(builder, CameraSizeRate);
     MiniGameShootingStageExcel.AddDefaultLogicEffect(builder, DefaultLogicEffectOffset);
     MiniGameShootingStageExcel.AddArtLevel(builder, ArtLevelOffset);
     MiniGameShootingStageExcel.AddDesignLevel(builder, DesignLevelOffset);
     MiniGameShootingStageExcel.AddDifficulty(builder, difficulty);
+    MiniGameShootingStageExcel.AddBgmId(builder, BgmIdOffset);
     return MiniGameShootingStageExcel.EndMiniGameShootingStageExcel(builder);
   }
 
   public static void StartMiniGameShootingStageExcel(FlatBufferBuilder builder) { builder.StartTable(11); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
-  public static void AddBgmId(FlatBufferBuilder builder, long BgmId) { builder.AddLong(1, BgmId, 0); }
+  public static void AddBgmId(FlatBufferBuilder builder, VectorOffset BgmIdOffset) { builder.AddOffset(1, BgmIdOffset.Value, 0); }
+  public static VectorOffset CreateBgmIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateBgmIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateBgmIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateBgmIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartBgmIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
   public static void AddCostGoodsId(FlatBufferBuilder builder, long CostGoodsId) { builder.AddLong(2, CostGoodsId, 0); }
   public static void AddDifficulty(FlatBufferBuilder builder, FlatDataGlobal.Difficulty difficulty) { builder.AddInt(3, (int)difficulty, 0); }
   public static void AddDesignLevel(FlatBufferBuilder builder, StringOffset DesignLevelOffset) { builder.AddOffset(4, DesignLevelOffset.Value, 0); }

@@ -55,6 +55,7 @@ public enum Club : int
   LaborParty = 45,
   KnowledgeLiberationFront = 46,
   Hyakkayouran = 47,
+  ShinySparkleSociety = 48,
 };
 
 

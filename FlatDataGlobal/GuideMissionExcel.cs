@@ -32,13 +32,7 @@ public struct GuideMissionExcel : IFlatbufferObject
   public ArraySegment<byte>? GetPreMissionIdBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
   public long[] GetPreMissionIdArray() { return __p.__vector_as_array<long>(14); }
-  public string Description { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span<byte>(16, 1); }
-#else
-  public ArraySegment<byte>? GetDescriptionBytes() { return __p.__vector_as_arraysegment(16); }
-#endif
-  public byte[] GetDescriptionArray() { return __p.__vector_as_array<byte>(16); }
+  public uint Description { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public FlatDataGlobal.MissionToastDisplayConditionType ToastDisplayType { get { int o = __p.__offset(18); return o != 0 ? (FlatDataGlobal.MissionToastDisplayConditionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MissionToastDisplayConditionType.Always; } }
   public string ToastImagePath { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -100,7 +94,7 @@ public struct GuideMissionExcel : IFlatbufferObject
       bool IsLegacy = false,
       long TabNumber = 0,
       VectorOffset PreMissionIdOffset = default(VectorOffset),
-      StringOffset DescriptionOffset = default(StringOffset),
+      uint Description = 0,
       FlatDataGlobal.MissionToastDisplayConditionType ToastDisplayType = FlatDataGlobal.MissionToastDisplayConditionType.Always,
       StringOffset ToastImagePathOffset = default(StringOffset),
       VectorOffset ShortcutUIOffset = default(VectorOffset),
@@ -126,7 +120,7 @@ public struct GuideMissionExcel : IFlatbufferObject
     GuideMissionExcel.AddShortcutUI(builder, ShortcutUIOffset);
     GuideMissionExcel.AddToastImagePath(builder, ToastImagePathOffset);
     GuideMissionExcel.AddToastDisplayType(builder, ToastDisplayType);
-    GuideMissionExcel.AddDescription(builder, DescriptionOffset);
+    GuideMissionExcel.AddDescription(builder, Description);
     GuideMissionExcel.AddPreMissionId(builder, PreMissionIdOffset);
     GuideMissionExcel.AddCategory(builder, Category);
     GuideMissionExcel.AddIsAutoClearForScenario(builder, IsAutoClearForScenario);
@@ -146,7 +140,7 @@ public struct GuideMissionExcel : IFlatbufferObject
   public static VectorOffset CreatePreMissionIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreatePreMissionIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartPreMissionIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddDescription(FlatBufferBuilder builder, StringOffset DescriptionOffset) { builder.AddOffset(6, DescriptionOffset.Value, 0); }
+  public static void AddDescription(FlatBufferBuilder builder, uint Description) { builder.AddUint(6, Description, 0); }
   public static void AddToastDisplayType(FlatBufferBuilder builder, FlatDataGlobal.MissionToastDisplayConditionType ToastDisplayType) { builder.AddInt(7, (int)ToastDisplayType, 0); }
   public static void AddToastImagePath(FlatBufferBuilder builder, StringOffset ToastImagePathOffset) { builder.AddOffset(8, ToastImagePathOffset.Value, 0); }
   public static void AddShortcutUI(FlatBufferBuilder builder, VectorOffset ShortcutUIOffset) { builder.AddOffset(9, ShortcutUIOffset.Value, 0); }

@@ -43,6 +43,7 @@ public enum ShopFilterType : int
   ShopFilterDUMMY_6 = 33,
   ShopFilterDUMMY_7 = 34,
   ETC = 35,
+  Bundle = 36,
 };
 
 

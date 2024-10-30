@@ -26,6 +26,7 @@ public struct ClanAssistSlotExcel : IFlatbufferObject
   public long AssistRewardLimit { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long AssistRentRewardDailyMaxCount { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long AssistRentalFeeAmount { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long AssistRentalFeeAmountStranger { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.ClanAssistSlotExcel> CreateClanAssistSlotExcel(FlatBufferBuilder builder,
       long SlotId = 0,
@@ -34,8 +35,10 @@ public struct ClanAssistSlotExcel : IFlatbufferObject
       long AssistTermRewardPeriodFromSec = 0,
       long AssistRewardLimit = 0,
       long AssistRentRewardDailyMaxCount = 0,
-      long AssistRentalFeeAmount = 0) {
-    builder.StartTable(7);
+      long AssistRentalFeeAmount = 0,
+      long AssistRentalFeeAmountStranger = 0) {
+    builder.StartTable(8);
+    ClanAssistSlotExcel.AddAssistRentalFeeAmountStranger(builder, AssistRentalFeeAmountStranger);
     ClanAssistSlotExcel.AddAssistRentalFeeAmount(builder, AssistRentalFeeAmount);
     ClanAssistSlotExcel.AddAssistRentRewardDailyMaxCount(builder, AssistRentRewardDailyMaxCount);
     ClanAssistSlotExcel.AddAssistRewardLimit(builder, AssistRewardLimit);
@@ -46,7 +49,7 @@ public struct ClanAssistSlotExcel : IFlatbufferObject
     return ClanAssistSlotExcel.EndClanAssistSlotExcel(builder);
   }
 
-  public static void StartClanAssistSlotExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
+  public static void StartClanAssistSlotExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddSlotId(FlatBufferBuilder builder, long SlotId) { builder.AddLong(0, SlotId, 0); }
   public static void AddEchelonType(FlatBufferBuilder builder, FlatDataGlobal.EchelonType echelonType) { builder.AddInt(1, (int)echelonType, 0); }
   public static void AddSlotNumber(FlatBufferBuilder builder, long SlotNumber) { builder.AddLong(2, SlotNumber, 0); }
@@ -54,6 +57,7 @@ public struct ClanAssistSlotExcel : IFlatbufferObject
   public static void AddAssistRewardLimit(FlatBufferBuilder builder, long AssistRewardLimit) { builder.AddLong(4, AssistRewardLimit, 0); }
   public static void AddAssistRentRewardDailyMaxCount(FlatBufferBuilder builder, long AssistRentRewardDailyMaxCount) { builder.AddLong(5, AssistRentRewardDailyMaxCount, 0); }
   public static void AddAssistRentalFeeAmount(FlatBufferBuilder builder, long AssistRentalFeeAmount) { builder.AddLong(6, AssistRentalFeeAmount, 0); }
+  public static void AddAssistRentalFeeAmountStranger(FlatBufferBuilder builder, long AssistRentalFeeAmountStranger) { builder.AddLong(7, AssistRentalFeeAmountStranger, 0); }
   public static Offset<FlatDataGlobal.ClanAssistSlotExcel> EndClanAssistSlotExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ClanAssistSlotExcel>(o);

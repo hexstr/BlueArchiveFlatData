@@ -29,6 +29,7 @@ public enum RewardTag : int
   ConquestErosionPenalty = 19,
   GemBonus = 20,
   GemPaid = 21,
+  ConquestTileConquer = 22,
 };
 
 

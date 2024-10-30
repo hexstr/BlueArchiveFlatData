@@ -11,6 +11,7 @@ public enum EventContentReleaseType : int
   Permanent = 1,
   MainStory = 2,
   PermanentSpecialOperate = 3,
+  PermanentConquest = 4,
 };
 
 

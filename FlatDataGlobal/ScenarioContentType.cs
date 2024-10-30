@@ -24,6 +24,7 @@ public enum ScenarioContentType : int
   MiniEvent = 14,
   EliminateRaid = 15,
   MultiFloorRaid = 16,
+  EventContentPermanent = 17,
 };
 
 

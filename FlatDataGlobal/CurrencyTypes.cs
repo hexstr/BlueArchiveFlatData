@@ -34,7 +34,8 @@ public enum CurrencyTypes : int
   EliminateTicketA = 24,
   EliminateTicketB = 25,
   EliminateTicketC = 26,
-  Max = 27,
+  EliminateTicketD = 27,
+  Max = 28,
 };
 
 

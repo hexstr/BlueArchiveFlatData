@@ -21,13 +21,7 @@ public struct MissionExcel : IFlatbufferObject
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.MissionCategory Category { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.MissionCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MissionCategory.Challenge; } }
-  public string Description { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span<byte>(8, 1); }
-#else
-  public ArraySegment<byte>? GetDescriptionBytes() { return __p.__vector_as_arraysegment(8); }
-#endif
-  public byte[] GetDescriptionArray() { return __p.__vector_as_array<byte>(8); }
+  public uint Description { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public FlatDataGlobal.MissionResetType ResetType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.MissionResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MissionResetType.None; } }
   public FlatDataGlobal.MissionToastDisplayConditionType ToastDisplayType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.MissionToastDisplayConditionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.MissionToastDisplayConditionType.Always; } }
   public string ToastImagePath { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
@@ -137,7 +131,7 @@ public struct MissionExcel : IFlatbufferObject
   public static Offset<FlatDataGlobal.MissionExcel> CreateMissionExcel(FlatBufferBuilder builder,
       long Id = 0,
       FlatDataGlobal.MissionCategory Category = FlatDataGlobal.MissionCategory.Challenge,
-      StringOffset DescriptionOffset = default(StringOffset),
+      uint Description = 0,
       FlatDataGlobal.MissionResetType ResetType = FlatDataGlobal.MissionResetType.None,
       FlatDataGlobal.MissionToastDisplayConditionType ToastDisplayType = FlatDataGlobal.MissionToastDisplayConditionType.Always,
       StringOffset ToastImagePathOffset = default(StringOffset),
@@ -188,7 +182,7 @@ public struct MissionExcel : IFlatbufferObject
     MissionExcel.AddToastImagePath(builder, ToastImagePathOffset);
     MissionExcel.AddToastDisplayType(builder, ToastDisplayType);
     MissionExcel.AddResetType(builder, ResetType);
-    MissionExcel.AddDescription(builder, DescriptionOffset);
+    MissionExcel.AddDescription(builder, Description);
     MissionExcel.AddCategory(builder, Category);
     MissionExcel.AddLimit(builder, Limit);
     MissionExcel.AddViewFlag(builder, ViewFlag);
@@ -198,7 +192,7 @@ public struct MissionExcel : IFlatbufferObject
   public static void StartMissionExcel(FlatBufferBuilder builder) { builder.StartTable(28); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddCategory(FlatBufferBuilder builder, FlatDataGlobal.MissionCategory Category) { builder.AddInt(1, (int)Category, 0); }
-  public static void AddDescription(FlatBufferBuilder builder, StringOffset DescriptionOffset) { builder.AddOffset(2, DescriptionOffset.Value, 0); }
+  public static void AddDescription(FlatBufferBuilder builder, uint Description) { builder.AddUint(2, Description, 0); }
   public static void AddResetType(FlatBufferBuilder builder, FlatDataGlobal.MissionResetType ResetType) { builder.AddInt(3, (int)ResetType, 0); }
   public static void AddToastDisplayType(FlatBufferBuilder builder, FlatDataGlobal.MissionToastDisplayConditionType ToastDisplayType) { builder.AddInt(4, (int)ToastDisplayType, 0); }
   public static void AddToastImagePath(FlatBufferBuilder builder, StringOffset ToastImagePathOffset) { builder.AddOffset(5, ToastImagePathOffset.Value, 0); }
