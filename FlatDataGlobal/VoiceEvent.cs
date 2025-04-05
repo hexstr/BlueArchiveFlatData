@@ -40,6 +40,8 @@ public enum VoiceEvent : int
   PublicSkill02 = 30,
   InteractionPublicSkill01 = 31,
   InteractionPublicSkill02 = 32,
+  FormationStyleChange = 33,
+  BattleInteractionVictoryTimeline = 34,
 };
 
 

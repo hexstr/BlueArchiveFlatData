@@ -81,6 +81,9 @@ public struct MinigameTBGSeasonExcel : IFlatbufferObject
   public ArraySegment<byte>? GetMapNameLocalizeBytes() { return __p.__vector_as_arraysegment(54); }
 #endif
   public byte[] GetMapNameLocalizeArray() { return __p.__vector_as_array<byte>(54); }
+  public int StartThemaIndex { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int LoopThemaIndex { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MaxDicePlus { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.MinigameTBGSeasonExcel> CreateMinigameTBGSeasonExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
@@ -108,8 +111,11 @@ public struct MinigameTBGSeasonExcel : IFlatbufferObject
       int InstantClearRound = 0,
       int MaxHp = 0,
       StringOffset MapImagePathOffset = default(StringOffset),
-      StringOffset MapNameLocalizeOffset = default(StringOffset)) {
-    builder.StartTable(26);
+      StringOffset MapNameLocalizeOffset = default(StringOffset),
+      int StartThemaIndex = 0,
+      int LoopThemaIndex = 0,
+      int MaxDicePlus = 0) {
+    builder.StartTable(29);
     MinigameTBGSeasonExcel.AddEchelonRevivalCostId(builder, EchelonRevivalCostId);
     MinigameTBGSeasonExcel.AddEventUseCostId(builder, EventUseCostId);
     MinigameTBGSeasonExcel.AddEchelonSlot4CharacterId(builder, EchelonSlot4CharacterId);
@@ -118,6 +124,9 @@ public struct MinigameTBGSeasonExcel : IFlatbufferObject
     MinigameTBGSeasonExcel.AddEchelonSlot1CharacterId(builder, EchelonSlot1CharacterId);
     MinigameTBGSeasonExcel.AddDefaultItemDiceId(builder, DefaultItemDiceId);
     MinigameTBGSeasonExcel.AddEventContentId(builder, EventContentId);
+    MinigameTBGSeasonExcel.AddMaxDicePlus(builder, MaxDicePlus);
+    MinigameTBGSeasonExcel.AddLoopThemaIndex(builder, LoopThemaIndex);
+    MinigameTBGSeasonExcel.AddStartThemaIndex(builder, StartThemaIndex);
     MinigameTBGSeasonExcel.AddMapNameLocalize(builder, MapNameLocalizeOffset);
     MinigameTBGSeasonExcel.AddMapImagePath(builder, MapImagePathOffset);
     MinigameTBGSeasonExcel.AddMaxHp(builder, MaxHp);
@@ -139,7 +148,7 @@ public struct MinigameTBGSeasonExcel : IFlatbufferObject
     return MinigameTBGSeasonExcel.EndMinigameTBGSeasonExcel(builder);
   }
 
-  public static void StartMinigameTBGSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(26); }
+  public static void StartMinigameTBGSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(29); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddItemSlot(FlatBufferBuilder builder, int ItemSlot) { builder.AddInt(1, ItemSlot, 0); }
   public static void AddDefaultEchelonHp(FlatBufferBuilder builder, int DefaultEchelonHp) { builder.AddInt(2, DefaultEchelonHp, 0); }
@@ -166,6 +175,9 @@ public struct MinigameTBGSeasonExcel : IFlatbufferObject
   public static void AddMaxHp(FlatBufferBuilder builder, int MaxHp) { builder.AddInt(23, MaxHp, 0); }
   public static void AddMapImagePath(FlatBufferBuilder builder, StringOffset MapImagePathOffset) { builder.AddOffset(24, MapImagePathOffset.Value, 0); }
   public static void AddMapNameLocalize(FlatBufferBuilder builder, StringOffset MapNameLocalizeOffset) { builder.AddOffset(25, MapNameLocalizeOffset.Value, 0); }
+  public static void AddStartThemaIndex(FlatBufferBuilder builder, int StartThemaIndex) { builder.AddInt(26, StartThemaIndex, 0); }
+  public static void AddLoopThemaIndex(FlatBufferBuilder builder, int LoopThemaIndex) { builder.AddInt(27, LoopThemaIndex, 0); }
+  public static void AddMaxDicePlus(FlatBufferBuilder builder, int MaxDicePlus) { builder.AddInt(28, MaxDicePlus, 0); }
   public static Offset<FlatDataGlobal.MinigameTBGSeasonExcel> EndMinigameTBGSeasonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.MinigameTBGSeasonExcel>(o);

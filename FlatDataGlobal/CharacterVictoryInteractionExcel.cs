@@ -36,86 +36,92 @@ public struct CharacterVictoryInteractionExcel : IFlatbufferObject
   public ArraySegment<byte>? GetVictoryEndAnimationPath01Bytes() { return __p.__vector_as_arraysegment(12); }
 #endif
   public byte[] GetVictoryEndAnimationPath01Array() { return __p.__vector_as_array<byte>(12); }
-  public long CostumeId02 { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int PositionIndex02 { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string VictoryStartAnimationPath02 { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataGlobal.VoiceEvent VoiceEvent01 { get { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.VoiceEvent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.VoiceEvent.OnTSA; } }
+  public long CostumeId02 { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int PositionIndex02 { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string VictoryStartAnimationPath02 { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryStartAnimationPath02Bytes() { return __p.__vector_as_span<byte>(18, 1); }
+  public Span<byte> GetVictoryStartAnimationPath02Bytes() { return __p.__vector_as_span<byte>(20, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryStartAnimationPath02Bytes() { return __p.__vector_as_arraysegment(18); }
+  public ArraySegment<byte>? GetVictoryStartAnimationPath02Bytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public byte[] GetVictoryStartAnimationPath02Array() { return __p.__vector_as_array<byte>(18); }
-  public string VictoryEndAnimationPath02 { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetVictoryStartAnimationPath02Array() { return __p.__vector_as_array<byte>(20); }
+  public string VictoryEndAnimationPath02 { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryEndAnimationPath02Bytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetVictoryEndAnimationPath02Bytes() { return __p.__vector_as_span<byte>(22, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryEndAnimationPath02Bytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetVictoryEndAnimationPath02Bytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetVictoryEndAnimationPath02Array() { return __p.__vector_as_array<byte>(20); }
-  public long CostumeId03 { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int PositionIndex03 { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string VictoryStartAnimationPath03 { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetVictoryEndAnimationPath02Array() { return __p.__vector_as_array<byte>(22); }
+  public FlatDataGlobal.VoiceEvent VoiceEvent02 { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.VoiceEvent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.VoiceEvent.OnTSA; } }
+  public long CostumeId03 { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int PositionIndex03 { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string VictoryStartAnimationPath03 { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryStartAnimationPath03Bytes() { return __p.__vector_as_span<byte>(26, 1); }
+  public Span<byte> GetVictoryStartAnimationPath03Bytes() { return __p.__vector_as_span<byte>(30, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryStartAnimationPath03Bytes() { return __p.__vector_as_arraysegment(26); }
+  public ArraySegment<byte>? GetVictoryStartAnimationPath03Bytes() { return __p.__vector_as_arraysegment(30); }
 #endif
-  public byte[] GetVictoryStartAnimationPath03Array() { return __p.__vector_as_array<byte>(26); }
-  public string VictoryEndAnimationPath03 { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetVictoryStartAnimationPath03Array() { return __p.__vector_as_array<byte>(30); }
+  public string VictoryEndAnimationPath03 { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryEndAnimationPath03Bytes() { return __p.__vector_as_span<byte>(28, 1); }
+  public Span<byte> GetVictoryEndAnimationPath03Bytes() { return __p.__vector_as_span<byte>(32, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryEndAnimationPath03Bytes() { return __p.__vector_as_arraysegment(28); }
+  public ArraySegment<byte>? GetVictoryEndAnimationPath03Bytes() { return __p.__vector_as_arraysegment(32); }
 #endif
-  public byte[] GetVictoryEndAnimationPath03Array() { return __p.__vector_as_array<byte>(28); }
-  public long CostumeId04 { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int PositionIndex04 { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string VictoryStartAnimationPath04 { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetVictoryEndAnimationPath03Array() { return __p.__vector_as_array<byte>(32); }
+  public FlatDataGlobal.VoiceEvent VoiceEvent03 { get { int o = __p.__offset(34); return o != 0 ? (FlatDataGlobal.VoiceEvent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.VoiceEvent.OnTSA; } }
+  public long CostumeId04 { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int PositionIndex04 { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string VictoryStartAnimationPath04 { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryStartAnimationPath04Bytes() { return __p.__vector_as_span<byte>(34, 1); }
+  public Span<byte> GetVictoryStartAnimationPath04Bytes() { return __p.__vector_as_span<byte>(40, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryStartAnimationPath04Bytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetVictoryStartAnimationPath04Bytes() { return __p.__vector_as_arraysegment(40); }
 #endif
-  public byte[] GetVictoryStartAnimationPath04Array() { return __p.__vector_as_array<byte>(34); }
-  public string VictoryEndAnimationPath04 { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetVictoryStartAnimationPath04Array() { return __p.__vector_as_array<byte>(40); }
+  public string VictoryEndAnimationPath04 { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryEndAnimationPath04Bytes() { return __p.__vector_as_span<byte>(36, 1); }
+  public Span<byte> GetVictoryEndAnimationPath04Bytes() { return __p.__vector_as_span<byte>(42, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryEndAnimationPath04Bytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetVictoryEndAnimationPath04Bytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public byte[] GetVictoryEndAnimationPath04Array() { return __p.__vector_as_array<byte>(36); }
-  public long CostumeId05 { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int PositionIndex05 { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string VictoryStartAnimationPath05 { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetVictoryEndAnimationPath04Array() { return __p.__vector_as_array<byte>(42); }
+  public FlatDataGlobal.VoiceEvent VoiceEvent04 { get { int o = __p.__offset(44); return o != 0 ? (FlatDataGlobal.VoiceEvent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.VoiceEvent.OnTSA; } }
+  public long CostumeId05 { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int PositionIndex05 { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string VictoryStartAnimationPath05 { get { int o = __p.__offset(50); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryStartAnimationPath05Bytes() { return __p.__vector_as_span<byte>(42, 1); }
+  public Span<byte> GetVictoryStartAnimationPath05Bytes() { return __p.__vector_as_span<byte>(50, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryStartAnimationPath05Bytes() { return __p.__vector_as_arraysegment(42); }
+  public ArraySegment<byte>? GetVictoryStartAnimationPath05Bytes() { return __p.__vector_as_arraysegment(50); }
 #endif
-  public byte[] GetVictoryStartAnimationPath05Array() { return __p.__vector_as_array<byte>(42); }
-  public string VictoryEndAnimationPath05 { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetVictoryStartAnimationPath05Array() { return __p.__vector_as_array<byte>(50); }
+  public string VictoryEndAnimationPath05 { get { int o = __p.__offset(52); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryEndAnimationPath05Bytes() { return __p.__vector_as_span<byte>(44, 1); }
+  public Span<byte> GetVictoryEndAnimationPath05Bytes() { return __p.__vector_as_span<byte>(52, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryEndAnimationPath05Bytes() { return __p.__vector_as_arraysegment(44); }
+  public ArraySegment<byte>? GetVictoryEndAnimationPath05Bytes() { return __p.__vector_as_arraysegment(52); }
 #endif
-  public byte[] GetVictoryEndAnimationPath05Array() { return __p.__vector_as_array<byte>(44); }
-  public long CostumeId06 { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int PositionIndex06 { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string VictoryStartAnimationPath06 { get { int o = __p.__offset(50); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetVictoryEndAnimationPath05Array() { return __p.__vector_as_array<byte>(52); }
+  public FlatDataGlobal.VoiceEvent VoiceEvent05 { get { int o = __p.__offset(54); return o != 0 ? (FlatDataGlobal.VoiceEvent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.VoiceEvent.OnTSA; } }
+  public long CostumeId06 { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int PositionIndex06 { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string VictoryStartAnimationPath06 { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryStartAnimationPath06Bytes() { return __p.__vector_as_span<byte>(50, 1); }
+  public Span<byte> GetVictoryStartAnimationPath06Bytes() { return __p.__vector_as_span<byte>(60, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryStartAnimationPath06Bytes() { return __p.__vector_as_arraysegment(50); }
+  public ArraySegment<byte>? GetVictoryStartAnimationPath06Bytes() { return __p.__vector_as_arraysegment(60); }
 #endif
-  public byte[] GetVictoryStartAnimationPath06Array() { return __p.__vector_as_array<byte>(50); }
-  public string VictoryEndAnimationPath06 { get { int o = __p.__offset(52); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetVictoryStartAnimationPath06Array() { return __p.__vector_as_array<byte>(60); }
+  public string VictoryEndAnimationPath06 { get { int o = __p.__offset(62); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryEndAnimationPath06Bytes() { return __p.__vector_as_span<byte>(52, 1); }
+  public Span<byte> GetVictoryEndAnimationPath06Bytes() { return __p.__vector_as_span<byte>(62, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryEndAnimationPath06Bytes() { return __p.__vector_as_arraysegment(52); }
+  public ArraySegment<byte>? GetVictoryEndAnimationPath06Bytes() { return __p.__vector_as_arraysegment(62); }
 #endif
-  public byte[] GetVictoryEndAnimationPath06Array() { return __p.__vector_as_array<byte>(52); }
+  public byte[] GetVictoryEndAnimationPath06Array() { return __p.__vector_as_array<byte>(62); }
+  public FlatDataGlobal.VoiceEvent VoiceEvent06 { get { int o = __p.__offset(64); return o != 0 ? (FlatDataGlobal.VoiceEvent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.VoiceEvent.OnTSA; } }
 
   public static Offset<FlatDataGlobal.CharacterVictoryInteractionExcel> CreateCharacterVictoryInteractionExcel(FlatBufferBuilder builder,
       long InteractionId = 0,
@@ -123,27 +129,33 @@ public struct CharacterVictoryInteractionExcel : IFlatbufferObject
       int PositionIndex01 = 0,
       StringOffset VictoryStartAnimationPath01Offset = default(StringOffset),
       StringOffset VictoryEndAnimationPath01Offset = default(StringOffset),
+      FlatDataGlobal.VoiceEvent VoiceEvent01 = FlatDataGlobal.VoiceEvent.OnTSA,
       long CostumeId02 = 0,
       int PositionIndex02 = 0,
       StringOffset VictoryStartAnimationPath02Offset = default(StringOffset),
       StringOffset VictoryEndAnimationPath02Offset = default(StringOffset),
+      FlatDataGlobal.VoiceEvent VoiceEvent02 = FlatDataGlobal.VoiceEvent.OnTSA,
       long CostumeId03 = 0,
       int PositionIndex03 = 0,
       StringOffset VictoryStartAnimationPath03Offset = default(StringOffset),
       StringOffset VictoryEndAnimationPath03Offset = default(StringOffset),
+      FlatDataGlobal.VoiceEvent VoiceEvent03 = FlatDataGlobal.VoiceEvent.OnTSA,
       long CostumeId04 = 0,
       int PositionIndex04 = 0,
       StringOffset VictoryStartAnimationPath04Offset = default(StringOffset),
       StringOffset VictoryEndAnimationPath04Offset = default(StringOffset),
+      FlatDataGlobal.VoiceEvent VoiceEvent04 = FlatDataGlobal.VoiceEvent.OnTSA,
       long CostumeId05 = 0,
       int PositionIndex05 = 0,
       StringOffset VictoryStartAnimationPath05Offset = default(StringOffset),
       StringOffset VictoryEndAnimationPath05Offset = default(StringOffset),
+      FlatDataGlobal.VoiceEvent VoiceEvent05 = FlatDataGlobal.VoiceEvent.OnTSA,
       long CostumeId06 = 0,
       int PositionIndex06 = 0,
       StringOffset VictoryStartAnimationPath06Offset = default(StringOffset),
-      StringOffset VictoryEndAnimationPath06Offset = default(StringOffset)) {
-    builder.StartTable(25);
+      StringOffset VictoryEndAnimationPath06Offset = default(StringOffset),
+      FlatDataGlobal.VoiceEvent VoiceEvent06 = FlatDataGlobal.VoiceEvent.OnTSA) {
+    builder.StartTable(31);
     CharacterVictoryInteractionExcel.AddCostumeId06(builder, CostumeId06);
     CharacterVictoryInteractionExcel.AddCostumeId05(builder, CostumeId05);
     CharacterVictoryInteractionExcel.AddCostumeId04(builder, CostumeId04);
@@ -151,53 +163,65 @@ public struct CharacterVictoryInteractionExcel : IFlatbufferObject
     CharacterVictoryInteractionExcel.AddCostumeId02(builder, CostumeId02);
     CharacterVictoryInteractionExcel.AddCostumeId01(builder, CostumeId01);
     CharacterVictoryInteractionExcel.AddInteractionId(builder, InteractionId);
+    CharacterVictoryInteractionExcel.AddVoiceEvent06(builder, VoiceEvent06);
     CharacterVictoryInteractionExcel.AddVictoryEndAnimationPath06(builder, VictoryEndAnimationPath06Offset);
     CharacterVictoryInteractionExcel.AddVictoryStartAnimationPath06(builder, VictoryStartAnimationPath06Offset);
     CharacterVictoryInteractionExcel.AddPositionIndex06(builder, PositionIndex06);
+    CharacterVictoryInteractionExcel.AddVoiceEvent05(builder, VoiceEvent05);
     CharacterVictoryInteractionExcel.AddVictoryEndAnimationPath05(builder, VictoryEndAnimationPath05Offset);
     CharacterVictoryInteractionExcel.AddVictoryStartAnimationPath05(builder, VictoryStartAnimationPath05Offset);
     CharacterVictoryInteractionExcel.AddPositionIndex05(builder, PositionIndex05);
+    CharacterVictoryInteractionExcel.AddVoiceEvent04(builder, VoiceEvent04);
     CharacterVictoryInteractionExcel.AddVictoryEndAnimationPath04(builder, VictoryEndAnimationPath04Offset);
     CharacterVictoryInteractionExcel.AddVictoryStartAnimationPath04(builder, VictoryStartAnimationPath04Offset);
     CharacterVictoryInteractionExcel.AddPositionIndex04(builder, PositionIndex04);
+    CharacterVictoryInteractionExcel.AddVoiceEvent03(builder, VoiceEvent03);
     CharacterVictoryInteractionExcel.AddVictoryEndAnimationPath03(builder, VictoryEndAnimationPath03Offset);
     CharacterVictoryInteractionExcel.AddVictoryStartAnimationPath03(builder, VictoryStartAnimationPath03Offset);
     CharacterVictoryInteractionExcel.AddPositionIndex03(builder, PositionIndex03);
+    CharacterVictoryInteractionExcel.AddVoiceEvent02(builder, VoiceEvent02);
     CharacterVictoryInteractionExcel.AddVictoryEndAnimationPath02(builder, VictoryEndAnimationPath02Offset);
     CharacterVictoryInteractionExcel.AddVictoryStartAnimationPath02(builder, VictoryStartAnimationPath02Offset);
     CharacterVictoryInteractionExcel.AddPositionIndex02(builder, PositionIndex02);
+    CharacterVictoryInteractionExcel.AddVoiceEvent01(builder, VoiceEvent01);
     CharacterVictoryInteractionExcel.AddVictoryEndAnimationPath01(builder, VictoryEndAnimationPath01Offset);
     CharacterVictoryInteractionExcel.AddVictoryStartAnimationPath01(builder, VictoryStartAnimationPath01Offset);
     CharacterVictoryInteractionExcel.AddPositionIndex01(builder, PositionIndex01);
     return CharacterVictoryInteractionExcel.EndCharacterVictoryInteractionExcel(builder);
   }
 
-  public static void StartCharacterVictoryInteractionExcel(FlatBufferBuilder builder) { builder.StartTable(25); }
+  public static void StartCharacterVictoryInteractionExcel(FlatBufferBuilder builder) { builder.StartTable(31); }
   public static void AddInteractionId(FlatBufferBuilder builder, long InteractionId) { builder.AddLong(0, InteractionId, 0); }
   public static void AddCostumeId01(FlatBufferBuilder builder, long CostumeId01) { builder.AddLong(1, CostumeId01, 0); }
   public static void AddPositionIndex01(FlatBufferBuilder builder, int PositionIndex01) { builder.AddInt(2, PositionIndex01, 0); }
   public static void AddVictoryStartAnimationPath01(FlatBufferBuilder builder, StringOffset VictoryStartAnimationPath01Offset) { builder.AddOffset(3, VictoryStartAnimationPath01Offset.Value, 0); }
   public static void AddVictoryEndAnimationPath01(FlatBufferBuilder builder, StringOffset VictoryEndAnimationPath01Offset) { builder.AddOffset(4, VictoryEndAnimationPath01Offset.Value, 0); }
-  public static void AddCostumeId02(FlatBufferBuilder builder, long CostumeId02) { builder.AddLong(5, CostumeId02, 0); }
-  public static void AddPositionIndex02(FlatBufferBuilder builder, int PositionIndex02) { builder.AddInt(6, PositionIndex02, 0); }
-  public static void AddVictoryStartAnimationPath02(FlatBufferBuilder builder, StringOffset VictoryStartAnimationPath02Offset) { builder.AddOffset(7, VictoryStartAnimationPath02Offset.Value, 0); }
-  public static void AddVictoryEndAnimationPath02(FlatBufferBuilder builder, StringOffset VictoryEndAnimationPath02Offset) { builder.AddOffset(8, VictoryEndAnimationPath02Offset.Value, 0); }
-  public static void AddCostumeId03(FlatBufferBuilder builder, long CostumeId03) { builder.AddLong(9, CostumeId03, 0); }
-  public static void AddPositionIndex03(FlatBufferBuilder builder, int PositionIndex03) { builder.AddInt(10, PositionIndex03, 0); }
-  public static void AddVictoryStartAnimationPath03(FlatBufferBuilder builder, StringOffset VictoryStartAnimationPath03Offset) { builder.AddOffset(11, VictoryStartAnimationPath03Offset.Value, 0); }
-  public static void AddVictoryEndAnimationPath03(FlatBufferBuilder builder, StringOffset VictoryEndAnimationPath03Offset) { builder.AddOffset(12, VictoryEndAnimationPath03Offset.Value, 0); }
-  public static void AddCostumeId04(FlatBufferBuilder builder, long CostumeId04) { builder.AddLong(13, CostumeId04, 0); }
-  public static void AddPositionIndex04(FlatBufferBuilder builder, int PositionIndex04) { builder.AddInt(14, PositionIndex04, 0); }
-  public static void AddVictoryStartAnimationPath04(FlatBufferBuilder builder, StringOffset VictoryStartAnimationPath04Offset) { builder.AddOffset(15, VictoryStartAnimationPath04Offset.Value, 0); }
-  public static void AddVictoryEndAnimationPath04(FlatBufferBuilder builder, StringOffset VictoryEndAnimationPath04Offset) { builder.AddOffset(16, VictoryEndAnimationPath04Offset.Value, 0); }
-  public static void AddCostumeId05(FlatBufferBuilder builder, long CostumeId05) { builder.AddLong(17, CostumeId05, 0); }
-  public static void AddPositionIndex05(FlatBufferBuilder builder, int PositionIndex05) { builder.AddInt(18, PositionIndex05, 0); }
-  public static void AddVictoryStartAnimationPath05(FlatBufferBuilder builder, StringOffset VictoryStartAnimationPath05Offset) { builder.AddOffset(19, VictoryStartAnimationPath05Offset.Value, 0); }
-  public static void AddVictoryEndAnimationPath05(FlatBufferBuilder builder, StringOffset VictoryEndAnimationPath05Offset) { builder.AddOffset(20, VictoryEndAnimationPath05Offset.Value, 0); }
-  public static void AddCostumeId06(FlatBufferBuilder builder, long CostumeId06) { builder.AddLong(21, CostumeId06, 0); }
-  public static void AddPositionIndex06(FlatBufferBuilder builder, int PositionIndex06) { builder.AddInt(22, PositionIndex06, 0); }
-  public static void AddVictoryStartAnimationPath06(FlatBufferBuilder builder, StringOffset VictoryStartAnimationPath06Offset) { builder.AddOffset(23, VictoryStartAnimationPath06Offset.Value, 0); }
-  public static void AddVictoryEndAnimationPath06(FlatBufferBuilder builder, StringOffset VictoryEndAnimationPath06Offset) { builder.AddOffset(24, VictoryEndAnimationPath06Offset.Value, 0); }
+  public static void AddVoiceEvent01(FlatBufferBuilder builder, FlatDataGlobal.VoiceEvent VoiceEvent01) { builder.AddInt(5, (int)VoiceEvent01, 0); }
+  public static void AddCostumeId02(FlatBufferBuilder builder, long CostumeId02) { builder.AddLong(6, CostumeId02, 0); }
+  public static void AddPositionIndex02(FlatBufferBuilder builder, int PositionIndex02) { builder.AddInt(7, PositionIndex02, 0); }
+  public static void AddVictoryStartAnimationPath02(FlatBufferBuilder builder, StringOffset VictoryStartAnimationPath02Offset) { builder.AddOffset(8, VictoryStartAnimationPath02Offset.Value, 0); }
+  public static void AddVictoryEndAnimationPath02(FlatBufferBuilder builder, StringOffset VictoryEndAnimationPath02Offset) { builder.AddOffset(9, VictoryEndAnimationPath02Offset.Value, 0); }
+  public static void AddVoiceEvent02(FlatBufferBuilder builder, FlatDataGlobal.VoiceEvent VoiceEvent02) { builder.AddInt(10, (int)VoiceEvent02, 0); }
+  public static void AddCostumeId03(FlatBufferBuilder builder, long CostumeId03) { builder.AddLong(11, CostumeId03, 0); }
+  public static void AddPositionIndex03(FlatBufferBuilder builder, int PositionIndex03) { builder.AddInt(12, PositionIndex03, 0); }
+  public static void AddVictoryStartAnimationPath03(FlatBufferBuilder builder, StringOffset VictoryStartAnimationPath03Offset) { builder.AddOffset(13, VictoryStartAnimationPath03Offset.Value, 0); }
+  public static void AddVictoryEndAnimationPath03(FlatBufferBuilder builder, StringOffset VictoryEndAnimationPath03Offset) { builder.AddOffset(14, VictoryEndAnimationPath03Offset.Value, 0); }
+  public static void AddVoiceEvent03(FlatBufferBuilder builder, FlatDataGlobal.VoiceEvent VoiceEvent03) { builder.AddInt(15, (int)VoiceEvent03, 0); }
+  public static void AddCostumeId04(FlatBufferBuilder builder, long CostumeId04) { builder.AddLong(16, CostumeId04, 0); }
+  public static void AddPositionIndex04(FlatBufferBuilder builder, int PositionIndex04) { builder.AddInt(17, PositionIndex04, 0); }
+  public static void AddVictoryStartAnimationPath04(FlatBufferBuilder builder, StringOffset VictoryStartAnimationPath04Offset) { builder.AddOffset(18, VictoryStartAnimationPath04Offset.Value, 0); }
+  public static void AddVictoryEndAnimationPath04(FlatBufferBuilder builder, StringOffset VictoryEndAnimationPath04Offset) { builder.AddOffset(19, VictoryEndAnimationPath04Offset.Value, 0); }
+  public static void AddVoiceEvent04(FlatBufferBuilder builder, FlatDataGlobal.VoiceEvent VoiceEvent04) { builder.AddInt(20, (int)VoiceEvent04, 0); }
+  public static void AddCostumeId05(FlatBufferBuilder builder, long CostumeId05) { builder.AddLong(21, CostumeId05, 0); }
+  public static void AddPositionIndex05(FlatBufferBuilder builder, int PositionIndex05) { builder.AddInt(22, PositionIndex05, 0); }
+  public static void AddVictoryStartAnimationPath05(FlatBufferBuilder builder, StringOffset VictoryStartAnimationPath05Offset) { builder.AddOffset(23, VictoryStartAnimationPath05Offset.Value, 0); }
+  public static void AddVictoryEndAnimationPath05(FlatBufferBuilder builder, StringOffset VictoryEndAnimationPath05Offset) { builder.AddOffset(24, VictoryEndAnimationPath05Offset.Value, 0); }
+  public static void AddVoiceEvent05(FlatBufferBuilder builder, FlatDataGlobal.VoiceEvent VoiceEvent05) { builder.AddInt(25, (int)VoiceEvent05, 0); }
+  public static void AddCostumeId06(FlatBufferBuilder builder, long CostumeId06) { builder.AddLong(26, CostumeId06, 0); }
+  public static void AddPositionIndex06(FlatBufferBuilder builder, int PositionIndex06) { builder.AddInt(27, PositionIndex06, 0); }
+  public static void AddVictoryStartAnimationPath06(FlatBufferBuilder builder, StringOffset VictoryStartAnimationPath06Offset) { builder.AddOffset(28, VictoryStartAnimationPath06Offset.Value, 0); }
+  public static void AddVictoryEndAnimationPath06(FlatBufferBuilder builder, StringOffset VictoryEndAnimationPath06Offset) { builder.AddOffset(29, VictoryEndAnimationPath06Offset.Value, 0); }
+  public static void AddVoiceEvent06(FlatBufferBuilder builder, FlatDataGlobal.VoiceEvent VoiceEvent06) { builder.AddInt(30, (int)VoiceEvent06, 0); }
   public static Offset<FlatDataGlobal.CharacterVictoryInteractionExcel> EndCharacterVictoryInteractionExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterVictoryInteractionExcel>(o);

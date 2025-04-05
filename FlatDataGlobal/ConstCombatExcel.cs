@@ -37,138 +37,137 @@ public struct ConstCombatExcel : IFlatbufferObject
   public float PublicSpeechBubbleOffsetX { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public float PublicSpeechBubbleOffsetY { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public float PublicSpeechBubbleOffsetZ { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float PublicSpeechDuration { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public int ShowRaidListCount { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long MaxRaidTicketCount { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long MaxRaidBossSkillSlot { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string EngageTimelinePath { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public int ShowRaidListCount { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long MaxRaidTicketCount { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long MaxRaidBossSkillSlot { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string EngageTimelinePath { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEngageTimelinePathBytes() { return __p.__vector_as_span<byte>(36, 1); }
+  public Span<byte> GetEngageTimelinePathBytes() { return __p.__vector_as_span<byte>(34, 1); }
 #else
-  public ArraySegment<byte>? GetEngageTimelinePathBytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetEngageTimelinePathBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
-  public byte[] GetEngageTimelinePathArray() { return __p.__vector_as_array<byte>(36); }
-  public string EngageWithSupporterTimelinePath { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEngageTimelinePathArray() { return __p.__vector_as_array<byte>(34); }
+  public string EngageWithSupporterTimelinePath { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEngageWithSupporterTimelinePathBytes() { return __p.__vector_as_span<byte>(38, 1); }
+  public Span<byte> GetEngageWithSupporterTimelinePathBytes() { return __p.__vector_as_span<byte>(36, 1); }
 #else
-  public ArraySegment<byte>? GetEngageWithSupporterTimelinePathBytes() { return __p.__vector_as_arraysegment(38); }
+  public ArraySegment<byte>? GetEngageWithSupporterTimelinePathBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public byte[] GetEngageWithSupporterTimelinePathArray() { return __p.__vector_as_array<byte>(38); }
-  public string VictoryTimelinePath { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEngageWithSupporterTimelinePathArray() { return __p.__vector_as_array<byte>(36); }
+  public string VictoryTimelinePath { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetVictoryTimelinePathBytes() { return __p.__vector_as_span<byte>(40, 1); }
+  public Span<byte> GetVictoryTimelinePathBytes() { return __p.__vector_as_span<byte>(38, 1); }
 #else
-  public ArraySegment<byte>? GetVictoryTimelinePathBytes() { return __p.__vector_as_arraysegment(40); }
+  public ArraySegment<byte>? GetVictoryTimelinePathBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public byte[] GetVictoryTimelinePathArray() { return __p.__vector_as_array<byte>(40); }
-  public long TimeLimitAlarm { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int EchelonMaxCommonCost { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int EchelonInitCommonCost { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long SkillSlotCoolTime { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EnemyRegenCost { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ChampionRegenCost { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long PlayerRegenCostDelay { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CrowdControlFactor { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string RaidOpenScenarioId { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetVictoryTimelinePathArray() { return __p.__vector_as_array<byte>(38); }
+  public long TimeLimitAlarm { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int EchelonMaxCommonCost { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int EchelonInitCommonCost { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long SkillSlotCoolTime { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnemyRegenCost { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ChampionRegenCost { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long PlayerRegenCostDelay { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CrowdControlFactor { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string RaidOpenScenarioId { get { int o = __p.__offset(56); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetRaidOpenScenarioIdBytes() { return __p.__vector_as_span<byte>(58, 1); }
+  public Span<byte> GetRaidOpenScenarioIdBytes() { return __p.__vector_as_span<byte>(56, 1); }
 #else
-  public ArraySegment<byte>? GetRaidOpenScenarioIdBytes() { return __p.__vector_as_arraysegment(58); }
+  public ArraySegment<byte>? GetRaidOpenScenarioIdBytes() { return __p.__vector_as_arraysegment(56); }
 #endif
-  public byte[] GetRaidOpenScenarioIdArray() { return __p.__vector_as_array<byte>(58); }
-  public string EliminateRaidOpenScenarioId { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetRaidOpenScenarioIdArray() { return __p.__vector_as_array<byte>(56); }
+  public string EliminateRaidOpenScenarioId { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEliminateRaidOpenScenarioIdBytes() { return __p.__vector_as_span<byte>(60, 1); }
+  public Span<byte> GetEliminateRaidOpenScenarioIdBytes() { return __p.__vector_as_span<byte>(58, 1); }
 #else
-  public ArraySegment<byte>? GetEliminateRaidOpenScenarioIdBytes() { return __p.__vector_as_arraysegment(60); }
+  public ArraySegment<byte>? GetEliminateRaidOpenScenarioIdBytes() { return __p.__vector_as_arraysegment(58); }
 #endif
-  public byte[] GetEliminateRaidOpenScenarioIdArray() { return __p.__vector_as_array<byte>(60); }
-  public long DefenceConstA { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long DefenceConstB { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long DefenceConstC { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long DefenceConstD { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long AccuracyConstA { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long AccuracyConstB { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long AccuracyConstC { get { int o = __p.__offset(74); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long AccuracyConstD { get { int o = __p.__offset(76); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CriticalConstA { get { int o = __p.__offset(78); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CriticalConstB { get { int o = __p.__offset(80); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CriticalConstC { get { int o = __p.__offset(82); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CriticalConstD { get { int o = __p.__offset(84); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int MaxGroupBuffLevel { get { int o = __p.__offset(86); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int EmojiDefaultTime { get { int o = __p.__offset(88); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long TimeLineActionRotateSpeed { get { int o = __p.__offset(90); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long BodyRotateSpeed { get { int o = __p.__offset(92); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long NormalTimeScale { get { int o = __p.__offset(94); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FastTimeScale { get { int o = __p.__offset(96); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long BulletTimeScale { get { int o = __p.__offset(98); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long UIDisplayDelayAfterSkillCutIn { get { int o = __p.__offset(100); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool UseInitialRangeForCoverMove { get { int o = __p.__offset(102); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long SlowTimeScale { get { int o = __p.__offset(104); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public float AimIKMinDegree { get { int o = __p.__offset(106); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float AimIKMaxDegree { get { int o = __p.__offset(108); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public int MinimumClearTime { get { int o = __p.__offset(110); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int MinimumClearLevelGap { get { int o = __p.__offset(112); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int CheckCheaterMaxUseCostNonArena { get { int o = __p.__offset(114); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int CheckCheaterMaxUseCostArena { get { int o = __p.__offset(116); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long AllowedMaxTimeScale { get { int o = __p.__offset(118); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RandomAnimationOutput { get { int o = __p.__offset(120); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long SummonedTeleportDistance { get { int o = __p.__offset(122); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int ArenaMinimumClearTime { get { int o = __p.__offset(124); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long WORLDBOSSBATTLELITTLE { get { int o = __p.__offset(126); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLELITTLETw { get { int o = __p.__offset(128); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLELITTLEAsia { get { int o = __p.__offset(130); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLELITTLENa { get { int o = __p.__offset(132); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLELITTLEGlobal { get { int o = __p.__offset(134); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEMIDDLE { get { int o = __p.__offset(136); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEMIDDLETw { get { int o = __p.__offset(138); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEMIDDLEAsia { get { int o = __p.__offset(140); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEMIDDLENa { get { int o = __p.__offset(142); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEMIDDLEGlobal { get { int o = __p.__offset(144); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEHIGH { get { int o = __p.__offset(146); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEHIGHTw { get { int o = __p.__offset(148); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEHIGHAsia { get { int o = __p.__offset(150); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEHIGHNa { get { int o = __p.__offset(152); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEHIGHGlobal { get { int o = __p.__offset(154); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEVERYHIGH { get { int o = __p.__offset(156); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEVERYHIGHTw { get { int o = __p.__offset(158); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEVERYHIGHAsia { get { int o = __p.__offset(160); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEVERYHIGHNa { get { int o = __p.__offset(162); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WORLDBOSSBATTLEVERYHIGHGlobal { get { int o = __p.__offset(164); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WorldRaidAutoSyncTermSecond { get { int o = __p.__offset(166); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WorldRaidBossHpDecreaseTerm { get { int o = __p.__offset(168); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long WorldRaidBossParcelReactionDelay { get { int o = __p.__offset(170); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RaidRankingJumpMinimumWaitingTime { get { int o = __p.__offset(172); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public float EffectTeleportDistance { get { int o = __p.__offset(174); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public long AuraExitThresholdMargin { get { int o = __p.__offset(176); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long TSAInteractionDamageFactor { get { int o = __p.__offset(178); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long VictoryInteractionRate { get { int o = __p.__offset(180); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string EchelonExtensionEngageTimelinePath { get { int o = __p.__offset(182); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEliminateRaidOpenScenarioIdArray() { return __p.__vector_as_array<byte>(58); }
+  public long DefenceConstA { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DefenceConstB { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DefenceConstC { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DefenceConstD { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long AccuracyConstA { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long AccuracyConstB { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long AccuracyConstC { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long AccuracyConstD { get { int o = __p.__offset(74); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CriticalConstA { get { int o = __p.__offset(76); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CriticalConstB { get { int o = __p.__offset(78); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CriticalConstC { get { int o = __p.__offset(80); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CriticalConstD { get { int o = __p.__offset(82); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int MaxGroupBuffLevel { get { int o = __p.__offset(84); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int EmojiDefaultTime { get { int o = __p.__offset(86); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long TimeLineActionRotateSpeed { get { int o = __p.__offset(88); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long BodyRotateSpeed { get { int o = __p.__offset(90); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long NormalTimeScale { get { int o = __p.__offset(92); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FastTimeScale { get { int o = __p.__offset(94); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long BulletTimeScale { get { int o = __p.__offset(96); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long UIDisplayDelayAfterSkillCutIn { get { int o = __p.__offset(98); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool UseInitialRangeForCoverMove { get { int o = __p.__offset(100); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long SlowTimeScale { get { int o = __p.__offset(102); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public float AimIKMinDegree { get { int o = __p.__offset(104); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float AimIKMaxDegree { get { int o = __p.__offset(106); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public int MinimumClearTime { get { int o = __p.__offset(108); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MinimumClearLevelGap { get { int o = __p.__offset(110); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CheckCheaterMaxUseCostNonArena { get { int o = __p.__offset(112); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CheckCheaterMaxUseCostArena { get { int o = __p.__offset(114); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long AllowedMaxTimeScale { get { int o = __p.__offset(116); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RandomAnimationOutput { get { int o = __p.__offset(118); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long SummonedTeleportDistance { get { int o = __p.__offset(120); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int ArenaMinimumClearTime { get { int o = __p.__offset(122); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long WORLDBOSSBATTLELITTLE { get { int o = __p.__offset(124); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLELITTLETw { get { int o = __p.__offset(126); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLELITTLEAsia { get { int o = __p.__offset(128); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLELITTLENa { get { int o = __p.__offset(130); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLELITTLEGlobal { get { int o = __p.__offset(132); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEMIDDLE { get { int o = __p.__offset(134); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEMIDDLETw { get { int o = __p.__offset(136); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEMIDDLEAsia { get { int o = __p.__offset(138); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEMIDDLENa { get { int o = __p.__offset(140); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEMIDDLEGlobal { get { int o = __p.__offset(142); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEHIGH { get { int o = __p.__offset(144); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEHIGHTw { get { int o = __p.__offset(146); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEHIGHAsia { get { int o = __p.__offset(148); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEHIGHNa { get { int o = __p.__offset(150); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEHIGHGlobal { get { int o = __p.__offset(152); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEVERYHIGH { get { int o = __p.__offset(154); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEVERYHIGHTw { get { int o = __p.__offset(156); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEVERYHIGHAsia { get { int o = __p.__offset(158); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEVERYHIGHNa { get { int o = __p.__offset(160); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WORLDBOSSBATTLEVERYHIGHGlobal { get { int o = __p.__offset(162); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WorldRaidAutoSyncTermSecond { get { int o = __p.__offset(164); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WorldRaidBossHpDecreaseTerm { get { int o = __p.__offset(166); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long WorldRaidBossParcelReactionDelay { get { int o = __p.__offset(168); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RaidRankingJumpMinimumWaitingTime { get { int o = __p.__offset(170); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public float EffectTeleportDistance { get { int o = __p.__offset(172); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public long AuraExitThresholdMargin { get { int o = __p.__offset(174); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long TSAInteractionDamageFactor { get { int o = __p.__offset(176); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long VictoryInteractionRate { get { int o = __p.__offset(178); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string EchelonExtensionEngageTimelinePath { get { int o = __p.__offset(180); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEchelonExtensionEngageTimelinePathBytes() { return __p.__vector_as_span<byte>(182, 1); }
+  public Span<byte> GetEchelonExtensionEngageTimelinePathBytes() { return __p.__vector_as_span<byte>(180, 1); }
 #else
-  public ArraySegment<byte>? GetEchelonExtensionEngageTimelinePathBytes() { return __p.__vector_as_arraysegment(182); }
+  public ArraySegment<byte>? GetEchelonExtensionEngageTimelinePathBytes() { return __p.__vector_as_arraysegment(180); }
 #endif
-  public byte[] GetEchelonExtensionEngageTimelinePathArray() { return __p.__vector_as_array<byte>(182); }
-  public string EchelonExtensionEngageWithSupporterTimelinePath { get { int o = __p.__offset(184); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEchelonExtensionEngageTimelinePathArray() { return __p.__vector_as_array<byte>(180); }
+  public string EchelonExtensionEngageWithSupporterTimelinePath { get { int o = __p.__offset(182); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEchelonExtensionEngageWithSupporterTimelinePathBytes() { return __p.__vector_as_span<byte>(184, 1); }
+  public Span<byte> GetEchelonExtensionEngageWithSupporterTimelinePathBytes() { return __p.__vector_as_span<byte>(182, 1); }
 #else
-  public ArraySegment<byte>? GetEchelonExtensionEngageWithSupporterTimelinePathBytes() { return __p.__vector_as_arraysegment(184); }
+  public ArraySegment<byte>? GetEchelonExtensionEngageWithSupporterTimelinePathBytes() { return __p.__vector_as_arraysegment(182); }
 #endif
-  public byte[] GetEchelonExtensionEngageWithSupporterTimelinePathArray() { return __p.__vector_as_array<byte>(184); }
-  public string EchelonExtensionVictoryTimelinePath { get { int o = __p.__offset(186); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEchelonExtensionEngageWithSupporterTimelinePathArray() { return __p.__vector_as_array<byte>(182); }
+  public string EchelonExtensionVictoryTimelinePath { get { int o = __p.__offset(184); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEchelonExtensionVictoryTimelinePathBytes() { return __p.__vector_as_span<byte>(186, 1); }
+  public Span<byte> GetEchelonExtensionVictoryTimelinePathBytes() { return __p.__vector_as_span<byte>(184, 1); }
 #else
-  public ArraySegment<byte>? GetEchelonExtensionVictoryTimelinePathBytes() { return __p.__vector_as_arraysegment(186); }
+  public ArraySegment<byte>? GetEchelonExtensionVictoryTimelinePathBytes() { return __p.__vector_as_arraysegment(184); }
 #endif
-  public byte[] GetEchelonExtensionVictoryTimelinePathArray() { return __p.__vector_as_array<byte>(186); }
-  public int EchelonExtensionEchelonMaxCommonCost { get { int o = __p.__offset(188); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int EchelonExtensionEchelonInitCommonCost { get { int o = __p.__offset(190); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long EchelonExtensionCostRegenRatio { get { int o = __p.__offset(192); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int CheckCheaterMaxUseCostMultiFloorRaid { get { int o = __p.__offset(194); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public byte[] GetEchelonExtensionVictoryTimelinePathArray() { return __p.__vector_as_array<byte>(184); }
+  public int EchelonExtensionEchelonMaxCommonCost { get { int o = __p.__offset(186); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int EchelonExtensionEchelonInitCommonCost { get { int o = __p.__offset(188); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long EchelonExtensionCostRegenRatio { get { int o = __p.__offset(190); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int CheckCheaterMaxUseCostMultiFloorRaid { get { int o = __p.__offset(192); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.ConstCombatExcel> CreateConstCombatExcel(FlatBufferBuilder builder,
       int SkillHandCount = 0,
@@ -183,7 +182,6 @@ public struct ConstCombatExcel : IFlatbufferObject
       float PublicSpeechBubbleOffsetX = 0.0f,
       float PublicSpeechBubbleOffsetY = 0.0f,
       float PublicSpeechBubbleOffsetZ = 0.0f,
-      float PublicSpeechDuration = 0.0f,
       int ShowRaidListCount = 0,
       long MaxRaidTicketCount = 0,
       long MaxRaidBossSkillSlot = 0,
@@ -267,7 +265,7 @@ public struct ConstCombatExcel : IFlatbufferObject
       int EchelonExtensionEchelonInitCommonCost = 0,
       long EchelonExtensionCostRegenRatio = 0,
       int CheckCheaterMaxUseCostMultiFloorRaid = 0) {
-    builder.StartTable(96);
+    builder.StartTable(95);
     ConstCombatExcel.AddEchelonExtensionCostRegenRatio(builder, EchelonExtensionCostRegenRatio);
     ConstCombatExcel.AddVictoryInteractionRate(builder, VictoryInteractionRate);
     ConstCombatExcel.AddTSAInteractionDamageFactor(builder, TSAInteractionDamageFactor);
@@ -350,7 +348,6 @@ public struct ConstCombatExcel : IFlatbufferObject
     ConstCombatExcel.AddEngageWithSupporterTimelinePath(builder, EngageWithSupporterTimelinePathOffset);
     ConstCombatExcel.AddEngageTimelinePath(builder, EngageTimelinePathOffset);
     ConstCombatExcel.AddShowRaidListCount(builder, ShowRaidListCount);
-    ConstCombatExcel.AddPublicSpeechDuration(builder, PublicSpeechDuration);
     ConstCombatExcel.AddPublicSpeechBubbleOffsetZ(builder, PublicSpeechBubbleOffsetZ);
     ConstCombatExcel.AddPublicSpeechBubbleOffsetY(builder, PublicSpeechBubbleOffsetY);
     ConstCombatExcel.AddPublicSpeechBubbleOffsetX(builder, PublicSpeechBubbleOffsetX);
@@ -367,7 +364,7 @@ public struct ConstCombatExcel : IFlatbufferObject
     return ConstCombatExcel.EndConstCombatExcel(builder);
   }
 
-  public static void StartConstCombatExcel(FlatBufferBuilder builder) { builder.StartTable(96); }
+  public static void StartConstCombatExcel(FlatBufferBuilder builder) { builder.StartTable(95); }
   public static void AddSkillHandCount(FlatBufferBuilder builder, int SkillHandCount) { builder.AddInt(0, SkillHandCount, 0); }
   public static void AddDyingTime(FlatBufferBuilder builder, int DyingTime) { builder.AddInt(1, DyingTime, 0); }
   public static void AddBuffIconBlinkTime(FlatBufferBuilder builder, int BuffIconBlinkTime) { builder.AddInt(2, BuffIconBlinkTime, 0); }
@@ -380,90 +377,89 @@ public struct ConstCombatExcel : IFlatbufferObject
   public static void AddPublicSpeechBubbleOffsetX(FlatBufferBuilder builder, float PublicSpeechBubbleOffsetX) { builder.AddFloat(9, PublicSpeechBubbleOffsetX, 0.0f); }
   public static void AddPublicSpeechBubbleOffsetY(FlatBufferBuilder builder, float PublicSpeechBubbleOffsetY) { builder.AddFloat(10, PublicSpeechBubbleOffsetY, 0.0f); }
   public static void AddPublicSpeechBubbleOffsetZ(FlatBufferBuilder builder, float PublicSpeechBubbleOffsetZ) { builder.AddFloat(11, PublicSpeechBubbleOffsetZ, 0.0f); }
-  public static void AddPublicSpeechDuration(FlatBufferBuilder builder, float PublicSpeechDuration) { builder.AddFloat(12, PublicSpeechDuration, 0.0f); }
-  public static void AddShowRaidListCount(FlatBufferBuilder builder, int ShowRaidListCount) { builder.AddInt(13, ShowRaidListCount, 0); }
-  public static void AddMaxRaidTicketCount(FlatBufferBuilder builder, long MaxRaidTicketCount) { builder.AddLong(14, MaxRaidTicketCount, 0); }
-  public static void AddMaxRaidBossSkillSlot(FlatBufferBuilder builder, long MaxRaidBossSkillSlot) { builder.AddLong(15, MaxRaidBossSkillSlot, 0); }
-  public static void AddEngageTimelinePath(FlatBufferBuilder builder, StringOffset EngageTimelinePathOffset) { builder.AddOffset(16, EngageTimelinePathOffset.Value, 0); }
-  public static void AddEngageWithSupporterTimelinePath(FlatBufferBuilder builder, StringOffset EngageWithSupporterTimelinePathOffset) { builder.AddOffset(17, EngageWithSupporterTimelinePathOffset.Value, 0); }
-  public static void AddVictoryTimelinePath(FlatBufferBuilder builder, StringOffset VictoryTimelinePathOffset) { builder.AddOffset(18, VictoryTimelinePathOffset.Value, 0); }
-  public static void AddTimeLimitAlarm(FlatBufferBuilder builder, long TimeLimitAlarm) { builder.AddLong(19, TimeLimitAlarm, 0); }
-  public static void AddEchelonMaxCommonCost(FlatBufferBuilder builder, int EchelonMaxCommonCost) { builder.AddInt(20, EchelonMaxCommonCost, 0); }
-  public static void AddEchelonInitCommonCost(FlatBufferBuilder builder, int EchelonInitCommonCost) { builder.AddInt(21, EchelonInitCommonCost, 0); }
-  public static void AddSkillSlotCoolTime(FlatBufferBuilder builder, long SkillSlotCoolTime) { builder.AddLong(22, SkillSlotCoolTime, 0); }
-  public static void AddEnemyRegenCost(FlatBufferBuilder builder, long EnemyRegenCost) { builder.AddLong(23, EnemyRegenCost, 0); }
-  public static void AddChampionRegenCost(FlatBufferBuilder builder, long ChampionRegenCost) { builder.AddLong(24, ChampionRegenCost, 0); }
-  public static void AddPlayerRegenCostDelay(FlatBufferBuilder builder, long PlayerRegenCostDelay) { builder.AddLong(25, PlayerRegenCostDelay, 0); }
-  public static void AddCrowdControlFactor(FlatBufferBuilder builder, long CrowdControlFactor) { builder.AddLong(26, CrowdControlFactor, 0); }
-  public static void AddRaidOpenScenarioId(FlatBufferBuilder builder, StringOffset RaidOpenScenarioIdOffset) { builder.AddOffset(27, RaidOpenScenarioIdOffset.Value, 0); }
-  public static void AddEliminateRaidOpenScenarioId(FlatBufferBuilder builder, StringOffset EliminateRaidOpenScenarioIdOffset) { builder.AddOffset(28, EliminateRaidOpenScenarioIdOffset.Value, 0); }
-  public static void AddDefenceConstA(FlatBufferBuilder builder, long DefenceConstA) { builder.AddLong(29, DefenceConstA, 0); }
-  public static void AddDefenceConstB(FlatBufferBuilder builder, long DefenceConstB) { builder.AddLong(30, DefenceConstB, 0); }
-  public static void AddDefenceConstC(FlatBufferBuilder builder, long DefenceConstC) { builder.AddLong(31, DefenceConstC, 0); }
-  public static void AddDefenceConstD(FlatBufferBuilder builder, long DefenceConstD) { builder.AddLong(32, DefenceConstD, 0); }
-  public static void AddAccuracyConstA(FlatBufferBuilder builder, long AccuracyConstA) { builder.AddLong(33, AccuracyConstA, 0); }
-  public static void AddAccuracyConstB(FlatBufferBuilder builder, long AccuracyConstB) { builder.AddLong(34, AccuracyConstB, 0); }
-  public static void AddAccuracyConstC(FlatBufferBuilder builder, long AccuracyConstC) { builder.AddLong(35, AccuracyConstC, 0); }
-  public static void AddAccuracyConstD(FlatBufferBuilder builder, long AccuracyConstD) { builder.AddLong(36, AccuracyConstD, 0); }
-  public static void AddCriticalConstA(FlatBufferBuilder builder, long CriticalConstA) { builder.AddLong(37, CriticalConstA, 0); }
-  public static void AddCriticalConstB(FlatBufferBuilder builder, long CriticalConstB) { builder.AddLong(38, CriticalConstB, 0); }
-  public static void AddCriticalConstC(FlatBufferBuilder builder, long CriticalConstC) { builder.AddLong(39, CriticalConstC, 0); }
-  public static void AddCriticalConstD(FlatBufferBuilder builder, long CriticalConstD) { builder.AddLong(40, CriticalConstD, 0); }
-  public static void AddMaxGroupBuffLevel(FlatBufferBuilder builder, int MaxGroupBuffLevel) { builder.AddInt(41, MaxGroupBuffLevel, 0); }
-  public static void AddEmojiDefaultTime(FlatBufferBuilder builder, int EmojiDefaultTime) { builder.AddInt(42, EmojiDefaultTime, 0); }
-  public static void AddTimeLineActionRotateSpeed(FlatBufferBuilder builder, long TimeLineActionRotateSpeed) { builder.AddLong(43, TimeLineActionRotateSpeed, 0); }
-  public static void AddBodyRotateSpeed(FlatBufferBuilder builder, long BodyRotateSpeed) { builder.AddLong(44, BodyRotateSpeed, 0); }
-  public static void AddNormalTimeScale(FlatBufferBuilder builder, long NormalTimeScale) { builder.AddLong(45, NormalTimeScale, 0); }
-  public static void AddFastTimeScale(FlatBufferBuilder builder, long FastTimeScale) { builder.AddLong(46, FastTimeScale, 0); }
-  public static void AddBulletTimeScale(FlatBufferBuilder builder, long BulletTimeScale) { builder.AddLong(47, BulletTimeScale, 0); }
-  public static void AddUIDisplayDelayAfterSkillCutIn(FlatBufferBuilder builder, long UIDisplayDelayAfterSkillCutIn) { builder.AddLong(48, UIDisplayDelayAfterSkillCutIn, 0); }
-  public static void AddUseInitialRangeForCoverMove(FlatBufferBuilder builder, bool UseInitialRangeForCoverMove) { builder.AddBool(49, UseInitialRangeForCoverMove, false); }
-  public static void AddSlowTimeScale(FlatBufferBuilder builder, long SlowTimeScale) { builder.AddLong(50, SlowTimeScale, 0); }
-  public static void AddAimIKMinDegree(FlatBufferBuilder builder, float AimIKMinDegree) { builder.AddFloat(51, AimIKMinDegree, 0.0f); }
-  public static void AddAimIKMaxDegree(FlatBufferBuilder builder, float AimIKMaxDegree) { builder.AddFloat(52, AimIKMaxDegree, 0.0f); }
-  public static void AddMinimumClearTime(FlatBufferBuilder builder, int MinimumClearTime) { builder.AddInt(53, MinimumClearTime, 0); }
-  public static void AddMinimumClearLevelGap(FlatBufferBuilder builder, int MinimumClearLevelGap) { builder.AddInt(54, MinimumClearLevelGap, 0); }
-  public static void AddCheckCheaterMaxUseCostNonArena(FlatBufferBuilder builder, int CheckCheaterMaxUseCostNonArena) { builder.AddInt(55, CheckCheaterMaxUseCostNonArena, 0); }
-  public static void AddCheckCheaterMaxUseCostArena(FlatBufferBuilder builder, int CheckCheaterMaxUseCostArena) { builder.AddInt(56, CheckCheaterMaxUseCostArena, 0); }
-  public static void AddAllowedMaxTimeScale(FlatBufferBuilder builder, long AllowedMaxTimeScale) { builder.AddLong(57, AllowedMaxTimeScale, 0); }
-  public static void AddRandomAnimationOutput(FlatBufferBuilder builder, long RandomAnimationOutput) { builder.AddLong(58, RandomAnimationOutput, 0); }
-  public static void AddSummonedTeleportDistance(FlatBufferBuilder builder, long SummonedTeleportDistance) { builder.AddLong(59, SummonedTeleportDistance, 0); }
-  public static void AddArenaMinimumClearTime(FlatBufferBuilder builder, int ArenaMinimumClearTime) { builder.AddInt(60, ArenaMinimumClearTime, 0); }
-  public static void AddWORLDBOSSBATTLELITTLE(FlatBufferBuilder builder, long WORLDBOSSBATTLELITTLE) { builder.AddLong(61, WORLDBOSSBATTLELITTLE, 0); }
-  public static void AddWORLDBOSSBATTLELITTLETw(FlatBufferBuilder builder, long WORLDBOSSBATTLELITTLETw) { builder.AddLong(62, WORLDBOSSBATTLELITTLETw, 0); }
-  public static void AddWORLDBOSSBATTLELITTLEAsia(FlatBufferBuilder builder, long WORLDBOSSBATTLELITTLEAsia) { builder.AddLong(63, WORLDBOSSBATTLELITTLEAsia, 0); }
-  public static void AddWORLDBOSSBATTLELITTLENa(FlatBufferBuilder builder, long WORLDBOSSBATTLELITTLENa) { builder.AddLong(64, WORLDBOSSBATTLELITTLENa, 0); }
-  public static void AddWORLDBOSSBATTLELITTLEGlobal(FlatBufferBuilder builder, long WORLDBOSSBATTLELITTLEGlobal) { builder.AddLong(65, WORLDBOSSBATTLELITTLEGlobal, 0); }
-  public static void AddWORLDBOSSBATTLEMIDDLE(FlatBufferBuilder builder, long WORLDBOSSBATTLEMIDDLE) { builder.AddLong(66, WORLDBOSSBATTLEMIDDLE, 0); }
-  public static void AddWORLDBOSSBATTLEMIDDLETw(FlatBufferBuilder builder, long WORLDBOSSBATTLEMIDDLETw) { builder.AddLong(67, WORLDBOSSBATTLEMIDDLETw, 0); }
-  public static void AddWORLDBOSSBATTLEMIDDLEAsia(FlatBufferBuilder builder, long WORLDBOSSBATTLEMIDDLEAsia) { builder.AddLong(68, WORLDBOSSBATTLEMIDDLEAsia, 0); }
-  public static void AddWORLDBOSSBATTLEMIDDLENa(FlatBufferBuilder builder, long WORLDBOSSBATTLEMIDDLENa) { builder.AddLong(69, WORLDBOSSBATTLEMIDDLENa, 0); }
-  public static void AddWORLDBOSSBATTLEMIDDLEGlobal(FlatBufferBuilder builder, long WORLDBOSSBATTLEMIDDLEGlobal) { builder.AddLong(70, WORLDBOSSBATTLEMIDDLEGlobal, 0); }
-  public static void AddWORLDBOSSBATTLEHIGH(FlatBufferBuilder builder, long WORLDBOSSBATTLEHIGH) { builder.AddLong(71, WORLDBOSSBATTLEHIGH, 0); }
-  public static void AddWORLDBOSSBATTLEHIGHTw(FlatBufferBuilder builder, long WORLDBOSSBATTLEHIGHTw) { builder.AddLong(72, WORLDBOSSBATTLEHIGHTw, 0); }
-  public static void AddWORLDBOSSBATTLEHIGHAsia(FlatBufferBuilder builder, long WORLDBOSSBATTLEHIGHAsia) { builder.AddLong(73, WORLDBOSSBATTLEHIGHAsia, 0); }
-  public static void AddWORLDBOSSBATTLEHIGHNa(FlatBufferBuilder builder, long WORLDBOSSBATTLEHIGHNa) { builder.AddLong(74, WORLDBOSSBATTLEHIGHNa, 0); }
-  public static void AddWORLDBOSSBATTLEHIGHGlobal(FlatBufferBuilder builder, long WORLDBOSSBATTLEHIGHGlobal) { builder.AddLong(75, WORLDBOSSBATTLEHIGHGlobal, 0); }
-  public static void AddWORLDBOSSBATTLEVERYHIGH(FlatBufferBuilder builder, long WORLDBOSSBATTLEVERYHIGH) { builder.AddLong(76, WORLDBOSSBATTLEVERYHIGH, 0); }
-  public static void AddWORLDBOSSBATTLEVERYHIGHTw(FlatBufferBuilder builder, long WORLDBOSSBATTLEVERYHIGHTw) { builder.AddLong(77, WORLDBOSSBATTLEVERYHIGHTw, 0); }
-  public static void AddWORLDBOSSBATTLEVERYHIGHAsia(FlatBufferBuilder builder, long WORLDBOSSBATTLEVERYHIGHAsia) { builder.AddLong(78, WORLDBOSSBATTLEVERYHIGHAsia, 0); }
-  public static void AddWORLDBOSSBATTLEVERYHIGHNa(FlatBufferBuilder builder, long WORLDBOSSBATTLEVERYHIGHNa) { builder.AddLong(79, WORLDBOSSBATTLEVERYHIGHNa, 0); }
-  public static void AddWORLDBOSSBATTLEVERYHIGHGlobal(FlatBufferBuilder builder, long WORLDBOSSBATTLEVERYHIGHGlobal) { builder.AddLong(80, WORLDBOSSBATTLEVERYHIGHGlobal, 0); }
-  public static void AddWorldRaidAutoSyncTermSecond(FlatBufferBuilder builder, long WorldRaidAutoSyncTermSecond) { builder.AddLong(81, WorldRaidAutoSyncTermSecond, 0); }
-  public static void AddWorldRaidBossHpDecreaseTerm(FlatBufferBuilder builder, long WorldRaidBossHpDecreaseTerm) { builder.AddLong(82, WorldRaidBossHpDecreaseTerm, 0); }
-  public static void AddWorldRaidBossParcelReactionDelay(FlatBufferBuilder builder, long WorldRaidBossParcelReactionDelay) { builder.AddLong(83, WorldRaidBossParcelReactionDelay, 0); }
-  public static void AddRaidRankingJumpMinimumWaitingTime(FlatBufferBuilder builder, long RaidRankingJumpMinimumWaitingTime) { builder.AddLong(84, RaidRankingJumpMinimumWaitingTime, 0); }
-  public static void AddEffectTeleportDistance(FlatBufferBuilder builder, float EffectTeleportDistance) { builder.AddFloat(85, EffectTeleportDistance, 0.0f); }
-  public static void AddAuraExitThresholdMargin(FlatBufferBuilder builder, long AuraExitThresholdMargin) { builder.AddLong(86, AuraExitThresholdMargin, 0); }
-  public static void AddTSAInteractionDamageFactor(FlatBufferBuilder builder, long TSAInteractionDamageFactor) { builder.AddLong(87, TSAInteractionDamageFactor, 0); }
-  public static void AddVictoryInteractionRate(FlatBufferBuilder builder, long VictoryInteractionRate) { builder.AddLong(88, VictoryInteractionRate, 0); }
-  public static void AddEchelonExtensionEngageTimelinePath(FlatBufferBuilder builder, StringOffset EchelonExtensionEngageTimelinePathOffset) { builder.AddOffset(89, EchelonExtensionEngageTimelinePathOffset.Value, 0); }
-  public static void AddEchelonExtensionEngageWithSupporterTimelinePath(FlatBufferBuilder builder, StringOffset EchelonExtensionEngageWithSupporterTimelinePathOffset) { builder.AddOffset(90, EchelonExtensionEngageWithSupporterTimelinePathOffset.Value, 0); }
-  public static void AddEchelonExtensionVictoryTimelinePath(FlatBufferBuilder builder, StringOffset EchelonExtensionVictoryTimelinePathOffset) { builder.AddOffset(91, EchelonExtensionVictoryTimelinePathOffset.Value, 0); }
-  public static void AddEchelonExtensionEchelonMaxCommonCost(FlatBufferBuilder builder, int EchelonExtensionEchelonMaxCommonCost) { builder.AddInt(92, EchelonExtensionEchelonMaxCommonCost, 0); }
-  public static void AddEchelonExtensionEchelonInitCommonCost(FlatBufferBuilder builder, int EchelonExtensionEchelonInitCommonCost) { builder.AddInt(93, EchelonExtensionEchelonInitCommonCost, 0); }
-  public static void AddEchelonExtensionCostRegenRatio(FlatBufferBuilder builder, long EchelonExtensionCostRegenRatio) { builder.AddLong(94, EchelonExtensionCostRegenRatio, 0); }
-  public static void AddCheckCheaterMaxUseCostMultiFloorRaid(FlatBufferBuilder builder, int CheckCheaterMaxUseCostMultiFloorRaid) { builder.AddInt(95, CheckCheaterMaxUseCostMultiFloorRaid, 0); }
+  public static void AddShowRaidListCount(FlatBufferBuilder builder, int ShowRaidListCount) { builder.AddInt(12, ShowRaidListCount, 0); }
+  public static void AddMaxRaidTicketCount(FlatBufferBuilder builder, long MaxRaidTicketCount) { builder.AddLong(13, MaxRaidTicketCount, 0); }
+  public static void AddMaxRaidBossSkillSlot(FlatBufferBuilder builder, long MaxRaidBossSkillSlot) { builder.AddLong(14, MaxRaidBossSkillSlot, 0); }
+  public static void AddEngageTimelinePath(FlatBufferBuilder builder, StringOffset EngageTimelinePathOffset) { builder.AddOffset(15, EngageTimelinePathOffset.Value, 0); }
+  public static void AddEngageWithSupporterTimelinePath(FlatBufferBuilder builder, StringOffset EngageWithSupporterTimelinePathOffset) { builder.AddOffset(16, EngageWithSupporterTimelinePathOffset.Value, 0); }
+  public static void AddVictoryTimelinePath(FlatBufferBuilder builder, StringOffset VictoryTimelinePathOffset) { builder.AddOffset(17, VictoryTimelinePathOffset.Value, 0); }
+  public static void AddTimeLimitAlarm(FlatBufferBuilder builder, long TimeLimitAlarm) { builder.AddLong(18, TimeLimitAlarm, 0); }
+  public static void AddEchelonMaxCommonCost(FlatBufferBuilder builder, int EchelonMaxCommonCost) { builder.AddInt(19, EchelonMaxCommonCost, 0); }
+  public static void AddEchelonInitCommonCost(FlatBufferBuilder builder, int EchelonInitCommonCost) { builder.AddInt(20, EchelonInitCommonCost, 0); }
+  public static void AddSkillSlotCoolTime(FlatBufferBuilder builder, long SkillSlotCoolTime) { builder.AddLong(21, SkillSlotCoolTime, 0); }
+  public static void AddEnemyRegenCost(FlatBufferBuilder builder, long EnemyRegenCost) { builder.AddLong(22, EnemyRegenCost, 0); }
+  public static void AddChampionRegenCost(FlatBufferBuilder builder, long ChampionRegenCost) { builder.AddLong(23, ChampionRegenCost, 0); }
+  public static void AddPlayerRegenCostDelay(FlatBufferBuilder builder, long PlayerRegenCostDelay) { builder.AddLong(24, PlayerRegenCostDelay, 0); }
+  public static void AddCrowdControlFactor(FlatBufferBuilder builder, long CrowdControlFactor) { builder.AddLong(25, CrowdControlFactor, 0); }
+  public static void AddRaidOpenScenarioId(FlatBufferBuilder builder, StringOffset RaidOpenScenarioIdOffset) { builder.AddOffset(26, RaidOpenScenarioIdOffset.Value, 0); }
+  public static void AddEliminateRaidOpenScenarioId(FlatBufferBuilder builder, StringOffset EliminateRaidOpenScenarioIdOffset) { builder.AddOffset(27, EliminateRaidOpenScenarioIdOffset.Value, 0); }
+  public static void AddDefenceConstA(FlatBufferBuilder builder, long DefenceConstA) { builder.AddLong(28, DefenceConstA, 0); }
+  public static void AddDefenceConstB(FlatBufferBuilder builder, long DefenceConstB) { builder.AddLong(29, DefenceConstB, 0); }
+  public static void AddDefenceConstC(FlatBufferBuilder builder, long DefenceConstC) { builder.AddLong(30, DefenceConstC, 0); }
+  public static void AddDefenceConstD(FlatBufferBuilder builder, long DefenceConstD) { builder.AddLong(31, DefenceConstD, 0); }
+  public static void AddAccuracyConstA(FlatBufferBuilder builder, long AccuracyConstA) { builder.AddLong(32, AccuracyConstA, 0); }
+  public static void AddAccuracyConstB(FlatBufferBuilder builder, long AccuracyConstB) { builder.AddLong(33, AccuracyConstB, 0); }
+  public static void AddAccuracyConstC(FlatBufferBuilder builder, long AccuracyConstC) { builder.AddLong(34, AccuracyConstC, 0); }
+  public static void AddAccuracyConstD(FlatBufferBuilder builder, long AccuracyConstD) { builder.AddLong(35, AccuracyConstD, 0); }
+  public static void AddCriticalConstA(FlatBufferBuilder builder, long CriticalConstA) { builder.AddLong(36, CriticalConstA, 0); }
+  public static void AddCriticalConstB(FlatBufferBuilder builder, long CriticalConstB) { builder.AddLong(37, CriticalConstB, 0); }
+  public static void AddCriticalConstC(FlatBufferBuilder builder, long CriticalConstC) { builder.AddLong(38, CriticalConstC, 0); }
+  public static void AddCriticalConstD(FlatBufferBuilder builder, long CriticalConstD) { builder.AddLong(39, CriticalConstD, 0); }
+  public static void AddMaxGroupBuffLevel(FlatBufferBuilder builder, int MaxGroupBuffLevel) { builder.AddInt(40, MaxGroupBuffLevel, 0); }
+  public static void AddEmojiDefaultTime(FlatBufferBuilder builder, int EmojiDefaultTime) { builder.AddInt(41, EmojiDefaultTime, 0); }
+  public static void AddTimeLineActionRotateSpeed(FlatBufferBuilder builder, long TimeLineActionRotateSpeed) { builder.AddLong(42, TimeLineActionRotateSpeed, 0); }
+  public static void AddBodyRotateSpeed(FlatBufferBuilder builder, long BodyRotateSpeed) { builder.AddLong(43, BodyRotateSpeed, 0); }
+  public static void AddNormalTimeScale(FlatBufferBuilder builder, long NormalTimeScale) { builder.AddLong(44, NormalTimeScale, 0); }
+  public static void AddFastTimeScale(FlatBufferBuilder builder, long FastTimeScale) { builder.AddLong(45, FastTimeScale, 0); }
+  public static void AddBulletTimeScale(FlatBufferBuilder builder, long BulletTimeScale) { builder.AddLong(46, BulletTimeScale, 0); }
+  public static void AddUIDisplayDelayAfterSkillCutIn(FlatBufferBuilder builder, long UIDisplayDelayAfterSkillCutIn) { builder.AddLong(47, UIDisplayDelayAfterSkillCutIn, 0); }
+  public static void AddUseInitialRangeForCoverMove(FlatBufferBuilder builder, bool UseInitialRangeForCoverMove) { builder.AddBool(48, UseInitialRangeForCoverMove, false); }
+  public static void AddSlowTimeScale(FlatBufferBuilder builder, long SlowTimeScale) { builder.AddLong(49, SlowTimeScale, 0); }
+  public static void AddAimIKMinDegree(FlatBufferBuilder builder, float AimIKMinDegree) { builder.AddFloat(50, AimIKMinDegree, 0.0f); }
+  public static void AddAimIKMaxDegree(FlatBufferBuilder builder, float AimIKMaxDegree) { builder.AddFloat(51, AimIKMaxDegree, 0.0f); }
+  public static void AddMinimumClearTime(FlatBufferBuilder builder, int MinimumClearTime) { builder.AddInt(52, MinimumClearTime, 0); }
+  public static void AddMinimumClearLevelGap(FlatBufferBuilder builder, int MinimumClearLevelGap) { builder.AddInt(53, MinimumClearLevelGap, 0); }
+  public static void AddCheckCheaterMaxUseCostNonArena(FlatBufferBuilder builder, int CheckCheaterMaxUseCostNonArena) { builder.AddInt(54, CheckCheaterMaxUseCostNonArena, 0); }
+  public static void AddCheckCheaterMaxUseCostArena(FlatBufferBuilder builder, int CheckCheaterMaxUseCostArena) { builder.AddInt(55, CheckCheaterMaxUseCostArena, 0); }
+  public static void AddAllowedMaxTimeScale(FlatBufferBuilder builder, long AllowedMaxTimeScale) { builder.AddLong(56, AllowedMaxTimeScale, 0); }
+  public static void AddRandomAnimationOutput(FlatBufferBuilder builder, long RandomAnimationOutput) { builder.AddLong(57, RandomAnimationOutput, 0); }
+  public static void AddSummonedTeleportDistance(FlatBufferBuilder builder, long SummonedTeleportDistance) { builder.AddLong(58, SummonedTeleportDistance, 0); }
+  public static void AddArenaMinimumClearTime(FlatBufferBuilder builder, int ArenaMinimumClearTime) { builder.AddInt(59, ArenaMinimumClearTime, 0); }
+  public static void AddWORLDBOSSBATTLELITTLE(FlatBufferBuilder builder, long WORLDBOSSBATTLELITTLE) { builder.AddLong(60, WORLDBOSSBATTLELITTLE, 0); }
+  public static void AddWORLDBOSSBATTLELITTLETw(FlatBufferBuilder builder, long WORLDBOSSBATTLELITTLETw) { builder.AddLong(61, WORLDBOSSBATTLELITTLETw, 0); }
+  public static void AddWORLDBOSSBATTLELITTLEAsia(FlatBufferBuilder builder, long WORLDBOSSBATTLELITTLEAsia) { builder.AddLong(62, WORLDBOSSBATTLELITTLEAsia, 0); }
+  public static void AddWORLDBOSSBATTLELITTLENa(FlatBufferBuilder builder, long WORLDBOSSBATTLELITTLENa) { builder.AddLong(63, WORLDBOSSBATTLELITTLENa, 0); }
+  public static void AddWORLDBOSSBATTLELITTLEGlobal(FlatBufferBuilder builder, long WORLDBOSSBATTLELITTLEGlobal) { builder.AddLong(64, WORLDBOSSBATTLELITTLEGlobal, 0); }
+  public static void AddWORLDBOSSBATTLEMIDDLE(FlatBufferBuilder builder, long WORLDBOSSBATTLEMIDDLE) { builder.AddLong(65, WORLDBOSSBATTLEMIDDLE, 0); }
+  public static void AddWORLDBOSSBATTLEMIDDLETw(FlatBufferBuilder builder, long WORLDBOSSBATTLEMIDDLETw) { builder.AddLong(66, WORLDBOSSBATTLEMIDDLETw, 0); }
+  public static void AddWORLDBOSSBATTLEMIDDLEAsia(FlatBufferBuilder builder, long WORLDBOSSBATTLEMIDDLEAsia) { builder.AddLong(67, WORLDBOSSBATTLEMIDDLEAsia, 0); }
+  public static void AddWORLDBOSSBATTLEMIDDLENa(FlatBufferBuilder builder, long WORLDBOSSBATTLEMIDDLENa) { builder.AddLong(68, WORLDBOSSBATTLEMIDDLENa, 0); }
+  public static void AddWORLDBOSSBATTLEMIDDLEGlobal(FlatBufferBuilder builder, long WORLDBOSSBATTLEMIDDLEGlobal) { builder.AddLong(69, WORLDBOSSBATTLEMIDDLEGlobal, 0); }
+  public static void AddWORLDBOSSBATTLEHIGH(FlatBufferBuilder builder, long WORLDBOSSBATTLEHIGH) { builder.AddLong(70, WORLDBOSSBATTLEHIGH, 0); }
+  public static void AddWORLDBOSSBATTLEHIGHTw(FlatBufferBuilder builder, long WORLDBOSSBATTLEHIGHTw) { builder.AddLong(71, WORLDBOSSBATTLEHIGHTw, 0); }
+  public static void AddWORLDBOSSBATTLEHIGHAsia(FlatBufferBuilder builder, long WORLDBOSSBATTLEHIGHAsia) { builder.AddLong(72, WORLDBOSSBATTLEHIGHAsia, 0); }
+  public static void AddWORLDBOSSBATTLEHIGHNa(FlatBufferBuilder builder, long WORLDBOSSBATTLEHIGHNa) { builder.AddLong(73, WORLDBOSSBATTLEHIGHNa, 0); }
+  public static void AddWORLDBOSSBATTLEHIGHGlobal(FlatBufferBuilder builder, long WORLDBOSSBATTLEHIGHGlobal) { builder.AddLong(74, WORLDBOSSBATTLEHIGHGlobal, 0); }
+  public static void AddWORLDBOSSBATTLEVERYHIGH(FlatBufferBuilder builder, long WORLDBOSSBATTLEVERYHIGH) { builder.AddLong(75, WORLDBOSSBATTLEVERYHIGH, 0); }
+  public static void AddWORLDBOSSBATTLEVERYHIGHTw(FlatBufferBuilder builder, long WORLDBOSSBATTLEVERYHIGHTw) { builder.AddLong(76, WORLDBOSSBATTLEVERYHIGHTw, 0); }
+  public static void AddWORLDBOSSBATTLEVERYHIGHAsia(FlatBufferBuilder builder, long WORLDBOSSBATTLEVERYHIGHAsia) { builder.AddLong(77, WORLDBOSSBATTLEVERYHIGHAsia, 0); }
+  public static void AddWORLDBOSSBATTLEVERYHIGHNa(FlatBufferBuilder builder, long WORLDBOSSBATTLEVERYHIGHNa) { builder.AddLong(78, WORLDBOSSBATTLEVERYHIGHNa, 0); }
+  public static void AddWORLDBOSSBATTLEVERYHIGHGlobal(FlatBufferBuilder builder, long WORLDBOSSBATTLEVERYHIGHGlobal) { builder.AddLong(79, WORLDBOSSBATTLEVERYHIGHGlobal, 0); }
+  public static void AddWorldRaidAutoSyncTermSecond(FlatBufferBuilder builder, long WorldRaidAutoSyncTermSecond) { builder.AddLong(80, WorldRaidAutoSyncTermSecond, 0); }
+  public static void AddWorldRaidBossHpDecreaseTerm(FlatBufferBuilder builder, long WorldRaidBossHpDecreaseTerm) { builder.AddLong(81, WorldRaidBossHpDecreaseTerm, 0); }
+  public static void AddWorldRaidBossParcelReactionDelay(FlatBufferBuilder builder, long WorldRaidBossParcelReactionDelay) { builder.AddLong(82, WorldRaidBossParcelReactionDelay, 0); }
+  public static void AddRaidRankingJumpMinimumWaitingTime(FlatBufferBuilder builder, long RaidRankingJumpMinimumWaitingTime) { builder.AddLong(83, RaidRankingJumpMinimumWaitingTime, 0); }
+  public static void AddEffectTeleportDistance(FlatBufferBuilder builder, float EffectTeleportDistance) { builder.AddFloat(84, EffectTeleportDistance, 0.0f); }
+  public static void AddAuraExitThresholdMargin(FlatBufferBuilder builder, long AuraExitThresholdMargin) { builder.AddLong(85, AuraExitThresholdMargin, 0); }
+  public static void AddTSAInteractionDamageFactor(FlatBufferBuilder builder, long TSAInteractionDamageFactor) { builder.AddLong(86, TSAInteractionDamageFactor, 0); }
+  public static void AddVictoryInteractionRate(FlatBufferBuilder builder, long VictoryInteractionRate) { builder.AddLong(87, VictoryInteractionRate, 0); }
+  public static void AddEchelonExtensionEngageTimelinePath(FlatBufferBuilder builder, StringOffset EchelonExtensionEngageTimelinePathOffset) { builder.AddOffset(88, EchelonExtensionEngageTimelinePathOffset.Value, 0); }
+  public static void AddEchelonExtensionEngageWithSupporterTimelinePath(FlatBufferBuilder builder, StringOffset EchelonExtensionEngageWithSupporterTimelinePathOffset) { builder.AddOffset(89, EchelonExtensionEngageWithSupporterTimelinePathOffset.Value, 0); }
+  public static void AddEchelonExtensionVictoryTimelinePath(FlatBufferBuilder builder, StringOffset EchelonExtensionVictoryTimelinePathOffset) { builder.AddOffset(90, EchelonExtensionVictoryTimelinePathOffset.Value, 0); }
+  public static void AddEchelonExtensionEchelonMaxCommonCost(FlatBufferBuilder builder, int EchelonExtensionEchelonMaxCommonCost) { builder.AddInt(91, EchelonExtensionEchelonMaxCommonCost, 0); }
+  public static void AddEchelonExtensionEchelonInitCommonCost(FlatBufferBuilder builder, int EchelonExtensionEchelonInitCommonCost) { builder.AddInt(92, EchelonExtensionEchelonInitCommonCost, 0); }
+  public static void AddEchelonExtensionCostRegenRatio(FlatBufferBuilder builder, long EchelonExtensionCostRegenRatio) { builder.AddLong(93, EchelonExtensionCostRegenRatio, 0); }
+  public static void AddCheckCheaterMaxUseCostMultiFloorRaid(FlatBufferBuilder builder, int CheckCheaterMaxUseCostMultiFloorRaid) { builder.AddInt(94, CheckCheaterMaxUseCostMultiFloorRaid, 0); }
   public static Offset<FlatDataGlobal.ConstCombatExcel> EndConstCombatExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstCombatExcel>(o);

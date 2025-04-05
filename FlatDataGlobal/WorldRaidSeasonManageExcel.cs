@@ -57,43 +57,44 @@ public struct WorldRaidSeasonManageExcel : IFlatbufferObject
   public byte[] GetWorldRaidUniqueThemeNameArray() { return __p.__vector_as_array<byte>(26); }
   public bool CanWorldRaidGemEnter { get { int o = __p.__offset(28); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool HideWorldRaidTicketUI { get { int o = __p.__offset(30); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool UseWorldRaidCommonToast { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long OpenRaidBossGroupId(int j) { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int OpenRaidBossGroupIdLength { get { int o = __p.__offset(34); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public bool HideWorldRaidBossCompleteRewardUI { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool UseWorldRaidCommonToast { get { int o = __p.__offset(34); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long OpenRaidBossGroupId(int j) { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int OpenRaidBossGroupIdLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetOpenRaidBossGroupIdBytes() { return __p.__vector_as_span<long>(34, 8); }
+  public Span<long> GetOpenRaidBossGroupIdBytes() { return __p.__vector_as_span<long>(36, 8); }
 #else
-  public ArraySegment<byte>? GetOpenRaidBossGroupIdBytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetOpenRaidBossGroupIdBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public long[] GetOpenRaidBossGroupIdArray() { return __p.__vector_as_array<long>(34); }
-  public string BossSpawnTime(int j) { int o = __p.__offset(36); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int BossSpawnTimeLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string EliminateTime(int j) { int o = __p.__offset(38); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int EliminateTimeLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public long ScenarioOutputConditionId(int j) { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int ScenarioOutputConditionIdLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetOpenRaidBossGroupIdArray() { return __p.__vector_as_array<long>(36); }
+  public string BossSpawnTime(int j) { int o = __p.__offset(38); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int BossSpawnTimeLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string EliminateTime(int j) { int o = __p.__offset(40); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int EliminateTimeLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long ScenarioOutputConditionId(int j) { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ScenarioOutputConditionIdLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetScenarioOutputConditionIdBytes() { return __p.__vector_as_span<long>(40, 8); }
+  public Span<long> GetScenarioOutputConditionIdBytes() { return __p.__vector_as_span<long>(42, 8); }
 #else
-  public ArraySegment<byte>? GetScenarioOutputConditionIdBytes() { return __p.__vector_as_arraysegment(40); }
+  public ArraySegment<byte>? GetScenarioOutputConditionIdBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public long[] GetScenarioOutputConditionIdArray() { return __p.__vector_as_array<long>(40); }
-  public long ConditionScenarioGroupid(int j) { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int ConditionScenarioGroupidLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetScenarioOutputConditionIdArray() { return __p.__vector_as_array<long>(42); }
+  public long ConditionScenarioGroupid(int j) { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ConditionScenarioGroupidLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetConditionScenarioGroupidBytes() { return __p.__vector_as_span<long>(42, 8); }
+  public Span<long> GetConditionScenarioGroupidBytes() { return __p.__vector_as_span<long>(44, 8); }
 #else
-  public ArraySegment<byte>? GetConditionScenarioGroupidBytes() { return __p.__vector_as_arraysegment(42); }
+  public ArraySegment<byte>? GetConditionScenarioGroupidBytes() { return __p.__vector_as_arraysegment(44); }
 #endif
-  public long[] GetConditionScenarioGroupidArray() { return __p.__vector_as_array<long>(42); }
-  public string WorldRaidMapEnterOperator { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long[] GetConditionScenarioGroupidArray() { return __p.__vector_as_array<long>(44); }
+  public string WorldRaidMapEnterOperator { get { int o = __p.__offset(46); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetWorldRaidMapEnterOperatorBytes() { return __p.__vector_as_span<byte>(44, 1); }
+  public Span<byte> GetWorldRaidMapEnterOperatorBytes() { return __p.__vector_as_span<byte>(46, 1); }
 #else
-  public ArraySegment<byte>? GetWorldRaidMapEnterOperatorBytes() { return __p.__vector_as_arraysegment(44); }
+  public ArraySegment<byte>? GetWorldRaidMapEnterOperatorBytes() { return __p.__vector_as_arraysegment(46); }
 #endif
-  public byte[] GetWorldRaidMapEnterOperatorArray() { return __p.__vector_as_array<byte>(44); }
-  public bool UseFavorRankBuff { get { int o = __p.__offset(46); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public byte[] GetWorldRaidMapEnterOperatorArray() { return __p.__vector_as_array<byte>(46); }
+  public bool UseFavorRankBuff { get { int o = __p.__offset(48); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.WorldRaidSeasonManageExcel> CreateWorldRaidSeasonManageExcel(FlatBufferBuilder builder,
       long SeasonId = 0,
@@ -110,6 +111,7 @@ public struct WorldRaidSeasonManageExcel : IFlatbufferObject
       StringOffset WorldRaidUniqueThemeNameOffset = default(StringOffset),
       bool CanWorldRaidGemEnter = false,
       bool HideWorldRaidTicketUI = false,
+      bool HideWorldRaidBossCompleteRewardUI = false,
       bool UseWorldRaidCommonToast = false,
       VectorOffset OpenRaidBossGroupIdOffset = default(VectorOffset),
       VectorOffset BossSpawnTimeOffset = default(VectorOffset),
@@ -118,7 +120,7 @@ public struct WorldRaidSeasonManageExcel : IFlatbufferObject
       VectorOffset ConditionScenarioGroupidOffset = default(VectorOffset),
       StringOffset WorldRaidMapEnterOperatorOffset = default(StringOffset),
       bool UseFavorRankBuff = false) {
-    builder.StartTable(22);
+    builder.StartTable(23);
     WorldRaidSeasonManageExcel.AddWorldRaidLobbyEnterScenario(builder, WorldRaidLobbyEnterScenario);
     WorldRaidSeasonManageExcel.AddSeasonOpenCondition(builder, SeasonOpenCondition);
     WorldRaidSeasonManageExcel.AddEventContentId(builder, EventContentId);
@@ -136,6 +138,7 @@ public struct WorldRaidSeasonManageExcel : IFlatbufferObject
     WorldRaidSeasonManageExcel.AddEnterTicket(builder, EnterTicket);
     WorldRaidSeasonManageExcel.AddUseFavorRankBuff(builder, UseFavorRankBuff);
     WorldRaidSeasonManageExcel.AddUseWorldRaidCommonToast(builder, UseWorldRaidCommonToast);
+    WorldRaidSeasonManageExcel.AddHideWorldRaidBossCompleteRewardUI(builder, HideWorldRaidBossCompleteRewardUI);
     WorldRaidSeasonManageExcel.AddHideWorldRaidTicketUI(builder, HideWorldRaidTicketUI);
     WorldRaidSeasonManageExcel.AddCanWorldRaidGemEnter(builder, CanWorldRaidGemEnter);
     WorldRaidSeasonManageExcel.AddWorldRaidUniqueThemeLobbyUI(builder, WorldRaidUniqueThemeLobbyUI);
@@ -144,7 +147,7 @@ public struct WorldRaidSeasonManageExcel : IFlatbufferObject
     return WorldRaidSeasonManageExcel.EndWorldRaidSeasonManageExcel(builder);
   }
 
-  public static void StartWorldRaidSeasonManageExcel(FlatBufferBuilder builder) { builder.StartTable(22); }
+  public static void StartWorldRaidSeasonManageExcel(FlatBufferBuilder builder) { builder.StartTable(23); }
   public static void AddSeasonId(FlatBufferBuilder builder, long SeasonId) { builder.AddLong(0, SeasonId, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(1, EventContentId, 0); }
   public static void AddEnterTicket(FlatBufferBuilder builder, FlatDataGlobal.CurrencyTypes EnterTicket) { builder.AddInt(2, (int)EnterTicket, 0); }
@@ -159,39 +162,40 @@ public struct WorldRaidSeasonManageExcel : IFlatbufferObject
   public static void AddWorldRaidUniqueThemeName(FlatBufferBuilder builder, StringOffset WorldRaidUniqueThemeNameOffset) { builder.AddOffset(11, WorldRaidUniqueThemeNameOffset.Value, 0); }
   public static void AddCanWorldRaidGemEnter(FlatBufferBuilder builder, bool CanWorldRaidGemEnter) { builder.AddBool(12, CanWorldRaidGemEnter, false); }
   public static void AddHideWorldRaidTicketUI(FlatBufferBuilder builder, bool HideWorldRaidTicketUI) { builder.AddBool(13, HideWorldRaidTicketUI, false); }
-  public static void AddUseWorldRaidCommonToast(FlatBufferBuilder builder, bool UseWorldRaidCommonToast) { builder.AddBool(14, UseWorldRaidCommonToast, false); }
-  public static void AddOpenRaidBossGroupId(FlatBufferBuilder builder, VectorOffset OpenRaidBossGroupIdOffset) { builder.AddOffset(15, OpenRaidBossGroupIdOffset.Value, 0); }
+  public static void AddHideWorldRaidBossCompleteRewardUI(FlatBufferBuilder builder, bool HideWorldRaidBossCompleteRewardUI) { builder.AddBool(14, HideWorldRaidBossCompleteRewardUI, false); }
+  public static void AddUseWorldRaidCommonToast(FlatBufferBuilder builder, bool UseWorldRaidCommonToast) { builder.AddBool(15, UseWorldRaidCommonToast, false); }
+  public static void AddOpenRaidBossGroupId(FlatBufferBuilder builder, VectorOffset OpenRaidBossGroupIdOffset) { builder.AddOffset(16, OpenRaidBossGroupIdOffset.Value, 0); }
   public static VectorOffset CreateOpenRaidBossGroupIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateOpenRaidBossGroupIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateOpenRaidBossGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateOpenRaidBossGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartOpenRaidBossGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddBossSpawnTime(FlatBufferBuilder builder, VectorOffset BossSpawnTimeOffset) { builder.AddOffset(16, BossSpawnTimeOffset.Value, 0); }
+  public static void AddBossSpawnTime(FlatBufferBuilder builder, VectorOffset BossSpawnTimeOffset) { builder.AddOffset(17, BossSpawnTimeOffset.Value, 0); }
   public static VectorOffset CreateBossSpawnTimeVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateBossSpawnTimeVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBossSpawnTimeVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBossSpawnTimeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartBossSpawnTimeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddEliminateTime(FlatBufferBuilder builder, VectorOffset EliminateTimeOffset) { builder.AddOffset(17, EliminateTimeOffset.Value, 0); }
+  public static void AddEliminateTime(FlatBufferBuilder builder, VectorOffset EliminateTimeOffset) { builder.AddOffset(18, EliminateTimeOffset.Value, 0); }
   public static VectorOffset CreateEliminateTimeVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateEliminateTimeVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEliminateTimeVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEliminateTimeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartEliminateTimeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddScenarioOutputConditionId(FlatBufferBuilder builder, VectorOffset ScenarioOutputConditionIdOffset) { builder.AddOffset(18, ScenarioOutputConditionIdOffset.Value, 0); }
+  public static void AddScenarioOutputConditionId(FlatBufferBuilder builder, VectorOffset ScenarioOutputConditionIdOffset) { builder.AddOffset(19, ScenarioOutputConditionIdOffset.Value, 0); }
   public static VectorOffset CreateScenarioOutputConditionIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateScenarioOutputConditionIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateScenarioOutputConditionIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateScenarioOutputConditionIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartScenarioOutputConditionIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddConditionScenarioGroupid(FlatBufferBuilder builder, VectorOffset ConditionScenarioGroupidOffset) { builder.AddOffset(19, ConditionScenarioGroupidOffset.Value, 0); }
+  public static void AddConditionScenarioGroupid(FlatBufferBuilder builder, VectorOffset ConditionScenarioGroupidOffset) { builder.AddOffset(20, ConditionScenarioGroupidOffset.Value, 0); }
   public static VectorOffset CreateConditionScenarioGroupidVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateConditionScenarioGroupidVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateConditionScenarioGroupidVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateConditionScenarioGroupidVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartConditionScenarioGroupidVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddWorldRaidMapEnterOperator(FlatBufferBuilder builder, StringOffset WorldRaidMapEnterOperatorOffset) { builder.AddOffset(20, WorldRaidMapEnterOperatorOffset.Value, 0); }
-  public static void AddUseFavorRankBuff(FlatBufferBuilder builder, bool UseFavorRankBuff) { builder.AddBool(21, UseFavorRankBuff, false); }
+  public static void AddWorldRaidMapEnterOperator(FlatBufferBuilder builder, StringOffset WorldRaidMapEnterOperatorOffset) { builder.AddOffset(21, WorldRaidMapEnterOperatorOffset.Value, 0); }
+  public static void AddUseFavorRankBuff(FlatBufferBuilder builder, bool UseFavorRankBuff) { builder.AddBool(22, UseFavorRankBuff, false); }
   public static Offset<FlatDataGlobal.WorldRaidSeasonManageExcel> EndWorldRaidSeasonManageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.WorldRaidSeasonManageExcel>(o);

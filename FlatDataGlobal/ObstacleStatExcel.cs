@@ -33,6 +33,13 @@ public struct ObstacleStatExcel : IFlatbufferObject
   public long Dodge { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long CanNotStandRange { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public float HighlightFloaterHeight { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public long EnhanceLightArmorRate { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceHeavyArmorRate { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceUnarmedRate { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceElasticArmorRate { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceStructureRate { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EnhanceNormalArmorRate { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ReduceExDamagedRate { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.ObstacleStatExcel> CreateObstacleStatExcel(FlatBufferBuilder builder,
       uint StringID = 0,
@@ -42,8 +49,22 @@ public struct ObstacleStatExcel : IFlatbufferObject
       long BlockRate = 0,
       long Dodge = 0,
       long CanNotStandRange = 0,
-      float HighlightFloaterHeight = 0.0f) {
-    builder.StartTable(8);
+      float HighlightFloaterHeight = 0.0f,
+      long EnhanceLightArmorRate = 0,
+      long EnhanceHeavyArmorRate = 0,
+      long EnhanceUnarmedRate = 0,
+      long EnhanceElasticArmorRate = 0,
+      long EnhanceStructureRate = 0,
+      long EnhanceNormalArmorRate = 0,
+      long ReduceExDamagedRate = 0) {
+    builder.StartTable(15);
+    ObstacleStatExcel.AddReduceExDamagedRate(builder, ReduceExDamagedRate);
+    ObstacleStatExcel.AddEnhanceNormalArmorRate(builder, EnhanceNormalArmorRate);
+    ObstacleStatExcel.AddEnhanceStructureRate(builder, EnhanceStructureRate);
+    ObstacleStatExcel.AddEnhanceElasticArmorRate(builder, EnhanceElasticArmorRate);
+    ObstacleStatExcel.AddEnhanceUnarmedRate(builder, EnhanceUnarmedRate);
+    ObstacleStatExcel.AddEnhanceHeavyArmorRate(builder, EnhanceHeavyArmorRate);
+    ObstacleStatExcel.AddEnhanceLightArmorRate(builder, EnhanceLightArmorRate);
     ObstacleStatExcel.AddCanNotStandRange(builder, CanNotStandRange);
     ObstacleStatExcel.AddDodge(builder, Dodge);
     ObstacleStatExcel.AddBlockRate(builder, BlockRate);
@@ -55,7 +76,7 @@ public struct ObstacleStatExcel : IFlatbufferObject
     return ObstacleStatExcel.EndObstacleStatExcel(builder);
   }
 
-  public static void StartObstacleStatExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
+  public static void StartObstacleStatExcel(FlatBufferBuilder builder) { builder.StartTable(15); }
   public static void AddStringID(FlatBufferBuilder builder, uint StringID) { builder.AddUint(0, StringID, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(1, NameOffset.Value, 0); }
   public static void AddMaxHP1(FlatBufferBuilder builder, long MaxHP1) { builder.AddLong(2, MaxHP1, 0); }
@@ -64,6 +85,13 @@ public struct ObstacleStatExcel : IFlatbufferObject
   public static void AddDodge(FlatBufferBuilder builder, long Dodge) { builder.AddLong(5, Dodge, 0); }
   public static void AddCanNotStandRange(FlatBufferBuilder builder, long CanNotStandRange) { builder.AddLong(6, CanNotStandRange, 0); }
   public static void AddHighlightFloaterHeight(FlatBufferBuilder builder, float HighlightFloaterHeight) { builder.AddFloat(7, HighlightFloaterHeight, 0.0f); }
+  public static void AddEnhanceLightArmorRate(FlatBufferBuilder builder, long EnhanceLightArmorRate) { builder.AddLong(8, EnhanceLightArmorRate, 0); }
+  public static void AddEnhanceHeavyArmorRate(FlatBufferBuilder builder, long EnhanceHeavyArmorRate) { builder.AddLong(9, EnhanceHeavyArmorRate, 0); }
+  public static void AddEnhanceUnarmedRate(FlatBufferBuilder builder, long EnhanceUnarmedRate) { builder.AddLong(10, EnhanceUnarmedRate, 0); }
+  public static void AddEnhanceElasticArmorRate(FlatBufferBuilder builder, long EnhanceElasticArmorRate) { builder.AddLong(11, EnhanceElasticArmorRate, 0); }
+  public static void AddEnhanceStructureRate(FlatBufferBuilder builder, long EnhanceStructureRate) { builder.AddLong(12, EnhanceStructureRate, 0); }
+  public static void AddEnhanceNormalArmorRate(FlatBufferBuilder builder, long EnhanceNormalArmorRate) { builder.AddLong(13, EnhanceNormalArmorRate, 0); }
+  public static void AddReduceExDamagedRate(FlatBufferBuilder builder, long ReduceExDamagedRate) { builder.AddLong(14, ReduceExDamagedRate, 0); }
   public static Offset<FlatDataGlobal.ObstacleStatExcel> EndObstacleStatExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ObstacleStatExcel>(o);

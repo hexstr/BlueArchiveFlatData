@@ -92,6 +92,8 @@ enum VoiceEvent: int {
 	PublicSkill02,
 	InteractionPublicSkill01,
 	InteractionPublicSkill02,
+	FormationStyleChange,
+	BattleInteractionVictoryTimeline,
 }
 enum UnitType: int {
 	None,
@@ -223,6 +225,7 @@ enum WeaponType: int {
 	MT,
 	Relic,
 	FT,
+	Akemi,
 }
 enum EntityMaterialType: int {
 	Wood,
@@ -515,6 +518,10 @@ enum EndCondition: int {
 	None,
 	UseExSkillCount,
 }
+enum AmplifyDoTRemoveCondition: int {
+	None,
+	ApplyCount,
+}
 enum LogicEffectSound: int {
 	None,
 	Damage,
@@ -691,6 +698,19 @@ enum StatType: int {
 	EnhanceElasticArmorRate,
 	ExDamagedRatioIncrease,
 	ExDamagedRatioDecrease,
+	EnhanceExDamageRate,
+	ReduceExDamagedRate,
+	HealRate,
+	HealLightArmorRate,
+	HealHeavyArmorRate,
+	HealUnarmedRate,
+	HealElasticArmorRate,
+	HealNormalArmorRate,
+	HealedExplosionRate,
+	HealedPierceRate,
+	HealedMysticRate,
+	HealedSonicRate,
+	HealedNormalRate,
 	Max,
 }
 enum ProductionStep: int {
@@ -844,7 +864,7 @@ enum ContentType: int {
 	Chaser,
 	FieldContentStage,
 	MultiFloorRaid,
-	Temp,
+	MinigameDefense,
 }
 enum EventContentType: int {
 	Stage,
@@ -881,6 +901,9 @@ enum EventContentType: int {
 	MinigameDreamMaker,
 	MiniGameDefense,
 	OpenWebView,
+	SpecialMiniEvent,
+	ScenarioCollection,
+	ScenarioShortcut,
 }
 enum OpenCondition: int {
 	Hide,
@@ -971,7 +994,7 @@ enum OpenConditionContent: int {
 	MultiFloorRaid,
 	StrategySkip,
 	MinigameDreamMaker,
-	Temp,
+	MiniGameDefense,
 }
 enum ContentLockType: int {
 	None,
@@ -1029,6 +1052,7 @@ enum EventTargetType: int {
 	AccountLevelExpIncrease,
 	Raid,
 	EliminateRaid,
+	MultiFloorRaid,
 }
 enum ContentResultType: int {
 	Failure,
@@ -1141,6 +1165,7 @@ enum EventNotifyType: int {
 	RaidSeasonManager,
 	TimeAttackDungeonSeasonManage,
 	EliminateRaidSeasonManage,
+	MultiFloorRaidSeasonManage,
 }
 enum EventContentDiceRaceResultType: int {
 	DiceResult1,
@@ -1371,7 +1396,7 @@ enum EchelonType: int {
 	EliminateRaid03,
 	Field,
 	MultiFloorRaid,
-	Temp,
+	MinigameDefense,
 }
 enum EchelonExtensionType: int {
 	Base,
@@ -1642,6 +1667,7 @@ enum MailType: int {
 	CouponCompleteReward,
 	BirthdayMail,
 	FromCS,
+	ExpiryChangeCurrency,
 }
 enum AttendanceType: int {
 	Basic,
@@ -1982,10 +2008,11 @@ enum MissionCompleteConditionType: int {
 	Reset_DreamGetEndingCount,
 	Reset_DreamGetSpecificEndingCount,
 	Reset_DreamGetCollectionScenarioCount,
-	Temp_1,
-	Temp_2,
-	Temp_3,
-	Temp_4,
+	Reset_ClearCountDefense,
+	Reset_ClearSpecificDefenseStage,
+	Reset_ClearCharacterLimitDefense,
+	Reset_ClearTimeLimitDefenseFromSecond,
+	Reset_JoinMultiFloorRaidCount,
 }
 enum AccountAchievementType: int {
 	TotalLoginCount,
@@ -2403,9 +2430,12 @@ enum ParcelChangeReason: int {
 	MiniGame_DreamDailyClosing,
 	MiniGame_DreamEnding,
 	Item_ExpireChange,
-	Temp,
+	MiniGame_DefenseBattleResult,
 	Raid_FailCompensateReward,
 	EliminateRaid_FailCompensateReward,
+	Currency_ExpireChange,
+	Conquest_ErosionBattleResult,
+	Conquest_EnterErosionBattle,
 }
 enum ConsumeCondition: int {
 	And,
@@ -2537,6 +2567,7 @@ enum DialogCategory: int {
 	UIEventTreasure,
 	UIMultiFloorRaid,
 	UIEventMiniGameDreamMaker,
+	UIAttendanceEvent17,
 }
 enum DialogCondition: int {
 	Idle,
@@ -6038,6 +6069,7 @@ enum Club: int {
 	KnowledgeLiberationFront,
 	Hyakkayouran,
 	ShinySparkleSociety,
+	AbydosStudentCouncil,
 }
 table GroundVector3 {
 	X: float;
@@ -7005,6 +7037,19 @@ table CharacterStatExcel {
 	DamagedRatio2Decrease: long;
 	ExDamagedRatioIncrease: long;
 	ExDamagedRatioDecrease: long;
+	EnhanceExDamageRate: long;
+	ReduceExDamagedRate: long;
+	HealRate: long;
+	HealLightArmorRate: long;
+	HealHeavyArmorRate: long;
+	HealUnarmedRate: long;
+	HealElasticArmorRate: long;
+	HealNormalArmorRate: long;
+	HealedExplosionRate: long;
+	HealedPierceRate: long;
+	HealedMysticRate: long;
+	HealedSonicRate: long;
+	HealedNormalRate: long;
 	StreetBattleAdaptation: TerrainAdaptationStat;
 	OutdoorBattleAdaptation: TerrainAdaptationStat;
 	IndoorBattleAdaptation: TerrainAdaptationStat;
@@ -7059,6 +7104,7 @@ table CharacterTranscendenceExcel {
 	RecipeId: [long];
 	SkillSlotA: [string];
 	SkillSlotB: [string];
+	SkillSlotC: [string];
 	MaxlevelStar: [int];
 }
 
@@ -7072,26 +7118,32 @@ table CharacterVictoryInteractionExcel {
 	PositionIndex01: int;
 	VictoryStartAnimationPath01: string;
 	VictoryEndAnimationPath01: string;
+	VoiceEvent01: VoiceEvent;
 	CostumeId02: long;
 	PositionIndex02: int;
 	VictoryStartAnimationPath02: string;
 	VictoryEndAnimationPath02: string;
+	VoiceEvent02: VoiceEvent;
 	CostumeId03: long;
 	PositionIndex03: int;
 	VictoryStartAnimationPath03: string;
 	VictoryEndAnimationPath03: string;
+	VoiceEvent03: VoiceEvent;
 	CostumeId04: long;
 	PositionIndex04: int;
 	VictoryStartAnimationPath04: string;
 	VictoryEndAnimationPath04: string;
+	VoiceEvent04: VoiceEvent;
 	CostumeId05: long;
 	PositionIndex05: int;
 	VictoryStartAnimationPath05: string;
 	VictoryEndAnimationPath05: string;
+	VoiceEvent05: VoiceEvent;
 	CostumeId06: long;
 	PositionIndex06: int;
 	VictoryStartAnimationPath06: string;
 	VictoryEndAnimationPath06: string;
+	VoiceEvent06: VoiceEvent;
 }
 
 table CharacterWeaponExcelTable {
@@ -7145,6 +7197,7 @@ table CheatCodeListExcelTable {
 }
 
 table CheatCodeListExcel {
+	Id: long;
 	CheatCode: [string];
 	InputTitle: [string];
 	Desc: string;
@@ -7561,7 +7614,6 @@ table ConstCombatExcel {
 	PublicSpeechBubbleOffsetX: float;
 	PublicSpeechBubbleOffsetY: float;
 	PublicSpeechBubbleOffsetZ: float;
-	PublicSpeechDuration: float;
 	ShowRaidListCount: int;
 	MaxRaidTicketCount: long;
 	MaxRaidBossSkillSlot: long;
@@ -7967,6 +8019,7 @@ table ConstStrategyExcel {
 	StoryEchelonCount: int;
 	MultiSweepPresetCount: int;
 	MultiSweepPresetNameMaxLength: int;
+	MultiSweepPresetNameMaxLengthKr: int;
 	MultiSweepPresetSelectStageMaxCount: int;
 	MultiSweepPresetMaxSweepCount: int;
 	MultiSweepPresetSelectParcelMaxCount: int;
@@ -8033,6 +8086,7 @@ table CostumeExcel {
 	EnterStrategyAnimationName: string;
 	AnimationValidator: bool;
 	CharacterVoiceGroupId: long;
+	ShowObjectHpStatus: bool;
 }
 
 table CouponStuffExcelTable {
@@ -8083,6 +8137,11 @@ table CurrencyExcel {
 	dailyRefillType: DailyRefillType;
 	DailyRefillAmount: long;
 	DailyRefillTime: [long];
+	ExpirationDateTime: string;
+	ExpirationNotifyDateIn: int;
+	ExpiryChangeParcelType: ParcelType;
+	ExpiryChangeId: long;
+	ExpiryChangeAmount: long;
 }
 
 table DefaultCharacterExcelTable {
@@ -8945,12 +9004,14 @@ table EventContentSeasonExcel {
 	MinigameLobbyPrefabName: string;
 	MinigameVictoryPrefabName: string;
 	MinigameMissionBgPrefabName: string;
+	MinigameMissionBgImagePath: string;
 	CardBgImagePath: string;
 	EventAssist: bool;
 	eventContentReleaseType: EventContentReleaseType;
 	EventContentStageRewardIdPermanent: long;
 	RewardTagPermanent: RewardTag;
 	MiniEventShortCutScenarioModeId: long;
+	ScenarioContentCollectionGroupId: long;
 }
 
 table EventContentShopExcelTable {
@@ -9219,6 +9280,17 @@ table FieldContentStageRewardExcel {
 	RewardId: long;
 	RewardAmount: int;
 	IsDisplayed: bool;
+}
+
+table FieldCurtainCallFreeModeExcelTable {
+	DataList: [FieldCurtainCallFreeModeExcel];
+}
+
+table FieldCurtainCallFreeModeExcel {
+	UniqueId: long;
+	OpenDate: long;
+	SetFieldDateID: long;
+	SetFieldQuestOpenDate: long;
 }
 
 table FieldDateExcelTable {
@@ -9751,6 +9823,7 @@ table GroundExcel {
 	BeforeVictoryTimelinePath: string;
 	SkipBattleEnd: bool;
 	HideNPCWhenBattleEnd: bool;
+	CoverPointOff: bool;
 	UIHpScale: float;
 	UIEmojiScale: float;
 	UISkillMainLogScale: float;
@@ -10437,6 +10510,7 @@ table MinigameTBGItemExcel {
 	BuffIcon: string;
 	EncounterCount: int;
 	DiceEffectAniClip: string;
+	BuffIconHUDVisible: bool;
 }
 
 table MinigameTBGObjectExcelTable {
@@ -10486,6 +10560,9 @@ table MinigameTBGSeasonExcel {
 	MaxHp: int;
 	MapImagePath: string;
 	MapNameLocalize: string;
+	StartThemaIndex: int;
+	LoopThemaIndex: int;
+	MaxDicePlus: int;
 }
 
 table MinigameTBGThemaExcelTable {
@@ -10507,6 +10584,7 @@ table MinigameTBGThemaExcel {
 	ThemaLeaderId: long;
 	ThemaGoalLocalize: string;
 	InstantClearCostAmount: long;
+	IsTutorial: bool;
 }
 
 table MiniGameTBGThemaRewardExcelTable {
@@ -10628,6 +10706,13 @@ table ObstacleStatExcel {
 	Dodge: long;
 	CanNotStandRange: long;
 	HighlightFloaterHeight: float;
+	EnhanceLightArmorRate: long;
+	EnhanceHeavyArmorRate: long;
+	EnhanceUnarmedRate: long;
+	EnhanceElasticArmorRate: long;
+	EnhanceStructureRate: long;
+	EnhanceNormalArmorRate: long;
+	ReduceExDamagedRate: long;
 }
 
 table OpenConditionExcelTable {
@@ -11837,6 +11922,7 @@ table WorldRaidSeasonManageExcel {
 	WorldRaidUniqueThemeName: string;
 	CanWorldRaidGemEnter: bool;
 	HideWorldRaidTicketUI: bool;
+	HideWorldRaidBossCompleteRewardUI: bool;
 	UseWorldRaidCommonToast: bool;
 	OpenRaidBossGroupId: [long];
 	BossSpawnTime: [string];
@@ -12032,6 +12118,7 @@ table CharacterDialogExcel {
 table CharacterDialogSubtitleExcel {
 	LocalizeCVGroup: string;
 	CharacterId: long;
+	TLMID: string;
 	Duration: long;
 	DurationKr: long;
 	Separate: bool;
@@ -12085,13 +12172,14 @@ table CharacterVoiceExcel {
 table CharacterVoiceSubtitleExcel {
 	LocalizeCVGroup: string;
 	CharacterVoiceGroupId: long;
+	TLMID: string;
 	Duration: long;
 	DurationKr: long;
 	Separate: bool;
 	LocalizeKR: string;
 	LocalizeJP: string;
-	LocalizeTW: string;
 	LocalizeTH: string;
+	LocalizeTW: string;
 	LocalizeEN: string;
 }
 
@@ -12348,6 +12436,67 @@ table MessagePopupExcel {
 	ButtonParameter: [string];
 }
 
+table MiniGameDefenseCharacterBanExcel {
+	EventContentId: long;
+	CharacterId: long;
+}
+
+table MiniGameDefenseFixedStatExcel {
+	MinigameDefenseFixedStatId: long;
+	Level: int;
+	Grade: int;
+	ExSkillLevel: int;
+	NoneExSkillLevel: int;
+	Equipment1Tier: int;
+	Equipment1Level: int;
+	Equipment2Tier: int;
+	Equipment2Level: int;
+	Equipment3Tier: int;
+	Equipment3Level: int;
+	CharacterWeaponGrade: int;
+	CharacterWeaponLevel: int;
+	CharacterGearTier: int;
+	CharacterGearLevel: int;
+}
+
+table MiniGameDefenseInfoExcel {
+	EventContentId: long;
+	DefenseBattleParcelType: ParcelType;
+	DefenseBattleParcelId: long;
+	DefenseBattleMultiplierMax: long;
+	DisableRootMotion: bool;
+}
+
+table MiniGameDefenseStageExcel {
+	Id: long;
+	Name: string;
+	EventContentId: long;
+	stageDifficulty: StageDifficulty;
+	StageDifficultyLocalize: uint;
+	StageNumber: int;
+	StageDisplay: int;
+	PrevStageId: long;
+	echelonExtensionType: EchelonExtensionType;
+	BattleDuration: long;
+	StageEnterCostType: ParcelType;
+	StageEnterCostId: long;
+	StageEnterCostAmount: int;
+	EventContentStageRewardId: long;
+	EnterScenarioGroupId: [long];
+	ClearScenarioGroupId: [long];
+	stageTopography: StageTopography;
+	RecommandLevel: int;
+	GroundID: long;
+	contentType: ContentType;
+	StarGoal: [StarGoalType];
+	StarGoalAmount: [int];
+	DefenseFormationBGPrefab: string;
+	DefenseFormationBGPrefabScale: float;
+	FixedEchelon: long;
+	MininageDefenseFixedStatId: long;
+	StageHint: uint;
+}
+
 table MiniGameDreamCollectionScenarioExcel {
 	Id: long;
 	IsSkip: bool;
@@ -12493,6 +12642,7 @@ table MultiFloorRaidSeasonManageExcel {
 	EnterScenarioKey: uint;
 	LobbyImgPath: string;
 	LevelImgPath: string;
+	PlayTip: string;
 }
 
 table MultiFloorRaidStageExcel {
@@ -12549,6 +12699,7 @@ table OperatorExcel {
 table ScenarioBGEffectExcel {
 	Name: uint;
 	Effect: string;
+	Effect2: string;
 	Scroll: ScenarioBGScroll;
 	ScrollTime: long;
 	ScrollFrom: long;
@@ -12638,6 +12789,7 @@ table ScenarioModeExcel {
 	VolumeId: long;
 	ChapterId: long;
 	EpisodeId: long;
+	ExposedTime: string;
 	Hide: bool;
 	Open: bool;
 	ScenarioOpenDate: string;

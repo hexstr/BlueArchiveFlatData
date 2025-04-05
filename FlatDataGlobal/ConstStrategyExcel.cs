@@ -47,9 +47,10 @@ public struct ConstStrategyExcel : IFlatbufferObject
   public int StoryEchelonCount { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int MultiSweepPresetCount { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int MultiSweepPresetNameMaxLength { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int MultiSweepPresetSelectStageMaxCount { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int MultiSweepPresetMaxSweepCount { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int MultiSweepPresetSelectParcelMaxCount { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MultiSweepPresetNameMaxLengthKr { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MultiSweepPresetSelectStageMaxCount { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MultiSweepPresetMaxSweepCount { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int MultiSweepPresetSelectParcelMaxCount { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.ConstStrategyExcel> CreateConstStrategyExcel(FlatBufferBuilder builder,
       float HexaMapBoundaryOffset = 0.0f,
@@ -73,14 +74,16 @@ public struct ConstStrategyExcel : IFlatbufferObject
       int StoryEchelonCount = 0,
       int MultiSweepPresetCount = 0,
       int MultiSweepPresetNameMaxLength = 0,
+      int MultiSweepPresetNameMaxLengthKr = 0,
       int MultiSweepPresetSelectStageMaxCount = 0,
       int MultiSweepPresetMaxSweepCount = 0,
       int MultiSweepPresetSelectParcelMaxCount = 0) {
-    builder.StartTable(24);
+    builder.StartTable(25);
     ConstStrategyExcel.AddPlayTimeLimitInSeconds(builder, PlayTimeLimitInSeconds);
     ConstStrategyExcel.AddMultiSweepPresetSelectParcelMaxCount(builder, MultiSweepPresetSelectParcelMaxCount);
     ConstStrategyExcel.AddMultiSweepPresetMaxSweepCount(builder, MultiSweepPresetMaxSweepCount);
     ConstStrategyExcel.AddMultiSweepPresetSelectStageMaxCount(builder, MultiSweepPresetSelectStageMaxCount);
+    ConstStrategyExcel.AddMultiSweepPresetNameMaxLengthKr(builder, MultiSweepPresetNameMaxLengthKr);
     ConstStrategyExcel.AddMultiSweepPresetNameMaxLength(builder, MultiSweepPresetNameMaxLength);
     ConstStrategyExcel.AddMultiSweepPresetCount(builder, MultiSweepPresetCount);
     ConstStrategyExcel.AddStoryEchelonCount(builder, StoryEchelonCount);
@@ -104,7 +107,7 @@ public struct ConstStrategyExcel : IFlatbufferObject
     return ConstStrategyExcel.EndConstStrategyExcel(builder);
   }
 
-  public static void StartConstStrategyExcel(FlatBufferBuilder builder) { builder.StartTable(24); }
+  public static void StartConstStrategyExcel(FlatBufferBuilder builder) { builder.StartTable(25); }
   public static void AddHexaMapBoundaryOffset(FlatBufferBuilder builder, float HexaMapBoundaryOffset) { builder.AddFloat(0, HexaMapBoundaryOffset, 0.0f); }
   public static void AddHexaMapStartCameraOffset(FlatBufferBuilder builder, float HexaMapStartCameraOffset) { builder.AddFloat(1, HexaMapStartCameraOffset, 0.0f); }
   public static void AddCameraZoomMax(FlatBufferBuilder builder, float CameraZoomMax) { builder.AddFloat(2, CameraZoomMax, 0.0f); }
@@ -131,9 +134,10 @@ public struct ConstStrategyExcel : IFlatbufferObject
   public static void AddStoryEchelonCount(FlatBufferBuilder builder, int StoryEchelonCount) { builder.AddInt(18, StoryEchelonCount, 0); }
   public static void AddMultiSweepPresetCount(FlatBufferBuilder builder, int MultiSweepPresetCount) { builder.AddInt(19, MultiSweepPresetCount, 0); }
   public static void AddMultiSweepPresetNameMaxLength(FlatBufferBuilder builder, int MultiSweepPresetNameMaxLength) { builder.AddInt(20, MultiSweepPresetNameMaxLength, 0); }
-  public static void AddMultiSweepPresetSelectStageMaxCount(FlatBufferBuilder builder, int MultiSweepPresetSelectStageMaxCount) { builder.AddInt(21, MultiSweepPresetSelectStageMaxCount, 0); }
-  public static void AddMultiSweepPresetMaxSweepCount(FlatBufferBuilder builder, int MultiSweepPresetMaxSweepCount) { builder.AddInt(22, MultiSweepPresetMaxSweepCount, 0); }
-  public static void AddMultiSweepPresetSelectParcelMaxCount(FlatBufferBuilder builder, int MultiSweepPresetSelectParcelMaxCount) { builder.AddInt(23, MultiSweepPresetSelectParcelMaxCount, 0); }
+  public static void AddMultiSweepPresetNameMaxLengthKr(FlatBufferBuilder builder, int MultiSweepPresetNameMaxLengthKr) { builder.AddInt(21, MultiSweepPresetNameMaxLengthKr, 0); }
+  public static void AddMultiSweepPresetSelectStageMaxCount(FlatBufferBuilder builder, int MultiSweepPresetSelectStageMaxCount) { builder.AddInt(22, MultiSweepPresetSelectStageMaxCount, 0); }
+  public static void AddMultiSweepPresetMaxSweepCount(FlatBufferBuilder builder, int MultiSweepPresetMaxSweepCount) { builder.AddInt(23, MultiSweepPresetMaxSweepCount, 0); }
+  public static void AddMultiSweepPresetSelectParcelMaxCount(FlatBufferBuilder builder, int MultiSweepPresetSelectParcelMaxCount) { builder.AddInt(24, MultiSweepPresetSelectParcelMaxCount, 0); }
   public static Offset<FlatDataGlobal.ConstStrategyExcel> EndConstStrategyExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstStrategyExcel>(o);

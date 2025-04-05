@@ -65,6 +65,13 @@ public struct MultiFloorRaidSeasonManageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetLevelImgPathBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
   public byte[] GetLevelImgPathArray() { return __p.__vector_as_array<byte>(22); }
+  public string PlayTip { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetPlayTipBytes() { return __p.__vector_as_span<byte>(24, 1); }
+#else
+  public ArraySegment<byte>? GetPlayTipBytes() { return __p.__vector_as_arraysegment(24); }
+#endif
+  public byte[] GetPlayTipArray() { return __p.__vector_as_array<byte>(24); }
 
   public static Offset<FlatDataGlobal.MultiFloorRaidSeasonManageExcel> CreateMultiFloorRaidSeasonManageExcel(FlatBufferBuilder builder,
       long SeasonId = 0,
@@ -76,9 +83,11 @@ public struct MultiFloorRaidSeasonManageExcel : IFlatbufferObject
       StringOffset OpenRaidBossGroupIdOffset = default(StringOffset),
       uint EnterScenarioKey = 0,
       StringOffset LobbyImgPathOffset = default(StringOffset),
-      StringOffset LevelImgPathOffset = default(StringOffset)) {
-    builder.StartTable(10);
+      StringOffset LevelImgPathOffset = default(StringOffset),
+      StringOffset PlayTipOffset = default(StringOffset)) {
+    builder.StartTable(11);
     MultiFloorRaidSeasonManageExcel.AddSeasonId(builder, SeasonId);
+    MultiFloorRaidSeasonManageExcel.AddPlayTip(builder, PlayTipOffset);
     MultiFloorRaidSeasonManageExcel.AddLevelImgPath(builder, LevelImgPathOffset);
     MultiFloorRaidSeasonManageExcel.AddLobbyImgPath(builder, LobbyImgPathOffset);
     MultiFloorRaidSeasonManageExcel.AddEnterScenarioKey(builder, EnterScenarioKey);
@@ -91,7 +100,7 @@ public struct MultiFloorRaidSeasonManageExcel : IFlatbufferObject
     return MultiFloorRaidSeasonManageExcel.EndMultiFloorRaidSeasonManageExcel(builder);
   }
 
-  public static void StartMultiFloorRaidSeasonManageExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
+  public static void StartMultiFloorRaidSeasonManageExcel(FlatBufferBuilder builder) { builder.StartTable(11); }
   public static void AddSeasonId(FlatBufferBuilder builder, long SeasonId) { builder.AddLong(0, SeasonId, 0); }
   public static void AddLobbyEnterScenario(FlatBufferBuilder builder, uint LobbyEnterScenario) { builder.AddUint(1, LobbyEnterScenario, 0); }
   public static void AddShowLobbyBanner(FlatBufferBuilder builder, bool ShowLobbyBanner) { builder.AddBool(2, ShowLobbyBanner, false); }
@@ -102,6 +111,7 @@ public struct MultiFloorRaidSeasonManageExcel : IFlatbufferObject
   public static void AddEnterScenarioKey(FlatBufferBuilder builder, uint EnterScenarioKey) { builder.AddUint(7, EnterScenarioKey, 0); }
   public static void AddLobbyImgPath(FlatBufferBuilder builder, StringOffset LobbyImgPathOffset) { builder.AddOffset(8, LobbyImgPathOffset.Value, 0); }
   public static void AddLevelImgPath(FlatBufferBuilder builder, StringOffset LevelImgPathOffset) { builder.AddOffset(9, LevelImgPathOffset.Value, 0); }
+  public static void AddPlayTip(FlatBufferBuilder builder, StringOffset PlayTipOffset) { builder.AddOffset(10, PlayTipOffset.Value, 0); }
   public static Offset<FlatDataGlobal.MultiFloorRaidSeasonManageExcel> EndMultiFloorRaidSeasonManageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.MultiFloorRaidSeasonManageExcel>(o);

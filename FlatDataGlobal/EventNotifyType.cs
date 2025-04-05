@@ -12,6 +12,7 @@ public enum EventNotifyType : int
   RaidSeasonManager = 2,
   TimeAttackDungeonSeasonManage = 3,
   EliminateRaidSeasonManage = 4,
+  MultiFloorRaidSeasonManage = 5,
 };
 
 

@@ -17,6 +17,7 @@ public enum EventTargetType : int
   AccountLevelExpIncrease = 7,
   Raid = 8,
   EliminateRaid = 9,
+  MultiFloorRaid = 10,
 };
 
 

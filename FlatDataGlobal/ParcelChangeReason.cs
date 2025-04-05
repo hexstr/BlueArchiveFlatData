@@ -188,9 +188,12 @@ public enum ParcelChangeReason : int
   MiniGame_DreamDailyClosing = 178,
   MiniGame_DreamEnding = 179,
   Item_ExpireChange = 180,
-  Temp = 181,
+  MiniGame_DefenseBattleResult = 181,
   Raid_FailCompensateReward = 182,
   EliminateRaid_FailCompensateReward = 183,
+  Currency_ExpireChange = 184,
+  Conquest_ErosionBattleResult = 185,
+  Conquest_EnterErosionBattle = 186,
 };
 
 

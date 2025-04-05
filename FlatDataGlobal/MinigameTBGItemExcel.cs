@@ -52,6 +52,7 @@ public struct MinigameTBGItemExcel : IFlatbufferObject
   public ArraySegment<byte>? GetDiceEffectAniClipBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
   public byte[] GetDiceEffectAniClipArray() { return __p.__vector_as_array<byte>(20); }
+  public bool BuffIconHUDVisible { get { int o = __p.__offset(22); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.MinigameTBGItemExcel> CreateMinigameTBGItemExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
@@ -62,8 +63,9 @@ public struct MinigameTBGItemExcel : IFlatbufferObject
       StringOffset IconOffset = default(StringOffset),
       StringOffset BuffIconOffset = default(StringOffset),
       int EncounterCount = 0,
-      StringOffset DiceEffectAniClipOffset = default(StringOffset)) {
-    builder.StartTable(9);
+      StringOffset DiceEffectAniClipOffset = default(StringOffset),
+      bool BuffIconHUDVisible = false) {
+    builder.StartTable(10);
     MinigameTBGItemExcel.AddUniqueId(builder, UniqueId);
     MinigameTBGItemExcel.AddDiceEffectAniClip(builder, DiceEffectAniClipOffset);
     MinigameTBGItemExcel.AddEncounterCount(builder, EncounterCount);
@@ -73,10 +75,11 @@ public struct MinigameTBGItemExcel : IFlatbufferObject
     MinigameTBGItemExcel.AddItemParameter(builder, ItemParameter);
     MinigameTBGItemExcel.AddTBGItemEffectType(builder, tBGItemEffectType);
     MinigameTBGItemExcel.AddItemType(builder, ItemType);
+    MinigameTBGItemExcel.AddBuffIconHUDVisible(builder, BuffIconHUDVisible);
     return MinigameTBGItemExcel.EndMinigameTBGItemExcel(builder);
   }
 
-  public static void StartMinigameTBGItemExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
+  public static void StartMinigameTBGItemExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
   public static void AddItemType(FlatBufferBuilder builder, FlatDataGlobal.TBGItemType ItemType) { builder.AddInt(1, (int)ItemType, 0); }
   public static void AddTBGItemEffectType(FlatBufferBuilder builder, FlatDataGlobal.TBGItemEffectType tBGItemEffectType) { builder.AddInt(2, (int)tBGItemEffectType, 0); }
@@ -86,6 +89,7 @@ public struct MinigameTBGItemExcel : IFlatbufferObject
   public static void AddBuffIcon(FlatBufferBuilder builder, StringOffset BuffIconOffset) { builder.AddOffset(6, BuffIconOffset.Value, 0); }
   public static void AddEncounterCount(FlatBufferBuilder builder, int EncounterCount) { builder.AddInt(7, EncounterCount, 0); }
   public static void AddDiceEffectAniClip(FlatBufferBuilder builder, StringOffset DiceEffectAniClipOffset) { builder.AddOffset(8, DiceEffectAniClipOffset.Value, 0); }
+  public static void AddBuffIconHUDVisible(FlatBufferBuilder builder, bool BuffIconHUDVisible) { builder.AddBool(9, BuffIconHUDVisible, false); }
   public static Offset<FlatDataGlobal.MinigameTBGItemExcel> EndMinigameTBGItemExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.MinigameTBGItemExcel>(o);

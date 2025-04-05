@@ -25,85 +25,92 @@ public struct ScenarioModeExcel : IFlatbufferObject
   public long VolumeId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ChapterId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long EpisodeId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool Hide { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool Open { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string ScenarioOpenDate { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string ExposedTime { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetScenarioOpenDateBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetExposedTimeBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetScenarioOpenDateBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetExposedTimeBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetScenarioOpenDateArray() { return __p.__vector_as_array<byte>(20); }
-  public string ScenarioCloseDate { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetExposedTimeArray() { return __p.__vector_as_array<byte>(16); }
+  public bool Hide { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool Open { get { int o = __p.__offset(20); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string ScenarioOpenDate { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetScenarioCloseDateBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetScenarioOpenDateBytes() { return __p.__vector_as_span<byte>(22, 1); }
 #else
-  public ArraySegment<byte>? GetScenarioCloseDateBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetScenarioOpenDateBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetScenarioCloseDateArray() { return __p.__vector_as_array<byte>(22); }
-  public bool IsContinue { get { int o = __p.__offset(24); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long EpisodeContinueModeId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FrontScenarioGroupId(int j) { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int FrontScenarioGroupIdLength { get { int o = __p.__offset(28); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetScenarioOpenDateArray() { return __p.__vector_as_array<byte>(22); }
+  public string ScenarioCloseDate { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetFrontScenarioGroupIdBytes() { return __p.__vector_as_span<long>(28, 8); }
+  public Span<byte> GetScenarioCloseDateBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetFrontScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(28); }
+  public ArraySegment<byte>? GetScenarioCloseDateBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public long[] GetFrontScenarioGroupIdArray() { return __p.__vector_as_array<long>(28); }
-  public long StrategyId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long GroundId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool IsDefeatBattle { get { int o = __p.__offset(34); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long BattleDuration { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long BackScenarioGroupId(int j) { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int BackScenarioGroupIdLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetScenarioCloseDateArray() { return __p.__vector_as_array<byte>(24); }
+  public bool IsContinue { get { int o = __p.__offset(26); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long EpisodeContinueModeId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FrontScenarioGroupId(int j) { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int FrontScenarioGroupIdLength { get { int o = __p.__offset(30); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetBackScenarioGroupIdBytes() { return __p.__vector_as_span<long>(38, 8); }
+  public Span<long> GetFrontScenarioGroupIdBytes() { return __p.__vector_as_span<long>(30, 8); }
 #else
-  public ArraySegment<byte>? GetBackScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(38); }
+  public ArraySegment<byte>? GetFrontScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
-  public long[] GetBackScenarioGroupIdArray() { return __p.__vector_as_array<long>(38); }
-  public long ClearedModeId(int j) { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int ClearedModeIdLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetFrontScenarioGroupIdArray() { return __p.__vector_as_array<long>(30); }
+  public long StrategyId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long GroundId { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool IsDefeatBattle { get { int o = __p.__offset(36); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long BattleDuration { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long BackScenarioGroupId(int j) { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int BackScenarioGroupIdLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetClearedModeIdBytes() { return __p.__vector_as_span<long>(40, 8); }
+  public Span<long> GetBackScenarioGroupIdBytes() { return __p.__vector_as_span<long>(40, 8); }
 #else
-  public ArraySegment<byte>? GetClearedModeIdBytes() { return __p.__vector_as_arraysegment(40); }
+  public ArraySegment<byte>? GetBackScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
-  public long[] GetClearedModeIdArray() { return __p.__vector_as_array<long>(40); }
-  public long ScenarioModeRewardId { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool IsScenarioSpecialReward { get { int o = __p.__offset(44); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long AccountLevelLimit { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ClearedStageId { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.Club NeedClub { get { int o = __p.__offset(50); return o != 0 ? (FlatDataGlobal.Club)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Club.None; } }
-  public int NeedClubStudentCount { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long EventContentId { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.EventContentType EventContentType { get { int o = __p.__offset(56); return o != 0 ? (FlatDataGlobal.EventContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentType.Stage; } }
-  public long EventContentCondition { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EventContentConditionGroup { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.StageDifficulty MapDifficulty { get { int o = __p.__offset(62); return o != 0 ? (FlatDataGlobal.StageDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageDifficulty.None; } }
-  public int StepIndex { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int RecommendLevel { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string EventIconParcelPath { get { int o = __p.__offset(68); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long[] GetBackScenarioGroupIdArray() { return __p.__vector_as_array<long>(40); }
+  public long ClearedModeId(int j) { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ClearedModeIdLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEventIconParcelPathBytes() { return __p.__vector_as_span<byte>(68, 1); }
+  public Span<long> GetClearedModeIdBytes() { return __p.__vector_as_span<long>(42, 8); }
 #else
-  public ArraySegment<byte>? GetEventIconParcelPathBytes() { return __p.__vector_as_arraysegment(68); }
+  public ArraySegment<byte>? GetClearedModeIdBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public byte[] GetEventIconParcelPathArray() { return __p.__vector_as_array<byte>(68); }
-  public uint EventBannerTitle { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public bool Lof { get { int o = __p.__offset(72); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.StageTopography StageTopography { get { int o = __p.__offset(74); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
-  public long FixedEchelonId { get { int o = __p.__offset(76); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string CompleteReportEventName { get { int o = __p.__offset(78); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long[] GetClearedModeIdArray() { return __p.__vector_as_array<long>(42); }
+  public long ScenarioModeRewardId { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool IsScenarioSpecialReward { get { int o = __p.__offset(46); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long AccountLevelLimit { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ClearedStageId { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.Club NeedClub { get { int o = __p.__offset(52); return o != 0 ? (FlatDataGlobal.Club)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Club.None; } }
+  public int NeedClubStudentCount { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long EventContentId { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.EventContentType EventContentType { get { int o = __p.__offset(58); return o != 0 ? (FlatDataGlobal.EventContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentType.Stage; } }
+  public long EventContentCondition { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EventContentConditionGroup { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.StageDifficulty MapDifficulty { get { int o = __p.__offset(64); return o != 0 ? (FlatDataGlobal.StageDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageDifficulty.None; } }
+  public int StepIndex { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int RecommendLevel { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string EventIconParcelPath { get { int o = __p.__offset(70); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetCompleteReportEventNameBytes() { return __p.__vector_as_span<byte>(78, 1); }
+  public Span<byte> GetEventIconParcelPathBytes() { return __p.__vector_as_span<byte>(70, 1); }
 #else
-  public ArraySegment<byte>? GetCompleteReportEventNameBytes() { return __p.__vector_as_arraysegment(78); }
+  public ArraySegment<byte>? GetEventIconParcelPathBytes() { return __p.__vector_as_arraysegment(70); }
 #endif
-  public byte[] GetCompleteReportEventNameArray() { return __p.__vector_as_array<byte>(78); }
-  public FlatDataGlobal.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(80); return o != 0 ? (FlatDataGlobal.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EchelonExtensionType.Base; } }
-  public long CollectionGroupId { get { int o = __p.__offset(82); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public byte[] GetEventIconParcelPathArray() { return __p.__vector_as_array<byte>(70); }
+  public uint EventBannerTitle { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public bool Lof { get { int o = __p.__offset(74); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.StageTopography StageTopography { get { int o = __p.__offset(76); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
+  public long FixedEchelonId { get { int o = __p.__offset(78); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string CompleteReportEventName { get { int o = __p.__offset(80); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetCompleteReportEventNameBytes() { return __p.__vector_as_span<byte>(80, 1); }
+#else
+  public ArraySegment<byte>? GetCompleteReportEventNameBytes() { return __p.__vector_as_arraysegment(80); }
+#endif
+  public byte[] GetCompleteReportEventNameArray() { return __p.__vector_as_array<byte>(80); }
+  public FlatDataGlobal.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(82); return o != 0 ? (FlatDataGlobal.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EchelonExtensionType.Base; } }
+  public long CollectionGroupId { get { int o = __p.__offset(84); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.ScenarioModeExcel> CreateScenarioModeExcel(FlatBufferBuilder builder,
       long ModeId = 0,
@@ -112,6 +119,7 @@ public struct ScenarioModeExcel : IFlatbufferObject
       long VolumeId = 0,
       long ChapterId = 0,
       long EpisodeId = 0,
+      StringOffset ExposedTimeOffset = default(StringOffset),
       bool Hide = false,
       bool Open = false,
       StringOffset ScenarioOpenDateOffset = default(StringOffset),
@@ -146,7 +154,7 @@ public struct ScenarioModeExcel : IFlatbufferObject
       StringOffset CompleteReportEventNameOffset = default(StringOffset),
       FlatDataGlobal.EchelonExtensionType echelonExtensionType = FlatDataGlobal.EchelonExtensionType.Base,
       long CollectionGroupId = 0) {
-    builder.StartTable(40);
+    builder.StartTable(41);
     ScenarioModeExcel.AddCollectionGroupId(builder, CollectionGroupId);
     ScenarioModeExcel.AddFixedEchelonId(builder, FixedEchelonId);
     ScenarioModeExcel.AddEventContentConditionGroup(builder, EventContentConditionGroup);
@@ -179,6 +187,7 @@ public struct ScenarioModeExcel : IFlatbufferObject
     ScenarioModeExcel.AddFrontScenarioGroupId(builder, FrontScenarioGroupIdOffset);
     ScenarioModeExcel.AddScenarioCloseDate(builder, ScenarioCloseDateOffset);
     ScenarioModeExcel.AddScenarioOpenDate(builder, ScenarioOpenDateOffset);
+    ScenarioModeExcel.AddExposedTime(builder, ExposedTimeOffset);
     ScenarioModeExcel.AddSubType(builder, SubType);
     ScenarioModeExcel.AddModeType(builder, ModeType);
     ScenarioModeExcel.AddLof(builder, Lof);
@@ -190,62 +199,63 @@ public struct ScenarioModeExcel : IFlatbufferObject
     return ScenarioModeExcel.EndScenarioModeExcel(builder);
   }
 
-  public static void StartScenarioModeExcel(FlatBufferBuilder builder) { builder.StartTable(40); }
+  public static void StartScenarioModeExcel(FlatBufferBuilder builder) { builder.StartTable(41); }
   public static void AddModeId(FlatBufferBuilder builder, long ModeId) { builder.AddLong(0, ModeId, 0); }
   public static void AddModeType(FlatBufferBuilder builder, FlatDataGlobal.ScenarioModeTypes ModeType) { builder.AddInt(1, (int)ModeType, 0); }
   public static void AddSubType(FlatBufferBuilder builder, FlatDataGlobal.ScenarioModeSubTypes SubType) { builder.AddInt(2, (int)SubType, 0); }
   public static void AddVolumeId(FlatBufferBuilder builder, long VolumeId) { builder.AddLong(3, VolumeId, 0); }
   public static void AddChapterId(FlatBufferBuilder builder, long ChapterId) { builder.AddLong(4, ChapterId, 0); }
   public static void AddEpisodeId(FlatBufferBuilder builder, long EpisodeId) { builder.AddLong(5, EpisodeId, 0); }
-  public static void AddHide(FlatBufferBuilder builder, bool Hide) { builder.AddBool(6, Hide, false); }
-  public static void AddOpen(FlatBufferBuilder builder, bool Open) { builder.AddBool(7, Open, false); }
-  public static void AddScenarioOpenDate(FlatBufferBuilder builder, StringOffset ScenarioOpenDateOffset) { builder.AddOffset(8, ScenarioOpenDateOffset.Value, 0); }
-  public static void AddScenarioCloseDate(FlatBufferBuilder builder, StringOffset ScenarioCloseDateOffset) { builder.AddOffset(9, ScenarioCloseDateOffset.Value, 0); }
-  public static void AddIsContinue(FlatBufferBuilder builder, bool IsContinue) { builder.AddBool(10, IsContinue, false); }
-  public static void AddEpisodeContinueModeId(FlatBufferBuilder builder, long EpisodeContinueModeId) { builder.AddLong(11, EpisodeContinueModeId, 0); }
-  public static void AddFrontScenarioGroupId(FlatBufferBuilder builder, VectorOffset FrontScenarioGroupIdOffset) { builder.AddOffset(12, FrontScenarioGroupIdOffset.Value, 0); }
+  public static void AddExposedTime(FlatBufferBuilder builder, StringOffset ExposedTimeOffset) { builder.AddOffset(6, ExposedTimeOffset.Value, 0); }
+  public static void AddHide(FlatBufferBuilder builder, bool Hide) { builder.AddBool(7, Hide, false); }
+  public static void AddOpen(FlatBufferBuilder builder, bool Open) { builder.AddBool(8, Open, false); }
+  public static void AddScenarioOpenDate(FlatBufferBuilder builder, StringOffset ScenarioOpenDateOffset) { builder.AddOffset(9, ScenarioOpenDateOffset.Value, 0); }
+  public static void AddScenarioCloseDate(FlatBufferBuilder builder, StringOffset ScenarioCloseDateOffset) { builder.AddOffset(10, ScenarioCloseDateOffset.Value, 0); }
+  public static void AddIsContinue(FlatBufferBuilder builder, bool IsContinue) { builder.AddBool(11, IsContinue, false); }
+  public static void AddEpisodeContinueModeId(FlatBufferBuilder builder, long EpisodeContinueModeId) { builder.AddLong(12, EpisodeContinueModeId, 0); }
+  public static void AddFrontScenarioGroupId(FlatBufferBuilder builder, VectorOffset FrontScenarioGroupIdOffset) { builder.AddOffset(13, FrontScenarioGroupIdOffset.Value, 0); }
   public static VectorOffset CreateFrontScenarioGroupIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateFrontScenarioGroupIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateFrontScenarioGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateFrontScenarioGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartFrontScenarioGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddStrategyId(FlatBufferBuilder builder, long StrategyId) { builder.AddLong(13, StrategyId, 0); }
-  public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(14, GroundId, 0); }
-  public static void AddIsDefeatBattle(FlatBufferBuilder builder, bool IsDefeatBattle) { builder.AddBool(15, IsDefeatBattle, false); }
-  public static void AddBattleDuration(FlatBufferBuilder builder, long BattleDuration) { builder.AddLong(16, BattleDuration, 0); }
-  public static void AddBackScenarioGroupId(FlatBufferBuilder builder, VectorOffset BackScenarioGroupIdOffset) { builder.AddOffset(17, BackScenarioGroupIdOffset.Value, 0); }
+  public static void AddStrategyId(FlatBufferBuilder builder, long StrategyId) { builder.AddLong(14, StrategyId, 0); }
+  public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(15, GroundId, 0); }
+  public static void AddIsDefeatBattle(FlatBufferBuilder builder, bool IsDefeatBattle) { builder.AddBool(16, IsDefeatBattle, false); }
+  public static void AddBattleDuration(FlatBufferBuilder builder, long BattleDuration) { builder.AddLong(17, BattleDuration, 0); }
+  public static void AddBackScenarioGroupId(FlatBufferBuilder builder, VectorOffset BackScenarioGroupIdOffset) { builder.AddOffset(18, BackScenarioGroupIdOffset.Value, 0); }
   public static VectorOffset CreateBackScenarioGroupIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateBackScenarioGroupIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBackScenarioGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBackScenarioGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartBackScenarioGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddClearedModeId(FlatBufferBuilder builder, VectorOffset ClearedModeIdOffset) { builder.AddOffset(18, ClearedModeIdOffset.Value, 0); }
+  public static void AddClearedModeId(FlatBufferBuilder builder, VectorOffset ClearedModeIdOffset) { builder.AddOffset(19, ClearedModeIdOffset.Value, 0); }
   public static VectorOffset CreateClearedModeIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateClearedModeIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateClearedModeIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateClearedModeIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartClearedModeIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddScenarioModeRewardId(FlatBufferBuilder builder, long ScenarioModeRewardId) { builder.AddLong(19, ScenarioModeRewardId, 0); }
-  public static void AddIsScenarioSpecialReward(FlatBufferBuilder builder, bool IsScenarioSpecialReward) { builder.AddBool(20, IsScenarioSpecialReward, false); }
-  public static void AddAccountLevelLimit(FlatBufferBuilder builder, long AccountLevelLimit) { builder.AddLong(21, AccountLevelLimit, 0); }
-  public static void AddClearedStageId(FlatBufferBuilder builder, long ClearedStageId) { builder.AddLong(22, ClearedStageId, 0); }
-  public static void AddNeedClub(FlatBufferBuilder builder, FlatDataGlobal.Club NeedClub) { builder.AddInt(23, (int)NeedClub, 0); }
-  public static void AddNeedClubStudentCount(FlatBufferBuilder builder, int NeedClubStudentCount) { builder.AddInt(24, NeedClubStudentCount, 0); }
-  public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(25, EventContentId, 0); }
-  public static void AddEventContentType(FlatBufferBuilder builder, FlatDataGlobal.EventContentType eventContentType) { builder.AddInt(26, (int)eventContentType, 0); }
-  public static void AddEventContentCondition(FlatBufferBuilder builder, long EventContentCondition) { builder.AddLong(27, EventContentCondition, 0); }
-  public static void AddEventContentConditionGroup(FlatBufferBuilder builder, long EventContentConditionGroup) { builder.AddLong(28, EventContentConditionGroup, 0); }
-  public static void AddMapDifficulty(FlatBufferBuilder builder, FlatDataGlobal.StageDifficulty MapDifficulty) { builder.AddInt(29, (int)MapDifficulty, 0); }
-  public static void AddStepIndex(FlatBufferBuilder builder, int StepIndex) { builder.AddInt(30, StepIndex, 0); }
-  public static void AddRecommendLevel(FlatBufferBuilder builder, int RecommendLevel) { builder.AddInt(31, RecommendLevel, 0); }
-  public static void AddEventIconParcelPath(FlatBufferBuilder builder, StringOffset EventIconParcelPathOffset) { builder.AddOffset(32, EventIconParcelPathOffset.Value, 0); }
-  public static void AddEventBannerTitle(FlatBufferBuilder builder, uint EventBannerTitle) { builder.AddUint(33, EventBannerTitle, 0); }
-  public static void AddLof(FlatBufferBuilder builder, bool Lof) { builder.AddBool(34, Lof, false); }
-  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stageTopography) { builder.AddInt(35, (int)stageTopography, 0); }
-  public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(36, FixedEchelonId, 0); }
-  public static void AddCompleteReportEventName(FlatBufferBuilder builder, StringOffset CompleteReportEventNameOffset) { builder.AddOffset(37, CompleteReportEventNameOffset.Value, 0); }
-  public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataGlobal.EchelonExtensionType echelonExtensionType) { builder.AddInt(38, (int)echelonExtensionType, 0); }
-  public static void AddCollectionGroupId(FlatBufferBuilder builder, long CollectionGroupId) { builder.AddLong(39, CollectionGroupId, 0); }
+  public static void AddScenarioModeRewardId(FlatBufferBuilder builder, long ScenarioModeRewardId) { builder.AddLong(20, ScenarioModeRewardId, 0); }
+  public static void AddIsScenarioSpecialReward(FlatBufferBuilder builder, bool IsScenarioSpecialReward) { builder.AddBool(21, IsScenarioSpecialReward, false); }
+  public static void AddAccountLevelLimit(FlatBufferBuilder builder, long AccountLevelLimit) { builder.AddLong(22, AccountLevelLimit, 0); }
+  public static void AddClearedStageId(FlatBufferBuilder builder, long ClearedStageId) { builder.AddLong(23, ClearedStageId, 0); }
+  public static void AddNeedClub(FlatBufferBuilder builder, FlatDataGlobal.Club NeedClub) { builder.AddInt(24, (int)NeedClub, 0); }
+  public static void AddNeedClubStudentCount(FlatBufferBuilder builder, int NeedClubStudentCount) { builder.AddInt(25, NeedClubStudentCount, 0); }
+  public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(26, EventContentId, 0); }
+  public static void AddEventContentType(FlatBufferBuilder builder, FlatDataGlobal.EventContentType eventContentType) { builder.AddInt(27, (int)eventContentType, 0); }
+  public static void AddEventContentCondition(FlatBufferBuilder builder, long EventContentCondition) { builder.AddLong(28, EventContentCondition, 0); }
+  public static void AddEventContentConditionGroup(FlatBufferBuilder builder, long EventContentConditionGroup) { builder.AddLong(29, EventContentConditionGroup, 0); }
+  public static void AddMapDifficulty(FlatBufferBuilder builder, FlatDataGlobal.StageDifficulty MapDifficulty) { builder.AddInt(30, (int)MapDifficulty, 0); }
+  public static void AddStepIndex(FlatBufferBuilder builder, int StepIndex) { builder.AddInt(31, StepIndex, 0); }
+  public static void AddRecommendLevel(FlatBufferBuilder builder, int RecommendLevel) { builder.AddInt(32, RecommendLevel, 0); }
+  public static void AddEventIconParcelPath(FlatBufferBuilder builder, StringOffset EventIconParcelPathOffset) { builder.AddOffset(33, EventIconParcelPathOffset.Value, 0); }
+  public static void AddEventBannerTitle(FlatBufferBuilder builder, uint EventBannerTitle) { builder.AddUint(34, EventBannerTitle, 0); }
+  public static void AddLof(FlatBufferBuilder builder, bool Lof) { builder.AddBool(35, Lof, false); }
+  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stageTopography) { builder.AddInt(36, (int)stageTopography, 0); }
+  public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(37, FixedEchelonId, 0); }
+  public static void AddCompleteReportEventName(FlatBufferBuilder builder, StringOffset CompleteReportEventNameOffset) { builder.AddOffset(38, CompleteReportEventNameOffset.Value, 0); }
+  public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataGlobal.EchelonExtensionType echelonExtensionType) { builder.AddInt(39, (int)echelonExtensionType, 0); }
+  public static void AddCollectionGroupId(FlatBufferBuilder builder, long CollectionGroupId) { builder.AddLong(40, CollectionGroupId, 0); }
   public static Offset<FlatDataGlobal.ScenarioModeExcel> EndScenarioModeExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ScenarioModeExcel>(o);

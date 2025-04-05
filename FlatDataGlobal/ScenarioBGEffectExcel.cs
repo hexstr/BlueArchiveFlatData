@@ -27,35 +27,45 @@ public struct ScenarioBGEffectExcel : IFlatbufferObject
   public ArraySegment<byte>? GetEffectBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetEffectArray() { return __p.__vector_as_array<byte>(6); }
-  public FlatDataGlobal.ScenarioBGScroll Scroll { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.ScenarioBGScroll)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ScenarioBGScroll.None; } }
-  public long ScrollTime { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ScrollFrom { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ScrollTo { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string Effect2 { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetEffect2Bytes() { return __p.__vector_as_span<byte>(8, 1); }
+#else
+  public ArraySegment<byte>? GetEffect2Bytes() { return __p.__vector_as_arraysegment(8); }
+#endif
+  public byte[] GetEffect2Array() { return __p.__vector_as_array<byte>(8); }
+  public FlatDataGlobal.ScenarioBGScroll Scroll { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.ScenarioBGScroll)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ScenarioBGScroll.None; } }
+  public long ScrollTime { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ScrollFrom { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ScrollTo { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.ScenarioBGEffectExcel> CreateScenarioBGEffectExcel(FlatBufferBuilder builder,
       uint Name = 0,
       StringOffset EffectOffset = default(StringOffset),
+      StringOffset Effect2Offset = default(StringOffset),
       FlatDataGlobal.ScenarioBGScroll Scroll = FlatDataGlobal.ScenarioBGScroll.None,
       long ScrollTime = 0,
       long ScrollFrom = 0,
       long ScrollTo = 0) {
-    builder.StartTable(6);
+    builder.StartTable(7);
     ScenarioBGEffectExcel.AddScrollTo(builder, ScrollTo);
     ScenarioBGEffectExcel.AddScrollFrom(builder, ScrollFrom);
     ScenarioBGEffectExcel.AddScrollTime(builder, ScrollTime);
     ScenarioBGEffectExcel.AddScroll(builder, Scroll);
+    ScenarioBGEffectExcel.AddEffect2(builder, Effect2Offset);
     ScenarioBGEffectExcel.AddEffect(builder, EffectOffset);
     ScenarioBGEffectExcel.AddName(builder, Name);
     return ScenarioBGEffectExcel.EndScenarioBGEffectExcel(builder);
   }
 
-  public static void StartScenarioBGEffectExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
+  public static void StartScenarioBGEffectExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddName(FlatBufferBuilder builder, uint Name) { builder.AddUint(0, Name, 0); }
   public static void AddEffect(FlatBufferBuilder builder, StringOffset EffectOffset) { builder.AddOffset(1, EffectOffset.Value, 0); }
-  public static void AddScroll(FlatBufferBuilder builder, FlatDataGlobal.ScenarioBGScroll Scroll) { builder.AddInt(2, (int)Scroll, 0); }
-  public static void AddScrollTime(FlatBufferBuilder builder, long ScrollTime) { builder.AddLong(3, ScrollTime, 0); }
-  public static void AddScrollFrom(FlatBufferBuilder builder, long ScrollFrom) { builder.AddLong(4, ScrollFrom, 0); }
-  public static void AddScrollTo(FlatBufferBuilder builder, long ScrollTo) { builder.AddLong(5, ScrollTo, 0); }
+  public static void AddEffect2(FlatBufferBuilder builder, StringOffset Effect2Offset) { builder.AddOffset(2, Effect2Offset.Value, 0); }
+  public static void AddScroll(FlatBufferBuilder builder, FlatDataGlobal.ScenarioBGScroll Scroll) { builder.AddInt(3, (int)Scroll, 0); }
+  public static void AddScrollTime(FlatBufferBuilder builder, long ScrollTime) { builder.AddLong(4, ScrollTime, 0); }
+  public static void AddScrollFrom(FlatBufferBuilder builder, long ScrollFrom) { builder.AddLong(5, ScrollFrom, 0); }
+  public static void AddScrollTo(FlatBufferBuilder builder, long ScrollTo) { builder.AddLong(6, ScrollTo, 0); }
   public static Offset<FlatDataGlobal.ScenarioBGEffectExcel> EndScenarioBGEffectExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ScenarioBGEffectExcel>(o);

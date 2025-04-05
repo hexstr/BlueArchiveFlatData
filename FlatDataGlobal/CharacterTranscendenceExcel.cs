@@ -64,14 +64,16 @@ public struct CharacterTranscendenceExcel : IFlatbufferObject
   public int SkillSlotALength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
   public string SkillSlotB(int j) { int o = __p.__offset(18); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
   public int SkillSlotBLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public int MaxlevelStar(int j) { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int MaxlevelStarLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string SkillSlotC(int j) { int o = __p.__offset(20); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int SkillSlotCLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public int MaxlevelStar(int j) { int o = __p.__offset(22); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int MaxlevelStarLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetMaxlevelStarBytes() { return __p.__vector_as_span<int>(20, 4); }
+  public Span<int> GetMaxlevelStarBytes() { return __p.__vector_as_span<int>(22, 4); }
 #else
-  public ArraySegment<byte>? GetMaxlevelStarBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetMaxlevelStarBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public int[] GetMaxlevelStarArray() { return __p.__vector_as_array<int>(20); }
+  public int[] GetMaxlevelStarArray() { return __p.__vector_as_array<int>(22); }
 
   public static Offset<FlatDataGlobal.CharacterTranscendenceExcel> CreateCharacterTranscendenceExcel(FlatBufferBuilder builder,
       long CharacterId = 0,
@@ -82,10 +84,12 @@ public struct CharacterTranscendenceExcel : IFlatbufferObject
       VectorOffset RecipeIdOffset = default(VectorOffset),
       VectorOffset SkillSlotAOffset = default(VectorOffset),
       VectorOffset SkillSlotBOffset = default(VectorOffset),
+      VectorOffset SkillSlotCOffset = default(VectorOffset),
       VectorOffset MaxlevelStarOffset = default(VectorOffset)) {
-    builder.StartTable(9);
+    builder.StartTable(10);
     CharacterTranscendenceExcel.AddCharacterId(builder, CharacterId);
     CharacterTranscendenceExcel.AddMaxlevelStar(builder, MaxlevelStarOffset);
+    CharacterTranscendenceExcel.AddSkillSlotC(builder, SkillSlotCOffset);
     CharacterTranscendenceExcel.AddSkillSlotB(builder, SkillSlotBOffset);
     CharacterTranscendenceExcel.AddSkillSlotA(builder, SkillSlotAOffset);
     CharacterTranscendenceExcel.AddRecipeId(builder, RecipeIdOffset);
@@ -96,7 +100,7 @@ public struct CharacterTranscendenceExcel : IFlatbufferObject
     return CharacterTranscendenceExcel.EndCharacterTranscendenceExcel(builder);
   }
 
-  public static void StartCharacterTranscendenceExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
+  public static void StartCharacterTranscendenceExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
   public static void AddCharacterId(FlatBufferBuilder builder, long CharacterId) { builder.AddLong(0, CharacterId, 0); }
   public static void AddMaxFavorLevel(FlatBufferBuilder builder, VectorOffset MaxFavorLevelOffset) { builder.AddOffset(1, MaxFavorLevelOffset.Value, 0); }
   public static VectorOffset CreateMaxFavorLevelVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
@@ -140,7 +144,13 @@ public struct CharacterTranscendenceExcel : IFlatbufferObject
   public static VectorOffset CreateSkillSlotBVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSkillSlotBVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartSkillSlotBVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddMaxlevelStar(FlatBufferBuilder builder, VectorOffset MaxlevelStarOffset) { builder.AddOffset(8, MaxlevelStarOffset.Value, 0); }
+  public static void AddSkillSlotC(FlatBufferBuilder builder, VectorOffset SkillSlotCOffset) { builder.AddOffset(8, SkillSlotCOffset.Value, 0); }
+  public static VectorOffset CreateSkillSlotCVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateSkillSlotCVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSkillSlotCVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateSkillSlotCVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartSkillSlotCVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddMaxlevelStar(FlatBufferBuilder builder, VectorOffset MaxlevelStarOffset) { builder.AddOffset(9, MaxlevelStarOffset.Value, 0); }
   public static VectorOffset CreateMaxlevelStarVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateMaxlevelStarVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateMaxlevelStarVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }

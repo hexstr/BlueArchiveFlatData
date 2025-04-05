@@ -160,6 +160,7 @@ public struct CostumeExcel : IFlatbufferObject
   public byte[] GetEnterStrategyAnimationNameArray() { return __p.__vector_as_array<byte>(60); }
   public bool AnimationValidator { get { int o = __p.__offset(62); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long CharacterVoiceGroupId { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool ShowObjectHpStatus { get { int o = __p.__offset(66); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.CostumeExcel> CreateCostumeExcel(FlatBufferBuilder builder,
       long CostumeGroupId = 0,
@@ -192,8 +193,9 @@ public struct CostumeExcel : IFlatbufferObject
       StringOffset AnimationSSROffset = default(StringOffset),
       StringOffset EnterStrategyAnimationNameOffset = default(StringOffset),
       bool AnimationValidator = false,
-      long CharacterVoiceGroupId = 0) {
-    builder.StartTable(31);
+      long CharacterVoiceGroupId = 0,
+      bool ShowObjectHpStatus = false) {
+    builder.StartTable(32);
     CostumeExcel.AddCharacterVoiceGroupId(builder, CharacterVoiceGroupId);
     CostumeExcel.AddCharacterSkillListGroupId(builder, CharacterSkillListGroupId);
     CostumeExcel.AddCostumeUniqueId(builder, CostumeUniqueId);
@@ -221,6 +223,7 @@ public struct CostumeExcel : IFlatbufferObject
     CostumeExcel.AddReleaseDate(builder, ReleaseDateOffset);
     CostumeExcel.AddProductionStep(builder, productionStep);
     CostumeExcel.AddDevName(builder, DevNameOffset);
+    CostumeExcel.AddShowObjectHpStatus(builder, ShowObjectHpStatus);
     CostumeExcel.AddAnimationValidator(builder, AnimationValidator);
     CostumeExcel.AddUseObjectHPBAR(builder, UseObjectHPBAR);
     CostumeExcel.AddCollectionVisible(builder, CollectionVisible);
@@ -228,7 +231,7 @@ public struct CostumeExcel : IFlatbufferObject
     return CostumeExcel.EndCostumeExcel(builder);
   }
 
-  public static void StartCostumeExcel(FlatBufferBuilder builder) { builder.StartTable(31); }
+  public static void StartCostumeExcel(FlatBufferBuilder builder) { builder.StartTable(32); }
   public static void AddCostumeGroupId(FlatBufferBuilder builder, long CostumeGroupId) { builder.AddLong(0, CostumeGroupId, 0); }
   public static void AddCostumeUniqueId(FlatBufferBuilder builder, long CostumeUniqueId) { builder.AddLong(1, CostumeUniqueId, 0); }
   public static void AddDevName(FlatBufferBuilder builder, StringOffset DevNameOffset) { builder.AddOffset(2, DevNameOffset.Value, 0); }
@@ -270,6 +273,7 @@ public struct CostumeExcel : IFlatbufferObject
   public static void AddEnterStrategyAnimationName(FlatBufferBuilder builder, StringOffset EnterStrategyAnimationNameOffset) { builder.AddOffset(28, EnterStrategyAnimationNameOffset.Value, 0); }
   public static void AddAnimationValidator(FlatBufferBuilder builder, bool AnimationValidator) { builder.AddBool(29, AnimationValidator, false); }
   public static void AddCharacterVoiceGroupId(FlatBufferBuilder builder, long CharacterVoiceGroupId) { builder.AddLong(30, CharacterVoiceGroupId, 0); }
+  public static void AddShowObjectHpStatus(FlatBufferBuilder builder, bool ShowObjectHpStatus) { builder.AddBool(31, ShowObjectHpStatus, false); }
   public static Offset<FlatDataGlobal.CostumeExcel> EndCostumeExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CostumeExcel>(o);

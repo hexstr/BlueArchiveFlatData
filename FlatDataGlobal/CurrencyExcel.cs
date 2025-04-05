@@ -60,6 +60,17 @@ public struct CurrencyExcel : IFlatbufferObject
   public ArraySegment<byte>? GetDailyRefillTimeBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
   public long[] GetDailyRefillTimeArray() { return __p.__vector_as_array<long>(34); }
+  public string ExpirationDateTime { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetExpirationDateTimeBytes() { return __p.__vector_as_span<byte>(36, 1); }
+#else
+  public ArraySegment<byte>? GetExpirationDateTimeBytes() { return __p.__vector_as_arraysegment(36); }
+#endif
+  public byte[] GetExpirationDateTimeArray() { return __p.__vector_as_array<byte>(36); }
+  public int ExpirationNotifyDateIn { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.ParcelType ExpiryChangeParcelType { get { int o = __p.__offset(40); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public long ExpiryChangeId { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ExpiryChangeAmount { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.CurrencyExcel> CreateCurrencyExcel(FlatBufferBuilder builder,
       long ID = 0,
@@ -77,12 +88,22 @@ public struct CurrencyExcel : IFlatbufferObject
       StringOffset SpriteNameOffset = default(StringOffset),
       FlatDataGlobal.DailyRefillType dailyRefillType = FlatDataGlobal.DailyRefillType.None,
       long DailyRefillAmount = 0,
-      VectorOffset DailyRefillTimeOffset = default(VectorOffset)) {
-    builder.StartTable(16);
+      VectorOffset DailyRefillTimeOffset = default(VectorOffset),
+      StringOffset ExpirationDateTimeOffset = default(StringOffset),
+      int ExpirationNotifyDateIn = 0,
+      FlatDataGlobal.ParcelType ExpiryChangeParcelType = FlatDataGlobal.ParcelType.None,
+      long ExpiryChangeId = 0,
+      long ExpiryChangeAmount = 0) {
+    builder.StartTable(21);
+    CurrencyExcel.AddExpiryChangeAmount(builder, ExpiryChangeAmount);
+    CurrencyExcel.AddExpiryChangeId(builder, ExpiryChangeId);
     CurrencyExcel.AddDailyRefillAmount(builder, DailyRefillAmount);
     CurrencyExcel.AddOverChargeLimit(builder, OverChargeLimit);
     CurrencyExcel.AddChargeLimit(builder, ChargeLimit);
     CurrencyExcel.AddID(builder, ID);
+    CurrencyExcel.AddExpiryChangeParcelType(builder, ExpiryChangeParcelType);
+    CurrencyExcel.AddExpirationNotifyDateIn(builder, ExpirationNotifyDateIn);
+    CurrencyExcel.AddExpirationDateTime(builder, ExpirationDateTimeOffset);
     CurrencyExcel.AddDailyRefillTime(builder, DailyRefillTimeOffset);
     CurrencyExcel.AddDailyRefillType(builder, dailyRefillType);
     CurrencyExcel.AddSpriteName(builder, SpriteNameOffset);
@@ -98,7 +119,7 @@ public struct CurrencyExcel : IFlatbufferObject
     return CurrencyExcel.EndCurrencyExcel(builder);
   }
 
-  public static void StartCurrencyExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
+  public static void StartCurrencyExcel(FlatBufferBuilder builder) { builder.StartTable(21); }
   public static void AddID(FlatBufferBuilder builder, long ID) { builder.AddLong(0, ID, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(1, LocalizeEtcId, 0); }
   public static void AddCurrencyType(FlatBufferBuilder builder, FlatDataGlobal.CurrencyTypes CurrencyType) { builder.AddInt(2, (int)CurrencyType, 0); }
@@ -120,6 +141,11 @@ public struct CurrencyExcel : IFlatbufferObject
   public static VectorOffset CreateDailyRefillTimeVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateDailyRefillTimeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartDailyRefillTimeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddExpirationDateTime(FlatBufferBuilder builder, StringOffset ExpirationDateTimeOffset) { builder.AddOffset(16, ExpirationDateTimeOffset.Value, 0); }
+  public static void AddExpirationNotifyDateIn(FlatBufferBuilder builder, int ExpirationNotifyDateIn) { builder.AddInt(17, ExpirationNotifyDateIn, 0); }
+  public static void AddExpiryChangeParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType ExpiryChangeParcelType) { builder.AddInt(18, (int)ExpiryChangeParcelType, 0); }
+  public static void AddExpiryChangeId(FlatBufferBuilder builder, long ExpiryChangeId) { builder.AddLong(19, ExpiryChangeId, 0); }
+  public static void AddExpiryChangeAmount(FlatBufferBuilder builder, long ExpiryChangeAmount) { builder.AddLong(20, ExpiryChangeAmount, 0); }
   public static Offset<FlatDataGlobal.CurrencyExcel> EndCurrencyExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CurrencyExcel>(o);
