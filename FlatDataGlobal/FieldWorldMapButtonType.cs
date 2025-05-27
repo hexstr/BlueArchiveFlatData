@@ -5,16 +5,13 @@
 namespace FlatDataGlobal
 {
 
-public enum Difficulty : int
+public enum FieldWorldMapButtonType : int
 {
-  Normal = 0,
-  Hard = 1,
-  VeryHard = 2,
-  Hardcore = 3,
-  Extreme = 4,
-  Insane = 5,
-  Torment = 6,
-  Lunatic = 7,
+  DefaultMode = 0,
+  Normal = 1,
+  Combat = 2,
+  Combat_VeryHard = 3,
+  UnderCover = 4,
 };
 
 

@@ -19,8 +19,8 @@ public struct FieldDateExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public FieldDateExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public long UniqueId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long SeasonId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long SeasonId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long UniqueId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long OpenDate { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public string DateLocalizeKey { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
@@ -34,19 +34,35 @@ public struct FieldDateExcel : IFlatbufferObject
   public long StartConditionId { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.FieldConditionType EndConditionType { get { int o = __p.__offset(18); return o != 0 ? (FlatDataGlobal.FieldConditionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.FieldConditionType.Invalid; } }
   public long EndConditionId { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long OpenConditionStage { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string DateResultSpinePath { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataGlobal.FieldConditionType EndReadyConditionType { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.FieldConditionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.FieldConditionType.Invalid; } }
+  public long EndReadyConditionId { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long OpenConditionStage { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string CharacterIconPath { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDateResultSpinePathBytes() { return __p.__vector_as_span<byte>(24, 1); }
+  public Span<byte> GetCharacterIconPathBytes() { return __p.__vector_as_span<byte>(28, 1); }
 #else
-  public ArraySegment<byte>? GetDateResultSpinePathBytes() { return __p.__vector_as_arraysegment(24); }
+  public ArraySegment<byte>? GetCharacterIconPathBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
-  public byte[] GetDateResultSpinePathArray() { return __p.__vector_as_array<byte>(24); }
-  public float DateResultSpineOffsetX { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public byte[] GetCharacterIconPathArray() { return __p.__vector_as_array<byte>(28); }
+  public string DateResultBGPath { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetDateResultBGPathBytes() { return __p.__vector_as_span<byte>(30, 1); }
+#else
+  public ArraySegment<byte>? GetDateResultBGPathBytes() { return __p.__vector_as_arraysegment(30); }
+#endif
+  public byte[] GetDateResultBGPathArray() { return __p.__vector_as_array<byte>(30); }
+  public string DateResultSpinePath { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetDateResultSpinePathBytes() { return __p.__vector_as_span<byte>(32, 1); }
+#else
+  public ArraySegment<byte>? GetDateResultSpinePathBytes() { return __p.__vector_as_arraysegment(32); }
+#endif
+  public byte[] GetDateResultSpinePathArray() { return __p.__vector_as_array<byte>(32); }
+  public float DateResultSpineOffsetX { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
 
   public static Offset<FlatDataGlobal.FieldDateExcel> CreateFieldDateExcel(FlatBufferBuilder builder,
-      long UniqueId = 0,
       long SeasonId = 0,
+      long UniqueId = 0,
       long OpenDate = 0,
       StringOffset DateLocalizeKeyOffset = default(StringOffset),
       long EntrySceneId = 0,
@@ -54,28 +70,36 @@ public struct FieldDateExcel : IFlatbufferObject
       long StartConditionId = 0,
       FlatDataGlobal.FieldConditionType EndConditionType = FlatDataGlobal.FieldConditionType.Invalid,
       long EndConditionId = 0,
+      FlatDataGlobal.FieldConditionType EndReadyConditionType = FlatDataGlobal.FieldConditionType.Invalid,
+      long EndReadyConditionId = 0,
       long OpenConditionStage = 0,
+      StringOffset CharacterIconPathOffset = default(StringOffset),
+      StringOffset DateResultBGPathOffset = default(StringOffset),
       StringOffset DateResultSpinePathOffset = default(StringOffset),
       float DateResultSpineOffsetX = 0.0f) {
-    builder.StartTable(12);
+    builder.StartTable(16);
     FieldDateExcel.AddOpenConditionStage(builder, OpenConditionStage);
+    FieldDateExcel.AddEndReadyConditionId(builder, EndReadyConditionId);
     FieldDateExcel.AddEndConditionId(builder, EndConditionId);
     FieldDateExcel.AddStartConditionId(builder, StartConditionId);
     FieldDateExcel.AddEntrySceneId(builder, EntrySceneId);
     FieldDateExcel.AddOpenDate(builder, OpenDate);
-    FieldDateExcel.AddSeasonId(builder, SeasonId);
     FieldDateExcel.AddUniqueId(builder, UniqueId);
+    FieldDateExcel.AddSeasonId(builder, SeasonId);
     FieldDateExcel.AddDateResultSpineOffsetX(builder, DateResultSpineOffsetX);
     FieldDateExcel.AddDateResultSpinePath(builder, DateResultSpinePathOffset);
+    FieldDateExcel.AddDateResultBGPath(builder, DateResultBGPathOffset);
+    FieldDateExcel.AddCharacterIconPath(builder, CharacterIconPathOffset);
+    FieldDateExcel.AddEndReadyConditionType(builder, EndReadyConditionType);
     FieldDateExcel.AddEndConditionType(builder, EndConditionType);
     FieldDateExcel.AddStartConditionType(builder, StartConditionType);
     FieldDateExcel.AddDateLocalizeKey(builder, DateLocalizeKeyOffset);
     return FieldDateExcel.EndFieldDateExcel(builder);
   }
 
-  public static void StartFieldDateExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
-  public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
-  public static void AddSeasonId(FlatBufferBuilder builder, long SeasonId) { builder.AddLong(1, SeasonId, 0); }
+  public static void StartFieldDateExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
+  public static void AddSeasonId(FlatBufferBuilder builder, long SeasonId) { builder.AddLong(0, SeasonId, 0); }
+  public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(1, UniqueId, 0); }
   public static void AddOpenDate(FlatBufferBuilder builder, long OpenDate) { builder.AddLong(2, OpenDate, 0); }
   public static void AddDateLocalizeKey(FlatBufferBuilder builder, StringOffset DateLocalizeKeyOffset) { builder.AddOffset(3, DateLocalizeKeyOffset.Value, 0); }
   public static void AddEntrySceneId(FlatBufferBuilder builder, long EntrySceneId) { builder.AddLong(4, EntrySceneId, 0); }
@@ -83,9 +107,13 @@ public struct FieldDateExcel : IFlatbufferObject
   public static void AddStartConditionId(FlatBufferBuilder builder, long StartConditionId) { builder.AddLong(6, StartConditionId, 0); }
   public static void AddEndConditionType(FlatBufferBuilder builder, FlatDataGlobal.FieldConditionType EndConditionType) { builder.AddInt(7, (int)EndConditionType, 0); }
   public static void AddEndConditionId(FlatBufferBuilder builder, long EndConditionId) { builder.AddLong(8, EndConditionId, 0); }
-  public static void AddOpenConditionStage(FlatBufferBuilder builder, long OpenConditionStage) { builder.AddLong(9, OpenConditionStage, 0); }
-  public static void AddDateResultSpinePath(FlatBufferBuilder builder, StringOffset DateResultSpinePathOffset) { builder.AddOffset(10, DateResultSpinePathOffset.Value, 0); }
-  public static void AddDateResultSpineOffsetX(FlatBufferBuilder builder, float DateResultSpineOffsetX) { builder.AddFloat(11, DateResultSpineOffsetX, 0.0f); }
+  public static void AddEndReadyConditionType(FlatBufferBuilder builder, FlatDataGlobal.FieldConditionType EndReadyConditionType) { builder.AddInt(9, (int)EndReadyConditionType, 0); }
+  public static void AddEndReadyConditionId(FlatBufferBuilder builder, long EndReadyConditionId) { builder.AddLong(10, EndReadyConditionId, 0); }
+  public static void AddOpenConditionStage(FlatBufferBuilder builder, long OpenConditionStage) { builder.AddLong(11, OpenConditionStage, 0); }
+  public static void AddCharacterIconPath(FlatBufferBuilder builder, StringOffset CharacterIconPathOffset) { builder.AddOffset(12, CharacterIconPathOffset.Value, 0); }
+  public static void AddDateResultBGPath(FlatBufferBuilder builder, StringOffset DateResultBGPathOffset) { builder.AddOffset(13, DateResultBGPathOffset.Value, 0); }
+  public static void AddDateResultSpinePath(FlatBufferBuilder builder, StringOffset DateResultSpinePathOffset) { builder.AddOffset(14, DateResultSpinePathOffset.Value, 0); }
+  public static void AddDateResultSpineOffsetX(FlatBufferBuilder builder, float DateResultSpineOffsetX) { builder.AddFloat(15, DateResultSpineOffsetX, 0.0f); }
   public static Offset<FlatDataGlobal.FieldDateExcel> EndFieldDateExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.FieldDateExcel>(o);

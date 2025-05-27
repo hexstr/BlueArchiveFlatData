@@ -94,7 +94,14 @@ public struct FurnitureExcel : IFlatbufferObject
   public long CraftQualityTier2 { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ShiftingCraftQuality { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.FurnitureFunctionType FurnitureFunctionType { get { int o = __p.__offset(66); return o != 0 ? (FlatDataGlobal.FurnitureFunctionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.FurnitureFunctionType.None; } }
-  public long FurnitureFunctionParameter { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FurnitureFunctionParameter(int j) { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int FurnitureFunctionParameterLength { get { int o = __p.__offset(68); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<long> GetFurnitureFunctionParameterBytes() { return __p.__vector_as_span<long>(68, 8); }
+#else
+  public ArraySegment<byte>? GetFurnitureFunctionParameterBytes() { return __p.__vector_as_arraysegment(68); }
+#endif
+  public long[] GetFurnitureFunctionParameterArray() { return __p.__vector_as_array<long>(68); }
   public long VideoId { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long EventCollectionId { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long FurnitureBubbleOffsetX { get { int o = __p.__offset(74); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -141,7 +148,7 @@ public struct FurnitureExcel : IFlatbufferObject
       long CraftQualityTier2 = 0,
       long ShiftingCraftQuality = 0,
       FlatDataGlobal.FurnitureFunctionType furnitureFunctionType = FlatDataGlobal.FurnitureFunctionType.None,
-      long FurnitureFunctionParameter = 0,
+      VectorOffset FurnitureFunctionParameterOffset = default(VectorOffset),
       long VideoId = 0,
       long EventCollectionId = 0,
       long FurnitureBubbleOffsetX = 0,
@@ -155,7 +162,6 @@ public struct FurnitureExcel : IFlatbufferObject
     FurnitureExcel.AddFurnitureBubbleOffsetX(builder, FurnitureBubbleOffsetX);
     FurnitureExcel.AddEventCollectionId(builder, EventCollectionId);
     FurnitureExcel.AddVideoId(builder, VideoId);
-    FurnitureExcel.AddFurnitureFunctionParameter(builder, FurnitureFunctionParameter);
     FurnitureExcel.AddShiftingCraftQuality(builder, ShiftingCraftQuality);
     FurnitureExcel.AddCraftQualityTier2(builder, CraftQualityTier2);
     FurnitureExcel.AddCraftQualityTier1(builder, CraftQualityTier1);
@@ -172,6 +178,7 @@ public struct FurnitureExcel : IFlatbufferObject
     FurnitureExcel.AddCafeCharacterStateMake(builder, CafeCharacterStateMakeOffset);
     FurnitureExcel.AddCafeCharacterStateAdd(builder, CafeCharacterStateAddOffset);
     FurnitureExcel.AddCafeCharacterStateReq(builder, CafeCharacterStateReqOffset);
+    FurnitureExcel.AddFurnitureFunctionParameter(builder, FurnitureFunctionParameterOffset);
     FurnitureExcel.AddFurnitureFunctionType(builder, furnitureFunctionType);
     FurnitureExcel.AddTags(builder, TagsOffset);
     FurnitureExcel.AddCornerPrefab(builder, CornerPrefabOffset);
@@ -233,7 +240,12 @@ public struct FurnitureExcel : IFlatbufferObject
   public static void AddCraftQualityTier2(FlatBufferBuilder builder, long CraftQualityTier2) { builder.AddLong(29, CraftQualityTier2, 0); }
   public static void AddShiftingCraftQuality(FlatBufferBuilder builder, long ShiftingCraftQuality) { builder.AddLong(30, ShiftingCraftQuality, 0); }
   public static void AddFurnitureFunctionType(FlatBufferBuilder builder, FlatDataGlobal.FurnitureFunctionType furnitureFunctionType) { builder.AddInt(31, (int)furnitureFunctionType, 0); }
-  public static void AddFurnitureFunctionParameter(FlatBufferBuilder builder, long FurnitureFunctionParameter) { builder.AddLong(32, FurnitureFunctionParameter, 0); }
+  public static void AddFurnitureFunctionParameter(FlatBufferBuilder builder, VectorOffset FurnitureFunctionParameterOffset) { builder.AddOffset(32, FurnitureFunctionParameterOffset.Value, 0); }
+  public static VectorOffset CreateFurnitureFunctionParameterVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateFurnitureFunctionParameterVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateFurnitureFunctionParameterVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateFurnitureFunctionParameterVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartFurnitureFunctionParameterVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
   public static void AddVideoId(FlatBufferBuilder builder, long VideoId) { builder.AddLong(33, VideoId, 0); }
   public static void AddEventCollectionId(FlatBufferBuilder builder, long EventCollectionId) { builder.AddLong(34, EventCollectionId, 0); }
   public static void AddFurnitureBubbleOffsetX(FlatBufferBuilder builder, long FurnitureBubbleOffsetX) { builder.AddLong(35, FurnitureBubbleOffsetX, 0); }

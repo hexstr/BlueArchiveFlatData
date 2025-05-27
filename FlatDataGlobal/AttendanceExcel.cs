@@ -86,6 +86,13 @@ public struct AttendanceExcel : IFlatbufferObject
   public ArraySegment<byte>? GetDecorationImagePathBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
   public byte[] GetDecorationImagePathArray() { return __p.__vector_as_array<byte>(40); }
+  public string DecorationGarlandImagePath { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetDecorationGarlandImagePathBytes() { return __p.__vector_as_span<byte>(42, 1); }
+#else
+  public ArraySegment<byte>? GetDecorationGarlandImagePathBytes() { return __p.__vector_as_arraysegment(42); }
+#endif
+  public byte[] GetDecorationGarlandImagePathArray() { return __p.__vector_as_array<byte>(42); }
 
   public static Offset<FlatDataGlobal.AttendanceExcel> CreateAttendanceExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -106,13 +113,15 @@ public struct AttendanceExcel : IFlatbufferObject
       FlatDataGlobal.MailType mailType = FlatDataGlobal.MailType.System,
       FlatDataGlobal.DialogCategory dialogCategory = FlatDataGlobal.DialogCategory.Cafe,
       StringOffset TitleImagePathOffset = default(StringOffset),
-      StringOffset DecorationImagePathOffset = default(StringOffset)) {
-    builder.StartTable(19);
+      StringOffset DecorationImagePathOffset = default(StringOffset),
+      StringOffset DecorationGarlandImagePathOffset = default(StringOffset)) {
+    builder.StartTable(20);
     AttendanceExcel.AddExpiryDate(builder, ExpiryDate);
     AttendanceExcel.AddBookSize(builder, BookSize);
     AttendanceExcel.AddAccountLevelLimit(builder, AccountLevelLimit);
     AttendanceExcel.AddDisplayOrder(builder, DisplayOrder);
     AttendanceExcel.AddId(builder, Id);
+    AttendanceExcel.AddDecorationGarlandImagePath(builder, DecorationGarlandImagePathOffset);
     AttendanceExcel.AddDecorationImagePath(builder, DecorationImagePathOffset);
     AttendanceExcel.AddTitleImagePath(builder, TitleImagePathOffset);
     AttendanceExcel.AddDialogCategory(builder, dialogCategory);
@@ -130,7 +139,7 @@ public struct AttendanceExcel : IFlatbufferObject
     return AttendanceExcel.EndAttendanceExcel(builder);
   }
 
-  public static void StartAttendanceExcel(FlatBufferBuilder builder) { builder.StartTable(19); }
+  public static void StartAttendanceExcel(FlatBufferBuilder builder) { builder.StartTable(20); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddType(FlatBufferBuilder builder, FlatDataGlobal.AttendanceType Type) { builder.AddInt(1, (int)Type, 0); }
   public static void AddCountdownPrefab(FlatBufferBuilder builder, StringOffset CountdownPrefabOffset) { builder.AddOffset(2, CountdownPrefabOffset.Value, 0); }
@@ -150,6 +159,7 @@ public struct AttendanceExcel : IFlatbufferObject
   public static void AddDialogCategory(FlatBufferBuilder builder, FlatDataGlobal.DialogCategory dialogCategory) { builder.AddInt(16, (int)dialogCategory, 0); }
   public static void AddTitleImagePath(FlatBufferBuilder builder, StringOffset TitleImagePathOffset) { builder.AddOffset(17, TitleImagePathOffset.Value, 0); }
   public static void AddDecorationImagePath(FlatBufferBuilder builder, StringOffset DecorationImagePathOffset) { builder.AddOffset(18, DecorationImagePathOffset.Value, 0); }
+  public static void AddDecorationGarlandImagePath(FlatBufferBuilder builder, StringOffset DecorationGarlandImagePathOffset) { builder.AddOffset(19, DecorationGarlandImagePathOffset.Value, 0); }
   public static Offset<FlatDataGlobal.AttendanceExcel> EndAttendanceExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.AttendanceExcel>(o);

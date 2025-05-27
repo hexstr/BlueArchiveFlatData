@@ -19,17 +19,17 @@ public struct FieldInteractionExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public FieldInteractionExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public long UniqueId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FieldDateId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool ShowEmoji { get { int o = __p.__offset(8); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string KeywordLocalize { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long FieldSeasonId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long UniqueId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FieldDateId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool ShowEmoji { get { int o = __p.__offset(10); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string KeywordLocalize { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetKeywordLocalizeBytes() { return __p.__vector_as_span<byte>(10, 1); }
+  public Span<byte> GetKeywordLocalizeBytes() { return __p.__vector_as_span<byte>(12, 1); }
 #else
-  public ArraySegment<byte>? GetKeywordLocalizeBytes() { return __p.__vector_as_arraysegment(10); }
+  public ArraySegment<byte>? GetKeywordLocalizeBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
-  public byte[] GetKeywordLocalizeArray() { return __p.__vector_as_array<byte>(10); }
-  public long FieldSeasonId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public byte[] GetKeywordLocalizeArray() { return __p.__vector_as_array<byte>(12); }
   public FlatDataGlobal.FieldInteractionType InteractionType(int j) { int o = __p.__offset(14); return o != 0 ? (FlatDataGlobal.FieldInteractionType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.FieldInteractionType)0; }
   public int InteractionTypeLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -90,11 +90,11 @@ public struct FieldInteractionExcel : IFlatbufferObject
   public bool[] GetNegateConditionArray() { return __p.__vector_as_array<bool>(30); }
 
   public static Offset<FlatDataGlobal.FieldInteractionExcel> CreateFieldInteractionExcel(FlatBufferBuilder builder,
+      long FieldSeasonId = 0,
       long UniqueId = 0,
       long FieldDateId = 0,
       bool ShowEmoji = false,
       StringOffset KeywordLocalizeOffset = default(StringOffset),
-      long FieldSeasonId = 0,
       VectorOffset InteractionTypeOffset = default(VectorOffset),
       VectorOffset InteractionIdOffset = default(VectorOffset),
       FlatDataGlobal.FieldConditionClass ConditionClass = FlatDataGlobal.FieldConditionClass.AndOr,
@@ -105,9 +105,9 @@ public struct FieldInteractionExcel : IFlatbufferObject
       VectorOffset ConditionIdOffset = default(VectorOffset),
       VectorOffset NegateConditionOffset = default(VectorOffset)) {
     builder.StartTable(14);
-    FieldInteractionExcel.AddFieldSeasonId(builder, FieldSeasonId);
     FieldInteractionExcel.AddFieldDateId(builder, FieldDateId);
     FieldInteractionExcel.AddUniqueId(builder, UniqueId);
+    FieldInteractionExcel.AddFieldSeasonId(builder, FieldSeasonId);
     FieldInteractionExcel.AddNegateCondition(builder, NegateConditionOffset);
     FieldInteractionExcel.AddConditionId(builder, ConditionIdOffset);
     FieldInteractionExcel.AddConditionType(builder, ConditionTypeOffset);
@@ -123,11 +123,11 @@ public struct FieldInteractionExcel : IFlatbufferObject
   }
 
   public static void StartFieldInteractionExcel(FlatBufferBuilder builder) { builder.StartTable(14); }
-  public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
-  public static void AddFieldDateId(FlatBufferBuilder builder, long FieldDateId) { builder.AddLong(1, FieldDateId, 0); }
-  public static void AddShowEmoji(FlatBufferBuilder builder, bool ShowEmoji) { builder.AddBool(2, ShowEmoji, false); }
-  public static void AddKeywordLocalize(FlatBufferBuilder builder, StringOffset KeywordLocalizeOffset) { builder.AddOffset(3, KeywordLocalizeOffset.Value, 0); }
-  public static void AddFieldSeasonId(FlatBufferBuilder builder, long FieldSeasonId) { builder.AddLong(4, FieldSeasonId, 0); }
+  public static void AddFieldSeasonId(FlatBufferBuilder builder, long FieldSeasonId) { builder.AddLong(0, FieldSeasonId, 0); }
+  public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(1, UniqueId, 0); }
+  public static void AddFieldDateId(FlatBufferBuilder builder, long FieldDateId) { builder.AddLong(2, FieldDateId, 0); }
+  public static void AddShowEmoji(FlatBufferBuilder builder, bool ShowEmoji) { builder.AddBool(3, ShowEmoji, false); }
+  public static void AddKeywordLocalize(FlatBufferBuilder builder, StringOffset KeywordLocalizeOffset) { builder.AddOffset(4, KeywordLocalizeOffset.Value, 0); }
   public static void AddInteractionType(FlatBufferBuilder builder, VectorOffset InteractionTypeOffset) { builder.AddOffset(5, InteractionTypeOffset.Value, 0); }
   public static VectorOffset CreateInteractionTypeVector(FlatBufferBuilder builder, FlatDataGlobal.FieldInteractionType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateInteractionTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.FieldInteractionType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }

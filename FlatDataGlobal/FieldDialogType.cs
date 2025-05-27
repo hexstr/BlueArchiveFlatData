@@ -24,6 +24,8 @@ public enum FieldDialogType : int
   Phone = 14,
   Keyword = 15,
   Evidence = 16,
+  Chat = 17,
+  Keyword_843 = 18,
 };
 
 

@@ -91,15 +91,16 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
   public uint[] GetVoiceIdArray() { return __p.__vector_as_array<uint>(44); }
   public bool CollectionVisible { get { int o = __p.__offset(46); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public FlatDataGlobal.CVCollectionType CVCollectionType { get { int o = __p.__offset(48); return o != 0 ? (FlatDataGlobal.CVCollectionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVCollectionType.CVNormal; } }
-  public long UnlockEventSeason { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ScenarioGroupId { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string LocalizeCVGroup { get { int o = __p.__offset(54); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public FlatDataGlobal.CVUnlockScenarioType CVUnlockScenarioType { get { int o = __p.__offset(50); return o != 0 ? (FlatDataGlobal.CVUnlockScenarioType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CVUnlockScenarioType.Main; } }
+  public long UnlockEventSeason { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ScenarioGroupId { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string LocalizeCVGroup { get { int o = __p.__offset(56); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeCVGroupBytes() { return __p.__vector_as_span<byte>(54, 1); }
+  public Span<byte> GetLocalizeCVGroupBytes() { return __p.__vector_as_span<byte>(56, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeCVGroupBytes() { return __p.__vector_as_arraysegment(54); }
+  public ArraySegment<byte>? GetLocalizeCVGroupBytes() { return __p.__vector_as_arraysegment(56); }
 #endif
-  public byte[] GetLocalizeCVGroupArray() { return __p.__vector_as_array<byte>(54); }
+  public byte[] GetLocalizeCVGroupArray() { return __p.__vector_as_array<byte>(56); }
 
   public static Offset<FlatDataGlobal.CharacterDialogEventExcel> CreateCharacterDialogEventExcel(FlatBufferBuilder builder,
       long CostumeUniqueId = 0,
@@ -125,10 +126,11 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
       VectorOffset VoiceIdOffset = default(VectorOffset),
       bool CollectionVisible = false,
       FlatDataGlobal.CVCollectionType cVCollectionType = FlatDataGlobal.CVCollectionType.CVNormal,
+      FlatDataGlobal.CVUnlockScenarioType cVUnlockScenarioType = FlatDataGlobal.CVUnlockScenarioType.Main,
       long UnlockEventSeason = 0,
       long ScenarioGroupId = 0,
       StringOffset LocalizeCVGroupOffset = default(StringOffset)) {
-    builder.StartTable(26);
+    builder.StartTable(27);
     CharacterDialogEventExcel.AddScenarioGroupId(builder, ScenarioGroupId);
     CharacterDialogEventExcel.AddUnlockEventSeason(builder, UnlockEventSeason);
     CharacterDialogEventExcel.AddDurationKr(builder, DurationKr);
@@ -140,6 +142,7 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
     CharacterDialogEventExcel.AddOriginalCharacterId(builder, OriginalCharacterId);
     CharacterDialogEventExcel.AddCostumeUniqueId(builder, CostumeUniqueId);
     CharacterDialogEventExcel.AddLocalizeCVGroup(builder, LocalizeCVGroupOffset);
+    CharacterDialogEventExcel.AddCVUnlockScenarioType(builder, cVUnlockScenarioType);
     CharacterDialogEventExcel.AddCVCollectionType(builder, cVCollectionType);
     CharacterDialogEventExcel.AddVoiceId(builder, VoiceIdOffset);
     CharacterDialogEventExcel.AddLocalizeEN(builder, LocalizeENOffset);
@@ -158,7 +161,7 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
     return CharacterDialogEventExcel.EndCharacterDialogEventExcel(builder);
   }
 
-  public static void StartCharacterDialogEventExcel(FlatBufferBuilder builder) { builder.StartTable(26); }
+  public static void StartCharacterDialogEventExcel(FlatBufferBuilder builder) { builder.StartTable(27); }
   public static void AddCostumeUniqueId(FlatBufferBuilder builder, long CostumeUniqueId) { builder.AddLong(0, CostumeUniqueId, 0); }
   public static void AddOriginalCharacterId(FlatBufferBuilder builder, long OriginalCharacterId) { builder.AddLong(1, OriginalCharacterId, 0); }
   public static void AddDisplayOrder(FlatBufferBuilder builder, long DisplayOrder) { builder.AddLong(2, DisplayOrder, 0); }
@@ -187,9 +190,10 @@ public struct CharacterDialogEventExcel : IFlatbufferObject
   public static void StartVoiceIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddCollectionVisible(FlatBufferBuilder builder, bool CollectionVisible) { builder.AddBool(21, CollectionVisible, false); }
   public static void AddCVCollectionType(FlatBufferBuilder builder, FlatDataGlobal.CVCollectionType cVCollectionType) { builder.AddInt(22, (int)cVCollectionType, 0); }
-  public static void AddUnlockEventSeason(FlatBufferBuilder builder, long UnlockEventSeason) { builder.AddLong(23, UnlockEventSeason, 0); }
-  public static void AddScenarioGroupId(FlatBufferBuilder builder, long ScenarioGroupId) { builder.AddLong(24, ScenarioGroupId, 0); }
-  public static void AddLocalizeCVGroup(FlatBufferBuilder builder, StringOffset LocalizeCVGroupOffset) { builder.AddOffset(25, LocalizeCVGroupOffset.Value, 0); }
+  public static void AddCVUnlockScenarioType(FlatBufferBuilder builder, FlatDataGlobal.CVUnlockScenarioType cVUnlockScenarioType) { builder.AddInt(23, (int)cVUnlockScenarioType, 0); }
+  public static void AddUnlockEventSeason(FlatBufferBuilder builder, long UnlockEventSeason) { builder.AddLong(24, UnlockEventSeason, 0); }
+  public static void AddScenarioGroupId(FlatBufferBuilder builder, long ScenarioGroupId) { builder.AddLong(25, ScenarioGroupId, 0); }
+  public static void AddLocalizeCVGroup(FlatBufferBuilder builder, StringOffset LocalizeCVGroupOffset) { builder.AddOffset(26, LocalizeCVGroupOffset.Value, 0); }
   public static Offset<FlatDataGlobal.CharacterDialogEventExcel> EndCharacterDialogEventExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterDialogEventExcel>(o);

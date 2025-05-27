@@ -44,6 +44,7 @@ public struct ConstEventCommonExcel : IFlatbufferObject
   public int TreasureLoopVariationAmount { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int TreasureLimitVariationLoopCount { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int TreasureLimitVariationClearLoopCount { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int EventStoryReplayHideEventContentId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.ConstEventCommonExcel> CreateConstEventCommonExcel(FlatBufferBuilder builder,
       int EventContentHardStageCount = 0,
@@ -58,12 +59,14 @@ public struct ConstEventCommonExcel : IFlatbufferObject
       int TreasureNormalVariationAmount = 0,
       int TreasureLoopVariationAmount = 0,
       int TreasureLimitVariationLoopCount = 0,
-      int TreasureLimitVariationClearLoopCount = 0) {
-    builder.StartTable(13);
+      int TreasureLimitVariationClearLoopCount = 0,
+      int EventStoryReplayHideEventContentId = 0) {
+    builder.StartTable(14);
     ConstEventCommonExcel.AddSpecialOperactionCollectionGroupId(builder, SpecialOperactionCollectionGroupId);
     ConstEventCommonExcel.AddCardShopProbWeightCount(builder, CardShopProbWeightCount);
     ConstEventCommonExcel.AddSubEventChangeLimitSeconds(builder, SubEventChangeLimitSeconds);
     ConstEventCommonExcel.AddEventStrategyPlayTimeLimitInSeconds(builder, EventStrategyPlayTimeLimitInSeconds);
+    ConstEventCommonExcel.AddEventStoryReplayHideEventContentId(builder, EventStoryReplayHideEventContentId);
     ConstEventCommonExcel.AddTreasureLimitVariationClearLoopCount(builder, TreasureLimitVariationClearLoopCount);
     ConstEventCommonExcel.AddTreasureLimitVariationLoopCount(builder, TreasureLimitVariationLoopCount);
     ConstEventCommonExcel.AddTreasureLoopVariationAmount(builder, TreasureLoopVariationAmount);
@@ -76,7 +79,7 @@ public struct ConstEventCommonExcel : IFlatbufferObject
     return ConstEventCommonExcel.EndConstEventCommonExcel(builder);
   }
 
-  public static void StartConstEventCommonExcel(FlatBufferBuilder builder) { builder.StartTable(13); }
+  public static void StartConstEventCommonExcel(FlatBufferBuilder builder) { builder.StartTable(14); }
   public static void AddEventContentHardStageCount(FlatBufferBuilder builder, int EventContentHardStageCount) { builder.AddInt(0, EventContentHardStageCount, 0); }
   public static void AddEventStrategyPlayTimeLimitInSeconds(FlatBufferBuilder builder, long EventStrategyPlayTimeLimitInSeconds) { builder.AddLong(1, EventStrategyPlayTimeLimitInSeconds, 0); }
   public static void AddSubEventChangeLimitSeconds(FlatBufferBuilder builder, long SubEventChangeLimitSeconds) { builder.AddLong(2, SubEventChangeLimitSeconds, 0); }
@@ -90,6 +93,7 @@ public struct ConstEventCommonExcel : IFlatbufferObject
   public static void AddTreasureLoopVariationAmount(FlatBufferBuilder builder, int TreasureLoopVariationAmount) { builder.AddInt(10, TreasureLoopVariationAmount, 0); }
   public static void AddTreasureLimitVariationLoopCount(FlatBufferBuilder builder, int TreasureLimitVariationLoopCount) { builder.AddInt(11, TreasureLimitVariationLoopCount, 0); }
   public static void AddTreasureLimitVariationClearLoopCount(FlatBufferBuilder builder, int TreasureLimitVariationClearLoopCount) { builder.AddInt(12, TreasureLimitVariationClearLoopCount, 0); }
+  public static void AddEventStoryReplayHideEventContentId(FlatBufferBuilder builder, int EventStoryReplayHideEventContentId) { builder.AddInt(13, EventStoryReplayHideEventContentId, 0); }
   public static Offset<FlatDataGlobal.ConstEventCommonExcel> EndConstEventCommonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstEventCommonExcel>(o);

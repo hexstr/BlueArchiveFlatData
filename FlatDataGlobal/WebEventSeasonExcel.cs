@@ -49,13 +49,20 @@ public struct WebEventSeasonExcel : IFlatbufferObject
   public ArraySegment<byte>? GetPopupTitleLocalizeKeyBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
   public byte[] GetPopupTitleLocalizeKeyArray() { return __p.__vector_as_array<byte>(14); }
-  public string EventUrl { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string StageEventUrl { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEventUrlBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<byte> GetStageEventUrlBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetEventUrlBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetStageEventUrlBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetEventUrlArray() { return __p.__vector_as_array<byte>(16); }
+  public byte[] GetStageEventUrlArray() { return __p.__vector_as_array<byte>(16); }
+  public string LiveEventUrl { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetLiveEventUrlBytes() { return __p.__vector_as_span<byte>(18, 1); }
+#else
+  public ArraySegment<byte>? GetLiveEventUrlBytes() { return __p.__vector_as_arraysegment(18); }
+#endif
+  public byte[] GetLiveEventUrlArray() { return __p.__vector_as_array<byte>(18); }
 
   public static Offset<FlatDataGlobal.WebEventSeasonExcel> CreateWebEventSeasonExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -64,10 +71,12 @@ public struct WebEventSeasonExcel : IFlatbufferObject
       StringOffset EndDateOffset = default(StringOffset),
       StringOffset LobbyBannerImageOffset = default(StringOffset),
       StringOffset PopupTitleLocalizeKeyOffset = default(StringOffset),
-      StringOffset EventUrlOffset = default(StringOffset)) {
-    builder.StartTable(7);
+      StringOffset StageEventUrlOffset = default(StringOffset),
+      StringOffset LiveEventUrlOffset = default(StringOffset)) {
+    builder.StartTable(8);
     WebEventSeasonExcel.AddId(builder, Id);
-    WebEventSeasonExcel.AddEventUrl(builder, EventUrlOffset);
+    WebEventSeasonExcel.AddLiveEventUrl(builder, LiveEventUrlOffset);
+    WebEventSeasonExcel.AddStageEventUrl(builder, StageEventUrlOffset);
     WebEventSeasonExcel.AddPopupTitleLocalizeKey(builder, PopupTitleLocalizeKeyOffset);
     WebEventSeasonExcel.AddLobbyBannerImage(builder, LobbyBannerImageOffset);
     WebEventSeasonExcel.AddEndDate(builder, EndDateOffset);
@@ -76,14 +85,15 @@ public struct WebEventSeasonExcel : IFlatbufferObject
     return WebEventSeasonExcel.EndWebEventSeasonExcel(builder);
   }
 
-  public static void StartWebEventSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
+  public static void StartWebEventSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddEnabled(FlatBufferBuilder builder, bool Enabled) { builder.AddBool(1, Enabled, false); }
   public static void AddStartDate(FlatBufferBuilder builder, StringOffset StartDateOffset) { builder.AddOffset(2, StartDateOffset.Value, 0); }
   public static void AddEndDate(FlatBufferBuilder builder, StringOffset EndDateOffset) { builder.AddOffset(3, EndDateOffset.Value, 0); }
   public static void AddLobbyBannerImage(FlatBufferBuilder builder, StringOffset LobbyBannerImageOffset) { builder.AddOffset(4, LobbyBannerImageOffset.Value, 0); }
   public static void AddPopupTitleLocalizeKey(FlatBufferBuilder builder, StringOffset PopupTitleLocalizeKeyOffset) { builder.AddOffset(5, PopupTitleLocalizeKeyOffset.Value, 0); }
-  public static void AddEventUrl(FlatBufferBuilder builder, StringOffset EventUrlOffset) { builder.AddOffset(6, EventUrlOffset.Value, 0); }
+  public static void AddStageEventUrl(FlatBufferBuilder builder, StringOffset StageEventUrlOffset) { builder.AddOffset(6, StageEventUrlOffset.Value, 0); }
+  public static void AddLiveEventUrl(FlatBufferBuilder builder, StringOffset LiveEventUrlOffset) { builder.AddOffset(7, LiveEventUrlOffset.Value, 0); }
   public static Offset<FlatDataGlobal.WebEventSeasonExcel> EndWebEventSeasonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.WebEventSeasonExcel>(o);

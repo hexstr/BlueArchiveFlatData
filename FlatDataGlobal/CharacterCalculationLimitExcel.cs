@@ -24,28 +24,60 @@ public struct CharacterCalculationLimitExcel : IFlatbufferObject
   public FlatDataGlobal.BattleCalculationStat CalculationValue { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.BattleCalculationStat)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.BattleCalculationStat.FinalDamage; } }
   public long MinValue { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long MaxValue { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long LimitStartValue(int j) { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int LimitStartValueLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<long> GetLimitStartValueBytes() { return __p.__vector_as_span<long>(14, 8); }
+#else
+  public ArraySegment<byte>? GetLimitStartValueBytes() { return __p.__vector_as_arraysegment(14); }
+#endif
+  public long[] GetLimitStartValueArray() { return __p.__vector_as_array<long>(14); }
+  public long DecreaseRate(int j) { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int DecreaseRateLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<long> GetDecreaseRateBytes() { return __p.__vector_as_span<long>(16, 8); }
+#else
+  public ArraySegment<byte>? GetDecreaseRateBytes() { return __p.__vector_as_arraysegment(16); }
+#endif
+  public long[] GetDecreaseRateArray() { return __p.__vector_as_array<long>(16); }
 
   public static Offset<FlatDataGlobal.CharacterCalculationLimitExcel> CreateCharacterCalculationLimitExcel(FlatBufferBuilder builder,
       long Id = 0,
       FlatDataGlobal.TacticEntityType tacticEntityType = FlatDataGlobal.TacticEntityType.None,
       FlatDataGlobal.BattleCalculationStat CalculationValue = FlatDataGlobal.BattleCalculationStat.FinalDamage,
       long MinValue = 0,
-      long MaxValue = 0) {
-    builder.StartTable(5);
+      long MaxValue = 0,
+      VectorOffset LimitStartValueOffset = default(VectorOffset),
+      VectorOffset DecreaseRateOffset = default(VectorOffset)) {
+    builder.StartTable(7);
     CharacterCalculationLimitExcel.AddMaxValue(builder, MaxValue);
     CharacterCalculationLimitExcel.AddMinValue(builder, MinValue);
     CharacterCalculationLimitExcel.AddId(builder, Id);
+    CharacterCalculationLimitExcel.AddDecreaseRate(builder, DecreaseRateOffset);
+    CharacterCalculationLimitExcel.AddLimitStartValue(builder, LimitStartValueOffset);
     CharacterCalculationLimitExcel.AddCalculationValue(builder, CalculationValue);
     CharacterCalculationLimitExcel.AddTacticEntityType(builder, tacticEntityType);
     return CharacterCalculationLimitExcel.EndCharacterCalculationLimitExcel(builder);
   }
 
-  public static void StartCharacterCalculationLimitExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
+  public static void StartCharacterCalculationLimitExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddTacticEntityType(FlatBufferBuilder builder, FlatDataGlobal.TacticEntityType tacticEntityType) { builder.AddInt(1, (int)tacticEntityType, 0); }
   public static void AddCalculationValue(FlatBufferBuilder builder, FlatDataGlobal.BattleCalculationStat CalculationValue) { builder.AddInt(2, (int)CalculationValue, 0); }
   public static void AddMinValue(FlatBufferBuilder builder, long MinValue) { builder.AddLong(3, MinValue, 0); }
   public static void AddMaxValue(FlatBufferBuilder builder, long MaxValue) { builder.AddLong(4, MaxValue, 0); }
+  public static void AddLimitStartValue(FlatBufferBuilder builder, VectorOffset LimitStartValueOffset) { builder.AddOffset(5, LimitStartValueOffset.Value, 0); }
+  public static VectorOffset CreateLimitStartValueVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateLimitStartValueVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateLimitStartValueVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateLimitStartValueVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartLimitStartValueVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddDecreaseRate(FlatBufferBuilder builder, VectorOffset DecreaseRateOffset) { builder.AddOffset(6, DecreaseRateOffset.Value, 0); }
+  public static VectorOffset CreateDecreaseRateVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateDecreaseRateVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateDecreaseRateVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateDecreaseRateVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartDecreaseRateVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
   public static Offset<FlatDataGlobal.CharacterCalculationLimitExcel> EndCharacterCalculationLimitExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterCalculationLimitExcel>(o);

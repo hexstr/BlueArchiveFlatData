@@ -177,6 +177,8 @@ public enum MissionCompleteConditionType : int
   Reset_ClearCharacterLimitDefense = 167,
   Reset_ClearTimeLimitDefenseFromSecond = 168,
   Reset_JoinMultiFloorRaidCount = 169,
+  Reset_GivePresentCharacterCount = 170,
+  Reset_CharacterInviteCount = 171,
 };
 
 

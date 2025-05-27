@@ -38,20 +38,29 @@ public struct FieldSeasonExcel : IFlatbufferObject
 #endif
   public byte[] GetEndDateArray() { return __p.__vector_as_array<byte>(14); }
   public long LobbyBGMChangeStageId { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string CharacterIconPath { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long FieldPrefabControlID { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.FieldDialogType FieldGetKeywordCallDialogEnum { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.FieldDialogType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.FieldDialogType.None; } }
+  public string MasteryImagePath { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetCharacterIconPathBytes() { return __p.__vector_as_span<byte>(18, 1); }
+  public Span<byte> GetMasteryImagePathBytes() { return __p.__vector_as_span<byte>(22, 1); }
 #else
-  public ArraySegment<byte>? GetCharacterIconPathBytes() { return __p.__vector_as_arraysegment(18); }
+  public ArraySegment<byte>? GetMasteryImagePathBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetCharacterIconPathArray() { return __p.__vector_as_array<byte>(18); }
-  public string MasteryImagePath { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetMasteryImagePathArray() { return __p.__vector_as_array<byte>(22); }
+  public string FieldLobbyTitleImagePath { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMasteryImagePathBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetFieldLobbyTitleImagePathBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetMasteryImagePathBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetFieldLobbyTitleImagePathBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetMasteryImagePathArray() { return __p.__vector_as_array<byte>(20); }
+  public byte[] GetFieldLobbyTitleImagePathArray() { return __p.__vector_as_array<byte>(24); }
+  public string KeywordLogoImagePath { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetKeywordLogoImagePathBytes() { return __p.__vector_as_span<byte>(26, 1); }
+#else
+  public ArraySegment<byte>? GetKeywordLogoImagePathBytes() { return __p.__vector_as_arraysegment(26); }
+#endif
+  public byte[] GetKeywordLogoImagePathArray() { return __p.__vector_as_array<byte>(26); }
 
   public static Offset<FlatDataGlobal.FieldSeasonExcel> CreateFieldSeasonExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
@@ -61,22 +70,28 @@ public struct FieldSeasonExcel : IFlatbufferObject
       StringOffset StartDateOffset = default(StringOffset),
       StringOffset EndDateOffset = default(StringOffset),
       long LobbyBGMChangeStageId = 0,
-      StringOffset CharacterIconPathOffset = default(StringOffset),
-      StringOffset MasteryImagePathOffset = default(StringOffset)) {
-    builder.StartTable(9);
+      long FieldPrefabControlID = 0,
+      FlatDataGlobal.FieldDialogType FieldGetKeywordCallDialogEnum = FlatDataGlobal.FieldDialogType.None,
+      StringOffset MasteryImagePathOffset = default(StringOffset),
+      StringOffset FieldLobbyTitleImagePathOffset = default(StringOffset),
+      StringOffset KeywordLogoImagePathOffset = default(StringOffset)) {
+    builder.StartTable(12);
+    FieldSeasonExcel.AddFieldPrefabControlID(builder, FieldPrefabControlID);
     FieldSeasonExcel.AddLobbyBGMChangeStageId(builder, LobbyBGMChangeStageId);
     FieldSeasonExcel.AddInstantEntryDateId(builder, InstantEntryDateId);
     FieldSeasonExcel.AddEntryDateId(builder, EntryDateId);
     FieldSeasonExcel.AddEventContentId(builder, EventContentId);
     FieldSeasonExcel.AddUniqueId(builder, UniqueId);
+    FieldSeasonExcel.AddKeywordLogoImagePath(builder, KeywordLogoImagePathOffset);
+    FieldSeasonExcel.AddFieldLobbyTitleImagePath(builder, FieldLobbyTitleImagePathOffset);
     FieldSeasonExcel.AddMasteryImagePath(builder, MasteryImagePathOffset);
-    FieldSeasonExcel.AddCharacterIconPath(builder, CharacterIconPathOffset);
+    FieldSeasonExcel.AddFieldGetKeywordCallDialogEnum(builder, FieldGetKeywordCallDialogEnum);
     FieldSeasonExcel.AddEndDate(builder, EndDateOffset);
     FieldSeasonExcel.AddStartDate(builder, StartDateOffset);
     return FieldSeasonExcel.EndFieldSeasonExcel(builder);
   }
 
-  public static void StartFieldSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
+  public static void StartFieldSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(1, EventContentId, 0); }
   public static void AddEntryDateId(FlatBufferBuilder builder, long EntryDateId) { builder.AddLong(2, EntryDateId, 0); }
@@ -84,8 +99,11 @@ public struct FieldSeasonExcel : IFlatbufferObject
   public static void AddStartDate(FlatBufferBuilder builder, StringOffset StartDateOffset) { builder.AddOffset(4, StartDateOffset.Value, 0); }
   public static void AddEndDate(FlatBufferBuilder builder, StringOffset EndDateOffset) { builder.AddOffset(5, EndDateOffset.Value, 0); }
   public static void AddLobbyBGMChangeStageId(FlatBufferBuilder builder, long LobbyBGMChangeStageId) { builder.AddLong(6, LobbyBGMChangeStageId, 0); }
-  public static void AddCharacterIconPath(FlatBufferBuilder builder, StringOffset CharacterIconPathOffset) { builder.AddOffset(7, CharacterIconPathOffset.Value, 0); }
-  public static void AddMasteryImagePath(FlatBufferBuilder builder, StringOffset MasteryImagePathOffset) { builder.AddOffset(8, MasteryImagePathOffset.Value, 0); }
+  public static void AddFieldPrefabControlID(FlatBufferBuilder builder, long FieldPrefabControlID) { builder.AddLong(7, FieldPrefabControlID, 0); }
+  public static void AddFieldGetKeywordCallDialogEnum(FlatBufferBuilder builder, FlatDataGlobal.FieldDialogType FieldGetKeywordCallDialogEnum) { builder.AddInt(8, (int)FieldGetKeywordCallDialogEnum, 0); }
+  public static void AddMasteryImagePath(FlatBufferBuilder builder, StringOffset MasteryImagePathOffset) { builder.AddOffset(9, MasteryImagePathOffset.Value, 0); }
+  public static void AddFieldLobbyTitleImagePath(FlatBufferBuilder builder, StringOffset FieldLobbyTitleImagePathOffset) { builder.AddOffset(10, FieldLobbyTitleImagePathOffset.Value, 0); }
+  public static void AddKeywordLogoImagePath(FlatBufferBuilder builder, StringOffset KeywordLogoImagePathOffset) { builder.AddOffset(11, KeywordLogoImagePathOffset.Value, 0); }
   public static Offset<FlatDataGlobal.FieldSeasonExcel> EndFieldSeasonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.FieldSeasonExcel>(o);

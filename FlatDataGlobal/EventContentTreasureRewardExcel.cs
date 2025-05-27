@@ -68,6 +68,13 @@ public struct EventContentTreasureRewardExcel : IFlatbufferObject
   public ArraySegment<byte>? GetTreasureSmallImagePathBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
   public byte[] GetTreasureSmallImagePathArray() { return __p.__vector_as_array<byte>(22); }
+  public string TreasureSizeIconPath { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetTreasureSizeIconPathBytes() { return __p.__vector_as_span<byte>(24, 1); }
+#else
+  public ArraySegment<byte>? GetTreasureSizeIconPathBytes() { return __p.__vector_as_arraysegment(24); }
+#endif
+  public byte[] GetTreasureSizeIconPathArray() { return __p.__vector_as_array<byte>(24); }
 
   public static Offset<FlatDataGlobal.EventContentTreasureRewardExcel> CreateEventContentTreasureRewardExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -79,9 +86,11 @@ public struct EventContentTreasureRewardExcel : IFlatbufferObject
       VectorOffset RewardParcelIdOffset = default(VectorOffset),
       VectorOffset RewardParcelAmountOffset = default(VectorOffset),
       StringOffset CellUnderImagePathOffset = default(StringOffset),
-      StringOffset TreasureSmallImagePathOffset = default(StringOffset)) {
-    builder.StartTable(10);
+      StringOffset TreasureSmallImagePathOffset = default(StringOffset),
+      StringOffset TreasureSizeIconPathOffset = default(StringOffset)) {
+    builder.StartTable(11);
     EventContentTreasureRewardExcel.AddId(builder, Id);
+    EventContentTreasureRewardExcel.AddTreasureSizeIconPath(builder, TreasureSizeIconPathOffset);
     EventContentTreasureRewardExcel.AddTreasureSmallImagePath(builder, TreasureSmallImagePathOffset);
     EventContentTreasureRewardExcel.AddCellUnderImagePath(builder, CellUnderImagePathOffset);
     EventContentTreasureRewardExcel.AddRewardParcelAmount(builder, RewardParcelAmountOffset);
@@ -94,7 +103,7 @@ public struct EventContentTreasureRewardExcel : IFlatbufferObject
     return EventContentTreasureRewardExcel.EndEventContentTreasureRewardExcel(builder);
   }
 
-  public static void StartEventContentTreasureRewardExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
+  public static void StartEventContentTreasureRewardExcel(FlatBufferBuilder builder) { builder.StartTable(11); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddLocalizeCodeID(FlatBufferBuilder builder, StringOffset LocalizeCodeIDOffset) { builder.AddOffset(1, LocalizeCodeIDOffset.Value, 0); }
   public static void AddCellUnderImageWidth(FlatBufferBuilder builder, int CellUnderImageWidth) { builder.AddInt(2, CellUnderImageWidth, 0); }
@@ -120,6 +129,7 @@ public struct EventContentTreasureRewardExcel : IFlatbufferObject
   public static void StartRewardParcelAmountVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
   public static void AddCellUnderImagePath(FlatBufferBuilder builder, StringOffset CellUnderImagePathOffset) { builder.AddOffset(8, CellUnderImagePathOffset.Value, 0); }
   public static void AddTreasureSmallImagePath(FlatBufferBuilder builder, StringOffset TreasureSmallImagePathOffset) { builder.AddOffset(9, TreasureSmallImagePathOffset.Value, 0); }
+  public static void AddTreasureSizeIconPath(FlatBufferBuilder builder, StringOffset TreasureSizeIconPathOffset) { builder.AddOffset(10, TreasureSizeIconPathOffset.Value, 0); }
   public static Offset<FlatDataGlobal.EventContentTreasureRewardExcel> EndEventContentTreasureRewardExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentTreasureRewardExcel>(o);

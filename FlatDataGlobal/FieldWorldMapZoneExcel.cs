@@ -28,7 +28,9 @@ public struct FieldWorldMapZoneExcel : IFlatbufferObject
   public long CloseConditionId { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ResultFieldScene { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long FieldStageInteractionId { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public uint LocalizeCode { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public FlatDataGlobal.FieldWorldMapButtonType WorldMapButtonType { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.FieldWorldMapButtonType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.FieldWorldMapButtonType.DefaultMode; } }
+  public uint LocalizeCode { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public bool NewTagDisplay { get { int o = __p.__offset(26); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.FieldWorldMapZoneExcel> CreateFieldWorldMapZoneExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -40,22 +42,26 @@ public struct FieldWorldMapZoneExcel : IFlatbufferObject
       long CloseConditionId = 0,
       long ResultFieldScene = 0,
       long FieldStageInteractionId = 0,
-      uint LocalizeCode = 0) {
-    builder.StartTable(10);
+      FlatDataGlobal.FieldWorldMapButtonType WorldMapButtonType = FlatDataGlobal.FieldWorldMapButtonType.DefaultMode,
+      uint LocalizeCode = 0,
+      bool NewTagDisplay = false) {
+    builder.StartTable(12);
     FieldWorldMapZoneExcel.AddFieldStageInteractionId(builder, FieldStageInteractionId);
     FieldWorldMapZoneExcel.AddResultFieldScene(builder, ResultFieldScene);
     FieldWorldMapZoneExcel.AddCloseConditionId(builder, CloseConditionId);
     FieldWorldMapZoneExcel.AddOpenConditionId(builder, OpenConditionId);
     FieldWorldMapZoneExcel.AddId(builder, Id);
     FieldWorldMapZoneExcel.AddLocalizeCode(builder, LocalizeCode);
+    FieldWorldMapZoneExcel.AddWorldMapButtonType(builder, WorldMapButtonType);
     FieldWorldMapZoneExcel.AddCloseConditionType(builder, CloseConditionType);
     FieldWorldMapZoneExcel.AddOpenConditionType(builder, OpenConditionType);
     FieldWorldMapZoneExcel.AddDate(builder, Date);
     FieldWorldMapZoneExcel.AddGroupId(builder, GroupId);
+    FieldWorldMapZoneExcel.AddNewTagDisplay(builder, NewTagDisplay);
     return FieldWorldMapZoneExcel.EndFieldWorldMapZoneExcel(builder);
   }
 
-  public static void StartFieldWorldMapZoneExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
+  public static void StartFieldWorldMapZoneExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, int GroupId) { builder.AddInt(1, GroupId, 0); }
   public static void AddDate(FlatBufferBuilder builder, int Date) { builder.AddInt(2, Date, 0); }
@@ -65,7 +71,9 @@ public struct FieldWorldMapZoneExcel : IFlatbufferObject
   public static void AddCloseConditionId(FlatBufferBuilder builder, long CloseConditionId) { builder.AddLong(6, CloseConditionId, 0); }
   public static void AddResultFieldScene(FlatBufferBuilder builder, long ResultFieldScene) { builder.AddLong(7, ResultFieldScene, 0); }
   public static void AddFieldStageInteractionId(FlatBufferBuilder builder, long FieldStageInteractionId) { builder.AddLong(8, FieldStageInteractionId, 0); }
-  public static void AddLocalizeCode(FlatBufferBuilder builder, uint LocalizeCode) { builder.AddUint(9, LocalizeCode, 0); }
+  public static void AddWorldMapButtonType(FlatBufferBuilder builder, FlatDataGlobal.FieldWorldMapButtonType WorldMapButtonType) { builder.AddInt(9, (int)WorldMapButtonType, 0); }
+  public static void AddLocalizeCode(FlatBufferBuilder builder, uint LocalizeCode) { builder.AddUint(10, LocalizeCode, 0); }
+  public static void AddNewTagDisplay(FlatBufferBuilder builder, bool NewTagDisplay) { builder.AddBool(11, NewTagDisplay, false); }
   public static Offset<FlatDataGlobal.FieldWorldMapZoneExcel> EndFieldWorldMapZoneExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.FieldWorldMapZoneExcel>(o);

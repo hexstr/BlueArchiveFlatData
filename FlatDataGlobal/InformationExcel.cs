@@ -27,44 +27,48 @@ public struct InformationExcel : IFlatbufferObject
   public ArraySegment<byte>? GetPageNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetPageNameArray() { return __p.__vector_as_array<byte>(6); }
-  public string LocalizeCodeId { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public bool IsPcBuild { get { int o = __p.__offset(8); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string LocalizeCodeId { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLocalizeCodeIdBytes() { return __p.__vector_as_span<byte>(8, 1); }
+  public Span<byte> GetLocalizeCodeIdBytes() { return __p.__vector_as_span<byte>(10, 1); }
 #else
-  public ArraySegment<byte>? GetLocalizeCodeIdBytes() { return __p.__vector_as_arraysegment(8); }
+  public ArraySegment<byte>? GetLocalizeCodeIdBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
-  public byte[] GetLocalizeCodeIdArray() { return __p.__vector_as_array<byte>(8); }
-  public string TutorialParentName(int j) { int o = __p.__offset(10); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int TutorialParentNameLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string UIName(int j) { int o = __p.__offset(12); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int UINameLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetLocalizeCodeIdArray() { return __p.__vector_as_array<byte>(10); }
+  public string TutorialParentName(int j) { int o = __p.__offset(12); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int TutorialParentNameLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string UIName(int j) { int o = __p.__offset(14); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int UINameLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
 
   public static Offset<FlatDataGlobal.InformationExcel> CreateInformationExcel(FlatBufferBuilder builder,
       long GroupID = 0,
       StringOffset PageNameOffset = default(StringOffset),
+      bool IsPcBuild = false,
       StringOffset LocalizeCodeIdOffset = default(StringOffset),
       VectorOffset TutorialParentNameOffset = default(VectorOffset),
       VectorOffset UINameOffset = default(VectorOffset)) {
-    builder.StartTable(5);
+    builder.StartTable(6);
     InformationExcel.AddGroupID(builder, GroupID);
     InformationExcel.AddUIName(builder, UINameOffset);
     InformationExcel.AddTutorialParentName(builder, TutorialParentNameOffset);
     InformationExcel.AddLocalizeCodeId(builder, LocalizeCodeIdOffset);
     InformationExcel.AddPageName(builder, PageNameOffset);
+    InformationExcel.AddIsPcBuild(builder, IsPcBuild);
     return InformationExcel.EndInformationExcel(builder);
   }
 
-  public static void StartInformationExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
+  public static void StartInformationExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
   public static void AddGroupID(FlatBufferBuilder builder, long GroupID) { builder.AddLong(0, GroupID, 0); }
   public static void AddPageName(FlatBufferBuilder builder, StringOffset PageNameOffset) { builder.AddOffset(1, PageNameOffset.Value, 0); }
-  public static void AddLocalizeCodeId(FlatBufferBuilder builder, StringOffset LocalizeCodeIdOffset) { builder.AddOffset(2, LocalizeCodeIdOffset.Value, 0); }
-  public static void AddTutorialParentName(FlatBufferBuilder builder, VectorOffset TutorialParentNameOffset) { builder.AddOffset(3, TutorialParentNameOffset.Value, 0); }
+  public static void AddIsPcBuild(FlatBufferBuilder builder, bool IsPcBuild) { builder.AddBool(2, IsPcBuild, false); }
+  public static void AddLocalizeCodeId(FlatBufferBuilder builder, StringOffset LocalizeCodeIdOffset) { builder.AddOffset(3, LocalizeCodeIdOffset.Value, 0); }
+  public static void AddTutorialParentName(FlatBufferBuilder builder, VectorOffset TutorialParentNameOffset) { builder.AddOffset(4, TutorialParentNameOffset.Value, 0); }
   public static VectorOffset CreateTutorialParentNameVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateTutorialParentNameVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTutorialParentNameVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTutorialParentNameVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartTutorialParentNameVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddUIName(FlatBufferBuilder builder, VectorOffset UINameOffset) { builder.AddOffset(4, UINameOffset.Value, 0); }
+  public static void AddUIName(FlatBufferBuilder builder, VectorOffset UINameOffset) { builder.AddOffset(5, UINameOffset.Value, 0); }
   public static VectorOffset CreateUINameVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateUINameVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateUINameVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }

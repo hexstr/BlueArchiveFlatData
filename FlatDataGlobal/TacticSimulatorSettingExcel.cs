@@ -20,28 +20,20 @@ public struct TacticSimulatorSettingExcel : IFlatbufferObject
   public TacticSimulatorSettingExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long GroundId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long GetExp { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long GetStarGrade { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long Equipment { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FixedEchelonId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.TacticSimulatorSettingExcel> CreateTacticSimulatorSettingExcel(FlatBufferBuilder builder,
       long GroundId = 0,
-      long GetExp = 0,
-      long GetStarGrade = 0,
-      long Equipment = 0) {
-    builder.StartTable(4);
-    TacticSimulatorSettingExcel.AddEquipment(builder, Equipment);
-    TacticSimulatorSettingExcel.AddGetStarGrade(builder, GetStarGrade);
-    TacticSimulatorSettingExcel.AddGetExp(builder, GetExp);
+      long FixedEchelonId = 0) {
+    builder.StartTable(2);
+    TacticSimulatorSettingExcel.AddFixedEchelonId(builder, FixedEchelonId);
     TacticSimulatorSettingExcel.AddGroundId(builder, GroundId);
     return TacticSimulatorSettingExcel.EndTacticSimulatorSettingExcel(builder);
   }
 
-  public static void StartTacticSimulatorSettingExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
+  public static void StartTacticSimulatorSettingExcel(FlatBufferBuilder builder) { builder.StartTable(2); }
   public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(0, GroundId, 0); }
-  public static void AddGetExp(FlatBufferBuilder builder, long GetExp) { builder.AddLong(1, GetExp, 0); }
-  public static void AddGetStarGrade(FlatBufferBuilder builder, long GetStarGrade) { builder.AddLong(2, GetStarGrade, 0); }
-  public static void AddEquipment(FlatBufferBuilder builder, long Equipment) { builder.AddLong(3, Equipment, 0); }
+  public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(1, FixedEchelonId, 0); }
   public static Offset<FlatDataGlobal.TacticSimulatorSettingExcel> EndTacticSimulatorSettingExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.TacticSimulatorSettingExcel>(o);

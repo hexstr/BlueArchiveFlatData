@@ -24,24 +24,42 @@ public struct FieldContentStageExcel : IFlatbufferObject
   public long AreaId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long GroupId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.StageDifficulty StageDifficulty { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.StageDifficulty)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageDifficulty.None; } }
-  public string Name { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long PrevStageId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string Name { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetNameBytes() { return __p.__vector_as_span<byte>(14, 1); }
+  public Span<byte> GetNameBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetNameBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetNameBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetNameArray() { return __p.__vector_as_array<byte>(14); }
-  public long BattleDuration { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.ParcelType StageEnterCostType { get { int o = __p.__offset(18); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
-  public long StageEnterCostId { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int StageEnterCostAmount { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.StageTopography StageTopography { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
-  public int RecommandLevel { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long GroundID { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long BGMId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool InstantClear { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long FixedEchelonId { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool SkipFormationSettings { get { int o = __p.__offset(36); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public byte[] GetNameArray() { return __p.__vector_as_array<byte>(16); }
+  public long BattleDuration { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.ParcelType StageEnterCostType { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public long StageEnterCostId { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int StageEnterCostAmount { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.StageTopography StageTopography { get { int o = __p.__offset(26); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
+  public int RecommandLevel { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long GroundID { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long BGMId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool InstantClear { get { int o = __p.__offset(34); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long FixedEchelonId { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool SkipFormationSettings { get { int o = __p.__offset(38); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool DailyLastPlay { get { int o = __p.__offset(40); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.StarGoalType StarGoal(int j) { int o = __p.__offset(42); return o != 0 ? (FlatDataGlobal.StarGoalType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.StarGoalType)0; }
+  public int StarGoalLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<FlatDataGlobal.StarGoalType> GetStarGoalBytes() { return __p.__vector_as_span<FlatDataGlobal.StarGoalType>(42, 4); }
+#else
+  public ArraySegment<byte>? GetStarGoalBytes() { return __p.__vector_as_arraysegment(42); }
+#endif
+  public FlatDataGlobal.StarGoalType[] GetStarGoalArray() { int o = __p.__offset(42); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.StarGoalType[] a = new FlatDataGlobal.StarGoalType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.StarGoalType)__p.bb.GetInt(p + i * 4); } return a; }
+  public int StarGoalAmount(int j) { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int StarGoalAmountLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<int> GetStarGoalAmountBytes() { return __p.__vector_as_span<int>(44, 4); }
+#else
+  public ArraySegment<byte>? GetStarGoalAmountBytes() { return __p.__vector_as_arraysegment(44); }
+#endif
+  public int[] GetStarGoalAmountArray() { return __p.__vector_as_array<int>(44); }
 
   public static Offset<FlatDataGlobal.FieldContentStageExcel> CreateFieldContentStageExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -49,6 +67,7 @@ public struct FieldContentStageExcel : IFlatbufferObject
       long AreaId = 0,
       long GroupId = 0,
       FlatDataGlobal.StageDifficulty stageDifficulty = FlatDataGlobal.StageDifficulty.None,
+      long PrevStageId = 0,
       StringOffset NameOffset = default(StringOffset),
       long BattleDuration = 0,
       FlatDataGlobal.ParcelType StageEnterCostType = FlatDataGlobal.ParcelType.None,
@@ -60,46 +79,67 @@ public struct FieldContentStageExcel : IFlatbufferObject
       long BGMId = 0,
       bool InstantClear = false,
       long FixedEchelonId = 0,
-      bool SkipFormationSettings = false) {
-    builder.StartTable(17);
+      bool SkipFormationSettings = false,
+      bool DailyLastPlay = false,
+      VectorOffset StarGoalOffset = default(VectorOffset),
+      VectorOffset StarGoalAmountOffset = default(VectorOffset)) {
+    builder.StartTable(21);
     FieldContentStageExcel.AddFixedEchelonId(builder, FixedEchelonId);
     FieldContentStageExcel.AddBGMId(builder, BGMId);
     FieldContentStageExcel.AddGroundID(builder, GroundID);
     FieldContentStageExcel.AddStageEnterCostId(builder, StageEnterCostId);
     FieldContentStageExcel.AddBattleDuration(builder, BattleDuration);
+    FieldContentStageExcel.AddPrevStageId(builder, PrevStageId);
     FieldContentStageExcel.AddGroupId(builder, GroupId);
     FieldContentStageExcel.AddAreaId(builder, AreaId);
     FieldContentStageExcel.AddSeasonId(builder, SeasonId);
     FieldContentStageExcel.AddId(builder, Id);
+    FieldContentStageExcel.AddStarGoalAmount(builder, StarGoalAmountOffset);
+    FieldContentStageExcel.AddStarGoal(builder, StarGoalOffset);
     FieldContentStageExcel.AddRecommandLevel(builder, RecommandLevel);
     FieldContentStageExcel.AddStageTopography(builder, stageTopography);
     FieldContentStageExcel.AddStageEnterCostAmount(builder, StageEnterCostAmount);
     FieldContentStageExcel.AddStageEnterCostType(builder, StageEnterCostType);
     FieldContentStageExcel.AddName(builder, NameOffset);
     FieldContentStageExcel.AddStageDifficulty(builder, stageDifficulty);
+    FieldContentStageExcel.AddDailyLastPlay(builder, DailyLastPlay);
     FieldContentStageExcel.AddSkipFormationSettings(builder, SkipFormationSettings);
     FieldContentStageExcel.AddInstantClear(builder, InstantClear);
     return FieldContentStageExcel.EndFieldContentStageExcel(builder);
   }
 
-  public static void StartFieldContentStageExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
+  public static void StartFieldContentStageExcel(FlatBufferBuilder builder) { builder.StartTable(21); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddSeasonId(FlatBufferBuilder builder, long SeasonId) { builder.AddLong(1, SeasonId, 0); }
   public static void AddAreaId(FlatBufferBuilder builder, long AreaId) { builder.AddLong(2, AreaId, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(3, GroupId, 0); }
   public static void AddStageDifficulty(FlatBufferBuilder builder, FlatDataGlobal.StageDifficulty stageDifficulty) { builder.AddInt(4, (int)stageDifficulty, 0); }
-  public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(5, NameOffset.Value, 0); }
-  public static void AddBattleDuration(FlatBufferBuilder builder, long BattleDuration) { builder.AddLong(6, BattleDuration, 0); }
-  public static void AddStageEnterCostType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType StageEnterCostType) { builder.AddInt(7, (int)StageEnterCostType, 0); }
-  public static void AddStageEnterCostId(FlatBufferBuilder builder, long StageEnterCostId) { builder.AddLong(8, StageEnterCostId, 0); }
-  public static void AddStageEnterCostAmount(FlatBufferBuilder builder, int StageEnterCostAmount) { builder.AddInt(9, StageEnterCostAmount, 0); }
-  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stageTopography) { builder.AddInt(10, (int)stageTopography, 0); }
-  public static void AddRecommandLevel(FlatBufferBuilder builder, int RecommandLevel) { builder.AddInt(11, RecommandLevel, 0); }
-  public static void AddGroundID(FlatBufferBuilder builder, long GroundID) { builder.AddLong(12, GroundID, 0); }
-  public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(13, BGMId, 0); }
-  public static void AddInstantClear(FlatBufferBuilder builder, bool InstantClear) { builder.AddBool(14, InstantClear, false); }
-  public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(15, FixedEchelonId, 0); }
-  public static void AddSkipFormationSettings(FlatBufferBuilder builder, bool SkipFormationSettings) { builder.AddBool(16, SkipFormationSettings, false); }
+  public static void AddPrevStageId(FlatBufferBuilder builder, long PrevStageId) { builder.AddLong(5, PrevStageId, 0); }
+  public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(6, NameOffset.Value, 0); }
+  public static void AddBattleDuration(FlatBufferBuilder builder, long BattleDuration) { builder.AddLong(7, BattleDuration, 0); }
+  public static void AddStageEnterCostType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType StageEnterCostType) { builder.AddInt(8, (int)StageEnterCostType, 0); }
+  public static void AddStageEnterCostId(FlatBufferBuilder builder, long StageEnterCostId) { builder.AddLong(9, StageEnterCostId, 0); }
+  public static void AddStageEnterCostAmount(FlatBufferBuilder builder, int StageEnterCostAmount) { builder.AddInt(10, StageEnterCostAmount, 0); }
+  public static void AddStageTopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stageTopography) { builder.AddInt(11, (int)stageTopography, 0); }
+  public static void AddRecommandLevel(FlatBufferBuilder builder, int RecommandLevel) { builder.AddInt(12, RecommandLevel, 0); }
+  public static void AddGroundID(FlatBufferBuilder builder, long GroundID) { builder.AddLong(13, GroundID, 0); }
+  public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(14, BGMId, 0); }
+  public static void AddInstantClear(FlatBufferBuilder builder, bool InstantClear) { builder.AddBool(15, InstantClear, false); }
+  public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(16, FixedEchelonId, 0); }
+  public static void AddSkipFormationSettings(FlatBufferBuilder builder, bool SkipFormationSettings) { builder.AddBool(17, SkipFormationSettings, false); }
+  public static void AddDailyLastPlay(FlatBufferBuilder builder, bool DailyLastPlay) { builder.AddBool(18, DailyLastPlay, false); }
+  public static void AddStarGoal(FlatBufferBuilder builder, VectorOffset StarGoalOffset) { builder.AddOffset(19, StarGoalOffset.Value, 0); }
+  public static VectorOffset CreateStarGoalVector(FlatBufferBuilder builder, FlatDataGlobal.StarGoalType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.StarGoalType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.StarGoalType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.StarGoalType>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartStarGoalVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddStarGoalAmount(FlatBufferBuilder builder, VectorOffset StarGoalAmountOffset) { builder.AddOffset(20, StarGoalAmountOffset.Value, 0); }
+  public static VectorOffset CreateStarGoalAmountVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateStarGoalAmountVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<int>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartStarGoalAmountVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static Offset<FlatDataGlobal.FieldContentStageExcel> EndFieldContentStageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.FieldContentStageExcel>(o);

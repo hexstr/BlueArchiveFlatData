@@ -18,6 +18,7 @@ public enum FieldInteractionType : int
   Timeline = 8,
   ActionTrigger = 9,
   Interplay = 10,
+  UnderCoverStage = 11,
 };
 
 

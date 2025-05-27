@@ -53,22 +53,38 @@ public struct FieldSceneExcel : IFlatbufferObject
   public ArraySegment<byte>? GetBeginConditionalBGMScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
   public long[] GetBeginConditionalBGMScenarioGroupIdArray() { return __p.__vector_as_array<long>(18); }
-  public long EndConditionalBGMScenarioGroupId(int j) { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int EndConditionalBGMScenarioGroupIdLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long BeginConditionalBGMInteractionId(int j) { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int BeginConditionalBGMInteractionIdLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetEndConditionalBGMScenarioGroupIdBytes() { return __p.__vector_as_span<long>(20, 8); }
+  public Span<long> GetBeginConditionalBGMInteractionIdBytes() { return __p.__vector_as_span<long>(20, 8); }
 #else
-  public ArraySegment<byte>? GetEndConditionalBGMScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetBeginConditionalBGMInteractionIdBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
-  public long[] GetEndConditionalBGMScenarioGroupIdArray() { return __p.__vector_as_array<long>(20); }
-  public long ConditionalBGMId(int j) { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int ConditionalBGMIdLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetBeginConditionalBGMInteractionIdArray() { return __p.__vector_as_array<long>(20); }
+  public long EndConditionalBGMScenarioGroupId(int j) { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int EndConditionalBGMScenarioGroupIdLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetConditionalBGMIdBytes() { return __p.__vector_as_span<long>(22, 8); }
+  public Span<long> GetEndConditionalBGMScenarioGroupIdBytes() { return __p.__vector_as_span<long>(22, 8); }
 #else
-  public ArraySegment<byte>? GetConditionalBGMIdBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetEndConditionalBGMScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public long[] GetConditionalBGMIdArray() { return __p.__vector_as_array<long>(22); }
+  public long[] GetEndConditionalBGMScenarioGroupIdArray() { return __p.__vector_as_array<long>(22); }
+  public long EndConditionalBGMInteractionId(int j) { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int EndConditionalBGMInteractionIdLength { get { int o = __p.__offset(24); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<long> GetEndConditionalBGMInteractionIdBytes() { return __p.__vector_as_span<long>(24, 8); }
+#else
+  public ArraySegment<byte>? GetEndConditionalBGMInteractionIdBytes() { return __p.__vector_as_arraysegment(24); }
+#endif
+  public long[] GetEndConditionalBGMInteractionIdArray() { return __p.__vector_as_array<long>(24); }
+  public long ConditionalBGMId(int j) { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ConditionalBGMIdLength { get { int o = __p.__offset(26); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<long> GetConditionalBGMIdBytes() { return __p.__vector_as_span<long>(26, 8); }
+#else
+  public ArraySegment<byte>? GetConditionalBGMIdBytes() { return __p.__vector_as_arraysegment(26); }
+#endif
+  public long[] GetConditionalBGMIdArray() { return __p.__vector_as_array<long>(26); }
 
   public static Offset<FlatDataGlobal.FieldSceneExcel> CreateFieldSceneExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
@@ -79,15 +95,19 @@ public struct FieldSceneExcel : IFlatbufferObject
       long BGMId = 0,
       VectorOffset ConditionalBGMQuestIdOffset = default(VectorOffset),
       VectorOffset BeginConditionalBGMScenarioGroupIdOffset = default(VectorOffset),
+      VectorOffset BeginConditionalBGMInteractionIdOffset = default(VectorOffset),
       VectorOffset EndConditionalBGMScenarioGroupIdOffset = default(VectorOffset),
+      VectorOffset EndConditionalBGMInteractionIdOffset = default(VectorOffset),
       VectorOffset ConditionalBGMIdOffset = default(VectorOffset)) {
-    builder.StartTable(10);
+    builder.StartTable(12);
     FieldSceneExcel.AddBGMId(builder, BGMId);
     FieldSceneExcel.AddGroupId(builder, GroupId);
     FieldSceneExcel.AddDateId(builder, DateId);
     FieldSceneExcel.AddUniqueId(builder, UniqueId);
     FieldSceneExcel.AddConditionalBGMId(builder, ConditionalBGMIdOffset);
+    FieldSceneExcel.AddEndConditionalBGMInteractionId(builder, EndConditionalBGMInteractionIdOffset);
     FieldSceneExcel.AddEndConditionalBGMScenarioGroupId(builder, EndConditionalBGMScenarioGroupIdOffset);
+    FieldSceneExcel.AddBeginConditionalBGMInteractionId(builder, BeginConditionalBGMInteractionIdOffset);
     FieldSceneExcel.AddBeginConditionalBGMScenarioGroupId(builder, BeginConditionalBGMScenarioGroupIdOffset);
     FieldSceneExcel.AddConditionalBGMQuestId(builder, ConditionalBGMQuestIdOffset);
     FieldSceneExcel.AddDesignLevelPath(builder, DesignLevelPathOffset);
@@ -95,7 +115,7 @@ public struct FieldSceneExcel : IFlatbufferObject
     return FieldSceneExcel.EndFieldSceneExcel(builder);
   }
 
-  public static void StartFieldSceneExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
+  public static void StartFieldSceneExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
   public static void AddDateId(FlatBufferBuilder builder, long DateId) { builder.AddLong(1, DateId, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(2, GroupId, 0); }
@@ -114,13 +134,25 @@ public struct FieldSceneExcel : IFlatbufferObject
   public static VectorOffset CreateBeginConditionalBGMScenarioGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateBeginConditionalBGMScenarioGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartBeginConditionalBGMScenarioGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddEndConditionalBGMScenarioGroupId(FlatBufferBuilder builder, VectorOffset EndConditionalBGMScenarioGroupIdOffset) { builder.AddOffset(8, EndConditionalBGMScenarioGroupIdOffset.Value, 0); }
+  public static void AddBeginConditionalBGMInteractionId(FlatBufferBuilder builder, VectorOffset BeginConditionalBGMInteractionIdOffset) { builder.AddOffset(8, BeginConditionalBGMInteractionIdOffset.Value, 0); }
+  public static VectorOffset CreateBeginConditionalBGMInteractionIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateBeginConditionalBGMInteractionIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateBeginConditionalBGMInteractionIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateBeginConditionalBGMInteractionIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartBeginConditionalBGMInteractionIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddEndConditionalBGMScenarioGroupId(FlatBufferBuilder builder, VectorOffset EndConditionalBGMScenarioGroupIdOffset) { builder.AddOffset(9, EndConditionalBGMScenarioGroupIdOffset.Value, 0); }
   public static VectorOffset CreateEndConditionalBGMScenarioGroupIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateEndConditionalBGMScenarioGroupIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEndConditionalBGMScenarioGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEndConditionalBGMScenarioGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartEndConditionalBGMScenarioGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddConditionalBGMId(FlatBufferBuilder builder, VectorOffset ConditionalBGMIdOffset) { builder.AddOffset(9, ConditionalBGMIdOffset.Value, 0); }
+  public static void AddEndConditionalBGMInteractionId(FlatBufferBuilder builder, VectorOffset EndConditionalBGMInteractionIdOffset) { builder.AddOffset(10, EndConditionalBGMInteractionIdOffset.Value, 0); }
+  public static VectorOffset CreateEndConditionalBGMInteractionIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateEndConditionalBGMInteractionIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateEndConditionalBGMInteractionIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateEndConditionalBGMInteractionIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartEndConditionalBGMInteractionIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddConditionalBGMId(FlatBufferBuilder builder, VectorOffset ConditionalBGMIdOffset) { builder.AddOffset(11, ConditionalBGMIdOffset.Value, 0); }
   public static VectorOffset CreateConditionalBGMIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateConditionalBGMIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateConditionalBGMIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }

@@ -19,8 +19,8 @@ public struct FieldQuestExcel : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public FieldQuestExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public long UniqueId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FieldSeasonId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FieldSeasonId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long UniqueId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public bool IsDaily { get { int o = __p.__offset(8); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public long FieldDateId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long Opendate { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -37,8 +37,8 @@ public struct FieldQuestExcel : IFlatbufferObject
   public uint QuestDescKey { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
 
   public static Offset<FlatDataGlobal.FieldQuestExcel> CreateFieldQuestExcel(FlatBufferBuilder builder,
-      long UniqueId = 0,
       long FieldSeasonId = 0,
+      long UniqueId = 0,
       bool IsDaily = false,
       long FieldDateId = 0,
       long Opendate = 0,
@@ -51,8 +51,8 @@ public struct FieldQuestExcel : IFlatbufferObject
     FieldQuestExcel.AddRewardId(builder, RewardId);
     FieldQuestExcel.AddOpendate(builder, Opendate);
     FieldQuestExcel.AddFieldDateId(builder, FieldDateId);
-    FieldQuestExcel.AddFieldSeasonId(builder, FieldSeasonId);
     FieldQuestExcel.AddUniqueId(builder, UniqueId);
+    FieldQuestExcel.AddFieldSeasonId(builder, FieldSeasonId);
     FieldQuestExcel.AddQuestDescKey(builder, QuestDescKey);
     FieldQuestExcel.AddQuestNamKey(builder, QuestNamKey);
     FieldQuestExcel.AddProb(builder, Prob);
@@ -62,8 +62,8 @@ public struct FieldQuestExcel : IFlatbufferObject
   }
 
   public static void StartFieldQuestExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
-  public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
-  public static void AddFieldSeasonId(FlatBufferBuilder builder, long FieldSeasonId) { builder.AddLong(1, FieldSeasonId, 0); }
+  public static void AddFieldSeasonId(FlatBufferBuilder builder, long FieldSeasonId) { builder.AddLong(0, FieldSeasonId, 0); }
+  public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(1, UniqueId, 0); }
   public static void AddIsDaily(FlatBufferBuilder builder, bool IsDaily) { builder.AddBool(2, IsDaily, false); }
   public static void AddFieldDateId(FlatBufferBuilder builder, long FieldDateId) { builder.AddLong(3, FieldDateId, 0); }
   public static void AddOpendate(FlatBufferBuilder builder, long Opendate) { builder.AddLong(4, Opendate, 0); }

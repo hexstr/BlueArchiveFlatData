@@ -48,33 +48,30 @@ public struct EventContentScenarioExcel : IFlatbufferObject
 #endif
   public byte[] GetRecollectionResourceArray() { return __p.__vector_as_array<byte>(32); }
   public bool IsRecollectionHorizon { get { int o = __p.__offset(34); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.ParcelType CostParcelType { get { int o = __p.__offset(36); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
-  public long CostId { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int CostAmount { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.ParcelType RewardParcelType(int j) { int o = __p.__offset(42); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
-  public int RewardParcelTypeLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.ParcelType RewardParcelType(int j) { int o = __p.__offset(36); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
+  public int RewardParcelTypeLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.ParcelType> GetRewardParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(42, 4); }
+  public Span<FlatDataGlobal.ParcelType> GetRewardParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(36, 4); }
 #else
-  public ArraySegment<byte>? GetRewardParcelTypeBytes() { return __p.__vector_as_arraysegment(42); }
+  public ArraySegment<byte>? GetRewardParcelTypeBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public FlatDataGlobal.ParcelType[] GetRewardParcelTypeArray() { int o = __p.__offset(42); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
-  public long RewardId(int j) { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int RewardIdLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.ParcelType[] GetRewardParcelTypeArray() { int o = __p.__offset(36); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
+  public long RewardId(int j) { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int RewardIdLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetRewardIdBytes() { return __p.__vector_as_span<long>(44, 8); }
+  public Span<long> GetRewardIdBytes() { return __p.__vector_as_span<long>(38, 8); }
 #else
-  public ArraySegment<byte>? GetRewardIdBytes() { return __p.__vector_as_arraysegment(44); }
+  public ArraySegment<byte>? GetRewardIdBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public long[] GetRewardIdArray() { return __p.__vector_as_array<long>(44); }
-  public int RewardAmount(int j) { int o = __p.__offset(46); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int RewardAmountLength { get { int o = __p.__offset(46); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetRewardIdArray() { return __p.__vector_as_array<long>(38); }
+  public int RewardAmount(int j) { int o = __p.__offset(40); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int RewardAmountLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetRewardAmountBytes() { return __p.__vector_as_span<int>(46, 4); }
+  public Span<int> GetRewardAmountBytes() { return __p.__vector_as_span<int>(40, 4); }
 #else
-  public ArraySegment<byte>? GetRewardAmountBytes() { return __p.__vector_as_arraysegment(46); }
+  public ArraySegment<byte>? GetRewardAmountBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
-  public int[] GetRewardAmountArray() { return __p.__vector_as_array<int>(46); }
+  public int[] GetRewardAmountArray() { return __p.__vector_as_array<int>(40); }
 
   public static Offset<FlatDataGlobal.EventContentScenarioExcel> CreateEventContentScenarioExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -93,14 +90,10 @@ public struct EventContentScenarioExcel : IFlatbufferObject
       uint RecollectionSummaryLocalizeScenarioId = 0,
       StringOffset RecollectionResourceOffset = default(StringOffset),
       bool IsRecollectionHorizon = false,
-      FlatDataGlobal.ParcelType CostParcelType = FlatDataGlobal.ParcelType.None,
-      long CostId = 0,
-      int CostAmount = 0,
       VectorOffset RewardParcelTypeOffset = default(VectorOffset),
       VectorOffset RewardIdOffset = default(VectorOffset),
       VectorOffset RewardAmountOffset = default(VectorOffset)) {
-    builder.StartTable(22);
-    EventContentScenarioExcel.AddCostId(builder, CostId);
+    builder.StartTable(19);
     EventContentScenarioExcel.AddClearedScenarioGroupId(builder, ClearedScenarioGroupId);
     EventContentScenarioExcel.AddConditionEventContentId(builder, ConditionEventContentId);
     EventContentScenarioExcel.AddConditionAmount(builder, ConditionAmount);
@@ -111,8 +104,6 @@ public struct EventContentScenarioExcel : IFlatbufferObject
     EventContentScenarioExcel.AddRewardAmount(builder, RewardAmountOffset);
     EventContentScenarioExcel.AddRewardId(builder, RewardIdOffset);
     EventContentScenarioExcel.AddRewardParcelType(builder, RewardParcelTypeOffset);
-    EventContentScenarioExcel.AddCostAmount(builder, CostAmount);
-    EventContentScenarioExcel.AddCostParcelType(builder, CostParcelType);
     EventContentScenarioExcel.AddRecollectionResource(builder, RecollectionResourceOffset);
     EventContentScenarioExcel.AddRecollectionSummaryLocalizeScenarioId(builder, RecollectionSummaryLocalizeScenarioId);
     EventContentScenarioExcel.AddScenarioConditionType(builder, ScenarioConditionType);
@@ -125,7 +116,7 @@ public struct EventContentScenarioExcel : IFlatbufferObject
     return EventContentScenarioExcel.EndEventContentScenarioExcel(builder);
   }
 
-  public static void StartEventContentScenarioExcel(FlatBufferBuilder builder) { builder.StartTable(22); }
+  public static void StartEventContentScenarioExcel(FlatBufferBuilder builder) { builder.StartTable(19); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(1, EventContentId, 0); }
   public static void AddReplayDisplayGroup(FlatBufferBuilder builder, int ReplayDisplayGroup) { builder.AddInt(2, ReplayDisplayGroup, 0); }
@@ -147,22 +138,19 @@ public struct EventContentScenarioExcel : IFlatbufferObject
   public static void AddRecollectionSummaryLocalizeScenarioId(FlatBufferBuilder builder, uint RecollectionSummaryLocalizeScenarioId) { builder.AddUint(13, RecollectionSummaryLocalizeScenarioId, 0); }
   public static void AddRecollectionResource(FlatBufferBuilder builder, StringOffset RecollectionResourceOffset) { builder.AddOffset(14, RecollectionResourceOffset.Value, 0); }
   public static void AddIsRecollectionHorizon(FlatBufferBuilder builder, bool IsRecollectionHorizon) { builder.AddBool(15, IsRecollectionHorizon, false); }
-  public static void AddCostParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType CostParcelType) { builder.AddInt(16, (int)CostParcelType, 0); }
-  public static void AddCostId(FlatBufferBuilder builder, long CostId) { builder.AddLong(17, CostId, 0); }
-  public static void AddCostAmount(FlatBufferBuilder builder, int CostAmount) { builder.AddInt(18, CostAmount, 0); }
-  public static void AddRewardParcelType(FlatBufferBuilder builder, VectorOffset RewardParcelTypeOffset) { builder.AddOffset(19, RewardParcelTypeOffset.Value, 0); }
+  public static void AddRewardParcelType(FlatBufferBuilder builder, VectorOffset RewardParcelTypeOffset) { builder.AddOffset(16, RewardParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateRewardParcelTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ParcelType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ParcelType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartRewardParcelTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddRewardId(FlatBufferBuilder builder, VectorOffset RewardIdOffset) { builder.AddOffset(20, RewardIdOffset.Value, 0); }
+  public static void AddRewardId(FlatBufferBuilder builder, VectorOffset RewardIdOffset) { builder.AddOffset(17, RewardIdOffset.Value, 0); }
   public static VectorOffset CreateRewardIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateRewardIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartRewardIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddRewardAmount(FlatBufferBuilder builder, VectorOffset RewardAmountOffset) { builder.AddOffset(21, RewardAmountOffset.Value, 0); }
+  public static void AddRewardAmount(FlatBufferBuilder builder, VectorOffset RewardAmountOffset) { builder.AddOffset(18, RewardAmountOffset.Value, 0); }
   public static VectorOffset CreateRewardAmountVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateRewardAmountVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }

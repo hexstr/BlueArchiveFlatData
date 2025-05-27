@@ -124,6 +124,7 @@ public struct ConstArenaExcel : IFlatbufferObject
 #endif
   public byte[] GetShowSeasonChangeInfoEndTimeArray() { return __p.__vector_as_array<byte>(64); }
   public long ShowSeasonId { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int ArenaHistoryQueryLimitDays { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.ConstArenaExcel> CreateConstArenaExcel(FlatBufferBuilder builder,
       long AttackCoolTime = 0,
@@ -157,8 +158,9 @@ public struct ConstArenaExcel : IFlatbufferObject
       long SkipAllowedTimeMilliSeconds = 0,
       StringOffset ShowSeasonChangeInfoStartTimeOffset = default(StringOffset),
       StringOffset ShowSeasonChangeInfoEndTimeOffset = default(StringOffset),
-      long ShowSeasonId = 0) {
-    builder.StartTable(32);
+      long ShowSeasonId = 0,
+      int ArenaHistoryQueryLimitDays = 0) {
+    builder.StartTable(33);
     ConstArenaExcel.AddShowSeasonId(builder, ShowSeasonId);
     ConstArenaExcel.AddSkipAllowedTimeMilliSeconds(builder, SkipAllowedTimeMilliSeconds);
     ConstArenaExcel.AddEchelonSettingIntervalMilliSeconds(builder, EchelonSettingIntervalMilliSeconds);
@@ -178,6 +180,7 @@ public struct ConstArenaExcel : IFlatbufferObject
     ConstArenaExcel.AddDefenseCoolTime(builder, DefenseCoolTime);
     ConstArenaExcel.AddBattleDuration(builder, BattleDuration);
     ConstArenaExcel.AddAttackCoolTime(builder, AttackCoolTime);
+    ConstArenaExcel.AddArenaHistoryQueryLimitDays(builder, ArenaHistoryQueryLimitDays);
     ConstArenaExcel.AddShowSeasonChangeInfoEndTime(builder, ShowSeasonChangeInfoEndTimeOffset);
     ConstArenaExcel.AddShowSeasonChangeInfoStartTime(builder, ShowSeasonChangeInfoStartTimeOffset);
     ConstArenaExcel.AddHiddenCharacterImagePath(builder, HiddenCharacterImagePathOffset);
@@ -194,7 +197,7 @@ public struct ConstArenaExcel : IFlatbufferObject
     return ConstArenaExcel.EndConstArenaExcel(builder);
   }
 
-  public static void StartConstArenaExcel(FlatBufferBuilder builder) { builder.StartTable(32); }
+  public static void StartConstArenaExcel(FlatBufferBuilder builder) { builder.StartTable(33); }
   public static void AddAttackCoolTime(FlatBufferBuilder builder, long AttackCoolTime) { builder.AddLong(0, AttackCoolTime, 0); }
   public static void AddBattleDuration(FlatBufferBuilder builder, long BattleDuration) { builder.AddLong(1, BattleDuration, 0); }
   public static void AddDefenseCoolTime(FlatBufferBuilder builder, long DefenseCoolTime) { builder.AddLong(2, DefenseCoolTime, 0); }
@@ -262,6 +265,7 @@ public struct ConstArenaExcel : IFlatbufferObject
   public static void AddShowSeasonChangeInfoStartTime(FlatBufferBuilder builder, StringOffset ShowSeasonChangeInfoStartTimeOffset) { builder.AddOffset(29, ShowSeasonChangeInfoStartTimeOffset.Value, 0); }
   public static void AddShowSeasonChangeInfoEndTime(FlatBufferBuilder builder, StringOffset ShowSeasonChangeInfoEndTimeOffset) { builder.AddOffset(30, ShowSeasonChangeInfoEndTimeOffset.Value, 0); }
   public static void AddShowSeasonId(FlatBufferBuilder builder, long ShowSeasonId) { builder.AddLong(31, ShowSeasonId, 0); }
+  public static void AddArenaHistoryQueryLimitDays(FlatBufferBuilder builder, int ArenaHistoryQueryLimitDays) { builder.AddInt(32, ArenaHistoryQueryLimitDays, 0); }
   public static Offset<FlatDataGlobal.ConstArenaExcel> EndConstArenaExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstArenaExcel>(o);

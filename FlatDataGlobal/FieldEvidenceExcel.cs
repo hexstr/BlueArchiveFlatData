@@ -20,42 +20,45 @@ public struct FieldEvidenceExcel : IFlatbufferObject
   public FieldEvidenceExcel __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long UniqueId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string NameLocalizeKey { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long SeasonId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string NameLocalizeKey { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetNameLocalizeKeyBytes() { return __p.__vector_as_span<byte>(6, 1); }
+  public Span<byte> GetNameLocalizeKeyBytes() { return __p.__vector_as_span<byte>(8, 1); }
 #else
-  public ArraySegment<byte>? GetNameLocalizeKeyBytes() { return __p.__vector_as_arraysegment(6); }
+  public ArraySegment<byte>? GetNameLocalizeKeyBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
-  public byte[] GetNameLocalizeKeyArray() { return __p.__vector_as_array<byte>(6); }
-  public string DescriptionLocalizeKey { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetNameLocalizeKeyArray() { return __p.__vector_as_array<byte>(8); }
+  public string DescriptionLocalizeKey { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDescriptionLocalizeKeyBytes() { return __p.__vector_as_span<byte>(8, 1); }
+  public Span<byte> GetDescriptionLocalizeKeyBytes() { return __p.__vector_as_span<byte>(10, 1); }
 #else
-  public ArraySegment<byte>? GetDescriptionLocalizeKeyBytes() { return __p.__vector_as_arraysegment(8); }
+  public ArraySegment<byte>? GetDescriptionLocalizeKeyBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
-  public byte[] GetDescriptionLocalizeKeyArray() { return __p.__vector_as_array<byte>(8); }
-  public string DetailLocalizeKey { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetDescriptionLocalizeKeyArray() { return __p.__vector_as_array<byte>(10); }
+  public string DetailLocalizeKey { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDetailLocalizeKeyBytes() { return __p.__vector_as_span<byte>(10, 1); }
+  public Span<byte> GetDetailLocalizeKeyBytes() { return __p.__vector_as_span<byte>(12, 1); }
 #else
-  public ArraySegment<byte>? GetDetailLocalizeKeyBytes() { return __p.__vector_as_arraysegment(10); }
+  public ArraySegment<byte>? GetDetailLocalizeKeyBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
-  public byte[] GetDetailLocalizeKeyArray() { return __p.__vector_as_array<byte>(10); }
-  public string ImagePath { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetDetailLocalizeKeyArray() { return __p.__vector_as_array<byte>(12); }
+  public string ImagePath { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetImagePathBytes() { return __p.__vector_as_span<byte>(12, 1); }
+  public Span<byte> GetImagePathBytes() { return __p.__vector_as_span<byte>(14, 1); }
 #else
-  public ArraySegment<byte>? GetImagePathBytes() { return __p.__vector_as_arraysegment(12); }
+  public ArraySegment<byte>? GetImagePathBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
-  public byte[] GetImagePathArray() { return __p.__vector_as_array<byte>(12); }
+  public byte[] GetImagePathArray() { return __p.__vector_as_array<byte>(14); }
 
   public static Offset<FlatDataGlobal.FieldEvidenceExcel> CreateFieldEvidenceExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
+      long SeasonId = 0,
       StringOffset NameLocalizeKeyOffset = default(StringOffset),
       StringOffset DescriptionLocalizeKeyOffset = default(StringOffset),
       StringOffset DetailLocalizeKeyOffset = default(StringOffset),
       StringOffset ImagePathOffset = default(StringOffset)) {
-    builder.StartTable(5);
+    builder.StartTable(6);
+    FieldEvidenceExcel.AddSeasonId(builder, SeasonId);
     FieldEvidenceExcel.AddUniqueId(builder, UniqueId);
     FieldEvidenceExcel.AddImagePath(builder, ImagePathOffset);
     FieldEvidenceExcel.AddDetailLocalizeKey(builder, DetailLocalizeKeyOffset);
@@ -64,12 +67,13 @@ public struct FieldEvidenceExcel : IFlatbufferObject
     return FieldEvidenceExcel.EndFieldEvidenceExcel(builder);
   }
 
-  public static void StartFieldEvidenceExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
+  public static void StartFieldEvidenceExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
-  public static void AddNameLocalizeKey(FlatBufferBuilder builder, StringOffset NameLocalizeKeyOffset) { builder.AddOffset(1, NameLocalizeKeyOffset.Value, 0); }
-  public static void AddDescriptionLocalizeKey(FlatBufferBuilder builder, StringOffset DescriptionLocalizeKeyOffset) { builder.AddOffset(2, DescriptionLocalizeKeyOffset.Value, 0); }
-  public static void AddDetailLocalizeKey(FlatBufferBuilder builder, StringOffset DetailLocalizeKeyOffset) { builder.AddOffset(3, DetailLocalizeKeyOffset.Value, 0); }
-  public static void AddImagePath(FlatBufferBuilder builder, StringOffset ImagePathOffset) { builder.AddOffset(4, ImagePathOffset.Value, 0); }
+  public static void AddSeasonId(FlatBufferBuilder builder, long SeasonId) { builder.AddLong(1, SeasonId, 0); }
+  public static void AddNameLocalizeKey(FlatBufferBuilder builder, StringOffset NameLocalizeKeyOffset) { builder.AddOffset(2, NameLocalizeKeyOffset.Value, 0); }
+  public static void AddDescriptionLocalizeKey(FlatBufferBuilder builder, StringOffset DescriptionLocalizeKeyOffset) { builder.AddOffset(3, DescriptionLocalizeKeyOffset.Value, 0); }
+  public static void AddDetailLocalizeKey(FlatBufferBuilder builder, StringOffset DetailLocalizeKeyOffset) { builder.AddOffset(4, DetailLocalizeKeyOffset.Value, 0); }
+  public static void AddImagePath(FlatBufferBuilder builder, StringOffset ImagePathOffset) { builder.AddOffset(5, ImagePathOffset.Value, 0); }
   public static Offset<FlatDataGlobal.FieldEvidenceExcel> EndFieldEvidenceExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.FieldEvidenceExcel>(o);

@@ -240,8 +240,11 @@ public struct ConstCommonExcel : IFlatbufferObject
   public int AssistStrangerMinLevel { get { int o = __p.__offset(334); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int AssistStrangerMaxLevel { get { int o = __p.__offset(336); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int MaxBlockedUserCount { get { int o = __p.__offset(338); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long CafeRandomVisitMinComfortBonus { get { int o = __p.__offset(340); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int CafeRandomVisitMinLastLogin { get { int o = __p.__offset(342); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int CafeTravelSyncIntervalByMillisec { get { int o = __p.__offset(344); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
-  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(168); }
+  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(171); }
   public static void AddCampaignMainStageMaxRank(FlatBufferBuilder builder, int CampaignMainStageMaxRank) { builder.AddInt(0, CampaignMainStageMaxRank, 0); }
   public static void AddCampaignMainStageBestRecord(FlatBufferBuilder builder, int CampaignMainStageBestRecord) { builder.AddInt(1, CampaignMainStageBestRecord, 0); }
   public static void AddHardAdventurePlayCountRecoverDailyNumber(FlatBufferBuilder builder, int HardAdventurePlayCountRecoverDailyNumber) { builder.AddInt(2, HardAdventurePlayCountRecoverDailyNumber, 0); }
@@ -435,6 +438,9 @@ public struct ConstCommonExcel : IFlatbufferObject
   public static void AddAssistStrangerMinLevel(FlatBufferBuilder builder, int AssistStrangerMinLevel) { builder.AddInt(165, AssistStrangerMinLevel, 0); }
   public static void AddAssistStrangerMaxLevel(FlatBufferBuilder builder, int AssistStrangerMaxLevel) { builder.AddInt(166, AssistStrangerMaxLevel, 0); }
   public static void AddMaxBlockedUserCount(FlatBufferBuilder builder, int MaxBlockedUserCount) { builder.AddInt(167, MaxBlockedUserCount, 0); }
+  public static void AddCafeRandomVisitMinComfortBonus(FlatBufferBuilder builder, long CafeRandomVisitMinComfortBonus) { builder.AddLong(168, CafeRandomVisitMinComfortBonus, 0); }
+  public static void AddCafeRandomVisitMinLastLogin(FlatBufferBuilder builder, int CafeRandomVisitMinLastLogin) { builder.AddInt(169, CafeRandomVisitMinLastLogin, 0); }
+  public static void AddCafeTravelSyncIntervalByMillisec(FlatBufferBuilder builder, int CafeTravelSyncIntervalByMillisec) { builder.AddInt(170, CafeTravelSyncIntervalByMillisec, 0); }
   public static Offset<FlatDataGlobal.ConstCommonExcel> EndConstCommonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstCommonExcel>(o);
