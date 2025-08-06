@@ -24,96 +24,97 @@ public struct FurnitureExcel : IFlatbufferObject
   public FlatDataGlobal.Rarity Rarity { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.Rarity)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.Rarity.N; } }
   public FlatDataGlobal.FurnitureCategory Category { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.FurnitureCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.FurnitureCategory.Furnitures; } }
   public FlatDataGlobal.FurnitureSubCategory SubCategory { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.FurnitureSubCategory)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.FurnitureSubCategory.Table; } }
-  public uint LocalizeEtcId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public int StarGradeInit { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long Tier { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string Icon { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public bool CheckFloorDecoration { get { int o = __p.__offset(14); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public uint LocalizeEtcId { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public int StarGradeInit { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long Tier { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string Icon { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIconBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetIconBytes() { return __p.__vector_as_span<byte>(22, 1); }
 #else
-  public ArraySegment<byte>? GetIconBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetIconBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetIconArray() { return __p.__vector_as_array<byte>(20); }
-  public int SizeWidth { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int SizeHeight { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int OtherSize { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ExpandWidth { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool Enable { get { int o = __p.__offset(30); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool ReverseRotation { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public string Prefab { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetIconArray() { return __p.__vector_as_array<byte>(22); }
+  public int SizeWidth { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int SizeHeight { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int OtherSize { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ExpandWidth { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public bool Enable { get { int o = __p.__offset(32); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool ReverseRotation { get { int o = __p.__offset(34); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string Prefab { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetPrefabBytes() { return __p.__vector_as_span<byte>(34, 1); }
+  public Span<byte> GetPrefabBytes() { return __p.__vector_as_span<byte>(36, 1); }
 #else
-  public ArraySegment<byte>? GetPrefabBytes() { return __p.__vector_as_arraysegment(34); }
+  public ArraySegment<byte>? GetPrefabBytes() { return __p.__vector_as_arraysegment(36); }
 #endif
-  public byte[] GetPrefabArray() { return __p.__vector_as_array<byte>(34); }
-  public string PrefabExpand { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetPrefabArray() { return __p.__vector_as_array<byte>(36); }
+  public string PrefabExpand { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetPrefabExpandBytes() { return __p.__vector_as_span<byte>(36, 1); }
+  public Span<byte> GetPrefabExpandBytes() { return __p.__vector_as_span<byte>(38, 1); }
 #else
-  public ArraySegment<byte>? GetPrefabExpandBytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetPrefabExpandBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public byte[] GetPrefabExpandArray() { return __p.__vector_as_array<byte>(36); }
-  public string SubPrefab { get { int o = __p.__offset(38); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetPrefabExpandArray() { return __p.__vector_as_array<byte>(38); }
+  public string SubPrefab { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSubPrefabBytes() { return __p.__vector_as_span<byte>(38, 1); }
+  public Span<byte> GetSubPrefabBytes() { return __p.__vector_as_span<byte>(40, 1); }
 #else
-  public ArraySegment<byte>? GetSubPrefabBytes() { return __p.__vector_as_arraysegment(38); }
+  public ArraySegment<byte>? GetSubPrefabBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
-  public byte[] GetSubPrefabArray() { return __p.__vector_as_array<byte>(38); }
-  public string SubExpandPrefab { get { int o = __p.__offset(40); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSubPrefabArray() { return __p.__vector_as_array<byte>(40); }
+  public string SubExpandPrefab { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSubExpandPrefabBytes() { return __p.__vector_as_span<byte>(40, 1); }
+  public Span<byte> GetSubExpandPrefabBytes() { return __p.__vector_as_span<byte>(42, 1); }
 #else
-  public ArraySegment<byte>? GetSubExpandPrefabBytes() { return __p.__vector_as_arraysegment(40); }
+  public ArraySegment<byte>? GetSubExpandPrefabBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public byte[] GetSubExpandPrefabArray() { return __p.__vector_as_array<byte>(40); }
-  public string CornerPrefab { get { int o = __p.__offset(42); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSubExpandPrefabArray() { return __p.__vector_as_array<byte>(42); }
+  public string CornerPrefab { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetCornerPrefabBytes() { return __p.__vector_as_span<byte>(42, 1); }
+  public Span<byte> GetCornerPrefabBytes() { return __p.__vector_as_span<byte>(44, 1); }
 #else
-  public ArraySegment<byte>? GetCornerPrefabBytes() { return __p.__vector_as_arraysegment(42); }
+  public ArraySegment<byte>? GetCornerPrefabBytes() { return __p.__vector_as_arraysegment(44); }
 #endif
-  public byte[] GetCornerPrefabArray() { return __p.__vector_as_array<byte>(42); }
-  public long StackableMax { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RecipeCraftId { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long SetGroudpId { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ComfortBonus { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long VisitOperationType { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long VisitBonusOperationType { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.Tag Tags(int j) { int o = __p.__offset(56); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Tag)0; }
-  public int TagsLength { get { int o = __p.__offset(56); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetCornerPrefabArray() { return __p.__vector_as_array<byte>(44); }
+  public long StackableMax { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RecipeCraftId { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long SetGroudpId { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ComfortBonus { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long VisitOperationType { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long VisitBonusOperationType { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.Tag Tags(int j) { int o = __p.__offset(58); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Tag)0; }
+  public int TagsLength { get { int o = __p.__offset(58); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.Tag> GetTagsBytes() { return __p.__vector_as_span<FlatDataGlobal.Tag>(56, 4); }
+  public Span<FlatDataGlobal.Tag> GetTagsBytes() { return __p.__vector_as_span<FlatDataGlobal.Tag>(58, 4); }
 #else
-  public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(56); }
+  public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(58); }
 #endif
-  public FlatDataGlobal.Tag[] GetTagsArray() { int o = __p.__offset(56); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Tag[] a = new FlatDataGlobal.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Tag)__p.bb.GetInt(p + i * 4); } return a; }
-  public long CraftQualityTier0 { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CraftQualityTier1 { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long CraftQualityTier2 { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ShiftingCraftQuality { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.FurnitureFunctionType FurnitureFunctionType { get { int o = __p.__offset(66); return o != 0 ? (FlatDataGlobal.FurnitureFunctionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.FurnitureFunctionType.None; } }
-  public long FurnitureFunctionParameter(int j) { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int FurnitureFunctionParameterLength { get { int o = __p.__offset(68); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.Tag[] GetTagsArray() { int o = __p.__offset(58); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Tag[] a = new FlatDataGlobal.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Tag)__p.bb.GetInt(p + i * 4); } return a; }
+  public long CraftQualityTier0 { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CraftQualityTier1 { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long CraftQualityTier2 { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ShiftingCraftQuality { get { int o = __p.__offset(66); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.FurnitureFunctionType FurnitureFunctionType { get { int o = __p.__offset(68); return o != 0 ? (FlatDataGlobal.FurnitureFunctionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.FurnitureFunctionType.None; } }
+  public long FurnitureFunctionParameter(int j) { int o = __p.__offset(70); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int FurnitureFunctionParameterLength { get { int o = __p.__offset(70); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetFurnitureFunctionParameterBytes() { return __p.__vector_as_span<long>(68, 8); }
+  public Span<long> GetFurnitureFunctionParameterBytes() { return __p.__vector_as_span<long>(70, 8); }
 #else
-  public ArraySegment<byte>? GetFurnitureFunctionParameterBytes() { return __p.__vector_as_arraysegment(68); }
+  public ArraySegment<byte>? GetFurnitureFunctionParameterBytes() { return __p.__vector_as_arraysegment(70); }
 #endif
-  public long[] GetFurnitureFunctionParameterArray() { return __p.__vector_as_array<long>(68); }
-  public long VideoId { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long EventCollectionId { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FurnitureBubbleOffsetX { get { int o = __p.__offset(74); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FurnitureBubbleOffsetY { get { int o = __p.__offset(76); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string CafeCharacterStateReq(int j) { int o = __p.__offset(78); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int CafeCharacterStateReqLength { get { int o = __p.__offset(78); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string CafeCharacterStateAdd(int j) { int o = __p.__offset(80); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int CafeCharacterStateAddLength { get { int o = __p.__offset(80); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string CafeCharacterStateMake(int j) { int o = __p.__offset(82); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int CafeCharacterStateMakeLength { get { int o = __p.__offset(82); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public string CafeCharacterStateOnly(int j) { int o = __p.__offset(84); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int CafeCharacterStateOnlyLength { get { int o = __p.__offset(84); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetFurnitureFunctionParameterArray() { return __p.__vector_as_array<long>(70); }
+  public long VideoId { get { int o = __p.__offset(72); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long EventCollectionId { get { int o = __p.__offset(74); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FurnitureBubbleOffsetX { get { int o = __p.__offset(76); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FurnitureBubbleOffsetY { get { int o = __p.__offset(78); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string CafeCharacterStateReq(int j) { int o = __p.__offset(80); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int CafeCharacterStateReqLength { get { int o = __p.__offset(80); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string CafeCharacterStateAdd(int j) { int o = __p.__offset(82); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int CafeCharacterStateAddLength { get { int o = __p.__offset(82); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string CafeCharacterStateMake(int j) { int o = __p.__offset(84); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int CafeCharacterStateMakeLength { get { int o = __p.__offset(84); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public string CafeCharacterStateOnly(int j) { int o = __p.__offset(86); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int CafeCharacterStateOnlyLength { get { int o = __p.__offset(86); return o != 0 ? __p.__vector_len(o) : 0; } }
 
   public static Offset<FlatDataGlobal.FurnitureExcel> CreateFurnitureExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -121,6 +122,7 @@ public struct FurnitureExcel : IFlatbufferObject
       FlatDataGlobal.Rarity rarity = FlatDataGlobal.Rarity.N,
       FlatDataGlobal.FurnitureCategory Category = FlatDataGlobal.FurnitureCategory.Furnitures,
       FlatDataGlobal.FurnitureSubCategory SubCategory = FlatDataGlobal.FurnitureSubCategory.Table,
+      bool CheckFloorDecoration = false,
       uint LocalizeEtcId = 0,
       int StarGradeInit = 0,
       long Tier = 0,
@@ -157,7 +159,7 @@ public struct FurnitureExcel : IFlatbufferObject
       VectorOffset CafeCharacterStateAddOffset = default(VectorOffset),
       VectorOffset CafeCharacterStateMakeOffset = default(VectorOffset),
       VectorOffset CafeCharacterStateOnlyOffset = default(VectorOffset)) {
-    builder.StartTable(41);
+    builder.StartTable(42);
     FurnitureExcel.AddFurnitureBubbleOffsetY(builder, FurnitureBubbleOffsetY);
     FurnitureExcel.AddFurnitureBubbleOffsetX(builder, FurnitureBubbleOffsetX);
     FurnitureExcel.AddEventCollectionId(builder, EventCollectionId);
@@ -199,76 +201,78 @@ public struct FurnitureExcel : IFlatbufferObject
     FurnitureExcel.AddProductionStep(builder, productionStep);
     FurnitureExcel.AddReverseRotation(builder, ReverseRotation);
     FurnitureExcel.AddEnable(builder, Enable);
+    FurnitureExcel.AddCheckFloorDecoration(builder, CheckFloorDecoration);
     return FurnitureExcel.EndFurnitureExcel(builder);
   }
 
-  public static void StartFurnitureExcel(FlatBufferBuilder builder) { builder.StartTable(41); }
+  public static void StartFurnitureExcel(FlatBufferBuilder builder) { builder.StartTable(42); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddProductionStep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionStep) { builder.AddInt(1, (int)productionStep, 0); }
   public static void AddRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity rarity) { builder.AddInt(2, (int)rarity, 0); }
   public static void AddCategory(FlatBufferBuilder builder, FlatDataGlobal.FurnitureCategory Category) { builder.AddInt(3, (int)Category, 0); }
   public static void AddSubCategory(FlatBufferBuilder builder, FlatDataGlobal.FurnitureSubCategory SubCategory) { builder.AddInt(4, (int)SubCategory, 0); }
-  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(5, LocalizeEtcId, 0); }
-  public static void AddStarGradeInit(FlatBufferBuilder builder, int StarGradeInit) { builder.AddInt(6, StarGradeInit, 0); }
-  public static void AddTier(FlatBufferBuilder builder, long Tier) { builder.AddLong(7, Tier, 0); }
-  public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(8, IconOffset.Value, 0); }
-  public static void AddSizeWidth(FlatBufferBuilder builder, int SizeWidth) { builder.AddInt(9, SizeWidth, 0); }
-  public static void AddSizeHeight(FlatBufferBuilder builder, int SizeHeight) { builder.AddInt(10, SizeHeight, 0); }
-  public static void AddOtherSize(FlatBufferBuilder builder, int OtherSize) { builder.AddInt(11, OtherSize, 0); }
-  public static void AddExpandWidth(FlatBufferBuilder builder, int ExpandWidth) { builder.AddInt(12, ExpandWidth, 0); }
-  public static void AddEnable(FlatBufferBuilder builder, bool Enable) { builder.AddBool(13, Enable, false); }
-  public static void AddReverseRotation(FlatBufferBuilder builder, bool ReverseRotation) { builder.AddBool(14, ReverseRotation, false); }
-  public static void AddPrefab(FlatBufferBuilder builder, StringOffset PrefabOffset) { builder.AddOffset(15, PrefabOffset.Value, 0); }
-  public static void AddPrefabExpand(FlatBufferBuilder builder, StringOffset PrefabExpandOffset) { builder.AddOffset(16, PrefabExpandOffset.Value, 0); }
-  public static void AddSubPrefab(FlatBufferBuilder builder, StringOffset SubPrefabOffset) { builder.AddOffset(17, SubPrefabOffset.Value, 0); }
-  public static void AddSubExpandPrefab(FlatBufferBuilder builder, StringOffset SubExpandPrefabOffset) { builder.AddOffset(18, SubExpandPrefabOffset.Value, 0); }
-  public static void AddCornerPrefab(FlatBufferBuilder builder, StringOffset CornerPrefabOffset) { builder.AddOffset(19, CornerPrefabOffset.Value, 0); }
-  public static void AddStackableMax(FlatBufferBuilder builder, long StackableMax) { builder.AddLong(20, StackableMax, 0); }
-  public static void AddRecipeCraftId(FlatBufferBuilder builder, long RecipeCraftId) { builder.AddLong(21, RecipeCraftId, 0); }
-  public static void AddSetGroudpId(FlatBufferBuilder builder, long SetGroudpId) { builder.AddLong(22, SetGroudpId, 0); }
-  public static void AddComfortBonus(FlatBufferBuilder builder, long ComfortBonus) { builder.AddLong(23, ComfortBonus, 0); }
-  public static void AddVisitOperationType(FlatBufferBuilder builder, long VisitOperationType) { builder.AddLong(24, VisitOperationType, 0); }
-  public static void AddVisitBonusOperationType(FlatBufferBuilder builder, long VisitBonusOperationType) { builder.AddLong(25, VisitBonusOperationType, 0); }
-  public static void AddTags(FlatBufferBuilder builder, VectorOffset TagsOffset) { builder.AddOffset(26, TagsOffset.Value, 0); }
+  public static void AddCheckFloorDecoration(FlatBufferBuilder builder, bool CheckFloorDecoration) { builder.AddBool(5, CheckFloorDecoration, false); }
+  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(6, LocalizeEtcId, 0); }
+  public static void AddStarGradeInit(FlatBufferBuilder builder, int StarGradeInit) { builder.AddInt(7, StarGradeInit, 0); }
+  public static void AddTier(FlatBufferBuilder builder, long Tier) { builder.AddLong(8, Tier, 0); }
+  public static void AddIcon(FlatBufferBuilder builder, StringOffset IconOffset) { builder.AddOffset(9, IconOffset.Value, 0); }
+  public static void AddSizeWidth(FlatBufferBuilder builder, int SizeWidth) { builder.AddInt(10, SizeWidth, 0); }
+  public static void AddSizeHeight(FlatBufferBuilder builder, int SizeHeight) { builder.AddInt(11, SizeHeight, 0); }
+  public static void AddOtherSize(FlatBufferBuilder builder, int OtherSize) { builder.AddInt(12, OtherSize, 0); }
+  public static void AddExpandWidth(FlatBufferBuilder builder, int ExpandWidth) { builder.AddInt(13, ExpandWidth, 0); }
+  public static void AddEnable(FlatBufferBuilder builder, bool Enable) { builder.AddBool(14, Enable, false); }
+  public static void AddReverseRotation(FlatBufferBuilder builder, bool ReverseRotation) { builder.AddBool(15, ReverseRotation, false); }
+  public static void AddPrefab(FlatBufferBuilder builder, StringOffset PrefabOffset) { builder.AddOffset(16, PrefabOffset.Value, 0); }
+  public static void AddPrefabExpand(FlatBufferBuilder builder, StringOffset PrefabExpandOffset) { builder.AddOffset(17, PrefabExpandOffset.Value, 0); }
+  public static void AddSubPrefab(FlatBufferBuilder builder, StringOffset SubPrefabOffset) { builder.AddOffset(18, SubPrefabOffset.Value, 0); }
+  public static void AddSubExpandPrefab(FlatBufferBuilder builder, StringOffset SubExpandPrefabOffset) { builder.AddOffset(19, SubExpandPrefabOffset.Value, 0); }
+  public static void AddCornerPrefab(FlatBufferBuilder builder, StringOffset CornerPrefabOffset) { builder.AddOffset(20, CornerPrefabOffset.Value, 0); }
+  public static void AddStackableMax(FlatBufferBuilder builder, long StackableMax) { builder.AddLong(21, StackableMax, 0); }
+  public static void AddRecipeCraftId(FlatBufferBuilder builder, long RecipeCraftId) { builder.AddLong(22, RecipeCraftId, 0); }
+  public static void AddSetGroudpId(FlatBufferBuilder builder, long SetGroudpId) { builder.AddLong(23, SetGroudpId, 0); }
+  public static void AddComfortBonus(FlatBufferBuilder builder, long ComfortBonus) { builder.AddLong(24, ComfortBonus, 0); }
+  public static void AddVisitOperationType(FlatBufferBuilder builder, long VisitOperationType) { builder.AddLong(25, VisitOperationType, 0); }
+  public static void AddVisitBonusOperationType(FlatBufferBuilder builder, long VisitBonusOperationType) { builder.AddLong(26, VisitBonusOperationType, 0); }
+  public static void AddTags(FlatBufferBuilder builder, VectorOffset TagsOffset) { builder.AddOffset(27, TagsOffset.Value, 0); }
   public static VectorOffset CreateTagsVector(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartTagsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddCraftQualityTier0(FlatBufferBuilder builder, long CraftQualityTier0) { builder.AddLong(27, CraftQualityTier0, 0); }
-  public static void AddCraftQualityTier1(FlatBufferBuilder builder, long CraftQualityTier1) { builder.AddLong(28, CraftQualityTier1, 0); }
-  public static void AddCraftQualityTier2(FlatBufferBuilder builder, long CraftQualityTier2) { builder.AddLong(29, CraftQualityTier2, 0); }
-  public static void AddShiftingCraftQuality(FlatBufferBuilder builder, long ShiftingCraftQuality) { builder.AddLong(30, ShiftingCraftQuality, 0); }
-  public static void AddFurnitureFunctionType(FlatBufferBuilder builder, FlatDataGlobal.FurnitureFunctionType furnitureFunctionType) { builder.AddInt(31, (int)furnitureFunctionType, 0); }
-  public static void AddFurnitureFunctionParameter(FlatBufferBuilder builder, VectorOffset FurnitureFunctionParameterOffset) { builder.AddOffset(32, FurnitureFunctionParameterOffset.Value, 0); }
+  public static void AddCraftQualityTier0(FlatBufferBuilder builder, long CraftQualityTier0) { builder.AddLong(28, CraftQualityTier0, 0); }
+  public static void AddCraftQualityTier1(FlatBufferBuilder builder, long CraftQualityTier1) { builder.AddLong(29, CraftQualityTier1, 0); }
+  public static void AddCraftQualityTier2(FlatBufferBuilder builder, long CraftQualityTier2) { builder.AddLong(30, CraftQualityTier2, 0); }
+  public static void AddShiftingCraftQuality(FlatBufferBuilder builder, long ShiftingCraftQuality) { builder.AddLong(31, ShiftingCraftQuality, 0); }
+  public static void AddFurnitureFunctionType(FlatBufferBuilder builder, FlatDataGlobal.FurnitureFunctionType furnitureFunctionType) { builder.AddInt(32, (int)furnitureFunctionType, 0); }
+  public static void AddFurnitureFunctionParameter(FlatBufferBuilder builder, VectorOffset FurnitureFunctionParameterOffset) { builder.AddOffset(33, FurnitureFunctionParameterOffset.Value, 0); }
   public static VectorOffset CreateFurnitureFunctionParameterVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateFurnitureFunctionParameterVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateFurnitureFunctionParameterVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateFurnitureFunctionParameterVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartFurnitureFunctionParameterVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddVideoId(FlatBufferBuilder builder, long VideoId) { builder.AddLong(33, VideoId, 0); }
-  public static void AddEventCollectionId(FlatBufferBuilder builder, long EventCollectionId) { builder.AddLong(34, EventCollectionId, 0); }
-  public static void AddFurnitureBubbleOffsetX(FlatBufferBuilder builder, long FurnitureBubbleOffsetX) { builder.AddLong(35, FurnitureBubbleOffsetX, 0); }
-  public static void AddFurnitureBubbleOffsetY(FlatBufferBuilder builder, long FurnitureBubbleOffsetY) { builder.AddLong(36, FurnitureBubbleOffsetY, 0); }
-  public static void AddCafeCharacterStateReq(FlatBufferBuilder builder, VectorOffset CafeCharacterStateReqOffset) { builder.AddOffset(37, CafeCharacterStateReqOffset.Value, 0); }
+  public static void AddVideoId(FlatBufferBuilder builder, long VideoId) { builder.AddLong(34, VideoId, 0); }
+  public static void AddEventCollectionId(FlatBufferBuilder builder, long EventCollectionId) { builder.AddLong(35, EventCollectionId, 0); }
+  public static void AddFurnitureBubbleOffsetX(FlatBufferBuilder builder, long FurnitureBubbleOffsetX) { builder.AddLong(36, FurnitureBubbleOffsetX, 0); }
+  public static void AddFurnitureBubbleOffsetY(FlatBufferBuilder builder, long FurnitureBubbleOffsetY) { builder.AddLong(37, FurnitureBubbleOffsetY, 0); }
+  public static void AddCafeCharacterStateReq(FlatBufferBuilder builder, VectorOffset CafeCharacterStateReqOffset) { builder.AddOffset(38, CafeCharacterStateReqOffset.Value, 0); }
   public static VectorOffset CreateCafeCharacterStateReqVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateReqVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateReqVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateReqVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCafeCharacterStateReqVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddCafeCharacterStateAdd(FlatBufferBuilder builder, VectorOffset CafeCharacterStateAddOffset) { builder.AddOffset(38, CafeCharacterStateAddOffset.Value, 0); }
+  public static void AddCafeCharacterStateAdd(FlatBufferBuilder builder, VectorOffset CafeCharacterStateAddOffset) { builder.AddOffset(39, CafeCharacterStateAddOffset.Value, 0); }
   public static VectorOffset CreateCafeCharacterStateAddVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateAddVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateAddVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateAddVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCafeCharacterStateAddVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddCafeCharacterStateMake(FlatBufferBuilder builder, VectorOffset CafeCharacterStateMakeOffset) { builder.AddOffset(39, CafeCharacterStateMakeOffset.Value, 0); }
+  public static void AddCafeCharacterStateMake(FlatBufferBuilder builder, VectorOffset CafeCharacterStateMakeOffset) { builder.AddOffset(40, CafeCharacterStateMakeOffset.Value, 0); }
   public static VectorOffset CreateCafeCharacterStateMakeVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateMakeVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateMakeVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateMakeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCafeCharacterStateMakeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddCafeCharacterStateOnly(FlatBufferBuilder builder, VectorOffset CafeCharacterStateOnlyOffset) { builder.AddOffset(40, CafeCharacterStateOnlyOffset.Value, 0); }
+  public static void AddCafeCharacterStateOnly(FlatBufferBuilder builder, VectorOffset CafeCharacterStateOnlyOffset) { builder.AddOffset(41, CafeCharacterStateOnlyOffset.Value, 0); }
   public static VectorOffset CreateCafeCharacterStateOnlyVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateOnlyVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateOnlyVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }

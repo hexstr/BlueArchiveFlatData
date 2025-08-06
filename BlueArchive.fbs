@@ -25,9 +25,9 @@ enum FurnitureSubCategory: int {
 	Closet,
 	Chair,
 	Bed,
+	Prop,
 	FurnitureEtc,
 	FurnitureSubCategory1,
-	Prop,
 	HomeAppliance,
 	WallDecoration,
 	FloorDecoration,
@@ -912,6 +912,7 @@ enum EventContentType: int {
 	ScenarioShortcut,
 	SeasonalEvent,
 	MiniShop,
+	MiniGameRoad,
 }
 enum OpenCondition: int {
 	Hide,
@@ -1567,6 +1568,7 @@ enum FilterIcon: int {
 	Defense,
 	Range,
 	MemoryLobby,
+	Obscuration,
 }
 enum CVUnlockScenarioType: int {
 	Main,
@@ -1758,6 +1760,26 @@ enum DreamMakerEndingRewardType: int {
 	None,
 	FirstEndingReward,
 	LoopEndingReward,
+}
+enum RoadPuzzleMapTileType: int {
+	None,
+	Start,
+	End,
+	Transit,
+	Obstacle,
+	Empty,
+}
+enum RoadPuzzleRailTileType: int {
+	None,
+	Straight,
+	CurveBig,
+	CurveSmall,
+}
+enum RoadPuzzleVoiceCondition: int {
+	None,
+	TrainDepart,
+	RailConnectSuccess,
+	SaveSuccess,
 }
 enum Geas: int {
 	ForwardProjectile,
@@ -2038,6 +2060,9 @@ enum MissionCompleteConditionType: int {
 	Reset_JoinMultiFloorRaidCount,
 	Reset_GivePresentCharacterCount,
 	Reset_CharacterInviteCount,
+	Reset_RoadpuzzleTileCount,
+	Reset_ClearSpecificRoundRoadpuzzle,
+	Reset_ClearCountRoadpuzzle,
 }
 enum AccountAchievementType: int {
 	TotalLoginCount,
@@ -2659,6 +2684,7 @@ enum School: int {
 	ETC,
 	Tokiwadai,
 	Sakugawa,
+	Highlander,
 }
 enum EtcSchool: int {
 	None,
@@ -2932,7 +2958,7 @@ enum ShopFilterType: int {
 	Event,
 	ChaserTotalTicket,
 	SchoolTotalTicket,
-	ShopFilterDUMMY_1,
+	Highlander,
 	ShopFilterDUMMY_2,
 	ShopFilterDUMMY_3,
 	ShopFilterDUMMY_4,
@@ -6098,6 +6124,8 @@ enum Club: int {
 	Hyakkayouran,
 	ShinySparkleSociety,
 	AbydosStudentCouncil,
+	CentralControlCenter,
+	FreightLogisticsDepartment,
 }
 enum UnderCoverItemCategory: int {
 	Consumable,
@@ -6843,6 +6871,7 @@ table CharacterExcel {
 	CanFix: bool;
 	CanCrowdControl: bool;
 	CanBattleItemMove: bool;
+	IgnoreObstacle: bool;
 	IsAirUnit: bool;
 	AirUnitHeight: long;
 	Tags: [Tag];
@@ -7615,6 +7644,8 @@ table ConstCombatExcel {
 	EchelonExtensionEchelonInitCommonCost: int;
 	EchelonExtensionCostRegenRatio: long;
 	CheckCheaterMaxUseCostMultiFloorRaid: int;
+	ExcessiveTouchCheckTime: float;
+	ExcessiveTouchCheckCount: int;
 }
 
 table ConstCommonExcelTable {
@@ -7839,6 +7870,39 @@ table ConstFieldExcel {
 	ThinkDialogDurationDefault: int;
 	IdleThinkDelayMin: int;
 	IdleThinkDelayMax: int;
+}
+
+table ConstKeyMappingExcelTable {
+	DataList: [ConstKeyMappingExcel];
+}
+
+table ConstKeyMappingExcel {
+	DragSensitivity: float;
+	PcInformationGroupID: long;
+	ScrollWheelFactor: float;
+	RemoveKeycodeWord: string;
+	TutorialDialogTouchKey: string;
+}
+
+table ConstMinigameRoadPuzzleExcelTable {
+	DataList: [ConstMinigameRoadPuzzleExcel];
+}
+
+table ConstMinigameRoadPuzzleExcel {
+	RoadPuzzleMapBoundaryOffsetLeft: float;
+	RoadPuzzleMapBoundaryOffsetRight: float;
+	RoadPuzzleMapBoundaryOffsetTop: float;
+	RoadPuzzleMapBoundaryOffsetBottom: float;
+	RoadPuzzleMapCenterOffsetX: float;
+	RoadPuzzleMapCenterOffsetY: float;
+	CameraAngle: float;
+	CameraZoomMax: float;
+	CameraZoomMin: float;
+	CameraZoomDefault: float;
+	StageLoadingProgressTime: float;
+	TileRotationDegree: int;
+	StartStageIndex: int;
+	LoopStageIndex: int;
 }
 
 table ConstMiniGameShootingExcelTable {
@@ -8142,6 +8206,7 @@ table EliminateRaidSeasonManageExcel {
 	SeasonId: long;
 	SeasonDisplay: long;
 	SeasonStartData: string;
+	EndNoteLabelStartDate: string;
 	SeasonEndData: string;
 	SettlementEndDate: string;
 	LobbyTableBGPath: string;
@@ -8499,6 +8564,7 @@ table EventContentCurrencyItemExcel {
 	EventContentId: long;
 	eventContentItemType: EventContentItemType;
 	ItemUniqueId: long;
+	UseShortCutContentType: string;
 }
 
 table EventContentDebuffRewardExcelTable {
@@ -8596,6 +8662,7 @@ table EventContentFortuneGachaExcelTable {
 table EventContentFortuneGachaExcel {
 	FortuneGachaGroupId: int;
 	LocalizeEtcId: uint;
+	NameImagePath: string;
 	IconPath: string;
 }
 
@@ -8726,6 +8793,7 @@ table EventContentMiniEventShortCutExcel {
 	Id: int;
 	LocalizeEtcId: uint;
 	ShorcutContentType: EventTargetType;
+	ShortcutUI: string;
 }
 
 table EventContentMiniEventTokenExcelTable {
@@ -9363,6 +9431,7 @@ table FurnitureExcel {
 	rarity: Rarity;
 	Category: FurnitureCategory;
 	SubCategory: FurnitureSubCategory;
+	CheckFloorDecoration: bool;
 	LocalizeEtcId: uint;
 	StarGradeInit: int;
 	Tier: long;
@@ -9706,6 +9775,41 @@ table KatakanaConvertExcel {
 	Jp: string;
 }
 
+table KeyMappingExcelTable {
+	DataList: [KeyMappingExcel];
+}
+
+table KeyMappingExcel {
+	Id: string;
+	TargetKeyCode: string;
+	IsDisplay: bool;
+	IsUsed: bool;
+	IsLongPress: bool;
+	IgnorePosCheck: bool;
+	IconPositionX: float;
+	IconPositionY: float;
+	IconScaleX: float;
+	IconScaleY: float;
+}
+
+table KeyMappingPopupExcelTable {
+	DataList: [KeyMappingPopupExcel];
+}
+
+table KeyMappingPopupExcel {
+	PrefabName: string;
+	ButtonName01: string;
+	KeyMappingId01: string;
+	ButtonName02: string;
+	KeyMappingId02: string;
+	ButtonName03: string;
+	KeyMappingId03: string;
+	ButtonName04: string;
+	KeyMappingId04: string;
+	ButtonName05: string;
+	KeyMappingId05: string;
+}
+
 table KnockBackExcelTable {
 	DataList: [KnockBackExcel];
 }
@@ -10038,6 +10142,14 @@ table MiniGameRhythmExcel {
 	RhythmFileName: string;
 	ArtLevelSceneName: string;
 	ComboImagePath: string;
+}
+
+table MinigameRoadExcelTable {
+	DataList: [MinigameRoadExcel];
+}
+
+table MinigameRoadExcel {
+	None: [RoadPuzzleMapTileType];
 }
 
 table MiniGameShootingCharacterExcelTable {
@@ -10592,6 +10704,7 @@ table RaidSeasonManageExcel {
 	SeasonId: long;
 	SeasonDisplay: long;
 	SeasonStartData: string;
+	EndNoteLabelStartDate: string;
 	SeasonEndData: string;
 	SettlementEndDate: string;
 	OpenRaidBossGroup: [string];
@@ -10826,6 +10939,7 @@ table ShopCashExcelTable {
 table ShopCashExcel {
 	Id: long;
 	CashProductId: long;
+	PackageType: PurchaseSourceType;
 	LocalizeEtcId: uint;
 	IconPath: string;
 	DisplayOrder: long;
@@ -11285,6 +11399,7 @@ table TimeAttackDungeonSeasonManageExcelTable {
 table TimeAttackDungeonSeasonManageExcel {
 	Id: long;
 	StartDate: string;
+	EndNoteLabelStartDate: string;
 	EndDate: string;
 	UISlot: long;
 	DungeonId: long;
@@ -12478,6 +12593,89 @@ table MinigameDreamVoiceExcel {
 	VoiceClip: uint;
 }
 
+table MiniGameRoadPuzzleAdditionalRewardExcel {
+	EventContentId: long;
+	UniqueId: long;
+	RewardParcelType: ParcelType;
+	RewardParcelId: long;
+	RewardParcelAmount: long;
+}
+
+table MiniGameRoadPuzzleInfoExcel {
+	EventContentId: long;
+	EventUseCostType: ParcelType;
+	EventUseCostId: long;
+	CostGoodsId: long;
+	RailSetRewardId: long;
+	InstantClearRound: int;
+}
+
+table MinigameRoadPuzzleMapExcel {
+	EventContentId: long;
+	UniqueId: long;
+	MapGroupId: long;
+	Map: string;
+	MapBG: string;
+	BGMId: long;
+	AvailableRailTile: [long];
+	AvailableRailTileAmount: [long];
+	OriginalTileCount: [long];
+	TrainSpeed: float;
+}
+
+table MinigameRoadPuzzleMapTileExcel {
+	EventContentId: long;
+	UniqueId: long;
+	PrefabName: string;
+	MapTileType: RoadPuzzleMapTileType;
+}
+
+table MiniGameRoadPuzzleRailSetRewardExcel {
+	EventContentId: long;
+	UniqueId: long;
+	LocalizePrefabID: string;
+	RewardParcelType: [ParcelType];
+	RewardParcelId: [long];
+	RewardParcelAmount: [long];
+}
+
+table MinigameRoadPuzzleRailTileExcel {
+	EventContentId: long;
+	UniqueId: long;
+	GroupId: long;
+	OriginalTile: bool;
+	PrefabName: string;
+	RailTileType: RoadPuzzleRailTileType;
+}
+
+table MiniGameRoadPuzzleRewardExcel {
+	EventContentId: long;
+	UniqueId: long;
+	RewardParcelType: [ParcelType];
+	RewardParcelId: [long];
+	RewardParcelAmount: [long];
+}
+
+table MinigameRoadPuzzleRoadRoundExcel {
+	EventContentId: long;
+	UniqueId: long;
+	Round: int;
+	IsLoop: bool;
+	EnterScenarioGroupId: long;
+	EndScenarioGroupId: long;
+	MapGroupId: long;
+	RoundReward: long;
+	AdditionalRewardID: [long];
+	AdditionalRewardAmount: [int];
+}
+
+table MiniGameRoadPuzzleVoiceExcel {
+	EventContentId: long;
+	UniqueId: long;
+	VoiceCondition: RoadPuzzleVoiceCondition;
+	VoiceClip: uint;
+}
+
 table MissionEmergencyCompleteExcel {
 	MissionId: long;
 	EmergencyComplete: bool;
@@ -12496,6 +12694,7 @@ table MultiFloorRaidSeasonManageExcel {
 	LobbyEnterScenario: uint;
 	ShowLobbyBanner: bool;
 	SeasonStartDate: string;
+	EndNoteLabelStartDate: string;
 	SeasonEndDate: string;
 	SettlementEndDate: string;
 	OpenRaidBossGroupId: string;
@@ -12740,6 +12939,8 @@ table ScenarioModeRewardExcel {
 table ScenarioResourceInfoExcel {
 	Id: long;
 	ScenarioModeId: long;
+	PriorityOrder: long;
+	PVDisplayOrder: long;
 	VideoId: long;
 	BgmId: long;
 	AudioName: string;

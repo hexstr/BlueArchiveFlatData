@@ -29,55 +29,63 @@ public struct MultiFloorRaidSeasonManageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetSeasonStartDateBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetSeasonStartDateArray() { return __p.__vector_as_array<byte>(10); }
-  public string SeasonEndDate { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string EndNoteLabelStartDate { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSeasonEndDateBytes() { return __p.__vector_as_span<byte>(12, 1); }
+  public Span<byte> GetEndNoteLabelStartDateBytes() { return __p.__vector_as_span<byte>(12, 1); }
 #else
-  public ArraySegment<byte>? GetSeasonEndDateBytes() { return __p.__vector_as_arraysegment(12); }
+  public ArraySegment<byte>? GetEndNoteLabelStartDateBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
-  public byte[] GetSeasonEndDateArray() { return __p.__vector_as_array<byte>(12); }
-  public string SettlementEndDate { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetEndNoteLabelStartDateArray() { return __p.__vector_as_array<byte>(12); }
+  public string SeasonEndDate { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSettlementEndDateBytes() { return __p.__vector_as_span<byte>(14, 1); }
+  public Span<byte> GetSeasonEndDateBytes() { return __p.__vector_as_span<byte>(14, 1); }
 #else
-  public ArraySegment<byte>? GetSettlementEndDateBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetSeasonEndDateBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
-  public byte[] GetSettlementEndDateArray() { return __p.__vector_as_array<byte>(14); }
-  public string OpenRaidBossGroupId { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSeasonEndDateArray() { return __p.__vector_as_array<byte>(14); }
+  public string SettlementEndDate { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetOpenRaidBossGroupIdBytes() { return __p.__vector_as_span<byte>(16, 1); }
+  public Span<byte> GetSettlementEndDateBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetOpenRaidBossGroupIdBytes() { return __p.__vector_as_arraysegment(16); }
+  public ArraySegment<byte>? GetSettlementEndDateBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetOpenRaidBossGroupIdArray() { return __p.__vector_as_array<byte>(16); }
-  public uint EnterScenarioKey { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public string LobbyImgPath { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSettlementEndDateArray() { return __p.__vector_as_array<byte>(16); }
+  public string OpenRaidBossGroupId { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLobbyImgPathBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetOpenRaidBossGroupIdBytes() { return __p.__vector_as_span<byte>(18, 1); }
 #else
-  public ArraySegment<byte>? GetLobbyImgPathBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetOpenRaidBossGroupIdBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public byte[] GetLobbyImgPathArray() { return __p.__vector_as_array<byte>(20); }
-  public string LevelImgPath { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetOpenRaidBossGroupIdArray() { return __p.__vector_as_array<byte>(18); }
+  public uint EnterScenarioKey { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public string LobbyImgPath { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLevelImgPathBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetLobbyImgPathBytes() { return __p.__vector_as_span<byte>(22, 1); }
 #else
-  public ArraySegment<byte>? GetLevelImgPathBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetLobbyImgPathBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetLevelImgPathArray() { return __p.__vector_as_array<byte>(22); }
-  public string PlayTip { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLobbyImgPathArray() { return __p.__vector_as_array<byte>(22); }
+  public string LevelImgPath { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetPlayTipBytes() { return __p.__vector_as_span<byte>(24, 1); }
+  public Span<byte> GetLevelImgPathBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetPlayTipBytes() { return __p.__vector_as_arraysegment(24); }
+  public ArraySegment<byte>? GetLevelImgPathBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetPlayTipArray() { return __p.__vector_as_array<byte>(24); }
+  public byte[] GetLevelImgPathArray() { return __p.__vector_as_array<byte>(24); }
+  public string PlayTip { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetPlayTipBytes() { return __p.__vector_as_span<byte>(26, 1); }
+#else
+  public ArraySegment<byte>? GetPlayTipBytes() { return __p.__vector_as_arraysegment(26); }
+#endif
+  public byte[] GetPlayTipArray() { return __p.__vector_as_array<byte>(26); }
 
   public static Offset<FlatDataGlobal.MultiFloorRaidSeasonManageExcel> CreateMultiFloorRaidSeasonManageExcel(FlatBufferBuilder builder,
       long SeasonId = 0,
       uint LobbyEnterScenario = 0,
       bool ShowLobbyBanner = false,
       StringOffset SeasonStartDateOffset = default(StringOffset),
+      StringOffset EndNoteLabelStartDateOffset = default(StringOffset),
       StringOffset SeasonEndDateOffset = default(StringOffset),
       StringOffset SettlementEndDateOffset = default(StringOffset),
       StringOffset OpenRaidBossGroupIdOffset = default(StringOffset),
@@ -85,7 +93,7 @@ public struct MultiFloorRaidSeasonManageExcel : IFlatbufferObject
       StringOffset LobbyImgPathOffset = default(StringOffset),
       StringOffset LevelImgPathOffset = default(StringOffset),
       StringOffset PlayTipOffset = default(StringOffset)) {
-    builder.StartTable(11);
+    builder.StartTable(12);
     MultiFloorRaidSeasonManageExcel.AddSeasonId(builder, SeasonId);
     MultiFloorRaidSeasonManageExcel.AddPlayTip(builder, PlayTipOffset);
     MultiFloorRaidSeasonManageExcel.AddLevelImgPath(builder, LevelImgPathOffset);
@@ -94,24 +102,26 @@ public struct MultiFloorRaidSeasonManageExcel : IFlatbufferObject
     MultiFloorRaidSeasonManageExcel.AddOpenRaidBossGroupId(builder, OpenRaidBossGroupIdOffset);
     MultiFloorRaidSeasonManageExcel.AddSettlementEndDate(builder, SettlementEndDateOffset);
     MultiFloorRaidSeasonManageExcel.AddSeasonEndDate(builder, SeasonEndDateOffset);
+    MultiFloorRaidSeasonManageExcel.AddEndNoteLabelStartDate(builder, EndNoteLabelStartDateOffset);
     MultiFloorRaidSeasonManageExcel.AddSeasonStartDate(builder, SeasonStartDateOffset);
     MultiFloorRaidSeasonManageExcel.AddLobbyEnterScenario(builder, LobbyEnterScenario);
     MultiFloorRaidSeasonManageExcel.AddShowLobbyBanner(builder, ShowLobbyBanner);
     return MultiFloorRaidSeasonManageExcel.EndMultiFloorRaidSeasonManageExcel(builder);
   }
 
-  public static void StartMultiFloorRaidSeasonManageExcel(FlatBufferBuilder builder) { builder.StartTable(11); }
+  public static void StartMultiFloorRaidSeasonManageExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
   public static void AddSeasonId(FlatBufferBuilder builder, long SeasonId) { builder.AddLong(0, SeasonId, 0); }
   public static void AddLobbyEnterScenario(FlatBufferBuilder builder, uint LobbyEnterScenario) { builder.AddUint(1, LobbyEnterScenario, 0); }
   public static void AddShowLobbyBanner(FlatBufferBuilder builder, bool ShowLobbyBanner) { builder.AddBool(2, ShowLobbyBanner, false); }
   public static void AddSeasonStartDate(FlatBufferBuilder builder, StringOffset SeasonStartDateOffset) { builder.AddOffset(3, SeasonStartDateOffset.Value, 0); }
-  public static void AddSeasonEndDate(FlatBufferBuilder builder, StringOffset SeasonEndDateOffset) { builder.AddOffset(4, SeasonEndDateOffset.Value, 0); }
-  public static void AddSettlementEndDate(FlatBufferBuilder builder, StringOffset SettlementEndDateOffset) { builder.AddOffset(5, SettlementEndDateOffset.Value, 0); }
-  public static void AddOpenRaidBossGroupId(FlatBufferBuilder builder, StringOffset OpenRaidBossGroupIdOffset) { builder.AddOffset(6, OpenRaidBossGroupIdOffset.Value, 0); }
-  public static void AddEnterScenarioKey(FlatBufferBuilder builder, uint EnterScenarioKey) { builder.AddUint(7, EnterScenarioKey, 0); }
-  public static void AddLobbyImgPath(FlatBufferBuilder builder, StringOffset LobbyImgPathOffset) { builder.AddOffset(8, LobbyImgPathOffset.Value, 0); }
-  public static void AddLevelImgPath(FlatBufferBuilder builder, StringOffset LevelImgPathOffset) { builder.AddOffset(9, LevelImgPathOffset.Value, 0); }
-  public static void AddPlayTip(FlatBufferBuilder builder, StringOffset PlayTipOffset) { builder.AddOffset(10, PlayTipOffset.Value, 0); }
+  public static void AddEndNoteLabelStartDate(FlatBufferBuilder builder, StringOffset EndNoteLabelStartDateOffset) { builder.AddOffset(4, EndNoteLabelStartDateOffset.Value, 0); }
+  public static void AddSeasonEndDate(FlatBufferBuilder builder, StringOffset SeasonEndDateOffset) { builder.AddOffset(5, SeasonEndDateOffset.Value, 0); }
+  public static void AddSettlementEndDate(FlatBufferBuilder builder, StringOffset SettlementEndDateOffset) { builder.AddOffset(6, SettlementEndDateOffset.Value, 0); }
+  public static void AddOpenRaidBossGroupId(FlatBufferBuilder builder, StringOffset OpenRaidBossGroupIdOffset) { builder.AddOffset(7, OpenRaidBossGroupIdOffset.Value, 0); }
+  public static void AddEnterScenarioKey(FlatBufferBuilder builder, uint EnterScenarioKey) { builder.AddUint(8, EnterScenarioKey, 0); }
+  public static void AddLobbyImgPath(FlatBufferBuilder builder, StringOffset LobbyImgPathOffset) { builder.AddOffset(9, LobbyImgPathOffset.Value, 0); }
+  public static void AddLevelImgPath(FlatBufferBuilder builder, StringOffset LevelImgPathOffset) { builder.AddOffset(10, LevelImgPathOffset.Value, 0); }
+  public static void AddPlayTip(FlatBufferBuilder builder, StringOffset PlayTipOffset) { builder.AddOffset(11, PlayTipOffset.Value, 0); }
   public static Offset<FlatDataGlobal.MultiFloorRaidSeasonManageExcel> EndMultiFloorRaidSeasonManageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.MultiFloorRaidSeasonManageExcel>(o);

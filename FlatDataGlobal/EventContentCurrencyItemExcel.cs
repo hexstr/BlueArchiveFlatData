@@ -22,22 +22,32 @@ public struct EventContentCurrencyItemExcel : IFlatbufferObject
   public long EventContentId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.EventContentItemType EventContentItemType { get { int o = __p.__offset(6); return o != 0 ? (FlatDataGlobal.EventContentItemType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentItemType.EventPoint; } }
   public long ItemUniqueId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string UseShortCutContentType { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetUseShortCutContentTypeBytes() { return __p.__vector_as_span<byte>(10, 1); }
+#else
+  public ArraySegment<byte>? GetUseShortCutContentTypeBytes() { return __p.__vector_as_arraysegment(10); }
+#endif
+  public byte[] GetUseShortCutContentTypeArray() { return __p.__vector_as_array<byte>(10); }
 
   public static Offset<FlatDataGlobal.EventContentCurrencyItemExcel> CreateEventContentCurrencyItemExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
       FlatDataGlobal.EventContentItemType eventContentItemType = FlatDataGlobal.EventContentItemType.EventPoint,
-      long ItemUniqueId = 0) {
-    builder.StartTable(3);
+      long ItemUniqueId = 0,
+      StringOffset UseShortCutContentTypeOffset = default(StringOffset)) {
+    builder.StartTable(4);
     EventContentCurrencyItemExcel.AddItemUniqueId(builder, ItemUniqueId);
     EventContentCurrencyItemExcel.AddEventContentId(builder, EventContentId);
+    EventContentCurrencyItemExcel.AddUseShortCutContentType(builder, UseShortCutContentTypeOffset);
     EventContentCurrencyItemExcel.AddEventContentItemType(builder, eventContentItemType);
     return EventContentCurrencyItemExcel.EndEventContentCurrencyItemExcel(builder);
   }
 
-  public static void StartEventContentCurrencyItemExcel(FlatBufferBuilder builder) { builder.StartTable(3); }
+  public static void StartEventContentCurrencyItemExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddEventContentItemType(FlatBufferBuilder builder, FlatDataGlobal.EventContentItemType eventContentItemType) { builder.AddInt(1, (int)eventContentItemType, 0); }
   public static void AddItemUniqueId(FlatBufferBuilder builder, long ItemUniqueId) { builder.AddLong(2, ItemUniqueId, 0); }
+  public static void AddUseShortCutContentType(FlatBufferBuilder builder, StringOffset UseShortCutContentTypeOffset) { builder.AddOffset(3, UseShortCutContentTypeOffset.Value, 0); }
   public static Offset<FlatDataGlobal.EventContentCurrencyItemExcel> EndEventContentCurrencyItemExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentCurrencyItemExcel>(o);

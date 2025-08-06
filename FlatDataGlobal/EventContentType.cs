@@ -46,6 +46,7 @@ public enum EventContentType : int
   ScenarioShortcut = 36,
   SeasonalEvent = 37,
   MiniShop = 38,
+  MiniGameRoad = 39,
 };
 
 

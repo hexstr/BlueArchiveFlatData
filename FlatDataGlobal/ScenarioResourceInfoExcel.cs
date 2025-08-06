@@ -21,42 +21,46 @@ public struct ScenarioResourceInfoExcel : IFlatbufferObject
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ScenarioModeId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long VideoId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long BgmId { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string AudioName { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long PriorityOrder { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long PVDisplayOrder { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long VideoId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long BgmId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string AudioName { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetAudioNameBytes() { return __p.__vector_as_span<byte>(12, 1); }
+  public Span<byte> GetAudioNameBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
-  public ArraySegment<byte>? GetAudioNameBytes() { return __p.__vector_as_arraysegment(12); }
+  public ArraySegment<byte>? GetAudioNameBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
-  public byte[] GetAudioNameArray() { return __p.__vector_as_array<byte>(12); }
-  public string SpinePath { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetAudioNameArray() { return __p.__vector_as_array<byte>(16); }
+  public string SpinePath { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSpinePathBytes() { return __p.__vector_as_span<byte>(14, 1); }
+  public Span<byte> GetSpinePathBytes() { return __p.__vector_as_span<byte>(18, 1); }
 #else
-  public ArraySegment<byte>? GetSpinePathBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetSpinePathBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
-  public byte[] GetSpinePathArray() { return __p.__vector_as_array<byte>(14); }
-  public int Ratio { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string LobbyAniPath { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSpinePathArray() { return __p.__vector_as_array<byte>(18); }
+  public int Ratio { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public string LobbyAniPath { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetLobbyAniPathBytes() { return __p.__vector_as_span<byte>(18, 1); }
+  public Span<byte> GetLobbyAniPathBytes() { return __p.__vector_as_span<byte>(22, 1); }
 #else
-  public ArraySegment<byte>? GetLobbyAniPathBytes() { return __p.__vector_as_arraysegment(18); }
+  public ArraySegment<byte>? GetLobbyAniPathBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public byte[] GetLobbyAniPathArray() { return __p.__vector_as_array<byte>(18); }
-  public string MovieCGPath { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetLobbyAniPathArray() { return __p.__vector_as_array<byte>(22); }
+  public string MovieCGPath { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMovieCGPathBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetMovieCGPathBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetMovieCGPathBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetMovieCGPathBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetMovieCGPathArray() { return __p.__vector_as_array<byte>(20); }
-  public uint LocalizeId { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public byte[] GetMovieCGPathArray() { return __p.__vector_as_array<byte>(24); }
+  public uint LocalizeId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
 
   public static Offset<FlatDataGlobal.ScenarioResourceInfoExcel> CreateScenarioResourceInfoExcel(FlatBufferBuilder builder,
       long Id = 0,
       long ScenarioModeId = 0,
+      long PriorityOrder = 0,
+      long PVDisplayOrder = 0,
       long VideoId = 0,
       long BgmId = 0,
       StringOffset AudioNameOffset = default(StringOffset),
@@ -65,9 +69,11 @@ public struct ScenarioResourceInfoExcel : IFlatbufferObject
       StringOffset LobbyAniPathOffset = default(StringOffset),
       StringOffset MovieCGPathOffset = default(StringOffset),
       uint LocalizeId = 0) {
-    builder.StartTable(10);
+    builder.StartTable(12);
     ScenarioResourceInfoExcel.AddBgmId(builder, BgmId);
     ScenarioResourceInfoExcel.AddVideoId(builder, VideoId);
+    ScenarioResourceInfoExcel.AddPVDisplayOrder(builder, PVDisplayOrder);
+    ScenarioResourceInfoExcel.AddPriorityOrder(builder, PriorityOrder);
     ScenarioResourceInfoExcel.AddScenarioModeId(builder, ScenarioModeId);
     ScenarioResourceInfoExcel.AddId(builder, Id);
     ScenarioResourceInfoExcel.AddLocalizeId(builder, LocalizeId);
@@ -79,17 +85,19 @@ public struct ScenarioResourceInfoExcel : IFlatbufferObject
     return ScenarioResourceInfoExcel.EndScenarioResourceInfoExcel(builder);
   }
 
-  public static void StartScenarioResourceInfoExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
+  public static void StartScenarioResourceInfoExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddScenarioModeId(FlatBufferBuilder builder, long ScenarioModeId) { builder.AddLong(1, ScenarioModeId, 0); }
-  public static void AddVideoId(FlatBufferBuilder builder, long VideoId) { builder.AddLong(2, VideoId, 0); }
-  public static void AddBgmId(FlatBufferBuilder builder, long BgmId) { builder.AddLong(3, BgmId, 0); }
-  public static void AddAudioName(FlatBufferBuilder builder, StringOffset AudioNameOffset) { builder.AddOffset(4, AudioNameOffset.Value, 0); }
-  public static void AddSpinePath(FlatBufferBuilder builder, StringOffset SpinePathOffset) { builder.AddOffset(5, SpinePathOffset.Value, 0); }
-  public static void AddRatio(FlatBufferBuilder builder, int Ratio) { builder.AddInt(6, Ratio, 0); }
-  public static void AddLobbyAniPath(FlatBufferBuilder builder, StringOffset LobbyAniPathOffset) { builder.AddOffset(7, LobbyAniPathOffset.Value, 0); }
-  public static void AddMovieCGPath(FlatBufferBuilder builder, StringOffset MovieCGPathOffset) { builder.AddOffset(8, MovieCGPathOffset.Value, 0); }
-  public static void AddLocalizeId(FlatBufferBuilder builder, uint LocalizeId) { builder.AddUint(9, LocalizeId, 0); }
+  public static void AddPriorityOrder(FlatBufferBuilder builder, long PriorityOrder) { builder.AddLong(2, PriorityOrder, 0); }
+  public static void AddPVDisplayOrder(FlatBufferBuilder builder, long PVDisplayOrder) { builder.AddLong(3, PVDisplayOrder, 0); }
+  public static void AddVideoId(FlatBufferBuilder builder, long VideoId) { builder.AddLong(4, VideoId, 0); }
+  public static void AddBgmId(FlatBufferBuilder builder, long BgmId) { builder.AddLong(5, BgmId, 0); }
+  public static void AddAudioName(FlatBufferBuilder builder, StringOffset AudioNameOffset) { builder.AddOffset(6, AudioNameOffset.Value, 0); }
+  public static void AddSpinePath(FlatBufferBuilder builder, StringOffset SpinePathOffset) { builder.AddOffset(7, SpinePathOffset.Value, 0); }
+  public static void AddRatio(FlatBufferBuilder builder, int Ratio) { builder.AddInt(8, Ratio, 0); }
+  public static void AddLobbyAniPath(FlatBufferBuilder builder, StringOffset LobbyAniPathOffset) { builder.AddOffset(9, LobbyAniPathOffset.Value, 0); }
+  public static void AddMovieCGPath(FlatBufferBuilder builder, StringOffset MovieCGPathOffset) { builder.AddOffset(10, MovieCGPathOffset.Value, 0); }
+  public static void AddLocalizeId(FlatBufferBuilder builder, uint LocalizeId) { builder.AddUint(11, LocalizeId, 0); }
   public static Offset<FlatDataGlobal.ScenarioResourceInfoExcel> EndScenarioResourceInfoExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ScenarioResourceInfoExcel>(o);

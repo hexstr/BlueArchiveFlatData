@@ -27,36 +27,44 @@ public struct TimeAttackDungeonSeasonManageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetStartDateBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetStartDateArray() { return __p.__vector_as_array<byte>(6); }
-  public string EndDate { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string EndNoteLabelStartDate { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetEndDateBytes() { return __p.__vector_as_span<byte>(8, 1); }
+  public Span<byte> GetEndNoteLabelStartDateBytes() { return __p.__vector_as_span<byte>(8, 1); }
 #else
-  public ArraySegment<byte>? GetEndDateBytes() { return __p.__vector_as_arraysegment(8); }
+  public ArraySegment<byte>? GetEndNoteLabelStartDateBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
-  public byte[] GetEndDateArray() { return __p.__vector_as_array<byte>(8); }
-  public long UISlot { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long DungeonId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long DifficultyGeas(int j) { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int DifficultyGeasLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetEndNoteLabelStartDateArray() { return __p.__vector_as_array<byte>(8); }
+  public string EndDate { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetDifficultyGeasBytes() { return __p.__vector_as_span<long>(14, 8); }
+  public Span<byte> GetEndDateBytes() { return __p.__vector_as_span<byte>(10, 1); }
 #else
-  public ArraySegment<byte>? GetDifficultyGeasBytes() { return __p.__vector_as_arraysegment(14); }
+  public ArraySegment<byte>? GetEndDateBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
-  public long[] GetDifficultyGeasArray() { return __p.__vector_as_array<long>(14); }
-  public long TimeAttackDungeonRewardId { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RoomLifeTimeInSeconds { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public byte[] GetEndDateArray() { return __p.__vector_as_array<byte>(10); }
+  public long UISlot { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DungeonId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DifficultyGeas(int j) { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int DifficultyGeasLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<long> GetDifficultyGeasBytes() { return __p.__vector_as_span<long>(16, 8); }
+#else
+  public ArraySegment<byte>? GetDifficultyGeasBytes() { return __p.__vector_as_arraysegment(16); }
+#endif
+  public long[] GetDifficultyGeasArray() { return __p.__vector_as_array<long>(16); }
+  public long TimeAttackDungeonRewardId { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RoomLifeTimeInSeconds { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.TimeAttackDungeonSeasonManageExcel> CreateTimeAttackDungeonSeasonManageExcel(FlatBufferBuilder builder,
       long Id = 0,
       StringOffset StartDateOffset = default(StringOffset),
+      StringOffset EndNoteLabelStartDateOffset = default(StringOffset),
       StringOffset EndDateOffset = default(StringOffset),
       long UISlot = 0,
       long DungeonId = 0,
       VectorOffset DifficultyGeasOffset = default(VectorOffset),
       long TimeAttackDungeonRewardId = 0,
       long RoomLifeTimeInSeconds = 0) {
-    builder.StartTable(8);
+    builder.StartTable(9);
     TimeAttackDungeonSeasonManageExcel.AddRoomLifeTimeInSeconds(builder, RoomLifeTimeInSeconds);
     TimeAttackDungeonSeasonManageExcel.AddTimeAttackDungeonRewardId(builder, TimeAttackDungeonRewardId);
     TimeAttackDungeonSeasonManageExcel.AddDungeonId(builder, DungeonId);
@@ -64,24 +72,26 @@ public struct TimeAttackDungeonSeasonManageExcel : IFlatbufferObject
     TimeAttackDungeonSeasonManageExcel.AddId(builder, Id);
     TimeAttackDungeonSeasonManageExcel.AddDifficultyGeas(builder, DifficultyGeasOffset);
     TimeAttackDungeonSeasonManageExcel.AddEndDate(builder, EndDateOffset);
+    TimeAttackDungeonSeasonManageExcel.AddEndNoteLabelStartDate(builder, EndNoteLabelStartDateOffset);
     TimeAttackDungeonSeasonManageExcel.AddStartDate(builder, StartDateOffset);
     return TimeAttackDungeonSeasonManageExcel.EndTimeAttackDungeonSeasonManageExcel(builder);
   }
 
-  public static void StartTimeAttackDungeonSeasonManageExcel(FlatBufferBuilder builder) { builder.StartTable(8); }
+  public static void StartTimeAttackDungeonSeasonManageExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddStartDate(FlatBufferBuilder builder, StringOffset StartDateOffset) { builder.AddOffset(1, StartDateOffset.Value, 0); }
-  public static void AddEndDate(FlatBufferBuilder builder, StringOffset EndDateOffset) { builder.AddOffset(2, EndDateOffset.Value, 0); }
-  public static void AddUISlot(FlatBufferBuilder builder, long UISlot) { builder.AddLong(3, UISlot, 0); }
-  public static void AddDungeonId(FlatBufferBuilder builder, long DungeonId) { builder.AddLong(4, DungeonId, 0); }
-  public static void AddDifficultyGeas(FlatBufferBuilder builder, VectorOffset DifficultyGeasOffset) { builder.AddOffset(5, DifficultyGeasOffset.Value, 0); }
+  public static void AddEndNoteLabelStartDate(FlatBufferBuilder builder, StringOffset EndNoteLabelStartDateOffset) { builder.AddOffset(2, EndNoteLabelStartDateOffset.Value, 0); }
+  public static void AddEndDate(FlatBufferBuilder builder, StringOffset EndDateOffset) { builder.AddOffset(3, EndDateOffset.Value, 0); }
+  public static void AddUISlot(FlatBufferBuilder builder, long UISlot) { builder.AddLong(4, UISlot, 0); }
+  public static void AddDungeonId(FlatBufferBuilder builder, long DungeonId) { builder.AddLong(5, DungeonId, 0); }
+  public static void AddDifficultyGeas(FlatBufferBuilder builder, VectorOffset DifficultyGeasOffset) { builder.AddOffset(6, DifficultyGeasOffset.Value, 0); }
   public static VectorOffset CreateDifficultyGeasVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateDifficultyGeasVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateDifficultyGeasVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateDifficultyGeasVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartDifficultyGeasVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddTimeAttackDungeonRewardId(FlatBufferBuilder builder, long TimeAttackDungeonRewardId) { builder.AddLong(6, TimeAttackDungeonRewardId, 0); }
-  public static void AddRoomLifeTimeInSeconds(FlatBufferBuilder builder, long RoomLifeTimeInSeconds) { builder.AddLong(7, RoomLifeTimeInSeconds, 0); }
+  public static void AddTimeAttackDungeonRewardId(FlatBufferBuilder builder, long TimeAttackDungeonRewardId) { builder.AddLong(7, TimeAttackDungeonRewardId, 0); }
+  public static void AddRoomLifeTimeInSeconds(FlatBufferBuilder builder, long RoomLifeTimeInSeconds) { builder.AddLong(8, RoomLifeTimeInSeconds, 0); }
   public static Offset<FlatDataGlobal.TimeAttackDungeonSeasonManageExcel> EndTimeAttackDungeonSeasonManageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.TimeAttackDungeonSeasonManageExcel>(o);

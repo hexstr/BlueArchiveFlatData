@@ -17,6 +17,7 @@ public enum FilterIcon : int
   Defense = 7,
   Range = 8,
   MemoryLobby = 9,
+  Obscuration = 10,
 };
 
 

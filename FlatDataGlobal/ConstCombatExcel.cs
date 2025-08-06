@@ -168,6 +168,8 @@ public struct ConstCombatExcel : IFlatbufferObject
   public int EchelonExtensionEchelonInitCommonCost { get { int o = __p.__offset(188); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long EchelonExtensionCostRegenRatio { get { int o = __p.__offset(190); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public int CheckCheaterMaxUseCostMultiFloorRaid { get { int o = __p.__offset(192); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public float ExcessiveTouchCheckTime { get { int o = __p.__offset(194); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public int ExcessiveTouchCheckCount { get { int o = __p.__offset(196); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.ConstCombatExcel> CreateConstCombatExcel(FlatBufferBuilder builder,
       int SkillHandCount = 0,
@@ -264,8 +266,10 @@ public struct ConstCombatExcel : IFlatbufferObject
       int EchelonExtensionEchelonMaxCommonCost = 0,
       int EchelonExtensionEchelonInitCommonCost = 0,
       long EchelonExtensionCostRegenRatio = 0,
-      int CheckCheaterMaxUseCostMultiFloorRaid = 0) {
-    builder.StartTable(95);
+      int CheckCheaterMaxUseCostMultiFloorRaid = 0,
+      float ExcessiveTouchCheckTime = 0.0f,
+      int ExcessiveTouchCheckCount = 0) {
+    builder.StartTable(97);
     ConstCombatExcel.AddEchelonExtensionCostRegenRatio(builder, EchelonExtensionCostRegenRatio);
     ConstCombatExcel.AddVictoryInteractionRate(builder, VictoryInteractionRate);
     ConstCombatExcel.AddTSAInteractionDamageFactor(builder, TSAInteractionDamageFactor);
@@ -324,6 +328,8 @@ public struct ConstCombatExcel : IFlatbufferObject
     ConstCombatExcel.AddTimeLimitAlarm(builder, TimeLimitAlarm);
     ConstCombatExcel.AddMaxRaidBossSkillSlot(builder, MaxRaidBossSkillSlot);
     ConstCombatExcel.AddMaxRaidTicketCount(builder, MaxRaidTicketCount);
+    ConstCombatExcel.AddExcessiveTouchCheckCount(builder, ExcessiveTouchCheckCount);
+    ConstCombatExcel.AddExcessiveTouchCheckTime(builder, ExcessiveTouchCheckTime);
     ConstCombatExcel.AddCheckCheaterMaxUseCostMultiFloorRaid(builder, CheckCheaterMaxUseCostMultiFloorRaid);
     ConstCombatExcel.AddEchelonExtensionEchelonInitCommonCost(builder, EchelonExtensionEchelonInitCommonCost);
     ConstCombatExcel.AddEchelonExtensionEchelonMaxCommonCost(builder, EchelonExtensionEchelonMaxCommonCost);
@@ -364,7 +370,7 @@ public struct ConstCombatExcel : IFlatbufferObject
     return ConstCombatExcel.EndConstCombatExcel(builder);
   }
 
-  public static void StartConstCombatExcel(FlatBufferBuilder builder) { builder.StartTable(95); }
+  public static void StartConstCombatExcel(FlatBufferBuilder builder) { builder.StartTable(97); }
   public static void AddSkillHandCount(FlatBufferBuilder builder, int SkillHandCount) { builder.AddInt(0, SkillHandCount, 0); }
   public static void AddDyingTime(FlatBufferBuilder builder, int DyingTime) { builder.AddInt(1, DyingTime, 0); }
   public static void AddBuffIconBlinkTime(FlatBufferBuilder builder, int BuffIconBlinkTime) { builder.AddInt(2, BuffIconBlinkTime, 0); }
@@ -460,6 +466,8 @@ public struct ConstCombatExcel : IFlatbufferObject
   public static void AddEchelonExtensionEchelonInitCommonCost(FlatBufferBuilder builder, int EchelonExtensionEchelonInitCommonCost) { builder.AddInt(92, EchelonExtensionEchelonInitCommonCost, 0); }
   public static void AddEchelonExtensionCostRegenRatio(FlatBufferBuilder builder, long EchelonExtensionCostRegenRatio) { builder.AddLong(93, EchelonExtensionCostRegenRatio, 0); }
   public static void AddCheckCheaterMaxUseCostMultiFloorRaid(FlatBufferBuilder builder, int CheckCheaterMaxUseCostMultiFloorRaid) { builder.AddInt(94, CheckCheaterMaxUseCostMultiFloorRaid, 0); }
+  public static void AddExcessiveTouchCheckTime(FlatBufferBuilder builder, float ExcessiveTouchCheckTime) { builder.AddFloat(95, ExcessiveTouchCheckTime, 0.0f); }
+  public static void AddExcessiveTouchCheckCount(FlatBufferBuilder builder, int ExcessiveTouchCheckCount) { builder.AddInt(96, ExcessiveTouchCheckCount, 0); }
   public static Offset<FlatDataGlobal.ConstCombatExcel> EndConstCombatExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstCombatExcel>(o);

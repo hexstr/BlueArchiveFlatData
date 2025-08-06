@@ -112,21 +112,22 @@ public struct CharacterExcel : IFlatbufferObject
   public bool CanFix { get { int o = __p.__offset(110); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool CanCrowdControl { get { int o = __p.__offset(112); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool CanBattleItemMove { get { int o = __p.__offset(114); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool IsAirUnit { get { int o = __p.__offset(116); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long AirUnitHeight { get { int o = __p.__offset(118); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.Tag Tags(int j) { int o = __p.__offset(120); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Tag)0; }
-  public int TagsLength { get { int o = __p.__offset(120); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public bool IgnoreObstacle { get { int o = __p.__offset(116); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool IsAirUnit { get { int o = __p.__offset(118); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long AirUnitHeight { get { int o = __p.__offset(120); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.Tag Tags(int j) { int o = __p.__offset(122); return o != 0 ? (FlatDataGlobal.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.Tag)0; }
+  public int TagsLength { get { int o = __p.__offset(122); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.Tag> GetTagsBytes() { return __p.__vector_as_span<FlatDataGlobal.Tag>(120, 4); }
+  public Span<FlatDataGlobal.Tag> GetTagsBytes() { return __p.__vector_as_span<FlatDataGlobal.Tag>(122, 4); }
 #else
-  public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(120); }
+  public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(122); }
 #endif
-  public FlatDataGlobal.Tag[] GetTagsArray() { int o = __p.__offset(120); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Tag[] a = new FlatDataGlobal.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Tag)__p.bb.GetInt(p + i * 4); } return a; }
-  public long SecretStoneItemId { get { int o = __p.__offset(122); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int SecretStoneItemAmount { get { int o = __p.__offset(124); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long CharacterPieceItemId { get { int o = __p.__offset(126); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int CharacterPieceItemAmount { get { int o = __p.__offset(128); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long CombineRecipeId { get { int o = __p.__offset(130); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.Tag[] GetTagsArray() { int o = __p.__offset(122); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.Tag[] a = new FlatDataGlobal.Tag[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.Tag)__p.bb.GetInt(p + i * 4); } return a; }
+  public long SecretStoneItemId { get { int o = __p.__offset(124); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int SecretStoneItemAmount { get { int o = __p.__offset(126); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long CharacterPieceItemId { get { int o = __p.__offset(128); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int CharacterPieceItemAmount { get { int o = __p.__offset(130); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long CombineRecipeId { get { int o = __p.__offset(132); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.CharacterExcel> CreateCharacterExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -185,6 +186,7 @@ public struct CharacterExcel : IFlatbufferObject
       bool CanFix = false,
       bool CanCrowdControl = false,
       bool CanBattleItemMove = false,
+      bool IgnoreObstacle = false,
       bool IsAirUnit = false,
       long AirUnitHeight = 0,
       VectorOffset TagsOffset = default(VectorOffset),
@@ -193,7 +195,7 @@ public struct CharacterExcel : IFlatbufferObject
       long CharacterPieceItemId = 0,
       int CharacterPieceItemAmount = 0,
       long CombineRecipeId = 0) {
-    builder.StartTable(64);
+    builder.StartTable(65);
     CharacterExcel.AddCombineRecipeId(builder, CombineRecipeId);
     CharacterExcel.AddCharacterPieceItemId(builder, CharacterPieceItemId);
     CharacterExcel.AddSecretStoneItemId(builder, SecretStoneItemId);
@@ -245,6 +247,7 @@ public struct CharacterExcel : IFlatbufferObject
     CharacterExcel.AddProductionStep(builder, productionStep);
     CharacterExcel.AddDevName(builder, DevNameOffset);
     CharacterExcel.AddIsAirUnit(builder, IsAirUnit);
+    CharacterExcel.AddIgnoreObstacle(builder, IgnoreObstacle);
     CharacterExcel.AddCanBattleItemMove(builder, CanBattleItemMove);
     CharacterExcel.AddCanCrowdControl(builder, CanCrowdControl);
     CharacterExcel.AddCanFix(builder, CanFix);
@@ -261,7 +264,7 @@ public struct CharacterExcel : IFlatbufferObject
     return CharacterExcel.EndCharacterExcel(builder);
   }
 
-  public static void StartCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(64); }
+  public static void StartCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(65); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddDevName(FlatBufferBuilder builder, StringOffset DevNameOffset) { builder.AddOffset(1, DevNameOffset.Value, 0); }
   public static void AddCostumeGroupId(FlatBufferBuilder builder, long CostumeGroupId) { builder.AddLong(2, CostumeGroupId, 0); }
@@ -323,19 +326,20 @@ public struct CharacterExcel : IFlatbufferObject
   public static void AddCanFix(FlatBufferBuilder builder, bool CanFix) { builder.AddBool(53, CanFix, false); }
   public static void AddCanCrowdControl(FlatBufferBuilder builder, bool CanCrowdControl) { builder.AddBool(54, CanCrowdControl, false); }
   public static void AddCanBattleItemMove(FlatBufferBuilder builder, bool CanBattleItemMove) { builder.AddBool(55, CanBattleItemMove, false); }
-  public static void AddIsAirUnit(FlatBufferBuilder builder, bool IsAirUnit) { builder.AddBool(56, IsAirUnit, false); }
-  public static void AddAirUnitHeight(FlatBufferBuilder builder, long AirUnitHeight) { builder.AddLong(57, AirUnitHeight, 0); }
-  public static void AddTags(FlatBufferBuilder builder, VectorOffset TagsOffset) { builder.AddOffset(58, TagsOffset.Value, 0); }
+  public static void AddIgnoreObstacle(FlatBufferBuilder builder, bool IgnoreObstacle) { builder.AddBool(56, IgnoreObstacle, false); }
+  public static void AddIsAirUnit(FlatBufferBuilder builder, bool IsAirUnit) { builder.AddBool(57, IsAirUnit, false); }
+  public static void AddAirUnitHeight(FlatBufferBuilder builder, long AirUnitHeight) { builder.AddLong(58, AirUnitHeight, 0); }
+  public static void AddTags(FlatBufferBuilder builder, VectorOffset TagsOffset) { builder.AddOffset(59, TagsOffset.Value, 0); }
   public static VectorOffset CreateTagsVector(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartTagsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSecretStoneItemId(FlatBufferBuilder builder, long SecretStoneItemId) { builder.AddLong(59, SecretStoneItemId, 0); }
-  public static void AddSecretStoneItemAmount(FlatBufferBuilder builder, int SecretStoneItemAmount) { builder.AddInt(60, SecretStoneItemAmount, 0); }
-  public static void AddCharacterPieceItemId(FlatBufferBuilder builder, long CharacterPieceItemId) { builder.AddLong(61, CharacterPieceItemId, 0); }
-  public static void AddCharacterPieceItemAmount(FlatBufferBuilder builder, int CharacterPieceItemAmount) { builder.AddInt(62, CharacterPieceItemAmount, 0); }
-  public static void AddCombineRecipeId(FlatBufferBuilder builder, long CombineRecipeId) { builder.AddLong(63, CombineRecipeId, 0); }
+  public static void AddSecretStoneItemId(FlatBufferBuilder builder, long SecretStoneItemId) { builder.AddLong(60, SecretStoneItemId, 0); }
+  public static void AddSecretStoneItemAmount(FlatBufferBuilder builder, int SecretStoneItemAmount) { builder.AddInt(61, SecretStoneItemAmount, 0); }
+  public static void AddCharacterPieceItemId(FlatBufferBuilder builder, long CharacterPieceItemId) { builder.AddLong(62, CharacterPieceItemId, 0); }
+  public static void AddCharacterPieceItemAmount(FlatBufferBuilder builder, int CharacterPieceItemAmount) { builder.AddInt(63, CharacterPieceItemAmount, 0); }
+  public static void AddCombineRecipeId(FlatBufferBuilder builder, long CombineRecipeId) { builder.AddLong(64, CombineRecipeId, 0); }
   public static Offset<FlatDataGlobal.CharacterExcel> EndCharacterExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CharacterExcel>(o);

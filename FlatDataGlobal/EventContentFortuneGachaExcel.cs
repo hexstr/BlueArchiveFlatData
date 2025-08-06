@@ -21,29 +21,39 @@ public struct EventContentFortuneGachaExcel : IFlatbufferObject
 
   public int FortuneGachaGroupId { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public uint LocalizeEtcId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public string IconPath { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string NameImagePath { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIconPathBytes() { return __p.__vector_as_span<byte>(8, 1); }
+  public Span<byte> GetNameImagePathBytes() { return __p.__vector_as_span<byte>(8, 1); }
 #else
-  public ArraySegment<byte>? GetIconPathBytes() { return __p.__vector_as_arraysegment(8); }
+  public ArraySegment<byte>? GetNameImagePathBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
-  public byte[] GetIconPathArray() { return __p.__vector_as_array<byte>(8); }
+  public byte[] GetNameImagePathArray() { return __p.__vector_as_array<byte>(8); }
+  public string IconPath { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetIconPathBytes() { return __p.__vector_as_span<byte>(10, 1); }
+#else
+  public ArraySegment<byte>? GetIconPathBytes() { return __p.__vector_as_arraysegment(10); }
+#endif
+  public byte[] GetIconPathArray() { return __p.__vector_as_array<byte>(10); }
 
   public static Offset<FlatDataGlobal.EventContentFortuneGachaExcel> CreateEventContentFortuneGachaExcel(FlatBufferBuilder builder,
       int FortuneGachaGroupId = 0,
       uint LocalizeEtcId = 0,
+      StringOffset NameImagePathOffset = default(StringOffset),
       StringOffset IconPathOffset = default(StringOffset)) {
-    builder.StartTable(3);
+    builder.StartTable(4);
     EventContentFortuneGachaExcel.AddIconPath(builder, IconPathOffset);
+    EventContentFortuneGachaExcel.AddNameImagePath(builder, NameImagePathOffset);
     EventContentFortuneGachaExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
     EventContentFortuneGachaExcel.AddFortuneGachaGroupId(builder, FortuneGachaGroupId);
     return EventContentFortuneGachaExcel.EndEventContentFortuneGachaExcel(builder);
   }
 
-  public static void StartEventContentFortuneGachaExcel(FlatBufferBuilder builder) { builder.StartTable(3); }
+  public static void StartEventContentFortuneGachaExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
   public static void AddFortuneGachaGroupId(FlatBufferBuilder builder, int FortuneGachaGroupId) { builder.AddInt(0, FortuneGachaGroupId, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(1, LocalizeEtcId, 0); }
-  public static void AddIconPath(FlatBufferBuilder builder, StringOffset IconPathOffset) { builder.AddOffset(2, IconPathOffset.Value, 0); }
+  public static void AddNameImagePath(FlatBufferBuilder builder, StringOffset NameImagePathOffset) { builder.AddOffset(2, NameImagePathOffset.Value, 0); }
+  public static void AddIconPath(FlatBufferBuilder builder, StringOffset IconPathOffset) { builder.AddOffset(3, IconPathOffset.Value, 0); }
   public static Offset<FlatDataGlobal.EventContentFortuneGachaExcel> EndEventContentFortuneGachaExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentFortuneGachaExcel>(o);

@@ -179,6 +179,9 @@ public enum MissionCompleteConditionType : int
   Reset_JoinMultiFloorRaidCount = 169,
   Reset_GivePresentCharacterCount = 170,
   Reset_CharacterInviteCount = 171,
+  Reset_RoadpuzzleTileCount = 172,
+  Reset_ClearSpecificRoundRoadpuzzle = 173,
+  Reset_ClearCountRoadpuzzle = 174,
 };
 
 
