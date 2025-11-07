@@ -39,53 +39,62 @@ public struct ShopInfoExcel : IFlatbufferObject
 #endif
   public long[] GetCostParcelIdArray() { return __p.__vector_as_array<long>(12); }
   public long AutoRefreshCoolTime { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RefreshAbleCount { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long GoodsId(int j) { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int GoodsIdLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.ShopRefresherType ShopRefresherType { get { int o = __p.__offset(16); return o != 0 ? (FlatDataGlobal.ShopRefresherType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ShopRefresherType.None; } }
+  public FlatDataGlobal.ShopRefreshPeriodType ShopRefreshPeriodType { get { int o = __p.__offset(18); return o != 0 ? (FlatDataGlobal.ShopRefreshPeriodType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ShopRefreshPeriodType.None; } }
+  public long RefreshAbleCount { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long GoodsId(int j) { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int GoodsIdLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetGoodsIdBytes() { return __p.__vector_as_span<long>(18, 8); }
+  public Span<long> GetGoodsIdBytes() { return __p.__vector_as_span<long>(22, 8); }
 #else
-  public ArraySegment<byte>? GetGoodsIdBytes() { return __p.__vector_as_arraysegment(18); }
+  public ArraySegment<byte>? GetGoodsIdBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public long[] GetGoodsIdArray() { return __p.__vector_as_array<long>(18); }
-  public string OpenPeriodFrom { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long[] GetGoodsIdArray() { return __p.__vector_as_array<long>(22); }
+  public string OpenPeriodFrom { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetOpenPeriodFromBytes() { return __p.__vector_as_span<byte>(20, 1); }
+  public Span<byte> GetOpenPeriodFromBytes() { return __p.__vector_as_span<byte>(24, 1); }
 #else
-  public ArraySegment<byte>? GetOpenPeriodFromBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetOpenPeriodFromBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
-  public byte[] GetOpenPeriodFromArray() { return __p.__vector_as_array<byte>(20); }
-  public string OpenPeriodTo { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetOpenPeriodFromArray() { return __p.__vector_as_array<byte>(24); }
+  public string OpenPeriodTo { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetOpenPeriodToBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetOpenPeriodToBytes() { return __p.__vector_as_span<byte>(26, 1); }
 #else
-  public ArraySegment<byte>? GetOpenPeriodToBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetOpenPeriodToBytes() { return __p.__vector_as_arraysegment(26); }
 #endif
-  public byte[] GetOpenPeriodToArray() { return __p.__vector_as_array<byte>(22); }
-  public string ShopProductUpdateTime { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetOpenPeriodToArray() { return __p.__vector_as_array<byte>(26); }
+  public string RefreshPeriodBaseTime { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetShopProductUpdateTimeBytes() { return __p.__vector_as_span<byte>(24, 1); }
+  public Span<byte> GetRefreshPeriodBaseTimeBytes() { return __p.__vector_as_span<byte>(28, 1); }
 #else
-  public ArraySegment<byte>? GetShopProductUpdateTimeBytes() { return __p.__vector_as_arraysegment(24); }
+  public ArraySegment<byte>? GetRefreshPeriodBaseTimeBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
-  public byte[] GetShopProductUpdateTimeArray() { return __p.__vector_as_array<byte>(24); }
-  public FlatDataGlobal.ParcelType DisplayParcelType { get { int o = __p.__offset(26); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
-  public long DisplayParcelId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool IsShopVisible { get { int o = __p.__offset(30); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public int DisplayOrder { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateDate { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateGroupId1 { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateGroupId2 { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateGroupId3 { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateGroupId4 { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateGroupId5 { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateGroupId6 { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateGroupId7 { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateGroupId8 { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateGroupId9 { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateGroupId10 { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateGroupId11 { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public int ShopUpdateGroupId12 { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public byte[] GetRefreshPeriodBaseTimeArray() { return __p.__vector_as_array<byte>(28); }
+  public string ShopProductUpdateTime { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetShopProductUpdateTimeBytes() { return __p.__vector_as_span<byte>(30, 1); }
+#else
+  public ArraySegment<byte>? GetShopProductUpdateTimeBytes() { return __p.__vector_as_arraysegment(30); }
+#endif
+  public byte[] GetShopProductUpdateTimeArray() { return __p.__vector_as_array<byte>(30); }
+  public FlatDataGlobal.ParcelType DisplayParcelType { get { int o = __p.__offset(32); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public long DisplayParcelId { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool IsShopVisible { get { int o = __p.__offset(36); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public int DisplayOrder { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateDate { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateGroupId1 { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateGroupId2 { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateGroupId3 { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateGroupId4 { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateGroupId5 { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateGroupId6 { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateGroupId7 { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateGroupId8 { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateGroupId9 { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateGroupId10 { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateGroupId11 { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int ShopUpdateGroupId12 { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
   public static Offset<FlatDataGlobal.ShopInfoExcel> CreateShopInfoExcel(FlatBufferBuilder builder,
       FlatDataGlobal.ShopCategoryType CategoryType = FlatDataGlobal.ShopCategoryType.General,
@@ -94,10 +103,13 @@ public struct ShopInfoExcel : IFlatbufferObject
       VectorOffset CostParcelTypeOffset = default(VectorOffset),
       VectorOffset CostParcelIdOffset = default(VectorOffset),
       long AutoRefreshCoolTime = 0,
+      FlatDataGlobal.ShopRefresherType shopRefresherType = FlatDataGlobal.ShopRefresherType.None,
+      FlatDataGlobal.ShopRefreshPeriodType shopRefreshPeriodType = FlatDataGlobal.ShopRefreshPeriodType.None,
       long RefreshAbleCount = 0,
       VectorOffset GoodsIdOffset = default(VectorOffset),
       StringOffset OpenPeriodFromOffset = default(StringOffset),
       StringOffset OpenPeriodToOffset = default(StringOffset),
+      StringOffset RefreshPeriodBaseTimeOffset = default(StringOffset),
       StringOffset ShopProductUpdateTimeOffset = default(StringOffset),
       FlatDataGlobal.ParcelType DisplayParcelType = FlatDataGlobal.ParcelType.None,
       long DisplayParcelId = 0,
@@ -116,7 +128,7 @@ public struct ShopInfoExcel : IFlatbufferObject
       int ShopUpdateGroupId10 = 0,
       int ShopUpdateGroupId11 = 0,
       int ShopUpdateGroupId12 = 0) {
-    builder.StartTable(28);
+    builder.StartTable(31);
     ShopInfoExcel.AddDisplayParcelId(builder, DisplayParcelId);
     ShopInfoExcel.AddRefreshAbleCount(builder, RefreshAbleCount);
     ShopInfoExcel.AddAutoRefreshCoolTime(builder, AutoRefreshCoolTime);
@@ -136,9 +148,12 @@ public struct ShopInfoExcel : IFlatbufferObject
     ShopInfoExcel.AddDisplayOrder(builder, DisplayOrder);
     ShopInfoExcel.AddDisplayParcelType(builder, DisplayParcelType);
     ShopInfoExcel.AddShopProductUpdateTime(builder, ShopProductUpdateTimeOffset);
+    ShopInfoExcel.AddRefreshPeriodBaseTime(builder, RefreshPeriodBaseTimeOffset);
     ShopInfoExcel.AddOpenPeriodTo(builder, OpenPeriodToOffset);
     ShopInfoExcel.AddOpenPeriodFrom(builder, OpenPeriodFromOffset);
     ShopInfoExcel.AddGoodsId(builder, GoodsIdOffset);
+    ShopInfoExcel.AddShopRefreshPeriodType(builder, shopRefreshPeriodType);
+    ShopInfoExcel.AddShopRefresherType(builder, shopRefresherType);
     ShopInfoExcel.AddCostParcelId(builder, CostParcelIdOffset);
     ShopInfoExcel.AddCostParcelType(builder, CostParcelTypeOffset);
     ShopInfoExcel.AddCategoryType(builder, CategoryType);
@@ -148,7 +163,7 @@ public struct ShopInfoExcel : IFlatbufferObject
     return ShopInfoExcel.EndShopInfoExcel(builder);
   }
 
-  public static void StartShopInfoExcel(FlatBufferBuilder builder) { builder.StartTable(28); }
+  public static void StartShopInfoExcel(FlatBufferBuilder builder) { builder.StartTable(31); }
   public static void AddCategoryType(FlatBufferBuilder builder, FlatDataGlobal.ShopCategoryType CategoryType) { builder.AddInt(0, (int)CategoryType, 0); }
   public static void AddIsRefresh(FlatBufferBuilder builder, bool IsRefresh) { builder.AddBool(1, IsRefresh, false); }
   public static void AddIsSoldOutDimmed(FlatBufferBuilder builder, bool IsSoldOutDimmed) { builder.AddBool(2, IsSoldOutDimmed, false); }
@@ -165,33 +180,36 @@ public struct ShopInfoExcel : IFlatbufferObject
   public static VectorOffset CreateCostParcelIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCostParcelIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
   public static void AddAutoRefreshCoolTime(FlatBufferBuilder builder, long AutoRefreshCoolTime) { builder.AddLong(5, AutoRefreshCoolTime, 0); }
-  public static void AddRefreshAbleCount(FlatBufferBuilder builder, long RefreshAbleCount) { builder.AddLong(6, RefreshAbleCount, 0); }
-  public static void AddGoodsId(FlatBufferBuilder builder, VectorOffset GoodsIdOffset) { builder.AddOffset(7, GoodsIdOffset.Value, 0); }
+  public static void AddShopRefresherType(FlatBufferBuilder builder, FlatDataGlobal.ShopRefresherType shopRefresherType) { builder.AddInt(6, (int)shopRefresherType, 0); }
+  public static void AddShopRefreshPeriodType(FlatBufferBuilder builder, FlatDataGlobal.ShopRefreshPeriodType shopRefreshPeriodType) { builder.AddInt(7, (int)shopRefreshPeriodType, 0); }
+  public static void AddRefreshAbleCount(FlatBufferBuilder builder, long RefreshAbleCount) { builder.AddLong(8, RefreshAbleCount, 0); }
+  public static void AddGoodsId(FlatBufferBuilder builder, VectorOffset GoodsIdOffset) { builder.AddOffset(9, GoodsIdOffset.Value, 0); }
   public static VectorOffset CreateGoodsIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateGoodsIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateGoodsIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateGoodsIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartGoodsIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddOpenPeriodFrom(FlatBufferBuilder builder, StringOffset OpenPeriodFromOffset) { builder.AddOffset(8, OpenPeriodFromOffset.Value, 0); }
-  public static void AddOpenPeriodTo(FlatBufferBuilder builder, StringOffset OpenPeriodToOffset) { builder.AddOffset(9, OpenPeriodToOffset.Value, 0); }
-  public static void AddShopProductUpdateTime(FlatBufferBuilder builder, StringOffset ShopProductUpdateTimeOffset) { builder.AddOffset(10, ShopProductUpdateTimeOffset.Value, 0); }
-  public static void AddDisplayParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType DisplayParcelType) { builder.AddInt(11, (int)DisplayParcelType, 0); }
-  public static void AddDisplayParcelId(FlatBufferBuilder builder, long DisplayParcelId) { builder.AddLong(12, DisplayParcelId, 0); }
-  public static void AddIsShopVisible(FlatBufferBuilder builder, bool IsShopVisible) { builder.AddBool(13, IsShopVisible, false); }
-  public static void AddDisplayOrder(FlatBufferBuilder builder, int DisplayOrder) { builder.AddInt(14, DisplayOrder, 0); }
-  public static void AddShopUpdateDate(FlatBufferBuilder builder, int ShopUpdateDate) { builder.AddInt(15, ShopUpdateDate, 0); }
-  public static void AddShopUpdateGroupId1(FlatBufferBuilder builder, int ShopUpdateGroupId1) { builder.AddInt(16, ShopUpdateGroupId1, 0); }
-  public static void AddShopUpdateGroupId2(FlatBufferBuilder builder, int ShopUpdateGroupId2) { builder.AddInt(17, ShopUpdateGroupId2, 0); }
-  public static void AddShopUpdateGroupId3(FlatBufferBuilder builder, int ShopUpdateGroupId3) { builder.AddInt(18, ShopUpdateGroupId3, 0); }
-  public static void AddShopUpdateGroupId4(FlatBufferBuilder builder, int ShopUpdateGroupId4) { builder.AddInt(19, ShopUpdateGroupId4, 0); }
-  public static void AddShopUpdateGroupId5(FlatBufferBuilder builder, int ShopUpdateGroupId5) { builder.AddInt(20, ShopUpdateGroupId5, 0); }
-  public static void AddShopUpdateGroupId6(FlatBufferBuilder builder, int ShopUpdateGroupId6) { builder.AddInt(21, ShopUpdateGroupId6, 0); }
-  public static void AddShopUpdateGroupId7(FlatBufferBuilder builder, int ShopUpdateGroupId7) { builder.AddInt(22, ShopUpdateGroupId7, 0); }
-  public static void AddShopUpdateGroupId8(FlatBufferBuilder builder, int ShopUpdateGroupId8) { builder.AddInt(23, ShopUpdateGroupId8, 0); }
-  public static void AddShopUpdateGroupId9(FlatBufferBuilder builder, int ShopUpdateGroupId9) { builder.AddInt(24, ShopUpdateGroupId9, 0); }
-  public static void AddShopUpdateGroupId10(FlatBufferBuilder builder, int ShopUpdateGroupId10) { builder.AddInt(25, ShopUpdateGroupId10, 0); }
-  public static void AddShopUpdateGroupId11(FlatBufferBuilder builder, int ShopUpdateGroupId11) { builder.AddInt(26, ShopUpdateGroupId11, 0); }
-  public static void AddShopUpdateGroupId12(FlatBufferBuilder builder, int ShopUpdateGroupId12) { builder.AddInt(27, ShopUpdateGroupId12, 0); }
+  public static void AddOpenPeriodFrom(FlatBufferBuilder builder, StringOffset OpenPeriodFromOffset) { builder.AddOffset(10, OpenPeriodFromOffset.Value, 0); }
+  public static void AddOpenPeriodTo(FlatBufferBuilder builder, StringOffset OpenPeriodToOffset) { builder.AddOffset(11, OpenPeriodToOffset.Value, 0); }
+  public static void AddRefreshPeriodBaseTime(FlatBufferBuilder builder, StringOffset RefreshPeriodBaseTimeOffset) { builder.AddOffset(12, RefreshPeriodBaseTimeOffset.Value, 0); }
+  public static void AddShopProductUpdateTime(FlatBufferBuilder builder, StringOffset ShopProductUpdateTimeOffset) { builder.AddOffset(13, ShopProductUpdateTimeOffset.Value, 0); }
+  public static void AddDisplayParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType DisplayParcelType) { builder.AddInt(14, (int)DisplayParcelType, 0); }
+  public static void AddDisplayParcelId(FlatBufferBuilder builder, long DisplayParcelId) { builder.AddLong(15, DisplayParcelId, 0); }
+  public static void AddIsShopVisible(FlatBufferBuilder builder, bool IsShopVisible) { builder.AddBool(16, IsShopVisible, false); }
+  public static void AddDisplayOrder(FlatBufferBuilder builder, int DisplayOrder) { builder.AddInt(17, DisplayOrder, 0); }
+  public static void AddShopUpdateDate(FlatBufferBuilder builder, int ShopUpdateDate) { builder.AddInt(18, ShopUpdateDate, 0); }
+  public static void AddShopUpdateGroupId1(FlatBufferBuilder builder, int ShopUpdateGroupId1) { builder.AddInt(19, ShopUpdateGroupId1, 0); }
+  public static void AddShopUpdateGroupId2(FlatBufferBuilder builder, int ShopUpdateGroupId2) { builder.AddInt(20, ShopUpdateGroupId2, 0); }
+  public static void AddShopUpdateGroupId3(FlatBufferBuilder builder, int ShopUpdateGroupId3) { builder.AddInt(21, ShopUpdateGroupId3, 0); }
+  public static void AddShopUpdateGroupId4(FlatBufferBuilder builder, int ShopUpdateGroupId4) { builder.AddInt(22, ShopUpdateGroupId4, 0); }
+  public static void AddShopUpdateGroupId5(FlatBufferBuilder builder, int ShopUpdateGroupId5) { builder.AddInt(23, ShopUpdateGroupId5, 0); }
+  public static void AddShopUpdateGroupId6(FlatBufferBuilder builder, int ShopUpdateGroupId6) { builder.AddInt(24, ShopUpdateGroupId6, 0); }
+  public static void AddShopUpdateGroupId7(FlatBufferBuilder builder, int ShopUpdateGroupId7) { builder.AddInt(25, ShopUpdateGroupId7, 0); }
+  public static void AddShopUpdateGroupId8(FlatBufferBuilder builder, int ShopUpdateGroupId8) { builder.AddInt(26, ShopUpdateGroupId8, 0); }
+  public static void AddShopUpdateGroupId9(FlatBufferBuilder builder, int ShopUpdateGroupId9) { builder.AddInt(27, ShopUpdateGroupId9, 0); }
+  public static void AddShopUpdateGroupId10(FlatBufferBuilder builder, int ShopUpdateGroupId10) { builder.AddInt(28, ShopUpdateGroupId10, 0); }
+  public static void AddShopUpdateGroupId11(FlatBufferBuilder builder, int ShopUpdateGroupId11) { builder.AddInt(29, ShopUpdateGroupId11, 0); }
+  public static void AddShopUpdateGroupId12(FlatBufferBuilder builder, int ShopUpdateGroupId12) { builder.AddInt(30, ShopUpdateGroupId12, 0); }
   public static Offset<FlatDataGlobal.ShopInfoExcel> EndShopInfoExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ShopInfoExcel>(o);

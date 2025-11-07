@@ -115,6 +115,7 @@ public struct FurnitureExcel : IFlatbufferObject
   public int CafeCharacterStateMakeLength { get { int o = __p.__offset(84); return o != 0 ? __p.__vector_len(o) : 0; } }
   public string CafeCharacterStateOnly(int j) { int o = __p.__offset(86); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
   public int CafeCharacterStateOnlyLength { get { int o = __p.__offset(86); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public bool HideCraftShortcut { get { int o = __p.__offset(88); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
 
   public static Offset<FlatDataGlobal.FurnitureExcel> CreateFurnitureExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -158,8 +159,9 @@ public struct FurnitureExcel : IFlatbufferObject
       VectorOffset CafeCharacterStateReqOffset = default(VectorOffset),
       VectorOffset CafeCharacterStateAddOffset = default(VectorOffset),
       VectorOffset CafeCharacterStateMakeOffset = default(VectorOffset),
-      VectorOffset CafeCharacterStateOnlyOffset = default(VectorOffset)) {
-    builder.StartTable(42);
+      VectorOffset CafeCharacterStateOnlyOffset = default(VectorOffset),
+      bool HideCraftShortcut = false) {
+    builder.StartTable(43);
     FurnitureExcel.AddFurnitureBubbleOffsetY(builder, FurnitureBubbleOffsetY);
     FurnitureExcel.AddFurnitureBubbleOffsetX(builder, FurnitureBubbleOffsetX);
     FurnitureExcel.AddEventCollectionId(builder, EventCollectionId);
@@ -199,13 +201,14 @@ public struct FurnitureExcel : IFlatbufferObject
     FurnitureExcel.AddCategory(builder, Category);
     FurnitureExcel.AddRarity(builder, rarity);
     FurnitureExcel.AddProductionStep(builder, productionStep);
+    FurnitureExcel.AddHideCraftShortcut(builder, HideCraftShortcut);
     FurnitureExcel.AddReverseRotation(builder, ReverseRotation);
     FurnitureExcel.AddEnable(builder, Enable);
     FurnitureExcel.AddCheckFloorDecoration(builder, CheckFloorDecoration);
     return FurnitureExcel.EndFurnitureExcel(builder);
   }
 
-  public static void StartFurnitureExcel(FlatBufferBuilder builder) { builder.StartTable(42); }
+  public static void StartFurnitureExcel(FlatBufferBuilder builder) { builder.StartTable(43); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddProductionStep(FlatBufferBuilder builder, FlatDataGlobal.ProductionStep productionStep) { builder.AddInt(1, (int)productionStep, 0); }
   public static void AddRarity(FlatBufferBuilder builder, FlatDataGlobal.Rarity rarity) { builder.AddInt(2, (int)rarity, 0); }
@@ -278,6 +281,7 @@ public struct FurnitureExcel : IFlatbufferObject
   public static VectorOffset CreateCafeCharacterStateOnlyVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateCafeCharacterStateOnlyVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartCafeCharacterStateOnlyVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddHideCraftShortcut(FlatBufferBuilder builder, bool HideCraftShortcut) { builder.AddBool(42, HideCraftShortcut, false); }
   public static Offset<FlatDataGlobal.FurnitureExcel> EndFurnitureExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.FurnitureExcel>(o);

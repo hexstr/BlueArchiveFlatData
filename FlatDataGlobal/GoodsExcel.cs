@@ -61,8 +61,22 @@ public struct GoodsExcel : IFlatbufferObject
   public ArraySegment<byte>? GetConsumeConditionBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
   public FlatDataGlobal.ConsumeCondition[] GetConsumeConditionArray() { int o = __p.__offset(18); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ConsumeCondition[] a = new FlatDataGlobal.ConsumeCondition[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ConsumeCondition)__p.bb.GetInt(p + i * 4); } return a; }
-  public FlatDataGlobal.GachaTicketType ConsumeGachaTicketType { get { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.GachaTicketType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.GachaTicketType.None; } }
-  public long ConsumeGachaTicketTypeAmount { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.GachaTicketType ConsumeGachaTicketType(int j) { int o = __p.__offset(20); return o != 0 ? (FlatDataGlobal.GachaTicketType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.GachaTicketType)0; }
+  public int ConsumeGachaTicketTypeLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<FlatDataGlobal.GachaTicketType> GetConsumeGachaTicketTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.GachaTicketType>(20, 4); }
+#else
+  public ArraySegment<byte>? GetConsumeGachaTicketTypeBytes() { return __p.__vector_as_arraysegment(20); }
+#endif
+  public FlatDataGlobal.GachaTicketType[] GetConsumeGachaTicketTypeArray() { int o = __p.__offset(20); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.GachaTicketType[] a = new FlatDataGlobal.GachaTicketType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.GachaTicketType)__p.bb.GetInt(p + i * 4); } return a; }
+  public long ConsumeGachaTicketTypeAmount(int j) { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ConsumeGachaTicketTypeAmountLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
+#if ENABLE_SPAN_T
+  public Span<long> GetConsumeGachaTicketTypeAmountBytes() { return __p.__vector_as_span<long>(22, 8); }
+#else
+  public ArraySegment<byte>? GetConsumeGachaTicketTypeAmountBytes() { return __p.__vector_as_arraysegment(22); }
+#endif
+  public long[] GetConsumeGachaTicketTypeAmountArray() { return __p.__vector_as_array<long>(22); }
   public long ProductIdAOS { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ProductIdiOS { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ProductIdONE { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -119,8 +133,8 @@ public struct GoodsExcel : IFlatbufferObject
       VectorOffset ConsumeParcelIdOffset = default(VectorOffset),
       VectorOffset ConsumeParcelAmountOffset = default(VectorOffset),
       VectorOffset ConsumeConditionOffset = default(VectorOffset),
-      FlatDataGlobal.GachaTicketType ConsumeGachaTicketType = FlatDataGlobal.GachaTicketType.None,
-      long ConsumeGachaTicketTypeAmount = 0,
+      VectorOffset ConsumeGachaTicketTypeOffset = default(VectorOffset),
+      VectorOffset ConsumeGachaTicketTypeAmountOffset = default(VectorOffset),
       long ProductIdAOS = 0,
       long ProductIdiOS = 0,
       long ProductIdONE = 0,
@@ -138,7 +152,6 @@ public struct GoodsExcel : IFlatbufferObject
     GoodsExcel.AddProductIdONE(builder, ProductIdONE);
     GoodsExcel.AddProductIdiOS(builder, ProductIdiOS);
     GoodsExcel.AddProductIdAOS(builder, ProductIdAOS);
-    GoodsExcel.AddConsumeGachaTicketTypeAmount(builder, ConsumeGachaTicketTypeAmount);
     GoodsExcel.AddId(builder, Id);
     GoodsExcel.AddParcelAmount(builder, ParcelAmountOffset);
     GoodsExcel.AddParcelId(builder, ParcelIdOffset);
@@ -146,7 +159,8 @@ public struct GoodsExcel : IFlatbufferObject
     GoodsExcel.AddState(builder, State);
     GoodsExcel.AddConsumeExtraAmount(builder, ConsumeExtraAmountOffset);
     GoodsExcel.AddConsumeExtraStep(builder, ConsumeExtraStepOffset);
-    GoodsExcel.AddConsumeGachaTicketType(builder, ConsumeGachaTicketType);
+    GoodsExcel.AddConsumeGachaTicketTypeAmount(builder, ConsumeGachaTicketTypeAmountOffset);
+    GoodsExcel.AddConsumeGachaTicketType(builder, ConsumeGachaTicketTypeOffset);
     GoodsExcel.AddConsumeCondition(builder, ConsumeConditionOffset);
     GoodsExcel.AddConsumeParcelAmount(builder, ConsumeParcelAmountOffset);
     GoodsExcel.AddConsumeParcelId(builder, ConsumeParcelIdOffset);
@@ -186,8 +200,18 @@ public struct GoodsExcel : IFlatbufferObject
   public static VectorOffset CreateConsumeConditionVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ConsumeCondition> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateConsumeConditionVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ConsumeCondition>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartConsumeConditionVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddConsumeGachaTicketType(FlatBufferBuilder builder, FlatDataGlobal.GachaTicketType ConsumeGachaTicketType) { builder.AddInt(8, (int)ConsumeGachaTicketType, 0); }
-  public static void AddConsumeGachaTicketTypeAmount(FlatBufferBuilder builder, long ConsumeGachaTicketTypeAmount) { builder.AddLong(9, ConsumeGachaTicketTypeAmount, 0); }
+  public static void AddConsumeGachaTicketType(FlatBufferBuilder builder, VectorOffset ConsumeGachaTicketTypeOffset) { builder.AddOffset(8, ConsumeGachaTicketTypeOffset.Value, 0); }
+  public static VectorOffset CreateConsumeGachaTicketTypeVector(FlatBufferBuilder builder, FlatDataGlobal.GachaTicketType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateConsumeGachaTicketTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.GachaTicketType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateConsumeGachaTicketTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.GachaTicketType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateConsumeGachaTicketTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.GachaTicketType>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartConsumeGachaTicketTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddConsumeGachaTicketTypeAmount(FlatBufferBuilder builder, VectorOffset ConsumeGachaTicketTypeAmountOffset) { builder.AddOffset(9, ConsumeGachaTicketTypeAmountOffset.Value, 0); }
+  public static VectorOffset CreateConsumeGachaTicketTypeAmountVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateConsumeGachaTicketTypeAmountVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateConsumeGachaTicketTypeAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateConsumeGachaTicketTypeAmountVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartConsumeGachaTicketTypeAmountVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
   public static void AddProductIdAOS(FlatBufferBuilder builder, long ProductIdAOS) { builder.AddLong(10, ProductIdAOS, 0); }
   public static void AddProductIdiOS(FlatBufferBuilder builder, long ProductIdiOS) { builder.AddLong(11, ProductIdiOS, 0); }
   public static void AddProductIdONE(FlatBufferBuilder builder, long ProductIdONE) { builder.AddLong(12, ProductIdONE, 0); }

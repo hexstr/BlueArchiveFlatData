@@ -57,45 +57,48 @@ public struct ShopRecruitExcel : IFlatbufferObject
   public ArraySegment<byte>? GetInfoCharacterIdBytes() { return __p.__vector_as_arraysegment(26); }
 #endif
   public long[] GetInfoCharacterIdArray() { return __p.__vector_as_array<long>(26); }
-  public string SalePeriodFrom { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public bool SalePeriodVisible { get { int o = __p.__offset(28); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public string SalePeriodFrom { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSalePeriodFromBytes() { return __p.__vector_as_span<byte>(28, 1); }
+  public Span<byte> GetSalePeriodFromBytes() { return __p.__vector_as_span<byte>(30, 1); }
 #else
-  public ArraySegment<byte>? GetSalePeriodFromBytes() { return __p.__vector_as_arraysegment(28); }
+  public ArraySegment<byte>? GetSalePeriodFromBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
-  public byte[] GetSalePeriodFromArray() { return __p.__vector_as_array<byte>(28); }
-  public string SalePeriodTo { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSalePeriodFromArray() { return __p.__vector_as_array<byte>(30); }
+  public string SalePeriodTo { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSalePeriodToBytes() { return __p.__vector_as_span<byte>(30, 1); }
+  public Span<byte> GetSalePeriodToBytes() { return __p.__vector_as_span<byte>(32, 1); }
 #else
-  public ArraySegment<byte>? GetSalePeriodToBytes() { return __p.__vector_as_arraysegment(30); }
+  public ArraySegment<byte>? GetSalePeriodToBytes() { return __p.__vector_as_arraysegment(32); }
 #endif
-  public byte[] GetSalePeriodToArray() { return __p.__vector_as_array<byte>(30); }
-  public long RecruitCoinId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RecruitSellectionShopId { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long PurchaseCooltimeMin { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long PurchaseCountLimit { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.PurchaseCountResetType PurchaseCountResetType { get { int o = __p.__offset(40); return o != 0 ? (FlatDataGlobal.PurchaseCountResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.PurchaseCountResetType.None; } }
-  public bool IsNewbie { get { int o = __p.__offset(42); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool IsSelectRecruit { get { int o = __p.__offset(44); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long DirectPayInvisibleTokenId { get { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long DirectPayAndroidShopCashId { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long DirectPayAppleShopCashId { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long DirectPayOneStoreShopCashId { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string ProbabilityUrlDev { get { int o = __p.__offset(54); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetSalePeriodToArray() { return __p.__vector_as_array<byte>(32); }
+  public long RecruitCoinId { get { int o = __p.__offset(34); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RecruitSellectionShopId { get { int o = __p.__offset(36); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long PurchaseCooltimeMin { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long PurchaseCountLimit { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.PurchaseCountResetType PurchaseCountResetType { get { int o = __p.__offset(42); return o != 0 ? (FlatDataGlobal.PurchaseCountResetType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.PurchaseCountResetType.None; } }
+  public bool IsNewbie { get { int o = __p.__offset(44); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool IsSelectRecruit { get { int o = __p.__offset(46); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long DirectPayInvisibleTokenId { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DirectPayAndroidShopCashId { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DirectPayAppleShopCashId { get { int o = __p.__offset(52); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long SelectAbleGachaGroupId { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long MaxSelectCharacterNum { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long DirectPayOneStoreShopCashId { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string ProbabilityUrlDev { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetProbabilityUrlDevBytes() { return __p.__vector_as_span<byte>(54, 1); }
+  public Span<byte> GetProbabilityUrlDevBytes() { return __p.__vector_as_span<byte>(60, 1); }
 #else
-  public ArraySegment<byte>? GetProbabilityUrlDevBytes() { return __p.__vector_as_arraysegment(54); }
+  public ArraySegment<byte>? GetProbabilityUrlDevBytes() { return __p.__vector_as_arraysegment(60); }
 #endif
-  public byte[] GetProbabilityUrlDevArray() { return __p.__vector_as_array<byte>(54); }
-  public string ProbabilityUrlLive { get { int o = __p.__offset(56); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetProbabilityUrlDevArray() { return __p.__vector_as_array<byte>(60); }
+  public string ProbabilityUrlLive { get { int o = __p.__offset(62); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetProbabilityUrlLiveBytes() { return __p.__vector_as_span<byte>(56, 1); }
+  public Span<byte> GetProbabilityUrlLiveBytes() { return __p.__vector_as_span<byte>(62, 1); }
 #else
-  public ArraySegment<byte>? GetProbabilityUrlLiveBytes() { return __p.__vector_as_arraysegment(56); }
+  public ArraySegment<byte>? GetProbabilityUrlLiveBytes() { return __p.__vector_as_arraysegment(62); }
 #endif
-  public byte[] GetProbabilityUrlLiveArray() { return __p.__vector_as_array<byte>(56); }
+  public byte[] GetProbabilityUrlLiveArray() { return __p.__vector_as_array<byte>(62); }
 
   public static Offset<FlatDataGlobal.ShopRecruitExcel> CreateShopRecruitExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -110,6 +113,7 @@ public struct ShopRecruitExcel : IFlatbufferObject
       VectorOffset VideoIdOffset = default(VectorOffset),
       long LinkedRobbyBannerId = 0,
       VectorOffset InfoCharacterIdOffset = default(VectorOffset),
+      bool SalePeriodVisible = false,
       StringOffset SalePeriodFromOffset = default(StringOffset),
       StringOffset SalePeriodToOffset = default(StringOffset),
       long RecruitCoinId = 0,
@@ -122,11 +126,15 @@ public struct ShopRecruitExcel : IFlatbufferObject
       long DirectPayInvisibleTokenId = 0,
       long DirectPayAndroidShopCashId = 0,
       long DirectPayAppleShopCashId = 0,
+      long SelectAbleGachaGroupId = 0,
+      long MaxSelectCharacterNum = 0,
       long DirectPayOneStoreShopCashId = 0,
       StringOffset ProbabilityUrlDevOffset = default(StringOffset),
       StringOffset ProbabilityUrlLiveOffset = default(StringOffset)) {
-    builder.StartTable(27);
+    builder.StartTable(30);
     ShopRecruitExcel.AddDirectPayOneStoreShopCashId(builder, DirectPayOneStoreShopCashId);
+    ShopRecruitExcel.AddMaxSelectCharacterNum(builder, MaxSelectCharacterNum);
+    ShopRecruitExcel.AddSelectAbleGachaGroupId(builder, SelectAbleGachaGroupId);
     ShopRecruitExcel.AddDirectPayAppleShopCashId(builder, DirectPayAppleShopCashId);
     ShopRecruitExcel.AddDirectPayAndroidShopCashId(builder, DirectPayAndroidShopCashId);
     ShopRecruitExcel.AddDirectPayInvisibleTokenId(builder, DirectPayInvisibleTokenId);
@@ -152,11 +160,12 @@ public struct ShopRecruitExcel : IFlatbufferObject
     ShopRecruitExcel.AddCategoryType(builder, CategoryType);
     ShopRecruitExcel.AddIsSelectRecruit(builder, IsSelectRecruit);
     ShopRecruitExcel.AddIsNewbie(builder, IsNewbie);
+    ShopRecruitExcel.AddSalePeriodVisible(builder, SalePeriodVisible);
     ShopRecruitExcel.AddIsLegacy(builder, IsLegacy);
     return ShopRecruitExcel.EndShopRecruitExcel(builder);
   }
 
-  public static void StartShopRecruitExcel(FlatBufferBuilder builder) { builder.StartTable(27); }
+  public static void StartShopRecruitExcel(FlatBufferBuilder builder) { builder.StartTable(30); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddCategoryType(FlatBufferBuilder builder, FlatDataGlobal.ShopCategoryType CategoryType) { builder.AddInt(1, (int)CategoryType, 0); }
   public static void AddIsLegacy(FlatBufferBuilder builder, bool IsLegacy) { builder.AddBool(2, IsLegacy, false); }
@@ -179,21 +188,24 @@ public struct ShopRecruitExcel : IFlatbufferObject
   public static VectorOffset CreateInfoCharacterIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateInfoCharacterIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartInfoCharacterIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddSalePeriodFrom(FlatBufferBuilder builder, StringOffset SalePeriodFromOffset) { builder.AddOffset(12, SalePeriodFromOffset.Value, 0); }
-  public static void AddSalePeriodTo(FlatBufferBuilder builder, StringOffset SalePeriodToOffset) { builder.AddOffset(13, SalePeriodToOffset.Value, 0); }
-  public static void AddRecruitCoinId(FlatBufferBuilder builder, long RecruitCoinId) { builder.AddLong(14, RecruitCoinId, 0); }
-  public static void AddRecruitSellectionShopId(FlatBufferBuilder builder, long RecruitSellectionShopId) { builder.AddLong(15, RecruitSellectionShopId, 0); }
-  public static void AddPurchaseCooltimeMin(FlatBufferBuilder builder, long PurchaseCooltimeMin) { builder.AddLong(16, PurchaseCooltimeMin, 0); }
-  public static void AddPurchaseCountLimit(FlatBufferBuilder builder, long PurchaseCountLimit) { builder.AddLong(17, PurchaseCountLimit, 0); }
-  public static void AddPurchaseCountResetType(FlatBufferBuilder builder, FlatDataGlobal.PurchaseCountResetType purchaseCountResetType) { builder.AddInt(18, (int)purchaseCountResetType, 0); }
-  public static void AddIsNewbie(FlatBufferBuilder builder, bool IsNewbie) { builder.AddBool(19, IsNewbie, false); }
-  public static void AddIsSelectRecruit(FlatBufferBuilder builder, bool IsSelectRecruit) { builder.AddBool(20, IsSelectRecruit, false); }
-  public static void AddDirectPayInvisibleTokenId(FlatBufferBuilder builder, long DirectPayInvisibleTokenId) { builder.AddLong(21, DirectPayInvisibleTokenId, 0); }
-  public static void AddDirectPayAndroidShopCashId(FlatBufferBuilder builder, long DirectPayAndroidShopCashId) { builder.AddLong(22, DirectPayAndroidShopCashId, 0); }
-  public static void AddDirectPayAppleShopCashId(FlatBufferBuilder builder, long DirectPayAppleShopCashId) { builder.AddLong(23, DirectPayAppleShopCashId, 0); }
-  public static void AddDirectPayOneStoreShopCashId(FlatBufferBuilder builder, long DirectPayOneStoreShopCashId) { builder.AddLong(24, DirectPayOneStoreShopCashId, 0); }
-  public static void AddProbabilityUrlDev(FlatBufferBuilder builder, StringOffset ProbabilityUrlDevOffset) { builder.AddOffset(25, ProbabilityUrlDevOffset.Value, 0); }
-  public static void AddProbabilityUrlLive(FlatBufferBuilder builder, StringOffset ProbabilityUrlLiveOffset) { builder.AddOffset(26, ProbabilityUrlLiveOffset.Value, 0); }
+  public static void AddSalePeriodVisible(FlatBufferBuilder builder, bool SalePeriodVisible) { builder.AddBool(12, SalePeriodVisible, false); }
+  public static void AddSalePeriodFrom(FlatBufferBuilder builder, StringOffset SalePeriodFromOffset) { builder.AddOffset(13, SalePeriodFromOffset.Value, 0); }
+  public static void AddSalePeriodTo(FlatBufferBuilder builder, StringOffset SalePeriodToOffset) { builder.AddOffset(14, SalePeriodToOffset.Value, 0); }
+  public static void AddRecruitCoinId(FlatBufferBuilder builder, long RecruitCoinId) { builder.AddLong(15, RecruitCoinId, 0); }
+  public static void AddRecruitSellectionShopId(FlatBufferBuilder builder, long RecruitSellectionShopId) { builder.AddLong(16, RecruitSellectionShopId, 0); }
+  public static void AddPurchaseCooltimeMin(FlatBufferBuilder builder, long PurchaseCooltimeMin) { builder.AddLong(17, PurchaseCooltimeMin, 0); }
+  public static void AddPurchaseCountLimit(FlatBufferBuilder builder, long PurchaseCountLimit) { builder.AddLong(18, PurchaseCountLimit, 0); }
+  public static void AddPurchaseCountResetType(FlatBufferBuilder builder, FlatDataGlobal.PurchaseCountResetType purchaseCountResetType) { builder.AddInt(19, (int)purchaseCountResetType, 0); }
+  public static void AddIsNewbie(FlatBufferBuilder builder, bool IsNewbie) { builder.AddBool(20, IsNewbie, false); }
+  public static void AddIsSelectRecruit(FlatBufferBuilder builder, bool IsSelectRecruit) { builder.AddBool(21, IsSelectRecruit, false); }
+  public static void AddDirectPayInvisibleTokenId(FlatBufferBuilder builder, long DirectPayInvisibleTokenId) { builder.AddLong(22, DirectPayInvisibleTokenId, 0); }
+  public static void AddDirectPayAndroidShopCashId(FlatBufferBuilder builder, long DirectPayAndroidShopCashId) { builder.AddLong(23, DirectPayAndroidShopCashId, 0); }
+  public static void AddDirectPayAppleShopCashId(FlatBufferBuilder builder, long DirectPayAppleShopCashId) { builder.AddLong(24, DirectPayAppleShopCashId, 0); }
+  public static void AddSelectAbleGachaGroupId(FlatBufferBuilder builder, long SelectAbleGachaGroupId) { builder.AddLong(25, SelectAbleGachaGroupId, 0); }
+  public static void AddMaxSelectCharacterNum(FlatBufferBuilder builder, long MaxSelectCharacterNum) { builder.AddLong(26, MaxSelectCharacterNum, 0); }
+  public static void AddDirectPayOneStoreShopCashId(FlatBufferBuilder builder, long DirectPayOneStoreShopCashId) { builder.AddLong(27, DirectPayOneStoreShopCashId, 0); }
+  public static void AddProbabilityUrlDev(FlatBufferBuilder builder, StringOffset ProbabilityUrlDevOffset) { builder.AddOffset(28, ProbabilityUrlDevOffset.Value, 0); }
+  public static void AddProbabilityUrlLive(FlatBufferBuilder builder, StringOffset ProbabilityUrlLiveOffset) { builder.AddOffset(29, ProbabilityUrlLiveOffset.Value, 0); }
   public static Offset<FlatDataGlobal.ShopRecruitExcel> EndShopRecruitExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ShopRecruitExcel>(o);

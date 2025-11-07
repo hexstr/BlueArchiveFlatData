@@ -19,7 +19,7 @@ public struct CharacterStatExcelTable : IFlatbufferObject
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public CharacterStatExcelTable __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public FlatDataGlobal.CharacterStatExcel? DataList(int j) { int o = __p.__offset(4); return o != 0 ? (FlatDataGlobal.CharacterStatExcel?)(new FlatDataGlobal.CharacterStatExcel()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
+  public FlatDataGlobal.O09e5e4f912402c81e7c5cfba5bfe3a48a49bd438bcd057a3aafcc868b68db826? DataList(int j) { int o = __p.__offset(4); return o != 0 ? (FlatDataGlobal.O09e5e4f912402c81e7c5cfba5bfe3a48a49bd438bcd057a3aafcc868b68db826?)(new FlatDataGlobal.O09e5e4f912402c81e7c5cfba5bfe3a48a49bd438bcd057a3aafcc868b68db826()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
   public int DataListLength { get { int o = __p.__offset(4); return o != 0 ? __p.__vector_len(o) : 0; } }
 
   public static Offset<FlatDataGlobal.CharacterStatExcelTable> CreateCharacterStatExcelTable(FlatBufferBuilder builder,
@@ -31,10 +31,10 @@ public struct CharacterStatExcelTable : IFlatbufferObject
 
   public static void StartCharacterStatExcelTable(FlatBufferBuilder builder) { builder.StartTable(1); }
   public static void AddDataList(FlatBufferBuilder builder, VectorOffset DataListOffset) { builder.AddOffset(0, DataListOffset.Value, 0); }
-  public static VectorOffset CreateDataListVector(FlatBufferBuilder builder, Offset<FlatDataGlobal.CharacterStatExcel>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateDataListVectorBlock(FlatBufferBuilder builder, Offset<FlatDataGlobal.CharacterStatExcel>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateDataListVectorBlock(FlatBufferBuilder builder, ArraySegment<Offset<FlatDataGlobal.CharacterStatExcel>> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateDataListVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<Offset<FlatDataGlobal.CharacterStatExcel>>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static VectorOffset CreateDataListVector(FlatBufferBuilder builder, Offset<FlatDataGlobal.O09e5e4f912402c81e7c5cfba5bfe3a48a49bd438bcd057a3aafcc868b68db826>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateDataListVectorBlock(FlatBufferBuilder builder, Offset<FlatDataGlobal.O09e5e4f912402c81e7c5cfba5bfe3a48a49bd438bcd057a3aafcc868b68db826>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateDataListVectorBlock(FlatBufferBuilder builder, ArraySegment<Offset<FlatDataGlobal.O09e5e4f912402c81e7c5cfba5bfe3a48a49bd438bcd057a3aafcc868b68db826>> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateDataListVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<Offset<FlatDataGlobal.O09e5e4f912402c81e7c5cfba5bfe3a48a49bd438bcd057a3aafcc868b68db826>>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartDataListVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static Offset<FlatDataGlobal.CharacterStatExcelTable> EndCharacterStatExcelTable(FlatBufferBuilder builder) {
     int o = builder.EndTable();

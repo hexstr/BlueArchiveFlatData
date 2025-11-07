@@ -70,20 +70,21 @@ public struct SkillExcel : IFlatbufferObject
   public bool IsShowSpeechbubble { get { int o = __p.__offset(52); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public int PublicSpeechDuration { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long AdditionalToolTipId { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string TextureSkillCardForFormConversion { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long SelectExSkillToolTipId { get { int o = __p.__offset(58); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string TextureSkillCardForFormConversion { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTextureSkillCardForFormConversionBytes() { return __p.__vector_as_span<byte>(58, 1); }
+  public Span<byte> GetTextureSkillCardForFormConversionBytes() { return __p.__vector_as_span<byte>(60, 1); }
 #else
-  public ArraySegment<byte>? GetTextureSkillCardForFormConversionBytes() { return __p.__vector_as_arraysegment(58); }
+  public ArraySegment<byte>? GetTextureSkillCardForFormConversionBytes() { return __p.__vector_as_arraysegment(60); }
 #endif
-  public byte[] GetTextureSkillCardForFormConversionArray() { return __p.__vector_as_array<byte>(58); }
-  public string SkillCardLabelPath { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetTextureSkillCardForFormConversionArray() { return __p.__vector_as_array<byte>(60); }
+  public string SkillCardLabelPath { get { int o = __p.__offset(62); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSkillCardLabelPathBytes() { return __p.__vector_as_span<byte>(60, 1); }
+  public Span<byte> GetSkillCardLabelPathBytes() { return __p.__vector_as_span<byte>(62, 1); }
 #else
-  public ArraySegment<byte>? GetSkillCardLabelPathBytes() { return __p.__vector_as_arraysegment(60); }
+  public ArraySegment<byte>? GetSkillCardLabelPathBytes() { return __p.__vector_as_arraysegment(62); }
 #endif
-  public byte[] GetSkillCardLabelPathArray() { return __p.__vector_as_array<byte>(60); }
+  public byte[] GetSkillCardLabelPathArray() { return __p.__vector_as_array<byte>(62); }
 
   public static Offset<FlatDataGlobal.SkillExcel> CreateSkillExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -113,9 +114,11 @@ public struct SkillExcel : IFlatbufferObject
       bool IsShowSpeechbubble = false,
       int PublicSpeechDuration = 0,
       long AdditionalToolTipId = 0,
+      long SelectExSkillToolTipId = 0,
       StringOffset TextureSkillCardForFormConversionOffset = default(StringOffset),
       StringOffset SkillCardLabelPathOffset = default(StringOffset)) {
-    builder.StartTable(29);
+    builder.StartTable(30);
+    SkillExcel.AddSelectExSkillToolTipId(builder, SelectExSkillToolTipId);
     SkillExcel.AddAdditionalToolTipId(builder, AdditionalToolTipId);
     SkillExcel.AddRequireLevelUpMaterial(builder, RequireLevelUpMaterial);
     SkillExcel.AddId(builder, Id);
@@ -148,7 +151,7 @@ public struct SkillExcel : IFlatbufferObject
     return SkillExcel.EndSkillExcel(builder);
   }
 
-  public static void StartSkillExcel(FlatBufferBuilder builder) { builder.StartTable(29); }
+  public static void StartSkillExcel(FlatBufferBuilder builder) { builder.StartTable(30); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddLocalizeSkillId(FlatBufferBuilder builder, uint LocalizeSkillId) { builder.AddUint(1, LocalizeSkillId, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, StringOffset GroupIdOffset) { builder.AddOffset(2, GroupIdOffset.Value, 0); }
@@ -176,8 +179,9 @@ public struct SkillExcel : IFlatbufferObject
   public static void AddIsShowSpeechbubble(FlatBufferBuilder builder, bool IsShowSpeechbubble) { builder.AddBool(24, IsShowSpeechbubble, false); }
   public static void AddPublicSpeechDuration(FlatBufferBuilder builder, int PublicSpeechDuration) { builder.AddInt(25, PublicSpeechDuration, 0); }
   public static void AddAdditionalToolTipId(FlatBufferBuilder builder, long AdditionalToolTipId) { builder.AddLong(26, AdditionalToolTipId, 0); }
-  public static void AddTextureSkillCardForFormConversion(FlatBufferBuilder builder, StringOffset TextureSkillCardForFormConversionOffset) { builder.AddOffset(27, TextureSkillCardForFormConversionOffset.Value, 0); }
-  public static void AddSkillCardLabelPath(FlatBufferBuilder builder, StringOffset SkillCardLabelPathOffset) { builder.AddOffset(28, SkillCardLabelPathOffset.Value, 0); }
+  public static void AddSelectExSkillToolTipId(FlatBufferBuilder builder, long SelectExSkillToolTipId) { builder.AddLong(27, SelectExSkillToolTipId, 0); }
+  public static void AddTextureSkillCardForFormConversion(FlatBufferBuilder builder, StringOffset TextureSkillCardForFormConversionOffset) { builder.AddOffset(28, TextureSkillCardForFormConversionOffset.Value, 0); }
+  public static void AddSkillCardLabelPath(FlatBufferBuilder builder, StringOffset SkillCardLabelPathOffset) { builder.AddOffset(29, SkillCardLabelPathOffset.Value, 0); }
   public static Offset<FlatDataGlobal.SkillExcel> EndSkillExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.SkillExcel>(o);

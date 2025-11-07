@@ -77,42 +77,59 @@ public struct CampaignStageExcel : IFlatbufferObject
   public int MaxTurn { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public FlatDataGlobal.StageTopography StageTopography { get { int o = __p.__offset(40); return o != 0 ? (FlatDataGlobal.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StageTopography.Street; } }
   public int RecommandLevel { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public string BgmId { get { int o = __p.__offset(44); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public int RecommandLevelGapForGuide { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long MinEquipmentTierForGuide(int j) { int o = __p.__offset(46); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int MinEquipmentTierForGuideLength { get { int o = __p.__offset(46); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBgmIdBytes() { return __p.__vector_as_span<byte>(44, 1); }
+  public Span<long> GetMinEquipmentTierForGuideBytes() { return __p.__vector_as_span<long>(46, 8); }
 #else
-  public ArraySegment<byte>? GetBgmIdBytes() { return __p.__vector_as_arraysegment(44); }
+  public ArraySegment<byte>? GetMinEquipmentTierForGuideBytes() { return __p.__vector_as_arraysegment(46); }
 #endif
-  public byte[] GetBgmIdArray() { return __p.__vector_as_array<byte>(44); }
-  public FlatDataGlobal.StrategyEnvironment StrategyEnvironment { get { int o = __p.__offset(46); return o != 0 ? (FlatDataGlobal.StrategyEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StrategyEnvironment.None; } }
-  public long GroundId { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int StrategySkipGroundId { get { int o = __p.__offset(50); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public FlatDataGlobal.ContentType ContentType { get { int o = __p.__offset(52); return o != 0 ? (FlatDataGlobal.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ContentType.None; } }
-  public long BGMId { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string FirstClearReportEventName { get { int o = __p.__offset(56); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long[] GetMinEquipmentTierForGuideArray() { return __p.__vector_as_array<long>(46); }
+  public long MinSkillLevelForGuide(int j) { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int MinSkillLevelForGuideLength { get { int o = __p.__offset(48); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetFirstClearReportEventNameBytes() { return __p.__vector_as_span<byte>(56, 1); }
+  public Span<long> GetMinSkillLevelForGuideBytes() { return __p.__vector_as_span<long>(48, 8); }
 #else
-  public ArraySegment<byte>? GetFirstClearReportEventNameBytes() { return __p.__vector_as_arraysegment(56); }
+  public ArraySegment<byte>? GetMinSkillLevelForGuideBytes() { return __p.__vector_as_arraysegment(48); }
 #endif
-  public byte[] GetFirstClearReportEventNameArray() { return __p.__vector_as_array<byte>(56); }
-  public string FirstClearFunnelMessage { get { int o = __p.__offset(58); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long[] GetMinSkillLevelForGuideArray() { return __p.__vector_as_array<long>(48); }
+  public string BgmId { get { int o = __p.__offset(50); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetFirstClearFunnelMessageBytes() { return __p.__vector_as_span<byte>(58, 1); }
+  public Span<byte> GetBgmIdBytes() { return __p.__vector_as_span<byte>(50, 1); }
 #else
-  public ArraySegment<byte>? GetFirstClearFunnelMessageBytes() { return __p.__vector_as_arraysegment(58); }
+  public ArraySegment<byte>? GetBgmIdBytes() { return __p.__vector_as_arraysegment(50); }
 #endif
-  public byte[] GetFirstClearFunnelMessageArray() { return __p.__vector_as_array<byte>(58); }
-  public string FirstClearEventMessage { get { int o = __p.__offset(60); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public byte[] GetBgmIdArray() { return __p.__vector_as_array<byte>(50); }
+  public FlatDataGlobal.StrategyEnvironment StrategyEnvironment { get { int o = __p.__offset(52); return o != 0 ? (FlatDataGlobal.StrategyEnvironment)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.StrategyEnvironment.None; } }
+  public long GroundId { get { int o = __p.__offset(54); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int StrategySkipGroundId { get { int o = __p.__offset(56); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public FlatDataGlobal.ContentType ContentType { get { int o = __p.__offset(58); return o != 0 ? (FlatDataGlobal.ContentType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ContentType.None; } }
+  public long BGMId { get { int o = __p.__offset(60); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string FirstClearReportEventName { get { int o = __p.__offset(62); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetFirstClearEventMessageBytes() { return __p.__vector_as_span<byte>(60, 1); }
+  public Span<byte> GetFirstClearReportEventNameBytes() { return __p.__vector_as_span<byte>(62, 1); }
 #else
-  public ArraySegment<byte>? GetFirstClearEventMessageBytes() { return __p.__vector_as_arraysegment(60); }
+  public ArraySegment<byte>? GetFirstClearReportEventNameBytes() { return __p.__vector_as_arraysegment(62); }
 #endif
-  public byte[] GetFirstClearEventMessageArray() { return __p.__vector_as_array<byte>(60); }
-  public long TacticRewardExp { get { int o = __p.__offset(62); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long FixedEchelonId { get { int o = __p.__offset(64); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public FlatDataGlobal.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(66); return o != 0 ? (FlatDataGlobal.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EchelonExtensionType.Base; } }
+  public byte[] GetFirstClearReportEventNameArray() { return __p.__vector_as_array<byte>(62); }
+  public string FirstClearFunnelMessage { get { int o = __p.__offset(64); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetFirstClearFunnelMessageBytes() { return __p.__vector_as_span<byte>(64, 1); }
+#else
+  public ArraySegment<byte>? GetFirstClearFunnelMessageBytes() { return __p.__vector_as_arraysegment(64); }
+#endif
+  public byte[] GetFirstClearFunnelMessageArray() { return __p.__vector_as_array<byte>(64); }
+  public string FirstClearEventMessage { get { int o = __p.__offset(66); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetFirstClearEventMessageBytes() { return __p.__vector_as_span<byte>(66, 1); }
+#else
+  public ArraySegment<byte>? GetFirstClearEventMessageBytes() { return __p.__vector_as_arraysegment(66); }
+#endif
+  public byte[] GetFirstClearEventMessageArray() { return __p.__vector_as_array<byte>(66); }
+  public long TacticRewardExp { get { int o = __p.__offset(68); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long FixedEchelonId { get { int o = __p.__offset(70); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(72); return o != 0 ? (FlatDataGlobal.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EchelonExtensionType.Base; } }
 
   public static Offset<FlatDataGlobal.CampaignStageExcel> CreateCampaignStageExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -135,6 +152,9 @@ public struct CampaignStageExcel : IFlatbufferObject
       int MaxTurn = 0,
       FlatDataGlobal.StageTopography stageTopography = FlatDataGlobal.StageTopography.Street,
       int RecommandLevel = 0,
+      int RecommandLevelGapForGuide = 0,
+      VectorOffset MinEquipmentTierForGuideOffset = default(VectorOffset),
+      VectorOffset MinSkillLevelForGuideOffset = default(VectorOffset),
       StringOffset BgmIdOffset = default(StringOffset),
       FlatDataGlobal.StrategyEnvironment strategyEnvironment = FlatDataGlobal.StrategyEnvironment.None,
       long GroundId = 0,
@@ -147,7 +167,7 @@ public struct CampaignStageExcel : IFlatbufferObject
       long TacticRewardExp = 0,
       long FixedEchelonId = 0,
       FlatDataGlobal.EchelonExtensionType echelonExtensionType = FlatDataGlobal.EchelonExtensionType.Base) {
-    builder.StartTable(32);
+    builder.StartTable(35);
     CampaignStageExcel.AddFixedEchelonId(builder, FixedEchelonId);
     CampaignStageExcel.AddTacticRewardExp(builder, TacticRewardExp);
     CampaignStageExcel.AddBGMId(builder, BGMId);
@@ -167,6 +187,9 @@ public struct CampaignStageExcel : IFlatbufferObject
     CampaignStageExcel.AddStrategySkipGroundId(builder, StrategySkipGroundId);
     CampaignStageExcel.AddStrategyEnvironment(builder, strategyEnvironment);
     CampaignStageExcel.AddBgmId(builder, BgmIdOffset);
+    CampaignStageExcel.AddMinSkillLevelForGuide(builder, MinSkillLevelForGuideOffset);
+    CampaignStageExcel.AddMinEquipmentTierForGuide(builder, MinEquipmentTierForGuideOffset);
+    CampaignStageExcel.AddRecommandLevelGapForGuide(builder, RecommandLevelGapForGuide);
     CampaignStageExcel.AddRecommandLevel(builder, RecommandLevel);
     CampaignStageExcel.AddStageTopography(builder, stageTopography);
     CampaignStageExcel.AddMaxTurn(builder, MaxTurn);
@@ -183,7 +206,7 @@ public struct CampaignStageExcel : IFlatbufferObject
     return CampaignStageExcel.EndCampaignStageExcel(builder);
   }
 
-  public static void StartCampaignStageExcel(FlatBufferBuilder builder) { builder.StartTable(32); }
+  public static void StartCampaignStageExcel(FlatBufferBuilder builder) { builder.StartTable(35); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddDeprecated(FlatBufferBuilder builder, bool Deprecated) { builder.AddBool(1, Deprecated, false); }
   public static void AddName(FlatBufferBuilder builder, StringOffset NameOffset) { builder.AddOffset(2, NameOffset.Value, 0); }
@@ -214,18 +237,31 @@ public struct CampaignStageExcel : IFlatbufferObject
   public static void AddMaxTurn(FlatBufferBuilder builder, int MaxTurn) { builder.AddInt(17, MaxTurn, 0); }
   public static void AddStageTopography(FlatBufferBuilder builder, FlatDataGlobal.StageTopography stageTopography) { builder.AddInt(18, (int)stageTopography, 0); }
   public static void AddRecommandLevel(FlatBufferBuilder builder, int RecommandLevel) { builder.AddInt(19, RecommandLevel, 0); }
-  public static void AddBgmId(FlatBufferBuilder builder, StringOffset BgmIdOffset) { builder.AddOffset(20, BgmIdOffset.Value, 0); }
-  public static void AddStrategyEnvironment(FlatBufferBuilder builder, FlatDataGlobal.StrategyEnvironment strategyEnvironment) { builder.AddInt(21, (int)strategyEnvironment, 0); }
-  public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(22, GroundId, 0); }
-  public static void AddStrategySkipGroundId(FlatBufferBuilder builder, int StrategySkipGroundId) { builder.AddInt(23, StrategySkipGroundId, 0); }
-  public static void AddContentType(FlatBufferBuilder builder, FlatDataGlobal.ContentType contentType) { builder.AddInt(24, (int)contentType, 0); }
-  public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(25, BGMId, 0); }
-  public static void AddFirstClearReportEventName(FlatBufferBuilder builder, StringOffset FirstClearReportEventNameOffset) { builder.AddOffset(26, FirstClearReportEventNameOffset.Value, 0); }
-  public static void AddFirstClearFunnelMessage(FlatBufferBuilder builder, StringOffset FirstClearFunnelMessageOffset) { builder.AddOffset(27, FirstClearFunnelMessageOffset.Value, 0); }
-  public static void AddFirstClearEventMessage(FlatBufferBuilder builder, StringOffset FirstClearEventMessageOffset) { builder.AddOffset(28, FirstClearEventMessageOffset.Value, 0); }
-  public static void AddTacticRewardExp(FlatBufferBuilder builder, long TacticRewardExp) { builder.AddLong(29, TacticRewardExp, 0); }
-  public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(30, FixedEchelonId, 0); }
-  public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataGlobal.EchelonExtensionType echelonExtensionType) { builder.AddInt(31, (int)echelonExtensionType, 0); }
+  public static void AddRecommandLevelGapForGuide(FlatBufferBuilder builder, int RecommandLevelGapForGuide) { builder.AddInt(20, RecommandLevelGapForGuide, 0); }
+  public static void AddMinEquipmentTierForGuide(FlatBufferBuilder builder, VectorOffset MinEquipmentTierForGuideOffset) { builder.AddOffset(21, MinEquipmentTierForGuideOffset.Value, 0); }
+  public static VectorOffset CreateMinEquipmentTierForGuideVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateMinEquipmentTierForGuideVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMinEquipmentTierForGuideVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMinEquipmentTierForGuideVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartMinEquipmentTierForGuideVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddMinSkillLevelForGuide(FlatBufferBuilder builder, VectorOffset MinSkillLevelForGuideOffset) { builder.AddOffset(22, MinSkillLevelForGuideOffset.Value, 0); }
+  public static VectorOffset CreateMinSkillLevelForGuideVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
+  public static VectorOffset CreateMinSkillLevelForGuideVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMinSkillLevelForGuideVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateMinSkillLevelForGuideVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartMinSkillLevelForGuideVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
+  public static void AddBgmId(FlatBufferBuilder builder, StringOffset BgmIdOffset) { builder.AddOffset(23, BgmIdOffset.Value, 0); }
+  public static void AddStrategyEnvironment(FlatBufferBuilder builder, FlatDataGlobal.StrategyEnvironment strategyEnvironment) { builder.AddInt(24, (int)strategyEnvironment, 0); }
+  public static void AddGroundId(FlatBufferBuilder builder, long GroundId) { builder.AddLong(25, GroundId, 0); }
+  public static void AddStrategySkipGroundId(FlatBufferBuilder builder, int StrategySkipGroundId) { builder.AddInt(26, StrategySkipGroundId, 0); }
+  public static void AddContentType(FlatBufferBuilder builder, FlatDataGlobal.ContentType contentType) { builder.AddInt(27, (int)contentType, 0); }
+  public static void AddBGMId(FlatBufferBuilder builder, long BGMId) { builder.AddLong(28, BGMId, 0); }
+  public static void AddFirstClearReportEventName(FlatBufferBuilder builder, StringOffset FirstClearReportEventNameOffset) { builder.AddOffset(29, FirstClearReportEventNameOffset.Value, 0); }
+  public static void AddFirstClearFunnelMessage(FlatBufferBuilder builder, StringOffset FirstClearFunnelMessageOffset) { builder.AddOffset(30, FirstClearFunnelMessageOffset.Value, 0); }
+  public static void AddFirstClearEventMessage(FlatBufferBuilder builder, StringOffset FirstClearEventMessageOffset) { builder.AddOffset(31, FirstClearEventMessageOffset.Value, 0); }
+  public static void AddTacticRewardExp(FlatBufferBuilder builder, long TacticRewardExp) { builder.AddLong(32, TacticRewardExp, 0); }
+  public static void AddFixedEchelonId(FlatBufferBuilder builder, long FixedEchelonId) { builder.AddLong(33, FixedEchelonId, 0); }
+  public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataGlobal.EchelonExtensionType echelonExtensionType) { builder.AddInt(34, (int)echelonExtensionType, 0); }
   public static Offset<FlatDataGlobal.CampaignStageExcel> EndCampaignStageExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CampaignStageExcel>(o);

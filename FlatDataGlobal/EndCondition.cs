@@ -14,6 +14,8 @@ public enum EndCondition : int
   HitCount = 4,
   None = 5,
   UseExSkillCount = 6,
+  UseTargetSlotExSkillCount = 7,
+  UseExSkillOverloadedCount = 8,
 };
 
 

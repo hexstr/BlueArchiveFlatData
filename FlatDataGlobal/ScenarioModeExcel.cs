@@ -111,6 +111,13 @@ public struct ScenarioModeExcel : IFlatbufferObject
   public byte[] GetCompleteReportEventNameArray() { return __p.__vector_as_array<byte>(80); }
   public FlatDataGlobal.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(82); return o != 0 ? (FlatDataGlobal.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EchelonExtensionType.Base; } }
   public long CollectionGroupId { get { int o = __p.__offset(84); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public string FirstClearFunnelMessage { get { int o = __p.__offset(86); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetFirstClearFunnelMessageBytes() { return __p.__vector_as_span<byte>(86, 1); }
+#else
+  public ArraySegment<byte>? GetFirstClearFunnelMessageBytes() { return __p.__vector_as_arraysegment(86); }
+#endif
+  public byte[] GetFirstClearFunnelMessageArray() { return __p.__vector_as_array<byte>(86); }
 
   public static Offset<FlatDataGlobal.ScenarioModeExcel> CreateScenarioModeExcel(FlatBufferBuilder builder,
       long ModeId = 0,
@@ -153,8 +160,9 @@ public struct ScenarioModeExcel : IFlatbufferObject
       long FixedEchelonId = 0,
       StringOffset CompleteReportEventNameOffset = default(StringOffset),
       FlatDataGlobal.EchelonExtensionType echelonExtensionType = FlatDataGlobal.EchelonExtensionType.Base,
-      long CollectionGroupId = 0) {
-    builder.StartTable(41);
+      long CollectionGroupId = 0,
+      StringOffset FirstClearFunnelMessageOffset = default(StringOffset)) {
+    builder.StartTable(42);
     ScenarioModeExcel.AddCollectionGroupId(builder, CollectionGroupId);
     ScenarioModeExcel.AddFixedEchelonId(builder, FixedEchelonId);
     ScenarioModeExcel.AddEventContentConditionGroup(builder, EventContentConditionGroup);
@@ -171,6 +179,7 @@ public struct ScenarioModeExcel : IFlatbufferObject
     ScenarioModeExcel.AddChapterId(builder, ChapterId);
     ScenarioModeExcel.AddVolumeId(builder, VolumeId);
     ScenarioModeExcel.AddModeId(builder, ModeId);
+    ScenarioModeExcel.AddFirstClearFunnelMessage(builder, FirstClearFunnelMessageOffset);
     ScenarioModeExcel.AddEchelonExtensionType(builder, echelonExtensionType);
     ScenarioModeExcel.AddCompleteReportEventName(builder, CompleteReportEventNameOffset);
     ScenarioModeExcel.AddStageTopography(builder, stageTopography);
@@ -199,7 +208,7 @@ public struct ScenarioModeExcel : IFlatbufferObject
     return ScenarioModeExcel.EndScenarioModeExcel(builder);
   }
 
-  public static void StartScenarioModeExcel(FlatBufferBuilder builder) { builder.StartTable(41); }
+  public static void StartScenarioModeExcel(FlatBufferBuilder builder) { builder.StartTable(42); }
   public static void AddModeId(FlatBufferBuilder builder, long ModeId) { builder.AddLong(0, ModeId, 0); }
   public static void AddModeType(FlatBufferBuilder builder, FlatDataGlobal.ScenarioModeTypes ModeType) { builder.AddInt(1, (int)ModeType, 0); }
   public static void AddSubType(FlatBufferBuilder builder, FlatDataGlobal.ScenarioModeSubTypes SubType) { builder.AddInt(2, (int)SubType, 0); }
@@ -256,6 +265,7 @@ public struct ScenarioModeExcel : IFlatbufferObject
   public static void AddCompleteReportEventName(FlatBufferBuilder builder, StringOffset CompleteReportEventNameOffset) { builder.AddOffset(38, CompleteReportEventNameOffset.Value, 0); }
   public static void AddEchelonExtensionType(FlatBufferBuilder builder, FlatDataGlobal.EchelonExtensionType echelonExtensionType) { builder.AddInt(39, (int)echelonExtensionType, 0); }
   public static void AddCollectionGroupId(FlatBufferBuilder builder, long CollectionGroupId) { builder.AddLong(40, CollectionGroupId, 0); }
+  public static void AddFirstClearFunnelMessage(FlatBufferBuilder builder, StringOffset FirstClearFunnelMessageOffset) { builder.AddOffset(41, FirstClearFunnelMessageOffset.Value, 0); }
   public static Offset<FlatDataGlobal.ScenarioModeExcel> EndScenarioModeExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ScenarioModeExcel>(o);

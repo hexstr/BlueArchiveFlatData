@@ -194,6 +194,13 @@ public enum ParcelChangeReason : int
   Currency_ExpireChange = 184,
   Conquest_ErosionBattleResult = 185,
   Conquest_EnterErosionBattle = 186,
+  BattlePass_BuyLevel = 187,
+  BattlePass_Reward = 188,
+  Shop_SelectedPickupGacha = 189,
+  Billing_PurchaseProductSelect = 190,
+  Account_LevelReward = 191,
+  MiniGame_CCGCompleteGame = 192,
+  MiniGame_CCGBuyPerk = 193,
 };
 
 

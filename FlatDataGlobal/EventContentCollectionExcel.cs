@@ -57,14 +57,21 @@ public struct EventContentCollectionExcel : IFlatbufferObject
   public ArraySegment<byte>? GetFullResourceBytes() { return __p.__vector_as_arraysegment(28); }
 #endif
   public byte[] GetFullResourceArray() { return __p.__vector_as_array<byte>(28); }
-  public uint LocalizeEtcId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public string SubNameLocalizeCodeId { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string Decoration { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSubNameLocalizeCodeIdBytes() { return __p.__vector_as_span<byte>(32, 1); }
+  public Span<byte> GetDecorationBytes() { return __p.__vector_as_span<byte>(30, 1); }
 #else
-  public ArraySegment<byte>? GetSubNameLocalizeCodeIdBytes() { return __p.__vector_as_arraysegment(32); }
+  public ArraySegment<byte>? GetDecorationBytes() { return __p.__vector_as_arraysegment(30); }
 #endif
-  public byte[] GetSubNameLocalizeCodeIdArray() { return __p.__vector_as_array<byte>(32); }
+  public byte[] GetDecorationArray() { return __p.__vector_as_array<byte>(30); }
+  public uint LocalizeEtcId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public string SubNameLocalizeCodeId { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetSubNameLocalizeCodeIdBytes() { return __p.__vector_as_span<byte>(34, 1); }
+#else
+  public ArraySegment<byte>? GetSubNameLocalizeCodeIdBytes() { return __p.__vector_as_arraysegment(34); }
+#endif
+  public byte[] GetSubNameLocalizeCodeIdArray() { return __p.__vector_as_array<byte>(34); }
 
   public static Offset<FlatDataGlobal.EventContentCollectionExcel> CreateEventContentCollectionExcel(FlatBufferBuilder builder,
       long Id = 0,
@@ -80,15 +87,17 @@ public struct EventContentCollectionExcel : IFlatbufferObject
       StringOffset EmblemResourceOffset = default(StringOffset),
       StringOffset ThumbResourceOffset = default(StringOffset),
       StringOffset FullResourceOffset = default(StringOffset),
+      StringOffset DecorationOffset = default(StringOffset),
       uint LocalizeEtcId = 0,
       StringOffset SubNameLocalizeCodeIdOffset = default(StringOffset)) {
-    builder.StartTable(15);
+    builder.StartTable(16);
     EventContentCollectionExcel.AddUnlockConditionCount(builder, UnlockConditionCount);
     EventContentCollectionExcel.AddGroupId(builder, GroupId);
     EventContentCollectionExcel.AddEventContentId(builder, EventContentId);
     EventContentCollectionExcel.AddId(builder, Id);
     EventContentCollectionExcel.AddSubNameLocalizeCodeId(builder, SubNameLocalizeCodeIdOffset);
     EventContentCollectionExcel.AddLocalizeEtcId(builder, LocalizeEtcId);
+    EventContentCollectionExcel.AddDecoration(builder, DecorationOffset);
     EventContentCollectionExcel.AddFullResource(builder, FullResourceOffset);
     EventContentCollectionExcel.AddThumbResource(builder, ThumbResourceOffset);
     EventContentCollectionExcel.AddEmblemResource(builder, EmblemResourceOffset);
@@ -101,7 +110,7 @@ public struct EventContentCollectionExcel : IFlatbufferObject
     return EventContentCollectionExcel.EndEventContentCollectionExcel(builder);
   }
 
-  public static void StartEventContentCollectionExcel(FlatBufferBuilder builder) { builder.StartTable(15); }
+  public static void StartEventContentCollectionExcel(FlatBufferBuilder builder) { builder.StartTable(16); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(1, EventContentId, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(2, GroupId, 0); }
@@ -120,8 +129,9 @@ public struct EventContentCollectionExcel : IFlatbufferObject
   public static void AddEmblemResource(FlatBufferBuilder builder, StringOffset EmblemResourceOffset) { builder.AddOffset(10, EmblemResourceOffset.Value, 0); }
   public static void AddThumbResource(FlatBufferBuilder builder, StringOffset ThumbResourceOffset) { builder.AddOffset(11, ThumbResourceOffset.Value, 0); }
   public static void AddFullResource(FlatBufferBuilder builder, StringOffset FullResourceOffset) { builder.AddOffset(12, FullResourceOffset.Value, 0); }
-  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(13, LocalizeEtcId, 0); }
-  public static void AddSubNameLocalizeCodeId(FlatBufferBuilder builder, StringOffset SubNameLocalizeCodeIdOffset) { builder.AddOffset(14, SubNameLocalizeCodeIdOffset.Value, 0); }
+  public static void AddDecoration(FlatBufferBuilder builder, StringOffset DecorationOffset) { builder.AddOffset(13, DecorationOffset.Value, 0); }
+  public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(14, LocalizeEtcId, 0); }
+  public static void AddSubNameLocalizeCodeId(FlatBufferBuilder builder, StringOffset SubNameLocalizeCodeIdOffset) { builder.AddOffset(15, SubNameLocalizeCodeIdOffset.Value, 0); }
   public static Offset<FlatDataGlobal.EventContentCollectionExcel> EndEventContentCollectionExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentCollectionExcel>(o);
