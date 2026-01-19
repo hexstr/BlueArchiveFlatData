@@ -23,25 +23,51 @@ public struct CafeInfoExcel : IFlatbufferObject
   public bool IsDefault { get { int o = __p.__offset(6); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public FlatDataGlobal.OpenConditionContent OpenConditionCafeId { get { int o = __p.__offset(8); return o != 0 ? (FlatDataGlobal.OpenConditionContent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.OpenConditionContent.Shop; } }
   public FlatDataGlobal.OpenConditionContent OpenConditionCafeInvite { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.OpenConditionContent)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.OpenConditionContent.Shop; } }
+  public FlatDataGlobal.ParcelType SummonParcelType { get { int o = __p.__offset(12); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
+  public long SummonParcelId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long SummonParcelAmount { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.ShopCategoryType CategoryType { get { int o = __p.__offset(18); return o != 0 ? (FlatDataGlobal.ShopCategoryType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ShopCategoryType.General; } }
+  public string SummonTicketIconPath { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetSummonTicketIconPathBytes() { return __p.__vector_as_span<byte>(20, 1); }
+#else
+  public ArraySegment<byte>? GetSummonTicketIconPathBytes() { return __p.__vector_as_arraysegment(20); }
+#endif
+  public byte[] GetSummonTicketIconPathArray() { return __p.__vector_as_array<byte>(20); }
 
   public static Offset<FlatDataGlobal.CafeInfoExcel> CreateCafeInfoExcel(FlatBufferBuilder builder,
       long CafeId = 0,
       bool IsDefault = false,
       FlatDataGlobal.OpenConditionContent OpenConditionCafeId = FlatDataGlobal.OpenConditionContent.Shop,
-      FlatDataGlobal.OpenConditionContent OpenConditionCafeInvite = FlatDataGlobal.OpenConditionContent.Shop) {
-    builder.StartTable(4);
+      FlatDataGlobal.OpenConditionContent OpenConditionCafeInvite = FlatDataGlobal.OpenConditionContent.Shop,
+      FlatDataGlobal.ParcelType SummonParcelType = FlatDataGlobal.ParcelType.None,
+      long SummonParcelId = 0,
+      long SummonParcelAmount = 0,
+      FlatDataGlobal.ShopCategoryType CategoryType = FlatDataGlobal.ShopCategoryType.General,
+      StringOffset SummonTicketIconPathOffset = default(StringOffset)) {
+    builder.StartTable(9);
+    CafeInfoExcel.AddSummonParcelAmount(builder, SummonParcelAmount);
+    CafeInfoExcel.AddSummonParcelId(builder, SummonParcelId);
     CafeInfoExcel.AddCafeId(builder, CafeId);
+    CafeInfoExcel.AddSummonTicketIconPath(builder, SummonTicketIconPathOffset);
+    CafeInfoExcel.AddCategoryType(builder, CategoryType);
+    CafeInfoExcel.AddSummonParcelType(builder, SummonParcelType);
     CafeInfoExcel.AddOpenConditionCafeInvite(builder, OpenConditionCafeInvite);
     CafeInfoExcel.AddOpenConditionCafeId(builder, OpenConditionCafeId);
     CafeInfoExcel.AddIsDefault(builder, IsDefault);
     return CafeInfoExcel.EndCafeInfoExcel(builder);
   }
 
-  public static void StartCafeInfoExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
+  public static void StartCafeInfoExcel(FlatBufferBuilder builder) { builder.StartTable(9); }
   public static void AddCafeId(FlatBufferBuilder builder, long CafeId) { builder.AddLong(0, CafeId, 0); }
   public static void AddIsDefault(FlatBufferBuilder builder, bool IsDefault) { builder.AddBool(1, IsDefault, false); }
   public static void AddOpenConditionCafeId(FlatBufferBuilder builder, FlatDataGlobal.OpenConditionContent OpenConditionCafeId) { builder.AddInt(2, (int)OpenConditionCafeId, 0); }
   public static void AddOpenConditionCafeInvite(FlatBufferBuilder builder, FlatDataGlobal.OpenConditionContent OpenConditionCafeInvite) { builder.AddInt(3, (int)OpenConditionCafeInvite, 0); }
+  public static void AddSummonParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType SummonParcelType) { builder.AddInt(4, (int)SummonParcelType, 0); }
+  public static void AddSummonParcelId(FlatBufferBuilder builder, long SummonParcelId) { builder.AddLong(5, SummonParcelId, 0); }
+  public static void AddSummonParcelAmount(FlatBufferBuilder builder, long SummonParcelAmount) { builder.AddLong(6, SummonParcelAmount, 0); }
+  public static void AddCategoryType(FlatBufferBuilder builder, FlatDataGlobal.ShopCategoryType CategoryType) { builder.AddInt(7, (int)CategoryType, 0); }
+  public static void AddSummonTicketIconPath(FlatBufferBuilder builder, StringOffset SummonTicketIconPathOffset) { builder.AddOffset(8, SummonTicketIconPathOffset.Value, 0); }
   public static Offset<FlatDataGlobal.CafeInfoExcel> EndCafeInfoExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CafeInfoExcel>(o);

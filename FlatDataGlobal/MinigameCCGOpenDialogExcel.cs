@@ -24,7 +24,8 @@ public struct MinigameCCGOpenDialogExcel : IFlatbufferObject
   public long ConditionCard { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public uint Dialog { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public long Duration { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public uint Voice { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public long DurationKr { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public uint Voice { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
 
   public static Offset<FlatDataGlobal.MinigameCCGOpenDialogExcel> CreateMinigameCCGOpenDialogExcel(FlatBufferBuilder builder,
       long DialogId = 0,
@@ -32,8 +33,10 @@ public struct MinigameCCGOpenDialogExcel : IFlatbufferObject
       long ConditionCard = 0,
       uint Dialog = 0,
       long Duration = 0,
+      long DurationKr = 0,
       uint Voice = 0) {
-    builder.StartTable(6);
+    builder.StartTable(7);
+    MinigameCCGOpenDialogExcel.AddDurationKr(builder, DurationKr);
     MinigameCCGOpenDialogExcel.AddDuration(builder, Duration);
     MinigameCCGOpenDialogExcel.AddConditionCard(builder, ConditionCard);
     MinigameCCGOpenDialogExcel.AddDialogId(builder, DialogId);
@@ -43,13 +46,14 @@ public struct MinigameCCGOpenDialogExcel : IFlatbufferObject
     return MinigameCCGOpenDialogExcel.EndMinigameCCGOpenDialogExcel(builder);
   }
 
-  public static void StartMinigameCCGOpenDialogExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
+  public static void StartMinigameCCGOpenDialogExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddDialogId(FlatBufferBuilder builder, long DialogId) { builder.AddLong(0, DialogId, 0); }
   public static void AddPlayOrder(FlatBufferBuilder builder, int PlayOrder) { builder.AddInt(1, PlayOrder, 0); }
   public static void AddConditionCard(FlatBufferBuilder builder, long ConditionCard) { builder.AddLong(2, ConditionCard, 0); }
   public static void AddDialog(FlatBufferBuilder builder, uint Dialog) { builder.AddUint(3, Dialog, 0); }
   public static void AddDuration(FlatBufferBuilder builder, long Duration) { builder.AddLong(4, Duration, 0); }
-  public static void AddVoice(FlatBufferBuilder builder, uint Voice) { builder.AddUint(5, Voice, 0); }
+  public static void AddDurationKr(FlatBufferBuilder builder, long DurationKr) { builder.AddLong(5, DurationKr, 0); }
+  public static void AddVoice(FlatBufferBuilder builder, uint Voice) { builder.AddUint(6, Voice, 0); }
   public static Offset<FlatDataGlobal.MinigameCCGOpenDialogExcel> EndMinigameCCGOpenDialogExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.MinigameCCGOpenDialogExcel>(o);

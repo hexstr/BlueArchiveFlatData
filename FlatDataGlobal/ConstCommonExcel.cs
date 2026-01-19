@@ -271,8 +271,11 @@ public struct ConstCommonExcel : IFlatbufferObject
   public byte[] GetReviewEventDateGLArray() { return __p.__vector_as_array<byte>(372); }
   public long ReviewEventStageIDGL { get { int o = __p.__offset(374); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ReviewEventCharIDGL { get { int o = __p.__offset(376); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public int CafeSummonTicketBuyLimitForValidate { get { int o = __p.__offset(378); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int AutoCraftPresetCountLimit { get { int o = __p.__offset(380); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public int AutoCraftNodeSelectCount { get { int o = __p.__offset(382); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
 
-  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(187); }
+  public static void StartConstCommonExcel(FlatBufferBuilder builder) { builder.StartTable(190); }
   public static void AddCampaignMainStageMaxRank(FlatBufferBuilder builder, int CampaignMainStageMaxRank) { builder.AddInt(0, CampaignMainStageMaxRank, 0); }
   public static void AddCampaignMainStageBestRecord(FlatBufferBuilder builder, int CampaignMainStageBestRecord) { builder.AddInt(1, CampaignMainStageBestRecord, 0); }
   public static void AddHardAdventurePlayCountRecoverDailyNumber(FlatBufferBuilder builder, int HardAdventurePlayCountRecoverDailyNumber) { builder.AddInt(2, HardAdventurePlayCountRecoverDailyNumber, 0); }
@@ -485,6 +488,9 @@ public struct ConstCommonExcel : IFlatbufferObject
   public static void AddReviewEventDateGL(FlatBufferBuilder builder, StringOffset ReviewEventDateGLOffset) { builder.AddOffset(184, ReviewEventDateGLOffset.Value, 0); }
   public static void AddReviewEventStageIDGL(FlatBufferBuilder builder, long ReviewEventStageIDGL) { builder.AddLong(185, ReviewEventStageIDGL, 0); }
   public static void AddReviewEventCharIDGL(FlatBufferBuilder builder, long ReviewEventCharIDGL) { builder.AddLong(186, ReviewEventCharIDGL, 0); }
+  public static void AddCafeSummonTicketBuyLimitForValidate(FlatBufferBuilder builder, int CafeSummonTicketBuyLimitForValidate) { builder.AddInt(187, CafeSummonTicketBuyLimitForValidate, 0); }
+  public static void AddAutoCraftPresetCountLimit(FlatBufferBuilder builder, int AutoCraftPresetCountLimit) { builder.AddInt(188, AutoCraftPresetCountLimit, 0); }
+  public static void AddAutoCraftNodeSelectCount(FlatBufferBuilder builder, int AutoCraftNodeSelectCount) { builder.AddInt(189, AutoCraftNodeSelectCount, 0); }
   public static Offset<FlatDataGlobal.ConstCommonExcel> EndConstCommonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ConstCommonExcel>(o);

@@ -71,6 +71,8 @@ public struct CurrencyExcel : IFlatbufferObject
   public FlatDataGlobal.ParcelType ExpiryChangeParcelType { get { int o = __p.__offset(40); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
   public long ExpiryChangeId { get { int o = __p.__offset(42); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long ExpiryChangeAmount { get { int o = __p.__offset(44); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public FlatDataGlobal.PeriodType ResetType { get { int o = __p.__offset(46); return o != 0 ? (FlatDataGlobal.PeriodType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.PeriodType.None; } }
+  public long ResetAmount { get { int o = __p.__offset(48); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.CurrencyExcel> CreateCurrencyExcel(FlatBufferBuilder builder,
       long ID = 0,
@@ -93,14 +95,18 @@ public struct CurrencyExcel : IFlatbufferObject
       int ExpirationNotifyDateIn = 0,
       FlatDataGlobal.ParcelType ExpiryChangeParcelType = FlatDataGlobal.ParcelType.None,
       long ExpiryChangeId = 0,
-      long ExpiryChangeAmount = 0) {
-    builder.StartTable(21);
+      long ExpiryChangeAmount = 0,
+      FlatDataGlobal.PeriodType ResetType = FlatDataGlobal.PeriodType.None,
+      long ResetAmount = 0) {
+    builder.StartTable(23);
+    CurrencyExcel.AddResetAmount(builder, ResetAmount);
     CurrencyExcel.AddExpiryChangeAmount(builder, ExpiryChangeAmount);
     CurrencyExcel.AddExpiryChangeId(builder, ExpiryChangeId);
     CurrencyExcel.AddDailyRefillAmount(builder, DailyRefillAmount);
     CurrencyExcel.AddOverChargeLimit(builder, OverChargeLimit);
     CurrencyExcel.AddChargeLimit(builder, ChargeLimit);
     CurrencyExcel.AddID(builder, ID);
+    CurrencyExcel.AddResetType(builder, ResetType);
     CurrencyExcel.AddExpiryChangeParcelType(builder, ExpiryChangeParcelType);
     CurrencyExcel.AddExpirationNotifyDateIn(builder, ExpirationNotifyDateIn);
     CurrencyExcel.AddExpirationDateTime(builder, ExpirationDateTimeOffset);
@@ -119,7 +125,7 @@ public struct CurrencyExcel : IFlatbufferObject
     return CurrencyExcel.EndCurrencyExcel(builder);
   }
 
-  public static void StartCurrencyExcel(FlatBufferBuilder builder) { builder.StartTable(21); }
+  public static void StartCurrencyExcel(FlatBufferBuilder builder) { builder.StartTable(23); }
   public static void AddID(FlatBufferBuilder builder, long ID) { builder.AddLong(0, ID, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(1, LocalizeEtcId, 0); }
   public static void AddCurrencyType(FlatBufferBuilder builder, FlatDataGlobal.CurrencyTypes CurrencyType) { builder.AddInt(2, (int)CurrencyType, 0); }
@@ -146,6 +152,8 @@ public struct CurrencyExcel : IFlatbufferObject
   public static void AddExpiryChangeParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType ExpiryChangeParcelType) { builder.AddInt(18, (int)ExpiryChangeParcelType, 0); }
   public static void AddExpiryChangeId(FlatBufferBuilder builder, long ExpiryChangeId) { builder.AddLong(19, ExpiryChangeId, 0); }
   public static void AddExpiryChangeAmount(FlatBufferBuilder builder, long ExpiryChangeAmount) { builder.AddLong(20, ExpiryChangeAmount, 0); }
+  public static void AddResetType(FlatBufferBuilder builder, FlatDataGlobal.PeriodType ResetType) { builder.AddInt(21, (int)ResetType, 0); }
+  public static void AddResetAmount(FlatBufferBuilder builder, long ResetAmount) { builder.AddLong(22, ResetAmount, 0); }
   public static Offset<FlatDataGlobal.CurrencyExcel> EndCurrencyExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.CurrencyExcel>(o);

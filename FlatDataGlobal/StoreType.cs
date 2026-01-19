@@ -15,6 +15,8 @@ public enum StoreType : int
   GalaxyStore = 5,
   STEAM = 6,
   FreeProduct = 7,
+  Twitch = 8,
+  Chzzk = 9,
 };
 
 

@@ -96,6 +96,48 @@ public struct KeyMappingPopupExcel : IFlatbufferObject
   public ArraySegment<byte>? GetKeyMappingId05Bytes() { return __p.__vector_as_arraysegment(24); }
 #endif
   public byte[] GetKeyMappingId05Array() { return __p.__vector_as_array<byte>(24); }
+  public string ButtonName06 { get { int o = __p.__offset(26); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetButtonName06Bytes() { return __p.__vector_as_span<byte>(26, 1); }
+#else
+  public ArraySegment<byte>? GetButtonName06Bytes() { return __p.__vector_as_arraysegment(26); }
+#endif
+  public byte[] GetButtonName06Array() { return __p.__vector_as_array<byte>(26); }
+  public string KeyMappingId06 { get { int o = __p.__offset(28); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetKeyMappingId06Bytes() { return __p.__vector_as_span<byte>(28, 1); }
+#else
+  public ArraySegment<byte>? GetKeyMappingId06Bytes() { return __p.__vector_as_arraysegment(28); }
+#endif
+  public byte[] GetKeyMappingId06Array() { return __p.__vector_as_array<byte>(28); }
+  public string ButtonName07 { get { int o = __p.__offset(30); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetButtonName07Bytes() { return __p.__vector_as_span<byte>(30, 1); }
+#else
+  public ArraySegment<byte>? GetButtonName07Bytes() { return __p.__vector_as_arraysegment(30); }
+#endif
+  public byte[] GetButtonName07Array() { return __p.__vector_as_array<byte>(30); }
+  public string KeyMappingId07 { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetKeyMappingId07Bytes() { return __p.__vector_as_span<byte>(32, 1); }
+#else
+  public ArraySegment<byte>? GetKeyMappingId07Bytes() { return __p.__vector_as_arraysegment(32); }
+#endif
+  public byte[] GetKeyMappingId07Array() { return __p.__vector_as_array<byte>(32); }
+  public string ButtonName08 { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetButtonName08Bytes() { return __p.__vector_as_span<byte>(34, 1); }
+#else
+  public ArraySegment<byte>? GetButtonName08Bytes() { return __p.__vector_as_arraysegment(34); }
+#endif
+  public byte[] GetButtonName08Array() { return __p.__vector_as_array<byte>(34); }
+  public string KeyMappingId08 { get { int o = __p.__offset(36); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetKeyMappingId08Bytes() { return __p.__vector_as_span<byte>(36, 1); }
+#else
+  public ArraySegment<byte>? GetKeyMappingId08Bytes() { return __p.__vector_as_arraysegment(36); }
+#endif
+  public byte[] GetKeyMappingId08Array() { return __p.__vector_as_array<byte>(36); }
 
   public static Offset<FlatDataGlobal.KeyMappingPopupExcel> CreateKeyMappingPopupExcel(FlatBufferBuilder builder,
       StringOffset PrefabNameOffset = default(StringOffset),
@@ -108,8 +150,20 @@ public struct KeyMappingPopupExcel : IFlatbufferObject
       StringOffset ButtonName04Offset = default(StringOffset),
       StringOffset KeyMappingId04Offset = default(StringOffset),
       StringOffset ButtonName05Offset = default(StringOffset),
-      StringOffset KeyMappingId05Offset = default(StringOffset)) {
-    builder.StartTable(11);
+      StringOffset KeyMappingId05Offset = default(StringOffset),
+      StringOffset ButtonName06Offset = default(StringOffset),
+      StringOffset KeyMappingId06Offset = default(StringOffset),
+      StringOffset ButtonName07Offset = default(StringOffset),
+      StringOffset KeyMappingId07Offset = default(StringOffset),
+      StringOffset ButtonName08Offset = default(StringOffset),
+      StringOffset KeyMappingId08Offset = default(StringOffset)) {
+    builder.StartTable(17);
+    KeyMappingPopupExcel.AddKeyMappingId08(builder, KeyMappingId08Offset);
+    KeyMappingPopupExcel.AddButtonName08(builder, ButtonName08Offset);
+    KeyMappingPopupExcel.AddKeyMappingId07(builder, KeyMappingId07Offset);
+    KeyMappingPopupExcel.AddButtonName07(builder, ButtonName07Offset);
+    KeyMappingPopupExcel.AddKeyMappingId06(builder, KeyMappingId06Offset);
+    KeyMappingPopupExcel.AddButtonName06(builder, ButtonName06Offset);
     KeyMappingPopupExcel.AddKeyMappingId05(builder, KeyMappingId05Offset);
     KeyMappingPopupExcel.AddButtonName05(builder, ButtonName05Offset);
     KeyMappingPopupExcel.AddKeyMappingId04(builder, KeyMappingId04Offset);
@@ -124,7 +178,7 @@ public struct KeyMappingPopupExcel : IFlatbufferObject
     return KeyMappingPopupExcel.EndKeyMappingPopupExcel(builder);
   }
 
-  public static void StartKeyMappingPopupExcel(FlatBufferBuilder builder) { builder.StartTable(11); }
+  public static void StartKeyMappingPopupExcel(FlatBufferBuilder builder) { builder.StartTable(17); }
   public static void AddPrefabName(FlatBufferBuilder builder, StringOffset PrefabNameOffset) { builder.AddOffset(0, PrefabNameOffset.Value, 0); }
   public static void AddButtonName01(FlatBufferBuilder builder, StringOffset ButtonName01Offset) { builder.AddOffset(1, ButtonName01Offset.Value, 0); }
   public static void AddKeyMappingId01(FlatBufferBuilder builder, StringOffset KeyMappingId01Offset) { builder.AddOffset(2, KeyMappingId01Offset.Value, 0); }
@@ -136,6 +190,12 @@ public struct KeyMappingPopupExcel : IFlatbufferObject
   public static void AddKeyMappingId04(FlatBufferBuilder builder, StringOffset KeyMappingId04Offset) { builder.AddOffset(8, KeyMappingId04Offset.Value, 0); }
   public static void AddButtonName05(FlatBufferBuilder builder, StringOffset ButtonName05Offset) { builder.AddOffset(9, ButtonName05Offset.Value, 0); }
   public static void AddKeyMappingId05(FlatBufferBuilder builder, StringOffset KeyMappingId05Offset) { builder.AddOffset(10, KeyMappingId05Offset.Value, 0); }
+  public static void AddButtonName06(FlatBufferBuilder builder, StringOffset ButtonName06Offset) { builder.AddOffset(11, ButtonName06Offset.Value, 0); }
+  public static void AddKeyMappingId06(FlatBufferBuilder builder, StringOffset KeyMappingId06Offset) { builder.AddOffset(12, KeyMappingId06Offset.Value, 0); }
+  public static void AddButtonName07(FlatBufferBuilder builder, StringOffset ButtonName07Offset) { builder.AddOffset(13, ButtonName07Offset.Value, 0); }
+  public static void AddKeyMappingId07(FlatBufferBuilder builder, StringOffset KeyMappingId07Offset) { builder.AddOffset(14, KeyMappingId07Offset.Value, 0); }
+  public static void AddButtonName08(FlatBufferBuilder builder, StringOffset ButtonName08Offset) { builder.AddOffset(15, ButtonName08Offset.Value, 0); }
+  public static void AddKeyMappingId08(FlatBufferBuilder builder, StringOffset KeyMappingId08Offset) { builder.AddOffset(16, KeyMappingId08Offset.Value, 0); }
   public static Offset<FlatDataGlobal.KeyMappingPopupExcel> EndKeyMappingPopupExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.KeyMappingPopupExcel>(o);

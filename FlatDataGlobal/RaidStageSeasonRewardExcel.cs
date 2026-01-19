@@ -36,33 +36,29 @@ public struct RaidStageSeasonRewardExcel : IFlatbufferObject
   public ArraySegment<byte>? GetSeasonRewardParcelUniqueIdBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
   public long[] GetSeasonRewardParcelUniqueIdArray() { return __p.__vector_as_array<long>(8); }
-  public string SeasonRewardParcelUniqueName(int j) { int o = __p.__offset(10); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
-  public int SeasonRewardParcelUniqueNameLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public long SeasonRewardAmount(int j) { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int SeasonRewardAmountLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long SeasonRewardAmount(int j) { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int SeasonRewardAmountLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetSeasonRewardAmountBytes() { return __p.__vector_as_span<long>(12, 8); }
+  public Span<long> GetSeasonRewardAmountBytes() { return __p.__vector_as_span<long>(10, 8); }
 #else
-  public ArraySegment<byte>? GetSeasonRewardAmountBytes() { return __p.__vector_as_arraysegment(12); }
+  public ArraySegment<byte>? GetSeasonRewardAmountBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
-  public long[] GetSeasonRewardAmountArray() { return __p.__vector_as_array<long>(12); }
+  public long[] GetSeasonRewardAmountArray() { return __p.__vector_as_array<long>(10); }
 
   public static Offset<FlatDataGlobal.RaidStageSeasonRewardExcel> CreateRaidStageSeasonRewardExcel(FlatBufferBuilder builder,
       long SeasonRewardId = 0,
       VectorOffset SeasonRewardParcelTypeOffset = default(VectorOffset),
       VectorOffset SeasonRewardParcelUniqueIdOffset = default(VectorOffset),
-      VectorOffset SeasonRewardParcelUniqueNameOffset = default(VectorOffset),
       VectorOffset SeasonRewardAmountOffset = default(VectorOffset)) {
-    builder.StartTable(5);
+    builder.StartTable(4);
     RaidStageSeasonRewardExcel.AddSeasonRewardId(builder, SeasonRewardId);
     RaidStageSeasonRewardExcel.AddSeasonRewardAmount(builder, SeasonRewardAmountOffset);
-    RaidStageSeasonRewardExcel.AddSeasonRewardParcelUniqueName(builder, SeasonRewardParcelUniqueNameOffset);
     RaidStageSeasonRewardExcel.AddSeasonRewardParcelUniqueId(builder, SeasonRewardParcelUniqueIdOffset);
     RaidStageSeasonRewardExcel.AddSeasonRewardParcelType(builder, SeasonRewardParcelTypeOffset);
     return RaidStageSeasonRewardExcel.EndRaidStageSeasonRewardExcel(builder);
   }
 
-  public static void StartRaidStageSeasonRewardExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
+  public static void StartRaidStageSeasonRewardExcel(FlatBufferBuilder builder) { builder.StartTable(4); }
   public static void AddSeasonRewardId(FlatBufferBuilder builder, long SeasonRewardId) { builder.AddLong(0, SeasonRewardId, 0); }
   public static void AddSeasonRewardParcelType(FlatBufferBuilder builder, VectorOffset SeasonRewardParcelTypeOffset) { builder.AddOffset(1, SeasonRewardParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateSeasonRewardParcelTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
@@ -76,13 +72,7 @@ public struct RaidStageSeasonRewardExcel : IFlatbufferObject
   public static VectorOffset CreateSeasonRewardParcelUniqueIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSeasonRewardParcelUniqueIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartSeasonRewardParcelUniqueIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddSeasonRewardParcelUniqueName(FlatBufferBuilder builder, VectorOffset SeasonRewardParcelUniqueNameOffset) { builder.AddOffset(3, SeasonRewardParcelUniqueNameOffset.Value, 0); }
-  public static VectorOffset CreateSeasonRewardParcelUniqueNameVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateSeasonRewardParcelUniqueNameVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSeasonRewardParcelUniqueNameVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
-  public static VectorOffset CreateSeasonRewardParcelUniqueNameVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
-  public static void StartSeasonRewardParcelUniqueNameVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSeasonRewardAmount(FlatBufferBuilder builder, VectorOffset SeasonRewardAmountOffset) { builder.AddOffset(4, SeasonRewardAmountOffset.Value, 0); }
+  public static void AddSeasonRewardAmount(FlatBufferBuilder builder, VectorOffset SeasonRewardAmountOffset) { builder.AddOffset(3, SeasonRewardAmountOffset.Value, 0); }
   public static VectorOffset CreateSeasonRewardAmountVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateSeasonRewardAmountVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateSeasonRewardAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }

@@ -24,14 +24,7 @@ public struct EliminateRaidStageRewardExcel : IFlatbufferObject
   public long ClearStageRewardProb { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public FlatDataGlobal.ParcelType ClearStageRewardParcelType { get { int o = __p.__offset(10); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.ParcelType.None; } }
   public long ClearStageRewardParcelUniqueID { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public string ClearStageRewardParcelUniqueName { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetClearStageRewardParcelUniqueNameBytes() { return __p.__vector_as_span<byte>(14, 1); }
-#else
-  public ArraySegment<byte>? GetClearStageRewardParcelUniqueNameBytes() { return __p.__vector_as_arraysegment(14); }
-#endif
-  public byte[] GetClearStageRewardParcelUniqueNameArray() { return __p.__vector_as_array<byte>(14); }
-  public long ClearStageRewardAmount { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ClearStageRewardAmount { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.EliminateRaidStageRewardExcel> CreateEliminateRaidStageRewardExcel(FlatBufferBuilder builder,
       long GroupId = 0,
@@ -39,27 +32,24 @@ public struct EliminateRaidStageRewardExcel : IFlatbufferObject
       long ClearStageRewardProb = 0,
       FlatDataGlobal.ParcelType ClearStageRewardParcelType = FlatDataGlobal.ParcelType.None,
       long ClearStageRewardParcelUniqueID = 0,
-      StringOffset ClearStageRewardParcelUniqueNameOffset = default(StringOffset),
       long ClearStageRewardAmount = 0) {
-    builder.StartTable(7);
+    builder.StartTable(6);
     EliminateRaidStageRewardExcel.AddClearStageRewardAmount(builder, ClearStageRewardAmount);
     EliminateRaidStageRewardExcel.AddClearStageRewardParcelUniqueID(builder, ClearStageRewardParcelUniqueID);
     EliminateRaidStageRewardExcel.AddClearStageRewardProb(builder, ClearStageRewardProb);
     EliminateRaidStageRewardExcel.AddGroupId(builder, GroupId);
-    EliminateRaidStageRewardExcel.AddClearStageRewardParcelUniqueName(builder, ClearStageRewardParcelUniqueNameOffset);
     EliminateRaidStageRewardExcel.AddClearStageRewardParcelType(builder, ClearStageRewardParcelType);
     EliminateRaidStageRewardExcel.AddIsClearStageRewardHideInfo(builder, IsClearStageRewardHideInfo);
     return EliminateRaidStageRewardExcel.EndEliminateRaidStageRewardExcel(builder);
   }
 
-  public static void StartEliminateRaidStageRewardExcel(FlatBufferBuilder builder) { builder.StartTable(7); }
+  public static void StartEliminateRaidStageRewardExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
   public static void AddGroupId(FlatBufferBuilder builder, long GroupId) { builder.AddLong(0, GroupId, 0); }
   public static void AddIsClearStageRewardHideInfo(FlatBufferBuilder builder, bool IsClearStageRewardHideInfo) { builder.AddBool(1, IsClearStageRewardHideInfo, false); }
   public static void AddClearStageRewardProb(FlatBufferBuilder builder, long ClearStageRewardProb) { builder.AddLong(2, ClearStageRewardProb, 0); }
   public static void AddClearStageRewardParcelType(FlatBufferBuilder builder, FlatDataGlobal.ParcelType ClearStageRewardParcelType) { builder.AddInt(3, (int)ClearStageRewardParcelType, 0); }
   public static void AddClearStageRewardParcelUniqueID(FlatBufferBuilder builder, long ClearStageRewardParcelUniqueID) { builder.AddLong(4, ClearStageRewardParcelUniqueID, 0); }
-  public static void AddClearStageRewardParcelUniqueName(FlatBufferBuilder builder, StringOffset ClearStageRewardParcelUniqueNameOffset) { builder.AddOffset(5, ClearStageRewardParcelUniqueNameOffset.Value, 0); }
-  public static void AddClearStageRewardAmount(FlatBufferBuilder builder, long ClearStageRewardAmount) { builder.AddLong(6, ClearStageRewardAmount, 0); }
+  public static void AddClearStageRewardAmount(FlatBufferBuilder builder, long ClearStageRewardAmount) { builder.AddLong(5, ClearStageRewardAmount, 0); }
   public static Offset<FlatDataGlobal.EliminateRaidStageRewardExcel> EndEliminateRaidStageRewardExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EliminateRaidStageRewardExcel>(o);

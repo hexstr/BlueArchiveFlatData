@@ -56,6 +56,7 @@ public struct OperatorExcel : IFlatbufferObject
 #endif
   public uint[] GetVoiceIdArray() { return __p.__vector_as_array<uint>(24); }
   public bool OperatorWaitQueue { get { int o = __p.__offset(26); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.CharacterVoiceOverridePriority CharacterVoiceOverridePriority { get { int o = __p.__offset(28); return o != 0 ? (FlatDataGlobal.CharacterVoiceOverridePriority)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.CharacterVoiceOverridePriority.None; } }
 
   public static Offset<FlatDataGlobal.OperatorExcel> CreateOperatorExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
@@ -69,9 +70,11 @@ public struct OperatorExcel : IFlatbufferObject
       StringOffset PortraitPathOffset = default(StringOffset),
       StringOffset TextLocalizeKeyOffset = default(StringOffset),
       VectorOffset VoiceIdOffset = default(VectorOffset),
-      bool OperatorWaitQueue = false) {
-    builder.StartTable(12);
+      bool OperatorWaitQueue = false,
+      FlatDataGlobal.CharacterVoiceOverridePriority characterVoiceOverridePriority = FlatDataGlobal.CharacterVoiceOverridePriority.None) {
+    builder.StartTable(13);
     OperatorExcel.AddUniqueId(builder, UniqueId);
+    OperatorExcel.AddCharacterVoiceOverridePriority(builder, characterVoiceOverridePriority);
     OperatorExcel.AddVoiceId(builder, VoiceIdOffset);
     OperatorExcel.AddTextLocalizeKey(builder, TextLocalizeKeyOffset);
     OperatorExcel.AddPortraitPath(builder, PortraitPathOffset);
@@ -86,7 +89,7 @@ public struct OperatorExcel : IFlatbufferObject
     return OperatorExcel.EndOperatorExcel(builder);
   }
 
-  public static void StartOperatorExcel(FlatBufferBuilder builder) { builder.StartTable(12); }
+  public static void StartOperatorExcel(FlatBufferBuilder builder) { builder.StartTable(13); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
   public static void AddGroupId(FlatBufferBuilder builder, StringOffset GroupIdOffset) { builder.AddOffset(1, GroupIdOffset.Value, 0); }
   public static void AddOperatorCondition(FlatBufferBuilder builder, FlatDataGlobal.OperatorCondition operatorCondition) { builder.AddInt(2, (int)operatorCondition, 0); }
@@ -104,6 +107,7 @@ public struct OperatorExcel : IFlatbufferObject
   public static VectorOffset CreateVoiceIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<uint>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartVoiceIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddOperatorWaitQueue(FlatBufferBuilder builder, bool OperatorWaitQueue) { builder.AddBool(11, OperatorWaitQueue, false); }
+  public static void AddCharacterVoiceOverridePriority(FlatBufferBuilder builder, FlatDataGlobal.CharacterVoiceOverridePriority characterVoiceOverridePriority) { builder.AddInt(12, (int)characterVoiceOverridePriority, 0); }
   public static Offset<FlatDataGlobal.OperatorExcel> EndOperatorExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.OperatorExcel>(o);

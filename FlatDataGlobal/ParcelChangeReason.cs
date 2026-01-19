@@ -201,6 +201,10 @@ public enum ParcelChangeReason : int
   Account_LevelReward = 191,
   MiniGame_CCGCompleteGame = 192,
   MiniGame_CCGBuyPerk = 193,
+  Cafe_SummonCharacterTicketUse = 194,
+  Concentration_FlipCard = 195,
+  Concentration_RoundComplete = 196,
+  Concentration_RoundSkip = 197,
 };
 
 

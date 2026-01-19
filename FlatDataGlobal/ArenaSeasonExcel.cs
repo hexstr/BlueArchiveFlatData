@@ -36,14 +36,17 @@ public struct ArenaSeasonExcel : IFlatbufferObject
   public byte[] GetSeasonEndDateArray() { return __p.__vector_as_array<byte>(8); }
   public long SeasonGroupLimit { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long PrevSeasonId { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long InformationGroupId { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
 
   public static Offset<FlatDataGlobal.ArenaSeasonExcel> CreateArenaSeasonExcel(FlatBufferBuilder builder,
       long UniqueId = 0,
       StringOffset SeasonStartDateOffset = default(StringOffset),
       StringOffset SeasonEndDateOffset = default(StringOffset),
       long SeasonGroupLimit = 0,
-      long PrevSeasonId = 0) {
-    builder.StartTable(5);
+      long PrevSeasonId = 0,
+      long InformationGroupId = 0) {
+    builder.StartTable(6);
+    ArenaSeasonExcel.AddInformationGroupId(builder, InformationGroupId);
     ArenaSeasonExcel.AddPrevSeasonId(builder, PrevSeasonId);
     ArenaSeasonExcel.AddSeasonGroupLimit(builder, SeasonGroupLimit);
     ArenaSeasonExcel.AddUniqueId(builder, UniqueId);
@@ -52,12 +55,13 @@ public struct ArenaSeasonExcel : IFlatbufferObject
     return ArenaSeasonExcel.EndArenaSeasonExcel(builder);
   }
 
-  public static void StartArenaSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(5); }
+  public static void StartArenaSeasonExcel(FlatBufferBuilder builder) { builder.StartTable(6); }
   public static void AddUniqueId(FlatBufferBuilder builder, long UniqueId) { builder.AddLong(0, UniqueId, 0); }
   public static void AddSeasonStartDate(FlatBufferBuilder builder, StringOffset SeasonStartDateOffset) { builder.AddOffset(1, SeasonStartDateOffset.Value, 0); }
   public static void AddSeasonEndDate(FlatBufferBuilder builder, StringOffset SeasonEndDateOffset) { builder.AddOffset(2, SeasonEndDateOffset.Value, 0); }
   public static void AddSeasonGroupLimit(FlatBufferBuilder builder, long SeasonGroupLimit) { builder.AddLong(3, SeasonGroupLimit, 0); }
   public static void AddPrevSeasonId(FlatBufferBuilder builder, long PrevSeasonId) { builder.AddLong(4, PrevSeasonId, 0); }
+  public static void AddInformationGroupId(FlatBufferBuilder builder, long InformationGroupId) { builder.AddLong(5, InformationGroupId, 0); }
   public static Offset<FlatDataGlobal.ArenaSeasonExcel> EndArenaSeasonExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.ArenaSeasonExcel>(o);

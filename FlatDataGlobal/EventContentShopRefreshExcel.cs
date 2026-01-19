@@ -35,6 +35,13 @@ public struct EventContentShopRefreshExcel : IFlatbufferObject
   public ArraySegment<byte>? GetBuyReportEventNameBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
   public byte[] GetBuyReportEventNameArray() { return __p.__vector_as_array<byte>(22); }
+  public string ProductUpdateTime { get { int o = __p.__offset(24); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+#if ENABLE_SPAN_T
+  public Span<byte> GetProductUpdateTimeBytes() { return __p.__vector_as_span<byte>(24, 1); }
+#else
+  public ArraySegment<byte>? GetProductUpdateTimeBytes() { return __p.__vector_as_arraysegment(24); }
+#endif
+  public byte[] GetProductUpdateTimeArray() { return __p.__vector_as_array<byte>(24); }
 
   public static Offset<FlatDataGlobal.EventContentShopRefreshExcel> CreateEventContentShopRefreshExcel(FlatBufferBuilder builder,
       long EventContentId = 0,
@@ -46,12 +53,14 @@ public struct EventContentShopRefreshExcel : IFlatbufferObject
       FlatDataGlobal.ShopCategoryType CategoryType = FlatDataGlobal.ShopCategoryType.General,
       int RefreshGroup = 0,
       int Prob = 0,
-      StringOffset BuyReportEventNameOffset = default(StringOffset)) {
-    builder.StartTable(10);
+      StringOffset BuyReportEventNameOffset = default(StringOffset),
+      StringOffset ProductUpdateTimeOffset = default(StringOffset)) {
+    builder.StartTable(11);
     EventContentShopRefreshExcel.AddDisplayOrder(builder, DisplayOrder);
     EventContentShopRefreshExcel.AddGoodsId(builder, GoodsId);
     EventContentShopRefreshExcel.AddId(builder, Id);
     EventContentShopRefreshExcel.AddEventContentId(builder, EventContentId);
+    EventContentShopRefreshExcel.AddProductUpdateTime(builder, ProductUpdateTimeOffset);
     EventContentShopRefreshExcel.AddBuyReportEventName(builder, BuyReportEventNameOffset);
     EventContentShopRefreshExcel.AddProb(builder, Prob);
     EventContentShopRefreshExcel.AddRefreshGroup(builder, RefreshGroup);
@@ -61,7 +70,7 @@ public struct EventContentShopRefreshExcel : IFlatbufferObject
     return EventContentShopRefreshExcel.EndEventContentShopRefreshExcel(builder);
   }
 
-  public static void StartEventContentShopRefreshExcel(FlatBufferBuilder builder) { builder.StartTable(10); }
+  public static void StartEventContentShopRefreshExcel(FlatBufferBuilder builder) { builder.StartTable(11); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(0, EventContentId, 0); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(1, Id, 0); }
   public static void AddLocalizeEtcId(FlatBufferBuilder builder, uint LocalizeEtcId) { builder.AddUint(2, LocalizeEtcId, 0); }
@@ -72,6 +81,7 @@ public struct EventContentShopRefreshExcel : IFlatbufferObject
   public static void AddRefreshGroup(FlatBufferBuilder builder, int RefreshGroup) { builder.AddInt(7, RefreshGroup, 0); }
   public static void AddProb(FlatBufferBuilder builder, int Prob) { builder.AddInt(8, Prob, 0); }
   public static void AddBuyReportEventName(FlatBufferBuilder builder, StringOffset BuyReportEventNameOffset) { builder.AddOffset(9, BuyReportEventNameOffset.Value, 0); }
+  public static void AddProductUpdateTime(FlatBufferBuilder builder, StringOffset ProductUpdateTimeOffset) { builder.AddOffset(10, ProductUpdateTimeOffset.Value, 0); }
   public static Offset<FlatDataGlobal.EventContentShopRefreshExcel> EndEventContentShopRefreshExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<FlatDataGlobal.EventContentShopRefreshExcel>(o);

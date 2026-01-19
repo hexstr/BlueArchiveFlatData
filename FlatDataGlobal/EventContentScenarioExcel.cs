@@ -21,61 +21,63 @@ public struct EventContentScenarioExcel : IFlatbufferObject
 
   public long Id { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public long EventContentId { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public int ReplayDisplayGroup { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public long Order { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long RecollectionNumber { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool IsRecollection { get { int o = __p.__offset(14); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool IsMeetup { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public bool IsOmnibus { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public long ScenarioGroupId(int j) { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int ScenarioGroupIdLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public bool ReturnScenarioPlay { get { int o = __p.__offset(8); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public int ReplayDisplayGroup { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
+  public long Order { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long RecollectionNumber { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool IsRecollection { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool IsMeetup { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public bool IsOmnibus { get { int o = __p.__offset(20); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public long ScenarioGroupId(int j) { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int ScenarioGroupIdLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetScenarioGroupIdBytes() { return __p.__vector_as_span<long>(20, 8); }
+  public Span<long> GetScenarioGroupIdBytes() { return __p.__vector_as_span<long>(22, 8); }
 #else
-  public ArraySegment<byte>? GetScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(20); }
+  public ArraySegment<byte>? GetScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(22); }
 #endif
-  public long[] GetScenarioGroupIdArray() { return __p.__vector_as_array<long>(20); }
-  public FlatDataGlobal.EventContentScenarioConditionType ScenarioConditionType { get { int o = __p.__offset(22); return o != 0 ? (FlatDataGlobal.EventContentScenarioConditionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentScenarioConditionType.None; } }
-  public long ConditionAmount { get { int o = __p.__offset(24); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ConditionEventContentId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public long ClearedScenarioGroupId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public uint RecollectionSummaryLocalizeScenarioId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
-  public string RecollectionResource { get { int o = __p.__offset(32); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public long[] GetScenarioGroupIdArray() { return __p.__vector_as_array<long>(22); }
+  public FlatDataGlobal.EventContentScenarioConditionType ScenarioConditionType { get { int o = __p.__offset(24); return o != 0 ? (FlatDataGlobal.EventContentScenarioConditionType)__p.bb.GetInt(o + __p.bb_pos) : FlatDataGlobal.EventContentScenarioConditionType.None; } }
+  public long ConditionAmount { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ConditionEventContentId { get { int o = __p.__offset(28); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public long ClearedScenarioGroupId { get { int o = __p.__offset(30); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public uint RecollectionSummaryLocalizeScenarioId { get { int o = __p.__offset(32); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
+  public string RecollectionResource { get { int o = __p.__offset(34); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetRecollectionResourceBytes() { return __p.__vector_as_span<byte>(32, 1); }
+  public Span<byte> GetRecollectionResourceBytes() { return __p.__vector_as_span<byte>(34, 1); }
 #else
-  public ArraySegment<byte>? GetRecollectionResourceBytes() { return __p.__vector_as_arraysegment(32); }
+  public ArraySegment<byte>? GetRecollectionResourceBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
-  public byte[] GetRecollectionResourceArray() { return __p.__vector_as_array<byte>(32); }
-  public bool IsRecollectionHorizon { get { int o = __p.__offset(34); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
-  public FlatDataGlobal.ParcelType RewardParcelType(int j) { int o = __p.__offset(36); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
-  public int RewardParcelTypeLength { get { int o = __p.__offset(36); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public byte[] GetRecollectionResourceArray() { return __p.__vector_as_array<byte>(34); }
+  public bool IsRecollectionHorizon { get { int o = __p.__offset(36); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
+  public FlatDataGlobal.ParcelType RewardParcelType(int j) { int o = __p.__offset(38); return o != 0 ? (FlatDataGlobal.ParcelType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (FlatDataGlobal.ParcelType)0; }
+  public int RewardParcelTypeLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<FlatDataGlobal.ParcelType> GetRewardParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(36, 4); }
+  public Span<FlatDataGlobal.ParcelType> GetRewardParcelTypeBytes() { return __p.__vector_as_span<FlatDataGlobal.ParcelType>(38, 4); }
 #else
-  public ArraySegment<byte>? GetRewardParcelTypeBytes() { return __p.__vector_as_arraysegment(36); }
+  public ArraySegment<byte>? GetRewardParcelTypeBytes() { return __p.__vector_as_arraysegment(38); }
 #endif
-  public FlatDataGlobal.ParcelType[] GetRewardParcelTypeArray() { int o = __p.__offset(36); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
-  public long RewardId(int j) { int o = __p.__offset(38); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
-  public int RewardIdLength { get { int o = __p.__offset(38); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public FlatDataGlobal.ParcelType[] GetRewardParcelTypeArray() { int o = __p.__offset(38); if (o == 0) return null; int p = __p.__vector(o); int l = __p.__vector_len(o); FlatDataGlobal.ParcelType[] a = new FlatDataGlobal.ParcelType[l]; for (int i = 0; i < l; i++) { a[i] = (FlatDataGlobal.ParcelType)__p.bb.GetInt(p + i * 4); } return a; }
+  public long RewardId(int j) { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(__p.__vector(o) + j * 8) : (long)0; }
+  public int RewardIdLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<long> GetRewardIdBytes() { return __p.__vector_as_span<long>(38, 8); }
+  public Span<long> GetRewardIdBytes() { return __p.__vector_as_span<long>(40, 8); }
 #else
-  public ArraySegment<byte>? GetRewardIdBytes() { return __p.__vector_as_arraysegment(38); }
+  public ArraySegment<byte>? GetRewardIdBytes() { return __p.__vector_as_arraysegment(40); }
 #endif
-  public long[] GetRewardIdArray() { return __p.__vector_as_array<long>(38); }
-  public int RewardAmount(int j) { int o = __p.__offset(40); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
-  public int RewardAmountLength { get { int o = __p.__offset(40); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long[] GetRewardIdArray() { return __p.__vector_as_array<long>(40); }
+  public int RewardAmount(int j) { int o = __p.__offset(42); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
+  public int RewardAmountLength { get { int o = __p.__offset(42); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<int> GetRewardAmountBytes() { return __p.__vector_as_span<int>(40, 4); }
+  public Span<int> GetRewardAmountBytes() { return __p.__vector_as_span<int>(42, 4); }
 #else
-  public ArraySegment<byte>? GetRewardAmountBytes() { return __p.__vector_as_arraysegment(40); }
+  public ArraySegment<byte>? GetRewardAmountBytes() { return __p.__vector_as_arraysegment(42); }
 #endif
-  public int[] GetRewardAmountArray() { return __p.__vector_as_array<int>(40); }
+  public int[] GetRewardAmountArray() { return __p.__vector_as_array<int>(42); }
 
   public static Offset<FlatDataGlobal.EventContentScenarioExcel> CreateEventContentScenarioExcel(FlatBufferBuilder builder,
       long Id = 0,
       long EventContentId = 0,
+      bool ReturnScenarioPlay = false,
       int ReplayDisplayGroup = 0,
       long Order = 0,
       long RecollectionNumber = 0,
@@ -93,7 +95,7 @@ public struct EventContentScenarioExcel : IFlatbufferObject
       VectorOffset RewardParcelTypeOffset = default(VectorOffset),
       VectorOffset RewardIdOffset = default(VectorOffset),
       VectorOffset RewardAmountOffset = default(VectorOffset)) {
-    builder.StartTable(19);
+    builder.StartTable(20);
     EventContentScenarioExcel.AddClearedScenarioGroupId(builder, ClearedScenarioGroupId);
     EventContentScenarioExcel.AddConditionEventContentId(builder, ConditionEventContentId);
     EventContentScenarioExcel.AddConditionAmount(builder, ConditionAmount);
@@ -113,44 +115,46 @@ public struct EventContentScenarioExcel : IFlatbufferObject
     EventContentScenarioExcel.AddIsOmnibus(builder, IsOmnibus);
     EventContentScenarioExcel.AddIsMeetup(builder, IsMeetup);
     EventContentScenarioExcel.AddIsRecollection(builder, IsRecollection);
+    EventContentScenarioExcel.AddReturnScenarioPlay(builder, ReturnScenarioPlay);
     return EventContentScenarioExcel.EndEventContentScenarioExcel(builder);
   }
 
-  public static void StartEventContentScenarioExcel(FlatBufferBuilder builder) { builder.StartTable(19); }
+  public static void StartEventContentScenarioExcel(FlatBufferBuilder builder) { builder.StartTable(20); }
   public static void AddId(FlatBufferBuilder builder, long Id) { builder.AddLong(0, Id, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long EventContentId) { builder.AddLong(1, EventContentId, 0); }
-  public static void AddReplayDisplayGroup(FlatBufferBuilder builder, int ReplayDisplayGroup) { builder.AddInt(2, ReplayDisplayGroup, 0); }
-  public static void AddOrder(FlatBufferBuilder builder, long Order) { builder.AddLong(3, Order, 0); }
-  public static void AddRecollectionNumber(FlatBufferBuilder builder, long RecollectionNumber) { builder.AddLong(4, RecollectionNumber, 0); }
-  public static void AddIsRecollection(FlatBufferBuilder builder, bool IsRecollection) { builder.AddBool(5, IsRecollection, false); }
-  public static void AddIsMeetup(FlatBufferBuilder builder, bool IsMeetup) { builder.AddBool(6, IsMeetup, false); }
-  public static void AddIsOmnibus(FlatBufferBuilder builder, bool IsOmnibus) { builder.AddBool(7, IsOmnibus, false); }
-  public static void AddScenarioGroupId(FlatBufferBuilder builder, VectorOffset ScenarioGroupIdOffset) { builder.AddOffset(8, ScenarioGroupIdOffset.Value, 0); }
+  public static void AddReturnScenarioPlay(FlatBufferBuilder builder, bool ReturnScenarioPlay) { builder.AddBool(2, ReturnScenarioPlay, false); }
+  public static void AddReplayDisplayGroup(FlatBufferBuilder builder, int ReplayDisplayGroup) { builder.AddInt(3, ReplayDisplayGroup, 0); }
+  public static void AddOrder(FlatBufferBuilder builder, long Order) { builder.AddLong(4, Order, 0); }
+  public static void AddRecollectionNumber(FlatBufferBuilder builder, long RecollectionNumber) { builder.AddLong(5, RecollectionNumber, 0); }
+  public static void AddIsRecollection(FlatBufferBuilder builder, bool IsRecollection) { builder.AddBool(6, IsRecollection, false); }
+  public static void AddIsMeetup(FlatBufferBuilder builder, bool IsMeetup) { builder.AddBool(7, IsMeetup, false); }
+  public static void AddIsOmnibus(FlatBufferBuilder builder, bool IsOmnibus) { builder.AddBool(8, IsOmnibus, false); }
+  public static void AddScenarioGroupId(FlatBufferBuilder builder, VectorOffset ScenarioGroupIdOffset) { builder.AddOffset(9, ScenarioGroupIdOffset.Value, 0); }
   public static VectorOffset CreateScenarioGroupIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateScenarioGroupIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateScenarioGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateScenarioGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartScenarioGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddScenarioConditionType(FlatBufferBuilder builder, FlatDataGlobal.EventContentScenarioConditionType ScenarioConditionType) { builder.AddInt(9, (int)ScenarioConditionType, 0); }
-  public static void AddConditionAmount(FlatBufferBuilder builder, long ConditionAmount) { builder.AddLong(10, ConditionAmount, 0); }
-  public static void AddConditionEventContentId(FlatBufferBuilder builder, long ConditionEventContentId) { builder.AddLong(11, ConditionEventContentId, 0); }
-  public static void AddClearedScenarioGroupId(FlatBufferBuilder builder, long ClearedScenarioGroupId) { builder.AddLong(12, ClearedScenarioGroupId, 0); }
-  public static void AddRecollectionSummaryLocalizeScenarioId(FlatBufferBuilder builder, uint RecollectionSummaryLocalizeScenarioId) { builder.AddUint(13, RecollectionSummaryLocalizeScenarioId, 0); }
-  public static void AddRecollectionResource(FlatBufferBuilder builder, StringOffset RecollectionResourceOffset) { builder.AddOffset(14, RecollectionResourceOffset.Value, 0); }
-  public static void AddIsRecollectionHorizon(FlatBufferBuilder builder, bool IsRecollectionHorizon) { builder.AddBool(15, IsRecollectionHorizon, false); }
-  public static void AddRewardParcelType(FlatBufferBuilder builder, VectorOffset RewardParcelTypeOffset) { builder.AddOffset(16, RewardParcelTypeOffset.Value, 0); }
+  public static void AddScenarioConditionType(FlatBufferBuilder builder, FlatDataGlobal.EventContentScenarioConditionType ScenarioConditionType) { builder.AddInt(10, (int)ScenarioConditionType, 0); }
+  public static void AddConditionAmount(FlatBufferBuilder builder, long ConditionAmount) { builder.AddLong(11, ConditionAmount, 0); }
+  public static void AddConditionEventContentId(FlatBufferBuilder builder, long ConditionEventContentId) { builder.AddLong(12, ConditionEventContentId, 0); }
+  public static void AddClearedScenarioGroupId(FlatBufferBuilder builder, long ClearedScenarioGroupId) { builder.AddLong(13, ClearedScenarioGroupId, 0); }
+  public static void AddRecollectionSummaryLocalizeScenarioId(FlatBufferBuilder builder, uint RecollectionSummaryLocalizeScenarioId) { builder.AddUint(14, RecollectionSummaryLocalizeScenarioId, 0); }
+  public static void AddRecollectionResource(FlatBufferBuilder builder, StringOffset RecollectionResourceOffset) { builder.AddOffset(15, RecollectionResourceOffset.Value, 0); }
+  public static void AddIsRecollectionHorizon(FlatBufferBuilder builder, bool IsRecollectionHorizon) { builder.AddBool(16, IsRecollectionHorizon, false); }
+  public static void AddRewardParcelType(FlatBufferBuilder builder, VectorOffset RewardParcelTypeOffset) { builder.AddOffset(17, RewardParcelTypeOffset.Value, 0); }
   public static VectorOffset CreateRewardParcelTypeVector(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelTypeVectorBlock(FlatBufferBuilder builder, FlatDataGlobal.ParcelType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelTypeVectorBlock(FlatBufferBuilder builder, ArraySegment<FlatDataGlobal.ParcelType> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardParcelTypeVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<FlatDataGlobal.ParcelType>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartRewardParcelTypeVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddRewardId(FlatBufferBuilder builder, VectorOffset RewardIdOffset) { builder.AddOffset(17, RewardIdOffset.Value, 0); }
+  public static void AddRewardId(FlatBufferBuilder builder, VectorOffset RewardIdOffset) { builder.AddOffset(18, RewardIdOffset.Value, 0); }
   public static VectorOffset CreateRewardIdVector(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddLong(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateRewardIdVectorBlock(FlatBufferBuilder builder, long[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartRewardIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddRewardAmount(FlatBufferBuilder builder, VectorOffset RewardAmountOffset) { builder.AddOffset(18, RewardAmountOffset.Value, 0); }
+  public static void AddRewardAmount(FlatBufferBuilder builder, VectorOffset RewardAmountOffset) { builder.AddOffset(19, RewardAmountOffset.Value, 0); }
   public static VectorOffset CreateRewardAmountVector(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateRewardAmountVectorBlock(FlatBufferBuilder builder, int[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateRewardAmountVectorBlock(FlatBufferBuilder builder, ArraySegment<int> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
